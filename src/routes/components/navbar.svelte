@@ -41,13 +41,13 @@
           <a class="hover:underline underline-offset-4" href="/">
             Home
           </a>
-          <a class="hover:underline underline-offset-4" href="/">
+          <a class="hover:underline underline-offset-4" href="/about">
             About
           </a>
-          <a class="hover:underline underline-offset-4" href="/">
+          <a class="hover:underline underline-offset-4" href="/getinvolved">
             Get Involved
           </a>
-          <a class="hover:underline underline-offset-4" href="/">
+          <a class="hover:underline underline-offset-4" href="/donate">
             Donate
           </a>
         </nav>
