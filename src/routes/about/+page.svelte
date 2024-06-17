@@ -7,9 +7,9 @@ import Navbar from "../components/navbar.svelte";
 
 
 
-<main class="min-h-screen bg-maia_white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-white">
     <Navbar />
-    <div class="px-24">
+    <div class="px-8 md:px-24 min-h-[90vh]">
         <!-- <h1 class="pt-48 text-6xl w-2/3 font-heading font-[550]">About</h1>
         <p class="pt-8">MAIA is led and organized by MIT students.</p> -->
         <h2 class="pt-36 text-2xl font-heading font-[550]">Executive Board</h2>

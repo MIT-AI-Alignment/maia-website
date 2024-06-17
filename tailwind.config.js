@@ -8,6 +8,7 @@ export default {
         maia_white: "#fdfbfe",
         maia_purple: "#663399",
         maia_pink: "#0070f3",
+        maia_black: "#1b1023"
       },
 
       fontFamily: {

@@ -7,15 +7,15 @@ import Navbar from "./components/navbar.svelte";
 
 
 
-<main class="min-h-screen bg-maia_white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-white">
     <Navbar />
-    <div class="px-24">
-        <h1 class="pt-48 text-6xl w-2/3 font-heading font-[550]">We're a group of MIT students conducting research to <span class="text-purple-600">reduce risk from advanced AI</span>.</h1>
-        <h2 class="pt-16 text-lg w-2/3">We think that reducing risks from advanced artificial intelligence may be one of the most important problems of our time. We also think it’s a highly interesting and exciting problem, with open opportunities for many more researchers to make progress on it.<br/><br/>
+    <div class="px-8 md:px-24">
+        <h1 class="pt-36 md:pt-48 text-4xl md:text-6xl md:w-2/3 font-heading font-[550]">We're a group of MIT students conducting research to <span class="text-purple-600 dark:text-purple-500">reduce risk from advanced AI</span>.</h1>
+        <h2 class="pt-16 text-lg md:w-2/3">We think that reducing risks from advanced artificial intelligence may be one of the most important problems of our time. We also think it’s a highly interesting and exciting problem, with open opportunities for many more researchers to make progress on it.<br/><br/>
         MAIA supports undergraduate and graduate students in conducting research relevant to reducing risks from advanced AI. <br/><br/>We also run a semester-long introductory reading group on AI safety, including both a technical machine learning track and a policy track.</h2>
 
-        <a href="https://www.mitalignment.org/aisf-ml"><h2 class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 rounded-md p-2">Apply to our technical AI safety program &rarr;</h2></a>
-        <a href="https://www.mitalignment.org/aisf-policy"><h2 class="w-fit mt-4 text-lg underline bg-fuchsia-100 text-fuchsia-600 rounded-md p-2">Apply to our policy AI safety program &rarr;</h2></a>
+        <a href="https://www.mitalignment.org/aisf-ml"><h2 class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md p-2">Apply to our technical AI safety program &rarr;</h2></a>
+        <a href="https://www.mitalignment.org/aisf-policy"><h2 class="w-fit mt-4 text-lg underline bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md p-2">Apply to our policy AI safety program &rarr;</h2></a>
 
         <h2 class="pt-20 pb-8 text-3xl w-2/3 font-heading font-bold">Selected Research</h2>
         <Papers />
