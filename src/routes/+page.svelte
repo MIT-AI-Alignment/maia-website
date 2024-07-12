@@ -5,7 +5,10 @@ import Navbar from "./components/navbar.svelte";
     import Papers from "./components/papers.svelte";
 </script>
 
-
+<svelte:head>
+    <title>MIT AI Alignment</title> 
+    <meta name="description" content="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI.">
+</svelte:head>
 
 <main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-white">
     <Navbar />

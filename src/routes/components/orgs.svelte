@@ -66,7 +66,7 @@
     ) as Record<string,any>;
   </script>
   
-<div class="flex flex-wrap mt-20 justify-between items-center gap-24">
+<div class="flex flex-wrap mt-20 justify-center sm:justify-between items-center gap-24">
   {#each organizations as { imagePath, name, link, invert }}
     <a href={link}>
         {#if imageModules[imagePath].default}

@@ -8,13 +8,13 @@
   let innerWidth = 0
   let innerHeight = 0
   
-  $: condition = innerWidth < 768
+  $: perPage = innerWidth < 650 ? 2 : (innerWidth < 768 ? 3 : 5)
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
 
-<Splide aria-label="Research images/papers" options={{ perPage: condition ? 3 : 5, gap: '1rem'}} hasTrack={ false }  on:arrowsUpdated={ e => { console.log( e )}} class="relative">
+<Splide aria-label="Research images/papers" options={{ perPage, gap: '1rem'}} hasTrack={ false }  on:arrowsUpdated={ e => { console.log( e )}} class="relative">
     <SplideTrack>
   <SplideSlide>
     <Paper

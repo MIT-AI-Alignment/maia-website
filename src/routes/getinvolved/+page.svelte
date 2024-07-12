@@ -4,6 +4,10 @@ import Navbar from "../components/navbar.svelte";
 </script>
 
 
+<svelte:head>
+    <title>MAIA - Get Involved</title> 
+    <meta name="description" content="MIT AI Alignment (MAIA) runs programs for people at all skill levels to explore deep learning and AI safety.">
+</svelte:head>
 
 <main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
     <Navbar />

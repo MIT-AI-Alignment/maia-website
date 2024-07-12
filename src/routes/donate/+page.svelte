@@ -3,7 +3,10 @@
 import Navbar from "../components/navbar.svelte";
 </script>
 
-
+<svelte:head>
+    <title>MAIA - Donate</title> 
+    <meta name="description" content="MIT AI Alignment (MAIA) donation page.">
+</svelte:head>
 
 <main class="bg-maia_white dark:bg-maia_black dark:text-white">
     <Navbar />
