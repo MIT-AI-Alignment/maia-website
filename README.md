@@ -4,10 +4,10 @@ The MAIA website is now created using [SvelteKit](https://kit.svelte.dev/), and 
 
 ## Developing
 
-Once you've created a project and installed dependencies with `pnpm install` (or npm), start a development server:
+Once you've cloned this repo, and installed dependencies by running `npm install`, start a development server:
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 ## Building
@@ -15,10 +15,10 @@ pnpm dev
 To create a production version of your app:
 
 ```bash
-pnpm build
+npm run build
 ```
 
-You can preview the production build with `pnpm run preview`.
+You can preview the production build with `npm run preview`.
 
 To deploy the site, copy the contents of the `/build` folder into `/mit/aialignment/www` on Athena. For more information, see the [MIT Athena docs](https://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907090).
 
