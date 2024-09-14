@@ -25,14 +25,14 @@ import Navbar from "../components/navbar.svelte";
             Participants meet weekly in small sections facilitated by a TA that is a graduate student or an upperclassman with experience in AI safety research. Dinner is provided, and no work is assigned outside of weekly meetings. Our curriculum is based on <a href="https://course.aisafetyfundamentals.com/alignment" class="underline">a course developed by OpenAI researcher Richard Ngo</a>.
             </p>
             <p class="font-heading underline text-lg mt-4 bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md p-2 w-fit">
-            Apply here by Wednesday, February 14th, 11:59pm EST.
+            Apply <a href="https://airtable.com/appVPLkc1QXD4A8IY/shrf4mFXsuSmZHbyc" class="underline">here</a> by Wednesday, September 18th, 11:59pm EST.
         </p>
         <h3 class="pt-8 text-3xl font-heading text-fuchsia-600 dark:text-fuchsia-500">Policy track</h3>
         <p class="pt-2">
             The policy track of AI Safety Fundamentals is a seven-week reading group on the foundational <b>governance and policy challenges</b> posed by advanced AI systems. Topics discussed include <a href="https://arxiv.org/abs/2303.11341" class="underline">the proliferation of dangerous AI models</a>, <a class="underline" href="https://arxiv.org/abs/2309.11690">AI-induced explosive economic growth</a>, and <a  class="underline" href="https://epochai.org/blog/compute-trends">methods for predicting when transformative AI will be developed</a>.
             <p class="mt-2">Participants meet weekly in small sections facilitated by a TA that is a graduate student or an upperclassman with relevant experience. Dinner is provided, and no work is assigned outside of weekly meetings. Our curriculum is based on <a href="https://course.aisafetyfundamentals.com/governance" class="underline">a course developed by experts on AI policy.</a></p>
             <p class="font-heading underline text-lg mt-4 bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md p-2 w-fit">
-            Apply here by Wednesday, February 14th, 11:59pm EST.
+            Apply <a href="https://airtable.com/appVPLkc1QXD4A8IY/shrf4mFXsuSmZHbyc" class="underline">here</a> by Wednesday, September 18th, 11:59pm EST.
         </p>
         <h2 class="pt-12 text-4xl font-heading font-[550]">Workshops</h2>
         <h3 class="pt-4">Every semester, MAIA and the AI Student Safety Team at Harvard (<a href="http://haist.ai">AISST</a>) collaborate to run weekend workshops on AI safety. We gather students, professors, and professionals working on AI safety to discuss and collaborate on the cutting edge of AI safety research and policy. </h3>

@@ -26,6 +26,9 @@
 </script>
 
 <div class="fixed top-0 w-full z-40">
+  <div class="bg-purple-600 dark:bg-purple-500 h-12 flex items-center justify-center w-full">
+    <p class="text-white">Applications are now open for AI Safety Fundamentals! Apply <a href="https://airtable.com/appVPLkc1QXD4A8IY/shrf4mFXsuSmZHbyc" class="underline">here</a> by Wednesday, September 18th, 11:59pm EST.</p>
+  </div>
   <div class="font-heading bg-maia_white dark:bg-maia_black dark:text-white">
     <div class="px-8 md:px-24 py-4">
       <div class="flex items-center justify-between transition-all" class:h-24={navbarExpanded} class:h-12={!navbarExpanded}>
