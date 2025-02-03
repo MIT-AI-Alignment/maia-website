@@ -11,6 +11,8 @@ Make sure you have NodeJS and NPM already installed. Then Run:
 npm install
 ```
 
+
+
 ## 02 Developing
 
 **Start Development Server**
@@ -20,7 +22,22 @@ In the project root, start the development server locally:
 npm run dev
 ```
 
-## 03 Building
+## 03 Updating the site
+
+### Routing
+
+The site's pages are all in the `routes` folder, with a folder for each page. Shared components are in `routes/components`. The site uses Tailwind CSS, otherwise it should be very intuitive to anyone used to HTML. For more, consult [gculp@mit.edu](mailto:gculp@mit.edu) or the [Svelte docs](https://svelte.dev/).
+
+### Common Changes Changes
+
+Each semester we need to update AISF due dates, exec board etc. Some common pages to edit are:
+
+1. [`./src/routes/about/execs.svelte`](./src/routes/about/execs.svelte) -- Edit the executive board
+1. [`./src/routes/components/banner.svelte`](./src/routes/components/banner.svelte) -- Edit the banner displayed at the top of each page, typically informing the viewer about AISF
+1. [`./src/routes/getinvolved/+page.svelte`](src/routes/getinvolved/+page.svelte) -- Edit AISF and program information.
+
+
+## 04 Building
 
 Once you are ready to upload, you can generate the production version of the app:
 
@@ -30,10 +47,21 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-To deploy the site, copy the contents of the [`./build`](./build) folder into `/mit/aialignment/www` on Athena, for mor information on how to connect, Gatlen recommends the [SIPB inofficial guide to connecting to MIT Athena](https://sipb.mit.edu/doc/using-athena/).
+## 05 Deploying to Athena
+
+!!! Info You must be on the `aialignment-www` email list (MAIA web admin) to access the locker, contact [spruce@mit.edu](mailto:spruce@mit.edu) if you aren't.
+
+After building the app in part 04, You should see compiled output such as `index.html` in your `./build` folder. Then, copy the contents of the [`./build`](./build) folder into `/mit/aialignment/www` on Athena, run the `rsync` command below using your kerb, password, and MFA as normal to sign in.
+
+
+```bash
+rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
+```
 
 <details>
 <summary>More info on connecting</summary>
+
+For more information on how to connect, Gatlen recommends the [SIPB inofficial guide to connecting to MIT Athena](https://sipb.mit.edu/doc/using-athena/).
 
 The TL;DR on how to connect via SSH is:
 
@@ -49,27 +77,3 @@ ssh [kerberos]@athena.dialup.mit.edu
 - [Official MIT Athena Docs Here](https://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907090).
 
 </details>
-
-## 04 Updating the site
-
-### Routing
-
-The site's pages are all in the `routes` folder, with a folder for each page. Shared components are in `routes/components`. The site uses Tailwind CSS, otherwise it should be very intuitive to anyone used to HTML. For more, consult [gculp@mit.edu](mailto:gculp@mit.edu) or the [Svelte docs](https://svelte.dev/).
-
-### Common Changes Changes
-
-Each semester we need to update AISF due dates, exec board etc. Some common pages to edit are:
-
-1. [`./src/routes/about/execs.svelte`](./src/routes/about/execs.svelte) -- Edit the executive board
-1. [`./src/routes/components/banner.svelte`](./src/routes/components/banner.svelte) -- Edit the banner displayed at the top of each page, typically informing the viewer about AISF
-1. [`./src/routes/getinvolved/+page.svelte`](src/routes/getinvolved/+page.svelte) -- Edit AISF and program information.
-
-## 05 Deploying to Athena
-
-You should see compiled output such as `index.html` in your `build/` folder. Then, run an `rsync` command to upload to the Athena locker:
-
-```bash
-rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
-```
-
-You must be on the `aialignment-www` email list (MAIA web admin) to access the locker, contact [spruce@mit.edu](mailto:spruce@mit.edu) if you aren't.
