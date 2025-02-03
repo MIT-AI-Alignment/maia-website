@@ -17,11 +17,12 @@
 			the student groups <a class="underline" href="https://haist.ai">AISST at Harvard</a> and MAIA at
 			MIT.
 		</p>
-		<a
+		<!-- This doesn't work :( -->
+		<!-- <a
 			href="https://www.every.oShrg/maia?utm_campaign=donate-link#/donate"
 			class="mt-8 text-purple-500 dark:text-purple-200 underline bg-purple-100 dark:bg-purple-700 p-4 rounded-lg mr-8"
 			>Donate to MAIA</a
-		>
+		> -->
 		<a
 			href="https://www.every.org/cbai?utm_campaign=donate-link#/donate"
 			class="mt-8 text-fuchsia-500 dark:text-fuchsia-200 underline bg-fuchsia-100 dark:bg-fuchsia-700 p-4 rounded-lg"
