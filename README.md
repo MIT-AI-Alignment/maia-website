@@ -28,11 +28,28 @@ The site's pages are all in the `routes` folder, with a folder for each page. Sh
 
 ### Common Changes Changes
 
-Each semester we need to update AISF due dates, exec board etc. Some common pages to edit are:
+Each semester we need to update AISF due dates, exec board etc. Because of this, there is a centralized location for common locations: [`./src/lib/config.ts`](./src/lib/config.ts)
 
-1. [`./src/routes/about/execs.svelte`](./src/routes/about/execs.svelte) -- Edit the executive board
-1. [`./src/routes/components/banner.svelte`](./src/routes/components/banner.svelte) -- Edit the banner displayed at the top of each page, typically informing the viewer about AISF
-1. [`./src/routes/getinvolved/+page.svelte`](src/routes/getinvolved/+page.svelte) -- Edit AISF and program information.
+```typescript
+// Use this to make high-level changes to the website in one place.
+export const CONFIG = {
+    banner: {
+        visible: true
+    },
+    aisf_ml: {
+        visible: true,
+        deadline: "Wednesday, February 12th, 11:59 PM EST",
+        deadline_short: "",
+        applicationLink: "https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
+    },
+    aisf_gov: {
+        visible: false,
+        deadline: "",
+        deadline_short: "",
+        applicationLink: ""
+    },
+} as const; 
+```
 
 ## 04 Building
 
@@ -51,10 +68,13 @@ You can preview the production build with `npm run preview`.
 After building the app in part 04, You should see compiled output such as `index.html` in your `./build` folder. Then, copy the contents of the [`./build`](./build) folder into `/mit/aialignment/www` on Athena, run the `rsync` command below using your kerb, password, and MFA as normal to sign in.
 
 ```bash
-rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
+npm run deploy --kerb=YOUR_KERB
 ```
 
-(There is also an npm task which you can trigger with `npm run deploy --kerb=YOUR_KERB`)
+> This command is equivalent to:
+> ```bash
+> rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
+> ```
 
 <details>
 <summary>More info on connecting</summary>
