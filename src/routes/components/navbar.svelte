@@ -41,7 +41,7 @@
 						<enhanced:img src="../../images/maia.svg" alt="MAIA logo" class="h-8 w-auto" />
 						<span class="sr-only">MAIA</span>
 					</a>
-					<a href="/www" class="hidden dark:block">
+					<a href="/" class="hidden dark:block">
 						<enhanced:img src="../../images/maia_dark.svg" alt="MAIA logo" class="h-8 w-auto" />
 						<span class="sr-only">MAIA</span>
 					</a>
