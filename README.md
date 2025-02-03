@@ -54,6 +54,8 @@ After building the app in part 04, You should see compiled output such as `index
 rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
 ```
 
+(There is also an npm task which you can trigger with `npm run deploy --kerb=YOUR_KERB`)
+
 <details>
 <summary>More info on connecting</summary>
 

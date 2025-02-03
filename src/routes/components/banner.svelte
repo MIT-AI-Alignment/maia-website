@@ -19,7 +19,7 @@
 			class={`fa-solid fa-circle-exclamation ${animateIcon ? 'fa-flip' : ''}`}
 			style="--fa-animation-duration: 1.0s;"
 		></i>
-		Now accepting spring 2025 applications for 
+		Now accepting Spring 2025 applications for 
         <a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
 		<a href="{ CONFIG.aisf_ml.applicationLink }" class="underline">here</a>.
 		Deadline { CONFIG.aisf_ml.deadline }

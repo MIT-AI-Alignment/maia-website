@@ -3,7 +3,8 @@
 </script>
 
 <div class="flex my-6 flex-wrap">
-	<Profile
+    TBD for Spring 2025!
+	<!-- <Profile
 		name="Ionel Chiosa"
 		position="Co-Director"
 		imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512"
@@ -32,7 +33,7 @@
 		name="Gatlen Culp"
 		position="Webmaster and Compute Director"
 		imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f56d38b982d3-512"
-	/>
+	/> -->
 </div>
 
 <!-- <h3>Executives on Temporary Leave</h3>

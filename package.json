@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"deploy": "rsync -avz build/ $npm_config_kerb@athena.dialup.mit.edu:/mit/aialignment/www"
 	},
 	"devDependencies": {
 		"@iconify-json/ph": "^1.1.13",

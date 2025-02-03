@@ -30,10 +30,12 @@
 			a course developed by OpenAI researcher Richard Ngo</a
 		>.
 	</p>
-	<p
-		class="font-heading underline text-lg mt-4 bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md p-2 w-fit"
-	>
-		Apply <a href={CONFIG.aisf_ml.deadline} class="underline"> here</a> by {CONFIG.aisf_ml
+	<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
+		><h2
+			class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
+		>
+		Apply <a href={CONFIG.aisf_ml.applicationLink} class="underline"> here</a> by {CONFIG.aisf_ml
 			.deadline}.
-	</p>
+		</h2></a
+	>
 </section>
