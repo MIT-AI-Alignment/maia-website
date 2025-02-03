@@ -18,7 +18,7 @@
 			MIT.
 		</p>
 		<a
-			href="https://www.every.org/maia?utm_campaign=donate-link#/donate"
+			href="https://www.every.oShrg/maia?utm_campaign=donate-link#/donate"
 			class="mt-8 text-purple-500 dark:text-purple-200 underline bg-purple-100 dark:bg-purple-700 p-4 rounded-lg mr-8"
 			>Donate to MAIA</a
 		>

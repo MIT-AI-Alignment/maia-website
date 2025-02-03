@@ -16,10 +16,10 @@
 		of replicating ML papers in PyTorch. The program’s only prerequisites are comfort with Python and
 		introductory linear algebra.
 	</p>
-	<p class="mt-2 mb-8">
+	<!-- <p class="mt-2 mb-8">
 		We may run a bootcamp in January 2025, please <a
 			href="https://airtable.com/appSYKtT2eNbw95Oh/shrWlIgjzwRTDgLEv"
 			class="text-purple-500 underline">express interest here</a
 		>.
-	</p>
+	</p> -->
 </section>

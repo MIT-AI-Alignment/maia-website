@@ -8,6 +8,6 @@
 		research and policy.
 	</h3>
 	<p class="mt-2 italic mb-8">
-		More information about the Fall 2024 workshops will be released soon.
+		More information about the Spring 2025 workshops will be released soon.
 	</p>
 </section>

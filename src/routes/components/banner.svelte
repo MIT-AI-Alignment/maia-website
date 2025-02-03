@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+    import { CONFIG } from '$lib/config'
 
 	// Control the animation for the icon
 	let animateIcon = true;
@@ -20,7 +21,7 @@
 		></i>
 		Now accepting spring 2025 applications for 
         <a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
-		<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd" class="underline">here</a>.
-		Deadline TBD.
+		<a href="{ CONFIG.aisf_ml.applicationLink }" class="underline">here</a>.
+		Deadline { CONFIG.aisf_ml.deadline }
 	</p>
 </div>

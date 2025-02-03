@@ -1,3 +1,7 @@
+<script>
+	import { CONFIG } from '$lib/config';
+</script>
+
 <section>
 	<h3 class="pt-8 text-3xl font-heading text-purple-600 dark:text-purple-500">
 		Machine Learning track
@@ -29,8 +33,7 @@
 	<p
 		class="font-heading underline text-lg mt-4 bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md p-2 w-fit"
 	>
-		Apply <a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd" class="underline">
-			here</a
-		> by Wednesday, September 18th, 11:59pm EST.
+		Apply <a href={CONFIG.aisf_ml.deadline} class="underline"> here</a> by {CONFIG.aisf_ml
+			.deadline}.
 	</p>
 </section>
