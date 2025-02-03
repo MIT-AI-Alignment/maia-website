@@ -30,7 +30,7 @@
 			safety, including both a technical machine learning track and a policy track.
 		</h2>
 
-		<a href="https://airtable.com/appVPLkc1QXD4A8IY/shrf4mFXsuSmZHbyc"
+		<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
 			><h2
 				class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
 			>

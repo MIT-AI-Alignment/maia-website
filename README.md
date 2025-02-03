@@ -1,6 +1,6 @@
 # MAIA website
 
-The [MAIA website](https://aialignment.mit.edu/) is now created using [SvelteKit](https://kit.svelte.dev/), and hosted on MIT Athena. This README should tell you everything you need to know about updating and deploying the site.
+The [MAIA website](https://aialignment.mit.edu/) is created using [SvelteKit](https://kit.svelte.dev/) and hosted on MIT Athena. This README should tell you everything you need to know about updating and deploying the site.
 
 ## 01 Setup
 
@@ -10,8 +10,6 @@ Make sure you have NodeJS and NPM already installed. Then Run:
 ```bash
 npm install
 ```
-
-
 
 ## 02 Developing
 
@@ -36,7 +34,6 @@ Each semester we need to update AISF due dates, exec board etc. Some common page
 1. [`./src/routes/components/banner.svelte`](./src/routes/components/banner.svelte) -- Edit the banner displayed at the top of each page, typically informing the viewer about AISF
 1. [`./src/routes/getinvolved/+page.svelte`](src/routes/getinvolved/+page.svelte) -- Edit AISF and program information.
 
-
 ## 04 Building
 
 Once you are ready to upload, you can generate the production version of the app:
@@ -52,7 +49,6 @@ You can preview the production build with `npm run preview`.
 !!! Info You must be on the `aialignment-www` email list (MAIA web admin) to access the locker, contact [spruce@mit.edu](mailto:spruce@mit.edu) if you aren't.
 
 After building the app in part 04, You should see compiled output such as `index.html` in your `./build` folder. Then, copy the contents of the [`./build`](./build) folder into `/mit/aialignment/www` on Athena, run the `rsync` command below using your kerb, password, and MFA as normal to sign in.
-
 
 ```bash
 rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
