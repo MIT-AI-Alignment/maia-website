@@ -19,6 +19,10 @@ import Navbar from "../components/navbar.svelte";
         <Execs></Execs>
         <h2 class="pt-4 text-2xl font-heading font-[550]">Advisors</h2>
         <Advisors></Advisors>
+        <p>
+            <i>Last Updated: 2025-02-03</i>
+        </p>
+        <p><i>Positions are subject to change as the spring semester progresses.</i></p>
     </div>
     <Footer></Footer>
 </main>
