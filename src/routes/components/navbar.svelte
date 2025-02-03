@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { CONFIG } from '$lib/config';
 	import Banner from './banner.svelte';
 
 	let hrVisible = false;
@@ -28,7 +29,9 @@
 </script>
 
 <div class="fixed top-0 w-full z-40">
-	<Banner />
+	{#if CONFIG.banner.visible}
+		<Banner />
+	{/if}
 	<div class="font-heading bg-maia_white dark:bg-maia_black dark:text-white">
 		<div class="px-8 md:px-24 py-4">
 			<div

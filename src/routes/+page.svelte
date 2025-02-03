@@ -3,7 +3,7 @@
 	import Navbar from './components/navbar.svelte';
 	import Orgs from './components/orgs.svelte';
 	import Papers from './components/papers.svelte';
-    import { CONFIG } from '$lib/config';
+	import { CONFIG } from '$lib/config';
 </script>
 
 <svelte:head>
@@ -31,24 +31,24 @@
 			safety, including both a technical machine learning track and a policy track.
 		</h2>
 
-        {#if CONFIG.aisf_ml.visible}
-            <a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
-                ><h2
-                    class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
-                >
-                    Apply to our technical AI safety program &rarr;
-                </h2></a
-            >
-        {/if}
-        {#if CONFIG.aisf_gov.visible}
-		<a href="https://haist.ai/policy-fellowship"
-			><h2
-				class="w-fit mt-4 text-lg underline bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md py-2 px-4"
+		{#if CONFIG.aisf_ml.visible}
+			<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
+				><h2
+					class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
+				>
+					Apply to our technical AI safety program &rarr;
+				</h2></a
 			>
-				Apply to our policy AI safety program &rarr;
-			</h2></a
-		>
-        {/if}
+		{/if}
+		{#if CONFIG.aisf_gov.visible}
+			<a href="https://haist.ai/policy-fellowship"
+				><h2
+					class="w-fit mt-4 text-lg underline bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md py-2 px-4"
+				>
+					Apply to our policy AI safety program &rarr;
+				</h2></a
+			>
+		{/if}
 
 		<h2 class="pt-20 pb-8 text-3xl w-2/3 font-heading font-bold">Selected Research</h2>
 		<Papers />
