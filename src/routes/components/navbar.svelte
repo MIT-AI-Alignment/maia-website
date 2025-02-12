@@ -77,7 +77,8 @@
 								on:mouseenter={() => (activeDropdown = item.label)}
 								on:mouseleave={(e) => {
 									// Check if we're not moving to the dropdown content
-									const relatedTarget = e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
+									const relatedTarget =
+										e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
 									if (relatedTarget && !e.currentTarget.contains(relatedTarget)) {
 										activeDropdown = null;
 									}

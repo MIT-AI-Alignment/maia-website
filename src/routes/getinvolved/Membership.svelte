@@ -10,8 +10,6 @@
 </script>
 
 <div>
-			<h2 class="pt-12 text-4xl font-heading font-[550]">Apply for Membership</h2>
-			<br />
 			<p>
 				Being a member of the MAIA community has both a number of opportunities and a number of
 				responsibilities. Membership entails:

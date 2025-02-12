@@ -1,5 +1,4 @@
 <section>
-	<h2 class="pt-12 text-4xl font-heading font-[550]">Workshops</h2>
 	<h3 class="pt-4">
 		Every semester, MAIA and the AI Student Safety Team at Harvard (<a href="http://haist.ai"
 			>AISST</a

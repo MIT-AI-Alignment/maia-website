@@ -1,5 +1,4 @@
 <section>
-	<h2 class="pt-4 text-4xl font-heading font-[550]">Bootcamps</h2>
 	<p class="mt-4">
 		MAIA, in partnership with the Cambridge Boston Alignment Initiative (<a
 			href="https://www.cbai.ai/">CBAI</a

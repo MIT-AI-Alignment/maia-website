@@ -3,8 +3,6 @@
 </script>
 
 <div>
-	<h2 class="pt-12 text-4xl font-heading font-[550]">Upcoming Events</h2>
-	<br />
 	Stay up to date with the happenings of MAIA by adding the calendar below or signing up for our mailing
 	list.
 	<br />
