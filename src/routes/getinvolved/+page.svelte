@@ -26,26 +26,36 @@
 		<h1 class="pt-48 text-6xl w-2/3 font-heading font-[550]">Get Involved</h1>
 		<br />
 		<hr />
-		<h2 class="pt-12 text-4xl font-heading font-[550]">AI Safety Fundamentals</h2>
-		<p>MAIA runs programs for people at all skill levels to explore deep learning and AI safety.</p>
-		{#if CONFIG.aisf_ml.visible}
-			<Aisfml />
-		{/if}
-		{#if CONFIG.aisf_gov.visible}
-			<AisfGov />
-		{/if}
+		<section id="aisf">
+			<h2 class="pt-12 text-4xl font-heading font-[550]">AI Safety Fundamentals</h2>
+			<p>MAIA runs programs for people at all skill levels to explore deep learning and AI safety.</p>
+			{#if CONFIG.aisf_ml.visible}
+				<Aisfml />
+			{/if}
+			{#if CONFIG.aisf_gov.visible}
+				<AisfGov />
+			{/if}
+		</section>
 		<br />
 		<hr />
-		<Workshops></Workshops>
+		<section id="workshops">
+			<Workshops></Workshops>
+		</section>
 		<br />
 		<hr />
-		<Bootcamps></Bootcamps>
+		<section id="bootcamps">
+			<Bootcamps></Bootcamps>
+		</section>
 		<br />
 		<hr />
-		<Membership></Membership>
+		<section id="membership">
+			<Membership></Membership>
+		</section>
 		<br />
 		<hr />
-		<Calendar />
+		<section id="calendar">
+			<Calendar />
+		</section>
 	</div>
 	<Footer></Footer>
 </main>

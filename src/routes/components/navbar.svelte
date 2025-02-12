@@ -1,20 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 	import { CONFIG } from '$lib/config';
+	import { NAVIGATION_ITEMS } from '$lib/navItems';
 	import Banner from './banner.svelte';
-
-	const navigationItems = [
-		{ href: '/', label: 'Home' },
-		{ href: '/about', label: 'About' },
-		{ href: '/getinvolved', label: 'Get Involved' },
-		// { href: '/donate', label: 'Donate' },
-		{ href: '/initiatives', label: 'Initiatives' }
-	];
 
 	let hrVisible = false;
 	let navbarExpanded = true;
 
 	let hamburgerVisible = false;
+
+	let activeDropdown = null;
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -73,19 +68,68 @@
 					>
 				</button>
 				<nav class="hidden md:flex gap-10 font-semibold text-md">
-					{#each navigationItems as {href, label}}
-						<a class="hover:underline underline-offset-4" {href}>{label}</a>
+					{#each NAVIGATION_ITEMS as item}
+						{#if item.dropdownItems}
+							<div
+								class="relative"
+								on:mouseenter={() => (activeDropdown = item.label)}
+								on:mouseleave={() => (activeDropdown = null)}
+							>
+								<a class="hover:underline underline-offset-4 cursor-pointer" href={item.href}>
+									{item.label}
+								</a>
+								{#if activeDropdown === item.label}
+									<div
+										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-md rounded-md py-2 min-w-[200px]"
+									>
+										{#each item.dropdownItems as subItem}
+											<a
+												href={subItem.href}
+												class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-purple-950"
+											>
+												{subItem.label}
+											</a>
+										{/each}
+									</div>
+								{/if}
+							</div>
+						{:else}
+							<a class="hover:underline underline-offset-4" href={item.href}>{item.label}</a>
+						{/if}
 					{/each}
 				</nav>
 				<div
 					class="md:hidden absolute top-full right-0 bg-maia_white dark:bg-maia_black dark:text-white shadow-md flex flex-col items-start py-2 w-full"
 					class:hidden={!hamburgerVisible}
 				>
-					{#each navigationItems as {href, label}}
-						<a
-							class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
-							{href}>{label}</a
-						>
+					{#each NAVIGATION_ITEMS as item}
+						{#if item.dropdownItems}
+							<div class="w-full">
+								<a
+									class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"
+									href={item.href}
+								>
+									{item.label}
+								</a>
+								<div class="bg-gray-50 dark:bg-purple-950/50">
+									{#each item.dropdownItems as subItem}
+										<a
+											href={subItem.href}
+											class="px-12 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"
+										>
+											{subItem.label}
+										</a>
+									{/each}
+								</div>
+							</div>
+						{:else}
+							<a
+								class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"
+								href={item.href}
+							>
+								{item.label}
+							</a>
+						{/if}
 					{/each}
 				</div>
 			</div>
