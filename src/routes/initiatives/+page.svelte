@@ -2,7 +2,7 @@
 	import type { ComponentType } from 'svelte';
 	import Footer from '../components/footer.svelte';
 	import Navbar from '../components/navbar.svelte';
-	import Papers from '../components/papers.svelte';
+	import PapersExpandable from '../components/PapersExpandable.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
 
 	type Section = {
@@ -17,7 +17,7 @@
 			id: 'research',
 			title: 'Research by MAIA Members',
 			icon: 'fa-solid fa-book-open',
-			component: Papers
+			component: PapersExpandable
 		},
 		{
 			id: 'current',

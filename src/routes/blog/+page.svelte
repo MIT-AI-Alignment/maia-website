@@ -15,7 +15,7 @@
 	const sections: Section[] = [
 		{
 			id: 'posts',
-			title: 'Posts',
+			title: 'Demo Posts',
 			icon: 'fa-solid fa-pen-to-square',
 			component: BlogPosts
 		}
@@ -36,6 +36,8 @@
 		<br />
 		<hr />
 
+		<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
+
 		{#each sections as section}
 			<section id={section.id}>
 				<h2 class="pt-12 text-2xl font-heading font-[550]">
@@ -43,12 +45,7 @@
 					{section.title}
 				</h2>
 				<br />
-
-				{#if section.component}
-					<svelte:component this={section.component} />
-				{:else}
-					<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
-				{/if}
+				<svelte:component this={section.component} />
 			</section>
 			<br />
 			<hr />
