@@ -3,6 +3,7 @@
 	import { CONFIG } from '$lib/config';
 	import { NAVIGATION_ITEMS } from '$lib/navItems';
 	import Banner from './banner.svelte';
+	import { slide, fade } from 'svelte/transition';
 
 	let hrVisible = false;
 	let navbarExpanded = true;
@@ -38,9 +39,8 @@
 	<div class="font-heading bg-maia_white dark:bg-maia_black dark:text-white">
 		<div class="px-8 md:px-24 py-4">
 			<div
-				class="flex items-center justify-between transition-all"
-				class:h-24={navbarExpanded}
-				class:h-12={!navbarExpanded}
+				class="flex items-center justify-between"
+				style="transition: height 0.3s ease; height: {navbarExpanded ? '6rem' : '3rem'};"
 			>
 				<div class="flex items-center gap-2">
 					<a href="/" class="dark:hidden">
@@ -89,6 +89,7 @@
 								</a>
 								{#if activeDropdown === item.label}
 									<div
+										transition:slide={{ duration: 200 }}
 										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-md rounded-md py-2 min-w-[200px]"
 										role="menu"
 										on:mouseleave={() => (activeDropdown = null)}
@@ -110,6 +111,7 @@
 					{/each}
 				</nav>
 				<div
+					transition:slide={{ duration: 200 }}
 					class="md:hidden absolute top-full right-0 bg-maia_white dark:bg-maia_black dark:text-white shadow-md flex flex-col items-start py-2 w-full"
 					class:hidden={!hamburgerVisible}
 				>
@@ -146,9 +148,10 @@
 			</div>
 		</div>
 	</div>
-	<hr
-		class="mx-12 border-slate-300 transition-opacity dark:border-stone-800"
-		class:opacity-100={hrVisible}
-		class:opacity-0={!hrVisible}
-	/>
+	{#if hrVisible}
+		<hr
+			transition:fade={{ duration: 200 }}
+			class="mx-12 border-slate-300 dark:border-stone-800"
+		/>
+	{/if}
 </div>
