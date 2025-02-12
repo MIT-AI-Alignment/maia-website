@@ -75,7 +75,13 @@
 								role="button"
 								tabindex="0"
 								on:mouseenter={() => (activeDropdown = item.label)}
-								on:mouseleave={() => (activeDropdown = null)}
+								on:mouseleave={(e) => {
+									// Check if we're not moving to the dropdown content
+									const relatedTarget = e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
+									if (relatedTarget && !e.currentTarget.contains(relatedTarget)) {
+										activeDropdown = null;
+									}
+								}}
 							>
 								<a class="hover:underline underline-offset-4 cursor-pointer" href={item.href}>
 									{item.label}
@@ -83,6 +89,8 @@
 								{#if activeDropdown === item.label}
 									<div
 										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-md rounded-md py-2 min-w-[200px]"
+										role="menu"
+										on:mouseleave={() => (activeDropdown = null)}
 									>
 										{#each item.dropdownItems as subItem}
 											<a
