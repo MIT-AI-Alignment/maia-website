@@ -22,6 +22,6 @@
 		Now accepting Spring 2025 applications for 
         <a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
 		<a href="{ CONFIG.aisf_ml.applicationLink }" class="underline">here</a>.
-		Deadline { CONFIG.aisf_ml.deadline }
+		<small>Deadline { CONFIG.aisf_ml.deadline }</small>
 	</p>
 </div>

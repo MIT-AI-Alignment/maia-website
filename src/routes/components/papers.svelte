@@ -111,12 +111,12 @@
 		<SplideSlide>
 			<Paper
 				altText="Research Paper 8"
-				imgSrc="../../images/papers/paper7.png"
+				imgSrc="../../images/papers/explore-establish-exploit.png"
 				tags={[
 					{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }
 				]}
 				title="Explore, Establish, Exploit: Red Teaming Language Models from Scratch"
-				authors={['Gatlen Culp']}
+				authors={['Stephen Casper', 'Gatlen Culp']}
 				link="https://arxiv.org/abs/2306.09442"
 			/>
 		</SplideSlide>
