@@ -26,7 +26,7 @@
 	<SplideTrack>
 		{#each PAPERS as paper}
 			<SplideSlide>
-				<Paper {...paper} tags={Array.from(paper.tags)} />
+				<Paper {...paper} />
 			</SplideSlide>
 		{/each}
 	</SplideTrack>
