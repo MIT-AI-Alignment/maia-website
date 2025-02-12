@@ -3,6 +3,14 @@
 	import { CONFIG } from '$lib/config';
 	import Banner from './banner.svelte';
 
+	const navigationItems = [
+		{ href: '/', label: 'Home' },
+		{ href: '/about', label: 'About' },
+		{ href: '/getinvolved', label: 'Get Involved' },
+		// { href: '/donate', label: 'Donate' },
+		{ href: '/initiatives', label: 'Initiatives' }
+	];
+
 	let hrVisible = false;
 	let navbarExpanded = true;
 
@@ -65,35 +73,20 @@
 					>
 				</button>
 				<nav class="hidden md:flex gap-10 font-semibold text-md">
-					<a class="hover:underline underline-offset-4" href="/"> Home </a>
-					<a class="hover:underline underline-offset-4" href="/about"> About </a>
-					<a class="hover:underline underline-offset-4" href="/getinvolved"> Get Involved </a>
-					<!-- <a class="hover:underline underline-offset-4" href="/donate"> Donate </a> -->
-					<a class="hover:underline underline-offset-4" href="/initiatives"> Initiatives </a>
+					{#each navigationItems as {href, label}}
+						<a class="hover:underline underline-offset-4" {href}>{label}</a>
+					{/each}
 				</nav>
 				<div
 					class="md:hidden absolute top-full right-0 bg-maia_white dark:bg-maia_black dark:text-white shadow-md flex flex-col items-start py-2 w-full"
 					class:hidden={!hamburgerVisible}
 				>
-					<a class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left" href="/"
-						>Home</a
-					>
-					<a
-						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
-						href="/about">About</a
-					>
-					<a
-						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
-						href="/getinvolved">Get Involved</a
-					>
-					<!-- <a
-						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
-						href="/donate">Donate</a
-					> -->
-					<a
-						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
-						href="/initiatives">Initiatives</a
-					>
+					{#each navigationItems as {href, label}}
+						<a
+							class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
+							{href}>{label}</a
+						>
+					{/each}
 				</div>
 			</div>
 		</div>
