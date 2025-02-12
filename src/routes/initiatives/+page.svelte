@@ -14,13 +14,17 @@
 	<Navbar />
 
 	<div class="px-8 md:px-24 pt-48" id="research">
-		<h2 class="pt-12 text-4xl font-heading font-[550]">Research by MAIA Members</h2>
+		<h2 class="pt-12 text-4xl font-heading font-[550]">
+			<i class="fa-solid fa-book-open"></i> Research by MAIA Members
+		</h2>
 		<br />
 		<Papers />
 	</div>
 
-	<div class="px-8 md:px-12 pt-12" id="current">
-		<h2 class="pt-12 text-4xl font-heading font-[550]">Current Projects</h2>
+	<div class="px-8 md:px-24 pt-12" id="current">
+		<h2 class="pt-12 text-4xl font-heading font-[550]">
+			<i class="fa-solid fa-rocket"></i> Current Projects
+		</h2>
 		<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
 	</div>
 
