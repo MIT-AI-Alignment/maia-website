@@ -76,28 +76,27 @@
 								tabindex="0"
 								on:mouseenter={() => (activeDropdown = item.label)}
 								on:mouseleave={(e) => {
-									// Check if we're not moving to the dropdown content
-									const relatedTarget =
-										e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
+									const relatedTarget = e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
 									if (relatedTarget && !e.currentTarget.contains(relatedTarget)) {
 										activeDropdown = null;
 									}
 								}}
 							>
-								<a class="hover:underline underline-offset-4 cursor-pointer" href={item.href}>
+								<a class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-2" href={item.href}>
+									<i class={item.icon}></i>
 									{item.label}
 								</a>
 								{#if activeDropdown === item.label}
 									<div
 										transition:slide={{ duration: 200 }}
-										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-[0_4px_20px_-2px_rgba(0,0,0,0.2)] dark:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.5)] rounded-lg py-2 min-w-[200px] border border-gray-100 dark:border-gray-800"
+										class="absolute top-[calc(100%+0.5rem)] left-0 bg-maia_white dark:bg-maia_black shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.7)] rounded-lg py-1 min-w-[200px] border border-gray-100 dark:border-gray-800"
 										role="menu"
 										on:mouseleave={() => (activeDropdown = null)}
 									>
 										{#each item.dropdownItems as subItem}
 											<a
 												href={subItem.href}
-												class="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-purple-950 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+												class="block px-4 py-1.5 hover:bg-gray-50 hover:text-purple-600 dark:hover:bg-purple-950 dark:hover:text-purple-400 transition-all duration-200 first:rounded-t-lg last:rounded-b-lg"
 											>
 												{subItem.label}
 											</a>
@@ -106,7 +105,13 @@
 								{/if}
 							</div>
 						{:else}
-							<a class="hover:underline underline-offset-4" href={item.href}>{item.label}</a>
+							<a 
+								class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-2" 
+								href={item.href}
+							>
+								<i class={item.icon}></i>
+								{item.label}
+							</a>
 						{/if}
 					{/each}
 				</nav>
@@ -119,9 +124,10 @@
 						{#if 'dropdownItems' in item}
 							<div class="w-full">
 								<a
-									class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"
+									class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block flex items-center gap-2"
 									href={item.href}
 								>
+									<i class={item.icon}></i>
 									{item.label}
 								</a>
 								<div class="bg-gray-50 dark:bg-purple-950/50">
@@ -137,9 +143,10 @@
 							</div>
 						{:else}
 							<a
-								class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"
+								class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block flex items-center gap-2"
 								href={item.href}
 							>
+								<i class={item.icon}></i>
 								{item.label}
 							</a>
 						{/if}

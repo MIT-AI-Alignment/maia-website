@@ -1,8 +1,13 @@
 export const NAVIGATION_ITEMS = [
-    { href: '/', label: 'Home' },
+    {
+        label: 'Home',
+        href: '/',
+        icon: 'fas fa-home'
+    },
     {
         label: 'Initiatives',
         href: '/initiatives',
+        icon: 'fas fa-lightbulb',
         dropdownItems: [
             { href: '/initiatives#research', label: 'Research' },
             { href: '/initiatives#current', label: 'Current Projects' }
@@ -11,6 +16,7 @@ export const NAVIGATION_ITEMS = [
     {
         label: 'Get Involved',
         href: '/getinvolved',
+        icon: 'fas fa-hands-helping',
         dropdownItems: [
             { href: '/getinvolved#aisf', label: 'AI Safety Fundamentals' },
             { href: '/getinvolved#workshops', label: 'Workshops' },
@@ -19,6 +25,14 @@ export const NAVIGATION_ITEMS = [
             { href: '/getinvolved#calendar', label: 'Calendar' }
         ]
     },
-    { href: '/blog', label: 'Blog (Soon!)' },
-    { href: '/about', label: 'About' }
+    { 
+        href: '/blog', 
+        label: 'Blog (Soon!)',
+        icon: 'fas fa-newspaper'
+    },
+    {
+        label: 'About',
+        href: '/about',
+        icon: 'fas fa-info-circle'
+    },
 ] as const;

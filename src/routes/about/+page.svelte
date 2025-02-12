@@ -3,6 +3,7 @@
 	import Navbar from '../components/navbar.svelte';
 	import Advisors from './advisors.svelte';
 	import Execs from './execs.svelte';
+	import UpdateNotification from '../components/UpdateNotification.svelte';
 </script>
 
 <svelte:head>
@@ -17,10 +18,16 @@
 	<Navbar />
 	<!-- Meet the Team -->
 	<div class="px-8 md:px-24 min-h-[90vh]">
-		<h1 class="pt-48 text-4xl w-2/3 font-heading font-[550]">Meet the Team</h1>
-		<h2 class="pt-12 text-2xl font-heading font-[550]">Executive Board</h2>
+		<h1 class="pt-48 text-4xl w-2/3 font-heading font-[550]">
+			<i class="fa-solid fa-users-gear"></i> Meet the Team
+		</h1>
+		<h2 class="pt-12 text-2xl font-heading font-[550]">
+			<i class="fa-solid fa-users"></i> Executive Board
+		</h2>
 		<Execs></Execs>
-		<h2 class="pt-4 text-2xl font-heading font-[550]">Advisors</h2>
+		<h2 class="pt-4 text-2xl font-heading font-[550]">
+			<i class="fa-solid fa-chalkboard-user"></i> Advisors
+		</h2>
 		<Advisors></Advisors>
 		<p>
 			<i>Last Updated: 2025-02-03</i>

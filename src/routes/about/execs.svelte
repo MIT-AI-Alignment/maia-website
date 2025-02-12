@@ -1,9 +1,10 @@
 <script>
 	import Profile from './profile.svelte';
+	import UpdateNotification from '../components/UpdateNotification.svelte';
 </script>
 
 <div class="flex my-6 flex-wrap">
-    TBD for Spring 2025!
+	<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
 	<!-- <Profile
 		name="Ionel Chiosa"
 		position="Co-Director"

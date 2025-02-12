@@ -2,6 +2,7 @@
 	import Footer from '../components/footer.svelte';
 	import Navbar from '../components/navbar.svelte';
 	import Papers from '../components/papers.svelte';
+	import UpdateNotification from '../components/UpdateNotification.svelte';
 </script>
 
 <svelte:head>
@@ -18,12 +19,9 @@
 		<Papers />
 	</div>
 
-	<div class="px-8 md:px-24 pt-48" id="current">
+	<div class="px-8 md:px-12 pt-12" id="current">
 		<h2 class="pt-12 text-4xl font-heading font-[550]">Current Projects</h2>
-		<br />
-		<ul>
-			<li>To be updated Spring 2025!</li>
-		</ul>
+		<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
 	</div>
 
 	<Footer></Footer>
