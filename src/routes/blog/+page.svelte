@@ -1,8 +1,25 @@
-<script>
+<script lang="ts">
+	import type { ComponentType } from 'svelte';
 	import Footer from '../components/footer.svelte';
 	import Navbar from '../components/navbar.svelte';
-	import Papers from '../components/papers.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
+	import BlogPosts from './BlogPosts.svelte';
+
+	type Section = {
+		id: string;
+		title: string;
+		icon: string;
+		component: ComponentType | null;
+	};
+
+	const sections: Section[] = [
+		{
+			id: 'posts',
+			title: 'Posts',
+			icon: 'fa-solid fa-pen-to-square',
+			component: BlogPosts
+		}
+	];
 </script>
 
 <svelte:head>
@@ -10,14 +27,32 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) blog page." />
 </svelte:head>
 
-<main class="bg-maia_white dark:bg-maia_black dark:text-white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
 	<Navbar />
-
-	<div class="px-8 md:px-24 pt-48">
-		<h2 class="pt-12 text-4xl font-heading font-[550]">Posts</h2>
+	<div class="px-8 md:px-24">
+		<h1 class="pt-48 text-4xl md:text-4xl lg:text-5xl w-full md:w-4/5 font-heading font-[550]">
+			<i class="fa-solid fa-newspaper"></i> Blog
+		</h1>
 		<br />
-		<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
-	</div>
+		<hr />
 
-	<Footer></Footer>
+		{#each sections as section}
+			<section id={section.id}>
+				<h2 class="pt-12 text-2xl font-heading font-[550]">
+					<i class={section.icon}></i>
+					{section.title}
+				</h2>
+				<br />
+
+				{#if section.component}
+					<svelte:component this={section.component} />
+				{:else}
+					<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
+				{/if}
+			</section>
+			<br />
+			<hr />
+		{/each}
+	</div>
+	<Footer />
 </main>

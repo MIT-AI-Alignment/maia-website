@@ -1,8 +1,31 @@
-<script>
+<script lang="ts">
+	import type { ComponentType } from 'svelte';
 	import Footer from '../components/footer.svelte';
 	import Navbar from '../components/navbar.svelte';
 	import Papers from '../components/papers.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
+
+	type Section = {
+		id: string;
+		title: string;
+		icon: string;
+		component: ComponentType | null;
+	};
+
+	const sections: Section[] = [
+		{
+			id: 'research',
+			title: 'Research by MAIA Members',
+			icon: 'fa-solid fa-book-open',
+			component: Papers
+		},
+		{
+			id: 'current',
+			title: 'Current Projects',
+			icon: 'fa-solid fa-rocket',
+			component: null
+		}
+	];
 </script>
 
 <svelte:head>
@@ -10,23 +33,32 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
 </svelte:head>
 
-<main class="bg-maia_white dark:bg-maia_black dark:text-white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
 	<Navbar />
-
-	<div class="px-8 md:px-24 pt-48" id="research">
-		<h2 class="pt-12 text-4xl font-heading font-[550]">
-			<i class="fa-solid fa-book-open"></i> Research by MAIA Members
-		</h2>
+	<div class="px-8 md:px-24">
+		<h1 class="pt-48 text-4xl md:text-4xl lg:text-5xl w-full md:w-4/5 font-heading font-[550]">
+			<i class="fa-solid fa-lightbulb"></i> Initiatives
+		</h1>
 		<br />
-		<Papers />
-	</div>
+		<hr />
 
-	<div class="px-8 md:px-24 pt-12" id="current">
-		<h2 class="pt-12 text-4xl font-heading font-[550]">
-			<i class="fa-solid fa-rocket"></i> Current Projects
-		</h2>
-		<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
-	</div>
+		{#each sections as section}
+			<section id={section.id}>
+				<h2 class="pt-12 text-2xl font-heading font-[550]">
+					<i class={section.icon}></i>
+					{section.title}
+				</h2>
+				<br />
 
-	<Footer></Footer>
+				{#if section.component}
+					<svelte:component this={section.component} />
+				{:else}
+					<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
+				{/if}
+			</section>
+			<br />
+			<hr />
+		{/each}
+	</div>
+	<Footer />
 </main>
