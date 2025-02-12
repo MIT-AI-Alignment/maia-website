@@ -37,7 +37,7 @@
 		<Banner />
 	{/if}
 	<div class="font-heading bg-maia_white dark:bg-maia_black dark:text-white">
-		<div class="px-8 md:px-24 py-4">
+		<div class="px-8 md:px-12 py-4">
 			<div
 				class="flex items-center justify-between"
 				style="transition: height 0.3s ease; height: {navbarExpanded ? '6rem' : '3rem'};"
