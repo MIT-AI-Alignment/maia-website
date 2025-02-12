@@ -68,7 +68,8 @@
 					<a class="hover:underline underline-offset-4" href="/"> Home </a>
 					<a class="hover:underline underline-offset-4" href="/about"> About </a>
 					<a class="hover:underline underline-offset-4" href="/getinvolved"> Get Involved </a>
-					<a class="hover:underline underline-offset-4" href="/donate"> Donate </a>
+					<!-- <a class="hover:underline underline-offset-4" href="/donate"> Donate </a> -->
+					<a class="hover:underline underline-offset-4" href="/initiatives"> Initiatives </a>
 				</nav>
 				<div
 					class="md:hidden absolute top-full right-0 bg-maia_white dark:bg-maia_black dark:text-white shadow-md flex flex-col items-start py-2 w-full"
@@ -85,9 +86,13 @@
 						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
 						href="/getinvolved">Get Involved</a
 					>
-					<a
+					<!-- <a
 						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
 						href="/donate">Donate</a
+					> -->
+					<a
+						class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left"
+						href="/initiatives">Initiatives</a
 					>
 				</div>
 			</div>

@@ -3,6 +3,11 @@ export const CONFIG = {
     banner: {
         visible: true
     },
+    // TODO: See if up to date.
+    mailingListLink: "https://airtable.com/appkINRUv4Z4pNdWO/pag9ZQlgFCItt7kaJ/form",
+    membership: {
+        applicationLink: "https://airtable.com/appkINRUv4Z4pNdWO/pagr3FnCK1N28j7Hd/form"
+    },
     aisf_ml: {
         visible: true,
         deadline: "Wednesday, February 12th, 11:59 PM EST",

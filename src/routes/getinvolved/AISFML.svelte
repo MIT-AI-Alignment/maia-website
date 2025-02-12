@@ -34,8 +34,8 @@
 		><h2
 			class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
 		>
-		Apply <a href={CONFIG.aisf_ml.applicationLink} class="underline"> here</a> by {CONFIG.aisf_ml
-			.deadline}.
+		<a href={CONFIG.aisf_ml.applicationLink} class="underline">For AISF ML Track here by {CONFIG.aisf_ml
+			.deadline}.</a>
 		</h2></a
 	>
 </section>
