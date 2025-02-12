@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { CONFIG } from '$lib/config';
 	import { NAVIGATION_ITEMS } from '$lib/navItems';
@@ -9,7 +9,7 @@
 
 	let hamburgerVisible = false;
 
-	let activeDropdown = null;
+	let activeDropdown: string | null = null;
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -69,9 +69,11 @@
 				</button>
 				<nav class="hidden md:flex gap-10 font-semibold text-md">
 					{#each NAVIGATION_ITEMS as item}
-						{#if item.dropdownItems}
+						{#if 'dropdownItems' in item}
 							<div
-								class="relative"
+								class="relative group"
+								role="button"
+								tabindex="0"
 								on:mouseenter={() => (activeDropdown = item.label)}
 								on:mouseleave={() => (activeDropdown = null)}
 							>
@@ -103,7 +105,7 @@
 					class:hidden={!hamburgerVisible}
 				>
 					{#each NAVIGATION_ITEMS as item}
-						{#if item.dropdownItems}
+						{#if 'dropdownItems' in item}
 							<div class="w-full">
 								<a
 									class="px-8 py-2 hover:bg-gray-100 dark:hover:bg-purple-950 w-full text-left block"

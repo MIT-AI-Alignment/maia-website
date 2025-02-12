@@ -4,9 +4,8 @@ export const NAVIGATION_ITEMS = [
         label: 'Initiatives',
         href: '/initiatives',
         dropdownItems: [
-            { href: '/initiatives/current', label: 'Current Projects' },
-            { href: '/initiatives/past', label: 'Past Projects' },
-            { href: '/initiatives/upcoming', label: 'Upcoming' }
+            { href: '/initiatives#research', label: 'Research' },
+            { href: '/initiatives#current', label: 'Current Projects' }
         ]
     },
     {
@@ -20,6 +19,6 @@ export const NAVIGATION_ITEMS = [
             { href: '/getinvolved#calendar', label: 'Calendar' }
         ]
     },
-    { href: '/blog', label: 'Blog (Coming Soon!)' },
+    { href: '/blog', label: 'Blog (Soon!)' },
     { href: '/about', label: 'About' }
 ] as const;
