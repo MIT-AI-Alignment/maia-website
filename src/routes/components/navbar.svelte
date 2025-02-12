@@ -90,14 +90,14 @@
 								{#if activeDropdown === item.label}
 									<div
 										transition:slide={{ duration: 200 }}
-										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-md rounded-md py-2 min-w-[200px]"
+										class="absolute top-full left-0 bg-maia_white dark:bg-maia_black shadow-[0_4px_20px_-2px_rgba(0,0,0,0.2)] dark:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.5)] rounded-lg py-2 min-w-[200px] border border-gray-100 dark:border-gray-800"
 										role="menu"
 										on:mouseleave={() => (activeDropdown = null)}
 									>
 										{#each item.dropdownItems as subItem}
 											<a
 												href={subItem.href}
-												class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-purple-950"
+												class="block px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-purple-950 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
 											>
 												{subItem.label}
 											</a>
