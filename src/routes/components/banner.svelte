@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-    import { CONFIG } from '$lib/config'
+	import { CONFIG } from '$lib/config';
 
 	// Control the animation for the icon
 	let animateIcon = true;
@@ -14,14 +14,18 @@
 </script>
 
 <div class="bg-purple-600 dark:bg-purple-500 h-12 flex items-center justify-center w-full">
-	<p class="text-white">
-		<i
-			class={`fa-solid fa-circle-exclamation ${animateIcon ? 'fa-flip' : ''}`}
-			style="--fa-animation-duration: 1.0s;"
-		></i>
-		Now accepting Spring 2025 applications for 
-        <a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
-		<a href="{ CONFIG.aisf_ml.applicationLink }" class="underline">here</a>.
-		<small>Deadline { CONFIG.aisf_ml.deadline }</small>
-	</p>
+	<div class="flex flex-col items-center">
+		<p class="text-white">
+			<i
+				class={`fa-solid fa-circle-exclamation ${animateIcon ? 'fa-flip' : ''}`}
+				style="--fa-animation-duration: 1.0s;"
+			></i>
+			Now accepting Spring 2025 applications for
+			<a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
+			<a href={CONFIG.aisf_ml.applicationLink} class="underline">here</a>.
+		</p>
+		<p class="text-white text-sm -mt-1">
+			<small>Deadline {CONFIG.aisf_ml.deadline}</small>
+		</p>
+	</div>
 </div>
