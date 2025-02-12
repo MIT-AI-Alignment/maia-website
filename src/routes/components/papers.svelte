@@ -108,6 +108,18 @@
 				link="https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation"
 			/>
 		</SplideSlide>
+		<SplideSlide>
+			<Paper
+				altText="Research Paper 8"
+				imgSrc="../../images/papers/paper7.png"
+				tags={[
+					{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }
+				]}
+				title="Explore, Establish, Exploit: Red Teaming Language Models from Scratch"
+				authors={['Gatlen Culp']}
+				link="https://arxiv.org/abs/2306.09442"
+			/>
+		</SplideSlide>
 	</SplideTrack>
 	<div class="splide__arrows invisible md:visible">
 		<button
