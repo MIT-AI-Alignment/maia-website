@@ -54,6 +54,7 @@
 					<svelte:component this={section.component} />
 				{:else}
 					<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
+					<a href="./caip-exhibition">CAIP Exhibition</a>
 				{/if}
 			</section>
 			<br />
