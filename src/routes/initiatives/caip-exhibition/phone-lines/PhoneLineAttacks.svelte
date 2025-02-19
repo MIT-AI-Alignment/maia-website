@@ -1,15 +1,8 @@
 <script lang="ts">
 	import type { ComponentType } from 'svelte';
-	import Footer from '../../../components/footer.svelte';
-	import Navbar from '../../../components/navbar.svelte';
 	import PapersExpandable from '../../../components/PapersExpandable.svelte';
-	import UpdateNotification from '../../../components/UpdateNotification.svelte';
-	import Profile from '../../../about/profile.svelte';
-	import Paper from '../../../components/paper.svelte';
-	import { PAPERS } from '$lib/papers';
-	import SectionHeader from '../../../../components/SectionHeader.svelte';
 	import ContentCard from '../../../../components/ContentCard.svelte';
-	import Link from '../../../../components/Link.svelte';
+	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
 
 	type Section = {
 		id: string;
@@ -53,64 +46,66 @@
 		</div>
 	</ContentCard>
 
-	<!-- Policy Risks Section -->
-	<ContentCard>
-		<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-			<i class="fa-solid fa-gavel text-amber-500"></i>
-			<span>Policy Risks and Implications</span>
-		</h3>
-		<p class="mb-4">
-			The ease of launching targeted AI phone attacks points to several pressing policy concerns:
-		</p>
-		<ul class="list-disc pl-6 space-y-2 mb-4">
-			<li>
-				<strong>Identity Verification Gaps:</strong> Setting up the demo required purchasing phone services
-				under a fake name and email, illustrating how minimal oversight enables malicious actors to operate
-				anonymously.
-			</li>
-			<li>
-				<strong>Lack of Disclosure Requirements:</strong> Recipients often have no indication they are
-				speaking with an AI. This raises ethical questions about consent and opens the door to large-scale
-				deception.
-			</li>
-			<li>
-				<strong>Feasibility of Regulation:</strong> While licensing high-fidelity voice synthesis tools
-				sounds attractive, the open-source nature of AI technology (and its ability to run locally) poses
-				serious challenges for effective enforcement.
-			</li>
-		</ul>
-		<p class="mb-4">
-			Ultimately, this demo underscores the urgent need for stronger guardrails and regulatory
-			frameworks that address the rapidly expanding capabilities of generative AI—including updated
-			telemarketing and anti-spam legislation, rigorous verification standards for online phone
-			services, and mandated AI disclosures in certain contexts.
-		</p>
-	</ContentCard>
+	<ContentCardsMasonry columns="2">
+		<!-- Policy Risks Section -->
+		<ContentCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-gavel text-amber-500"></i>
+				<span>Policy Risks and Implications</span>
+			</h3>
+			<p class="mb-4">
+				The ease of launching targeted AI phone attacks points to several pressing policy concerns:
+			</p>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>Identity Verification Gaps:</strong> Setting up the demo required purchasing phone services
+					under a fake name and email, illustrating how minimal oversight enables malicious actors to operate
+					anonymously.
+				</li>
+				<li>
+					<strong>Lack of Disclosure Requirements:</strong> Recipients often have no indication they are
+					speaking with an AI. This raises ethical questions about consent and opens the door to large-scale
+					deception.
+				</li>
+				<li>
+					<strong>Feasibility of Regulation:</strong> While licensing high-fidelity voice synthesis tools
+					sounds attractive, the open-source nature of AI technology (and its ability to run locally) poses
+					serious challenges for effective enforcement.
+				</li>
+			</ul>
+			<p class="mb-4">
+				Ultimately, this demo underscores the urgent need for stronger guardrails and regulatory
+				frameworks that address the rapidly expanding capabilities of generative AI—including updated
+				telemarketing and anti-spam legislation, rigorous verification standards for online phone
+				services, and mandated AI disclosures in certain contexts.
+			</p>
+		</ContentCard>
 
-	<!-- Demo Format Section -->
-	<ContentCard>
-		<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-			<i class="fa-solid fa-eye text-blue-500"></i>
-			Demo Format
-		</h3>
-		<p class="mb-4">
-			During the Congressional Exhibition on Advanced AI, attendees will experience:
-		</p>
-		<ul class="list-disc pl-6 space-y-2 mb-4">
-			<li>
-				<strong>Pre-Recorded Calls:</strong> Real-world examples of AI-generated calls placed to volunteering
-				businesses, illustrating how the system scrapes details (e.g., hours of operation, basic info
-				from Yelp) and then initiates convincing, time-wasting conversations.
-			</li>
-			<li>
-				<strong>Live Demonstration:</strong> When feasible, a real-time call to a willing test business
-				will show the platform's full capabilities—from data gathering to automated phone dialing.
-			</li>
-			<li>
-				<strong>Interactive Explanation:</strong> Technical walkthrough of data scraping, neural voice
-				generation, and the low-latency response pipeline. We will also discuss potential expansions,
-				such as targeting congressional offices for demonstration purposes.
-			</li>
-		</ul>
-	</ContentCard>
+		<!-- Demo Format Section -->
+		<ContentCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-eye text-blue-500"></i>
+				Demo Format
+			</h3>
+			<p class="mb-4">
+				During the Congressional Exhibition on Advanced AI, attendees will experience:
+			</p>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>Pre-Recorded Calls:</strong> Real-world examples of AI-generated calls placed to volunteering
+					businesses, illustrating how the system scrapes details (e.g., hours of operation, basic info
+					from Yelp) and then initiates convincing, time-wasting conversations.
+				</li>
+				<li>
+					<strong>Live Demonstration:</strong> When feasible, a real-time call to a willing test business
+					will show the platform's full capabilities—from data gathering to automated phone dialing.
+				</li>
+				<li>
+					<strong>Interactive Explanation:</strong> Technical walkthrough of data scraping, neural voice
+					generation, and the low-latency response pipeline. We will also discuss potential expansions,
+					such as targeting congressional offices for demonstration purposes.
+				</li>
+			</ul>
+		</ContentCard>
+	</ContentCardsMasonry>
 </div>

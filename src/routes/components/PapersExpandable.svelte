@@ -3,6 +3,7 @@
 	import { PAPERS } from '$lib/papers';
 	import IconChevronDown from '~icons/ph/caret-down-bold';
 	import { slide } from 'svelte/transition';
+	import ExpandButton from './ExpandButton.svelte';
 
 	export let initialRows = 2;
 	export let initialCols = 3;
@@ -38,13 +39,13 @@
 	<!-- Expandable section -->
 	{#if PAPERS.length > initialCount}
 		<div class="flex justify-center">
-			<button
-				class="mt-8 px-4 py-2 text-purple-600 dark:text-purple-300 hover:text-purple-700 dark:hover:text-purple-200 border border-purple-600 dark:border-purple-300 rounded-lg transition-colors flex items-center gap-2"
-				on:click={() => (expanded = !expanded)}
-			>
-				<span>{expanded ? 'Show less' : 'Show more papers'}</span>
-				<IconChevronDown class="transform transition-transform {expanded ? 'rotate-180' : ''}" />
-			</button>
+			<ExpandButton 
+				{expanded}
+				text="Show more papers"
+				expandedText="Show less"
+				showChevron={true}
+				on:click={() => (expanded = !expanded)} 
+			/>
 		</div>
 
 		{#if expanded}

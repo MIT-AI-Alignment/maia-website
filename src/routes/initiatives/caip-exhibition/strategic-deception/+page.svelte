@@ -15,11 +15,11 @@
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->
-		<div class="absolute inset-0 h-[400px]">
+		<div class="absolute inset-0 h-[600px]">
 			<img
-				src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+				src="https://unsplash.com/photos/y0-dzC6KQGE/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDd8fHBpeGVsc3xlbnwwfHx8fDE3Mzk5OTQ5ODB8Mg&force=true&w=1920"
 				alt="Crowd in building lobby"
-				class="w-full h-full object-cover"
+				class="w-full h-full object-cover object-[center_-50px]"
 			/>
 			<div
 				class="absolute inset-0 bg-gradient-to-b from-transparent via-maia_white/70 to-maia_white dark:via-maia_black/70 dark:to-maia_black"
