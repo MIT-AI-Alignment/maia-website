@@ -7,6 +7,9 @@
 	import Profile from '../../about/profile.svelte';
 	import Paper from '../../components/paper.svelte';
 	import { PAPERS } from '$lib/papers';
+	import SectionHeader from '../../../components/SectionHeader.svelte';
+	import ContentCard from '../../../components/ContentCard.svelte';
+	import Link from '../../../components/Link.svelte';
 
 	type Section = {
 		id: string;
@@ -86,11 +89,7 @@
 				</div>
 				<p class="text-lg leading-relaxed">
 					MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI (hosted
-					by the <a
-						href="https://www.centeraipolicy.org/"
-						class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
-						>Center for AI Policy or CAIP</a
-					>) in February 2025 to showcase the potential risks of AI misuse to congressional
+					by the <Link href="https://www.centeraipolicy.org/">Center for AI Policy or CAIP</Link>) in February 2025 to showcase the potential risks of AI misuse to congressional
 					staffers.
 				</p>
 			</div>
@@ -99,29 +98,35 @@
 
 			<!-- Phone-line Attacks Section -->
 			<div class="mt-8 space-y-8 max-w-3xl">
-				<h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-					<i class="fa-solid fa-phone-slash text-red-500"></i>
-					<span>Targeted AI Phone-line Attacks Demo</span>
-				</h2>
+				<SectionHeader
+					icon="fa-solid fa-phone-slash"
+					iconColor="red-500"
+					text="AI Phone-line Attacks: Automated Social Engineering"
+				/>
 
-				<!-- Section content with enhanced styling -->
-				<div class="prose prose-lg dark:prose-invert max-w-none">
-					<p>AI-driven voice bots can systematically disrupt phone communications...</p>
-					<p>
-						The technology behind these calls uses advanced text-to-speech and language modeling
-						capabilities. Remarkably, it can run largely on local hardware (e.g., a standard laptop)
-						and does not require specialized infrastructure, highlighting how easily these
-						disruptive tools could be replicated or scaled. We have integrated multiple
-						components—including web scraping, dynamic voice generation, and call automation—into a
-						single interactive web platform.
-					</p>
-				</div>
+				<!-- Overview Section -->
+				<ContentCard bgColor="transparent" darkBgColor="transparent">
+					<div class="flex flex-col md:flex-row gap-8">
+						<div class="md:w-full">
+							<p class="mb-4 text-lg">
+								Our demo showcases how AI systems can be used to automate social engineering attacks
+								through phone calls, representing a scalable threat to businesses and individuals.
+							</p>
+							<p class="mb-4">
+								Using publicly available data and advanced language models, we demonstrate how
+								malicious actors could deploy AI systems to conduct convincing, automated phone
+								conversations for various purposes including scams, social engineering, or
+								denial-of-service attacks.
+							</p>
+						</div>
+					</div>
+				</ContentCard>
 
-				<!-- Policy Risks Section with Card-like styling -->
-				<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+				<!-- Policy Risks Section -->
+				<ContentCard>
 					<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-						<i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
-						Policy Risks and Implications
+						<i class="fa-solid fa-gavel text-amber-500"></i>
+						<span>Policy Risks and Implications</span>
 					</h3>
 					<p class="mb-4">
 						The ease of launching targeted AI phone attacks points to several pressing policy
@@ -150,12 +155,12 @@
 						updated telemarketing and anti-spam legislation, rigorous verification standards for
 						online phone services, and mandated AI disclosures in certain contexts.
 					</p>
-				</div>
+				</ContentCard>
 
 				<!-- Demo Format Section -->
-				<div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6 shadow-sm">
+				<ContentCard>
 					<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-						<i class="fa-solid fa-eye text-purple-500"></i>
+						<i class="fa-solid fa-eye text-blue-500"></i>
 						Demo Format
 					</h3>
 					<p class="mb-4">
@@ -178,47 +183,27 @@
 							expansions, such as targeting congressional offices for demonstration purposes.
 						</li>
 					</ul>
-				</div>
+				</ContentCard>
 			</div>
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />
 
 			<!-- Strategic Deception Section -->
 			<div class="mt-8 space-y-8 max-w-3xl">
-				<h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-					<i class="fa-solid fa-mask text-blue-500"></i>
-					<span>AI Strategic Deception: A Critical Safety Concern</span>
-				</h2>
-
-				<!-- Slideshow Preview Card -->
-				<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg overflow-hidden shadow-sm">
-					<a
-						href="https://drive.google.com/file/d/15UNd0CMSd0Z9z9kvkXiw76-R7plVQj0V/view?usp=sharing"
-						class="block hover:opacity-90 transition-opacity"
-					>
-						<div class="p-4">
-							<enhanced:img
-								src="../../../images/initiatives/broken-arm-slideshow.png"
-								alt="Broken Arm Slideshow Preview"
-								class="dark:invert w-full rounded-lg"
-							/>
-							<h4 class="mt-4 text-lg font-bold text-center">Broken Arm Slideshow</h4>
-						</div>
-					</a>
-				</div>
+				<SectionHeader
+					icon="fa-solid fa-mask"
+					iconColor="blue-500"
+					text="AI Strategic Deception: A Critical Safety Concern"
+				/>
 
 				<!-- Overview Section -->
-				<div class="prose prose-lg dark:prose-invert max-w-none">
+				<ContentCard bgColor="transparent" darkBgColor="transparent">
 					<div class="flex flex-col md:flex-row gap-8">
 						<div class="md:w-2/3">
 							<p class="mb-4 text-lg">
 								There is widespread agreement among tech leaders that "mitigating the risk of
 								extinction from AI should be a global priority alongside other societal-scale risks
-								such as pandemics and nuclear war" (<a
-									href="https://www.safe.ai/"
-									class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
-									>Center for AI Safety</a
-								>).
+								such as pandemics and nuclear war" (<Link href="https://www.safe.ai/">Center for AI Safety</Link>).
 							</p>
 							<p class="mb-4">
 								This concern is shared by the public—a 2024 survey found that 63% of Americans
@@ -234,11 +219,7 @@
 								of deception.
 							</p>
 							<p class="mb-4">
-								Our demonstration, based on <a
-									href="https://arxiv.org/abs/2412.14093"
-									class="text-purple-600 dark:text-purple-300"
-									>Greenblatt et al.'s "Alignment Faking" research</a
-								>, provides evidence of a current AI model concealing its true preferences when it
+								Our demonstration, based on <Link href="https://arxiv.org/abs/2412.14093">Greenblatt et al.'s "Alignment Faking" research</Link>, provides evidence of a current AI model concealing its true preferences when it
 								detects human oversight; that is, AI systems have both capability and propensity to
 								act deceptively.
 							</p>
@@ -252,12 +233,30 @@
 							/>
 						</div>
 					</div>
-				</div>
+				</ContentCard>
+				<!-- Slideshow Preview Card -->
+				<ContentCard>
+					<a
+						href="https://drive.google.com/file/d/15UNd0CMSd0Z9z9kvkXiw76-R7plVQj0V/view?usp=sharing"
+						class="block hover:opacity-90 transition-opacity"
+					>
+						<div class="p-4">
+							<enhanced:img
+								src="../../../images/initiatives/broken-arm-slideshow.png"
+								alt="Broken Arm Slideshow Preview"
+								class="dark:invert w-full rounded-lg"
+							/>
+							<h4 class="mt-4 text-lg font-bold text-center">
+								Strategic Deception in Serious Scenarios<br />[Slideshow]
+							</h4>
+						</div>
+					</a>
+				</ContentCard>
 
 				<!-- Policy Recommendations Section -->
-				<div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 shadow-sm">
+				<ContentCard>
 					<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-						<i class="fa-solid fa-gavel text-blue-500"></i>
+						<i class="fa-solid fa-gavel text-amber-500"></i>
 						<span>Policy Recommendations</span>
 					</h3>
 					<p class="mb-4">
@@ -286,12 +285,12 @@
 							</p>
 						</li>
 					</ol>
-				</div>
+				</ContentCard>
 
 				<!-- Race Narrative Section -->
-				<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+				<ContentCard>
 					<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-						<i class="fa-solid fa-chess text-purple-500"></i>
+						<i class="fa-solid fa-chess text-red-500"></i>
 						<span>Beyond the "Race" Narrative</span>
 					</h3>
 					<div class="space-y-4">
@@ -306,31 +305,23 @@
 							In short, there are no winners in an AI arms race.
 						</p>
 					</div>
-				</div>
+				</ContentCard>
 
 				<!-- Contact Section -->
-				<div class="mt-12 p-6 bg-purple-50 dark:bg-purple-900/20 rounded-lg shadow-sm">
+				<ContentCard>
 					<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
 						<i class="fa-solid fa-envelope text-purple-500"></i>
 						<span>Additional Resources</span>
 					</h3>
 					<div class="space-y-3">
 						<p>
-							For more information contact Alek Westover at <a
-								href="mailto://alekw@mit.edu"
-								class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
-								>alekw@mit.edu</a
-							>
+							For more information contact Alek Westover at <Link href="mailto://alekw@mit.edu">alekw@mit.edu</Link>
 						</p>
 						<p>
-							Download our <a
-								href="https://drive.google.com/file/d/1b06GSXwBVThFIgQyBL3BfpU4xmEN-hcR/view?usp=sharing"
-								class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
-								>detailed pamphlet</a
-							> for more information.
+							Download our <Link href="https://drive.google.com/file/d/1b06GSXwBVThFIgQyBL3BfpU4xmEN-hcR/view?usp=sharing">detailed pamphlet</Link> for more information.
 						</p>
 					</div>
-				</div>
+				</ContentCard>
 			</div>
 		</div>
 	</div>
