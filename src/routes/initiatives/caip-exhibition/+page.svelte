@@ -79,7 +79,13 @@
 				iconColor="red-500"
 				text="AI Phone-line Attacks: Automated Social Engineering"
 			/>
-			<Link href="./phone-lines">Standalone Page</Link>
+			<div class="flex justify-end -mt-4 mb-4">
+				<Link href="./phone-lines">
+					<span class="flex items-center gap-2">
+						See full demo <i class="fa-solid fa-arrow-right"></i>
+					</span>
+				</Link>
+			</div>
 			<PhoneLineAttacks />
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />
@@ -90,7 +96,13 @@
 				iconColor="blue-500"
 				text="AI Strategic Deception: A Critical Safety Concern"
 			/>
-			<Link href="./strategic-deception">Standalone Page</Link>
+			<div class="flex justify-end -mt-4 mb-4">
+				<Link href="./strategic-deception">
+					<span class="flex items-center gap-2">
+						See full demo <i class="fa-solid fa-arrow-right"></i>
+					</span>
+				</Link>
+			</div>
 			<StrategicDeception />
 		</div>
 	</div>
