@@ -4,20 +4,19 @@
 export const TAGS = {
 	NEURIPS_2022: { title: 'NeurIPS 2022', color: 'bg-blue-200 dark:bg-blue-800' },
 	NEURIPS_2023: { title: 'NeurIPS 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-  NEURIPS_2024: { title: 'NeurIPS 2024', color: 'bg-blue-200 dark:bg-blue-800' },
+	NEURIPS_2024: { title: 'NeurIPS 2024', color: 'bg-blue-200 dark:bg-blue-800' },
 	NEURIPS_2025: { title: 'NeurIPS 2025', color: 'bg-blue-200 dark:bg-blue-800' },
-  ICLR_2022: { title: 'ICLR 2022', color: 'bg-blue-200 dark:bg-blue-800' },
+	ICLR_2022: { title: 'ICLR 2022', color: 'bg-blue-200 dark:bg-blue-800' },
 	ICLR_2023: { title: 'ICLR 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-  ICLR_2024: { title: 'ICLR 2024', color: 'bg-blue-200 dark:bg-blue-800' },
+	ICLR_2024: { title: 'ICLR 2024', color: 'bg-blue-200 dark:bg-blue-800' },
 	ICLR_2025: { title: 'ICLR 2025', color: 'bg-blue-200 dark:bg-blue-800' },
-  ADVERSARIAL: { title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' },
+	ADVERSARIAL: { title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' },
 	RLHF: { title: 'RLHF', color: 'bg-green-200 dark:bg-green-800' },
 	SCALING: { title: 'Scaling Laws', color: 'bg-purple-200 dark:bg-purple-800' },
 	MECH_INTERP: { title: 'Mech Interp', color: 'bg-orange-200 dark:bg-orange-800' },
 	OPENAI: { title: 'OpenAI', color: 'bg-rose-200 dark:bg-rose-800' },
 	GOVERNANCE: { title: 'Governance', color: 'bg-sky-200 dark:bg-sky-800' }
 } as const;
-
 
 export const PAPERS = [
 	{
@@ -84,37 +83,44 @@ export const PAPERS = [
 		authors: ['Stephen Casper', 'Gatlen Culp'],
 		link: 'https://arxiv.org/abs/2306.09442'
 	},
-  	{
+	{
 		altText: 'Research Paper 9',
 		imgSrc: '../../images/papers/model-manipulation.png',
 		tags: [TAGS.ADVERSARIAL, TAGS.ICLR_2025],
 		title: 'Model Manipulation Attacks Enable More Rigorous Evaluations of LLM Capabilities',
 		authors: ['Stephen Casper', 'Stewy Slocum'],
 		link: 'https://openreview.net/forum?id=XmvgWEjkhG'
-  },
-    	{
+	},
+	{
 		altText: 'Research Paper 10',
 		imgSrc: '../../images/papers/diverse-preference-learning.png',
 		tags: [TAGS.RLHF, TAGS.ICLR_2025],
 		title: 'Diverse Preference Learning for Capabilities and Alignment',
-		authors: ["Stewy Slocum", "Asher Parker-Sartori"],
+		authors: ['Stewy Slocum', 'Asher Parker-Sartori'],
 		link: 'https://openreview.net/forum?id=pOq9vDIYev'
-  },
-{
+	},
+	{
 		altText: 'Research Paper 11',
 		imgSrc: '../../images/papers/model-on-model-deception.png',
 		tags: [TAGS.MECH_INTERP, TAGS.ICLR_2024],
 		title: 'An Assessment of Model-on-Model Deception',
-		authors: ["Laker Newhouse", "Michael Gerovitch"],
+		authors: ['Laker Newhouse', 'Michael Gerovitch'],
 		link: 'https://arxiv.org/pdf/2405.12999'
-  },
-{
+	},
+	{
 		altText: 'Research Paper 12',
 		imgSrc: '../../images/papers/harmonic-loss.png',
 		tags: [TAGS.MECH_INTERP],
 		title: 'Harmonic Loss Trains Interpretable AI Models',
-		authors: ["Riya Yagi", "David Baek"],
+		authors: ['Riya Yagi', 'David Baek'],
 		link: 'https://arxiv.org/pdf/2502.01628'
-  }
-  
+	},
+	{
+		altText: 'Alignment Faking Paper Preview',
+		imgSrc: '../../images/papers/alignment-faking.png',
+		tags: [TAGS.ADVERSARIAL],
+		title: 'Alignment faking in large language models',
+		authors: ['Benjamin Wright (MAIA Alum)'],
+		link: 'https://arxiv.org/abs/2412.14093',
+	}
 ] as const;

@@ -5,6 +5,8 @@
 	import PapersExpandable from '../../components/PapersExpandable.svelte';
 	import UpdateNotification from '../../components/UpdateNotification.svelte';
 	import Profile from '../../about/profile.svelte';
+	import Paper from '../../components/paper.svelte';
+	import { PAPERS } from '$lib/papers';
 
 	type Section = {
 		id: string;
@@ -36,20 +38,27 @@
 
 <main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
 	<Navbar />
-	<div class="px-8 md:px-24">
-		<h1 class="pt-48 text-4xl md:text-4xl lg:text-5xl w-full md:w-4/5 font-heading font-[550]">
+	<div class="px-8 md:px-24 max-w-7xl mx-auto">
+		<!-- Main Title -->
+		<h1
+			class="pt-48 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent"
+		>
 			<i class="fa-solid fa-building-columns"></i> Congressional Exhibition on Advanced AI, Feb 2025
 		</h1>
-		<div class="mt-8 space-y-6 max-w-3xl">
-			<p class="mb-4">
+
+		<!-- Introduction Section -->
+		<div class="mt-12 space-y-8 max-w-3xl">
+			<p class="text-lg leading-relaxed">
 				MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI (hosted by
-				the <a href="https://www.centeraipolicy.org/" class="text-purple-600 dark:text-purple-300">Center for AI Policy or CAIP</a>) in February
-				2025 to showcase the potential risks of AI misuse to congressional staffers. David Turturean
-				created and led a demonstration on flooding phone-lines with targeted attacks. Alek Westover
-				held a booth discussing AI's capability for strategic deception and its safety implications.
+				the <a
+					href="https://www.centeraipolicy.org/"
+					class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
+					>Center for AI Policy or CAIP</a
+				>) in February 2025 to showcase the potential risks of AI misuse to congressional staffers.
 			</p>
-			<h3 class="text-xl font-bold mb-4">Involved Members</h3>
-			<div class="flex my-6 flex-wrap">
+
+			<h3 class="text-2xl font-bold">Involved Members</h3>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 justify-items-center max-w-2xl mx-auto">
 				<Profile
 					name="David Turturean"
 					position="Lead on Phone-line Attack Demo"
@@ -72,101 +81,239 @@
 				/>
 			</div>
 		</div>
-		<hr />
 
-		<h2 class="pt-12 text-2xl md:text-2xl lg:text-2xl w-full md:w-4/5 font-heading font-[550]">
-			<i class="fa-solid fa-phone-slash"></i> Targeted AI Phone-line Attacks Demo
-		</h2>
-		<hr />
-		<h2 class="pt-12 text-2xl md:text-2xl lg:text-2xl w-full md:w-4/5 font-heading font-[550]">
-			<i class="fa-solid fa-mask"></i> AI Strategic Deception: A Critical Safety Concern
-		</h2>
-		<div class="mt-8 space-y-6 max-w-3xl">
-			<a href="https://drive.google.com/file/d/15UNd0CMSd0Z9z9kvkXiw76-R7plVQj0V/view?usp=sharing">
-				<div class="flex flex-col p-1">
-					<enhanced:img
-						src="../../../images/initiatives/broken-arm-slideshow.png"
-						alt="Broken Arm Slideshow Preview"
-						class="dark:invert"
-					/>
-					<h4 class="mt-3 mb-1 text-12 font-bold">Broken Arm Slideshow</h4>
-				</div>
-			</a>
+		<hr class="my-16 border-gray-200 dark:border-gray-700" />
+
+		<!-- Phone-line Attacks Section -->
+		<div class="mt-8 space-y-8 max-w-3xl">
+			<h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+				<i class="fa-solid fa-phone-slash text-red-500"></i>
+				<span>Targeted AI Phone-line Attacks Demo</span>
+			</h2>
+
+			<!-- Section content with enhanced styling -->
+			<div class="prose prose-lg dark:prose-invert max-w-none">
+				<p>AI-driven voice bots can systematically disrupt phone communications...</p>
+				<p>
+					The technology behind these calls uses advanced text-to-speech and language modeling
+					capabilities. Remarkably, it can run largely on local hardware (e.g., a standard laptop)
+					and does not require specialized infrastructure, highlighting how easily these disruptive
+					tools could be replicated or scaled. We have integrated multiple components—including web
+					scraping, dynamic voice generation, and call automation—into a single interactive web
+					platform.
+				</p>
+			</div>
+
+			<!-- Policy Risks Section with Card-like styling -->
+			<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+				<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+					<i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+					Policy Risks and Implications
+				</h3>
+				<p class="mb-4">
+					The ease of launching targeted AI phone attacks points to several pressing policy
+					concerns:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 mb-4">
+					<li>
+						<strong>Identity Verification Gaps:</strong> Setting up the demo required purchasing phone
+						services under a fake name and email, illustrating how minimal oversight enables malicious
+						actors to operate anonymously.
+					</li>
+					<li>
+						<strong>Lack of Disclosure Requirements:</strong> Recipients often have no indication they
+						are speaking with an AI. This raises ethical questions about consent and opens the door to
+						large-scale deception.
+					</li>
+					<li>
+						<strong>Feasibility of Regulation:</strong> While licensing high-fidelity voice synthesis
+						tools sounds attractive, the open-source nature of AI technology (and its ability to run
+						locally) poses serious challenges for effective enforcement.
+					</li>
+				</ul>
+				<p class="mb-4">
+					Ultimately, this demo underscores the urgent need for stronger guardrails and regulatory
+					frameworks that address the rapidly expanding capabilities of generative AI—including
+					updated telemarketing and anti-spam legislation, rigorous verification standards for
+					online phone services, and mandated AI disclosures in certain contexts.
+				</p>
+			</div>
+
+			<!-- Demo Format Section -->
+			<div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6 shadow-sm">
+				<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+					<i class="fa-solid fa-eye text-purple-500"></i>
+					Demo Format
+				</h3>
+				<p class="mb-4">
+					During the Congressional Exhibition on Advanced AI, attendees will experience:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 mb-4">
+					<li>
+						<strong>Pre-Recorded Calls:</strong> Real-world examples of AI-generated calls placed to
+						volunteering businesses, illustrating how the system scrapes details (e.g., hours of operation,
+						basic info from Yelp) and then initiates convincing, time-wasting conversations.
+					</li>
+					<li>
+						<strong>Live Demonstration:</strong> When feasible, a real-time call to a willing test business
+						will show the platform's full capabilities—from data gathering to automated phone dialing.
+					</li>
+					<li>
+						<strong>Interactive Explanation:</strong> Technical walkthrough of data scraping, neural
+						voice generation, and the low-latency response pipeline. We will also discuss potential expansions,
+						such as targeting congressional offices for demonstration purposes.
+					</li>
+				</ul>
+			</div>
 		</div>
 
-		<div class="mt-8 space-y-6 max-w-3xl">
-			<section>
-				<p class="mb-4">
-					There is widespread agreement among tech leaders that "mitigating the risk of extinction
-					from AI should be a global priority alongside other societal-scale risks such as pandemics
-					and nuclear war" (<a href="https://www.safe.ai/" class="text-purple-600 dark:text-purple-300">Center for AI Safety</a>).
-				</p>
-				<p class="mb-4">
-					This concern is shared by the public—a 2024 survey found that 63% of Americans support a
-					ban on smarter-than-human AI.
-				</p>
-				<p class="mb-4">
-					Our demo highlights a key factor contributing to this risk: AI systems can engage in
-					strategic deception.
-				</p>
-				<p class="mb-4">
-					This shouldn't be surprising— deception is a common human behavior, and as AI systems
-					become more capable than humans at reasoning, they will clearly be capable of deception.
-				</p>
-				<p class="mb-4">
-					Our demonstration, based on <a href="https://arxiv.org/abs/2412.14093" class="text-purple-600 dark:text-purple-300">Greenblatt et al.'s "Alignment Faking" research</a>, provides evidence of a current AI model concealing its true preferences when it detects
-					human oversight; that is, AI systems have both capability and propensity to act
-					deceptively.
-				</p>
-			</section>
+		<hr class="my-16 border-gray-200 dark:border-gray-700" />
 
-			<section>
-				<h3 class="text-xl font-bold mb-4">
-					<i class="fa-solid fa-gavel"></i> Policy Recommendations
+		<!-- Strategic Deception Section -->
+		<div class="mt-8 space-y-8 max-w-3xl">
+			<h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+				<i class="fa-solid fa-mask text-blue-500"></i>
+				<span>AI Strategic Deception: A Critical Safety Concern</span>
+			</h2>
+
+			<!-- Slideshow Preview Card -->
+			<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg overflow-hidden shadow-sm">
+				<a
+					href="https://drive.google.com/file/d/15UNd0CMSd0Z9z9kvkXiw76-R7plVQj0V/view?usp=sharing"
+					class="block hover:opacity-90 transition-opacity"
+				>
+					<div class="p-4">
+						<enhanced:img
+							src="../../../images/initiatives/broken-arm-slideshow.png"
+							alt="Broken Arm Slideshow Preview"
+							class="dark:invert w-full rounded-lg"
+						/>
+						<h4 class="mt-4 text-lg font-bold text-center">Broken Arm Slideshow</h4>
+					</div>
+				</a>
+			</div>
+
+			<!-- Overview Section -->
+			<div class="prose prose-lg dark:prose-invert max-w-none">
+				<div class="flex flex-col md:flex-row gap-8">
+					<div class="md:w-2/3">
+						<p class="mb-4 text-lg">
+							There is widespread agreement among tech leaders that "mitigating the risk of extinction
+							from AI should be a global priority alongside other societal-scale risks such as pandemics
+							and nuclear war" (<a
+								href="https://www.safe.ai/"
+								class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
+								>Center for AI Safety</a
+							>).
+						</p>
+						<p class="mb-4">
+							This concern is shared by the public—a 2024 survey found that 63% of Americans support a
+							ban on smarter-than-human AI.
+						</p>
+						<p class="mb-4">
+							Our demo highlights a key factor contributing to this risk: AI systems can engage in
+							strategic deception.
+						</p>
+						<p class="mb-4">
+							This shouldn't be surprising— deception is a common human behavior, and as AI systems
+							become more capable than humans at reasoning, they will clearly be capable of deception.
+						</p>
+						<p class="mb-4">
+							Our demonstration, based on <a
+								href="https://arxiv.org/abs/2412.14093"
+								class="text-purple-600 dark:text-purple-300"
+								>Greenblatt et al.'s "Alignment Faking" research</a
+							>, provides evidence of a current AI model concealing its true preferences when it detects
+							human oversight; that is, AI systems have both capability and propensity to act
+							deceptively.
+						</p>
+					</div>
+					<div class="md:w-1/3">
+						<Paper
+							textSize="sm"
+							{...PAPERS.find((paper) => paper.title === 'Alignment faking in large language models')}
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Policy Recommendations Section -->
+			<div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 shadow-sm">
+				<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+					<i class="fa-solid fa-gavel text-blue-500"></i>
+					<span>Policy Recommendations</span>
 				</h3>
-				<p class="mb-2">
+				<p class="mb-4">
 					To address the risks from AI deception, we propose several governance measures:
 				</p>
-				<ol class="list-decimal pl-6 space-y-2">
-					<li>
-						Mandatory external safety audits of frontier AI models, conducted by organizations like
-						the US AI Security Institute.
+				<ol class="list-decimal pl-6 space-y-4 mb-4">
+					<li class="pl-2">
+						<span class="font-semibold">Mandatory External Safety Audits:</span>
+						<p class="mt-1">
+							Frontier AI models must be evaluated by organizations like the US AI Security
+							Institute.
+						</p>
 					</li>
-					<li>
-						Requirements for AI labs to demonstrate safety before development, similar to protocols
-						in drug development and nuclear power plant construction.
+					<li class="pl-2">
+						<span class="font-semibold">Pre-development Safety Requirements:</span>
+						<p class="mt-1">
+							AI labs must demonstrate safety before development, following protocols similar to
+							drug development and nuclear power plant construction.
+						</p>
 					</li>
-					<li>
-						International coordination on AI development standards, following frameworks like those
-						used for nuclear non-proliferation.
+					<li class="pl-2">
+						<span class="font-semibold">International Coordination:</span>
+						<p class="mt-1">
+							Establish AI development standards following frameworks like those used for nuclear
+							non-proliferation.
+						</p>
 					</li>
 				</ol>
-			</section>
+			</div>
 
-			<section>
-				<h3 class="text-xl font-bold mb-4">
-					<i class="fa-solid fa-chess"></i> Beyond the "Race" Narrative
+			<!-- Race Narrative Section -->
+			<div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+				<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+					<i class="fa-solid fa-chess text-purple-500"></i>
+					<span>Beyond the "Race" Narrative</span>
 				</h3>
-				<p class="mb-4">
-					While some stakeholders (like AI company executives) frame AI development as a race that
-					the US must "win", this perspective is dangerous. The capacity for strategic deception in
-					AI systems reveals the fundamental flaw in this framing: rushing to develop
-					superintelligent AI risks creating powerful systems with hidden objectives that conflict
-					with human welfare. Such a scenario would inevitably lead to confrontation between
-					humanity and AI—a conflict we cannot win.
-				</p>
-				<p class="mb-4">In short, there are no winners in an AI arms race.</p>
-			</section>
+				<div class="space-y-4">
+					<p>
+						While some stakeholders (like AI company executives) frame AI development as a race that
+						the US must "win", this perspective is dangerous. The capacity for strategic deception
+						in AI systems reveals the fundamental flaw in this framing: rushing to develop
+						superintelligent AI risks creating powerful systems with hidden objectives that conflict
+						with human welfare.
+					</p>
+					<p class="text-lg font-semibold text-purple-600 dark:text-purple-300">
+						In short, there are no winners in an AI arms race.
+					</p>
+				</div>
+			</div>
 
-			<section class="mt-8">
-				<p>
-					For more information contact Alek Westover at <a href="mailto://alekw@mit.edu" class="text-purple-600 dark:text-purple-300">alekw@mit.edu</a>
-				</p>
-
-				<p>
-					<a href="https://drive.google.com/file/d/1b06GSXwBVThFIgQyBL3BfpU4xmEN-hcR/view?usp=sharing" class="text-purple-600 dark:text-purple-300">Pamphlet</a>
-				</p>
-			</section>
+			<!-- Contact Section -->
+			<div class="mt-12 p-6 bg-purple-50 dark:bg-purple-900/20 rounded-lg shadow-sm">
+				<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+					<i class="fa-solid fa-envelope text-purple-500"></i>
+					<span>Additional Resources</span>
+				</h3>
+				<div class="space-y-3">
+					<p>
+						For more information contact Alek Westover at <a
+							href="mailto://alekw@mit.edu"
+							class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
+							>alekw@mit.edu</a
+						>
+					</p>
+					<p>
+						Download our <a
+							href="https://drive.google.com/file/d/1b06GSXwBVThFIgQyBL3BfpU4xmEN-hcR/view?usp=sharing"
+							class="text-purple-600 hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200 transition-colors"
+							>detailed pamphlet</a
+						> for more information.
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<Footer />
