@@ -25,11 +25,11 @@ export const NAVIGATION_ITEMS = [
             { href: '/getinvolved#calendar', label: 'Calendar' }
         ]
     },
-    { 
-        href: '/blog', 
-        label: 'Blog (Soon!)',
-        icon: 'fas fa-newspaper'
-    },
+    // { 
+    //     href: '/blog', 
+    //     label: 'Blog (Soon!)',
+    //     icon: 'fas fa-newspaper'
+    // },
     {
         label: 'About',
         href: '/about',

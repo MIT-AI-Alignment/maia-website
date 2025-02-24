@@ -29,7 +29,7 @@
 		</div>
 
 		<!-- Content -->
-		<div class="px-8 md:px-24 max-w-7xl mx-auto relative">
+		<div class="px-8 md:px-24 relative">
 			<!-- Main Title -->
 			<BackLink/>
 			<h1
@@ -39,7 +39,7 @@
 			</h1>
 
 			<!-- Introduction Section -->
-			<div class="mt-12 space-y-8 max-w-5xl">
+			<div class="mt-12 space-y-8">
 				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
 					<Profile
 						name="David Turturean"

@@ -27,65 +27,94 @@
 	];
 </script>
 
-<div class="mt-8 space-y-8 max-w-3xl">
-
+<div class="mt-8 space-y-8">
 	<!-- Overview Section -->
 	<ContentCard bgColor="transparent" darkBgColor="transparent">
 		<div class="flex flex-col md:flex-row gap-8">
 			<div class="md:w-full">
+				<h2 class="text-3xl font-bold mb-6">The Weaponization of AI-Driven Voice Emulation</h2>
 				<p class="mb-4 text-lg">
-					Our demo showcases how AI systems can be used to automate social engineering attacks
-					through phone calls, representing a scalable threat to businesses and individuals.
+					Advanced AI-driven voice emulation represents a significant security threat when combined with automated calling systems. Our demonstration showcases how malicious actors could leverage state-of-the-art text-to-speech (TTS) technology and Large Language Models (LLMs) to generate synthetic voices capable of conducting human-like conversations at scale.
 				</p>
 				<p class="mb-4">
-					Using publicly available data and advanced language models, we demonstrate how malicious
-					actors could deploy AI systems to conduct convincing, automated phone conversations for
-					various purposes including scams, social engineering, or denial-of-service attacks.
+					This proof-of-concept system demonstrates the full attack chain: from scraping publicly available business data across targeted areas, to aggregating context from sources like Google and Yelp, to conducting real-time adaptive conversations. The platform can automatically place calls to businesses and government offices, highlighting the urgent need for protective measures against such potential attacks.
 				</p>
 			</div>
 		</div>
 	</ContentCard>
 
-	<ContentCardsMasonry columns="2">
-		<!-- Policy Risks Section -->
+	<ContentCardsMasonry columns="4">
+		<!-- Technical Capabilities Section -->
+		<ContentCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-microchip text-green-500"></i>
+				<span>Technical Capabilities</span>
+			</h3>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>Real-Time Voice Synthesis:</strong> Integration of ElevenLabs' text-to-speech API with OpenAI's models enables instant, dynamic voice generation with human-like qualities.
+				</li>
+				<li>
+					<strong>Automated Intelligence Gathering:</strong> Sophisticated backend system that builds detailed target profiles by aggregating data from multiple public sources.
+				</li>
+				<li>
+					<strong>Scalable Infrastructure:</strong> End-to-end pipeline utilizing Twilio for mass deployment of convincing automated calls.
+				</li>
+				<li>
+					<strong>Conversation Monitoring:</strong> Real-time transcript analysis for adaptive dialogue management and interaction optimization.
+				</li>
+			</ul>
+		</ContentCard>
+
+		<!-- Social Engineering Risks Section -->
+		<ContentCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+				<span>Social Engineering Risks</span>
+			</h3>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>Communication Channel Flooding:</strong> Potential for thousands of automated calls to overwhelm businesses, financial institutions, or government offices across targeted areas.
+				</li>
+				<li>
+					<strong>Public Perception Manipulation:</strong> Near-perfect voice imitation enabling spread of disinformation through trusted voices.
+				</li>
+				<li>
+					<strong>Critical Infrastructure Exploitation:</strong> Potential disruption of essential services and emergency communication systems.
+				</li>
+				<li>
+					<strong>Democratic Process Interference:</strong> Risk of overwhelming Congressional offices with fake constituent calls, distorting policy feedback channels.
+				</li>
+			</ul>
+		</ContentCard>
+
+		<!-- Policy Recommendations Section -->
 		<ContentCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-gavel text-amber-500"></i>
-				<span>Policy Risks and Implications</span>
+				<span>Policy Recommendations</span>
 			</h3>
-			<p class="mb-4">
-				The ease of launching targeted AI phone attacks points to several pressing policy concerns:
-			</p>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>Identity Verification Gaps:</strong> Setting up the demo required purchasing phone services
-					under a fake name and email, illustrating how minimal oversight enables malicious actors to operate
-					anonymously.
+					<strong>Mandatory Watermarking:</strong> Implement digital watermarking for synthetic voices to ensure traceability.
 				</li>
 				<li>
-					<strong>Lack of Disclosure Requirements:</strong> Recipients often have no indication they are
-					speaking with an AI. This raises ethical questions about consent and opens the door to large-scale
-					deception.
+					<strong>Verification Protocols:</strong> Develop robust systems to verify voice communication authenticity, especially in critical sectors.
 				</li>
 				<li>
-					<strong>Feasibility of Regulation:</strong> While licensing high-fidelity voice synthesis tools
-					sounds attractive, the open-source nature of AI technology (and its ability to run locally) poses
-					serious challenges for effective enforcement.
+					<strong>Regulatory Framework:</strong> Establish comprehensive legal measures to deter and penalize malicious use of AI voice technology.
+				</li>
+				<li>
+					<strong>Balanced Approach:</strong> Create policies that protect against harmful uses while supporting beneficial AI development.
 				</li>
 			</ul>
-			<p class="mb-4">
-				Ultimately, this demo underscores the urgent need for stronger guardrails and regulatory
-				frameworks that address the rapidly expanding capabilities of generative AI—including updated
-				telemarketing and anti-spam legislation, rigorous verification standards for online phone
-				services, and mandated AI disclosures in certain contexts.
-			</p>
 		</ContentCard>
 
 		<!-- Demo Format Section -->
 		<ContentCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-eye text-blue-500"></i>
-				Demo Format
+				<span>Demo Format</span>
 			</h3>
 			<p class="mb-4">
 				During the Congressional Exhibition on Advanced AI, attendees will experience:

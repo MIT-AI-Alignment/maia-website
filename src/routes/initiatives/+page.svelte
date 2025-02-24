@@ -55,10 +55,10 @@
 				{:else}
 					<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
 					<div class="mt-4 p-6 border rounded-lg border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-						<a href="./caip-exhibition" class="block">
+						<a href="." class="block">
 							<h3 class="text-xl font-bold mb-2">
 								<i class="fa-solid fa-building-columns mr-2"></i>
-								Congressional Exhibition on Advanced AI
+								Congressional Exhibition on Advanced AI (More info soon!)
 							</h3>
 							<p class="text-gray-600 dark:text-gray-300">
 								MAIA members showcased AI safety concerns to congressional staffers, featuring demonstrations on phone-line attacks and AI strategic deception.
