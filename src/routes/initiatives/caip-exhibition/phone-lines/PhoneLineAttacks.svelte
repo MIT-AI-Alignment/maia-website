@@ -136,5 +136,22 @@
 				</li>
 			</ul>
 		</ContentCard>
+
+		<!-- Contact Information Section -->
+		<ContentCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-address-card text-purple-500"></i>
+				<span>Contact Information</span>
+			</h3>
+			<p class="mb-4">
+				For inquiries about this demonstration, please contact:
+			</p>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>David Turturean</strong><br/>
+					Email: <a href="mailto:davidct@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline">davidct@mit.edu</a>
+				</li>
+			</ul>
+		</ContentCard>
 	</ContentCardsMasonry>
 </div>
