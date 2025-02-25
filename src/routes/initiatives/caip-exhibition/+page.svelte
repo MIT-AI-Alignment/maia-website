@@ -22,8 +22,8 @@
 		{
 			type: 'video',
 			src: 'https://drive.google.com/file/d/1HAMlY-cNGfm0ODQUy2gQklq3RGRwvwnt/preview',
-			alt: "Senator Foster's Introductory Speech",
-			caption: 'Opening remarks from Senator Foster'
+			alt: "Representative Foster's Introductory Speech",
+			caption: 'Opening remarks from Representative Bill Foster'
 		},
 		{
 			type: 'image',
