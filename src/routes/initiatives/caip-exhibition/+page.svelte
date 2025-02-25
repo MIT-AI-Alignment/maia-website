@@ -7,6 +7,7 @@
 	import SectionHeader from '../../../components/SectionHeader.svelte';
 	import Link from '../../../components/Link.svelte';
 	import BackLink from '../../../components/BackLink.svelte';
+	import ImageWithCaption from '../../../components/ImageWithCaption.svelte';
 </script>
 
 <svelte:head>
@@ -49,14 +50,14 @@
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192"
 					/>
 					<Profile
-						name="Alek Westover"
-						position="Lead on AI Strategic Deception Demo"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QL45P0E8-bdaa4ff976fe-512"
-					/>
-					<Profile
 						name="Gatlen Culp"
 						position="Demo Assitant"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
+					/>
+					<Profile
+						name="Alek Westover"
+						position="Lead on AI Strategic Deception Demo"
+						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QL45P0E8-bdaa4ff976fe-512"
 					/>
 					<Profile
 						name="Alice Blair"
@@ -64,11 +65,31 @@
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512"
 					/>
 				</div>
-				<p class="text-lg leading-relaxed">
-					MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI (hosted
-					by the <Link href="https://www.centeraipolicy.org/">Center for AI Policy or CAIP</Link>)
-					in February 2025 to showcase the potential risks of AI misuse to congressional staffers.
-				</p>
+				
+				<!-- Overview and Team Picture -->
+				<div class="flex flex-col md:flex-row gap-8">
+					<div class="md:w-2/3">
+						<p class="text-lg leading-relaxed">
+							MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI (hosted
+							by the <Link href="https://www.centeraipolicy.org/">Center for AI Policy or CAIP</Link>)
+							in February 2025 to showcase the potential risks of AI misuse to congressional staffers.
+						</p>
+						<p class="mt-4 text-lg leading-relaxed">
+							Our team presented two demonstrations highlighting critical AI safety concerns: automated phone-line
+							attacks that could enable mass social engineering, and strategic deception capabilities in advanced
+							AI systems that pose significant alignment challenges.
+						</p>
+					</div>
+					
+					<!-- Team Picture -->
+					<div class="md:w-1/3">
+						<ImageWithCaption
+							src="/src/images/initiatives/caip-exhibition-team.png"
+							alt="MAIA Team at the Congressional Exhibition on Advanced AI"
+							caption="MAIA team at the Congressional Exhibition (Feb 2025)"
+						/>
+					</div>
+				</div>
 			</div>
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />
@@ -77,7 +98,8 @@
 			<SectionHeader
 				icon="fa-solid fa-phone-slash"
 				iconColor="red-500"
-				text="AI Phone-line Attacks: Automated Social Engineering"
+				text="Automated Social Engineering & Manipulation using Targeted AI Phone-line
+				Attacks"
 			/>
 			<div class="flex justify-end -mt-4 mb-4">
 				<Link href="./phone-lines">

@@ -25,6 +25,22 @@
 			component: null
 		}
 	];
+
+	// Audio demo files
+	const audioDemos = [
+		{
+			title: 'Congressional Demo Call',
+			description: 'Example of an AI-generated call targeting congressional offices',
+			file: '/src/audio/congressional-demo.mp3',
+			icon: 'fa-solid fa-landmark'
+		},
+		{
+			title: 'Emergency Services Demo',
+			description: 'Demonstration of potential attacks on emergency service lines',
+			file: '/src/audio/emergency-call-demo.mp3',
+			icon: 'fa-solid fa-ambulance'
+		}
+	];
 </script>
 
 <div class="mt-8 space-y-8">
@@ -32,18 +48,54 @@
 	<ContentCard bgColor="transparent" darkBgColor="transparent">
 		<div class="flex flex-col md:flex-row gap-8">
 			<div class="md:w-full">
-				<h2 class="text-3xl font-bold mb-6">The Weaponization of AI-Driven Voice Emulation</h2>
 				<p class="mb-4 text-lg">
-					Advanced AI-driven voice emulation represents a significant security threat when combined with automated calling systems. Our demonstration showcases how malicious actors could leverage state-of-the-art text-to-speech (TTS) technology and Large Language Models (LLMs) to generate synthetic voices capable of conducting human-like conversations at scale.
+					Advanced AI-driven voice emulation represents a significant security threat when combined
+					with automated calling systems. Our demonstration showcases how malicious actors could
+					leverage state-of-the-art text-to-speech (TTS) technology and Large Language Models (LLMs)
+					to generate synthetic voices capable of conducting human-like conversations at scale.
 				</p>
 				<p class="mb-4">
-					This proof-of-concept system demonstrates the full attack chain: from scraping publicly available business data across targeted areas, to aggregating context from sources like Google and Yelp, to conducting real-time adaptive conversations. The platform can automatically place calls to businesses and government offices, highlighting the urgent need for protective measures against such potential attacks.
+					This proof-of-concept system demonstrates the full attack chain: from scraping publicly
+					available business data across targeted areas, to aggregating context from sources like
+					Google and Yelp, to conducting real-time adaptive conversations. The platform can
+					automatically place calls to businesses and government offices, highlighting the urgent
+					need for protective measures against such potential attacks.
 				</p>
 			</div>
 		</div>
 	</ContentCard>
 
-	<ContentCardsMasonry columns="4">
+	<!-- Audio Demos Section -->
+	<ContentCard>
+		<h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+			<i class="fa-solid fa-headphones text-purple-500"></i>
+			<span>Audio Demonstrations</span>
+		</h2>
+		<p class="mb-6">
+			Listen to examples of AI-generated voice calls that demonstrate the capabilities and potential
+			risks of this technology:
+		</p>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{#each audioDemos as demo}
+				<div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+					<div class="flex items-center gap-3 mb-3">
+						<i class="{demo.icon} text-2xl text-purple-500"></i>
+						<h3 class="text-xl font-bold">{demo.title}</h3>
+					</div>
+					<p class="mb-4 text-gray-700 dark:text-gray-300">{demo.description}</p>
+					<div class="audio-player w-full">
+						<audio controls class="w-full">
+							<source src={demo.file} type="audio/mpeg" />
+							Your browser does not support the audio element.
+						</audio>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</ContentCard>
+
+	<ContentCardsMasonry columns="3">
 		<!-- Technical Capabilities Section -->
 		<ContentCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -52,16 +104,20 @@
 			</h3>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>Real-Time Voice Synthesis:</strong> Integration of ElevenLabs' text-to-speech API with OpenAI's models enables instant, dynamic voice generation with human-like qualities.
+					<strong>Real-Time Voice Synthesis:</strong> Integration of ElevenLabs' text-to-speech API with
+					OpenAI's models enables instant, dynamic voice generation with human-like qualities.
 				</li>
 				<li>
-					<strong>Automated Intelligence Gathering:</strong> Sophisticated backend system that builds detailed target profiles by aggregating data from multiple public sources.
+					<strong>Automated Intelligence Gathering:</strong> Sophisticated backend system that builds
+					detailed target profiles by aggregating data from multiple public sources.
 				</li>
 				<li>
-					<strong>Scalable Infrastructure:</strong> End-to-end pipeline utilizing Twilio for mass deployment of convincing automated calls.
+					<strong>Scalable Infrastructure:</strong> End-to-end pipeline utilizing Twilio for mass deployment
+					of convincing automated calls.
 				</li>
 				<li>
-					<strong>Conversation Monitoring:</strong> Real-time transcript analysis for adaptive dialogue management and interaction optimization.
+					<strong>Conversation Monitoring:</strong> Real-time transcript analysis for adaptive dialogue
+					management and interaction optimization.
 				</li>
 			</ul>
 		</ContentCard>
@@ -74,16 +130,20 @@
 			</h3>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>Communication Channel Flooding:</strong> Potential for thousands of automated calls to overwhelm businesses, financial institutions, or government offices across targeted areas.
+					<strong>Communication Channel Flooding:</strong> Potential for thousands of automated calls
+					to overwhelm businesses, financial institutions, or government offices across targeted areas.
 				</li>
 				<li>
-					<strong>Public Perception Manipulation:</strong> Near-perfect voice imitation enabling spread of disinformation through trusted voices.
+					<strong>Public Perception Manipulation:</strong> Near-perfect voice imitation enabling spread
+					of disinformation through trusted voices.
 				</li>
 				<li>
-					<strong>Critical Infrastructure Exploitation:</strong> Potential disruption of essential services and emergency communication systems.
+					<strong>Critical Infrastructure Exploitation:</strong> Potential disruption of essential services
+					and emergency communication systems.
 				</li>
 				<li>
-					<strong>Democratic Process Interference:</strong> Risk of overwhelming Congressional offices with fake constituent calls, distorting policy feedback channels.
+					<strong>Democratic Process Interference:</strong> Risk of overwhelming Congressional offices
+					with fake constituent calls, distorting policy feedback channels.
 				</li>
 			</ul>
 		</ContentCard>
@@ -96,16 +156,20 @@
 			</h3>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>Mandatory Watermarking:</strong> Implement digital watermarking for synthetic voices to ensure traceability.
+					<strong>Mandatory Watermarking:</strong> Implement digital watermarking for synthetic voices
+					to ensure traceability.
 				</li>
 				<li>
-					<strong>Verification Protocols:</strong> Develop robust systems to verify voice communication authenticity, especially in critical sectors.
+					<strong>Verification Protocols:</strong> Develop robust systems to verify voice communication
+					authenticity, especially in critical sectors.
 				</li>
 				<li>
-					<strong>Regulatory Framework:</strong> Establish comprehensive legal measures to deter and penalize malicious use of AI voice technology.
+					<strong>Regulatory Framework:</strong> Establish comprehensive legal measures to deter and
+					penalize malicious use of AI voice technology.
 				</li>
 				<li>
-					<strong>Balanced Approach:</strong> Create policies that protect against harmful uses while supporting beneficial AI development.
+					<strong>Balanced Approach:</strong> Create policies that protect against harmful uses while
+					supporting beneficial AI development.
 				</li>
 			</ul>
 		</ContentCard>
@@ -143,13 +207,21 @@
 				<i class="fa-solid fa-address-card text-purple-500"></i>
 				<span>Contact Information</span>
 			</h3>
-			<p class="mb-4">
-				For inquiries about this demonstration, please contact:
-			</p>
+			<p class="mb-4">For inquiries about this demonstration, please contact:</p>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>David Turturean</strong><br/>
-					Email: <a href="mailto:davidct@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline">davidct@mit.edu</a>
+					<strong>David Turturean</strong><br />
+					Email:
+					<a href="mailto:davidct@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline"
+						>davidct@mit.edu</a
+					>
+				</li>
+				<li>
+					<strong>Gatlen Culp</strong><br />
+					Email:
+					<a href="mailto:gculp@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline"
+						>gculp@mit.edu</a
+					>
 				</li>
 			</ul>
 		</ContentCard>

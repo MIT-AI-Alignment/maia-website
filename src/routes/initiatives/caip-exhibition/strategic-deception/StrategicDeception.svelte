@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Paper from '../../../components/paper.svelte';
 	import { PAPERS } from '$lib/papers';
-	import SectionHeader from '../../../../components/SectionHeader.svelte';
 	import ContentCard from '../../../../components/ContentCard.svelte';
 	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
 	import Link from '../../../../components/Link.svelte';
+	import ImageWithCaption from '../../../../components/ImageWithCaption.svelte';
 </script>
 
-<div class="mt-8 space-y-8 max-w-3xl">
+<div class="mt-8 space-y-8">
 
 	<!-- Overview Section -->
 	<ContentCard bgColor="transparent" darkBgColor="transparent">
 		<div class="flex flex-col md:flex-row gap-8">
-			<div class="md:w-2/3">
+			<div class="md:w-3/4">
 				<p class="mb-4 text-lg">
 					There is widespread agreement among tech leaders that "mitigating the risk of extinction
 					from AI should be a global priority alongside other societal-scale risks such as pandemics
@@ -38,7 +38,7 @@
 					deceptively.
 				</p>
 			</div>
-			<div class="md:w-1/3">
+			<div class="md:w-1/4">
 				<Paper
 					textSize="sm"
 					{...PAPERS.find((paper) => paper.title === 'Alignment faking in large language models')}
@@ -48,7 +48,7 @@
 	</ContentCard>
 
 	<!-- Flexible Gallery Layout -->
-	<ContentCardsMasonry columns="2">
+	<ContentCardsMasonry columns="3">
 		<!-- Slideshow Preview Card -->
 		<ContentCard>
 			<a
@@ -56,14 +56,12 @@
 				class="block hover:opacity-90 transition-opacity"
 			>
 				<div class="p-4">
-					<enhanced:img
-						src="../../../../images/initiatives/broken-arm-slideshow.png"
+					<ImageWithCaption
+						src="/src/images/initiatives/broken-arm-slideshow.png"
 						alt="Broken Arm Slideshow Preview"
-						class="dark:invert w-full rounded-lg"
+						caption="Strategic Deception in Serious Scenarios [Slideshow]"
+						showShadow={false}
 					/>
-					<h4 class="mt-4 text-lg font-bold text-center">
-						Strategic Deception in Serious Scenarios<br />[Slideshow]
-					</h4>
 				</div>
 			</a>
 		</ContentCard>
