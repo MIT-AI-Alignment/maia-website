@@ -10,7 +10,7 @@
 
 	let hamburgerVisible = false;
 
-	let activeDropdown: string | null = null;
+	$: activeDropdown = null;
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -44,11 +44,11 @@
 			>
 				<div class="flex items-center gap-2">
 					<a href="/" class="dark:hidden">
-						<enhanced:img src="../../images/maia.svg" alt="MAIA logo" class="h-8 w-auto" />
+						<img src="/images/maia.svg" alt="MAIA logo" class="h-8 w-auto" />
 						<span class="sr-only">MAIA</span>
 					</a>
 					<a href="/" class="hidden dark:block">
-						<enhanced:img src="../../images/maia_dark.svg" alt="MAIA logo" class="h-8 w-auto" />
+						<img src="/images/maia_dark.svg" alt="MAIA logo" class="h-8 w-auto" />
 						<span class="sr-only">MAIA</span>
 					</a>
 				</div>
@@ -91,6 +91,7 @@
 										transition:slide={{ duration: 200 }}
 										class="absolute top-[calc(100%+0.5rem)] left-0 bg-maia_white dark:bg-maia_black shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.7)] rounded-lg py-1 min-w-[200px] border border-gray-100 dark:border-gray-800"
 										role="menu"
+										tabindex="0"
 										on:mouseleave={() => (activeDropdown = null)}
 									>
 										{#each item.dropdownItems as subItem}

@@ -7,20 +7,21 @@
 	export let link: string;
 	export let textSize: 'sm' | 'md' | 'lg' = 'md';
 
+	// Using the URL format for public directory assets
 	const imageModules = import.meta.glob(
-		'../../images/papers/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
+		'/images/papers/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
 		{
 			eager: true,
 			query: {
-				enhanced: true
+				url: true
 			}
 		}
-	) as Record<string, any>;
+	) as Record<string, { default: string }>;
 </script>
 
 <a href={link}>
 	<div class="flex flex-col p-1">
-		<enhanced:img src={imageModules[imgSrc].default} alt={altText} class="dark:invert" />
+		<img src={imgSrc} alt={altText} class="dark:invert" />
 		<h4 class="mt-3 mb-1 text-{textSize} font-bold">{title}</h4>
 		{#each authors as author}
 			<p class="text-{textSize === 'lg' ? 'md' : 'sm'} text-gray-600 dark:text-stone-400">{author}</p>

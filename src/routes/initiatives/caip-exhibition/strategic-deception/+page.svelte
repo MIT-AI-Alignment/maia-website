@@ -42,7 +42,7 @@
 					<Profile
 						name="Alek Westover"
 						position="Strategic Deception - Lead"
-						imageUrl="/src/images/people/alek-westover.jpg"
+						imageUrl="/images/people/alek-westover.jpg"
 					/>
 					<Profile
 						name="Alice Blair"

@@ -27,7 +27,7 @@
 		},
 		{
 			type: 'image',
-			src: '/src/images/initiatives/caip-exhibition/intro-panorama.jpeg',
+			src: '/images/initiatives/caip-exhibition/intro-panorama.jpeg',
 			alt: 'Wide view of the Intro Speech at the Exhibition',
 			caption: 'Wide view of the Intro Speech'
 		},
@@ -68,7 +68,7 @@
 				class="w-full h-full object-cover"
 			/> -->
 			<img
-				src="/src/images/initiatives/caip-exhibition/intro-panorama.jpeg"
+				src="/images/initiatives/caip-exhibition/intro-panorama.jpeg"
 				alt="Crowd in building lobby"
 				class="w-full h-full object-cover"
 			/>
@@ -104,7 +104,7 @@
 					<Profile
 						name="Alek Westover"
 						position="Strategic Deception - Lead"
-						imageUrl="/src/images/people/alek-westover.jpg"
+						imageUrl="/images/people/alek-westover.jpg"
 					/>
 					<Profile
 						name="Alice Blair"
@@ -136,7 +136,7 @@
 					<!-- Team Picture -->
 					<div class="md:w-1/3">
 						<ImageWithCaption
-							src="/src/images/initiatives/caip-exhibition/maia-team.jpg"
+							src="/images/initiatives/caip-exhibition/maia-team.jpg"
 							alt="MAIA Team at the Congressional Exhibition on Advanced AI"
 							caption="MAIA team at the Congressional Exhibition (Feb 2025)"
 						/>

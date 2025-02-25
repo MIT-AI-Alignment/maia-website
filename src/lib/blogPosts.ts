@@ -1,4 +1,4 @@
-const IMAGE_ROOT = '../src/images/papers';
+const IMAGE_ROOT = '/images/papers';
 
 type BlogPost = {
     title: string;

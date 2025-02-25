@@ -57,7 +57,7 @@
 			>
 				<div class="p-4">
 					<ImageWithCaption
-						src="/src/images/initiatives/broken-arm-slideshow.png"
+						src="/images/initiatives/broken-arm-slideshow.png"
 						alt="Broken Arm Slideshow Preview"
 						caption="Strategic Deception in Serious Scenarios [Slideshow]"
 						showShadow={false}
