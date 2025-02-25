@@ -35,7 +35,8 @@
 			<h1
 				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent"
 			>
-				<i class="fa-solid fa-phone-slash"></i>Targeted Phone-line Attacks: Automated Social Engineering & Manipulation using Public Information
+				<i class="fa-solid fa-phone-slash"></i>Targeted Phone-line Attacks: Automated Social
+				Engineering & Manipulation using Public Information
 			</h1>
 
 			<!-- Introduction Section -->
@@ -43,12 +44,12 @@
 				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
 					<Profile
 						name="David Turturean"
-						position="Lead on Phone-line Attack Demo"
+						position="Phone-line Attacks - Lead"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192"
 					/>
 					<Profile
 						name="Gatlen Culp"
-						position="Demo Assitant"
+						position="Phone-line Attacks"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
 					/>
 				</div>

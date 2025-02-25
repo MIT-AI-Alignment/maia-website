@@ -29,7 +29,7 @@
 		<!-- Content -->
 		<div class="px-8 md:px-24 max-w-7xl mx-auto relative">
 			<!-- Main Title -->
-			<BackLink/>
+			<BackLink />
 			<h1
 				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent"
 			>
@@ -41,12 +41,12 @@
 				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
 					<Profile
 						name="Alek Westover"
-						position="Lead on AI Strategic Deception Demo"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QL45P0E8-bdaa4ff976fe-512"
+						position="Strategic Deception - Lead"
+						imageUrl="/src/images/people/alek-westover.jpg"
 					/>
 					<Profile
 						name="Alice Blair"
-						position="Demo Assitant"
+						position="Strategic Deception"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512"
 					/>
 				</div>

@@ -8,6 +8,31 @@
 	import Link from '../../../components/Link.svelte';
 	import BackLink from '../../../components/BackLink.svelte';
 	import ImageWithCaption from '../../../components/ImageWithCaption.svelte';
+	import VideoWithCaption from '../../../components/VideoWithCaption.svelte';
+
+	// Create a type for media items
+	type MediaItem = {
+		type: 'image' | 'video';
+		src: string;
+		alt: string;
+		caption: string;
+	};
+
+	const MEDIA_ITEMS: MediaItem[] = [
+		{
+			type: 'image',
+			src: "/src/images/initiatives/caip-exhibition/intro-panorama.jpeg",
+			alt: "Wide view of the Intro Speech at the Exhibition",
+			caption: "Wide view of the Intro Speech at the Exhibition on Advanced AI"
+		},
+		{
+			type: 'video',
+			src: "https://drive.google.com/file/d/1wNzazRLN36qQI6HMdGm8ATqXfXlGq3J1/preview",
+			alt: "MAIA Congressional Exhibition Demo",
+			caption: "MAIA demonstration at the Congressional Exhibition on Advanced AI"
+		}
+		// Add more images or videos as needed
+	];
 </script>
 
 <svelte:head>
@@ -19,9 +44,14 @@
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->
-		<div class="absolute inset-0 h-[400px]">
-			<img
+		<div class="absolute inset-0 h-[700px]">
+			<!-- <img
 				src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+				alt="Crowd in building lobby"
+				class="w-full h-full object-cover"
+			/> -->
+			<img
+				src="/src/images/initiatives/caip-exhibition/intro-panorama.jpeg"
 				alt="Crowd in building lobby"
 				class="w-full h-full object-cover"
 			/>
@@ -32,7 +62,7 @@
 
 		<!-- Content -->
 		<div class="px-8 md:px-24 max-w-7xl mx-auto relative">
-			<BackLink/>
+			<BackLink />
 
 			<!-- Main Title -->
 			<h1
@@ -51,43 +81,80 @@
 					/>
 					<Profile
 						name="Gatlen Culp"
-						position="Phone-line attacks"
+						position="Phone-line Attacks"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
 					/>
 					<Profile
 						name="Alek Westover"
-						position="Lead on AI Strategic Deception Demo"
+						position="Strategic Deception - Lead"
 						imageUrl="/src/images/people/alek-westover.jpg"
 					/>
 					<Profile
 						name="Alice Blair"
-						position="Demo Assitant"
+						position="Strategic Deception"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512"
 					/>
 				</div>
-				
+
 				<!-- Overview and Team Picture -->
 				<div class="flex flex-col md:flex-row gap-8">
 					<div class="md:w-2/3">
 						<p class="text-lg leading-relaxed">
-							MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI (hosted
-							by the <Link href="https://www.centeraipolicy.org/">Center for AI Policy or CAIP</Link>)
-							in February 2025 to showcase the potential risks of AI misuse to congressional staffers.
+							MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI
+							(hosted by the <Link href="https://www.centeraipolicy.org/"
+								>Center for AI Policy or CAIP</Link
+							>, supported by <Link href="https://foster.house.gov/"
+								>Congressman Bill Foster of Illinois</Link
+							>) in February 2025 to showcase the potential risks of AI misuse to congressional
+							staffers.
 						</p>
 						<p class="mt-4 text-lg leading-relaxed">
-							Our team presented two demonstrations highlighting critical AI safety concerns: automated phone-line
-							attacks that could enable mass social engineering, and strategic deception capabilities in advanced
-							AI systems that pose significant alignment challenges.
+							Our team presented two demonstrations highlighting critical AI safety concerns:
+							automated phone-line attacks that could enable mass social engineering, and strategic
+							deception capabilities in advanced AI systems that pose significant alignment
+							challenges.
 						</p>
 					</div>
-					
+
 					<!-- Team Picture -->
 					<div class="md:w-1/3">
 						<ImageWithCaption
-							src="/src/images/initiatives/caip-exhibition-team.png"
+							src="/src/images/initiatives/caip-exhibition/maia-team.jpg"
 							alt="MAIA Team at the Congressional Exhibition on Advanced AI"
 							caption="MAIA team at the Congressional Exhibition (Feb 2025)"
 						/>
+					</div>
+				</div>
+
+				<!-- Exhibition Photos & Videos Gallery -->
+				<div class="w-full overflow-x-auto mt-8 pb-4">
+					<div class="flex flex-row gap-6" style="min-width: max-content;">
+						{#each MEDIA_ITEMS as item}
+							<div class="flex-shrink-0">
+								{#if item.type === 'image'}
+									<ImageWithCaption
+										src={item.src}
+										alt={item.alt}
+										caption={item.caption}
+										height="280px"
+										width="auto"
+										showShadow={true}
+									/>
+								{:else if item.type === 'video'}
+									<VideoWithCaption
+										videoUrl={item.src}
+										alt={item.alt}
+										caption={item.caption}
+										height="280px"
+										aspectRatio="portrait"
+										showShadow={true}
+									/>
+								{/if}
+							</div>
+						{/each}
+					</div>
+					<div class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
+						<i class="fa-solid fa-arrow-left"></i> Scroll to see more media <i class="fa-solid fa-arrow-right"></i>
 					</div>
 				</div>
 			</div>
