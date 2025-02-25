@@ -20,18 +20,35 @@
 
 	const MEDIA_ITEMS: MediaItem[] = [
 		{
+			type: 'video',
+			src: 'https://drive.google.com/file/d/1HAMlY-cNGfm0ODQUy2gQklq3RGRwvwnt/preview',
+			alt: "Senator Foster's Introductory Speech",
+			caption: 'Opening remarks from Senator Foster'
+		},
+		{
 			type: 'image',
-			src: "/src/images/initiatives/caip-exhibition/intro-panorama.jpeg",
-			alt: "Wide view of the Intro Speech at the Exhibition",
-			caption: "Wide view of the Intro Speech at the Exhibition on Advanced AI"
+			src: '/src/images/initiatives/caip-exhibition/intro-panorama.jpeg',
+			alt: 'Wide view of the Intro Speech at the Exhibition',
+			caption: 'Wide view of the Intro Speech'
 		},
 		{
 			type: 'video',
-			src: "https://drive.google.com/file/d/1wNzazRLN36qQI6HMdGm8ATqXfXlGq3J1/preview",
-			alt: "MAIA Congressional Exhibition Demo",
-			caption: "MAIA demonstration at the Congressional Exhibition on Advanced AI"
+			src: 'https://drive.google.com/file/d/1wNzazRLN36qQI6HMdGm8ATqXfXlGq3J1/preview',
+			alt: 'MAIA Congressional Exhibition Walkthrough',
+			caption: 'Video walkthrough of the Exhibition'
+		},
+		{
+			type: 'video',
+			src: 'https://drive.google.com/file/d/1X_vKrQtqJ_iaWzChgKsCmgp_aF5_Lfa5/preview',
+			alt: 'Exhibition Panorama',
+			caption: 'Panoramic video of the Exhibition'
+		},
+		{
+			type: 'video',
+			src: 'https://drive.google.com/file/d/1EFrAzf6jNfShOCknYReO2TmBhYb4sWjZ/preview',
+			alt: 'CAIP Intro Speech',
+			caption: 'Introductory speech from the Center for AI Policy (CAIP)'
 		}
-		// Add more images or videos as needed
 	];
 </script>
 
@@ -154,9 +171,11 @@
 						{/each}
 					</div>
 					<div class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
-						<i class="fa-solid fa-arrow-left"></i> Scroll to see more media <i class="fa-solid fa-arrow-right"></i>
+						<i class="fa-solid fa-arrow-left"></i> Scroll to see more media
+						<i class="fa-solid fa-arrow-right"></i>
 					</div>
 				</div>
+				<p>(More media to be released when CAIP releases their footage)</p>
 			</div>
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />

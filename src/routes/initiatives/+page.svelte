@@ -4,6 +4,7 @@
 	import Navbar from '../components/navbar.svelte';
 	import PapersExpandable from '../components/PapersExpandable.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
+	import CongressionalExhibition from '../../components/CongressionalExhibition.svelte';
 
 	type Section = {
 		id: string;
@@ -17,7 +18,7 @@
 			id: 'current',
 			title: 'Current Projects',
 			icon: 'fa-solid fa-rocket',
-			component: null
+			component: CongressionalExhibition
 		},
 		{
 			id: 'research',
@@ -53,19 +54,7 @@
 				{#if section.component}
 					<svelte:component this={section.component} />
 				{:else}
-					<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
-					<div class="mt-4 p-6 border rounded-lg border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-						<a href="." class="block">
-							<h3 class="text-xl font-bold mb-2">
-								<i class="fa-solid fa-building-columns mr-2"></i>
-								Congressional Exhibition on Advanced AI (More info soon!)
-							</h3>
-							<p class="text-gray-600 dark:text-gray-300">
-								MAIA members showcased AI safety concerns to congressional staffers, featuring demonstrations on phone-line attacks and AI strategic deception.
-							</p>
-							<span class="text-purple-600 dark:text-purple-300 mt-2 inline-block">Learn more →</span>
-						</a>
-					</div>
+					<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
 				{/if}
 			</section>
 			<br />

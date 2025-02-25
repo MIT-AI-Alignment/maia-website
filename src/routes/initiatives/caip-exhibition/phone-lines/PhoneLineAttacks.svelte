@@ -29,12 +29,12 @@
 
 	// Audio demo files
 	const audioDemos = [
-		{
-			title: 'Congressional Demo Call',
-			description: 'Example of an AI-generated call targeting congressional offices',
-			file: '/src/audio/congressional-demo.mp3',
-			icon: 'fa-solid fa-landmark'
-		},
+		// {
+		// 	title: 'Congressional Demo Call',
+		// 	description: 'Example of an AI-generated call targeting congressional offices',
+		// 	file: '/src/audio/congressional-demo.mp3',
+		// 	icon: 'fa-solid fa-landmark'
+		// },
 		{
 			title: 'Emergency Services Demo',
 			description: 'Demonstration of potential attacks on emergency service lines',
