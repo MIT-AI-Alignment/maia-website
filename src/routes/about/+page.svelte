@@ -26,7 +26,6 @@
 			title: 'Advisors',
 			icon: 'fa-solid fa-chalkboard-user',
 			component: Advisors,
-			footer: true
 		}
 	];
 </script>
@@ -57,13 +56,6 @@
 				<br />
 
 				<svelte:component this={section.component} />
-
-				{#if section.footer}
-					<p>
-						<i>Last Updated: 2025-02-03</i>
-					</p>
-					<p><i>Positions are subject to change as the spring semester progresses.</i></p>
-				{/if}
 			</section>
 			<br />
 			<hr />
