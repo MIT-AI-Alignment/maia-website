@@ -2,14 +2,15 @@
   export let videoUrl: string;
   export let alt: string;
   export let caption: string;
-  export let width = "auto";
   export let height = "280px";
+  export let width: string | undefined = undefined;
   export let showShadow = true;
-  export let posterImage: string | undefined = undefined;
   export let aspectRatio: "landscape" | "portrait" | "square" = "landscape";
   
-  // Calculate width based on aspect ratio and height
+  // Calculate width based on aspect ratio and height if width is not provided
   const getWidth = () => {
+    if (width) return width;
+    
     const heightNum = Number.parseInt(height);
     switch (aspectRatio) {
       case "landscape": return `${heightNum * (16/9)}px`; // 16:9
