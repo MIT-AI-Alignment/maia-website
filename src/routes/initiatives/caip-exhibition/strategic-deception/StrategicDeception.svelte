@@ -128,7 +128,9 @@
 				<p>
 					For more information contact Alek Westover at <Link href="mailto://alekw@mit.edu"
 						>alekw@mit.edu</Link
-					>
+					> or Alice Blair at <Link href="mailto://amblair@mit.edu"
+					>amblair@mit.edu</Link
+				>
 				</p>
 				<p>
 					Download our <Link

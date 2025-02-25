@@ -3,6 +3,7 @@
 	import PapersExpandable from '../../../components/PapersExpandable.svelte';
 	import ContentCard from '../../../../components/ContentCard.svelte';
 	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
+	import Link from '../../../../components/Link.svelte';
 
 	type Section = {
 		id: string;
@@ -203,27 +204,18 @@
 
 		<!-- Contact Information Section -->
 		<ContentCard>
-			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-				<i class="fa-solid fa-address-card text-purple-500"></i>
+			<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+				<i class="fa-solid fa-envelope text-purple-500"></i>
 				<span>Contact Information</span>
 			</h3>
-			<p class="mb-4">For inquiries about this demonstration, please contact:</p>
-			<ul class="list-disc pl-6 space-y-2 mb-4">
-				<li>
-					<strong>David Turturean</strong><br />
-					Email:
-					<a href="mailto:davidct@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline"
-						>davidct@mit.edu</a
-					>
-				</li>
-				<li>
-					<strong>Gatlen Culp</strong><br />
-					Email:
-					<a href="mailto:gculp@mit.edu" class="text-blue-600 dark:text-blue-400 hover:underline"
-						>gculp@mit.edu</a
-					>
-				</li>
-			</ul>
+			<div class="space-y-3">
+				<p>
+					For inquiries about this demonstration, please contact David Turturean at 
+					<Link href="mailto:davidct@mit.edu">davidct@mit.edu</Link>
+					or Gatlen Culp at
+					<Link href="mailto:gculp@mit.edu">gculp@mit.edu</Link>
+				</p>
+			</div>
 		</ContentCard>
 	</ContentCardsMasonry>
 </div>

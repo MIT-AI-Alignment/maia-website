@@ -46,18 +46,18 @@
 				<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
 					<Profile
 						name="David Turturean"
-						position="Lead on Phone-line Attack Demo"
+						position="Phone-line Attacks - Lead"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192"
 					/>
 					<Profile
 						name="Gatlen Culp"
-						position="Demo Assitant"
+						position="Phone-line attacks"
 						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
 					/>
 					<Profile
 						name="Alek Westover"
 						position="Lead on AI Strategic Deception Demo"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QL45P0E8-bdaa4ff976fe-512"
+						imageUrl="/src/images/people/alek-westover.jpg"
 					/>
 					<Profile
 						name="Alice Blair"
@@ -98,8 +98,7 @@
 			<SectionHeader
 				icon="fa-solid fa-phone-slash"
 				iconColor="red-500"
-				text="Automated Social Engineering & Manipulation using Targeted AI Phone-line
-				Attacks"
+				text="Targeted Phone-line Attacks: Automated Social Engineering & Manipulation using Public Information"
 			/>
 			<div class="flex justify-end -mt-4 mb-4">
 				<Link href="./phone-lines">
