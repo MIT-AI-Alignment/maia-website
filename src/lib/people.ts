@@ -61,6 +61,9 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Ionel Chiosa',
 		position: 'Co-Director; AI Safety Fundamentals Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
+		mitEmail: 'ichiosa@mit.edu',
+		github: 'https://github.com/nelionel',
+		linkedin: 'www.linkedin.com/in/ionelchiosa',
 		isExec: true,
 		isActive: true
 	},
@@ -69,6 +72,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Kaivu Hariharan',
 		position: 'Co-Director; Member Engagement Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040TKYD3QE-dbf946acd13c-512',
+		mitEmail: 'kaivu@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -85,6 +89,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Emre Yavuz',
 		position: 'Operations Director; Workshops and Socials Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192',
+		email: 'y.emreyavuz@outlook.com.tr',
 		isExec: true,
 		isActive: true
 	},
@@ -93,6 +98,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Duru Ozer',
 		position: 'AI Safety Fundamentals Co-Lead; Workshops Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07PXQ78WQZ-4273ee2db04d-192',
+		mitEmail: 'duru@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -101,6 +107,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Daria Ivanova',
 		position: 'Technical Development Co-Lead; Socials Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
+		mitEmail: 'divanova@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -161,6 +168,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Tara Rezaei Kheirkhah',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U0524UVD1J4-b15bb5cabe16-192',
+		mitEmail: 'tarark@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -183,7 +191,8 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Eleni Shor',
 		position: 'Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040KLXL7NK-88e0aed77925-192',
-		isExec: true,
+		email: 'eleni.shor@proton.me',
+		isExec: false,
 		isActive: false,
 		isAdvisor: true
 	},
@@ -274,7 +283,7 @@ export function getContactPreference(person: Person, platform: string): string |
 // Helper function to get people by project and sort them by their project order
 export function getSortedPeopleByProject(projectId: string): Person[] {
 	const people = getPeopleByProject(projectId);
-
+	
 	// Sort people by their project order (if specified)
 	return people.sort((a, b) => {
 		const orderA = a.projectOrder?.[projectId] ?? 999; // Default to a high number if not specified
