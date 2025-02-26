@@ -79,6 +79,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Misha Gerovitch',
 		position: 'Deputy Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192',
+		mitEmail: 'mgerov@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -157,6 +158,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'jen-ben-arye',
 		name: 'Jen Ben Arye',
 		position: 'Field-Building Co-Lead',
+		mitEmail: 'jen_ben@mit.edu',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
 		isExec: true,
 		isActive: true
