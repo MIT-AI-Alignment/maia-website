@@ -9,6 +9,11 @@
 	import BackLink from '../../../components/BackLink.svelte';
 	import ImageWithCaption from '../../../components/ImageWithCaption.svelte';
 	import VideoWithCaption from '../../../components/VideoWithCaption.svelte';
+	import { PEOPLE, getSortedPeopleByProject, getPersonProjectRole, type Person } from '$lib/people';
+
+	// Get people involved in the CAIP exhibition projects
+	const phoneLineTeam = getSortedPeopleByProject('phone-line-attacks');
+	const strategicDeceptionTeam = getSortedPeopleByProject('strategic-deception');
 
 	// Create a type for media items
 	type MediaItem = {
@@ -62,11 +67,6 @@
 	<div class="relative">
 		<!-- Hero Image -->
 		<div class="absolute inset-0 h-[700px]">
-			<!-- <img
-				src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				alt="Crowd in building lobby"
-				class="w-full h-full object-cover"
-			/> -->
 			<img
 				src="/images/initiatives/caip-exhibition/intro-panorama.jpeg"
 				alt="Crowd in building lobby"
@@ -91,26 +91,18 @@
 			<!-- Introduction Section -->
 			<div class="mt-12 space-y-8 max-w-5xl">
 				<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-					<Profile
-						name="David Turturean"
-						position="Phone-line Attacks - Lead"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192"
-					/>
-					<Profile
-						name="Gatlen Culp"
-						position="Phone-line Attacks"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
-					/>
-					<Profile
-						name="Alek Westover"
-						position="Strategic Deception - Lead"
-						imageUrl="/images/people/alek-westover.jpg"
-					/>
-					<Profile
-						name="Alice Blair"
-						position="Strategic Deception"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512"
-					/>
+					{#each phoneLineTeam as person}
+						<Profile
+							personId={person.id}
+							subtitle={getPersonProjectRole(person, 'phone-line-attacks')}
+						/>
+					{/each}
+					{#each strategicDeceptionTeam as person}
+						<Profile
+							personId={person.id}
+							subtitle={getPersonProjectRole(person, 'strategic-deception')}
+						/>
+					{/each}
 				</div>
 
 				<!-- Overview and Team Picture -->
