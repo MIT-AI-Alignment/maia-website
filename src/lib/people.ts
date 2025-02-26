@@ -62,8 +62,6 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Co-Director; AI Safety Fundamentals Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		mitEmail: 'ichiosa@mit.edu',
-		github: 'https://github.com/nelionel',
-		linkedin: 'www.linkedin.com/in/ionelchiosa',
 		isExec: true,
 		isActive: true
 	},
