@@ -141,10 +141,15 @@ The Profile component accepts the following display options:
 - `showSocials`: Whether to show social media links (default: `true`)
 - `showAllContacts`: Whether to show all contact information (default: `false`)
 - `showAllSocials`: Whether to show all social media links or just the default ones (default: `false`)
+- `showExpandButton`: Whether to show an expand/collapse button for additional contact information (default: `false`)
 
 By default, the Profile component displays social icons in the following order: Personal Website, Email (MIT email is prioritized if available), LinkedIn, and Google Scholar. To show additional social media icons (GitHub, GitLab, Twitter, Instagram, Medium), set `showAllSocials` to `true`.
 
-**Note:** For email contacts, the component will prioritize displaying MIT email addresses in the social icons. If a person doesn't have an MIT email, their personal email will be shown instead.
+When `showExpandButton` is set to `true`, a visually distinctive purple chevron icon will appear alongside the social icons if the person has additional contact information. Clicking this icon will expand the profile to show all contact details and social links. The expanded content appears in a floating card with a consistent purple color scheme throughout, including section headers, borders, icons, and links.
+
+The dropdown has a minimum width of 280px and can expand up to 400px to accommodate longer content. Text within the dropdown will wrap naturally for better readability, ensuring that even long email addresses or URLs are fully visible. The dropdown also features a smooth roll-down/up animation when opened or closed for a more polished user experience.
+
+**Note:** For email contacts, the component will prioritize displaying MIT email addresses in the social icons. If a person doesn't have an MIT email, their personal email will be shown instead. Academic profile links like Google Scholar, arXiv, and OpenReview are properly formatted to display clean, readable identifiers rather than full URLs.
 
 #### Person-specific Display Preferences
 

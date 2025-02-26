@@ -95,12 +95,14 @@
 						<Profile
 							personId={person.id}
 							subtitle={getPersonProjectRole(person, 'phone-line-attacks')}
+							showExpandButton={true}
 						/>
 					{/each}
 					{#each strategicDeceptionTeam as person}
 						<Profile
 							personId={person.id}
 							subtitle={getPersonProjectRole(person, 'strategic-deception')}
+							showExpandButton={true}
 						/>
 					{/each}
 				</div>

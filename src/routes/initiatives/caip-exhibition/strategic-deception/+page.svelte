@@ -47,6 +47,7 @@
 						<Profile
 							personId={person.id}
 							subtitle={getPersonProjectRole(person, 'strategic-deception')}
+							showExpandButton={true}
 						/>
 					{/each}
 				</div>
