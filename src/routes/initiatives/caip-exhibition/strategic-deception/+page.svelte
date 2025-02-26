@@ -4,6 +4,10 @@
 	import Navbar from '../../../components/navbar.svelte';
 	import Profile from '../../../about/profile.svelte';
 	import BackLink from '../../../../components/BackLink.svelte';
+	import { getSortedPeopleByProject, getPersonProjectRole } from '$lib/people';
+	
+	// Get people involved in the strategic deception project, sorted by their project order
+	const strategicDeceptionTeam = getSortedPeopleByProject('strategic-deception');
 </script>
 
 <svelte:head>
@@ -39,16 +43,12 @@
 			<!-- Introduction Section -->
 			<div class="mt-12 space-y-8 max-w-5xl">
 				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
-					<Profile
-						name="Alek Westover"
-						position="Strategic Deception - Lead"
-						imageUrl="/images/people/alek-westover.jpg"
-					/>
-					<Profile
-						name="Alice Blair"
-						position="Strategic Deception"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512"
-					/>
+					{#each strategicDeceptionTeam as person}
+						<Profile
+							personId={person.id}
+							subtitle={getPersonProjectRole(person, 'strategic-deception')}
+						/>
+					{/each}
 				</div>
 			</div>
 

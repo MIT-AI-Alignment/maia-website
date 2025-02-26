@@ -118,7 +118,7 @@ export const PEOPLE: Record<string, Person> = {
 		github: 'https://github.com/GatlenCulp',
 		gitlab: 'https://gitlab.com/GatlenCulp',
 		linkedin: 'https://www.linkedin.com/in/gatlen-culp/',
-		personalPage: 'gatlen.notion.site',
+		personalPage: 'https://gatlen.notion.site',
 		instagram: 'https://www.instagram.com/gatl0n/',
 		medium: '@gatlenculp',
 
@@ -126,7 +126,7 @@ export const PEOPLE: Record<string, Person> = {
 		slack: 'GatlenCulp@gmail.com',
 
 		// Academic profiles
-		googleScholar: 'Gatlen Culp',
+		googleScholar: 'https://scholar.google.com/citations?user=_rnqEboAAAAJ&hl=en',
 		orcid: 'https://orcid.org/0000-0001-5704-6251',
 		arxiv: 'GatlenCulp',
 		openreview: 'https://openreview.net/profile?id=~Gatlen_Culp1',
@@ -142,7 +142,7 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
-			'phone-line-attacks': 'Phone-line Attacks - Developer'
+			'phone-line-attacks': 'Phone-line Attacks'
 		},
 		projectOrder: {
 			'phone-line-attacks': 2 // Second in the phone-line attacks project
@@ -194,10 +194,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'David Turturean',
 		position: 'Phone-line Attacks - Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
-		
+
 		// Contact information
 		mitEmail: 'davidct@mit.edu',
-		
+
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -212,10 +212,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Alek Westover',
 		position: 'Strategic Deception - Lead',
 		imageUrl: '/images/people/alek-westover.jpg',
-		
+
 		// Contact information
 		mitEmail: 'alekw@mit.edu',
-		
+
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {
@@ -230,10 +230,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Alice Blair',
 		position: 'Strategic Deception',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512',
-		
+
 		// Contact information
 		mitEmail: 'amblair@mit.edu',
-		
+
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {
@@ -274,7 +274,7 @@ export function getContactPreference(person: Person, platform: string): string |
 // Helper function to get people by project and sort them by their project order
 export function getSortedPeopleByProject(projectId: string): Person[] {
 	const people = getPeopleByProject(projectId);
-	
+
 	// Sort people by their project order (if specified)
 	return people.sort((a, b) => {
 		const orderA = a.projectOrder?.[projectId] ?? 999; // Default to a high number if not specified

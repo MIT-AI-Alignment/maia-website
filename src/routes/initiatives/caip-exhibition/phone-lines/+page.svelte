@@ -6,6 +6,10 @@
 	import Profile from '../../../about/profile.svelte';
 	import Link from '../../../../components/Link.svelte';
 	import BackLink from '../../../../components/BackLink.svelte';
+	import { getSortedPeopleByProject, getPersonProjectRole } from '$lib/people';
+	
+	// Get people involved in the phone-line attacks project, sorted by their project order
+	const phoneLineTeam = getSortedPeopleByProject('phone-line-attacks');
 </script>
 
 <svelte:head>
@@ -42,16 +46,12 @@
 			<!-- Introduction Section -->
 			<div class="mt-12 space-y-8">
 				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
-					<Profile
-						name="David Turturean"
-						position="Phone-line Attacks - Lead"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192"
-					/>
-					<Profile
-						name="Gatlen Culp"
-						position="Phone-line Attacks"
-						imageUrl="https://ca.slack-edge.com/T040KLU5EHM-U04N2FE5BT9-f14f224d78bb-512"
-					/>
+					{#each phoneLineTeam as person}
+						<Profile
+							personId={person.id}
+							subtitle={getPersonProjectRole(person, 'phone-line-attacks')}
+						/>
+					{/each}
 				</div>
 			</div>
 
