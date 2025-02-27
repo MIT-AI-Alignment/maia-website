@@ -1,64 +1,71 @@
 <script>
-	import Footer from './components/footer.svelte';
-	import Navbar from './components/navbar.svelte';
+	import PageLayout from '../components/PageLayout.svelte';
+	import SectionContainer from '../components/SectionContainer.svelte';
+	import Button from '../components/Button.svelte';
 	import Orgs from './components/orgs.svelte';
 	import Papers from './components/papers.svelte';
 	import { CONFIG } from '$lib/config';
 </script>
 
-<svelte:head>
-	<title>MIT AI Alignment</title>
-	<meta
-		name="description"
-		content="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
-	/>
-</svelte:head>
-
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-white">
-	<Navbar />
-	<div class="px-8 md:px-24">
-		<h1 class="pt-48 md:pt-48 text-4xl md:text-6xl md:w-2/3 font-heading font-[550]">
-			We're a group of MIT students conducting research to <span
-				class="text-purple-600 dark:text-purple-500">reduce risk from advanced AI</span
-			>.
-		</h1>
-		<h2 class="pt-16 text-lg md:w-2/3">
-			We think that reducing risks from advanced artificial intelligence may be one of the most
-			important problems of our time. We also think it’s a highly interesting and exciting problem,
-			with open opportunities for many more researchers to make progress on it.<br /><br />
-			MAIA supports undergraduate and graduate students in conducting research relevant to reducing risks
-			from advanced AI. <br /><br />We also run a semester-long introductory reading group on AI
-			safety, including both a technical machine learning track and a policy track.
-		</h2>
-
-		{#if CONFIG.aisf_ml.visible}
-			<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
-				><h2
-					class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
-				>
-					Apply to our technical AI safety program &rarr;
-				</h2></a
-			>
-		{/if}
-		{#if CONFIG.aisf_gov.visible}
-			<a href="https://haist.ai/policy-fellowship"
-				><h2
-					class="w-fit mt-4 text-lg underline bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md py-2 px-4"
-				>
-					Apply to our policy AI safety program &rarr;
-				</h2></a
-			>
-		{/if}
-
-		<h2 class="pt-20 pb-8 text-3xl w-2/3 font-heading font-bold">Selected Research</h2>
+<PageLayout
+	title="MIT AI Alignment"
+	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
+	heroTitle="We're a group of MIT students conducting research to <span class='text-purple-600 dark:text-purple-500'>reduce risk from advanced AI</span>."
+>
+	<svelte:fragment slot="hero-content">
+		<div class="prose dark:prose-invert max-w-none">
+			<p class="text-lg md:w-2/3">
+				We think that reducing risks from advanced artificial intelligence may be one of the most
+				important problems of our time. We also think it's a highly interesting and exciting problem,
+				with open opportunities for many more researchers to make progress on it.
+			</p>
+			<p class="text-lg md:w-2/3">
+				MAIA supports undergraduate and graduate students in conducting research relevant to reducing risks
+				from advanced AI.
+			</p>
+			<p class="text-lg md:w-2/3">
+				We also run a semester-long introductory reading group on AI
+				safety, including both a technical machine learning track and a policy track.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 mt-8">
+				{#if CONFIG.aisf_ml.visible}
+					<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd">
+						<Button 
+							text="Apply to our technical AI safety program" 
+							icon="fa-solid fa-arrow-right" 
+							type="purple"
+						/>
+					</a>
+				{/if}
+				{#if CONFIG.aisf_gov.visible}
+					<a href="https://haist.ai/policy-fellowship">
+						<Button 
+							text="Apply to our policy AI safety program" 
+							icon="fa-solid fa-arrow-right" 
+							type="fuchsia"
+						/>
+					</a>
+				{/if}
+			</div>
+		</div>
+	</svelte:fragment>
+	
+	<SectionContainer
+		title="Selected Research"
+		icon="fa-solid fa-book-open"
+	>
 		<Papers />
-
-		<h2 class="pt-12 text-3xl w-2/3 font-heading font-bold">Organizations we work with</h2>
+	</SectionContainer>
+	
+	<SectionContainer
+		title="Organizations we work with"
+		icon="fa-solid fa-building"
+	>
 		<Orgs />
-		<p class="pt-12 pb-12">
+		<p class="mt-6">
 			This is a list of some of the organizations our members have worked with. Not all
 			organisations listed endorse or are affiliated with MAIA.
 		</p>
-	</div>
-	<Footer></Footer>
-</main>
+	</SectionContainer>
+</PageLayout>

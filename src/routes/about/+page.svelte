@@ -1,17 +1,16 @@
 <script lang="ts">
 	import type { ComponentType } from 'svelte';
-	import Footer from '../components/footer.svelte';
-	import Navbar from '../components/navbar.svelte';
+	import PageLayout from '../../components/PageLayout.svelte';
+	import SectionContainer from '../../components/SectionContainer.svelte';
+	import Button from '../../components/Button.svelte';
 	import Advisors from './advisors.svelte';
 	import Execs from './execs.svelte';
-	import UpdateNotification from '../components/UpdateNotification.svelte';
 
 	type Section = {
 		id: string;
 		title: string;
 		icon: string;
 		component: ComponentType | null;
-		footer?: boolean;
 	};
 
 	const sections: Section[] = [
@@ -28,38 +27,58 @@
 			component: Advisors,
 		}
 	];
+	
+	function scrollToSection(id: string) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
-<svelte:head>
-	<title>MAIA - About</title>
-	<meta
-		name="description"
-		content="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
-	/>
-</svelte:head>
-
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
-	<Navbar />
-	<div class="px-8 md:px-24">
-		<h1 class="pt-48 text-4xl md:text-4xl lg:text-5xl w-full md:w-4/5 font-heading font-[550]">
-			<i class="fa-solid fa-users-gear"></i> Meet the Team
-		</h1>
-		<br />
-		<hr />
-
-		{#each sections as section}
-			<section id={section.id}>
-				<h2 class="pt-12 text-2xl font-heading font-[550]">
-					<i class={section.icon}></i>
-					{section.title}
-				</h2>
-				<br />
-
-				<svelte:component this={section.component} />
-			</section>
-			<br />
-			<hr />
-		{/each}
+<PageLayout
+	title="About"
+	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
+	heroIcon="fa-solid fa-users-gear"
+	heroTitle="Meet the Team"
+	centerTitle={true}
+>
+	<svelte:fragment slot="hero-content">
+		<div class="flex flex-wrap justify-center gap-3 mb-8">
+			{#each sections as section}
+				<Button 
+					text={section.title} 
+					icon={section.icon} 
+					type="outline" 
+					size="md" 
+					on:click={() => scrollToSection(section.id)} 
+				/>
+			{/each}
+		</div>
+	</svelte:fragment>
+	
+	{#each sections as section, i}
+		<SectionContainer
+			id={section.id}
+			title={section.title}
+			icon={section.icon}
+		>
+			<svelte:component this={section.component} />
+		</SectionContainer>
+		
+		{#if i < sections.length - 1}
+			<div class="flex justify-center mb-16">
+				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+			</div>
+		{/if}
+	{/each}
+	
+	<div class="flex justify-center mt-8 mb-12">
+		<Button 
+			text="Back to Top" 
+			icon="fa-solid fa-arrow-up" 
+			type="text" 
+			on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+		/>
 	</div>
-	<Footer />
-</main>
+</PageLayout>
