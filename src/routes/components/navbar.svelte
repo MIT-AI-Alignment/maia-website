@@ -5,6 +5,7 @@
 	import { CONFIG } from '$lib/config';
 	import { NAVIGATION_ITEMS } from '$lib/navItems';
 	import { pageNavItems } from '$lib/stores/navigation';
+	import { theme } from '$lib/stores/theme';
 	import Banner from './banner.svelte';
 	import NavItem from './NavItem.svelte';
 	import MobileMenu from './MobileMenu.svelte';
@@ -29,9 +30,15 @@
 		if (scrollY > 20) {
 			isScrolled = true;
 			navbarHeight = '3.5rem';
-			navbarBg = 'bg-white/95 dark:bg-maia_black/95';
-			navbarBorder = 'border-gray-200 dark:border-gray-800';
-			navbarShadow = 'shadow-sm dark:shadow-purple-900/10';
+			navbarBg = $theme === 'dark' 
+				? 'bg-maia_black/95' 
+				: 'bg-white/95';
+			navbarBorder = $theme === 'dark'
+				? 'border-gray-800'
+				: 'border-gray-200';
+			navbarShadow = $theme === 'dark'
+				? 'shadow-sm shadow-purple-900/10'
+				: 'shadow-sm';
 		} else {
 			isScrolled = false;
 			navbarHeight = '4rem';
@@ -73,12 +80,14 @@
 	
 	// Set up scroll listener
 	onMount(() => {
-		window.addEventListener('scroll', handleScroll);
-		handleScroll(); // Initial check
-		
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
+		if (browser) {
+			window.addEventListener('scroll', handleScroll);
+			handleScroll(); // Initial check
+			
+			return () => {
+				window.removeEventListener('scroll', handleScroll);
+			};
+		}
 	});
 	
 	// Update CSS variables when they change
@@ -125,14 +134,9 @@
 				<div class="flex-shrink-0 flex items-center">
 					<a href="/" class="flex items-center">
 						<img 
-							src={isScrolled ? "/images/maia.svg" : "/images/maia.svg"} 
+							src={$theme === 'dark' ? "/images/maia_dark.svg" : "/images/maia.svg"} 
 							alt="MAIA logo" 
-							class="h-7 w-auto dark:hidden"
-						/>
-						<img 
-							src={isScrolled ? "/images/maia_dark.svg" : "/images/maia_dark.svg"} 
-							alt="MAIA logo" 
-							class="h-7 w-auto hidden dark:block"
+							class="h-7 w-auto"
 						/>
 					</a>
 				</div>

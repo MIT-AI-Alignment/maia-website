@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { theme } from '$lib/stores/theme';
 	import Footer from '../routes/components/footer.svelte';
 	import Navbar from '../routes/components/navbar.svelte';
 	import { updatePageNavItems, clearPageNavItems, type DropdownItem } from '$lib/stores/navigation';
@@ -34,11 +35,13 @@
 	<Navbar />
 	
 	<!-- Hero Section -->
-	<div class="bg-gradient-to-b from-purple-500/5 via-purple-500/3 to-transparent dark:from-purple-500/10 dark:via-purple-500/5 pt-32 pb-12">
+	<div class="bg-gradient-to-b {$theme === 'dark' 
+		? 'from-purple-500/10 via-purple-500/5 to-transparent' 
+		: 'from-purple-500/5 via-purple-500/3 to-transparent'} pt-32 pb-12">
 		<div class="px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="pt-16 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}
-					<i class="{heroIcon} mr-3 text-purple-600"></i>
+					<i class="{heroIcon} mr-3 text-purple-600 dark:text-purple-500"></i>
 				{/if}
 				{@html heroTitle}
 			</h1>

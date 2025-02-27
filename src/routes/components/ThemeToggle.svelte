@@ -1,37 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
+  import { theme, toggleTheme } from '$lib/stores/theme';
   
-  let darkMode = false;
-  
-  onMount(() => {
-    // Check if user has a theme preference in localStorage
-    if (browser) {
-      const savedTheme = localStorage.getItem('theme');
-      
-      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        darkMode = true;
-        document.documentElement.classList.add('dark');
-      } else {
-        darkMode = false;
-        document.documentElement.classList.remove('dark');
-      }
-    }
-  });
-  
-  function toggleTheme() {
-    darkMode = !darkMode;
-    
-    if (browser) {
-      if (darkMode) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-  }
+  // Local reactive variable for the toggle state
+  $: darkMode = $theme === 'dark';
 </script>
 
 <button

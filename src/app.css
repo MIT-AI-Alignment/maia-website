@@ -4,6 +4,27 @@
 
 :root {
   --navbar-height: 4rem;
+  
+  /* Light mode variables */
+  --background-color: #fdfbfe;
+  --text-color: #1b1023;
+  --border-color: #e5e7eb;
+  --hover-color: rgba(102, 51, 153, 0.05);
+}
+
+.dark {
+  /* Dark mode variables */
+  --background-color: #1b1023;
+  --text-color: #fdfbfe;
+  --border-color: #374151;
+  --hover-color: rgba(102, 51, 153, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-maia_white dark:bg-maia_black text-maia_black dark:text-maia_white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }
 
 /* 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
   import { page } from '$app/stores';
+  import { theme } from '$lib/stores/theme';
   
   export let item: {
     label: string;
@@ -51,8 +52,9 @@
   <div class="w-full">
     <button
       class="px-6 py-2 w-full text-left flex items-center justify-between transition-colors duration-200
-             {isActive ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30' : 
-                        'hover:bg-purple-50 dark:hover:bg-purple-950/30'}"
+             {isActive 
+               ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30' 
+               : 'hover:bg-purple-50 dark:hover:bg-purple-950/30'}"
       on:click={handleClick}
     >
       <div class="flex items-center gap-2">
@@ -65,14 +67,15 @@
     </button>
     
     {#if item.dropdownItems && activeDropdown === item.label}
-      <div transition:slide={{ duration: 200 }} class="bg-purple-50/50 dark:bg-purple-950/20">
+      <div transition:slide={{ duration: 200 }} 
+           class="{$theme === 'dark' ? 'bg-purple-950/20' : 'bg-purple-50/50'}">
         {#each item.dropdownItems as subItem}
           <a
             href={subItem.href}
             class="px-12 py-2 block w-full text-left transition-colors duration-200
-                   {$page.url.pathname + $page.url.hash === subItem.href || $page.url.pathname === subItem.href.split('#')[0] ? 
-                    'text-purple-600 dark:text-purple-400 bg-purple-100/50 dark:bg-purple-950/40' : 
-                    'hover:bg-purple-100/50 dark:hover:bg-purple-950/40'}"
+                   {$page.url.pathname + $page.url.hash === subItem.href || $page.url.pathname === subItem.href.split('#')[0] 
+                    ? 'text-purple-600 dark:text-purple-400 bg-purple-100/50 dark:bg-purple-950/40' 
+                    : 'hover:bg-purple-100/50 dark:hover:bg-purple-950/40'}"
           >
             {subItem.label}
           </a>
