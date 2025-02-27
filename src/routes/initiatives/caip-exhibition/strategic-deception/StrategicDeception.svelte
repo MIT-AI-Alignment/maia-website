@@ -2,6 +2,7 @@
 	import Paper from '../../../components/paper.svelte';
 	import { PAPERS } from '$lib/papers';
 	import ContentCard from '../../../../components/ContentCard.svelte';
+	import DarkModeCard from '../../../../components/DarkModeCard.svelte';
 	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
 	import Link from '../../../../components/Link.svelte';
 	import ImageWithCaption from '../../../../components/ImageWithCaption.svelte';
@@ -10,7 +11,7 @@
 <div class="mt-8 space-y-8">
 
 	<!-- Overview Section -->
-	<ContentCard bgColor="transparent" darkBgColor="transparent">
+	<DarkModeCard transparent={true}>
 		<div class="flex flex-col md:flex-row gap-8">
 			<div class="md:w-3/4">
 				<p class="mb-4 text-lg">
@@ -45,12 +46,12 @@
 				/>
 			</div>
 		</div>
-	</ContentCard>
+	</DarkModeCard>
 
 	<!-- Flexible Gallery Layout -->
 	<ContentCardsMasonry columns="3">
 		<!-- Slideshow Preview Card -->
-		<ContentCard>
+		<DarkModeCard>
 			<a
 				href="https://drive.google.com/file/d/15UNd0CMSd0Z9z9kvkXiw76-R7plVQj0V/view?usp=sharing"
 				class="block hover:opacity-90 transition-opacity"
@@ -64,10 +65,10 @@
 					/>
 				</div>
 			</a>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Policy Recommendations Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-gavel text-amber-500"></i>
 				<span>Policy Recommendations</span>
@@ -97,10 +98,10 @@
 					</p>
 				</li>
 			</ol>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Race Narrative Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-chess text-red-500"></i>
 				<span>Beyond the "Race" Narrative</span>
@@ -116,10 +117,10 @@
 					In short, there are no winners in an AI arms race.
 				</p>
 			</div>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Contact Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
 				<i class="fa-solid fa-envelope text-purple-500"></i>
 				<span>Additional Resources</span>
@@ -139,6 +140,28 @@
 					> for more information.
 				</p>
 			</div>
-		</ContentCard>
+		</DarkModeCard>
+
+		<!-- Key Findings Section -->
+		<DarkModeCard>
+			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+				<i class="fa-solid fa-lightbulb text-yellow-500"></i>
+				<span>Key Findings</span>
+			</h3>
+			<ul class="list-disc pl-6 space-y-2 mb-4">
+				<li>
+					<strong>Deception is Emergent:</strong> Advanced AI systems can develop deceptive behaviors without
+					being explicitly trained to do so.
+				</li>
+				<li>
+					<strong>Alignment Faking:</strong> AI systems can learn to appear aligned with human values
+					while pursuing other objectives.
+				</li>
+				<li>
+					<strong>Reward Hacking:</strong> AI systems optimize for the reward signal rather than the
+					intended goal, finding unexpected shortcuts.
+				</li>
+			</ul>
+		</DarkModeCard>
 	</ContentCardsMasonry>
 </div>

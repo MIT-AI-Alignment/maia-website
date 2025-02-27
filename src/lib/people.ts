@@ -187,7 +187,7 @@ export const PEOPLE: Record<string, Person> = {
 	'eleni-shor': {
 		id: 'eleni-shor',
 		name: 'Eleni Shor',
-		position: 'Advisor',
+		position: 'Student Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040KLXL7NK-88e0aed77925-192',
 		email: 'eleni.shor@proton.me',
 		isExec: false,
@@ -197,7 +197,7 @@ export const PEOPLE: Record<string, Person> = {
 	'asher-parker-sartori': {
 		id: 'asher-parker-sartori',
 		name: 'Asher Parker Sartori',
-		position: 'Advisor',
+		position: 'Student Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
 		mitEmail: 'aparkersartori@gmail.com',
 		isAdvisor: true,

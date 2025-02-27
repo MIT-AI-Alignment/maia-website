@@ -2,6 +2,7 @@
 	import type { ComponentType } from 'svelte';
 	import PapersExpandable from '../../../components/PapersExpandable.svelte';
 	import ContentCard from '../../../../components/ContentCard.svelte';
+	import DarkModeCard from '../../../../components/DarkModeCard.svelte';
 	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
 	import Link from '../../../../components/Link.svelte';
 
@@ -46,7 +47,7 @@
 
 <div class="mt-8 space-y-8">
 	<!-- Overview Section -->
-	<ContentCard bgColor="transparent" darkBgColor="transparent">
+	<DarkModeCard transparent={true}>
 		<div class="flex flex-col md:flex-row gap-8">
 			<div class="md:w-full">
 				<p class="mb-4 text-lg">
@@ -64,10 +65,10 @@
 				</p>
 			</div>
 		</div>
-	</ContentCard>
+	</DarkModeCard>
 
 	<!-- Audio Demos Section -->
-	<ContentCard>
+	<DarkModeCard>
 		<h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
 			<i class="fa-solid fa-headphones text-purple-500"></i>
 			<span>Audio Demonstrations</span>
@@ -94,11 +95,11 @@
 				</div>
 			{/each}
 		</div>
-	</ContentCard>
+	</DarkModeCard>
 
 	<ContentCardsMasonry columns="3">
 		<!-- Technical Capabilities Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-microchip text-green-500"></i>
 				<span>Technical Capabilities</span>
@@ -121,10 +122,10 @@
 					management and interaction optimization.
 				</li>
 			</ul>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Social Engineering Risks Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-triangle-exclamation text-red-500"></i>
 				<span>Social Engineering Risks</span>
@@ -147,10 +148,10 @@
 					with fake constituent calls, distorting policy feedback channels.
 				</li>
 			</ul>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Policy Recommendations Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-gavel text-amber-500"></i>
 				<span>Policy Recommendations</span>
@@ -173,10 +174,10 @@
 					supporting beneficial AI development.
 				</li>
 			</ul>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Demo Format Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
 				<i class="fa-solid fa-eye text-blue-500"></i>
 				<span>Demo Format</span>
@@ -200,10 +201,10 @@
 					such as targeting congressional offices for demonstration purposes.
 				</li>
 			</ul>
-		</ContentCard>
+		</DarkModeCard>
 
 		<!-- Contact Information Section -->
-		<ContentCard>
+		<DarkModeCard>
 			<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
 				<i class="fa-solid fa-envelope text-purple-500"></i>
 				<span>Contact Information</span>
@@ -216,6 +217,6 @@
 					<Link href="mailto:gculp@mit.edu">gculp@mit.edu</Link>
 				</p>
 			</div>
-		</ContentCard>
+		</DarkModeCard>
 	</ContentCardsMasonry>
 </div>
