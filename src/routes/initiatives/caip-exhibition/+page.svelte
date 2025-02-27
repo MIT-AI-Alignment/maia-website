@@ -62,7 +62,7 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black text-gray-800 dark:text-maia_white">
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->
@@ -169,7 +169,7 @@
 						<i class="fa-solid fa-arrow-right"></i>
 					</div>
 				</div>
-				<p>(More media to be released when CAIP releases their footage)</p>
+				<p class="text-gray-700 dark:text-gray-300">(More media to be released when CAIP releases their footage)</p>
 			</div>
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />

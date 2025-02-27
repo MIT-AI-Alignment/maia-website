@@ -1,8 +1,8 @@
 <script lang="ts">
-    export let bgColor: string = "bg-slate-900/40";
-    export let darkBgColor: string = "bg-slate-900/40";
+    export const bgColor = "bg-white";
+    export const darkBgColor = "bg-slate-900/40";
 </script>
 
-<div class={`${bgColor} dark:${darkBgColor} rounded-lg p-6 shadow-sm text-gray-800 dark:text-white`}>
+<div class={`${bgColor} dark:${darkBgColor} rounded-lg p-6 shadow-sm text-gray-800 dark:text-white border border-gray-100 dark:border-gray-800`}>
     <slot />
 </div> 

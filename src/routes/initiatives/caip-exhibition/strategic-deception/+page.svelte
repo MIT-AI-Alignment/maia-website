@@ -15,7 +15,7 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black text-gray-800 dark:text-maia_white">
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->

@@ -15,7 +15,7 @@
 			class="w-full object-cover" 
 			style="{height ? `height: ${height};` : ''}" 
 		/>
-		<div class="bg-gray-100 dark:bg-gray-800 p-2">
+		<div class="bg-gray-100 dark:bg-gray-800 p-2 border-t border-gray-200 dark:border-gray-700">
 			<p class="text-xs text-center text-gray-700 dark:text-gray-300">
 				{caption}
 			</p>
