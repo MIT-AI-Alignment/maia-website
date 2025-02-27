@@ -8,10 +8,10 @@
 	
 	export let title: string;
 	export let description: string;
-	export const heroIcon = '';
+	export let heroIcon = '';
 	export let heroTitle: string;
-	export const centerTitle = false;
-	export const pageNavItems: DropdownItem[] = [];
+	export let centerTitle = false;
+	export let pageNavItems: DropdownItem[] = [];
 	
 	let mounted = false;
 	
