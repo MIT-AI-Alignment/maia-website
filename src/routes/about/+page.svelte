@@ -5,6 +5,7 @@
 	import Button from '../../components/Button.svelte';
 	import Advisors from './advisors.svelte';
 	import Execs from './execs.svelte';
+	import type { DropdownItem } from '$lib/stores/navigation';
 
 	type Section = {
 		id: string;
@@ -28,6 +29,12 @@
 		}
 	];
 	
+	// Create page navigation items from sections
+	const pageNavItems: DropdownItem[] = sections.map(section => ({
+		label: section.title,
+		href: `#${section.id}`
+	}));
+	
 	function scrollToSection(id: string) {
 		const element = document.getElementById(id);
 		if (element) {
@@ -42,6 +49,7 @@
 	heroIcon="fa-solid fa-users-gear"
 	heroTitle="Meet the Team"
 	centerTitle={true}
+	{pageNavItems}
 >
 	<svelte:fragment slot="hero-content">
 		<div class="flex flex-wrap justify-center gap-3 mb-8">

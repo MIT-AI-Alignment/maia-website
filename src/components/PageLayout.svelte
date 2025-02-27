@@ -1,12 +1,28 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import Footer from '../routes/components/footer.svelte';
 	import Navbar from '../routes/components/navbar.svelte';
+	import { updatePageNavItems, clearPageNavItems, type DropdownItem } from '$lib/stores/navigation';
 	
 	export let title: string;
 	export let description: string;
 	export let heroIcon = '';
 	export let heroTitle: string;
 	export let centerTitle = false;
+	export let pageNavItems: DropdownItem[] = [];
+	
+	// Update the navigation store with page-specific items
+	$: if (pageNavItems.length > 0) {
+		updatePageNavItems(pageNavItems);
+	}
+	
+	// Clear page navigation items when component is destroyed
+	onMount(() => {
+		return () => {
+			clearPageNavItems();
+		};
+	});
 </script>
 
 <svelte:head>
@@ -18,7 +34,7 @@
 	<Navbar />
 	
 	<!-- Hero Section -->
-	<div class="bg-gradient-to-b from-purple-500/5 to-transparent dark:from-purple-500/10 pt-32 pb-12">
+	<div class="bg-gradient-to-b from-purple-500/5 via-purple-500/3 to-transparent dark:from-purple-500/10 dark:via-purple-500/5 pt-32 pb-12">
 		<div class="px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="pt-16 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}

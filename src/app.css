@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --navbar-height: 4rem;
+}
+
 /* 
 @font-face {
     font-family: 'Commit Mono';
