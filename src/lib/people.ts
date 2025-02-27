@@ -184,8 +184,6 @@ export const PEOPLE: Record<string, Person> = {
 		isAdvisor: true,
 		isActive: true
 	},
-
-	// Temporary Leave Executives
 	'eleni-shor': {
 		id: 'eleni-shor',
 		name: 'Eleni Shor',
@@ -195,6 +193,15 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: false,
 		isAdvisor: true
+	},
+	'asher-parker-sartori': {
+		id: 'asher-parker-sartori',
+		name: 'Asher Parker Sartori',
+		position: 'Advisor',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
+		mitEmail: 'aparkersartori@gmail.com',
+		isAdvisor: true,
+		isActive: true
 	},
 
 	// CAIP Exhibition Team Members
