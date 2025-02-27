@@ -4,131 +4,125 @@
 	import '@splidejs/svelte-splide/css/core';
 	import IconArrowRightBold from '~icons/ph/arrow-right-bold';
 	import IconArrowLeftBold from '~icons/ph/arrow-left-bold';
+	import { PAPERS } from '$lib/papers';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let innerWidth = 0;
 	let innerHeight = 0;
+	let mounted = false;
 
-	$: perPage = innerWidth < 650 ? 2 : innerWidth < 768 ? 3 : 5;
+	onMount(() => {
+		mounted = true;
+	});
+
+	$: perPage = innerWidth < 650 ? 1 : innerWidth < 768 ? 2 : innerWidth < 1024 ? 3 : 4;
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Splide
-	aria-label="Research images/papers"
-	options={{ perPage, gap: '1rem' }}
-	hasTrack={false}
-	on:arrowsUpdated={(e) => {
-		console.log(e);
-	}}
-	class="relative"
->
-	<SplideTrack>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 1"
-				imgSrc="../../images/papers/paper1.png"
-				tags={[
-					{ title: 'NeurIPS 2022', color: 'bg-blue-200 dark:bg-blue-800' },
-					{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }
-				]}
-				title="Robust Feature-Level Adversaries are Interpretability Tools"
-				authors={['Stephen Casper']}
-				link="https://arxiv.org/abs/2110.03605"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 2"
-				imgSrc="../../images/papers/paper2.png"
-				tags={[{ title: 'RLHF', color: 'bg-green-200 dark:bg-green-800' }]}
-				title="Open Problems and Fundamental Limitations of RLHF"
-				authors={['Stephen Casper', 'Tony Wang', 'Eric J. Michaud']}
-				link="https://arxiv.org/abs/2307.15217"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 3"
-				imgSrc="../../images/papers/paper3.png"
-				tags={[{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }]}
-				title="Adversarial Policies Beat Superhuman Go AIs"
-				authors={['Tony Wang']}
-				link="https://arxiv.org/pdf/2211.00241.pdf"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 4"
-				imgSrc="../../images/papers/paper4.png"
-				tags={[
-					{ title: 'NeurIPS 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-					{ title: 'Scaling Laws', color: 'bg-purple-200 dark:bg-purple-800' }
-				]}
-				title="The Quantization Model of Neural Scaling"
-				authors={['Eric J. Michaud', 'Uzay Girit']}
-				link="https://arxiv.org/abs/2303.13506"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 5"
-				imgSrc="../../images/papers/paper5.png"
-				tags={[
-					{ title: 'NeurIPS 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-					{ title: 'Mech Interp', color: 'bg-orange-200 dark:bg-orange-800' }
-				]}
-				title="Forbidden Facts: An Investigation of Competing Objectives in Llama-2"
-				authors={['Tony Wang', 'Kaivu Hariharan']}
-				link="https://arxiv.org/pdf/2312.08793.pdf"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 6"
-				imgSrc="../../images/papers/paper6.png"
-				tags={[
-					{ title: 'NeurIPS 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-					{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }
-				]}
-				title="Red Teaming Deep Neural Networks with Feature Synthesis Tools"
-				authors={['Stephen Casper', 'Kaivu Hariharan']}
-				link="https://arxiv.org/pdf/2302.10894.pdf"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 7"
-				imgSrc="../../images/papers/paper7.png"
-				tags={[
-					{ title: 'OpenAI', color: 'bg-rose-200 dark:bg-rose-800' },
-					{ title: 'Governance', color: 'bg-sky-200 dark:bg-sky-800' }
-				]}
-				title="Building an early warning system for LLM-aided biological threat creation"
-				authors={['Neil Choudhury']}
-				link="https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation"
-			/>
-		</SplideSlide>
-		<SplideSlide>
-			<Paper
-				altText="Research Paper 8"
-				imgSrc="../../images/papers/paper7.png"
-				tags={[
-					{ title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' }
-				]}
-				title="Explore, Establish, Exploit: Red Teaming Language Models from Scratch"
-				authors={['Gatlen Culp']}
-				link="https://arxiv.org/abs/2306.09442"
-			/>
-		</SplideSlide>
-	</SplideTrack>
-	<div class="splide__arrows invisible md:visible">
-		<button
-			class="splide__arrow splide__arrow--prev transition-opacity disabled:opacity-0 absolute left-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
-			><IconArrowLeftBold /></button
+{#if mounted}
+	<div in:fade={{ duration: 800, delay: 200 }}>
+		<Splide
+			aria-label="Research images/papers"
+			options={{ 
+				perPage, 
+				gap: '1.5rem', 
+				pagination: true,
+				arrows: true,
+				autoplay: true,
+				interval: 5000,
+				pauseOnHover: true,
+				pauseOnFocus: true,
+				rewind: true,
+				easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+				speed: 800
+			}}
+			hasTrack={false}
+			class="relative papers-carousel"
 		>
-		<button
-			class="splide__arrow splide__arrow--next transition-opacity disabled:opacity-0 absolute right-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
-			><IconArrowRightBold /></button
-		>
+			<div class="custom-pagination splide__pagination"></div>
+			<SplideTrack>
+				{#each PAPERS as paper, i}
+					<SplideSlide>
+						<div style="animation-delay: {i * 100}ms;" class="slide-in">
+							<Paper {...paper} />
+						</div>
+					</SplideSlide>
+				{/each}
+			</SplideTrack>
+			<div class="splide__arrows">
+				<button
+					class="splide__arrow splide__arrow--prev transition-all duration-300 absolute left-[-30px] md:left-[-50px] top-1/3 bg-white dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center border border-solid border-purple-200 dark:border-purple-900 shadow-md hover:scale-110 hover:bg-purple-50 dark:hover:bg-purple-900/30"
+					><IconArrowLeftBold class="text-purple-600 dark:text-purple-400" /></button
+				>
+				<button
+					class="splide__arrow splide__arrow--next transition-all duration-300 absolute right-[-30px] md:right-[-50px] top-1/3 bg-white dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center border border-solid border-purple-200 dark:border-purple-900 shadow-md hover:scale-110 hover:bg-purple-50 dark:hover:bg-purple-900/30"
+					><IconArrowRightBold class="text-purple-600 dark:text-purple-400" /></button
+				>
+			</div>
+		</Splide>
 	</div>
-</Splide>
+{:else}
+	<Splide
+		aria-label="Research images/papers"
+		options={{ perPage, gap: '1rem' }}
+		hasTrack={false}
+		class="relative"
+	>
+		<SplideTrack>
+			{#each PAPERS as paper}
+				<SplideSlide>
+					<Paper {...paper} />
+				</SplideSlide>
+			{/each}
+		</SplideTrack>
+		<div class="splide__arrows invisible md:visible">
+			<button
+				class="splide__arrow splide__arrow--prev transition-opacity disabled:opacity-0 absolute left-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
+				><IconArrowLeftBold /></button
+			>
+			<button
+				class="splide__arrow splide__arrow--next transition-opacity disabled:opacity-0 absolute right-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
+				><IconArrowRightBold /></button
+			>
+		</div>
+	</Splide>
+{/if}
+
+<style>
+	:global(.papers-carousel .splide__pagination) {
+		bottom: -2rem;
+	}
+	
+	:global(.papers-carousel .splide__pagination__page) {
+		background: rgba(139, 92, 246, 0.3);
+		transition: all 0.3s ease;
+	}
+	
+	:global(.papers-carousel .splide__pagination__page.is-active) {
+		background: rgba(139, 92, 246, 0.8);
+		transform: scale(1.3);
+	}
+	
+	.slide-in {
+		animation: slideIn 0.8s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	
+	@keyframes slideIn {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.slide-in {
+			animation: none;
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

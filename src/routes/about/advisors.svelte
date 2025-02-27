@@ -1,11 +1,16 @@
 <script>
 	import Profile from './profile.svelte';
+	import { getAdvisors } from '$lib/people';
+
+	const advisors = getAdvisors();
 </script>
 
 <div class="flex my-6 flex-wrap">
-	<Profile
-		name="Professor Max Tegmark"
-		position="Faculty Advisor"
-		imageUrl="https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg"
-	/>
+	{#each advisors as advisor}
+		<Profile 
+			personId={advisor.id} 
+			showSocials={true}
+			showExpandButton={true}
+		/>
+	{/each}
 </div>

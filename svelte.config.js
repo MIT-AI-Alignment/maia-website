@@ -20,6 +20,18 @@ const config = {
 		prerender: {
 			handleHttpError: 'ignore'
 		}
+	},
+
+	// Add onwarn configuration to handle package warnings
+	onwarn: (warning, handler) => {
+		if (warning.code.startsWith('a11y-')) {
+			return;
+		}
+		if (warning.message.includes('@splidejs/svelte-splide') || 
+			warning.message.includes('@splidejs/splide')) {
+			return;
+		}
+		handler(warning);
 	}
 };
 

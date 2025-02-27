@@ -1,119 +1,184 @@
-<script>
-	import Footer from '../components/footer.svelte';
-	import Navbar from '../components/navbar.svelte';
+<script lang="ts">
+	import type { ComponentType } from 'svelte';
+	import PageLayout from '../../components/PageLayout.svelte';
+	import SectionContainer from '../../components/SectionContainer.svelte';
+	import Button from '../../components/Button.svelte';
+
+	import Membership from './Membership.svelte';
 	import AisfGov from './AISFGov.svelte';
 	import Aisfml from './AISFML.svelte';
 	import Bootcamps from './Bootcamps.svelte';
 	import Workshops from './Workshops.svelte';
 	import Calendar from './Calendar.svelte';
 	import { CONFIG } from '$lib/config';
+
+	type RenderResult = {
+		html: string;
+		components: {
+			showML: boolean;
+			showGov: boolean;
+		};
+	};
+
+	type SectionContent = {
+		component: ComponentType | null;
+		customContent?: boolean;
+		render?: () => RenderResult;
+	};
+
+	type Section = {
+		id: string;
+		title: string;
+		icon: string;
+		content: () => SectionContent;
+	};
+
+	const sections: Section[] = [
+		{
+			id: 'aisf',
+			title: 'AI Safety Fundamentals',
+			icon: 'fa-solid fa-graduation-cap',
+			content: () => ({
+				component: null,
+				customContent: true,
+				render: () => ({
+					html: '<p>MAIA runs programs for people at all skill levels to explore deep learning and AI safety.</p>',
+					components: {
+						showML: CONFIG.aisf_ml.visible,
+						showGov: CONFIG.aisf_gov.visible
+					}
+				})
+			})
+		},
+		{
+			id: 'workshops',
+			title: 'Workshops',
+			icon: 'fa-solid fa-chalkboard-user',
+			content: () => ({ component: Workshops })
+		},
+		{
+			id: 'bootcamps',
+			title: 'Bootcamps',
+			icon: 'fa-solid fa-laptop-code',
+			content: () => ({ component: Bootcamps })
+		},
+		{
+			id: 'membership',
+			title: 'Membership',
+			icon: 'fa-solid fa-users',
+			content: () => ({ component: Membership })
+		},
+		{
+			id: 'calendar',
+			title: 'Calendar',
+			icon: 'fa-regular fa-calendar',
+			content: () => ({ component: Calendar })
+		}
+	];
+
+	function hasRender(content: SectionContent): content is SectionContent & { render: () => RenderResult } {
+		return content.customContent === true && typeof content.render === 'function';
+	}
+
+	function scrollToSection(id: string) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
-<svelte:head>
-	<title>MAIA - Get Involved</title>
-	<meta
-		name="description"
-		content="MIT AI Alignment (MAIA) runs programs for people at all skill levels to explore deep learning and AI safety."
-	/>
-</svelte:head>
-
-<!-- NOTE: There is so much text here, include pictures? -->
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
-	<Navbar />
-	<div class="px-8 md:px-24">
-		<h1 class="pt-48 text-6xl w-2/3 font-heading font-[550]">Get Involved</h1>
-		<br />
-		<hr />
-		<h2 class="pt-12 text-4xl font-heading font-[550]">AI Safety Fundamentals</h2>
-		<p>MAIA runs programs for people at all skill levels to explore deep learning and AI safety.</p>
-		{#if CONFIG.aisf_ml.visible}
-			<Aisfml />
-		{/if}
-		{#if CONFIG.aisf_gov.visible}
-			<AisfGov />
-		{/if}
-		<br />
-		<hr />
-		<Workshops></Workshops>
-		<br />
-		<hr />
-		<Bootcamps></Bootcamps>
-		<br />
-		<hr />
-		<div>
-			<h2 class="pt-12 text-4xl font-heading font-[550]">Apply for Membership</h2>
-			<br />
-			<p>
-				Being a member of the MAIA community has both a number of opportunities and a number of
-				responsibilities. Membership entails:
-			</p>
-			<ul class="list-disc pl-6 mt-4 space-y-2">
-				<li>24/7 access to our office, where you can co-work on AI safety with MAIA Members.</li>
-				<li>Compute and research tools</li>
-				<li>Weekly member meetings to read and discuss alignment research</li>
-				<li>
-					Small group discussions with alignment researchers and professors (recent guests included
-					<a href="https://colah.github.io/about.html" class="underline">Chris Olah</a>
-					from Anthropic and
-					<a
-						href="https://www.nytimes.com/2024/06/04/technology/openai-culture-whistleblowers.html"
-						class="underline">Daniel Kokotajlo</a
-					> from OpenAI)
-				</li>
-				<li>
-					Connections with and potential opportunities to collaborate with top alignment
-					organizations like <a href="https://www.redwoodresearch.org/" class="underline"
-						>Redwood Research</a
-					>, <a href="https://www.nist.gov/aisi" class="underline">The U.S. AI Safety Institute</a>,
-					and <a href="https://metr.org/" class="underline">METR</a>
-				</li>
-				<li>
-					Opportunities to participate in AI safety community workshops and connect with leaders in
-					policy, academia, and technical research. (Ex: Professors <a
-						href="https://sites.google.com/view/htanaka/home"
-						class="underline">Hidenori Tanaka</a
-					>
-					and <a href="http://davidbau.com/" class="underline">David Bau</a>)
-				</li>
-				<li>
-					A community of talented undergraduate and graduate students interested in reducing risks
-					from advanced AI
-				</li>
-			</ul>
-			<p class="mt-4">
-				Members generally contribute to the community by running or participating in workshops,
-				discussions, socials, hackathons, initiatives and more. While we are an MIT-recognized
-				student group, membership is not restricted to MIT students. Independent researchers and
-				students from other universities are welcome!
-			</p>
-			<p class="mt-4">
-				If you aren't very familiar with AI safety, we recommend applying for AI Safety Fundamentals
-				above. We typically offer participants of this program a streamlined application process.
-			</p>
-			<p class="mt-4">
-				The application has both technical and non-technical portions and typically takes 1-2 hours
-				to complete. Membership admission is rolling, with preference given to earlier applicants.
-				We expect MAIA members to be engaged throughout the semester.
-			</p>
-			<div class="mt-8 space-y-4">
-				<a
-					href={CONFIG.membership.applicationLink}
-					class="block w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
-				>
-					Apply for Membership
-				</a>
-				<p class="text-sm">
-					Questions? Contact us at <a
-						href="mailto:maia-exec@mit.edu"
-						class="text-purple-600 dark:text-purple-300">maia-exec@mit.edu</a
-					>
-				</p>
-			</div>
-			<!-- Note: MIT requires that a certain proportion of our members be students to be recognized as a student group, but this is generally allowed. -->
+<PageLayout
+	title="Get Involved"
+	description="MIT AI Alignment (MAIA) runs programs for people at all skill levels to explore deep learning and AI safety."
+	heroIcon="fa-solid fa-hands-helping"
+	heroTitle="Get Involved"
+	centerTitle={true}
+>
+	<svelte:fragment slot="hero-content">
+		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
+			Join the MAIA community and contribute to AI safety research and education at MIT.
+		</p>
+		
+		<!-- Navigation Buttons -->
+		<div class="flex flex-wrap justify-center gap-3 mb-8">
+			{#each sections as section}
+				<Button 
+					text={section.title} 
+					icon={section.icon} 
+					type="outline" 
+					size="md" 
+					on:click={() => scrollToSection(section.id)} 
+				/>
+			{/each}
 		</div>
-		<br />
-		<hr />
-		<Calendar />
+	</svelte:fragment>
+	
+	<!-- Content Sections -->
+	{#each sections as section, i}
+		{@const sectionContent = section.content()}
+		<SectionContainer
+			id={section.id}
+			title={section.title}
+			icon={section.icon}
+		>
+			{#if hasRender(sectionContent)}
+				{@const renderResult = sectionContent.render()}
+				<div class="prose dark:prose-invert max-w-none">
+					{@html renderResult.html}
+				</div>
+				{#if renderResult.components.showML}
+					<div class="mt-6 p-4 rounded-lg bg-gray-50 dark:bg-maia_black/40 border-l-4 border-purple-400">
+						<Aisfml />
+					</div>
+				{/if}
+				{#if renderResult.components.showGov}
+					<div class="mt-6 p-4 rounded-lg bg-gray-50 dark:bg-maia_black/40 border-l-4 border-fuchsia-400">
+						<AisfGov />
+					</div>
+				{/if}
+			{:else}
+				<div class="prose dark:prose-invert max-w-none">
+					<svelte:component this={sectionContent.component} />
+				</div>
+			{/if}
+		</SectionContainer>
+		
+		{#if i < sections.length - 1}
+			<div class="flex justify-center mb-16">
+				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+			</div>
+		{/if}
+	{/each}
+	
+	<div class="flex justify-center mt-8 mb-12">
+		<Button 
+			text="Back to Top" 
+			icon="fa-solid fa-arrow-up" 
+			type="text" 
+			on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+		/>
 	</div>
-	<Footer></Footer>
-</main>
+</PageLayout>
+
+<style lang="postcss">
+	:global(.prose) {
+		@apply text-gray-800 dark:text-gray-200;
+	}
+	
+	:global(.prose a) {
+		@apply text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors;
+	}
+	
+	:global(.prose p) {
+		@apply mb-4;
+	}
+	
+	:global(.prose ul) {
+		@apply mb-4 ml-6 list-disc;
+	}
+	
+	:global(.prose li) {
+		@apply mb-2;
+	}
+</style>
