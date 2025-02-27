@@ -26,11 +26,8 @@
 			<!-- Animated background elements -->
 			{#if mounted}
 				<div class="absolute top-0 left-0 w-full h-full overflow-visible pointer-events-none" style="z-index: -1;">
-					<div class="tech-grid"></div>
-					<div class="tech-particles"></div>
-					<div class="tech-circuit"></div>
-					<div class="tech-pulse"></div>
-					<div class="data-flow"></div>
+					<div class="flowing-dots"></div>
+					<div class="bottom-gradient"></div>
 				</div>
 			{/if}
 
@@ -141,188 +138,46 @@
 </PageLayout>
 
 <style>
-	/* Tech-themed grid background */
-	.tech-grid {
-		position: absolute;
-		top: -100vh; /* Extend well above the viewport */
-		left: -50vw;
-		width: 200vw; /* Extend beyond viewport width */
-		height: 200vh; /* Extend beyond viewport height */
-		background-size: 40px 40px;
-		background-image: 
-			linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-			linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
-		animation: gridPulse 15s ease-in-out infinite;
-		transform-origin: center;
-	}
-	
-	@keyframes gridPulse {
-		0% {
-			opacity: 0.3;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.5;
-			transform: scale(1.05);
-		}
-		100% {
-			opacity: 0.3;
-			transform: scale(1);
-		}
-	}
-	
-	/* Tech particles effect */
-	.tech-particles {
-		position: absolute;
-		top: -100vh;
-		left: -50vw;
-		width: 200vw;
-		height: 200vh;
-		background-image: radial-gradient(circle, rgba(139, 92, 246, 0.2) 1px, transparent 1px);
-		background-size: 30px 30px;
-		animation: particlesDrift 20s linear infinite;
-	}
-	
-	@keyframes particlesDrift {
-		0% {
-			background-position: 0 0;
-		}
-		100% {
-			background-position: 100px 100px;
-		}
-	}
-	
-	/* Tech circuit lines */
-	.tech-circuit {
-		position: absolute;
-		top: -20vh;
-		right: -10vw;
-		width: 60vw;
-		height: 120vh;
-		background-image: 
-			linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-			linear-gradient(0deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-			linear-gradient(45deg, rgba(139, 92, 246, 0.05) 1px, transparent 2px);
-		background-size: 40px 40px, 40px 40px, 80px 80px;
-		clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-		animation: circuitPulse 8s ease-in-out infinite;
-	}
-	
-	@keyframes circuitPulse {
-		0%, 100% {
-			opacity: 0.3;
-			transform: translateY(0);
-		}
-		50% {
-			opacity: 0.6;
-			transform: translateY(-20px);
-		}
-	}
-	
-	/* Tech pulse effect */
-	.tech-pulse {
-		position: absolute;
-		top: -50vh;
-		left: -20vw;
-		width: 140vw;
-		height: 140vh;
-		border-radius: 50%;
-		background: radial-gradient(
-			circle,
-			rgba(139, 92, 246, 0) 0%,
-			rgba(139, 92, 246, 0.03) 30%,
-			rgba(139, 92, 246, 0.05) 40%,
-			rgba(139, 92, 246, 0.03) 50%,
-			rgba(139, 92, 246, 0) 70%
-		);
-		animation: pulse 12s ease-in-out infinite;
-		transform-origin: center;
-	}
-	
-	/* Binary code animation */
-	.tech-circuit::before {
-		content: "";
-		position: absolute;
+	/* Flowing dots animation */
+	.flowing-dots {
+		position: fixed; /* Fixed position to ensure it covers the entire viewport */
 		top: 0;
 		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-image: radial-gradient(circle, rgba(139, 92, 246, 0.25) 1.5px, transparent 1.5px);
+		background-size: 35px 35px;
+		animation: dotsFlow 15s linear infinite;
+		transform-origin: top left;
+	}
+	
+	@keyframes dotsFlow {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(35px, 35px); /* True diagonal movement */
+		}
+	}
+	
+	/* Separate static gradient overlay */
+	.bottom-gradient {
+		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		height: 100%;
-		background-image: 
-			repeating-linear-gradient(
-				0deg,
-				transparent,
-				transparent 20px,
-				rgba(139, 92, 246, 0.1) 20px,
-				rgba(139, 92, 246, 0.1) 40px
-			),
-			repeating-linear-gradient(
-				90deg,
-				transparent,
-				transparent 20px,
-				rgba(139, 92, 246, 0.05) 20px,
-				rgba(139, 92, 246, 0.05) 40px
-			);
-		animation: binaryFlow 15s linear infinite;
+		height: 15vh;
+		background: linear-gradient(to bottom, transparent, var(--bg-color, #ffffff));
+		pointer-events: none;
+		z-index: 0;
 	}
 	
-	@keyframes binaryFlow {
-		0% {
-			background-position: 0 0, 0 0;
-		}
-		100% {
-			background-position: 0 100px, 100px 0;
-		}
-	}
-	
-	/* Data flow animation */
-	.data-flow {
-		position: absolute;
-		top: -50vh;
-		left: -50vw;
-		width: 200vw;
-		height: 200vh;
-		overflow: hidden;
-		opacity: 0.2;
-	}
-	
-	.data-flow::before {
-		content: "";
-		position: absolute;
-		width: 200%;
-		height: 200%;
-		top: -50%;
-		left: -50%;
-		background-image: 
-			linear-gradient(45deg, rgba(139, 92, 246, 0.1) 25%, transparent 25%),
-			linear-gradient(-45deg, rgba(139, 92, 246, 0.1) 25%, transparent 25%),
-			linear-gradient(45deg, transparent 75%, rgba(139, 92, 246, 0.1) 75%),
-			linear-gradient(-45deg, transparent 75%, rgba(139, 92, 246, 0.1) 75%);
-		background-size: 60px 60px;
-		animation: dataFlow 20s linear infinite;
-	}
-	
-	@keyframes dataFlow {
-		0% {
-			transform: rotate(0) scale(1);
-		}
-		100% {
-			transform: rotate(360deg) scale(1.1);
-		}
-	}
-	
-	@keyframes pulse {
-		0%, 100% {
-			transform: scale(0.8);
-			opacity: 0.3;
-		}
-		50% {
-			transform: scale(1);
-			opacity: 0.6;
-		}
+	:global(.dark) .bottom-gradient {
+		--bg-color: #000000;
 	}
 	
 	@media (prefers-reduced-motion: reduce) {
-		.tech-grid, .tech-particles, .tech-circuit, .tech-pulse, .tech-circuit::before, .data-flow::before {
+		.flowing-dots {
 			animation: none !important;
 		}
 	}

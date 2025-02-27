@@ -8,10 +8,10 @@
 	
 	export let title: string;
 	export let description: string;
-	export let heroIcon = '';
+	export const heroIcon = '';
 	export let heroTitle: string;
-	export let centerTitle = false;
-	export let pageNavItems: DropdownItem[] = [];
+	export const centerTitle = false;
+	export const pageNavItems: DropdownItem[] = [];
 	
 	let mounted = false;
 	
@@ -35,12 +35,7 @@
 </svelte:head>
 
 <main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white relative overflow-hidden">
-	<!-- Background animated elements - global background -->
-	{#if mounted}
-		<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30">
-			<div class="bg-grid"></div>
-		</div>
-	{/if}
+	<!-- No background grid needed anymore -->
 	
 	<Navbar />
 	
@@ -86,23 +81,5 @@
 	
 	:global(.prose li) {
 		@apply mb-2;
-	}
-	
-	.bg-grid {
-		position: absolute;
-		top: -100vh;
-		left: -100vw;
-		width: 300vw;
-		height: 300vh;
-		background-size: 50px 50px;
-		background-image: 
-			linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-			linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-	}
-	
-	@media (prefers-reduced-motion: reduce) {
-		.bg-grid {
-			animation: none !important;
-		}
 	}
 </style> 
