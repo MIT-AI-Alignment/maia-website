@@ -1,5 +1,6 @@
 <script>
 	import { CONFIG } from '$lib/config';
+	import Button from '../../components/Button.svelte';
 </script>
 
 <section>
@@ -38,13 +39,13 @@
 			a course developed by OpenAI researcher Richard Ngo</a
 		>.
 	</p>
-	<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
-		><h2
-			class="mt-8 w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
-		>
-			<a href={CONFIG.aisf_ml.applicationLink} class="text-purple-600 dark:text-purple-300"
-				>For AISF ML Track here by {CONFIG.aisf_ml.deadline}.</a
-			>
-		</h2></a
-	>
+	<div class="mt-8">
+		<Button 
+			text="Apply for AISF ML Track here by {CONFIG.aisf_ml.deadline}" 
+			icon="fa-solid fa-arrow-right"
+			type="purple" 
+			size="md" 
+			href={CONFIG.aisf_ml.applicationLink}
+		/>
+	</div>
 </section>

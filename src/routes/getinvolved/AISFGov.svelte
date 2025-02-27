@@ -1,3 +1,8 @@
+<script>
+	import { CONFIG } from '$lib/config';
+	import Button from '../../components/Button.svelte';
+</script>
+
 <section>
 	<h3 class="pt-8 text-3xl font-heading text-fuchsia-600 dark:text-fuchsia-500">Policy track</h3>
 	<p class="pt-2">
@@ -21,11 +26,13 @@
 			a course developed by experts on AI policy</a
 		>.
 	</p>
-	<p
-		class="font-heading underline text-lg mt-4 bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-700 dark:text-fuchsia-200 rounded-md p-2 w-fit"
-	>
-		Apply <a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd" class="underline">
-			here</a
-		> by Wednesday, September 18th, 11:59pm EST.
-	</p>
+	<div class="mt-8">
+		<Button 
+			text="Apply for AISF Policy Track here by {CONFIG.aisf_gov.deadline}" 
+			icon="fa-solid fa-arrow-right"
+			type="fuchsia" 
+			size="md" 
+			href={CONFIG.aisf_gov.applicationLink}
+		/>
+	</div>
 </section>

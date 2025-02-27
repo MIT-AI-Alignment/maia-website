@@ -1,6 +1,7 @@
 <script>
 	import Footer from '../components/footer.svelte';
 	import Navbar from '../components/navbar.svelte';
+	import Button from '../../components/Button.svelte';
 	import AisfGov from './AISFGov.svelte';
 	import Aisfml from './AISFML.svelte';
 	import Bootcamps from './Bootcamps.svelte';
@@ -72,12 +73,13 @@
 		>.
 	</p>
 	<div class="mt-8 space-y-4">
-		<a
+		<Button 
+			text="Apply for Membership" 
+			icon="fa-solid fa-arrow-right"
+			type="purple" 
+			size="md" 
 			href={CONFIG.membership.applicationLink}
-			class="block w-fit text-lg underline bg-purple-100 text-purple-600 dark:bg-purple-700 dark:text-purple-200 rounded-md py-2 px-4"
-		>
-			Apply for Membership
-		</a>
+		/>
 		<p class="text-sm">
 			Questions? Contact us at <a
 				href="mailto:maia-exec@mit.edu"
