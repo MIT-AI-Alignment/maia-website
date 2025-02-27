@@ -19,13 +19,14 @@
 		></iframe>
 	</div>
 	<div class="mt-8">
-		<Button 
-			text="Join our Mailing List" 
-			icon="fa-solid fa-envelope"
-			type="purple" 
-			size="md" 
-			href={CONFIG.mailingListLink}
-		/>
+		<a href={CONFIG.mailingListLink}>
+			<Button 
+				text="Join our Mailing List" 
+				icon="fa-solid fa-envelope"
+				type="purple" 
+				size="md" 
+			/>
+		</a>
 	</div>
 </div>
 

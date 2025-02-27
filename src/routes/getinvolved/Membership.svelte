@@ -73,13 +73,14 @@
 		>.
 	</p>
 	<div class="mt-8 space-y-4">
-		<Button 
-			text="Apply for Membership" 
-			icon="fa-solid fa-arrow-right"
-			type="purple" 
-			size="md" 
-			href={CONFIG.membership.applicationLink}
-		/>
+		<a href={CONFIG.membership.applicationLink}>
+			<Button 
+				text="Apply for Membership" 
+				icon="fa-solid fa-arrow-right"
+				type="purple" 
+				size="md" 
+			/>
+		</a>
 		<p class="text-sm">
 			Questions? Contact us at <a
 				href="mailto:maia-exec@mit.edu"

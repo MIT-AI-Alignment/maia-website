@@ -16,10 +16,13 @@
 	$: typeClasses = {
 		primary: 'bg-maia_blue hover:bg-maia_blue-600 text-white',
 		secondary: 'bg-maia_teal hover:bg-maia_teal-600 text-white',
-		outline: 'bg-transparent border border-maia_blue text-maia_blue hover:bg-maia_blue/10',
-		text: 'bg-transparent text-maia_blue hover:bg-maia_blue/10',
-		purple: 'bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-600 dark:text-white dark:hover:bg-purple-500',
-		fuchsia: 'bg-fuchsia-600 hover:bg-fuchsia-700 text-white dark:bg-fuchsia-600 dark:text-white dark:hover:bg-fuchsia-500'
+		outline:
+			'bg-transparent border border-gray-500 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-400',
+		text: 'bg-transparent text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800',
+		purple:
+			'bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-700 dark:text-white dark:hover:bg-purple-600',
+		fuchsia:
+			'bg-fuchsia-600 hover:bg-fuchsia-700 text-white dark:bg-fuchsia-600 dark:text-white dark:hover:bg-fuchsia-500'
 	}[type];
 
 	$: sizeClasses = {
@@ -44,7 +47,7 @@
 	{href}
 	{disabled}
 	aria-label={ariaLabel || text}
-	class="inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 
+	class="inline-flex items-center justify-center rounded-md font-medium transition-all duration-200
 		{typeClasses} {sizeClasses} {widthClass} 
 		{disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
 		active:scale-95 focus:outline-none focus:ring-2 focus:ring-maia_blue/50"
@@ -54,11 +57,11 @@
 		<i class="{icon} {text ? 'mr-2' : ''}"></i>
 	{/if}
 	{#if text}
-		<span>{text}</span>
+		<span class="text-current">{text}</span>
 	{/if}
 	<slot />
 </svelte:element>
 
 <style>
 	/* Add any additional styles here */
-</style> 
+</style>
