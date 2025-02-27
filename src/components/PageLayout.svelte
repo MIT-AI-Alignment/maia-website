@@ -13,6 +13,8 @@
 	export let centerTitle = false;
 	export let pageNavItems: DropdownItem[] = [];
 	
+	let mounted = false;
+	
 	// Update the navigation store with page-specific items
 	$: if (pageNavItems.length > 0) {
 		updatePageNavItems(pageNavItems);
@@ -20,6 +22,7 @@
 	
 	// Clear page navigation items when component is destroyed
 	onMount(() => {
+		mounted = true;
 		return () => {
 			clearPageNavItems();
 		};
@@ -31,13 +34,20 @@
 	<meta name="description" content={description} />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white">
+<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white relative overflow-hidden">
+	<!-- Background animated elements - global background -->
+	{#if mounted}
+		<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30">
+			<div class="bg-grid"></div>
+		</div>
+	{/if}
+	
 	<Navbar />
 	
 	<!-- Hero Section -->
 	<div class="bg-gradient-to-b {$theme === 'dark' 
-		? 'from-purple-500/10 via-purple-500/5 to-transparent' 
-		: 'from-purple-500/5 via-purple-500/3 to-transparent'} pt-32 pb-12">
+		? 'from-purple-500/5 via-purple-500/3 to-transparent' 
+		: 'from-purple-500/3 via-purple-500/2 to-transparent'} pt-32 pb-12 relative z-10">
 		<div class="px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="pt-16 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}
@@ -50,7 +60,7 @@
 	</div>
 	
 	<!-- Main Content -->
-	<div class="px-8 md:px-24 mx-auto max-w-6xl pb-16">
+	<div class="px-8 md:px-24 mx-auto max-w-6xl pb-16 relative z-10">
 		<slot />
 	</div>
 	
@@ -76,5 +86,23 @@
 	
 	:global(.prose li) {
 		@apply mb-2;
+	}
+	
+	.bg-grid {
+		position: absolute;
+		top: -100vh;
+		left: -100vw;
+		width: 300vw;
+		height: 300vh;
+		background-size: 50px 50px;
+		background-image: 
+			linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.bg-grid {
+			animation: none !important;
+		}
 	}
 </style> 
