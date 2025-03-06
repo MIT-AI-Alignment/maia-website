@@ -113,7 +113,7 @@ export const PEOPLE: Record<string, Person> = {
 	'gatlen-culp': {
 		id: 'gatlen-culp',
 		name: 'Gatlen Culp',
-		position: 'Field-Building Co-Lead; Web Master & Compute Lead',
+		position: 'Field-Building Lead; Web Master & Compute Lead',
 		imageUrl: '/images/people/gatlen-culp.png',
 
 		// Contact information
@@ -154,15 +154,6 @@ export const PEOPLE: Record<string, Person> = {
 			'phone-line-attacks': 2 // Second in the phone-line attacks project
 		}
 	},
-	'jen-ben-arye': {
-		id: 'jen-ben-arye',
-		name: 'Jen Ben Arye',
-		position: 'Field-Building Co-Lead',
-		mitEmail: 'jen_ben@mit.edu',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
-		isExec: true,
-		isActive: true
-	},
 	'tara-rezaei-kheirkhah': {
 		id: 'tara-rezaei-kheirkhah',
 		name: 'Tara Rezaei Kheirkhah',
@@ -172,14 +163,14 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true
 	},
-
+	
 	// Advisors
 	'max-tegmark': {
 		id: 'max-tegmark',
 		name: 'Professor Max Tegmark',
 		position: 'Faculty Advisor',
 		imageUrl:
-			'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
+		'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
 		personalPage: 'https://space.mit.edu/home/tegmark/',
 		isAdvisor: true,
 		isActive: true
@@ -203,17 +194,17 @@ export const PEOPLE: Record<string, Person> = {
 		isAdvisor: true,
 		isActive: true
 	},
-
+	
 	// CAIP Exhibition Team Members
 	'david-turturean': {
 		id: 'david-turturean',
 		name: 'David Turturean',
 		position: 'Phone-line Attacks - Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
-
+		
 		// Contact information
 		mitEmail: 'davidct@mit.edu',
-
+		
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -228,10 +219,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Alek Westover',
 		position: 'Strategic Deception - Lead',
 		imageUrl: '/images/people/alek-westover.jpg',
-
+		
 		// Contact information
 		mitEmail: 'alekw@mit.edu',
-
+		
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {
@@ -241,15 +232,21 @@ export const PEOPLE: Record<string, Person> = {
 			'strategic-deception': 1 // First in the strategic deception project
 		}
 	},
+	'jen-ben-arye': {
+		id: 'jen-ben-arye',
+		name: 'Jen Ben Arye',
+		mitEmail: 'jen_ben@mit.edu',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
+	},
 	'alice-blair': {
 		id: 'alice-blair',
 		name: 'Alice Blair',
 		position: 'Strategic Deception',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512',
-
+		
 		// Contact information
 		mitEmail: 'amblair@mit.edu',
-
+		
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {

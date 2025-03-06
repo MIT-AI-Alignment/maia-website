@@ -25,6 +25,18 @@
 
 	const MEDIA_ITEMS: MediaItem[] = [
 		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/alek-staffer-talk-2.jpg',
+			alt: 'Alek in conversation with a staffer',
+			caption: 'Alek explaining the strategic deception demo'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/gatlen-staffer-talk.jpg',
+			alt: 'Gatlen talking with a staffer',
+			caption: 'Gatlen explaining why phone-line attacks demonstrate more general AI risks'
+		},
+		{
 			type: 'video',
 			src: 'https://drive.google.com/file/d/1HAMlY-cNGfm0ODQUy2gQklq3RGRwvwnt/preview',
 			alt: "Representative Foster's Introductory Speech",
@@ -32,9 +44,21 @@
 		},
 		{
 			type: 'image',
-			src: '/images/initiatives/caip-exhibition/intro-panorama.jpeg',
-			alt: 'Wide view of the Intro Speech at the Exhibition',
-			caption: 'Wide view of the Intro Speech'
+			src: '/images/initiatives/caip-exhibition/david-nikola-talk.jpg',
+			alt: 'David and Nikola in conversation',
+			caption: 'David discussing the demo with a member from the AI Safety Team at Harvard'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/alek-staffer-talk-3.jpg',
+			alt: 'Alek talking with a staffer',
+			caption: 'Alek discussing AI risks with a congressional staffer'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/alek-alice-demo.jpg',
+			alt: 'Alek and Alice demonstrating AI capabilities',
+			caption: 'Alek and Alice at their booth pre-demonstration'
 		},
 		{
 			type: 'video',
@@ -42,6 +66,48 @@
 			alt: 'MAIA Congressional Exhibition Walkthrough',
 			caption: 'Video walkthrough of the Exhibition'
 		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/alek-staffer-talk.jpg',
+			alt: 'Alek engaging with a congressional staffer',
+			caption: 'Alek discussing AI policy implications'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/maia-team-2.jpg',
+			alt: 'MAIA team group photo',
+			caption: 'Another view of the MAIA team at the exhibition'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/david-gatlen-demo.jpg',
+			alt: 'David and Gatlen demonstrating AI capabilities',
+			caption: 'David and Gatlen at their booth pre-demonstration'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/expo-flyer.png',
+			alt: 'Exhibition flyer',
+			caption: 'Congressional Exhibition on Advanced AI flyer'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/maia-team.jpg',
+			alt: 'MAIA team at the exhibition',
+			caption: 'MAIA team at the Congressional Exhibition'
+		},
+		{
+			type: 'image',
+			src: '/images/initiatives/caip-exhibition/intro-panorama.jpeg',
+			alt: 'Wide view of the Intro Speech at the Exhibition',
+			caption: 'Wide view of the Intro Speech'
+		},
+		// {
+		// 	type: 'image',
+		// 	src: '/images/initiatives/caip-exhibition/alek-rayburn-statue.jpeg',
+		// 	alt: 'Alek at Rayburn statue',
+		// 	caption: 'Alek at the Rayburn statue in the Capitol'
+		// },
 		{
 			type: 'video',
 			src: 'https://drive.google.com/file/d/1X_vKrQtqJ_iaWzChgKsCmgp_aF5_Lfa5/preview',
@@ -111,7 +177,10 @@
 				<div class="flex flex-col md:flex-row gap-8">
 					<div class="md:w-2/3">
 						<p class="text-lg leading-relaxed">
-							MAIA members traveled to DC to attend the Congressional Exhibition on Advanced AI
+							MAIA members traveled to DC to attend the <Link
+								href="https://www.centeraipolicy.org/work/caip-showcases-advanced-ai-risks-to-congress-in-first-of-its-kind-tech-exhibition-on-capitol-hill"
+								>Congressional Exhibition on Advanced AI
+							</Link>
 							(hosted by the <Link href="https://www.centeraipolicy.org/"
 								>Center for AI Policy or CAIP</Link
 							>, supported by <Link href="https://foster.house.gov/"
@@ -169,7 +238,6 @@
 						<i class="fa-solid fa-arrow-right"></i>
 					</div>
 				</div>
-				<p class="text-gray-700 dark:text-gray-300">(More media to be released when CAIP releases their footage)</p>
 			</div>
 
 			<hr class="my-16 border-gray-200 dark:border-gray-700" />

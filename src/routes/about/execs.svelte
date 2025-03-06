@@ -3,7 +3,7 @@
 	import { getActiveExecs, getInactiveExecs } from '$lib/people';
 
 	const activeExecs = getActiveExecs();
-	const inactiveExecs = getInactiveExecs();
+	// const inactiveExecs = getInactiveExecs();
 </script>
 
 <div class="flex my-6 flex-wrap">
