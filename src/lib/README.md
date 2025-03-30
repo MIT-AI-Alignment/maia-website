@@ -20,50 +20,51 @@ The `Person` type includes the following fields:
 
 ```typescript
 type Person = {
-  id: string;                  // Unique identifier (kebab-case of name)
-  name: string;                // Full name
-  position?: string;           // Current position/role
-  imageUrl: string;            // Profile picture URL
-  
-  // Contact information
-  email?: string;              // Primary email
-  mitEmail?: string;           // MIT email if applicable
-  
-  // Social media and professional profiles
-  github?: string;             // GitHub username or URL
-  gitlab?: string;             // GitLab username or URL
-  linkedin?: string;           // LinkedIn URL
-  personalPage?: string;       // Personal website URL
-  twitter?: string;            // Twitter/X handle or URL
-  instagram?: string;          // Instagram URL
-  medium?: string;             // Medium URL or handle
-  
-  // Messaging platforms
-  slack?: string;              // Slack email or handle
-  // Note: Signal is no longer collected
-  
-  // Academic profiles
-  googleScholar?: string;      // Google Scholar profile
-  orcid?: string;              // ORCID identifier
-  arxiv?: string;              // arXiv identifier
-  openreview?: string;         // OpenReview profile
-  
-  // Project information
-  projects?: string[];         // List of project IDs the person is involved with
-  projectRoles?: Record<string, string>; // Project-specific roles (projectId -> role)
-  projectOrder?: Record<string, number>; // Order in which to display person in project (projectId -> order)
-  
-  // Display preferences
-  contactPreferences?: {       // Control how contact info is displayed
-    showAllSocials?: string;   // "true" to show all social media links by default
-    showAllContacts?: string;  // "true" to show all contact details by default
-  };
-  
-  // Status information
-  isActive?: boolean;          // Whether the person is currently active
-  isAdvisor?: boolean;         // Whether the person is an advisor
-  isExec?: boolean;            // Whether the person is an executive
-  joinDate?: string;           // When they joined MAIA (YYYY-MM format)
+	id: string; // Unique identifier (kebab-case of name)
+	name: string; // Full name
+	position?: string; // Current position/role
+	imageUrl: string; // Profile picture URL
+
+	// Contact information
+	email?: string; // Primary email
+	mitEmail?: string; // MIT email if applicable
+
+	// Social media and professional profiles
+	github?: string; // GitHub username or URL
+	gitlab?: string; // GitLab username or URL
+	linkedin?: string; // LinkedIn URL
+	personalPage?: string; // Personal website URL
+	twitter?: string; // Twitter/X handle or URL
+	instagram?: string; // Instagram URL
+	medium?: string; // Medium URL or handle
+
+	// Messaging platforms
+	slack?: string; // Slack email or handle
+	// Note: Signal is no longer collected
+
+	// Academic profiles
+	googleScholar?: string; // Google Scholar profile
+	orcid?: string; // ORCID identifier
+	arxiv?: string; // arXiv identifier
+	openreview?: string; // OpenReview profile
+
+	// Project information
+	projects?: string[]; // List of project IDs the person is involved with
+	projectRoles?: Record<string, string>; // Project-specific roles (projectId -> role)
+	projectOrder?: Record<string, number>; // Order in which to display person in project (projectId -> order)
+
+	// Display preferences
+	contactPreferences?: {
+		// Control how contact info is displayed
+		showAllSocials?: string; // "true" to show all social media links by default
+		showAllContacts?: string; // "true" to show all contact details by default
+	};
+
+	// Status information
+	isActive?: boolean; // Whether the person is currently active
+	isAdvisor?: boolean; // Whether the person is an advisor
+	isExec?: boolean; // Whether the person is an executive
+	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 ```
 
@@ -120,17 +121,17 @@ Alternatively, you can pass individual properties:
 
 ```svelte
 <Profile
-  name={person.name}
-  position={person.position}
-  subtitle={getPersonProjectRole(person, 'phone-line-attacks')}
-  imageUrl={person.imageUrl}
-  personalPage={person.personalPage}
-  email={person.email}
-  linkedin={person.linkedin}
-  googleScholar={person.googleScholar}
-  github={person.github}
-  showAllContacts={true}
-  showAllSocials={true}
+	name={person.name}
+	position={person.position}
+	subtitle={getPersonProjectRole(person, 'phone-line-attacks')}
+	imageUrl={person.imageUrl}
+	personalPage={person.personalPage}
+	email={person.email}
+	linkedin={person.linkedin}
+	googleScholar={person.googleScholar}
+	github={person.github}
+	showAllContacts={true}
+	showAllSocials={true}
 />
 ```
 
@@ -179,10 +180,7 @@ These preferences will be applied automatically when using the `personId` parame
 
 ```svelte
 {#each getPeopleByProject('project-id') as person}
-  <Profile
-    personId={person.id}
-    subtitle={getPersonProjectRole(person, 'project-id')}
-  />
+	<Profile personId={person.id} subtitle={getPersonProjectRole(person, 'project-id')} />
 {/each}
 ```
 
@@ -225,10 +223,7 @@ For pages that display people in the context of a specific project, you can use 
 
 ```svelte
 {#each getPeopleByProject('project-id') as person}
-  <Profile
-    personId={person.id}
-    subtitle={getPersonProjectRole(person, 'project-id')}
-  />
+	<Profile personId={person.id} subtitle={getPersonProjectRole(person, 'project-id')} />
 {/each}
 ```
 
@@ -263,9 +258,6 @@ Then use `getSortedPeopleByProject` to get the people in the correct order:
 
 ```svelte
 {#each getSortedPeopleByProject('project-id') as person}
-  <Profile
-    personId={person.id}
-    subtitle={getPersonProjectRole(person, 'project-id')}
-  />
+	<Profile personId={person.id} subtitle={getPersonProjectRole(person, 'project-id')} />
 {/each}
 ```

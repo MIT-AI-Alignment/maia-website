@@ -2,7 +2,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { imagetools } from 'vite-imagetools';
-import Icons from 'unplugin-icons/vite'
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
 	optimizeDeps: {
@@ -12,8 +12,11 @@ export default defineConfig({
 		sveltekit({
 			onwarn: (warning, handler) => {
 				if (warning.code.startsWith('a11y-')) return;
-				if (warning.message.includes('@splidejs/svelte-splide') || 
-					warning.message.includes('@splidejs/splide')) return;
+				if (
+					warning.message.includes('@splidejs/svelte-splide') ||
+					warning.message.includes('@splidejs/splide')
+				)
+					return;
 				handler(warning);
 			}
 		}),

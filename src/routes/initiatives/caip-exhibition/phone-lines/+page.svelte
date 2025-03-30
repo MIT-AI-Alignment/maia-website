@@ -7,7 +7,7 @@
 	import Link from '../../../../components/Link.svelte';
 	import BackLink from '../../../../components/BackLink.svelte';
 	import { getSortedPeopleByProject, getPersonProjectRole } from '$lib/people';
-	
+
 	// Get people involved in the phone-line attacks project, sorted by their project order
 	const phoneLineTeam = getSortedPeopleByProject('phone-line-attacks');
 </script>

@@ -9,7 +9,6 @@
 </script>
 
 <div class="mt-8 space-y-8">
-
 	<!-- Overview Section -->
 	<DarkModeCard transparent={true}>
 		<div class="flex flex-col md:flex-row gap-8">
@@ -108,10 +107,11 @@
 			</h3>
 			<div class="space-y-4">
 				<p>
-					While some stakeholders (like AI company executives) frame AI development as a race that the
-					US must "win", this perspective is dangerous. The capacity for strategic deception in AI
-					systems reveals the fundamental flaw in this framing: rushing to develop superintelligent AI
-					risks creating powerful systems with hidden objectives that conflict with human welfare.
+					While some stakeholders (like AI company executives) frame AI development as a race that
+					the US must "win", this perspective is dangerous. The capacity for strategic deception in
+					AI systems reveals the fundamental flaw in this framing: rushing to develop
+					superintelligent AI risks creating powerful systems with hidden objectives that conflict
+					with human welfare.
 				</p>
 				<p class="text-lg font-semibold text-purple-600 dark:text-purple-300">
 					In short, there are no winners in an AI arms race.
@@ -129,9 +129,7 @@
 				<p>
 					For more information contact Alek Westover at <Link href="mailto://alekw@mit.edu"
 						>alekw@mit.edu</Link
-					> or Alice Blair at <Link href="mailto://amblair@mit.edu"
-					>amblair@mit.edu</Link
-				>
+					> or Alice Blair at <Link href="mailto://amblair@mit.edu">amblair@mit.edu</Link>
 				</p>
 				<p>
 					Download our <Link
@@ -150,8 +148,8 @@
 			</h3>
 			<ul class="list-disc pl-6 space-y-2 mb-4">
 				<li>
-					<strong>Deception is Emergent:</strong> Advanced AI systems can develop deceptive behaviors without
-					being explicitly trained to do so.
+					<strong>Deception is Emergent:</strong> Advanced AI systems can develop deceptive behaviors
+					without being explicitly trained to do so.
 				</li>
 				<li>
 					<strong>Alignment Faking:</strong> AI systems can learn to appear aligned with human values

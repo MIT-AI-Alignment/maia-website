@@ -18,27 +18,21 @@
 	let isScrolled = false;
 	let isMobileMenuOpen = false;
 	let activeDropdown: string | null = null;
-	
+
 	// CSS variables for dynamic styling
 	let navbarHeight = '4rem'; // Default height
 	let navbarBg = 'transparent';
 	let navbarBorder = 'transparent';
 	let navbarShadow = 'none';
-	
+
 	// Update navbar appearance based on scroll position
 	$: {
 		if (scrollY > 20) {
 			isScrolled = true;
 			navbarHeight = '3.5rem';
-			navbarBg = $theme === 'dark' 
-				? 'bg-maia_black/95' 
-				: 'bg-white/95';
-			navbarBorder = $theme === 'dark'
-				? 'border-gray-800'
-				: 'border-gray-200';
-			navbarShadow = $theme === 'dark'
-				? 'shadow-sm shadow-purple-900/10'
-				: 'shadow-sm';
+			navbarBg = $theme === 'dark' ? 'bg-maia_black/95' : 'bg-white/95';
+			navbarBorder = $theme === 'dark' ? 'border-gray-800' : 'border-gray-200';
+			navbarShadow = $theme === 'dark' ? 'shadow-sm shadow-purple-900/10' : 'shadow-sm';
 		} else {
 			isScrolled = false;
 			navbarHeight = '4rem';
@@ -47,17 +41,17 @@
 			navbarShadow = 'shadow-none';
 		}
 	}
-	
+
 	// Handle scroll events
 	function handleScroll() {
 		scrollY = window.scrollY;
 	}
-	
+
 	// Set active dropdown
 	function setActiveDropdown(label: string | null) {
 		activeDropdown = label;
 	}
-	
+
 	// Toggle mobile menu
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
@@ -69,7 +63,7 @@
 			}
 		}
 	}
-	
+
 	// Close mobile menu on navigation
 	$: if ($page) {
 		isMobileMenuOpen = false;
@@ -77,28 +71,28 @@
 			document.body.style.overflow = '';
 		}
 	}
-	
+
 	// Set up scroll listener
 	onMount(() => {
 		if (browser) {
 			window.addEventListener('scroll', handleScroll);
 			handleScroll(); // Initial check
-			
+
 			return () => {
 				window.removeEventListener('scroll', handleScroll);
 			};
 		}
 	});
-	
+
 	// Update CSS variables when they change
 	afterUpdate(() => {
 		if (browser) {
 			document.documentElement.style.setProperty('--navbar-height', navbarHeight);
 		}
 	});
-	
+
 	// Convert readonly navigation items to mutable type for NavItem component
-	const navItems: NavItemType[] = NAVIGATION_ITEMS.map(item => {
+	const navItems: NavItemType[] = NAVIGATION_ITEMS.map((item) => {
 		if ('dropdownItems' in item) {
 			return {
 				...item,
@@ -109,23 +103,12 @@
 	});
 </script>
 
-<style>
-	:global(:root) {
-		--navbar-height: 4rem;
-	}
-	
-	.navbar-container {
-		height: var(--navbar-height);
-		transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	}
-</style>
-
 <div class="fixed top-0 left-0 right-0 z-50 w-full">
 	{#if CONFIG.banner.visible}
 		<Banner />
 	{/if}
-	
-	<header 
+
+	<header
 		class="navbar-container w-full border-b backdrop-blur-sm {navbarBg} {navbarBorder} {navbarShadow}"
 	>
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
@@ -133,47 +116,46 @@
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="/" class="flex items-center">
-						<img 
-							src={$theme === 'dark' ? "/images/maia_dark.svg" : "/images/maia.svg"} 
-							alt="MAIA logo" 
+						<img
+							src={$theme === 'dark' ? '/images/maia_dark.svg' : '/images/maia.svg'}
+							alt="MAIA logo"
 							class="h-7 w-auto"
 						/>
 					</a>
 				</div>
-				
+
 				<!-- Desktop Navigation -->
 				<nav class="hidden md:flex items-center space-x-1">
 					{#each navItems as item}
-						<NavItem 
-							{item} 
-							{activeDropdown} 
-							{setActiveDropdown} 
-						/>
+						<NavItem {item} {activeDropdown} {setActiveDropdown} />
 					{/each}
-					
+
 					<!-- Dynamic page-specific dropdown items -->
 					{#if $pageNavItems.length > 0}
-						<div 
+						<div
 							class="relative group"
 							role="button"
 							tabindex="0"
 							on:mouseenter={() => setActiveDropdown('page')}
 							on:mouseleave={() => setActiveDropdown(null)}
 						>
-							<button 
+							<button
 								class="px-3 py-2 rounded-md transition-colors duration-200 flex items-center gap-2
-										{activeDropdown === 'page' ? 'text-purple-600 dark:text-purple-400' : 
-										'hover:text-purple-600 dark:hover:text-purple-400'}"
+										{activeDropdown === 'page'
+									? 'text-purple-600 dark:text-purple-400'
+									: 'hover:text-purple-600 dark:hover:text-purple-400'}"
 							>
 								<i class="fas fa-list-ul text-sm"></i>
 								<span>On This Page</span>
-								<i class="fas fa-chevron-down text-xs opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>
+								<i
+									class="fas fa-chevron-down text-xs opacity-70 group-hover:rotate-180 transition-transform duration-200"
+								></i>
 							</button>
-							
+
 							{#if activeDropdown === 'page'}
 								<div
 									transition:slide={{ duration: 150 }}
-									class="absolute top-full right-0 bg-white dark:bg-maia_black shadow-lg dark:shadow-purple-900/20 
+									class="absolute top-full right-0 bg-white dark:bg-maia_black shadow-lg dark:shadow-purple-900/20
 											rounded-md py-1 min-w-[200px] border border-gray-100 dark:border-gray-800 backdrop-blur-sm"
 									role="menu"
 									tabindex="0"
@@ -192,13 +174,13 @@
 							{/if}
 						</div>
 					{/if}
-					
+
 					<!-- Theme Toggle -->
 					<div class="ml-2 flex items-center">
 						<ThemeToggle />
 					</div>
 				</nav>
-				
+
 				<!-- Mobile Menu Button -->
 				<div class="flex md:hidden">
 					<button
@@ -220,7 +202,7 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<!-- Mobile Menu -->
 	<MobileMenu isOpen={isMobileMenuOpen} {activeDropdown} {navItems} />
 </div>
@@ -230,3 +212,18 @@
 {#if CONFIG.banner.visible}
 	<div class="h-12"></div>
 {/if}
+
+<style>
+	:global(:root) {
+		--navbar-height: 4rem;
+	}
+
+	.navbar-container {
+		height: var(--navbar-height);
+		transition:
+			height 0.3s ease,
+			background-color 0.3s ease,
+			border-color 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+</style>

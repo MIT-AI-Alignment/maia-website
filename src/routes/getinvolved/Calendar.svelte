@@ -4,8 +4,8 @@
 </script>
 
 <div>
-	Stay up to date with the happenings of MAIA by adding the calendar below or signing up for our mailing
-	list.
+	Stay up to date with the happenings of MAIA by adding the calendar below or signing up for our
+	mailing list.
 	<br />
 	<div class="calendar-container w-full overflow-hidden">
 		<iframe
@@ -20,12 +20,7 @@
 	</div>
 	<div class="mt-8">
 		<a href={CONFIG.mailingListLink}>
-			<Button 
-				text="Join our Mailing List" 
-				icon="fa-solid fa-envelope"
-				type="purple" 
-				size="md" 
-			/>
+			<Button text="Join our Mailing List" icon="fa-solid fa-envelope" type="purple" size="md" />
 		</a>
 	</div>
 </div>
@@ -37,7 +32,7 @@
 		height: 0;
 		margin-top: 1rem;
 	}
-	
+
 	.calendar-container iframe {
 		position: absolute;
 		top: 0;

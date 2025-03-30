@@ -41,11 +41,11 @@
 	</p>
 	<div class="mt-8">
 		<a href={CONFIG.aisf_ml.applicationLink}>
-			<Button 
-				text="Apply for AISF ML Track here by {CONFIG.aisf_ml.deadline}" 
+			<Button
+				text="Apply for AISF ML Track here by {CONFIG.aisf_ml.deadline}"
 				icon="fa-solid fa-arrow-right"
-				type="purple" 
-				size="md" 
+				type="purple"
+				size="md"
 			/>
 		</a>
 	</div>

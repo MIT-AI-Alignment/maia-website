@@ -33,22 +33,22 @@ Each semester we need to update AISF due dates, exec board etc. Because of this,
 ```typescript
 // Use this to make high-level changes to the website in one place.
 export const CONFIG = {
-    banner: {
-        visible: true
-    },
-    aisf_ml: {
-        visible: true,
-        deadline: "Wednesday, February 12th, 11:59 PM EST",
-        deadline_short: "",
-        applicationLink: "https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
-    },
-    aisf_gov: {
-        visible: false,
-        deadline: "",
-        deadline_short: "",
-        applicationLink: ""
-    },
-} as const; 
+	banner: {
+		visible: true
+	},
+	aisf_ml: {
+		visible: true,
+		deadline: 'Wednesday, February 12th, 11:59 PM EST',
+		deadline_short: '',
+		applicationLink: 'https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd'
+	},
+	aisf_gov: {
+		visible: false,
+		deadline: '',
+		deadline_short: '',
+		applicationLink: ''
+	}
+} as const;
 ```
 
 ## 04 Building
@@ -72,6 +72,7 @@ npm run deploy --kerb=YOUR_KERB
 ```
 
 > This command is equivalent to:
+>
 > ```bash
 > rsync -avz build/ [YOUR_KERB]@athena.dialup.mit.edu:/mit/aialignment/www
 > ```

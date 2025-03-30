@@ -25,9 +25,9 @@
 	<div in:fade={{ duration: 800, delay: 200 }}>
 		<Splide
 			aria-label="Research images/papers"
-			options={{ 
-				perPage, 
-				gap: '1.5rem', 
+			options={{
+				perPage,
+				gap: '1.5rem',
 				pagination: true,
 				arrows: true,
 				autoplay: true,
@@ -94,30 +94,30 @@
 	:global(.papers-carousel .splide__pagination) {
 		bottom: -2rem;
 	}
-	
+
 	:global(.papers-carousel .splide__pagination__page) {
 		background: rgba(139, 92, 246, 0.3);
 		transition: all 0.3s ease;
 	}
-	
+
 	:global(.papers-carousel .splide__pagination__page.is-active) {
 		background: rgba(139, 92, 246, 0.8);
 		transform: scale(1.3);
 	}
-	
+
 	.slide-in {
 		animation: slideIn 0.8s ease-out forwards;
 		opacity: 0;
 		transform: translateY(20px);
 	}
-	
+
 	@keyframes slideIn {
 		to {
 			opacity: 1;
 			transform: translateY(0);
 		}
 	}
-	
+
 	@media (prefers-reduced-motion: reduce) {
 		.slide-in {
 			animation: none;

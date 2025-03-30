@@ -121,6 +121,6 @@ export const PAPERS = [
 		tags: [TAGS.ADVERSARIAL],
 		title: 'Alignment faking in large language models',
 		authors: ['Benjamin Wright (MAIA Alum)'],
-		link: 'https://arxiv.org/abs/2412.14093',
+		link: 'https://arxiv.org/abs/2412.14093'
 	}
 ] as const;

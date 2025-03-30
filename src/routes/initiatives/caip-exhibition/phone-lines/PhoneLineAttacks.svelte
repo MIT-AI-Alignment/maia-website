@@ -211,7 +211,7 @@
 			</h3>
 			<div class="space-y-3">
 				<p>
-					For inquiries about this demonstration, please contact David Turturean at 
+					For inquiries about this demonstration, please contact David Turturean at
 					<Link href="mailto:davidct@mit.edu">davidct@mit.edu</Link>
 					or Gatlen Culp at
 					<Link href="mailto:gculp@mit.edu">gculp@mit.edu</Link>

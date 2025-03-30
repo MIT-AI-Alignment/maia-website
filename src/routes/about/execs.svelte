@@ -9,11 +9,7 @@
 <div class="flex my-6 flex-wrap">
 	<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
 	{#each activeExecs as exec}
-		<Profile 
-			personId={exec.id} 
-			showSocials={true}
-			showExpandButton={true}
-		/>
+		<Profile personId={exec.id} showSocials={true} showExpandButton={true} />
 	{/each}
 </div>
 

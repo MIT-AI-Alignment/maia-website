@@ -27,11 +27,11 @@
 		>.
 	</p>
 	<div class="mt-8">
-		<Button 
-			text="Apply for AISF Policy Track here by {CONFIG.aisf_gov.deadline}" 
+		<Button
+			text="Apply for AISF Policy Track here by {CONFIG.aisf_gov.deadline}"
 			icon="fa-solid fa-arrow-right"
-			type="fuchsia" 
-			size="md" 
+			type="fuchsia"
+			size="md"
 			href={CONFIG.aisf_gov.applicationLink}
 		/>
 	</div>

@@ -4,7 +4,7 @@
 
 	// Control the animation for the icon
 	let animateIcon = true;
-	let isVisible = true;  // New state to control banner visibility
+	let isVisible = true; // New state to control banner visibility
 
 	// When the component mounts, remove the animation after 3 seconds.
 	onMount(() => {
@@ -27,7 +27,9 @@
 </script>
 
 {#if isVisible}
-	<div class="bg-purple-600 dark:bg-purple-500 h-12 flex items-center justify-center w-full relative">
+	<div
+		class="bg-purple-600 dark:bg-purple-500 h-12 flex items-center justify-center w-full relative"
+	>
 		<div class="flex flex-col items-center">
 			<p class="text-white">
 				<i

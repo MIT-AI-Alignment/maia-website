@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade, scale } from 'svelte/transition';
-	
+
 	let mounted = false;
-	
+
 	onMount(() => {
 		mounted = true;
 	});
-	
+
 	const organizations = [
 		{
 			imagePath: '/images/logos/chai.png',
@@ -63,11 +63,16 @@
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
 	{#each organizations as { imagePath, name, link, invert }, i}
 		{#if mounted}
-			<div 
+			<div
 				in:scale={{ duration: 400, delay: 100 + i * 50, start: 0.8, opacity: 0 }}
 				class="org-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800"
 			>
-				<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
+				<a
+					href={link}
+					class="flex flex-col items-center gap-2 w-full h-full"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					<div class="h-24 flex items-center justify-center">
 						<img
 							src={imagePath}
@@ -80,8 +85,15 @@
 				</a>
 			</div>
 		{:else}
-			<div class="org-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-				<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
+			<div
+				class="org-card flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800"
+			>
+				<a
+					href={link}
+					class="flex flex-col items-center gap-2 w-full h-full"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					<div class="h-24 flex items-center justify-center">
 						<img
 							src={imagePath}
@@ -101,12 +113,12 @@
 	.org-card {
 		border: 1px solid rgba(139, 92, 246, 0.1);
 	}
-	
+
 	@media (prefers-reduced-motion: reduce) {
 		.org-card {
 			transition: none !important;
 		}
-		
+
 		.org-card img {
 			transition: none !important;
 		}

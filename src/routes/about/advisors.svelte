@@ -7,10 +7,6 @@
 
 <div class="flex my-6 flex-wrap">
 	{#each advisors as advisor}
-		<Profile 
-			personId={advisor.id} 
-			showSocials={true}
-			showExpandButton={true}
-		/>
+		<Profile personId={advisor.id} showSocials={true} showExpandButton={true} />
 	{/each}
 </div>

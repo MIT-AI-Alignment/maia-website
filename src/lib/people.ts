@@ -89,7 +89,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Operations Director; Workshops and Socials Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192',
 		email: 'y.emreyavuz@outlook.com.tr',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'duru-ozer': {
@@ -163,14 +163,14 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true
 	},
-	
+
 	// Advisors
 	'max-tegmark': {
 		id: 'max-tegmark',
 		name: 'Professor Max Tegmark',
 		position: 'Faculty Advisor',
 		imageUrl:
-		'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
+			'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
 		personalPage: 'https://space.mit.edu/home/tegmark/',
 		isAdvisor: true,
 		isActive: true
@@ -194,17 +194,17 @@ export const PEOPLE: Record<string, Person> = {
 		isAdvisor: true,
 		isActive: true
 	},
-	
+
 	// CAIP Exhibition Team Members
 	'david-turturean': {
 		id: 'david-turturean',
 		name: 'David Turturean',
 		position: 'Phone-line Attacks - Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
-		
+
 		// Contact information
 		mitEmail: 'davidct@mit.edu',
-		
+
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -219,10 +219,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Alek Westover',
 		position: 'Strategic Deception - Lead',
 		imageUrl: '/images/people/alek-westover.jpg',
-		
+
 		// Contact information
 		mitEmail: 'alekw@mit.edu',
-		
+
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {
@@ -236,17 +236,17 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'jen-ben-arye',
 		name: 'Jen Ben Arye',
 		mitEmail: 'jen_ben@mit.edu',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192'
 	},
 	'alice-blair': {
 		id: 'alice-blair',
 		name: 'Alice Blair',
 		position: 'Strategic Deception',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512',
-		
+
 		// Contact information
 		mitEmail: 'amblair@mit.edu',
-		
+
 		isActive: true,
 		projects: ['strategic-deception'],
 		projectRoles: {
@@ -287,7 +287,7 @@ export function getContactPreference(person: Person, platform: string): string |
 // Helper function to get people by project and sort them by their project order
 export function getSortedPeopleByProject(projectId: string): Person[] {
 	const people = getPeopleByProject(projectId);
-	
+
 	// Sort people by their project order (if specified)
 	return people.sort((a, b) => {
 		const orderA = a.projectOrder?.[projectId] ?? 999; // Default to a high number if not specified

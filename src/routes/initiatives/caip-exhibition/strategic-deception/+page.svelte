@@ -5,7 +5,7 @@
 	import Profile from '../../../about/profile.svelte';
 	import BackLink from '../../../../components/BackLink.svelte';
 	import { getSortedPeopleByProject, getPersonProjectRole } from '$lib/people';
-	
+
 	// Get people involved in the strategic deception project, sorted by their project order
 	const strategicDeceptionTeam = getSortedPeopleByProject('strategic-deception');
 </script>
