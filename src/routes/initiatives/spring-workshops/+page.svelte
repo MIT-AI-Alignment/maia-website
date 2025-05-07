@@ -25,50 +25,50 @@
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/workshop-group.jpg',
 			alt: 'Workshop participants gathered together',
-			caption: 'Students and speakers at the April Policy Workshop'
+			caption: 'Team picture from one of our technical workshops'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/campfire.jpg',
 			alt: 'Students gathered around a campfire',
-			caption: 'Evening discussions around the campfire'
+			caption: 'Evening discussions and connections around the campfire'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/speaker-session.jpg',
-			alt: 'Workshop speaker giving a presentation',
-			caption: 'Expert speaker sharing insights on AI policy'
+			alt: 'Student organizer giving an introductory speech',
+			caption: 'Student organizer giving the introductory speech at a workshop'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/nature-walk.jpg',
 			alt: 'Participants on a nature walk',
-			caption: 'Taking a break to explore the surroundings'
+			caption: 'Workshop participants taking a refreshing nature walk between sessions'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/workshop-discussion.jpg',
 			alt: 'Small group discussion',
-			caption: 'Students engaging in deep discussions about AI safety'
+			caption: 'Collaborative discussions on technical AI safety challenges'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/campfire-2.jpg',
 			alt: 'People making smores around campfire',
-			caption: 'People making smores around campfire'
+			caption: 'Building community and sharing ideas over s\'mores'
 		},
 		{
 			type: 'image',
 			src: '/images/initiatives/spring-workshops/nature.jpg',
 			alt: 'Image of a lake and trees',
-			caption: 'Participants enjoying the nature surrounding the workshop.'
+			caption: 'The beautiful retreat setting where our workshops took place'
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>MAIA - AI Policy Workshop</title>
-	<meta name="description" content="MIT AI Alignment (MAIA) policy workshop initiatives page." />
+	<title>MAIA - Spring AI Workshops</title>
+	<meta name="description" content="MIT AI Alignment (MAIA) spring technical and policy workshops." />
 </svelte:head>
 
 <main class="min-h-screen bg-maia_white dark:bg-maia_black text-gray-800 dark:text-maia_white">
@@ -117,19 +117,14 @@
 								>AI Safety Student Team</Link
 							> and <Link href="https://www.linkedin.com/company/mit-ai-alignment/"
 								>MIT AI Alignment</Link
-							> had the incredible opportunity to gather around 150 students and 20 speakers over three
-							weekends to dive deep into AI policy, AI safety, and explore how we can make sure AI goes
-							well for everyone.
+							> had the incredible opportunity to organize three immersive weekend workshops - two focused on technical AI safety and one on AI policy - bringing together around 150 students and 20 speakers.
 						</p>
 						<p class="mt-4 text-lg leading-relaxed">
-							Nestled about an hour outside Cambridge, surrounded by nature, we unplugged from our
-							everyday lives. We made time to think creatively, explore new ideas, and sing around
-							the campfire.
+							Set in a beautiful retreat location about an hour outside Cambridge, these workshops created a space for participants to disconnect from daily routines, engage in deep thinking, and build community through shared experiences - from intensive technical discussions to singing around the campfire.
 						</p>
 						<p class="mt-4 text-lg leading-relaxed">
-							A huge thank you to every student who joined us from Harvard, MIT, Brown, Columbia,
-							and many others. We also want to give a massive shoutout to our exceptional speakers
-							from organizations like <Link
+							We're grateful to all the students who joined us from Harvard, MIT, Brown, Columbia,
+							and many other institutions. Special thanks to our exceptional speakers from <Link
 								href="https://www.linkedin.com/company/anthropicresearch/">Anthropic</Link
 							>, <Link href="https://www.linkedin.com/company/openai/">OpenAI</Link>,
 							<Link href="https://www.linkedin.com/company/metr-evals/">METR</Link>,
@@ -139,7 +134,7 @@
 							>, along with
 							<Link href="https://www.linkedin.com/company/harvard-university/"
 								>Harvard University</Link
-							> and many others, who shared their insights and sparked deep discussions.
+							> and many others, who shared valuable insights and catalyzed meaningful discussions.
 						</p>
 						<p class="mt-4 text-lg leading-relaxed">
 							Here's to shaping a future where AI empowers us all, and doing it with care!
@@ -151,7 +146,7 @@
 						<ImageWithCaption
 							src="/images/initiatives/spring-workshops/workshop-discussion.jpg"
 							alt="Workshop highlights"
-							caption="Students engaging in discussions at the April workshop"
+							caption="Participants engaging in AI safety discussions"
 						/>
 					</div>
 				</div>
@@ -196,28 +191,29 @@
 			<SectionHeader
 				icon="fa-solid fa-landmark"
 				iconColor="blue-500"
-				text="AI Policy and Safety Topics"
+				text="AI Technical & Policy Topics"
 			/>
 
 			<div class="mt-8 space-y-8">
 				<p class="text-lg leading-relaxed">
-					The workshop covered a range of critical topics in AI policy and safety, including:
+					The three workshops covered a range of critical topics in both technical AI safety and policy:
 				</p>
 
 				<ul class="list-disc list-inside space-y-4 ml-4">
-					<li class="text-lg">Governance frameworks for advanced AI systems</li>
 					<li class="text-lg">Technical approaches to AI alignment and safety</li>
+					<li class="text-lg">Governance frameworks for advanced AI systems</li>
+					<li class="text-lg">Interpretability and transparency in neural networks</li>
 					<li class="text-lg">Policy interventions for managing AI risks</li>
 					<li class="text-lg">
 						Collaborative approaches between industry, academia, and government
 					</li>
-					<li class="text-lg">Student-led initiatives in AI safety and governance</li>
+					<li class="text-lg">Student-led initiatives in AI safety research and governance</li>
 				</ul>
 
 				<p class="text-lg leading-relaxed mt-8">
-					Through interactive sessions, expert panels, and collaborative discussions, participants
-					developed a deeper understanding of the challenges and opportunities in ensuring AI
-					benefits humanity.
+					Through hands-on technical sessions, expert panels, and collaborative discussions, participants
+					developed practical skills and deeper understanding of the challenges in ensuring AI
+					benefits humanity from both technical and policy perspectives.
 				</p>
 			</div>
 		</div>
