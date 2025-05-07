@@ -6,6 +6,7 @@
 	import PapersExpandable from '../components/PapersExpandable.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
 	import CongressionalExhibition from '../../components/CongressionalExhibition.svelte';
+	import WorkshopsSp25 from '../../components/PolicyWorkshopApril.svelte';
 
 	type Section = {
 		id: string;
@@ -20,6 +21,12 @@
 			title: 'Current Projects',
 			icon: 'fa-solid fa-rocket',
 			component: CongressionalExhibition
+		},
+		{
+			id: 's',
+			title: 'Technical & Policy Workshops on AI Safety',
+			icon: 'fa-solid fa-tree',
+			component: WorkshopsSp25
 		},
 		{
 			id: 'research',
