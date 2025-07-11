@@ -80,7 +80,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Deputy Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192',
 		mitEmail: 'mgerov@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'emre-yavuz': {
