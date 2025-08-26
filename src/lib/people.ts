@@ -83,15 +83,15 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
-	'emre-yavuz': {
-		id: 'emre-yavuz',
-		name: 'Emre Yavuz',
-		position: 'Operations Director; Workshops and Socials Co-Lead',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192',
-		email: 'y.emreyavuz@outlook.com.tr',
-		isExec: true,
-		isActive: true
-	},
+	// 'emre-yavuz': {
+	// 	id: 'emre-yavuz',
+	// 	name: 'Emre Yavuz',
+	// 	position: 'Operations Director; Workshops and Socials Co-Lead',
+	// 	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192',
+	// 	email: 'y.emreyavuz@outlook.com.tr',
+	// 	isExec: true,
+	// 	isActive: true
+	// },
 	'duru-ozer': {
 		id: 'duru-ozer',
 		name: 'Duru Ozer',
@@ -246,9 +246,6 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Alice Blair',
 		position: 'Strategic Deception',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U06LUEP04FN-c59b408a7d62-512',
-
-		// Contact information
-		mitEmail: 'amblair@mit.edu',
 
 		isActive: true,
 		projects: ['strategic-deception'],

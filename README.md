@@ -5,10 +5,11 @@ The [MAIA website](https://aialignment.mit.edu/) is created using [SvelteKit](ht
 ## 01 Setup
 
 **Install Dependencies**
-Make sure you have NodeJS and NPM already installed. Then Run:
+Make sure you have NodeJS and NPM (or Bun) already installed. Then Run:
 
 ```bash
 npm install
+# OR bun install
 ```
 
 ## 02 Developing
@@ -18,6 +19,7 @@ In the project root, start the development server locally:
 
 ```bash
 npm run dev
+# OR bun run dev
 ```
 
 ## 03 Updating the site
@@ -57,6 +59,7 @@ Once you are ready to upload, you can generate the production version of the app
 
 ```bash
 npm run build
+# OR bun run build
 ```
 
 You can preview the production build with `npm run preview`.
@@ -69,6 +72,7 @@ After building the app in part 04, You should see compiled output such as `index
 
 ```bash
 npm run deploy --kerb=YOUR_KERB
+# OR npm_config_kerb=gculp bun run deploy
 ```
 
 > This command is equivalent to:
@@ -88,7 +92,7 @@ The TL;DR on how to connect via SSH is:
 ```bash
 ssh [kerberos]@athena.dialup.mit.edu
 ```
-
+****
 2. Follow the instructions on signing in. It should be your normal MIT kerb/password/MFA.
 1. Changes can be made once connected, but it's honestly easier to follow the rsync instructions in part 05 below.
 
