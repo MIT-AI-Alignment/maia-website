@@ -38,6 +38,13 @@
 		>
 			a course developed by OpenAI researcher Richard Ngo</a
 		>.
+		 We revise this curriculum every year to keep it up to date. For Fall 2024, see our
+		<a
+			href="https://drive.google.com/file/d/1eigK8-II1OFtZ9o4B0mwNYY8mxH5FHsk/view?usp=sharing"
+			class="text-purple-600 dark:text-purple-300"
+		>
+			284-page AI safety textbook</a
+		>.
 	</p>
 	<div class="mt-8">
 		<a href={CONFIG.aisf_ml.applicationLink}>

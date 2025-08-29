@@ -14,11 +14,11 @@ export const ACTIVE_EXECS = [
 		position: 'Deputy Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192'
 	},
-	{
-		name: 'Emre Yavuz',
-		position: 'Operations Director; Workshops and Socials Co-Lead',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192'
-	},
+	// {
+	// 	name: 'Emre Yavuz',
+	// 	position: 'Operations Director; Workshops and Socials Co-Lead',
+	// 	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07SY97CP6V-bb515f01bed7-192'
+	// },
 	{
 		name: 'Duru Ozer',
 		position: 'AI Safety Fundamentals Co-Lead; Workshops Co-Lead',

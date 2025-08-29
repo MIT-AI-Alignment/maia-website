@@ -10,12 +10,12 @@ export const CONFIG = {
     },
     aisf_ml: {
         visible: true,
-        deadline: "Sunday, February 16th, 11:59 PM EST",
+        deadline: "(DEADLINE TBD)",
         deadline_short: "",
-        applicationLink: "https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd"
+        applicationLink: "https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
     },
     aisf_gov: {
-        visible: false,
+        visible: true,
         deadline: "",
         deadline_short: "",
         applicationLink: ""

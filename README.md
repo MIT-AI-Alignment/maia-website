@@ -92,10 +92,13 @@ The TL;DR on how to connect via SSH is:
 ```bash
 ssh [kerberos]@athena.dialup.mit.edu
 ```
-****
+
 2. Follow the instructions on signing in. It should be your normal MIT kerb/password/MFA.
 1. Changes can be made once connected, but it's honestly easier to follow the rsync instructions in part 05 below.
 
 - [Official MIT Athena Docs Here](https://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907090).
+
+Note: Only those who have been granted access to this mailing list will be able to deploy:
+[https://groups.mit.edu/webmoira/list/maia-www](https://groups.mit.edu/webmoira/list/maia-www)
 
 </details>

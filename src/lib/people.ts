@@ -61,7 +61,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Ionel Chiosa',
 		position: 'Co-Director; AI Safety Fundamentals Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
-		mitEmail: 'ichiosa@mit.edu',
+		// mitEmail: 'ichiosa@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -70,7 +70,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Kaivu Hariharan',
 		position: 'Co-Director; Member Engagement Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040TKYD3QE-dbf946acd13c-512',
-		mitEmail: 'kaivu@mit.edu',
+		// mitEmail: 'kaivu@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -79,7 +79,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Misha Gerovitch',
 		position: 'Deputy Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192',
-		mitEmail: 'mgerov@mit.edu',
+		// mitEmail: 'mgerov@mit.edu',
 		isExec: false,
 		isActive: true
 	},
@@ -106,7 +106,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Daria Ivanova',
 		position: 'Technical Development Co-Lead; Socials Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
-		mitEmail: 'divanova@mit.edu',
+		// mitEmail: 'divanova@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -158,7 +158,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'jen-ben-arye',
 		name: 'Jen Ben Arye',
 		position: 'Field-Building Co-Lead',
-		mitEmail: 'jen_ben@mit.edu',
+		// mitEmail: 'jen_ben@mit.edu',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
 		isExec: true,
 		isActive: true
@@ -168,7 +168,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Tara Rezaei Kheirkhah',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U0524UVD1J4-b15bb5cabe16-192',
-		mitEmail: 'tarark@mit.edu',
+		// mitEmail: 'tarark@mit.edu',
 		isExec: true,
 		isActive: true
 	},
@@ -189,7 +189,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Eleni Shor',
 		position: 'Student Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040KLXL7NK-88e0aed77925-192',
-		email: 'eleni.shor@proton.me',
+		// email: 'eleni.shor@proton.me',
 		isExec: false,
 		isActive: false,
 		isAdvisor: true
@@ -199,7 +199,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Asher Parker Sartori',
 		position: 'Student Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
-		mitEmail: 'aparkersartori@gmail.com',
+		// mitEmail: 'aparkersartori@gmail.com',
 		isAdvisor: true,
 		isActive: true
 	},
@@ -212,7 +212,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
 
 		// Contact information
-		mitEmail: 'davidct@mit.edu',
+		// mitEmail: 'davidct@mit.edu',
 
 		isActive: true,
 		projects: ['phone-line-attacks'],
@@ -230,7 +230,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: '/images/people/alek-westover.jpg',
 
 		// Contact information
-		mitEmail: 'alekw@mit.edu',
+		// mitEmail: 'alekw@mit.edu',
 
 		isActive: true,
 		projects: ['strategic-deception'],
