@@ -104,7 +104,7 @@ export const PAPERS = [
 		imgSrc: '/images/papers/model-on-model-deception.png',
 		tags: [TAGS.MECH_INTERP, TAGS.ICLR_2024],
 		title: 'An Assessment of Model-on-Model Deception',
-		authors: ['Laker Newhouse', 'Michael Gerovitch'],
+		authors: ['Laker Newhouse'],
 		link: 'https://arxiv.org/pdf/2405.12999'
 	},
 	{
