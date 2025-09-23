@@ -127,13 +127,6 @@
 			</h3>
 			<div class="space-y-3">
 				<p>
-					For more information contact Alek Westover at <Link href="mailto://alekw@mit.edu"
-						>alekw@mit.edu</Link
-					> or Alice Blair at <Link href="mailto://amblair@mit.edu"
-					>amblair@mit.edu</Link
-				>
-				</p>
-				<p>
 					Download our <Link
 						href="https://drive.google.com/file/d/1b06GSXwBVThFIgQyBL3BfpU4xmEN-hcR/view?usp=sharing"
 						>detailed pamphlet</Link
