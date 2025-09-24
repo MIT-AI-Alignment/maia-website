@@ -71,7 +71,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Co-Director; Member Engagement Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040TKYD3QE-dbf946acd13c-512',
 		// mitEmail: 'kaivu@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'misha-gerovitch': {

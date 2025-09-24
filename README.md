@@ -1,5 +1,7 @@
 # MAIA website
 
+Tutorial video: [https://youtu.be/R00G5PhiKNw](https://youtu.be/R00G5PhiKNw)
+
 The [MAIA website](https://aialignment.mit.edu/) is created using [SvelteKit](https://kit.svelte.dev/) and hosted on MIT Athena. This README should tell you everything you need to know about updating and deploying the site.
 
 ## 01 Setup
@@ -66,7 +68,7 @@ You can preview the production build with `npm run preview`.
 
 ## 05 Deploying to Athena
 
-!!! Info You must be on the `aialignment-www` email list (MAIA web admin) to access the locker, contact [spruce@mit.edu](mailto:spruce@mit.edu) if you aren't.
+!!! Info You must be on the [`aialignment-www`](https://groups.mit.edu/webmoira/list/aialignment-www) email list (MAIA web admin) to access the locker, contact [gculp@mit.edu](mailto:gculp@mit.edu) if you aren't.
 
 After building the app in part 04, You should see compiled output such as `index.html` in your `./build` folder. Then, copy the contents of the [`./build`](./build) folder into `/mit/aialignment/www` on Athena, run the `rsync` command below using your kerb, password, and MFA as normal to sign in.
 
