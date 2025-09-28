@@ -11,7 +11,7 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"download-front-page": "pandoc",
-		"deploy": "rsync -avz build/ $npm_config_kerb@athena.dialup.mit.edu:/mit/aialignment/www"
+		"deploy": "vite build && rsync -avz build/ $npm_config_kerb@athena.dialup.mit.edu:/mit/aialignment/www"
 	},
 	"devDependencies": {
 		"@iconify-json/ph": "^1.1.13",

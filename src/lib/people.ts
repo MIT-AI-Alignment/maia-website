@@ -59,16 +59,41 @@ export const PEOPLE: Record<string, Person> = {
 	'ionel-chiosa': {
 		id: 'ionel-chiosa',
 		name: 'Ionel Chiosa',
-		position: 'Co-Director; AI Safety Fundamentals Co-Lead',
+		position: 'Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		// mitEmail: 'ichiosa@mit.edu',
 		isExec: true,
 		isActive: true
 	},
+	'daria-ivanova': {
+		id: 'daria-ivanova',
+		name: 'Daria Ivanova',
+		position: 'Deputy Director',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
+		// mitEmail: 'divanova@mit.edu',
+		isExec: true,
+		isActive: true
+	},
+	'sam-prieto-lima': {
+		id: 'sam-prieto-lima',
+		name: 'Samuel Prieto Lima',
+		position: 'Academic Coordinator',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U063WMLHLNT-481134342f1c-512',
+		isExec: true,
+		isActive: true,
+	},
+	'ryan-baylon': {
+		id: 'ryan-baylon',
+		name: 'Ryan Baylon',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-g40282930bcd-512',
+		isExec: true,
+		isActive: true,
+	},
 	'kaivu-hariharan': {
 		id: 'kaivu-hariharan',
 		name: 'Kaivu Hariharan',
-		position: 'Co-Director; Member Engagement Co-Lead',
+		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040TKYD3QE-dbf946acd13c-512',
 		// mitEmail: 'kaivu@mit.edu',
 		isExec: false,
@@ -77,7 +102,7 @@ export const PEOPLE: Record<string, Person> = {
 	'misha-gerovitch': {
 		id: 'misha-gerovitch',
 		name: 'Misha Gerovitch',
-		position: 'Deputy Director',
+		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192',
 		// mitEmail: 'mgerov@mit.edu',
 		isExec: false,
@@ -98,22 +123,13 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'AI Safety Fundamentals Co-Lead; Workshops Co-Lead',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07PXQ78WQZ-4273ee2db04d-192',
 		mitEmail: 'duru@mit.edu',
-		isExec: true,
-		isActive: true
-	},
-	'daria-ivanova': {
-		id: 'daria-ivanova',
-		name: 'Daria Ivanova',
-		position: 'Technical Development Co-Lead; Socials Co-Lead',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
-		// mitEmail: 'divanova@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'gatlen-culp': {
 		id: 'gatlen-culp',
 		name: 'Gatlen Culp',
-		position: 'Field-Building Co-Lead; Web Master & Compute Lead',
+		position: 'Board Member',
 		imageUrl: '/images/people/gatlen-culp.png',
 
 		// Contact information
@@ -157,19 +173,19 @@ export const PEOPLE: Record<string, Person> = {
 	'jen-ben-arye': {
 		id: 'jen-ben-arye',
 		name: 'Jen Ben Arye',
-		position: 'Field-Building Co-Lead',
+		position: '',
 		// mitEmail: 'jen_ben@mit.edu',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07R37ZFM9S-bcc7a7d4a31c-192',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'tara-rezaei-kheirkhah': {
 		id: 'tara-rezaei-kheirkhah',
 		name: 'Tara Rezaei Kheirkhah',
-		position: 'Board Member',
+		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U0524UVD1J4-b15bb5cabe16-192',
 		// mitEmail: 'tarark@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 
@@ -208,12 +224,12 @@ export const PEOPLE: Record<string, Person> = {
 	'david-turturean': {
 		id: 'david-turturean',
 		name: 'David Turturean',
-		position: 'Phone-line Attacks - Lead',
+		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
 
 		// Contact information
 		// mitEmail: 'davidct@mit.edu',
-
+		isExec: true,
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -255,7 +271,31 @@ export const PEOPLE: Record<string, Person> = {
 		projectOrder: {
 			'strategic-deception': 2 // Second in the strategic deception project
 		}
-	}
+	},
+	'riya-tyagi': {
+		id: 'riya-tyagi',
+		name: 'Riya Tyagi',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QK7455PB-4d530d106a81-512',
+		isExec: true,
+		isActive: true,
+	},
+	'sebastian-prasanna': {
+		id: 'sebastian-prasanna',
+		name: 'Sebastian Prasanna',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U083B4BFX5H-ab118c5ba1b8-512',
+		isExec: true,
+		isActive: true,
+	},
+	'atticus-wang': {
+		id: 'atticus-wang',
+		name: 'Atticus Wang',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: true,
+		isActive: true,
+	},
 };
 
 // Helper functions to get filtered lists of people
