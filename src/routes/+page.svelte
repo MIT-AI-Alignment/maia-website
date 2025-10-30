@@ -65,7 +65,7 @@
 				<div class="flex flex-col sm:flex-row gap-4 mt-8">
 					{#if CONFIG.aisf_ml.visible && mounted}
 						<div in:scale={{ duration: 400, delay: 800, start: 0.8, opacity: 0, easing: backOut }}>
-							<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd" class="hover:scale-105 transition-transform">
+							<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" class="hover:scale-105 transition-transform">
 								<Button 
 									text="Apply to our technical AI safety program" 
 									icon="fa-solid fa-arrow-right" 
@@ -74,7 +74,7 @@
 							</a>
 						</div>
 					{:else if CONFIG.aisf_ml.visible}
-						<a href="https://airtable.com/appci3nEZe4nlb8oX/shrSLlrgeIFubZnGd">
+						<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form">
 							<Button 
 								text="Apply to our technical AI safety program" 
 								icon="fa-solid fa-arrow-right" 

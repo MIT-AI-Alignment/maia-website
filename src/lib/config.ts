@@ -6,11 +6,11 @@ export const CONFIG = {
     // TODO: See if up to date.
     mailingListLink: "https://airtable.com/appkINRUv4Z4pNdWO/pag9ZQlgFCItt7kaJ/form",
     membership: {
-        applicationLink: "https://airtable.com/appkINRUv4Z4pNdWO/pagr3FnCK1N28j7Hd/form"
+        applicationLink: "https://airtable.com/appmfPejcK3lp2StV/pagywO1vQtW28ZYpA/form"
     },
     aisf_ml: {
         visible: true,
-        deadline: "(DEADLINE TBD)",
+        deadline: "(DEADLINE EARLY SPRING, TBD)",
         deadline_short: "",
         applicationLink: "https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
     },

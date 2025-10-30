@@ -49,7 +49,7 @@
 		>.
 	</p>
 	<p class="mt-2">
-		Every semester, HAIST runs an 8-week introductory reading group on the foundational policy and
+		Every semester, AISST runs an 8-week introductory reading group on the foundational policy and
 		governance issues posed by advanced AI systems. The fellowship meets weekly in small groups,
 		with dinner provided, and no additional work required beyond meetings.
 	</p>
@@ -66,7 +66,7 @@
 	<div class="mt-8">
 		<a href="https://haist.ai/policy-fellowship">
 			<Button
-				text="Visit HAIST Policy Fellowship"
+				text="Visit AISST Policy Fellowship"
 				icon="fa-solid fa-arrow-right"
 				type="purple"
 				size="md"
