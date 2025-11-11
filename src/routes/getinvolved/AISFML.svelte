@@ -29,8 +29,8 @@
 		<b>no prior experience is required</b>.
 	</p>
 	<p class="mt-2">
-		Participants meet weekly in small sections facilitated by a TA that is a graduate student or an
-		upperclassman with experience in AI safety research. Dinner is provided, and no work is assigned
+		Participants meet weekly in small sections facilitated by a TA that is an upperclassman or graduate student 
+		with experience in AI safety research. Dinner is provided, and no work is assigned
 		outside of weekly meetings. Our curriculum is based on
 		<a
 			href="https://course.aisafetyfundamentals.com/alignment"
@@ -50,7 +50,7 @@
 	<div class="mt-8">
 		<a href={CONFIG.aisf_ml.applicationLink}>
 			<Button 
-				text="Apply for AISF ML Track here by {CONFIG.aisf_ml.deadline}" 
+				text="Apply for the MAIA Technical Fellowship {CONFIG.aisf_ml.deadline}" 
 				icon="fa-solid fa-arrow-right"
 				type="purple" 
 				size="md" 

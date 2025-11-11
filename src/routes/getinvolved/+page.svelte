@@ -90,7 +90,7 @@
 
 <PageLayout
 	title="Get Involved"
-	description="MIT AI Alignment (MAIA) runs programs for people at all skill levels to explore deep learning and AI safety."
+	description="MIT AI Alignment (MAIA) runs programs for people at all skill levels to explore AI safety through our AI Safety Fundamentals program."
 	heroIcon="fa-solid fa-hands-helping"
 	heroTitle="Get Involved"
 	centerTitle={true}

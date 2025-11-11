@@ -42,7 +42,7 @@
 <section>
 	<h3 class="pt-8 text-3xl font-heading text-purple-600 dark:text-purple-500">Policy track</h3>
 	<p class="pt-2">
-		We are not running the AISF governance track this year. Please see the Harvard AI Safety Student
+		We are not running the AISF Policy track this year. If interested, please see the Harvard AI Safety Student
 		Team’s
 		<a href="https://haist.ai/policy-fellowship" class="text-purple-600 dark:text-purple-300"
 			>Introductory AI Policy Fellowship</a
@@ -66,7 +66,7 @@
 	<div class="mt-8">
 		<a href="https://haist.ai/policy-fellowship">
 			<Button
-				text="Visit AISST Policy Fellowship"
+				text="Apply for the AISST Policy Fellowship"
 				icon="fa-solid fa-arrow-right"
 				type="purple"
 				size="md"
