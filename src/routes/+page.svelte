@@ -44,7 +44,8 @@
 					</p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 600 }}>
 						We also run a semester-long introductory reading group on AI
-						safety, including both a technical machine learning track and a policy track.
+						safety, focused on technical machine learning. Our sister organization,
+						<a href="https://aisst.ai">AISST</a>, offers a policy track for those interested.
 					</p>
 				{:else}
 					<p class="text-lg md:w-2/3">
@@ -86,7 +87,7 @@
 						<div in:scale={{ duration: 400, delay: 1000, start: 0.8, opacity: 0, easing: backOut }}>
 							<a href="https://haist.ai/policy-fellowship" class="hover:scale-105 transition-transform">
 								<Button 
-									text="Apply to our policy AI safety program" 
+									text="Apply to the policy AI safety program" 
 									icon="fa-solid fa-arrow-right" 
 									type="fuchsia"
 								/>
@@ -95,7 +96,7 @@
 					{:else if CONFIG.aisf_gov.visible}
 						<a href="https://haist.ai/policy-fellowship">
 							<Button 
-								text="Apply to our policy AI safety program" 
+								text="Apply to the policy AI safety program" 
 								icon="fa-solid fa-arrow-right" 
 								type="fuchsia"
 							/>
