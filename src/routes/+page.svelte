@@ -43,9 +43,10 @@
 						from advanced AI.
 					</p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 600 }}>
-						We also run a semester-long introductory reading group on AI
-						safety, focused on technical machine learning. Our sister organization,
-						<a href="https://aisst.ai">AISST</a>, offers a policy track for those interested.
+						We also run a semester-long introductory fellowship on AI
+						safety, focused on technical machine learning. Our sister organization
+						at Harvard, 
+						<a href="https://aisst.ai">AISST</a>, offers a parallel policy fellowship.
 					</p>
 				{:else}
 					<p class="text-lg md:w-2/3">
@@ -68,7 +69,7 @@
 						<div in:scale={{ duration: 400, delay: 800, start: 0.8, opacity: 0, easing: backOut }}>
 							<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" class="hover:scale-105 transition-transform">
 								<Button 
-									text="Apply to our technical AI safety program" 
+									text="Apply to our technical AI safety fellowship" 
 									icon="fa-solid fa-arrow-right" 
 									type="purple"
 								/>
@@ -77,7 +78,7 @@
 					{:else if CONFIG.aisf_ml.visible}
 						<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form">
 							<Button 
-								text="Apply to our technical AI safety program" 
+								text="Apply to our technical AI safety fellowship" 
 								icon="fa-solid fa-arrow-right" 
 								type="purple"
 							/>
@@ -87,7 +88,7 @@
 						<div in:scale={{ duration: 400, delay: 1000, start: 0.8, opacity: 0, easing: backOut }}>
 							<a href="https://haist.ai/policy-fellowship" class="hover:scale-105 transition-transform">
 								<Button 
-									text="Apply to the policy AI safety program" 
+									text="Apply to the policy AI safety fellowship" 
 									icon="fa-solid fa-arrow-right" 
 									type="fuchsia"
 								/>
@@ -96,7 +97,7 @@
 					{:else if CONFIG.aisf_gov.visible}
 						<a href="https://haist.ai/policy-fellowship">
 							<Button 
-								text="Apply to the policy AI safety program" 
+								text="Apply to the policy AI safety fellowship" 
 								icon="fa-solid fa-arrow-right" 
 								type="fuchsia"
 							/>
