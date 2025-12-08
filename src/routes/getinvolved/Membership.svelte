@@ -61,13 +61,12 @@
 	</p>
 	<p class="mt-4">
 		If you aren't very familiar with AI safety, we recommend applying for AI Safety Fundamentals
-		above. We typically offer participants of this program a streamlined application process.
+		above. We typically offer AISF alumni priority in the application process.
 	</p>
 	<p class="mt-4">
 		The application has both technical and non-technical portions and typically takes around an hour
-		to complete. Membership admission is rolling, but the board typically meets at the start and the
-		end of the semester to parse through applications, so if we are slow to respond, don't
-		hesitate to email us at <a
+		to complete. Membership admission is rolling, but the board tends to make decisions every month.
+		If we are slow to respond, please don't hesitate to email us at <a
 			href="mailto:maia-exec@mit.edu"
 			class="text-purple-600 dark:text-purple-300">maia-exec@mit.edu</a
 		>.

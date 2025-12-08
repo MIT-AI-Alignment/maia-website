@@ -4,7 +4,7 @@ export const CONFIG = {
         visible: false
     },
     // TODO: See if up to date.
-    mailingListLink: "https://airtable.com/appkINRUv4Z4pNdWO/pag9ZQlgFCItt7kaJ/form",
+    mailingListLink: "https://mailchi.mp/0b6484dd282e/public",
     membership: {
         applicationLink: "https://airtable.com/appmfPejcK3lp2StV/pagywO1vQtW28ZYpA/form"
     },
