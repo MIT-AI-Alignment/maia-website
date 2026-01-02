@@ -40,16 +40,10 @@
 -->
 
 <section>
-	<h3 class="pt-8 text-3xl font-heading text-purple-600 dark:text-purple-500">Policy track</h3>
-	<p class="pt-2">
-		We are not running the AISF Policy track this year. If interested, please see the Harvard AI Safety Student
-		Team’s
-		<a href="https://haist.ai/policy-fellowship" class="text-purple-600 dark:text-purple-300"
-			>Introductory AI Policy Fellowship</a
-		>.
-	</p>
+	<h3 class="text-3xl font-heading text-fuchsia-600 dark:text-fuchsia-500">Policy Fellowship</h3>
+
 	<p class="mt-2">
-		Every semester, AISST runs an 8-week introductory reading group on the foundational policy and
+		Every semester our sister organization at Harvard, <a href="https://aisst.ai/">AISST</a>, runs an 8-week introductory reading group on the foundational policy and
 		governance issues posed by advanced AI systems. The fellowship meets weekly in small groups,
 		with dinner provided, and no additional work required beyond meetings.
 	</p>
@@ -64,11 +58,11 @@
 		</li>
 	</ul>
 	<div class="mt-8">
-		<a href="https://haist.ai/policy-fellowship">
+		<a href="https://aisst.ai/policy-fellowship">
 			<Button
 				text="Apply for the AISST Policy Fellowship"
 				icon="fa-solid fa-arrow-right"
-				type="purple"
+				type="fuchsia"
 				size="md"
 			/>
 		</a>

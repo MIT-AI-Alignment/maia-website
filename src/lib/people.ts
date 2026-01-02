@@ -72,7 +72,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Deputy Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
 		// mitEmail: 'divanova@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true
 	},
 	'sam-prieto-lima': {
@@ -80,14 +80,15 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Samuel Prieto Lima',
 		position: 'Academic Coordinator',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U063WMLHLNT-481134342f1c-512',
-		isExec: true,
+		isExec: false,
 		isActive: true,
 	},
 	'ryan-baylon': {
 		id: 'ryan-baylon',
 		name: 'Ryan Baylon',
-		position: 'Board Member',
+		position: 'Operations',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-g40282930bcd-512',
+		mitEmail: 'rfbaylon@gmail.com',
 		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
 		personalPage: 'https://ryanbaylon.neocities.org',
 		isExec: true,
@@ -163,7 +164,7 @@ export const PEOPLE: Record<string, Person> = {
 		},
 
 		// Project information
-		isExec: true,
+		isExec: false,
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -232,7 +233,7 @@ export const PEOPLE: Record<string, Person> = {
 
 		// Contact information
 		// mitEmail: 'davidct@mit.edu',
-		isExec: true,
+		isExec: false,
 		isActive: true,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
@@ -280,7 +281,7 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Riya Tyagi',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QK7455PB-4d530d106a81-512',
-		isExec: true,
+		isExec: false,
 		isActive: true,
 	},
 	'sebastian-prasanna': {
@@ -289,12 +290,28 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U083B4BFX5H-ab118c5ba1b8-512',
 		linkedin:'https://www.linkedin.com/in/sebastian-prasanna-6b3910301/',
-		isExec: true,
+		isExec: false,
 		isActive: true,
 	},
 	'atticus-wang': {
 		id: 'atticus-wang',
 		name: 'Atticus Wang',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: false,
+		isActive: true,
+	},
+	'felix-tudose': {
+		id: 'felix-tudose',
+		name: 'Felix Tudose',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: true,
+		isActive: true,
+	},
+	'brianna-adewinmbi': {
+		id: 'brianna-adewinmbi',
+		name: 'Brianna Adewinmbi',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
 		isExec: true,

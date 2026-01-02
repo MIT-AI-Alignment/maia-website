@@ -22,6 +22,7 @@
 	heroTitle="We're a group of MIT students conducting research to <span class='text-purple-600 dark:text-purple-500'>reduce risk from advanced AI</span>."
 >
 	<svelte:fragment slot="hero-content">
+
 		<div class="relative">
 			<!-- Animated background elements -->
 			{#if mounted}
@@ -33,21 +34,27 @@
 
 			<div class="prose dark:prose-invert max-w-none relative z-10">
 				{#if mounted}
+					<!-- <p><a 
+					href="https://mailchi.mp/0b6484dd282e/public" 
+					class="inline-block text-2xl text-purple-600 dark:text-purple-500 underline decoration-2 underline-offset-4 transition-colors"
+					in:fly={{ y: 20, duration: 800, delay: 100 }}>
+					Join our mailing list →
+					</a></p> -->
+					<p><a 
+					href="mailto:maia-exec@mit.edu" 
+					class="inline-block text-2xl text-purple-600 dark:text-purple-500 underline decoration-2 underline-offset-4 transition-colors"
+					in:fly={{ y: 20, duration: 800, delay: 100 }}>
+					Chat with us →
+					</a></p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 200 }}>
 						We think that reducing risks from advanced artificial intelligence may be one of the most
 						important problems of our time. We also think it's a highly interesting and exciting problem,
 						with open opportunities for many more researchers to make progress on it.
 					</p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 400 }}>
-						MAIA supports undergraduate and graduate students in conducting research relevant to reducing risks
-						from advanced AI.
+						MAIA supports undergraduate and graduate students contributing to such progress.
 					</p>
-					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 600 }}>
-						We also run a semester-long introductory fellowship on AI
-						safety, focused on technical machine learning. Our sister organization
-						at Harvard, 
-						<a href="https://aisst.ai">AISST</a>, offers a parallel policy fellowship.
-					</p>
+
 				{:else}
 					<p class="text-lg md:w-2/3">
 						We think that reducing risks from advanced artificial intelligence may be one of the most
@@ -67,18 +74,18 @@
 				<div class="flex flex-col sm:flex-row gap-4 mt-8">
 					{#if CONFIG.aisf_ml.visible && mounted}
 						<div in:scale={{ duration: 400, delay: 800, start: 0.8, opacity: 0, easing: backOut }}>
-							<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" class="hover:scale-105 transition-transform">
-								<Button 
-									text="Apply to our technical AI safety fellowship" 
-									icon="fa-solid fa-arrow-right" 
-									type="purple"
-								/>
+							<a href="https://aialignment.mit.edu/getinvolved/">
+							<Button 
+								text="See our opportunities" 
+								icon="fa-solid fa-arrow-right" 
+								type="purple"
+							/>
 							</a>
 						</div>
 					{:else if CONFIG.aisf_ml.visible}
-						<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form">
+						<a href="https://aialignment.mit.edu/getinvolved/">
 							<Button 
-								text="Apply to our technical AI safety fellowship" 
+								text="See our opportunities" 
 								icon="fa-solid fa-arrow-right" 
 								type="purple"
 							/>
@@ -86,18 +93,18 @@
 					{/if}
 					{#if CONFIG.aisf_gov.visible && mounted}
 						<div in:scale={{ duration: 400, delay: 1000, start: 0.8, opacity: 0, easing: backOut }}>
-							<a href="https://haist.ai/policy-fellowship" class="hover:scale-105 transition-transform">
+							<a href="{CONFIG.mailingListLink}" class="hover:scale-105 transition-transform">
 								<Button 
-									text="Apply to the policy AI safety fellowship" 
+									text="Get event updates" 
 									icon="fa-solid fa-arrow-right" 
 									type="fuchsia"
 								/>
 							</a>
 						</div>
 					{:else if CONFIG.aisf_gov.visible}
-						<a href="https://haist.ai/policy-fellowship">
+						<a href="{CONFIG.mailingListLink}" class="hover:scale-105 transition-transform">
 							<Button 
-								text="Apply to the policy AI safety fellowship" 
+								text="Get event updates" 
 								icon="fa-solid fa-arrow-right" 
 								type="fuchsia"
 							/>

@@ -42,13 +42,19 @@
 				component: null,
 				customContent: true,
 				render: () => ({
-					html: '<p>MAIA runs programs for people at all skill levels to explore deep learning and AI safety.</p>',
+					html: '<p>An introductory fellowship to the field of AI Safety.</p>',
 					components: {
 						showML: CONFIG.aisf_ml.visible,
 						showGov: CONFIG.aisf_gov.visible
 					}
 				})
 			})
+		},
+		{
+			id: 'membership',
+			title: 'Membership',
+			icon: 'fa-solid fa-users',
+			content: () => ({ component: Membership })
 		},
 		{
 			id: 'workshops',
@@ -62,18 +68,13 @@
 			icon: 'fa-solid fa-laptop-code',
 			content: () => ({ component: Bootcamps })
 		},
-		{
-			id: 'membership',
-			title: 'Membership',
-			icon: 'fa-solid fa-users',
-			content: () => ({ component: Membership })
-		},
-		{
-			id: 'calendar',
-			title: 'Calendar',
-			icon: 'fa-regular fa-calendar',
-			content: () => ({ component: Calendar })
-		}
+
+		// {
+		// 	id: 'calendar',
+		// 	title: 'Calendar',
+		// 	icon: 'fa-regular fa-calendar',
+		// 	content: () => ({ component: Calendar })
+		// }
 	];
 
 	function hasRender(content: SectionContent): content is SectionContent & { render: () => RenderResult } {
