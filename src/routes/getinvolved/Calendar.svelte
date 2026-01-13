@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import { CONFIG } from '$lib/config';
 	import Button from '../../components/Button.svelte';
 </script>
@@ -45,4 +45,4 @@
 		width: 100%;
 		height: 100%;
 	}
-</style>
+</style> -->

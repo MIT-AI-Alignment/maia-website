@@ -17,13 +17,13 @@
 	<p class="mt-2">Topics include:
 		<ul>
 			<li><a href="https://distill.pub/2020/circuits/zoom-in/" class="text-purple-600 dark:text-purple-300">
-			neural network interpretability</a></li>
+			Neural network interpretability</a></li>
 			<li><a href="https://arxiv.org/abs/2203.02155" class="text-purple-600 dark:text-purple-300">
-			learning from human feedback</a></li>
+			Learning from human feedback</a></li>
 			<li><a href="https://arxiv.org/abs/2105.14111" class="text-purple-600 dark:text-purple-300">
-			goal misgeneralization in reinforcement learning settings</a></li>
+			Goal misgeneralization in reinforcement learning settings</a></li>
 			<li><a href="https://arxiv.org/abs/2306.12001" class="text-purple-600 dark:text-purple-300">
-			potential catastrophic risks from advanced AI systems</a></li>
+			Potential catastrophic risks from advanced AI systems</a></li>
 		</ul>
 	<p class="mt-2">
 		The program is open to both undergraduate and graduate students. Students with machine

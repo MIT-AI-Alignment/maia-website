@@ -5,6 +5,7 @@
 	import Button from '../../components/Button.svelte';
 	import Advisors from './advisors.svelte';
 	import Execs from './execs.svelte';
+	import About from './about.svelte'
 	import type { DropdownItem } from '$lib/stores/navigation';
 
 	type Section = {
@@ -15,6 +16,12 @@
 	};
 
 	const sections: Section[] = [
+		{
+			id: 'about',
+			title: 'About MAIA',
+			icon: 'fa-solid fa-pencil',
+			component: About
+		},
 		{
 			id: 'executives',
 			title: 'Executive Board',
@@ -51,6 +58,8 @@
 	centerTitle={true}
 	{pageNavItems}
 >
+
+
 	<svelte:fragment slot="hero-content">
 		<div class="flex flex-wrap justify-center gap-3 mb-8">
 			{#each sections as section}

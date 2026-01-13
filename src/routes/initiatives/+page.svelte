@@ -17,7 +17,7 @@
 	const sections: Section[] = [
 		{
 			id: 'current',
-			title: 'Current Projects',
+			title: 'Projects',
 			icon: 'fa-solid fa-rocket',
 			component: CongressionalExhibition
 		},

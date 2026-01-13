@@ -22,7 +22,6 @@ export const NAVIGATION_ITEMS = [
             { href: '/getinvolved#membership', label: 'Membership' },
             { href: '/getinvolved#workshops', label: 'Workshops' },
             { href: '/getinvolved#bootcamps', label: 'Bootcamps' },
-
             // { href: '/getinvolved#calendar', label: 'Calendar' }
         ]
     },
