@@ -7,7 +7,7 @@
 
 <div class="flex my-6 flex-wrap">
 	<p>
-		MAIA is an MIT student club for people worried about human extinction due to AI.<sup class="text-purple-600 dark:text-purple-500">*</sup>
+		MAIA is an MIT club for people worried about human extinction due to AI.  <sup><a href="https://aisst.ai/non-technical-intro-to-ai-safety">[Why care about AI Safety?]</a></sup>
 	</p>
 	<p>
 		Our job is  to support education, research, and careers for our members. In doing 
@@ -22,7 +22,4 @@
 		which supports both us and our sister organization at Harvard, 
 		<a href="https://aisst.ai/">AISST</a>.
 	</p>
-	<sup>
-		<a href="https://aisst.ai/non-technical-intro-to-ai-safety">* Why care about AI Safety?</a>
-	</sup>
 </div>

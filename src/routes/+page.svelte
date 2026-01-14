@@ -47,27 +47,20 @@
 					Chat with us →
 					</a></p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 200 }}>
-						We think that reducing risks from advanced artificial intelligence may be one of the most
-						important problems of our time. We also think it's a highly interesting and exciting problem,
-						with open opportunities for many more researchers to make progress on it.
+						Reducing risks from advanced artificial intelligence may be one of the 
+						most important challenges of our time. And one where real progress is possible.
 					</p>
 					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 400 }}>
-						MAIA supports undergraduate and graduate students contributing to such progress.
+						MAIA supports undergraduate and graduate students contributing to that progress.
 					</p>
 
 				{:else}
-					<p class="text-lg md:w-2/3">
-						We think that reducing risks from advanced artificial intelligence may be one of the most
-						important problems of our time. We also think it's a highly interesting and exciting problem,
-						with open opportunities for many more researchers to make progress on it.
+					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 200 }}>
+						Reducing risks from advanced artificial intelligence may be one of the 
+						most important challenges of our time. And one where real progress is possible.
 					</p>
-					<p class="text-lg md:w-2/3">
-						MAIA supports undergraduate and graduate students in conducting research relevant to reducing risks
-						from advanced AI.
-					</p>
-					<p class="text-lg md:w-2/3">
-						We also run a semester-long introductory reading group on AI
-						safety, including both a technical machine learning track and a policy track.
+					<p class="text-lg md:w-2/3" in:fly={{ y: 20, duration: 800, delay: 400 }}>
+						MAIA supports undergraduate and graduate students contributing to that progress.
 					</p>
 				{/if}
 				

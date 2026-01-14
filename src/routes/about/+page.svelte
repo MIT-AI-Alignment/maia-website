@@ -5,7 +5,8 @@
 	import Button from '../../components/Button.svelte';
 	import Advisors from './advisors.svelte';
 	import Execs from './execs.svelte';
-	import About from './about.svelte'
+	import About from './about.svelte';
+	import Organizers from './organizers.svelte';
 	import type { DropdownItem } from '$lib/stores/navigation';
 
 	type Section = {
@@ -27,6 +28,12 @@
 			title: 'Executive Board',
 			icon: 'fa-solid fa-users',
 			component: Execs
+		},
+		{
+			id: 'organizers',
+			title: 'Organizers',
+			icon: 'fa-solid fa-users',
+			component: Organizers
 		},
 		{
 			id: 'advisors',
@@ -54,7 +61,7 @@
 	title="About"
 	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
 	heroIcon="fa-solid fa-users-gear"
-	heroTitle="Meet the Team"
+	heroTitle="About MAIA"
 	centerTitle={true}
 	{pageNavItems}
 >

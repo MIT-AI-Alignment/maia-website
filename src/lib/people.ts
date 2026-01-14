@@ -50,6 +50,7 @@ export type Person = {
 	isActive?: boolean; // Whether the person is currently active
 	isAdvisor?: boolean; // Whether the person is an advisor
 	isExec?: boolean; // Whether the person is an executive
+	isOrg?: boolean; // Whether the person is an organizer
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
@@ -66,7 +67,78 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true
 	},
-	'daria-ivanova': {
+	'ryan-baylon': {
+		id: 'ryan-baylon',
+		name: 'Ryan Baylon',
+		position: 'Operations',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-g40282930bcd-512',
+		mitEmail: 'rfbaylon@gmail.com',
+		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
+		personalPage: 'https://ryanbaylon.neocities.org',
+		isExec: true,
+		isActive: true,
+	},
+	'felix-tudose': {
+		id: 'felix-tudose',
+		name: 'Felix Tudose',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
+		isExec: true,
+		isActive: true,
+	},
+	'brianna-adewinmbi': {
+		id: 'brianna-adewinmbi',
+		name: 'Brianna Adewinmbi',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FAM14ZFE-7d16a01e5baa-512',
+		isExec: true,
+		isActive: true,
+	},
+
+	// ORGANIZERS 
+	'atticus-wang': {
+		id: 'atticus-wang',
+		name: 'Atticus Wang',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	// ADVISORS
+	'max-tegmark': {
+		id: 'max-tegmark',
+		name: 'Professor Max Tegmark',
+		position: 'Faculty Advisor',
+		imageUrl:
+			'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
+		personalPage: 'https://space.mit.edu/home/tegmark/',
+		isAdvisor: true,
+		isActive: true
+	},
+	'eleni-shor': {
+		id: 'eleni-shor',
+		name: 'Eleni Shor',
+		position: 'Student Advisor',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040KLXL7NK-88e0aed77925-192',
+		// email: 'eleni.shor@proton.me',
+		isExec: false,
+		isActive: false,
+		isAdvisor: true
+	},
+	'asher-parker-sartori': {
+		id: 'asher-parker-sartori',
+		name: 'Asher Parker Sartori',
+		position: 'Student Advisor',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
+		// mitEmail: 'aparkersartori@gmail.com',
+		isAdvisor: true,
+		isActive: true
+	},
+
+	// PAST EXECS/ ORGANIZERS
+		'daria-ivanova': {
 		id: 'daria-ivanova',
 		name: 'Daria Ivanova',
 		position: 'Deputy Director',
@@ -81,17 +153,6 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Academic Coordinator',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U063WMLHLNT-481134342f1c-512',
 		isExec: false,
-		isActive: true,
-	},
-	'ryan-baylon': {
-		id: 'ryan-baylon',
-		name: 'Ryan Baylon',
-		position: 'Operations',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-g40282930bcd-512',
-		mitEmail: 'rfbaylon@gmail.com',
-		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
-		personalPage: 'https://ryanbaylon.neocities.org',
-		isExec: true,
 		isActive: true,
 	},
 	'kaivu-hariharan': {
@@ -193,36 +254,7 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true
 	},
 
-	// Advisors
-	'max-tegmark': {
-		id: 'max-tegmark',
-		name: 'Professor Max Tegmark',
-		position: 'Faculty Advisor',
-		imageUrl:
-			'https://www.vbqspeakers.com/wp-content/uploads/2022/10/Max-Tegmark-Keynote-Speaker.jpg',
-		personalPage: 'https://space.mit.edu/home/tegmark/',
-		isAdvisor: true,
-		isActive: true
-	},
-	'eleni-shor': {
-		id: 'eleni-shor',
-		name: 'Eleni Shor',
-		position: 'Student Advisor',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U040KLXL7NK-88e0aed77925-192',
-		// email: 'eleni.shor@proton.me',
-		isExec: false,
-		isActive: false,
-		isAdvisor: true
-	},
-	'asher-parker-sartori': {
-		id: 'asher-parker-sartori',
-		name: 'Asher Parker Sartori',
-		position: 'Student Advisor',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
-		// mitEmail: 'aparkersartori@gmail.com',
-		isAdvisor: true,
-		isActive: true
-	},
+
 
 	// CAIP Exhibition Team Members
 	'david-turturean': {
@@ -293,30 +325,6 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true,
 	},
-	'atticus-wang': {
-		id: 'atticus-wang',
-		name: 'Atticus Wang',
-		position: 'Board Member',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
-		isExec: false,
-		isActive: true,
-	},
-	'felix-tudose': {
-		id: 'felix-tudose',
-		name: 'Felix Tudose',
-		position: 'Board Member',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
-		isExec: true,
-		isActive: true,
-	},
-	'brianna-adewinmbi': {
-		id: 'brianna-adewinmbi',
-		name: 'Brianna Adewinmbi',
-		position: 'Board Member',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
-		isExec: true,
-		isActive: true,
-	},
 };
 
 // Helper functions to get filtered lists of people
@@ -327,6 +335,8 @@ export const getInactiveExecs = () =>
 	Object.values(PEOPLE).filter((person) => person.isExec && !person.isActive);
 
 export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person.isAdvisor);
+
+export const getOrganizers = () => Object.values(PEOPLE).filter((person) => person.isOrg);
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
