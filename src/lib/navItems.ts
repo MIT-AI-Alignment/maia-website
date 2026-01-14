@@ -25,14 +25,15 @@ export const NAVIGATION_ITEMS = [
             // { href: '/getinvolved#calendar', label: 'Calendar' }
         ]
     },
-    // { 
-    //     href: '/blog', 
-    //     label: 'Blog (Soon!)',
-    //     icon: 'fas fa-newspaper'
-    // },
     {
         label: 'About',
         href: '/about',
-        icon: 'fas fa-info-circle'
+        icon: 'fas fa-info-circle',
+        dropdownItems: [
+            { href: '/about#about', label: 'About MAIA' },
+            { href: '/about#executives', label: 'Executives' },
+            { href: '/about#organizers', label: 'Organizers' },
+            { href: '/about#advisors', label: 'Advisors' },
+        ]
     },
 ] as const;

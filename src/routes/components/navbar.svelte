@@ -160,15 +160,6 @@
 							on:mouseenter={() => setActiveDropdown('page')}
 							on:mouseleave={() => setActiveDropdown(null)}
 						>
-							<button 
-								class="px-3 py-2 rounded-md transition-colors duration-200 flex items-center gap-2
-										{activeDropdown === 'page' ? 'text-purple-600 dark:text-purple-400' : 
-										'hover:text-purple-600 dark:hover:text-purple-400'}"
-							>
-								<i class="fas fa-list-ul text-sm"></i>
-								<span>On This Page</span>
-								<i class="fas fa-chevron-down text-xs opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>
-							</button>
 							
 							{#if activeDropdown === 'page'}
 								<div

@@ -71,7 +71,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'ryan-baylon',
 		name: 'Ryan Baylon',
 		position: 'Operations',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-g40282930bcd-512',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-09a10e1453ee-512',
 		mitEmail: 'rfbaylon@gmail.com',
 		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
 		personalPage: 'https://ryanbaylon.neocities.org',
