@@ -67,7 +67,7 @@
 				<div class="flex flex-col sm:flex-row gap-4 mt-8">
 					{#if CONFIG.aisf_ml.visible && mounted}
 						<div in:scale={{ duration: 400, delay: 800, start: 0.8, opacity: 0, easing: backOut }}>
-							<a href="https://aialignment.mit.edu/getinvolved/">
+							<a href="/getinvolved/">
 							<Button 
 								text="See our opportunities" 
 								icon="fa-solid fa-arrow-right" 
