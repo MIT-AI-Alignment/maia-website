@@ -13,10 +13,10 @@
 	<p class="mt-2 mb-2">
 		The bootcamp is <a href="https://www.cbai.ai/ml-bootcamp">CAMBRIA</a> (Cambridge Bootcamp for Research in Interpretability and Alignment).
 		It is in-person, with teaching assistants experienced with ML and AI safety
-		research. We follow the highly-rated ARENA curriculum designed provides a 
+		research. We follow the highly-rated ARENA curriculum, which provides a 
 		<b>thorough, hands-on introduction to state-of-the-art ML techniques</b> 
 		(e.g. transformers, deep RL, mechanistic interpretability) and is meant to get you to the level
-		of replicating ML papers in PyTorch. The program’s only prerequisites are comfort with Python and
+		of replicating ML papers in PyTorch. The program's only prerequisites are comfort with Python and
 		introductory linear algebra.
 	</p>
 	<div class="mt-8">

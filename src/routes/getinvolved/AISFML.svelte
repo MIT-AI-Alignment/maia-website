@@ -32,7 +32,7 @@
 	
 	<p class="mt-2">
 	We run AISF every Fall and Spring, with applications opening early into both semesters.
-	There are no open applications now, but you can stay up to date via our mailing list list.
+	There are no open applications now, but you can stay up to date via our mailing list.
 	</p>
 
 	<!-- UNCOMMENT THIS WHEN AN APPLICATION OPENS -->

@@ -134,7 +134,7 @@
 		{/if}
 		<p class="mt-6 text-center text-gray-600 dark:text-gray-400 italic">
 			This is a list of some of the organizations our members have worked with. Not all
-			organisations listed endorse or are affiliated with MAIA.
+			organizations listed endorse or are affiliated with MAIA.
 		</p>
 	</SectionContainer>
 </PageLayout>
