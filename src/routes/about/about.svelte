@@ -10,13 +10,13 @@
 		MAIA is an MIT club for people worried about human extinction due to AI.  <sup><a href="https://aisst.ai/non-technical-intro-to-ai-safety">[Why care about AI Safety?]</a></sup>
 	</p>
 	<p>
-		Our job is  to support education, research, and careers for our members. In doing 
+		Our job is to support education, research, and careers for our members. In doing 
 		so, we have become a hub for folk from across Boston to engage with events, 
 		opportunities, and people in AI Safety. We began in 2022, and now have membership 
 		in the hundreds. 
 	</p>
 	<p>
-		We get funding from <a href="https://coefficientgiving.org/">Coeffeicient Giving</a> 
+		We get funding from <a href="https://coefficientgiving.org/">Coefficient Giving</a> 
 		(FKA Open Philanthropy). Our parent organization is 
 		<a href="https://www.cbai.ai/">Cambridge Boston Alignment Initiative</a> (CBAI), 
 		which supports both us and our sister organization at Harvard, 
