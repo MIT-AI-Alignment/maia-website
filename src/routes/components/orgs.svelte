@@ -59,6 +59,10 @@
 		}
 	];
 </script>
+<p class="mt-6 text-center text-gray-600 dark:text-gray-400 italic">
+		This is a list of some of the organizations our members have worked with.<br>
+		Not all organisations listed endorse or are affiliated with MAIA.
+</p>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
 	{#each organizations as { imagePath, name, link, invert }, i}

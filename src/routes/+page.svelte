@@ -2,8 +2,6 @@
 	import PageLayout from '../components/PageLayout.svelte';
 	import SectionContainer from '../components/SectionContainer.svelte';
 	import Button from '../components/Button.svelte';
-	import Orgs from './components/orgs.svelte';
-	import Papers from './components/papers.svelte';
 	import { CONFIG } from '$lib/config';
 	import { onMount } from 'svelte';
 	import { fade, fly, scale } from 'svelte/transition';
@@ -107,36 +105,6 @@
 			</div>
 		</div>
 	</svelte:fragment>
-	
-	<SectionContainer
-		title="Selected Research"
-		icon="fa-solid fa-book-open"
-	>
-		{#if mounted}
-			<div in:fade={{ duration: 800, delay: 300 }}>
-				<Papers />
-			</div>
-		{:else}
-			<Papers />
-		{/if}
-	</SectionContainer>
-	
-	<SectionContainer
-		title="Organizations we work with"
-		icon="fa-solid fa-building"
-	>
-		{#if mounted}
-			<div in:fade={{ duration: 800, delay: 400 }}>
-				<Orgs />
-			</div>
-		{:else}
-			<Orgs />
-		{/if}
-		<p class="mt-6 text-center text-gray-600 dark:text-gray-400 italic">
-			This is a list of some of the organizations our members have worked with. Not all
-			organisations listed endorse or are affiliated with MAIA.
-		</p>
-	</SectionContainer>
 </PageLayout>
 
 <style>
