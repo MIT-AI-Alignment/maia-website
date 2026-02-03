@@ -19,7 +19,7 @@
   <div 
     transition:slide={{ duration: 200 }}
     class="fixed inset-x-0 top-[var(--navbar-height)] h-[calc(100vh-var(--navbar-height))] z-50 
-           {$theme === 'dark' ? 'bg-maia_black/95 border-gray-800' : 'bg-white/95 border-gray-200'}
+           {$theme === 'dark' ? 'bg-surface-dark/95 border-border-dark' : 'bg-surface-light-elevated/95 border-border-light'}
            backdrop-blur-sm border-t overflow-y-auto pb-20"
   >
     <nav class="flex flex-col py-4">
@@ -32,9 +32,9 @@
         />
       {/each}
       
-      <div class="mt-6 px-6 pt-6 border-t {$theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}">
+      <div class="mt-6 px-6 pt-6 border-t {$theme === 'dark' ? 'border-border-dark' : 'border-border-light'}">
         <div class="flex items-center justify-between">
-          <span class="text-sm {$theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}">Theme</span>
+          <span class="text-sm {$theme === 'dark' ? 'text-maia-300' : 'text-maia-950/60'}">Theme</span>
           <ThemeToggle />
         </div>
       </div>

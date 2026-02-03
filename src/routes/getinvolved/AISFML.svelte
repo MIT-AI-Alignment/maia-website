@@ -4,7 +4,7 @@
 </script>
 
 <section>
-	<h3 class="text-3xl font-heading text-purple-600 dark:text-purple-500">
+	<h3 class="text-3xl font-heading text-maia-800 dark:text-maia-500">
 		Technical Fellowship
 	</h3>
 	<p class="pt-2">
@@ -16,13 +16,13 @@
 		outside of weekly meetings. 
 	<p class="mt-2">Topics include:
 		<ul>
-			<li><a href="https://distill.pub/2020/circuits/zoom-in/" class="text-purple-600 dark:text-purple-300">
+			<li><a href="https://distill.pub/2020/circuits/zoom-in/" class="text-maia-800 dark:text-maia-400">
 			Neural network interpretability</a></li>
-			<li><a href="https://arxiv.org/abs/2203.02155" class="text-purple-600 dark:text-purple-300">
+			<li><a href="https://arxiv.org/abs/2203.02155" class="text-maia-800 dark:text-maia-400">
 			Learning from human feedback</a></li>
-			<li><a href="https://arxiv.org/abs/2105.14111" class="text-purple-600 dark:text-purple-300">
+			<li><a href="https://arxiv.org/abs/2105.14111" class="text-maia-800 dark:text-maia-400">
 			Goal misgeneralization in reinforcement learning settings</a></li>
-			<li><a href="https://arxiv.org/abs/2306.12001" class="text-purple-600 dark:text-purple-300">
+			<li><a href="https://arxiv.org/abs/2306.12001" class="text-maia-800 dark:text-maia-400">
 			Potential catastrophic risks from advanced AI systems</a></li>
 		</ul>
 	<p class="mt-2">

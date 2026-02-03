@@ -33,7 +33,7 @@
 	<!-- <p class="mt-2 mb-8">
 		We may run a bootcamp in January 2025, please <a
 			href="https://airtable.com/appSYKtT2eNbw95Oh/shrWlIgjzwRTDgLEv"
-			class="text-purple-500 underline">express interest here</a
+			class="text-maia-500 underline">express interest here</a
 		>.
 	</p> -->
 </section>

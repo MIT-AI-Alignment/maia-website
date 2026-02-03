@@ -53,8 +53,8 @@
     <button
       class="px-6 py-2 w-full text-left flex items-center justify-between transition-colors duration-200
              {isActive 
-               ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30' 
-               : 'hover:bg-purple-50 dark:hover:bg-purple-950/30'}"
+               ? 'text-maia-800 dark:text-maia-400 bg-maia-50 dark:bg-maia-950/30' 
+               : 'hover:bg-maia-50 dark:hover:bg-maia-950/30'}"
       on:click={handleClick}
     >
       <div class="flex items-center gap-2">
@@ -68,14 +68,14 @@
     
     {#if item.dropdownItems && activeDropdown === item.label}
       <div transition:slide={{ duration: 200 }} 
-           class="{$theme === 'dark' ? 'bg-purple-950/20' : 'bg-purple-50/50'}">
+           class="{$theme === 'dark' ? 'bg-maia-950/20' : 'bg-maia-50/50'}">
         {#each item.dropdownItems as subItem}
           <a
             href={subItem.href}
             class="px-12 py-2 block w-full text-left transition-colors duration-200
                    {$page.url.pathname + $page.url.hash === subItem.href || $page.url.pathname === subItem.href.split('#')[0] 
-                    ? 'text-purple-600 dark:text-purple-400 bg-purple-100/50 dark:bg-purple-950/40' 
-                    : 'hover:bg-purple-100/50 dark:hover:bg-purple-950/40'}"
+                    ? 'text-maia-800 dark:text-maia-400 bg-maia-100/50 dark:bg-maia-950/40' 
+                    : 'hover:bg-maia-100/50 dark:hover:bg-maia-950/40'}"
           >
             {subItem.label}
           </a>
@@ -93,8 +93,8 @@
   >
     <a 
       class="px-3 py-2 rounded-md transition-colors duration-200 flex items-center gap-2
-             {isActive ? 'text-purple-600 dark:text-purple-400' : 
-                        'hover:text-purple-600 dark:hover:text-purple-400'}" 
+             {isActive ? 'text-maia-800 dark:text-maia-400' : 
+                        'hover:text-maia-800 dark:hover:text-maia-400'}" 
       href={item.href}
     >
       <i class="{item.icon} text-sm"></i>
@@ -107,8 +107,8 @@
     {#if item.dropdownItems && activeDropdown === item.label}
       <div
         transition:slide={{ duration: 150 }}
-        class="absolute top-full left-0 bg-white dark:bg-maia_black shadow-lg dark:shadow-purple-900/20 
-               rounded-md py-1 min-w-[200px] border border-gray-100 dark:border-gray-800 backdrop-blur-sm"
+        class="absolute top-full left-0 bg-surface-light-elevated dark:bg-surface-dark shadow-lg dark:shadow-maia-900/20 
+               rounded-md py-1 min-w-[200px] border border-border-light dark:border-border-dark backdrop-blur-sm"
         role="menu"
         tabindex="0"
         on:mouseleave={() => setActiveDropdown(null)}
@@ -118,8 +118,8 @@
             href={subItem.href}
             class="block px-4 py-2 transition-colors duration-200
                    {$page.url.pathname + $page.url.hash === subItem.href || $page.url.pathname === subItem.href.split('#')[0] ? 
-                    'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30' : 
-                    'hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-purple-600 dark:hover:text-purple-400'}"
+                    'text-maia-800 dark:text-maia-400 bg-maia-50 dark:bg-maia-950/30' : 
+                    'hover:bg-maia-50 dark:hover:bg-maia-950/30 hover:text-maia-800 dark:hover:text-maia-400'}"
           >
             {subItem.label}
           </a>

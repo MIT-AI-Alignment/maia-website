@@ -6,12 +6,12 @@
 
 <section 
 	id={id} 
-	class="mb-16 rounded-lg p-6 bg-white dark:bg-maia_black/70 shadow-sm dark:shadow-purple-500/5 border border-gray-100 dark:border-purple-800"
+	class="mb-16 rounded-lg p-6 bg-surface-light-elevated dark:bg-maia-950/70 shadow-sm dark:shadow-maia border border-border-light dark:border-maia-800"
 >
 	{#if title}
 		<div class="flex items-center mb-6">
-			<div class="w-12 h-12 rounded-full bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center mr-4">
-				<i class="{icon} text-2xl text-purple-600"></i>
+			<div class="w-12 h-12 rounded-full bg-maia-500/10 dark:bg-maia-500/20 flex items-center justify-center mr-4">
+				<i class="{icon} text-2xl text-maia-800"></i>
 			</div>
 			<h2 class="text-2xl md:text-3xl font-heading font-[550]">
 				{title}

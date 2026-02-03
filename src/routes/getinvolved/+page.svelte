@@ -97,7 +97,7 @@
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
-		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
+		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
 			Join the MAIA community and contribute to AI safety research and education at MIT.
 		</p>
 		
@@ -129,12 +129,12 @@
 					{@html renderResult.html}
 				</div>
 				{#if renderResult.components.showML}
-					<div class="mt-6 p-4 rounded-lg bg-gray-50 dark:bg-maia_black/40 border-l-4 border-purple-400">
+					<div class="mt-6 p-4 rounded-lg bg-surface-light-alt dark:bg-surface-dark/40 border-l-4 border-maia-400">
 						<Aisfml />
 					</div>
 				{/if}
 				{#if renderResult.components.showGov}
-					<div class="mt-6 p-4 rounded-lg bg-gray-50 dark:bg-maia_black/40 border-l-4 border-fuchsia-400">
+					<div class="mt-6 p-4 rounded-lg bg-surface-light-alt dark:bg-surface-dark/40 border-l-4 border-maia-600">
 						<AisfGov />
 					</div>
 				{/if}
@@ -147,7 +147,7 @@
 		
 		{#if i < sections.length - 1}
 			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
 	{/each}
@@ -164,11 +164,11 @@
 
 <style lang="postcss">
 	:global(.prose) {
-		@apply text-gray-800 dark:text-gray-200;
+		@apply text-maia-950 dark:text-maia-100;
 	}
 	
 	:global(.prose a) {
-		@apply text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors;
+		@apply text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors;
 	}
 	
 	:global(.prose p) {

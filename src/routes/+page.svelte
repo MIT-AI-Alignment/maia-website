@@ -17,7 +17,7 @@
 <PageLayout
 	title="MIT AI Alignment"
 	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
-	heroTitle="We're a group of MIT students conducting research to <span class='text-purple-600 dark:text-purple-500'>reduce risk from advanced AI</span>."
+	heroTitle="We're a group of MIT students conducting research to <span class='text-maia-800 dark:text-maia-500'>reduce risk from advanced AI</span>."
 >
 	<svelte:fragment slot="hero-content">
 
@@ -34,13 +34,13 @@
 				{#if mounted}
 					<!-- <p><a 
 					href="https://mailchi.mp/0b6484dd282e/public" 
-					class="inline-block text-2xl text-purple-600 dark:text-purple-500 underline decoration-2 underline-offset-4 transition-colors"
+					class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
 					in:fly={{ y: 20, duration: 800, delay: 100 }}>
 					Join our mailing list →
 					</a></p> -->
 					<p><a 
 					href="mailto:maia-exec@mit.edu" 
-					class="inline-block text-2xl text-purple-600 dark:text-purple-500 underline decoration-2 underline-offset-4 transition-colors"
+					class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
 					in:fly={{ y: 20, duration: 800, delay: 100 }}>
 					Chat with us →
 					</a></p>
@@ -115,8 +115,9 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background-image: radial-gradient(circle, rgba(139, 92, 246, 0.25) 1.5px, transparent 1.5px);
+		background-image: radial-gradient(circle, var(--maia-400, #c084fc) 1.5px, transparent 1.5px);
 		background-size: 35px 35px;
+		opacity: 0.25;
 		animation: dotsFlow 15s linear infinite;
 		transform-origin: top left;
 	}
@@ -137,13 +138,9 @@
 		left: 0;
 		width: 100%;
 		height: 15vh;
-		background: linear-gradient(to bottom, transparent, var(--bg-color, #ffffff));
+		background: linear-gradient(to bottom, transparent, var(--background-color, #fdfbfe));
 		pointer-events: none;
 		z-index: 0;
-	}
-	
-	:global(.dark) .bottom-gradient {
-		--bg-color: #000000;
 	}
 	
 	@media (prefers-reduced-motion: reduce) {

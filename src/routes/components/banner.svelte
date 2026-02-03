@@ -27,7 +27,7 @@
 </script>
 
 {#if isVisible}
-	<div class="bg-purple-600 dark:bg-purple-500 h-12 flex items-center justify-center w-full relative">
+	<div class="bg-maia-800 dark:bg-maia-600 h-12 flex items-center justify-center w-full relative">
 		<div class="flex flex-col items-center">
 			<p class="text-white">
 				<i
@@ -44,7 +44,7 @@
 		</div>
 		<button
 			on:click={dismissBanner}
-			class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 focus:outline-none"
+			class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-maia-100 focus:outline-none"
 			aria-label="Close banner"
 		>
 			<i class="fa-solid fa-xmark"></i>

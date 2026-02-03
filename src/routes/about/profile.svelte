@@ -377,7 +377,7 @@
 			<img src={imageUrl} alt={name} class="rounded-lg h-24 w-24 object-cover" />
 			<div class="flex flex-col ml-4 mr-4">
 				<p class="text-2xl font-heading font-[550]">{name}</p>
-				<p class="text-sm text-purple-600 dark:text-purple-300">{subtitle || position}</p>
+				<p class="text-sm text-maia-800 dark:text-maia-400">{subtitle || position}</p>
 
 				{#if showSocials}
 					<div class="flex flex-wrap gap-2 mt-2">
@@ -385,7 +385,7 @@
 							{#if link.url}
 								{#if link.platform === 'email'}
 									<span
-										class="text-gray-600 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-300 cursor-pointer"
+										class="text-maia-950/60 hover:text-maia-800 dark:text-maia-200 dark:hover:text-maia-400 cursor-pointer"
 										title="Click to show email address"
 										on:click={handleEmailClick}
 									>
@@ -394,7 +394,7 @@
 								{:else if containsEmail(link.url)}
 									<!-- For non-email links that contain email addresses -->
 									<span
-										class="text-gray-600 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-300 cursor-pointer"
+										class="text-maia-950/60 hover:text-maia-800 dark:text-maia-200 dark:hover:text-maia-400 cursor-pointer"
 										title={`${link.title} (contains email address)`}
 										on:click={handleEmailClick}
 									>
@@ -405,7 +405,7 @@
 										href={link.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="text-gray-600 hover:text-purple-600 dark:text-gray-300 dark:hover:text-purple-300"
+										class="text-maia-950/60 hover:text-maia-800 dark:text-maia-200 dark:hover:text-maia-400"
 										title={link.title}
 									>
 										<i class={link.icon}></i>
@@ -416,7 +416,7 @@
 
 						{#if showExpandButton && hasAdditionalInfo}
 							<button
-								class="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 bg-purple-100 dark:bg-purple-900/30 rounded-full w-[1.25rem] h-[1.25rem] flex items-center justify-center transition-transform duration-200"
+								class="text-maia-800 hover:text-maia-700 dark:text-maia-400 dark:hover:text-maia-300 bg-maia-100 dark:bg-maia-900/30 rounded-full w-[1.25rem] h-[1.25rem] flex items-center justify-center transition-transform duration-200"
 								title="Show more information"
 								on:click={toggleExpandInfo}
 								style="transform: {showAllContacts ? 'rotate(180deg)' : 'rotate(0deg)'}"
@@ -432,7 +432,7 @@
 		{#if showAllContacts}
 			<div
 				transition:slide={{ duration: 300, easing: cubicOut }}
-				class="mt-4 text-sm bg-white dark:bg-gray-800 p-4 rounded-md border border-purple-600 dark:border-purple-300 shadow-xl z-10 relative overflow-hidden min-w-[280px] max-w-[400px] w-auto"
+				class="mt-4 text-sm bg-surface-light-elevated dark:bg-surface-dark-elevated p-4 rounded-md border border-maia-800 dark:border-maia-400 shadow-xl z-10 relative overflow-hidden min-w-[280px] max-w-[400px] w-auto"
 			>
 				<!-- Display each category of links -->
 				{#each Object.entries(linksByCategory) as [category, links]}
@@ -442,14 +442,14 @@
 							class={`mb-4 ${category === 'email' ? 'email-section' : ''}`}
 						>
 							<p
-								class="font-semibold mb-2 text-center text-purple-600 dark:text-purple-300 pb-1 border-b border-purple-600 dark:border-purple-300"
+								class="font-semibold mb-2 text-center text-maia-800 dark:text-maia-400 pb-1 border-b border-maia-800 dark:border-maia-400"
 							>
 								{category.charAt(0).toUpperCase() + category.slice(1)}
 							</p>
 							<ul class="text-xs space-y-2">
 								{#each links as link}
 									<li class="grid grid-cols-[2rem_1fr] items-center">
-										<i class={`${link.icon} text-center text-purple-600 dark:text-purple-300`}></i>
+										<i class={`${link.icon} text-center text-maia-800 dark:text-maia-400`}></i>
 										<div class="break-words">
 											<span class="font-medium mr-2">{link.title}</span>
 											{#if link.platform === 'email' || link.platform === 'mitEmail'}
@@ -481,8 +481,8 @@
 			</div>
 		{/if}
 	{:else}
-		<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-			<p class="text-red-500">Error: Missing required data (name and imageUrl)</p>
+		<div class="p-4 bg-surface-light-alt dark:bg-surface-dark-alt rounded-lg">
+			<p class="text-status-error">Error: Missing required data (name and imageUrl)</p>
 		</div>
 	{/if}
 </div>
@@ -499,7 +499,8 @@
 			background-color: transparent;
 		}
 		50% {
-			background-color: rgba(168, 85, 247, 0.3);
+			background-color: var(--maia-300, #d8b4fe);
+			opacity: 0.3;
 		}
 		100% {
 			background-color: transparent;

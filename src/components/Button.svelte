@@ -14,15 +14,15 @@
 
 	// Determine classes based on props
 	$: typeClasses = {
-		primary: 'bg-maia_blue hover:bg-maia_blue-600 text-white',
-		secondary: 'bg-maia_teal hover:bg-maia_teal-600 text-white',
+		primary: 'bg-maia-800 hover:bg-maia-700 text-white',
+		secondary: 'bg-maia-600 hover:bg-maia-500 text-white',
 		outline:
-			'bg-transparent border border-gray-500 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-400',
-		text: 'bg-transparent text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800',
+			'bg-transparent border border-maia-950/50 text-maia-950 dark:text-maia-100 hover:bg-maia-50 dark:hover:bg-maia-950/50 dark:border-maia-300/50',
+		text: 'bg-transparent text-maia-950 dark:text-maia-100 hover:bg-maia-50 dark:hover:bg-maia-950/50',
 		purple:
-			'bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-700 dark:text-white dark:hover:bg-purple-600',
+			'bg-maia-800 hover:bg-maia-700 text-white dark:bg-maia-700 dark:text-white dark:hover:bg-maia-600',
 		fuchsia:
-			'bg-fuchsia-600 hover:bg-fuchsia-700 text-white dark:bg-fuchsia-600 dark:text-white dark:hover:bg-fuchsia-500'
+			'bg-maia-600 hover:bg-maia-500 text-white dark:bg-maia-600 dark:text-white dark:hover:bg-maia-500'
 	}[type];
 
 	$: sizeClasses = {

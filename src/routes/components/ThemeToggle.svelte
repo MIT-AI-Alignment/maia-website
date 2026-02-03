@@ -10,8 +10,8 @@
 <button
   type="button"
   class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent 
-         transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
-         {darkMode ? 'bg-purple-600' : 'bg-gray-200'}"
+         transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-maia-800 focus:ring-offset-2
+         {darkMode ? 'bg-maia-800' : 'bg-maia-200'}"
   role="switch"
   aria-checked={darkMode}
   on:click={toggleTheme}
@@ -33,7 +33,7 @@
              {darkMode ? 'opacity-100 duration-200 ease-in' : 'opacity-0 duration-100 ease-out'}"
       aria-hidden="true"
     >
-      <i class="fas fa-moon text-xs text-indigo-700"></i>
+      <i class="fas fa-moon text-xs text-maia-800"></i>
     </span>
   </span>
 </button> 

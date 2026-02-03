@@ -30,15 +30,15 @@
 		if (scrollY > 20) {
 			isScrolled = true;
 			navbarHeight = '3.5rem';
-			navbarBg = $theme === 'dark' 
-				? 'bg-maia_black/95' 
-				: 'bg-white/95';
-			navbarBorder = $theme === 'dark'
-				? 'border-gray-800'
-				: 'border-gray-200';
-			navbarShadow = $theme === 'dark'
-				? 'shadow-sm shadow-purple-900/10'
-				: 'shadow-sm';
+		navbarBg = $theme === 'dark' 
+			? 'bg-surface-dark/95' 
+			: 'bg-surface-light-elevated/95';
+		navbarBorder = $theme === 'dark'
+			? 'border-border-dark'
+			: 'border-border-light';
+		navbarShadow = $theme === 'dark'
+			? 'shadow-sm shadow-maia-900/10'
+			: 'shadow-sm';
 		} else {
 			isScrolled = false;
 			navbarHeight = '4rem';
@@ -164,8 +164,8 @@
 							{#if activeDropdown === 'page'}
 								<div
 									transition:slide={{ duration: 150 }}
-									class="absolute top-full right-0 bg-white dark:bg-maia_black shadow-lg dark:shadow-purple-900/20 
-											rounded-md py-1 min-w-[200px] border border-gray-100 dark:border-gray-800 backdrop-blur-sm"
+							class="absolute top-full right-0 bg-surface-light-elevated dark:bg-surface-dark shadow-lg dark:shadow-maia-900/20 
+									rounded-md py-1 min-w-[200px] border border-border-light dark:border-border-dark backdrop-blur-sm"
 									role="menu"
 									tabindex="0"
 									on:mouseleave={() => setActiveDropdown(null)}
@@ -173,8 +173,8 @@
 									{#each $pageNavItems as item}
 										<a
 											href={item.href}
-											class="block px-4 py-2 transition-colors duration-200
-													hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-purple-600 dark:hover:text-purple-400"
+										class="block px-4 py-2 transition-colors duration-200
+												hover:bg-maia-50 dark:hover:bg-maia-950/30 hover:text-maia-800 dark:hover:text-maia-400"
 										>
 											{item.label}
 										</a>
@@ -192,11 +192,11 @@
 				
 				<!-- Mobile Menu Button -->
 				<div class="flex md:hidden">
-					<button
-						type="button"
-						class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200
-								hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/30
-								focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500"
+				<button
+					type="button"
+					class="inline-flex items-center justify-center p-2 rounded-md text-maia-950 dark:text-maia-100
+							hover:text-maia-800 dark:hover:text-maia-400 hover:bg-maia-50 dark:hover:bg-maia-950/30
+							focus:outline-none focus:ring-2 focus:ring-inset focus:ring-maia-500"
 						aria-expanded={isMobileMenuOpen}
 						on:click={toggleMobileMenu}
 					>

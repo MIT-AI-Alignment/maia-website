@@ -83,7 +83,7 @@
 		
 		{#if i < sections.length - 1}
 			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
 	{/each}
@@ -106,7 +106,7 @@
 			<Orgs />
 		</div>
 		<Orgs />
-		<p class="mt-6 text-center text-gray-600 dark:text-gray-400 italic">
+		<p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
 			This is a list of some of the organizations our members have worked with. Not all
 			organisations listed endorse or are affiliated with MAIA.
 		</p>
