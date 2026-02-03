@@ -56,23 +56,53 @@ export default {
         status: {
           success: {
             light: '#dcfce7',
-            DEFAULT: '#22c55e',
+            DEFAULT: '#059669',      // Emerald (light mode)
+            'dark-mode': '#34d399',  // Emerald light (dark mode)
             dark: '#166534',
           },
           warning: {
             light: '#fef9c3',
-            DEFAULT: '#eab308',
+            DEFAULT: '#ca8a04',      // Amber (light mode)
+            'dark-mode': '#fbbf24',  // Amber light (dark mode)
             dark: '#854d0e',
           },
           error: {
             light: '#fee2e2',
-            DEFAULT: '#ef4444',
+            DEFAULT: '#dc2626',      // Red (light mode)
+            'dark-mode': '#f87171',  // Red light (dark mode)
             dark: '#991b1b',
           },
           info: {
             light: '#dbeafe',
-            DEFAULT: '#3b82f6',
+            DEFAULT: '#0284c7',      // Sky blue (light mode)
+            'dark-mode': '#38bdf8',  // Sky blue light (dark mode)
             dark: '#1e40af',
+          },
+        },
+
+        // ===========================================
+        // Accent Colors - Complementary to Purple
+        // ===========================================
+        accent: {
+          // Teal - Triadic complement, secondary accent
+          teal: {
+            DEFAULT: '#0d9488',      // Light mode
+            'dark-mode': '#2dd4bf',  // Dark mode
+          },
+          // Orange - Split-complementary, CTAs & highlights
+          orange: {
+            DEFAULT: '#ea580c',      // Light mode
+            'dark-mode': '#fb923c',  // Dark mode
+          },
+          // Pink - Analogous, promotions & special callouts
+          pink: {
+            DEFAULT: '#db2777',      // Light mode
+            'dark-mode': '#f472b6',  // Dark mode
+          },
+          // Lime - Fresh contrast, new/growth indicators
+          lime: {
+            DEFAULT: '#65a30d',      // Light mode
+            'dark-mode': '#a3e635',  // Dark mode
           },
         },
 
