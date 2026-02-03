@@ -11,7 +11,7 @@
 	{#if title}
 		<div class="flex items-center mb-6">
 			<div class="w-12 h-12 rounded-full bg-maia-500/10 dark:bg-maia-500/20 flex items-center justify-center mr-4">
-				<i class="{icon} text-2xl text-maia-800"></i>
+				<i class="{icon} text-2xl text-maia-500"></i>
 			</div>
 			<h2 class="text-2xl md:text-3xl font-heading font-[550]">
 				{title}
