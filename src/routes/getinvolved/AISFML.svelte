@@ -32,30 +32,17 @@
 	
 	<p class="mt-2">
 	We run AISF every Fall and Spring, with applications opening early into both semesters.
-	There are no open applications now, but you can stay up to date via our mailing list.
+	Applications are now open!
 	</p>
 
-	<!-- UNCOMMENT THIS WHEN AN APPLICATION OPENS -->
 	<div class="mt-8">
-		<a href={CONFIG.mailingListLink}>
-			<Button 
-				text="Join our mailing list" 
+		<a href={CONFIG.aisf_ml.applicationLink}>
+			<Button
+				text="Apply Now"
 				icon="fa-solid fa-arrow-right"
-				type="purple" 
-				size="md" 
+				type="purple"
+				size="md"
 			/>
 		</a>
 	</div>
-	
-
-	<!-- <div class="mt-8">
-		<a href={CONFIG.aisf_ml.applicationLink}>
-			<Button 
-				text="Technical AISF {CONFIG.aisf_ml.deadline}" 
-				icon="fa-solid fa-arrow-right"
-				type="purple" 
-				size="md" 
-			/>
-		</a>
-	</div> -->
 </section>

@@ -105,6 +105,61 @@
 			</div>
 		</div>
 	</svelte:fragment>
+
+	<SectionContainer
+		title="Apply to our Safety Fellowship!"
+		icon="fa-solid fa-graduation-cap"
+	>
+		{#if mounted}
+			<div in:fade={{ duration: 800, delay: 300 }}>
+				<p class="mb-4 text-gray-600 dark:text-gray-400">
+					Join our AI Safety Fundamentals program — a 7-week introductory reading group on technical AI safety.
+				</p>
+				<iframe
+					class="airtable-embed"
+					src="https://airtable.com/embed/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
+					frameborder="0"
+					width="100%"
+					height="533"
+					style="background: transparent; border: 1px solid #ccc; border-radius: 0.5rem;"
+					title="AISF Application Form"
+				></iframe>
+				<div class="mt-6 flex justify-center">
+					<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" target="_blank" rel="noopener noreferrer">
+						<Button
+							text="Open form in new tab"
+							icon="fa-solid fa-arrow-up-right-from-square"
+							type="purple"
+							size="lg"
+						/>
+					</a>
+				</div>
+			</div>
+		{:else}
+			<p class="mb-4 text-gray-600 dark:text-gray-400">
+				Join our AI Safety Fundamentals program — a 7-week introductory reading group on technical AI safety.
+			</p>
+			<iframe
+				class="airtable-embed"
+				src="https://airtable.com/embed/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
+				frameborder="0"
+				width="100%"
+				height="533"
+				style="background: transparent; border: 1px solid #ccc; border-radius: 0.5rem;"
+				title="AISF Application Form"
+			></iframe>
+			<div class="mt-6 flex justify-center">
+				<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" target="_blank" rel="noopener noreferrer">
+					<Button
+						text="Open form in new tab"
+						icon="fa-solid fa-arrow-up-right-from-square"
+						type="purple"
+						size="lg"
+					/>
+				</a>
+			</div>
+		{/if}
+	</SectionContainer>
 </PageLayout>
 
 <style>
