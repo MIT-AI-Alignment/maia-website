@@ -16,10 +16,9 @@
 		in the hundreds. 
 	</p>
 	<p>
-		We get funding from <a href="https://coefficientgiving.org/">Coefficient Giving</a> 
-		(FKA Open Philanthropy). Our parent organization is 
+		Our parent organization,
 		<a href="https://www.cbai.ai/">Cambridge Boston Alignment Initiative</a> (CBAI), 
-		which supports both us and our sister organization at Harvard, 
+		supports both us and our sister organization at Harvard, 
 		<a href="https://aisst.ai/">AISST</a>.
 	</p>
 </div>
