@@ -5,7 +5,7 @@
 
 <!-- Deprecated: Original AISF Governance track content (commented out due to redirect)
 <section>
-	<h3 class="pt-8 text-3xl font-heading text-purple-600 dark:text-purple-500">Policy track</h3>
+	<h3 class="pt-8 text-3xl font-heading text-maia-800 dark:text-maia-500">Policy track</h3>
 	<p class="pt-2">
 		The policy track of AI Safety Fundamentals is a seven-week reading group on the foundational
 		<b>governance and policy challenges</b> posed by advanced AI systems. Topics discussed include
@@ -40,7 +40,7 @@
 -->
 
 <section>
-	<h3 class="text-3xl font-heading text-fuchsia-600 dark:text-fuchsia-500">Policy Fellowship</h3>
+	<h3 class="text-3xl font-heading text-maia-600 dark:text-maia-500">Policy Fellowship</h3>
 
 	<p class="mt-2">
 		Every semester our sister organization at Harvard, <a href="https://aisst.ai/">AISST</a>, runs an 8-week introductory reading group on the foundational policy and

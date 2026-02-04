@@ -6,7 +6,6 @@
 </script>
 
 <div class="flex my-6 flex-wrap">
-	<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
 	{#each orgs as org}
 		<Profile 
 			personId={org.id} 

@@ -52,14 +52,14 @@
 				{/each}
 			</SplideTrack>
 			<div class="splide__arrows">
-				<button
-					class="splide__arrow splide__arrow--prev transition-all duration-300 absolute left-[-30px] md:left-[-50px] top-1/3 bg-white dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center border border-solid border-purple-200 dark:border-purple-900 shadow-md hover:scale-110 hover:bg-purple-50 dark:hover:bg-purple-900/30"
-					><IconArrowLeftBold class="text-purple-600 dark:text-purple-400" /></button
-				>
-				<button
-					class="splide__arrow splide__arrow--next transition-all duration-300 absolute right-[-30px] md:right-[-50px] top-1/3 bg-white dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center border border-solid border-purple-200 dark:border-purple-900 shadow-md hover:scale-110 hover:bg-purple-50 dark:hover:bg-purple-900/30"
-					><IconArrowRightBold class="text-purple-600 dark:text-purple-400" /></button
-				>
+			<button
+				class="splide__arrow splide__arrow--prev transition-all duration-300 absolute left-[-30px] md:left-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
+				><IconArrowLeftBold class="text-maia-800 dark:text-maia-400" /></button
+			>
+			<button
+				class="splide__arrow splide__arrow--next transition-all duration-300 absolute right-[-30px] md:right-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
+				><IconArrowRightBold class="text-maia-800 dark:text-maia-400" /></button
+			>
 			</div>
 		</Splide>
 	</div>
@@ -79,11 +79,11 @@
 		</SplideTrack>
 		<div class="splide__arrows invisible md:visible">
 			<button
-				class="splide__arrow splide__arrow--prev transition-opacity disabled:opacity-0 absolute left-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
+				class="splide__arrow splide__arrow--prev transition-opacity disabled:opacity-0 absolute left-[-50px] top-1/3 bg-surface-light-alt h-8 w-8 rounded-full flex items-center justify-center border border-solid border-maia-950"
 				><IconArrowLeftBold /></button
 			>
 			<button
-				class="splide__arrow splide__arrow--next transition-opacity disabled:opacity-0 absolute right-[-50px] top-1/3 bg-slate-100 h-8 w-8 rounded-full flex items-center justify-center border border-solid border-black"
+				class="splide__arrow splide__arrow--next transition-opacity disabled:opacity-0 absolute right-[-50px] top-1/3 bg-surface-light-alt h-8 w-8 rounded-full flex items-center justify-center border border-solid border-maia-950"
 				><IconArrowRightBold /></button
 			>
 		</div>
@@ -96,12 +96,14 @@
 	}
 	
 	:global(.papers-carousel .splide__pagination__page) {
-		background: rgba(139, 92, 246, 0.3);
+		background: var(--maia-300, #d8b4fe);
+		opacity: 0.5;
 		transition: all 0.3s ease;
 	}
 	
 	:global(.papers-carousel .splide__pagination__page.is-active) {
-		background: rgba(139, 92, 246, 0.8);
+		background: var(--maia-800, #663399);
+		opacity: 1;
 		transform: scale(1.3);
 	}
 	

@@ -4,8 +4,10 @@
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
 	import PapersExpandable from '../components/PapersExpandable.svelte';
+	import Orgs from '../components/orgs.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
 	import CongressionalExhibition from '../../components/CongressionalExhibition.svelte';
+
 
 	type Section = {
 		id: string;
@@ -15,18 +17,25 @@
 	};
 
 	const sections: Section[] = [
+		
 		{
-			id: 'current',
-			title: 'Projects',
-			icon: 'fa-solid fa-rocket',
-			component: CongressionalExhibition
+			id: 'orgs',
+			title: 'Organizations MAIA Works With',
+			icon: 'fa-solid fa-book-open',
+			component: Orgs
 		},
 		{
 			id: 'research',
 			title: 'Research by MAIA Members',
 			icon: 'fa-solid fa-book-open',
 			component: PapersExpandable
-		}
+		},
+		// {
+		// 	id: 'current',
+		// 	title: 'Projects',
+		// 	icon: 'fa-solid fa-rocket',
+		// 	component: CongressionalExhibition
+		// },
 	];
 	
 	function scrollToSection(id: string) {
@@ -36,6 +45,7 @@
 		}
 	}
 </script>
+
 
 <PageLayout
 	title="Initiatives"
@@ -73,7 +83,7 @@
 		
 		{#if i < sections.length - 1}
 			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
 	{/each}
@@ -86,4 +96,19 @@
 			on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
 		/>
 	</div>
+	
+	<!-- <SectionContainer
+		title="Organizations we work with"
+		icon="fa-solid fa-building"
+	>
+
+		<div in:fade={{ duration: 800, delay: 400 }}>
+			<Orgs />
+		</div>
+		<Orgs />
+		<p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
+			This is a list of some of the organizations our members have worked with. Not all
+			organisations listed endorse or are affiliated with MAIA.
+		</p>
+	</SectionContainer> -->
 </PageLayout>

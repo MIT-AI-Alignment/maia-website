@@ -20,7 +20,7 @@
 </script>
 
 <a href={link} target="_blank" rel="noopener noreferrer">
-	<div class="paper-card flex flex-col p-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 h-full">
+	<div class="paper-card flex flex-col p-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-surface-light-alt dark:hover:bg-surface-dark-alt h-full border border-border-maia-subtle dark:border-border-maia-subtle-dark">
 		<div class="overflow-hidden rounded-md mb-3">
 			<img 
 				src={imgSrc} 
@@ -28,9 +28,9 @@
 				class="dark:invert w-full h-auto transition-transform duration-300 hover:scale-105" 
 			/>
 		</div>
-		<h4 class="mt-1 mb-2 text-{textSize} font-bold transition-colors duration-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">{title}</h4>
+		<h4 class="mt-1 mb-2 text-{textSize} font-bold transition-colors duration-300 group-hover:text-maia-800 dark:group-hover:text-maia-400">{title}</h4>
 		{#each authors as author}
-			<p class="text-{textSize === 'lg' ? 'md' : 'sm'} text-gray-600 dark:text-stone-400">{author}</p>
+			<p class="text-{textSize === 'lg' ? 'md' : 'sm'} text-maia-950/60 dark:text-maia-200">{author}</p>
 		{/each}
 		<div class="mt-3 flex flex-wrap gap-1">
 			{#each tags as tag}
@@ -43,10 +43,6 @@
 </a>
 
 <style>
-	.paper-card {
-		border: 1px solid rgba(139, 92, 246, 0.1);
-	}
-	
 	@media (prefers-reduced-motion: reduce) {
 		.paper-card {
 			transition: none !important;

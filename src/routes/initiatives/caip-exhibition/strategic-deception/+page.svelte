@@ -15,7 +15,7 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black text-gray-800 dark:text-maia_white">
+<main class="min-h-screen bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50">
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->
@@ -26,7 +26,7 @@
 				class="w-full h-full object-cover object-[center_-50px]"
 			/>
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-transparent via-maia_white/70 to-maia_white dark:via-maia_black/70 dark:to-maia_black"
+				class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-light/70 to-surface-light dark:via-surface-dark/70 dark:to-surface-dark"
 			/>
 		</div>
 
@@ -35,7 +35,7 @@
 			<!-- Main Title -->
 			<BackLink />
 			<h1
-				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent"
+				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-maia-800 to-maia-600 dark:from-maia-400 dark:to-maia-300 bg-clip-text text-transparent"
 			>
 				<i class="fa-solid fa-mask"></i> AI Strategic Deception: A Critical Safety Concern
 			</h1>

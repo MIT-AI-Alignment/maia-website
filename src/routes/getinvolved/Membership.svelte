@@ -21,31 +21,31 @@
 		<li>Weekly member meetings to read and discuss alignment research</li>
 		<li>
 			Small group discussions with alignment researchers and professors (recent guests included
-			<a href="https://colah.github.io/about.html" class="text-purple-600 dark:text-purple-300"
+			<a href="https://colah.github.io/about.html" class="text-maia-800 dark:text-maia-400"
 				>Chris Olah</a
 			>
 			from Anthropic and
 			<a
 				href="https://www.nytimes.com/2024/06/04/technology/openai-culture-whistleblowers.html"
-				class="text-purple-600 dark:text-purple-300">Daniel Kokotajlo</a
+				class="text-maia-800 dark:text-maia-400">Daniel Kokotajlo</a
 			> from OpenAI)
 		</li>
 		<li>
 			Connections with and potential opportunities to collaborate with top alignment organizations
-			like <a href="https://www.redwoodresearch.org/" class="text-purple-600 dark:text-purple-300"
+			like <a href="https://www.redwoodresearch.org/" class="text-maia-800 dark:text-maia-400"
 				>Redwood Research</a
 			>,
-			<a href="https://www.nist.gov/aisi" class="text-purple-600 dark:text-purple-300"
+			<a href="https://www.nist.gov/aisi" class="text-maia-800 dark:text-maia-400"
 				>The U.S. AI Safety Institute</a
-			>, and <a href="https://metr.org/" class="text-purple-600 dark:text-purple-300">METR</a>
+			>, and <a href="https://metr.org/" class="text-maia-800 dark:text-maia-400">METR</a>
 		</li>
 		<li>
 			Opportunities to participate in AI safety community workshops and connect with leaders in
 			policy, academia, and technical research. (Ex: Professors <a
 				href="https://sites.google.com/view/htanaka/home"
-				class="text-purple-600 dark:text-purple-300">Hidenori Tanaka</a
+				class="text-maia-800 dark:text-maia-400">Hidenori Tanaka</a
 			>
-			and <a href="http://davidbau.com/" class="text-purple-600 dark:text-purple-300">David Bau</a>)
+			and <a href="http://davidbau.com/" class="text-maia-800 dark:text-maia-400">David Bau</a>)
 		</li>
 		<li>
 			Participating in a community of talented undergraduate and graduate students interested in
@@ -68,7 +68,7 @@
 		to complete. Membership admission is rolling, but the board tends to make decisions every month.
 		If we are slow to respond, please don't hesitate to email us at <a
 			href="mailto:maia-exec@mit.edu"
-			class="text-purple-600 dark:text-purple-300">maia-exec@mit.edu</a
+			class="text-maia-800 dark:text-maia-400">maia-exec@mit.edu</a
 		>.
 	</p>
 	<div class="mt-8 space-y-4">
@@ -83,7 +83,7 @@
 		<p class="text-sm">
 			Questions? Contact us at <a
 				href="mailto:maia-exec@mit.edu"
-				class="text-purple-600 dark:text-purple-300">maia-exec@mit.edu</a
+				class="text-maia-800 dark:text-maia-400">maia-exec@mit.edu</a
 			>
 		</p>
 	</div>

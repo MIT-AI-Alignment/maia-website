@@ -32,8 +32,8 @@
         class="w-full h-full border-0"
       ></iframe>
     </div>
-    <div class="bg-gray-100 dark:bg-gray-800 p-2 border-t border-gray-200 dark:border-gray-700">
-      <p class="text-xs text-center text-gray-700 dark:text-gray-300">
+    <div class="bg-surface-light-alt dark:bg-surface-dark-alt p-2 border-t border-border-light dark:border-border-dark">
+      <p class="text-xs text-center text-maia-950/70 dark:text-maia-200">
         {caption}
       </p>
     </div>

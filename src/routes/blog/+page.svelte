@@ -69,7 +69,7 @@
 		
 		{#if i < sections.length - 1}
 			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
 	{/each}

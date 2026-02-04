@@ -70,7 +70,7 @@
 	<!-- Audio Demos Section -->
 	<DarkModeCard>
 		<h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-			<i class="fa-solid fa-headphones text-purple-500"></i>
+			<i class="fa-solid fa-headphones text-maia-500"></i>
 			<span>Audio Demonstrations</span>
 		</h2>
 		<p class="mb-6">
@@ -80,12 +80,12 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			{#each audioDemos as demo}
-				<div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+				<div class="border border-border-light dark:border-border-dark rounded-lg p-4">
 					<div class="flex items-center gap-3 mb-3">
-						<i class="{demo.icon} text-2xl text-purple-500"></i>
+						<i class="{demo.icon} text-2xl text-maia-500"></i>
 						<h3 class="text-xl font-bold">{demo.title}</h3>
 					</div>
-					<p class="mb-4 text-gray-700 dark:text-gray-300">{demo.description}</p>
+					<p class="mb-4 text-maia-950/70 dark:text-maia-200">{demo.description}</p>
 					<div class="audio-player w-full">
 						<audio controls class="w-full">
 							<source src={demo.file} type="audio/mpeg" />
@@ -206,7 +206,7 @@
 		<!-- Contact Information Section -->
 		<DarkModeCard>
 			<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
-				<i class="fa-solid fa-envelope text-purple-500"></i>
+				<i class="fa-solid fa-envelope text-maia-500"></i>
 				<span>Contact Information</span>
 			</h3>
 			<div class="space-y-3">

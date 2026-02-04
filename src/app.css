@@ -5,24 +5,28 @@
 :root {
   --navbar-height: 4rem;
   
-  /* Light mode variables */
+  /* 
+   * Note: Most colors are defined in tailwind.config.js
+   * Only add CSS variables here if you need them in:
+   * - <style> blocks (animations, keyframes)
+   * - Inline styles with var()
+   * - JavaScript access
+   */
+  
+  /* Light mode */
   --background-color: #fdfbfe;
-  --text-color: #1b1023;
-  --border-color: #e5e7eb;
-  --hover-color: rgba(102, 51, 153, 0.05);
+  --primary: #663399;
 }
 
 .dark {
-  /* Dark mode variables */
+  /* Dark mode */
   --background-color: #1b1023;
-  --text-color: #fdfbfe;
-  --border-color: #374151;
-  --hover-color: rgba(102, 51, 153, 0.2);
+  --primary: #a855f7;
 }
 
 @layer base {
   body {
-    @apply bg-maia_white dark:bg-maia_black text-maia_black dark:text-maia_white;
+    @apply bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }

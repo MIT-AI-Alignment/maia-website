@@ -2,20 +2,6 @@
     export let transparent = false;
 </script>
 
-<div class="rounded-lg p-6 shadow-sm text-gray-800 dark:text-gray-200 border border-gray-100 dark:border-gray-700 bg-white dark-card {transparent ? 'transparent-bg' : ''}">
+<div class="rounded-lg p-6 shadow-sm text-maia-950 dark:text-maia-50 border border-border-light dark:border-border-dark bg-surface-light-elevated dark:bg-surface-dark-elevated {transparent ? 'dark:!bg-transparent' : ''}">
     <slot />
-</div>
-
-<style>
-    .dark-card {
-        background-color: white;
-    }
-    
-    :global(.dark) .dark-card {
-        background-color: #1e293b !important;
-    }
-    
-    :global(.dark) .transparent-bg {
-        background-color: transparent !important;
-    }
-</style> 
+</div> 

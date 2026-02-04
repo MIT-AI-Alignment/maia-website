@@ -67,6 +67,18 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true
 	},
+
+	'felix-tudose': {
+		id: 'felix-tudose',
+		name: 'Felix Tudose',
+		position: 'Deputy Director',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
+		mitEmail: 'felixrt@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
+		isExec: true,
+		isActive: true,
+	},
+
 	'ryan-baylon': {
 		id: 'ryan-baylon',
 		name: 'Ryan Baylon',
@@ -98,11 +110,183 @@ export const PEOPLE: Record<string, Person> = {
 	},
 
 	// ORGANIZERS 
+	'david-turturean': {
+		id: 'david-turturean',
+		name: 'David Turturean',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
+
+		// Contact information
+		// mitEmail: 'davidct@mit.edu',
+		isExec: false,
+		isActive: true,
+		isOrg: true,
+		projects: ['phone-line-attacks'],
+		projectRoles: {
+			'phone-line-attacks': 'Phone-line Attacks - Lead'
+		},
+		projectOrder: {
+			'phone-line-attacks': 1 // First in the phone-line attacks project
+	}
+	},
+
 	'atticus-wang': {
 		id: 'atticus-wang',
 		name: 'Atticus Wang',
-		position: 'Board Member',
+		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'david-zhang': {
+		id: 'david-zhang',
+		name: 'David Zhang',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FWMK9NV6-eea6255beea8-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'anooshka-pendyal': {
+		id: 'anooshka-pendyal',
+		name: 'Anooshka Pendyal',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U08ETD9HPAP-37443c44c576-512',
+		mitEmail:'anpen118@mit.edu',
+		linkedin:'linkedin.com/in/anooshka-pendyal',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'nixon-hanna': {
+		id: 'nixon-hanna',
+		name: 'Nixon Hanna',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HDQTBNNP-cdb0521bb657-512',
+		mitEmail: 'noxin@mit.edu',
+		personalPage: 'nixonhanna.com',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'emily-yu': {
+		id: 'emily-yu',
+		name: 'Emily Yu',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09V27LGPJ5-ecfcf8190bfa-512',
+		mitEmail:'emily_yu@mit.edu',
+		linkedin:'https://www.linkedin.com/in/emily-yu-398249278/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'anna-krolik': {
+		id: 'anna-krolik',
+		name: 'Anna Krolik',
+		position: '',
+		imageUrl: '/src/lib/people-photos/anna.png',
+		mitEmail:'akrolik@mit.edu',
+		linkedin:'https://www.linkedin.com/in/anna-krolik/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'talha-ashraf': {
+		id: 'talha-ashraf',
+		name: 'Talha Ashraf',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'daniel-wu': {
+		id: 'daniel-wu',
+		name: 'Daniel Wu',
+		position: '',
+		imageUrl: '/src/lib/people-photos/daniel-wu.jpeg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'nikhil-vemuri': {
+		id: 'nikhil-vemuri',
+		name: 'Nikhil Vemuri',
+		position: '',
+		imageUrl: '/src/lib/people-photos/nikhil.jpeg',
+		linkedin: 'https://www.linkedin.com/in/nikhil-vemuri-',
+		mitEmail:'nvemuri@mit.edu',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'zsofia-keresztely': {
+		id: 'zsofia-keresztely',
+		name: 'Zsófia Keresztély',
+		position: '',
+		imageUrl: '/src/lib/people-photos/zsofia.jpeg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'elliott-slaughter': {
+		id: 'elliott-slaughter',
+		name: 'Elliott Slaughter',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09ULGG720N-b291471f94d6-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'jurgis-kemeklis': {
+		id: 'jurgis-kemeklis',
+		name: 'Jurgis Kemeklis',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'ionut-gabriel-stan': {
+		id: 'ionut-gabriel-stan',
+		name: 'Ionut Gabriel Stan',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
+		mitEmail:'igstan@mit.edu',
+		linkedin:'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'reshma-kosaraju': {
+		id: 'reshma-kosaraju',
+		name: 'Reshma Kosaraju',
+		position: '',
+		imageUrl: '/src/lib/people-photos/reshma.jpeg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'neha-muramalla': {
+		id: 'neha-muramalla',
+		name: 'Neha Muramalla',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U08F5JNU22V-0b2283c2aaf6-512',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -119,6 +303,9 @@ export const PEOPLE: Record<string, Person> = {
 		isAdvisor: true,
 		isActive: true
 	},
+
+
+	// PAST EXECS/ ORGANIZERS
 	'eleni-shor': {
 		id: 'eleni-shor',
 		name: 'Eleni Shor',
@@ -127,20 +314,20 @@ export const PEOPLE: Record<string, Person> = {
 		// email: 'eleni.shor@proton.me',
 		isExec: false,
 		isActive: false,
-		isAdvisor: true
+		isAdvisor: false
 	},
+
 	'asher-parker-sartori': {
 		id: 'asher-parker-sartori',
 		name: 'Asher Parker Sartori',
 		position: 'Student Advisor',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
 		// mitEmail: 'aparkersartori@gmail.com',
-		isAdvisor: true,
+		isAdvisor: false,
 		isActive: true
 	},
 
-	// PAST EXECS/ ORGANIZERS
-		'daria-ivanova': {
+	'daria-ivanova': {
 		id: 'daria-ivanova',
 		name: 'Daria Ivanova',
 		position: 'Deputy Director',
@@ -149,6 +336,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
+
 	'sam-prieto-lima': {
 		id: 'sam-prieto-lima',
 		name: 'Samuel Prieto Lima',
@@ -157,6 +345,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true,
 	},
+
 	'kaivu-hariharan': {
 		id: 'kaivu-hariharan',
 		name: 'Kaivu Hariharan',
@@ -166,6 +355,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
+
 	'misha-gerovitch': {
 		id: 'misha-gerovitch',
 		name: 'Misha Gerovitch',
@@ -175,6 +365,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
+
 	// 'emre-yavuz': {
 	// 	id: 'emre-yavuz',
 	// 	name: 'Emre Yavuz',
@@ -184,6 +375,7 @@ export const PEOPLE: Record<string, Person> = {
 	// 	isExec: true,
 	// 	isActive: true
 	// },
+
 	'duru-ozer': {
 		id: 'duru-ozer',
 		name: 'Duru Ozer',
@@ -193,6 +385,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
+
 	'gatlen-culp': {
 		id: 'gatlen-culp',
 		name: 'Gatlen Culp',
@@ -237,6 +430,7 @@ export const PEOPLE: Record<string, Person> = {
 			'phone-line-attacks': 2 // Second in the phone-line attacks project
 		}
 	},
+
 	'jen-ben-arye': {
 		id: 'jen-ben-arye',
 		name: 'Jen Ben Arye',
@@ -246,6 +440,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isActive: true
 	},
+
 	'tara-rezaei-kheirkhah': {
 		id: 'tara-rezaei-kheirkhah',
 		name: 'Tara Rezaei Kheirkhah',
@@ -256,27 +451,7 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true
 	},
 
-
-
 	// CAIP Exhibition Team Members
-	'david-turturean': {
-		id: 'david-turturean',
-		name: 'David Turturean',
-		position: 'Board Member',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07QX294TRR-12923a51bae9-192',
-
-		// Contact information
-		// mitEmail: 'davidct@mit.edu',
-		isExec: false,
-		isActive: true,
-		projects: ['phone-line-attacks'],
-		projectRoles: {
-			'phone-line-attacks': 'Phone-line Attacks - Lead'
-		},
-		projectOrder: {
-			'phone-line-attacks': 1 // First in the phone-line attacks project
-		}
-	},
 	'alek-westover': {
 		id: 'alek-westover',
 		name: 'Alek Westover',
