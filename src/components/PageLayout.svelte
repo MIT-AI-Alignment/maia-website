@@ -34,19 +34,19 @@
 	<meta name="description" content={description} />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black dark:text-maia_white relative overflow-hidden">
+<main class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden">
 	<!-- No background grid needed anymore -->
 	
 	<Navbar />
 	
 	<!-- Hero Section -->
 	<div class="bg-gradient-to-b {$theme === 'dark' 
-		? 'from-purple-500/5 via-purple-500/3 to-transparent' 
-		: 'from-purple-500/3 via-purple-500/2 to-transparent'} pt-32 pb-12 relative z-10">
+		? 'from-maia-500/5 via-maia-500/3 to-transparent' 
+		: 'from-maia-500/3 via-maia-500/2 to-transparent'} pt-32 pb-12 relative z-10">
 		<div class="px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="pt-16 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}
-					<i class="{heroIcon} mr-3 text-purple-600 dark:text-purple-500"></i>
+					<i class="{heroIcon} mr-3 text-maia-800 dark:text-maia-500"></i>
 				{/if}
 				{@html heroTitle}
 			</h1>
@@ -64,11 +64,11 @@
 
 <style lang="postcss">
 	:global(.prose) {
-		@apply text-gray-800 dark:text-gray-200;
+		@apply text-maia-950 dark:text-maia-100;
 	}
 	
 	:global(.prose a) {
-		@apply text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors;
+		@apply text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors;
 	}
 	
 	:global(.prose p) {

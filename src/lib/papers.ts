@@ -1,21 +1,22 @@
 // Controls the papers displayed
 
 // Define tags as constants to avoid repetition
+// Uses standardized tag colors from tailwind.config.js
 export const TAGS = {
-	NEURIPS_2022: { title: 'NeurIPS 2022', color: 'bg-blue-200 dark:bg-blue-800' },
-	NEURIPS_2023: { title: 'NeurIPS 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-	NEURIPS_2024: { title: 'NeurIPS 2024', color: 'bg-blue-200 dark:bg-blue-800' },
-	NEURIPS_2025: { title: 'NeurIPS 2025', color: 'bg-blue-200 dark:bg-blue-800' },
-	ICLR_2022: { title: 'ICLR 2022', color: 'bg-blue-200 dark:bg-blue-800' },
-	ICLR_2023: { title: 'ICLR 2023', color: 'bg-blue-200 dark:bg-blue-800' },
-	ICLR_2024: { title: 'ICLR 2024', color: 'bg-blue-200 dark:bg-blue-800' },
-	ICLR_2025: { title: 'ICLR 2025', color: 'bg-blue-200 dark:bg-blue-800' },
-	ADVERSARIAL: { title: 'Adversarial Attacks', color: 'bg-red-200 dark:bg-red-800' },
-	RLHF: { title: 'RLHF', color: 'bg-green-200 dark:bg-green-800' },
-	SCALING: { title: 'Scaling Laws', color: 'bg-purple-200 dark:bg-purple-800' },
-	MECH_INTERP: { title: 'Mech Interp', color: 'bg-orange-200 dark:bg-orange-800' },
-	OPENAI: { title: 'OpenAI', color: 'bg-rose-200 dark:bg-rose-800' },
-	GOVERNANCE: { title: 'Governance', color: 'bg-sky-200 dark:bg-sky-800' }
+	NEURIPS_2022: { title: 'NeurIPS 2022', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	NEURIPS_2023: { title: 'NeurIPS 2023', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	NEURIPS_2024: { title: 'NeurIPS 2024', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	NEURIPS_2025: { title: 'NeurIPS 2025', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	ICLR_2022: { title: 'ICLR 2022', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	ICLR_2023: { title: 'ICLR 2023', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	ICLR_2024: { title: 'ICLR 2024', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	ICLR_2025: { title: 'ICLR 2025', color: 'bg-tag-conference-light dark:bg-tag-conference-dark' },
+	ADVERSARIAL: { title: 'Adversarial Attacks', color: 'bg-tag-adversarial-light dark:bg-tag-adversarial-dark' },
+	RLHF: { title: 'RLHF', color: 'bg-tag-rlhf-light dark:bg-tag-rlhf-dark' },
+	SCALING: { title: 'Scaling Laws', color: 'bg-tag-scaling-light dark:bg-tag-scaling-dark' },
+	MECH_INTERP: { title: 'Mech Interp', color: 'bg-tag-mechinterp-light dark:bg-tag-mechinterp-dark' },
+	OPENAI: { title: 'OpenAI', color: 'bg-tag-openai-light dark:bg-tag-openai-dark' },
+	GOVERNANCE: { title: 'Governance', color: 'bg-tag-governance-light dark:bg-tag-governance-dark' }
 } as const;
 
 export const PAPERS = [

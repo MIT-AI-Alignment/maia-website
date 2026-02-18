@@ -5,19 +5,141 @@ export default {
   theme: {
     extend: {
       colors: {
-        maia_gray: "#f5eff9",
-        maia_white: "#fdfbfe",
-        maia_purple: "#663399",
-        maia_pink: "#0070f3",
-        maia_black: "#1b1023"
+        // ===========================================
+        // MAIA Brand Colors - Primary Purple Palette
+        // Base color: #663399 (Rebecca Purple)
+        // ===========================================
+        maia: {
+          50:  '#faf5ff',  // Lightest tint
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#c084fc',
+          500: '#a855f7',
+          600: '#8b5cf6',  // Vibrant purple (use for accents)
+          700: '#7c3aed',
+          800: '#663399',  // Brand purple (Rebecca Purple)
+          900: '#4c1d95',
+          950: '#1b1023',  // Darkest (same as dark bg)
+        },
+
+        // ===========================================
+        // Surface Colors - Backgrounds & Containers
+        // ===========================================
+        surface: {
+          // Light mode
+          light: '#fdfbfe',      // Main background (maia_white)
+          'light-alt': '#f5eff9', // Secondary background (maia_gray)
+          'light-elevated': '#ffffff', // Cards, modals
+          
+          // Dark mode
+          dark: '#1b1023',       // Main background (maia_black)
+          'dark-alt': '#2d1f3d', // Secondary background
+          'dark-elevated': '#3d2952', // Cards, modals
+        },
+
+        // ===========================================
+        // Border Colors
+        // ===========================================
+        border: {
+          light: '#e5e7eb',
+          dark: '#4c3d5c',
+          maia: '#663399',
+          // Subtle borders with opacity for cards
+          'maia-subtle': 'rgba(102, 51, 153, 0.2)',      // Light mode
+          'maia-subtle-dark': 'rgba(168, 85, 247, 0.3)', // Dark mode
+        },
+
+        // ===========================================
+        // Semantic Colors - Status & Feedback
+        // ===========================================
+        status: {
+          success: {
+            light: '#dcfce7',
+            DEFAULT: '#059669',      // Emerald (light mode)
+            'dark-mode': '#34d399',  // Emerald light (dark mode)
+            dark: '#166534',
+          },
+          warning: {
+            light: '#fef9c3',
+            DEFAULT: '#ca8a04',      // Amber (light mode)
+            'dark-mode': '#fbbf24',  // Amber light (dark mode)
+            dark: '#854d0e',
+          },
+          error: {
+            light: '#fee2e2',
+            DEFAULT: '#dc2626',      // Red (light mode)
+            'dark-mode': '#f87171',  // Red light (dark mode)
+            dark: '#991b1b',
+          },
+          info: {
+            light: '#dbeafe',
+            DEFAULT: '#0284c7',      // Sky blue (light mode)
+            'dark-mode': '#38bdf8',  // Sky blue light (dark mode)
+            dark: '#1e40af',
+          },
+        },
+
+        // ===========================================
+        // Accent Colors - Complementary to Purple
+        // ===========================================
+        accent: {
+          // Teal - Triadic complement, secondary accent
+          teal: {
+            DEFAULT: '#0d9488',      // Light mode
+            'dark-mode': '#2dd4bf',  // Dark mode
+          },
+          // Orange - Split-complementary, CTAs & highlights
+          orange: {
+            DEFAULT: '#ea580c',      // Light mode
+            'dark-mode': '#fb923c',  // Dark mode
+          },
+          // Pink - Analogous, promotions & special callouts
+          pink: {
+            DEFAULT: '#db2777',      // Light mode
+            'dark-mode': '#f472b6',  // Dark mode
+          },
+          // Lime - Fresh contrast, new/growth indicators
+          lime: {
+            DEFAULT: '#65a30d',      // Light mode
+            'dark-mode': '#a3e635',  // Dark mode
+          },
+        },
+
+        // ===========================================
+        // Tag/Badge Colors - For paper categories etc.
+        // ===========================================
+        tag: {
+          conference: { light: '#dbeafe', dark: '#1e3a5f' },  // Blue - NeurIPS, ICLR
+          adversarial: { light: '#fee2e2', dark: '#5f1e1e' }, // Red
+          rlhf: { light: '#dcfce7', dark: '#1e5f2c' },        // Green
+          scaling: { light: '#f3e8ff', dark: '#4c1d95' },     // Purple
+          mechinterp: { light: '#ffedd5', dark: '#7c2d12' },  // Orange
+          governance: { light: '#e0f2fe', dark: '#0c4a6e' },  // Sky
+          openai: { light: '#ffe4e6', dark: '#881337' },      // Rose
+        },
+
+        // ===========================================
+        // Legacy aliases (for gradual migration)
+        // ===========================================
+        maia_white: '#fdfbfe',
+        maia_black: '#1b1023',
+        maia_gray: '#f5eff9',
+        maia_purple: '#663399',
       },
 
       fontFamily: {
         heading: ['Inconsolata', 'Commit Mono', 'monospace'],
-        // heading: ['ui-serif', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'],
       },
-  },
-    
+
+      // ===========================================
+      // Box Shadow with brand colors
+      // ===========================================
+      boxShadow: {
+        'maia': '0 4px 14px 0 rgba(102, 51, 153, 0.15)',
+        'maia-lg': '0 10px 40px 0 rgba(102, 51, 153, 0.2)',
+      },
+    },
   },
   plugins: [],
 }

@@ -70,7 +70,7 @@
 		<!-- Policy Recommendations Section -->
 		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-				<i class="fa-solid fa-gavel text-amber-500"></i>
+				<i class="fa-solid fa-gavel text-status-warning"></i>
 				<span>Policy Recommendations</span>
 			</h3>
 			<p class="mb-4">
@@ -103,7 +103,7 @@
 		<!-- Race Narrative Section -->
 		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-				<i class="fa-solid fa-chess text-red-500"></i>
+				<i class="fa-solid fa-chess text-status-error"></i>
 				<span>Beyond the "Race" Narrative</span>
 			</h3>
 			<div class="space-y-4">
@@ -113,7 +113,7 @@
 					systems reveals the fundamental flaw in this framing: rushing to develop superintelligent AI
 					risks creating powerful systems with hidden objectives that conflict with human welfare.
 				</p>
-				<p class="text-lg font-semibold text-purple-600 dark:text-purple-300">
+				<p class="text-lg font-semibold text-maia-800 dark:text-maia-400">
 					In short, there are no winners in an AI arms race.
 				</p>
 			</div>
@@ -122,7 +122,7 @@
 		<!-- Contact Section -->
 		<DarkModeCard>
 			<h3 class="text-xl font-bold mb-4 flex items-center gap-3">
-				<i class="fa-solid fa-envelope text-purple-500"></i>
+				<i class="fa-solid fa-envelope text-maia-500"></i>
 				<span>Additional Resources</span>
 			</h3>
 			<div class="space-y-3">
@@ -138,7 +138,7 @@
 		<!-- Key Findings Section -->
 		<DarkModeCard>
 			<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-				<i class="fa-solid fa-lightbulb text-yellow-500"></i>
+				<i class="fa-solid fa-lightbulb text-status-warning"></i>
 				<span>Key Findings</span>
 			</h3>
 			<ul class="list-disc pl-6 space-y-2 mb-4">

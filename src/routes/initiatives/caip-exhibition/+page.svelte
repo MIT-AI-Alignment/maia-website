@@ -62,7 +62,7 @@
 	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
 </svelte:head>
 
-<main class="min-h-screen bg-maia_white dark:bg-maia_black text-gray-800 dark:text-maia_white">
+<main class="min-h-screen bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50">
 	<Navbar />
 	<div class="relative">
 		<!-- Hero Image -->
@@ -73,7 +73,7 @@
 				class="w-full h-full object-cover"
 			/>
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-transparent via-maia_white/70 to-maia_white dark:via-maia_black/70 dark:to-maia_black"
+				class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-light/70 to-surface-light dark:via-surface-dark/70 dark:to-surface-dark"
 			/>
 		</div>
 
@@ -83,7 +83,7 @@
 
 			<!-- Main Title -->
 			<h1
-				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent"
+				class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] bg-gradient-to-r from-maia-800 to-maia-600 dark:from-maia-400 dark:to-maia-300 bg-clip-text text-transparent"
 			>
 				<i class="fa-solid fa-building-columns"></i> Congressional Exhibition on Advanced AI, Feb 2025
 			</h1>
@@ -164,15 +164,15 @@
 							</div>
 						{/each}
 					</div>
-					<div class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
-						<i class="fa-solid fa-arrow-left"></i> Scroll to see more media
-						<i class="fa-solid fa-arrow-right"></i>
-					</div>
+				<div class="mt-2 text-sm text-maia-950/50 dark:text-maia-300 text-center">
+					<i class="fa-solid fa-arrow-left"></i> Scroll to see more media
+					<i class="fa-solid fa-arrow-right"></i>
 				</div>
-				<p class="text-gray-700 dark:text-gray-300">(More media to be released when CAIP releases their footage)</p>
 			</div>
+			<p class="text-maia-950/70 dark:text-maia-200">(More media to be released when CAIP releases their footage)</p>
+		</div>
 
-			<hr class="my-16 border-gray-200 dark:border-gray-700" />
+		<hr class="my-16 border-border-light dark:border-border-dark" />
 
 			<!-- Phone-line Attacks Section -->
 			<SectionHeader
@@ -189,9 +189,9 @@
 			</div>
 			<PhoneLineAttacks />
 
-			<hr class="my-16 border-gray-200 dark:border-gray-700" />
+		<hr class="my-16 border-border-light dark:border-border-dark" />
 
-			<!-- Strategic Deception Section -->
+		<!-- Strategic Deception Section -->
 			<SectionHeader
 				icon="fa-solid fa-mask"
 				iconColor="blue-500"

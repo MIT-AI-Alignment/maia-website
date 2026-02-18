@@ -1,4 +1,4 @@
-<div class="w-full bg-gray-100 dark:bg-black text-sm text-gray-700 dark:text-stone-400">
+<div class="w-full bg-surface-light-alt dark:bg-maia-950 text-sm text-maia-950/70 dark:text-maia-200">
 	<div class="px-8 md:px-24 py-8">
 		<p>In partnership with <a href="http://haist.ai" class="underline">AISST</a></p>
 
