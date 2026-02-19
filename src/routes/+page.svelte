@@ -113,7 +113,7 @@
 		{#if mounted}
 			<div in:fade={{ duration: 800, delay: 300 }}>
 				<p class="mb-4 text-gray-600 dark:text-gray-400">
-					Join our AI Safety Fundamentals program — a 7-week introductory reading group on technical AI safety.
+					Join our AI Safety Fundamentals program — a 8-week introductory reading group on technical AI safety.
 				</p>
 				<iframe
 					class="airtable-embed"
@@ -137,7 +137,7 @@
 			</div>
 		{:else}
 			<p class="mb-4 text-gray-600 dark:text-gray-400">
-				Join our AI Safety Fundamentals program — a 7-week introductory reading group on technical AI safety.
+				Join our AI Safety Fundamentals program — a 8-week introductory reading group on technical AI safety.
 			</p>
 			<iframe
 				class="airtable-embed"
