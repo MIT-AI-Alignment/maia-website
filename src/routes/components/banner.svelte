@@ -27,19 +27,15 @@
 </script>
 
 {#if isVisible}
-	<div class="bg-maia-800 dark:bg-maia-600 h-12 flex items-center justify-center w-full relative">
-		<div class="flex flex-col items-center">
-			<p class="text-white">
+	<div class="bg-maia-800 dark:bg-maia-600 py-2 flex items-center justify-center w-full relative">
+		<div class="flex flex-col items-center px-8">
+			<p class="text-white text-center">
 				<i
 					class={`fa-solid fa-circle-exclamation ${animateIcon ? 'fa-flip' : ''}`}
 					style="--fa-animation-duration: 1.0s;"
 				></i>
-				Now accepting Spring 2025 applications for
-				<a href="/getinvolved" class="underline">AI Safety Fundamentals</a>! Apply
-				<a href={CONFIG.aisf_ml.applicationLink} class="underline">here</a>.
-			</p>
-			<p class="text-white text-sm -mt-1">
-				<small>Deadline {CONFIG.aisf_ml.deadline}</small>
+				Deadline extended! Stages 1 &amp; 2 are now merged into a single application.
+				Apply <a href={CONFIG.aisf_ml.applicationLink} class="underline font-semibold">here</a> by {CONFIG.aisf_ml.deadline}.
 			</p>
 		</div>
 		<button

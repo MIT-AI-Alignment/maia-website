@@ -1,6 +1,4 @@
 <script>
-	import { CONFIG } from '$lib/config';
-	import Button from '../../components/Button.svelte';
 </script>
 
 <section>
@@ -32,17 +30,6 @@
 	
 	<p class="mt-2">
 	We run AISF every Fall and Spring, with applications opening early into both semesters.
-	Applications are now open!
+	Applications are currently closed — check back next semester!
 	</p>
-
-	<div class="mt-8">
-		<a href={CONFIG.aisf_ml.applicationLink}>
-			<Button
-				text="Apply Now"
-				icon="fa-solid fa-arrow-right"
-				type="purple"
-				size="md"
-			/>
-		</a>
-	</div>
 </section>

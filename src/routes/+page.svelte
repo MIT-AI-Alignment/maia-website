@@ -4,7 +4,7 @@
 	import Button from '../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
 	import { onMount } from 'svelte';
-	import { fade, fly, scale } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 	import { backOut } from 'svelte/easing';
 
 	let mounted = false;
@@ -107,58 +107,23 @@
 	</svelte:fragment>
 
 	<SectionContainer
-		title="Apply to our Safety Fellowship!"
+		title="Our Safety Fellowship"
 		icon="fa-solid fa-graduation-cap"
 	>
-		{#if mounted}
-			<div in:fade={{ duration: 800, delay: 300 }}>
-				<p class="mb-4 text-gray-600 dark:text-gray-400">
-					Join our AI Safety Fundamentals program — a 8-week introductory reading group on technical AI safety.
-				</p>
-				<iframe
-					class="airtable-embed"
-					src="https://airtable.com/embed/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
-					frameborder="0"
-					width="100%"
-					height="533"
-					style="background: transparent; border: 1px solid #ccc; border-radius: 0.5rem;"
-					title="AISF Application Form"
-				></iframe>
-				<div class="mt-6 flex justify-center">
-					<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" target="_blank" rel="noopener noreferrer">
-						<Button
-							text="Open form in new tab"
-							icon="fa-solid fa-arrow-up-right-from-square"
-							type="purple"
-							size="lg"
-						/>
-					</a>
-				</div>
-			</div>
-		{:else}
-			<p class="mb-4 text-gray-600 dark:text-gray-400">
-				Join our AI Safety Fundamentals program — a 8-week introductory reading group on technical AI safety.
-			</p>
-			<iframe
-				class="airtable-embed"
-				src="https://airtable.com/embed/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form"
-				frameborder="0"
-				width="100%"
-				height="533"
-				style="background: transparent; border: 1px solid #ccc; border-radius: 0.5rem;"
-				title="AISF Application Form"
-			></iframe>
-			<div class="mt-6 flex justify-center">
-				<a href="https://airtable.com/appkINRUv4Z4pNdWO/pagpwX03UNXIheRCp/form" target="_blank" rel="noopener noreferrer">
-					<Button
-						text="Open form in new tab"
-						icon="fa-solid fa-arrow-up-right-from-square"
-						type="purple"
-						size="lg"
-					/>
-				</a>
-			</div>
-		{/if}
+		<p class="mb-4 text-gray-600 dark:text-gray-400">
+			Our AI Safety Fundamentals program is an 8-week introductory reading group on technical AI safety.
+			Applications are currently closed — check back next semester!
+		</p>
+		<div class="flex justify-center">
+			<a href="/getinvolved/">
+				<Button
+					text="Learn more"
+					icon="fa-solid fa-arrow-right"
+					type="purple"
+					size="lg"
+				/>
+			</a>
+		</div>
 	</SectionContainer>
 </PageLayout>
 
