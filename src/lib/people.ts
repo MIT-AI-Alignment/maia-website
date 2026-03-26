@@ -90,24 +90,31 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true,
 	},
-	'felix-tudose': {
-		id: 'felix-tudose',
-		name: 'Felix Tudose',
-		position: 'Deputy Director',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
-		mitEmail: 'felixrt@mit.edu',
-		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
-		isExec: true,
-		isActive: true,
+
+	'anna-krolik': {
+	id: 'anna-krolik',
+	name: 'Anna Krolik',
+	position: '',
+	imageUrl: '/src/lib/people-photos/anna.png',
+	mitEmail:'akrolik@mit.edu',
+	linkedin:'https://www.linkedin.com/in/anna-krolik/',
+	isExec: true,
+	isOrg: false,
+	isActive: true,
 	},
-	'brianna-adewinmbi': {
-		id: 'brianna-adewinmbi',
-		name: 'Brianna Adewinmbi',
-		position: 'Board Member',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FAM14ZFE-7d16a01e5baa-512',
-		isExec: true,
-		isActive: true,
+
+	'nixon-hanna': {
+	id: 'nixon-hanna',
+	name: 'Nixon Hanna',
+	position: '',
+	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HDQTBNNP-cdb0521bb657-512',
+	mitEmail: 'noxin@mit.edu',
+	personalPage: 'nixonhanna.com',
+	isExec: true,
+	isOrg: false,
+	isActive: true,
 	},
+
 
 	// ORGANIZERS 
 	'david-turturean': {
@@ -128,6 +135,16 @@ export const PEOPLE: Record<string, Person> = {
 		projectOrder: {
 			'phone-line-attacks': 1 // First in the phone-line attacks project
 	}
+	},
+
+	'atticus-wang': {
+		id: 'atticus-wang',
+		name: 'Atticus Wang',
+		position: '',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
 	},
 
 	'david-zhang': {
@@ -152,17 +169,6 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true,
 	},
 
-	'nixon-hanna': {
-		id: 'nixon-hanna',
-		name: 'Nixon Hanna',
-		position: '',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HDQTBNNP-cdb0521bb657-512',
-		mitEmail: 'noxin@mit.edu',
-		personalPage: 'nixonhanna.com',
-		isExec: false,
-		isOrg: true,
-		isActive: true,
-	},
 
 	'emily-yu': {
 		id: 'emily-yu',
@@ -176,13 +182,11 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true,
 	},
 
-	'anna-krolik': {
-		id: 'anna-krolik',
-		name: 'Anna Krolik',
+	'talha-ashraf': {
+		id: 'talha-ashraf',
+		name: 'Talha Ashraf',
 		position: '',
-		imageUrl: '/images/people/anna.png',
-		mitEmail:'akrolik@mit.edu',
-		linkedin:'https://www.linkedin.com/in/anna-krolik/',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -192,7 +196,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'daniel-wu',
 		name: 'Daniel Wu',
 		position: '',
-		imageUrl: '/images/people/daniel-wu.jpeg',
+		imageUrl: '/src/lib/people-photos/daniel-wu.jpeg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -202,7 +206,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'nikhil-vemuri',
 		name: 'Nikhil Vemuri',
 		position: '',
-		imageUrl: '/images/people/nikhil.jpeg',
+		imageUrl: '/src/lib/people-photos/nikhil.jpeg',
 		linkedin: 'https://www.linkedin.com/in/nikhil-vemuri-',
 		mitEmail:'nvemuri@mit.edu',
 		isExec: false,
@@ -214,7 +218,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'zsofia-keresztely',
 		name: 'Zsófia Keresztély',
 		position: '',
-		imageUrl: '/images/people/zsofia.jpeg',
+		imageUrl: '/src/lib/people-photos/zsofia.jpeg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -256,7 +260,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'reshma-kosaraju',
 		name: 'Reshma Kosaraju',
 		position: '',
-		imageUrl: '/images/people/reshma.jpeg',
+		imageUrl: '/src/lib/people-photos/reshma.jpeg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -481,6 +485,15 @@ export const PEOPLE: Record<string, Person> = {
 		linkedin:'https://www.linkedin.com/in/sebastian-prasanna-6b3910301/',
 		isExec: false,
 		isActive: true,
+	},
+
+	'brianna-adewinmbi': {
+	id: 'brianna-adewinmbi',
+	name: 'Brianna Adewinmbi',
+	position: 'Board Member',
+	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FAM14ZFE-7d16a01e5baa-512',
+	isExec: false,
+	isActive: true,
 	},
 };
 
