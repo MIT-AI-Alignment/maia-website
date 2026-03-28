@@ -92,27 +92,28 @@ export const PEOPLE: Record<string, Person> = {
 	},
 
 	'anna-krolik': {
-	id: 'anna-krolik',
-	name: 'Anna Krolik',
-	position: '',
-	imageUrl: '/src/lib/people-photos/anna.png',
-	mitEmail:'akrolik@mit.edu',
-	linkedin:'https://www.linkedin.com/in/anna-krolik/',
-	isExec: true,
-	isOrg: false,
-	isActive: true,
+		id: 'anna-krolik',
+		name: 'Anna Krolik',
+		position: 'Board Member',
+		imageUrl: '/src/lib/people-photos/anna.png',
+		mitEmail: 'akrolik@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/anna-krolik/',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
 	},
 
 	'nixon-hanna': {
-	id: 'nixon-hanna',
-	name: 'Nixon Hanna',
-	position: '',
-	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HDQTBNNP-cdb0521bb657-512',
-	mitEmail: 'noxin@mit.edu',
-	personalPage: 'nixonhanna.com',
-	isExec: true,
-	isOrg: false,
-	isActive: true,
+		id: 'nixon-hanna',
+		name: 'Nixon Hanna',
+		position: 'Director of AISF',
+		imageUrl: '/src/lib/people-photos/nixon-hanna.jpeg',
+		mitEmail: 'noxin@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
+		personalPage: 'nixonhanna.com',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
 	},
 
 
@@ -134,7 +135,7 @@ export const PEOPLE: Record<string, Person> = {
 		},
 		projectOrder: {
 			'phone-line-attacks': 1 // First in the phone-line attacks project
-	}
+		}
 	},
 
 	'atticus-wang': {
@@ -162,8 +163,8 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Anooshka Pendyal',
 		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U08ETD9HPAP-37443c44c576-512',
-		mitEmail:'anpen118@mit.edu',
-		linkedin:'linkedin.com/in/anooshka-pendyal',
+		mitEmail: 'anpen118@mit.edu',
+		linkedin: 'linkedin.com/in/anooshka-pendyal',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -175,8 +176,8 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Emily Yu',
 		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09V27LGPJ5-ecfcf8190bfa-512',
-		mitEmail:'emily_yu@mit.edu',
-		linkedin:'https://www.linkedin.com/in/emily-yu-398249278/',
+		mitEmail: 'emily_yu@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/emily-yu-398249278/',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -208,7 +209,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: '/src/lib/people-photos/nikhil.jpeg',
 		linkedin: 'https://www.linkedin.com/in/nikhil-vemuri-',
-		mitEmail:'nvemuri@mit.edu',
+		mitEmail: 'nvemuri@mit.edu',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -249,8 +250,8 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Ionut Gabriel Stan',
 		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
-		mitEmail:'igstan@mit.edu',
-		linkedin:'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
+		mitEmail: 'igstan@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -482,18 +483,18 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Sebastian Prasanna',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U083B4BFX5H-ab118c5ba1b8-512',
-		linkedin:'https://www.linkedin.com/in/sebastian-prasanna-6b3910301/',
+		linkedin: 'https://www.linkedin.com/in/sebastian-prasanna-6b3910301/',
 		isExec: false,
 		isActive: true,
 	},
 
 	'brianna-adewinmbi': {
-	id: 'brianna-adewinmbi',
-	name: 'Brianna Adewinmbi',
-	position: 'Board Member',
-	imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FAM14ZFE-7d16a01e5baa-512',
-	isExec: false,
-	isActive: true,
+		id: 'brianna-adewinmbi',
+		name: 'Brianna Adewinmbi',
+		position: 'Board Member',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FAM14ZFE-7d16a01e5baa-512',
+		isExec: false,
+		isActive: true,
 	},
 };
 
@@ -528,7 +529,7 @@ export function getContactPreference(person: Person, platform: string): string |
 // Helper function to get people by project and sort them by their project order
 export function getSortedPeopleByProject(projectId: string): Person[] {
 	const people = getPeopleByProject(projectId);
-	
+
 	// Sort people by their project order (if specified)
 	return people.sort((a, b) => {
 		const orderA = a.projectOrder?.[projectId] ?? 999; // Default to a high number if not specified
