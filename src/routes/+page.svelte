@@ -107,22 +107,21 @@
 	</svelte:fragment>
 
 	<SectionContainer
-		title="Our Safety Fellowship"
+		title="Our Safety Fundamentals Fellowship"
 		icon="fa-solid fa-graduation-cap"
 	>
 		<p class="mb-4 text-gray-600 dark:text-gray-400">
 			Our AI Safety Fundamentals program is an 8-week introductory reading group on technical AI safety.
-			Applications are currently closed — check back next semester!
+			Applications are currently closed, but you can fill out the interest form for updates and a link to apply when we open applications for this summer and for fall.
 		</p>
 		<div class="flex justify-center">
-			<a href="/getinvolved/">
-				<Button
-					text="Learn more"
-					icon="fa-solid fa-arrow-right"
-					type="purple"
-					size="lg"
-				/>
-			</a>
+			<Button
+				text="Interest Form (Summer & Fall)"
+				icon="fa-solid fa-arrow-right"
+				type="purple"
+				size="lg"
+				href={CONFIG.aisf_ml.applicationLink}
+			/>
 		</div>
 	</SectionContainer>
 </PageLayout>
