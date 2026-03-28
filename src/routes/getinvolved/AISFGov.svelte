@@ -58,13 +58,12 @@
 		</li>
 	</ul>
 	<div class="mt-8">
-		<a href="https://aisst.ai/policy-fellowship">
-			<Button
-				text="Apply for the AISST Policy Fellowship"
-				icon="fa-solid fa-arrow-right"
-				type="fuchsia"
-				size="md"
-			/>
-		</a>
+		<Button
+			text="About the AISST Policy Fellowship"
+			icon="fa-solid fa-arrow-right"
+			type="fuchsia"
+			size="md"
+			href="https://aisst.ai/policy-fellowship"
+		/>
 	</div>
 </section>

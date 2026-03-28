@@ -13,16 +13,19 @@
 	const dispatch = createEventDispatcher();
 
 	// Determine classes based on props
+	// !text-white / hover:!text-white: beat :global(.prose a) when Button renders as <a> inside SectionContainer
 	$: typeClasses = {
-		primary: 'bg-maia-800 hover:bg-maia-700 text-white',
-		secondary: 'bg-maia-600 hover:bg-maia-500 text-white',
+		primary:
+			'bg-maia-800 hover:bg-maia-700 !text-white hover:!text-white',
+		secondary:
+			'bg-maia-600 hover:bg-maia-500 !text-white hover:!text-white',
 		outline:
 			'bg-transparent border border-maia-950/50 text-maia-950 dark:text-maia-100 hover:bg-maia-50 dark:hover:bg-maia-950/50 dark:border-maia-300/50',
 		text: 'bg-transparent text-maia-950 dark:text-maia-100 hover:bg-maia-50 dark:hover:bg-maia-950/50',
 		purple:
-			'bg-maia-800 hover:bg-maia-700 text-white dark:bg-maia-700 dark:text-white dark:hover:bg-maia-600',
+			'bg-maia-800 hover:bg-maia-700 !text-white hover:!text-white dark:bg-maia-700 dark:!text-white dark:hover:bg-maia-600 dark:hover:!text-white',
 		fuchsia:
-			'bg-maia-600 hover:bg-maia-500 text-white dark:bg-maia-600 dark:text-white dark:hover:bg-maia-500'
+			'bg-maia-600 hover:bg-maia-500 !text-white hover:!text-white dark:bg-maia-600 dark:!text-white dark:hover:bg-maia-500 dark:hover:!text-white'
 	}[type];
 
 	$: sizeClasses = {

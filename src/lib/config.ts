@@ -9,10 +9,11 @@ export const CONFIG = {
         applicationLink: "https://airtable.com/appmfPejcK3lp2StV/pagywO1vQtW28ZYpA/form"
     },
     aisf_ml: {
-        visible: false,
+        visible: true,
         deadline: "",
         deadline_short: "",
-        applicationLink: ""
+        applicationLink:
+            "https://airtable.com/appHwdJxaquLCsb75/pagMgBP9vydmwnBF4/form"
     },
     aisf_gov: {
         visible: true,
