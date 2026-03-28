@@ -3,8 +3,8 @@
     export let href: string = "..";
 </script>
 
-<div class="pt-[400px]">
+<div class="mb-6">
     <Link {href}>
         <i class="fa-solid fa-arrow-left mr-2"></i>Back
     </Link>
-</div> 
+</div>

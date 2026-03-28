@@ -17,8 +17,6 @@
 		</p>
 	</svelte:fragment>
 
-	<BackLink href="/aisf" />
-
 	<SectionContainer title="Overview" icon="fa-solid fa-book-open">
 		<p>
 			Week 0 is a bit different from the rest of the program: it's self-paced and optional, completed on your own.
@@ -48,7 +46,6 @@
 					Neural Networks Chapters 1-6 (3Blue1Brown, 2017-2024)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">~2 hours &mdash; Feel free to skip videos of topics you are already familiar with</span>
 			</li>
 		</ul>
 	</SectionContainer>
@@ -60,29 +57,29 @@
 					What is self-supervised learning? (CodeBasics, 2021)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">~5 minutes</span>
 			</li>
 			<li>
 				<a href="https://e2eml.school/transformers.html" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Transformers from scratch (Rohrer, 2021)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">~60 minutes</span>
 			</li>
 			<li>
 				<a href="https://youtu.be/VMj-3S1tku0" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					The spelled-out intro to neural networks and backpropagation: building micrograd (Karpathy, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">~150 minutes</span>
 			</li>
 			<li>
 				<a href="https://medium.com/@v_maini/supervised-learning-740383a2feab" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Machine Learning for Humans, Part 2.1: Supervised Learning (Maini and Sabri, 2017)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">~15 minutes</span>
 			</li>
 		</ul>
 	</SectionContainer>
+
+	<div class="mt-12 flex justify-center">
+		<BackLink href="/aisf" />
+	</div>
 </PageLayout>

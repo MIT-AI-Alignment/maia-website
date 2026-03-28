@@ -17,8 +17,6 @@
 		</p>
 	</svelte:fragment>
 
-	<BackLink href="/aisf" />
-
 	<SectionContainer title="Overview" icon="fa-solid fa-book-open">
 		<p>
 			Outer alignment asks a deceptively simple question: how do we get AI systems to optimize for what we
@@ -130,4 +128,8 @@
 			</li>
 		</ul>
 	</SectionContainer>
+
+	<div class="mt-12 flex justify-center">
+		<BackLink href="/aisf" />
+	</div>
 </PageLayout>

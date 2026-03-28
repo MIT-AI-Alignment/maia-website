@@ -17,8 +17,6 @@
 		</p>
 	</svelte:fragment>
 
-	<BackLink href="/aisf" />
-
 	<SectionContainer title="Overview" icon="fa-solid fa-book-open">
 		<p>
 			This week builds a grounded picture of where frontier AI capabilities are headed and how quickly they may
@@ -102,50 +100,47 @@
 					Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity (2025)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Short, surprising result</span>
 			</li>
 			<li>
 				<a href="https://bounded-regret.ghost.io/future-ml-systems-will-be-qualitatively-different/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Future ML Systems will be Qualitatively Different (Steinhardt, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Trends will break</span>
 			</li>
 			<li>
 				<a href="https://www.youtube.com/watch?v=QMqPAM_knrE" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Neural scaling laws and GPT-3 (Kaplan, 2020)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Only up to 30:30 &mdash; somewhat old but still informative</span>
 			</li>
 			<li>
 				<a href="https://arxiv.org/pdf/2203.15556.pdf" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Training Compute-Optimal Large Language Models (GDM, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Technical</span>
 			</li>
 			<li>
 				<a href="https://astralcodexten.substack.com/p/biological-anchors-a-trick-that-might" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Biological Anchors: A Trick That Might Or Might Not Work (Alexander, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Both sides</span>
 			</li>
 			<li>
 				<a href="https://arxiv.org/abs/2102.06701" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Explaining Neural Scaling Laws (Bahri, 2024)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Technical</span>
 			</li>
 			<li>
 				<a href="https://intelligence.org/files/AIFoomDebate.pdf" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					The Hanson-Yudkowsky AI-Foom Debate (2008)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="block text-sm text-maia-950/50 dark:text-maia-300 mt-1">Long, debate about recursive self-improvement</span>
 			</li>
 		</ul>
 	</SectionContainer>
+
+	<div class="mt-12 flex justify-center">
+		<BackLink href="/aisf" />
+	</div>
 </PageLayout>

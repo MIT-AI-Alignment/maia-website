@@ -1,6 +1,5 @@
 <script lang="ts">
 	import PageLayout from '../../components/PageLayout.svelte';
-	import Button from '../../components/Button.svelte';
 
 	type Week = {
 		number: number;
@@ -127,14 +126,5 @@
 				</div>
 			{/if}
 		{/each}
-	</div>
-
-	<div class="text-center mb-8">
-		<Button
-			text="Back to Get Involved"
-			icon="fa-solid fa-arrow-left"
-			type="text"
-			href="/getinvolved#aisf"
-		/>
 	</div>
 </PageLayout>
