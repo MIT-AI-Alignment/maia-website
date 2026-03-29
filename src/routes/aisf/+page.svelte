@@ -31,7 +31,7 @@
 			number: 3,
 			title: 'Inner Alignment',
 			description: 'Deception, reward tampering, alignment faking, and goal misgeneralization.',
-			available: false
+			available: true
 		},
 		{
 			number: 4,
