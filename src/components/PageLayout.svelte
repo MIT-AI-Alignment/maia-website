@@ -80,6 +80,6 @@
 	}
 	
 	:global(.prose li) {
-		@apply mb-2;
+		@apply mb-0;
 	}
 </style> 
