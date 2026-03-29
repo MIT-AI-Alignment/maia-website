@@ -48,32 +48,41 @@
 	</SectionContainer>
 
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">
-		<ul class="list-disc pl-6 space-y-3">
+		<ol class="list-decimal pl-6 space-y-3">
 			<li>
-				<a href="https://www.youtube.com/watch?v=bJLcIBixGj8" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+				<a href="/aisf/week3/mesa-optimizers" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					The OTHER AI Alignment Problem: Mesa-Optimizers and Inner Alignment (Robert Miles, 2021)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+					<i class="fa-solid fa-arrow-right text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://arxiv.org/abs/2412.14093" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+				<a href="/aisf/week3/alignment-faking" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Alignment faking in large language models (Anthropic & Redwood Research, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+					<i class="fa-solid fa-arrow-right text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://arxiv.org/abs/2401.05566" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+				<a href="/aisf/week3/sleeper-agents" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training (Anthropic, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+					<i class="fa-solid fa-arrow-right text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://arxiv.org/abs/2511.18397" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+				<a href="/aisf/week3/shortcuts-to-sabotage" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					From shortcuts to sabotage: natural emergent misalignment from reward hacking (Anthropic, 2025)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+					<i class="fa-solid fa-arrow-right text-xs ml-1"></i>
 				</a>
 			</li>
-		</ul>
+		</ol>
+		<div class="mt-8 not-prose">
+			<Button
+				text="Start reading"
+				icon="fa-solid fa-arrow-right"
+				type="fuchsia"
+				size="md"
+				href="/aisf/week3/mesa-optimizers"
+			/>
+		</div>
 	</SectionContainer>
 
 	<SectionContainer title="Recommended Readings" icon="fa-solid fa-bookmark">
