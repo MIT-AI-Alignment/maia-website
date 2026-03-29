@@ -18,7 +18,6 @@ export const NAVIGATION_ITEMS = [
         href: '/getinvolved',
         icon: 'fas fa-hands-helping',
         dropdownItems: [
-            { href: '/aisf', label: 'AISF Curriculum' },
             { href: '/getinvolved#aisf', label: 'AI Safety Fundamentals' },
             { href: '/getinvolved#membership', label: 'Membership' },
             { href: '/getinvolved#workshops', label: 'Workshops' },
