@@ -2,6 +2,7 @@
 	import PageLayout from '../../../components/PageLayout.svelte';
 	import SectionContainer from '../../../components/SectionContainer.svelte';
 	import BackLink from '../../../components/BackLink.svelte';
+	import Button from '../../../components/Button.svelte';
 </script>
 
 <PageLayout
@@ -34,6 +35,17 @@
 			<li>Describe major failure modes of outer alignment, including specification gaming and reward hacking</li>
 			<li>Evaluate how methods like RLHF and reward modeling somewhat improve alignment while still leaving important gaps</li>
 		</ul>
+		<div class="mt-8 not-prose">
+			<Button
+				text="Reading packet"
+				icon="fa-solid fa-arrow-right"
+				type="fuchsia"
+				size="md"
+				href="https://docs.google.com/document/d/1a7zRrb3LuMVoh2uTZjhMIcsFsEPyxwNkM4ancfLuxks/edit?usp=drive_link"
+				target="_blank"
+				rel="noopener noreferrer"
+			/>
+		</div>
 	</SectionContainer>
 
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">

@@ -6,6 +6,8 @@
 	export let type: 'primary' | 'secondary' | 'outline' | 'text' | 'purple' | 'fuchsia' = 'primary';
 	export let size: 'sm' | 'md' | 'lg' = 'md';
 	export let href: string | undefined = undefined;
+	export let target: string | undefined = undefined;
+	export let rel: string | undefined = undefined;
 	export let disabled = false;
 	export let fullWidth = false;
 	export let ariaLabel: string | undefined = undefined;
@@ -46,6 +48,8 @@
 <svelte:element
 	this={href ? 'a' : 'button'}
 	{href}
+	target={href ? target : undefined}
+	rel={href ? rel : undefined}
 	{disabled}
 	aria-label={ariaLabel || text}
 	class="inline-flex items-center justify-center rounded-md font-medium transition-all duration-200

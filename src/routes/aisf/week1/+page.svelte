@@ -2,6 +2,7 @@
 	import PageLayout from '../../../components/PageLayout.svelte';
 	import SectionContainer from '../../../components/SectionContainer.svelte';
 	import BackLink from '../../../components/BackLink.svelte';
+	import Button from '../../../components/Button.svelte';
 </script>
 
 <PageLayout
@@ -33,6 +34,17 @@
 			<li>Describe current trends in AI capabilities and likely impacts</li>
 			<li>Understand major arguments for acceleration vs. slowdown</li>
 		</ul>
+		<div class="mt-8 not-prose">
+			<Button
+				text="Reading packet"
+				icon="fa-solid fa-arrow-right"
+				type="fuchsia"
+				size="md"
+				href="https://docs.google.com/document/d/1TUwzVIeuRCN0PailHzKIZ3dJsFygDwoU5m4f5E7q-_o/edit?usp=drive_link"
+				target="_blank"
+				rel="noopener noreferrer"
+			/>
+		</div>
 	</SectionContainer>
 
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">

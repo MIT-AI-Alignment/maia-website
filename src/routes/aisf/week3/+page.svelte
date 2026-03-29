@@ -2,6 +2,7 @@
 	import PageLayout from '../../../components/PageLayout.svelte';
 	import SectionContainer from '../../../components/SectionContainer.svelte';
 	import BackLink from '../../../components/BackLink.svelte';
+	import Button from '../../../components/Button.svelte';
 </script>
 
 <PageLayout
@@ -33,6 +34,17 @@
 			<li>Evaluate empirical evidence that models can fake alignment, persist in deceptive behavior through safety training, and generalize from narrow reward hacking to broad misalignment</li>
 			<li>Assess why standard safety training techniques may be insufficient to detect or remove deceptively misaligned behavior, and what that implies for AI safety</li>
 		</ul>
+		<div class="mt-8 not-prose">
+			<Button
+				text="Reading packet"
+				icon="fa-solid fa-arrow-right"
+				type="fuchsia"
+				size="md"
+				href="https://docs.google.com/document/d/10oryBDtZ1immV00EARWN_MdgJcuuqc1BD9rYgQ6_Hhg/edit?usp=drive_link"
+				target="_blank"
+				rel="noopener noreferrer"
+			/>
+		</div>
 	</SectionContainer>
 
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">
