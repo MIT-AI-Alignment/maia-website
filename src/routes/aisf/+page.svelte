@@ -89,7 +89,7 @@
 		{#each weeks as week}
 			{#if week.available}
 				<a
-					href="/aisf/week{week.number}"
+					href="week{week.number}"
 					class="group block rounded-lg p-6 bg-surface-light-elevated dark:bg-maia-950/70 shadow-sm dark:shadow-maia border border-border-light dark:border-maia-800 hover:border-maia-400 dark:hover:border-maia-600 transition-all hover:shadow-md"
 				>
 					<div class="flex items-center justify-between mb-3">

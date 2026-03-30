@@ -142,6 +142,6 @@
 	</SectionContainer>
 
 	<div class="mt-12 flex justify-center">
-		<BackLink href="/aisf" />
+		<BackLink href=".." />
 	</div>
 </PageLayout>
