@@ -26,6 +26,12 @@ export const NAVIGATION_ITEMS = [
         ]
     },
     {
+        label: 'Resources',
+        href: '/aisf',
+        icon: 'fas fa-book',
+        dropdownItems: [{ href: '/aisf', label: 'AISF Curriculum' }]
+    },
+    {
         label: 'About',
         href: '/about',
         icon: 'fas fa-info-circle',
