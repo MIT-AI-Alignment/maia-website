@@ -37,7 +37,7 @@
 			number: 4,
 			title: 'Threat Models',
 			description: 'Instrumental convergence, power-seeking, bioterrorism, cyberwarfare, and gradual disempowerment.',
-			available: false
+			available: true
 		},
 		{
 			number: 5,
