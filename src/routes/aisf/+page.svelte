@@ -43,7 +43,7 @@
 			number: 5,
 			title: 'Control and Scalable Oversight',
 			description: 'AI control techniques, weak-to-strong generalization, debate, and iterated amplification.',
-			available: false
+			available: true
 		},
 		{
 			number: 6,

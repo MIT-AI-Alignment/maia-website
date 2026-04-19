@@ -10,7 +10,7 @@ export default {
         // Base color: #663399 (Rebecca Purple)
         // ===========================================
         maia: {
-          50:  '#faf5ff',  // Lightest tint
+          50: '#faf5ff',  // Lightest tint
           100: '#f3e8ff',
           200: '#e9d5ff',
           300: '#d8b4fe',
@@ -31,7 +31,7 @@ export default {
           light: '#fdfbfe',      // Main background (maia_white)
           'light-alt': '#f5eff9', // Secondary background (maia_gray)
           'light-elevated': '#ffffff', // Cards, modals
-          
+
           // Dark mode
           dark: '#1b1023',       // Main background (maia_black)
           'dark-alt': '#2d1f3d', // Secondary background
@@ -117,6 +117,14 @@ export default {
           mechinterp: { light: '#ffedd5', dark: '#7c2d12' },  // Orange
           governance: { light: '#e0f2fe', dark: '#0c4a6e' },  // Sky
           openai: { light: '#ffe4e6', dark: '#881337' },      // Rose
+          anthropic: { light: '#fed7aa', dark: '#9a3412' },   // Warm orange (distinct from OpenAI rose)
+          sae: { light: '#ddd6fe', dark: '#3b1d7a' },         // Violet - Sparse Autoencoders
+          agents: { light: '#fce7f3', dark: '#831843' },      // Pink - Agents
+          reasoning: { light: '#ccfbf1', dark: '#134e4a' },   // Teal - Reasoning
+          unlearning: { light: '#e2e8f0', dark: '#1e293b' },  // Slate - Unlearning / Editing
+          compute: { light: '#e0e7ff', dark: '#312e81' },     // Indigo - Compute / Forecasting
+          evals: { light: '#fae8ff', dark: '#581c87' },       // Fuchsia - Evals / Benchmarks
+          vlm: { light: '#cffafe', dark: '#164e63' },         // Cyan - Vision / Multimodal
         },
 
         // ===========================================

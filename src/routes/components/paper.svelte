@@ -21,11 +21,11 @@
 
 <a href={link} target="_blank" rel="noopener noreferrer">
 	<div class="paper-card flex flex-col p-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-surface-light-alt dark:hover:bg-surface-dark-alt h-full border border-border-maia-subtle dark:border-border-maia-subtle-dark">
-		<div class="overflow-hidden rounded-md mb-3">
+		<div class="overflow-hidden rounded-md mb-3 aspect-[915/1182]">
 			<img 
 				src={imgSrc} 
 				alt={altText} 
-				class="dark:invert w-full h-auto transition-transform duration-300 hover:scale-105" 
+				class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
 			/>
 		</div>
 		<h4 class="mt-1 mb-2 text-{textSize} font-bold transition-colors duration-300 group-hover:text-maia-800 dark:group-hover:text-maia-400">{title}</h4>

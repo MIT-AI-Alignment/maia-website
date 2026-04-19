@@ -10,6 +10,42 @@
 	
 	const organizations = [
 		{
+			imagePath: '/images/logos/openai.png',
+			name: 'OpenAI',
+			link: 'https://www.openai.com/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/anthropic.svg',
+			name: 'Anthropic',
+			link: 'https://www.anthropic.com/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/redwood.svg',
+			name: 'Redwood Research',
+			link: 'https://www.redwoodresearch.org/',
+			invert: false
+		},
+		{
+			imagePath: '/images/logos/nist.png',
+			name: 'Center for AI Standards and Innovation',
+			link: 'https://www.nist.gov/caisi',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/metr.png',
+			name: 'METR',
+			link: 'https://metr.org/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/epoch.png',
+			name: 'Epoch AI',
+			link: 'https://www.epoch.ai/',
+			invert: true
+		},
+		{
 			imagePath: '/images/logos/chai.png',
 			name: 'CHAI',
 			link: 'https://humancompatible.ai/',
@@ -20,51 +56,10 @@
 			name: 'MIT CSAIL',
 			link: 'https://www.csail.mit.edu/',
 			invert: false
-		},
-		{
-			imagePath: '/images/logos/el.png',
-			name: 'Eleuther AI',
-			link: 'https://www.eleuther.ai/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/redwood.png',
-			name: 'Redwood Research',
-			link: 'https://www.redwoodresearch.org/',
-			invert: false
-		},
-		{
-			imagePath: '/images/logos/anthropic.png',
-			name: 'Anthropic',
-			link: 'https://www.anthropic.com/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/openai.png',
-			name: 'OpenAI',
-			link: 'https://www.openai.com/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/epoch.png',
-			name: 'Epoch AI',
-			link: 'https://www.epoch.ai/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/metr.png',
-			name: 'METR',
-			link: 'https://metr.org/',
-			invert: true
 		}
 	];
 </script>
-<p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
-		This is a list of some of the organizations our members have worked with.<br>
-		Not all organisations listed endorse or are affiliated with MAIA.
-</p>
-
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-6">
 	{#each organizations as { imagePath, name, link, invert }, i}
 		{#if mounted}
 			<div 
@@ -80,7 +75,7 @@
 							class:dark:invert={invert}
 						/>
 					</div>
-					<span class="text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
+					<span class="block w-full max-w-full text-center text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
 				</a>
 			</div>
 		{:else}
@@ -94,12 +89,17 @@
 							class:dark:invert={invert}
 						/>
 					</div>
-					<span class="text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
+					<span class="block w-full max-w-full text-center text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
 				</a>
 			</div>
 		{/if}
 	{/each}
 </div>
+
+<p class="mt-10 text-center text-maia-950/60 dark:text-maia-200 italic">
+		This is a list of some of the organizations our members have worked with.<br>
+		Not all organisations listed endorse or are affiliated with MAIA.
+</p>
 
 <style>
 	@media (prefers-reduced-motion: reduce) {
