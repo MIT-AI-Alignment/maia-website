@@ -41,15 +41,15 @@
 		},
 		{
 			number: 5,
-			title: 'Control and Scalable Oversight',
-			description: 'AI control techniques, weak-to-strong generalization, debate, and iterated amplification.',
-			available: false
+			title: 'Control & Scalable Oversight',
+			description: 'AI control framework, resampling, monitoring, weak-to-strong generalization, and debate.',
+			available: true
 		},
 		{
 			number: 6,
-			title: 'Mechanistic Interpretability and Evals',
-			description: 'Circuits, sparse autoencoders, feature visualization, and evaluation methodologies.',
-			available: false
+			title: 'Interpretability & Evals',
+			description: 'Attribution graphs, linear probes, capability and propensity evals, and alignment auditing.',
+			available: true
 		},
 		{
 			number: 7,

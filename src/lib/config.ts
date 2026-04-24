@@ -1,11 +1,7 @@
 // Use this to make high-level changes to the website in one place.
 export const CONFIG = {
     banner: {
-        visible: true
-    },
-    cpw: {
-        visible: true,
-        anchor: "cpw"
+        visible: false
     },
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",
@@ -25,4 +21,4 @@ export const CONFIG = {
         deadline_short: "",
         applicationLink: ""
     },
-} as const;
+} as const; 

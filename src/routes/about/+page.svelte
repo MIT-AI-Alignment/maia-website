@@ -59,7 +59,7 @@
 
 <PageLayout
 	title="About"
-	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce risk from advanced AI."
+	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce catastrophic risk from advanced AI."
 	heroIcon="fa-solid fa-users-gear"
 	heroTitle="About MAIA"
 	centerTitle={true}

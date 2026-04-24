@@ -8,30 +8,30 @@
 		Fundamentals Fellowship
 	</h3>
 	<p class="pt-2">
-		This 8-week introductory reading group is MAIA's main entry point into AI Safety and is meant to give you a 
-		sense of why AI Safety is important and what people are doing about it.
+		The AI Safety Fundamentals Fellowship (AISF) is MAIA's flagship introduction to AI safety and the
+		main way people get involved with MIT AI Alignment. It's an 8-week reading group designed to help
+		you understand why the field matters and what researchers and policymakers are doing about it.
 	</p>
-	<p class="pt-2">At a high level, the fellowship covers:</p>
+	<p class="pt-2">Over the course of the fellowship, you'll explore:</p>
 	<ul class="list-disc pl-6 mt-1 space-y-1">
-		<li>The current trajectory of AI</li>
-		<li>Evidence for misalignment</li>
-		<li>Possible misalignment threat models</li>
-		<li>Technical safety approaches</li>
-		<li>AI policy landscape</li>
-		<li>Opportunities and careers in AI Safety </li>
+		<li>The current trajectory of AI development</li>
+		<li>Empirical evidence for misalignment</li>
+		<li>Threat models for how misalignment could cause harm</li>
+		<li>Technical approaches to AI safety</li>
+		<li>The AI policy landscape</li>
+		<li>Opportunities and careers in AI safety</li>
 	</ul>
 	<p class="mt-2">
-		Participants meet weekly in small sections facilitated by a pair of TAs that are upperclassmen or graduate
-		student with experience in AI safety research. Dinner is provided, and no work is assigned outside
-		of weekly meetings.
+		The fellowship is facilitated by top MAIA members with experience in AI safety research. During the
+		fall and spring, sections of about 10 fellows meet weekly in our office with two facilitators, and
+		dinner is provided. The summer program runs virtually with one facilitator and around 6 fellows per
+		section. No work is assigned outside of weekly meetings, making the fellowship easy to fit alongside
+		a full course load.
 	</p>
 	<p class="mt-2">
-		The program is open to both undergraduate and graduate students. Students with machine learning
-		experience are especially encouraged to apply, although <b>no prior experience is required</b>.
-	</p>
-	<p class="mt-2">
-		We are planning cohorts for this summer and for fall. If you would like updates and a link to apply
-		when it opens, submit the interest form below.
+		The program is open to anyone, with preference given to MIT undergraduate and graduate students.
+		Applicants with machine learning experience are especially encouraged to apply, but no prior
+		background is required—just curiosity and a willingness to engage with hard, open questions.
 	</p>
 	<div class="mt-8">
 		<Button
