@@ -53,14 +53,14 @@
 		},
 		{
 			number: 7,
-			title: 'International Policy and Liability',
-			description: 'Export controls, compute governance, model weight security, and AI liability frameworks.',
-			available: false
+			title: 'AI Governance & Liability',
+			description: 'Tort law, compute governance, US export controls on China, and the regulator\'s toolbox.',
+			available: true
 		},
 		{
 			number: 8,
-			title: 'Policy, Careers in Alignment',
-			description: 'AI regulation toolbox, career paths in alignment research, and next steps.',
+			title: 'Careers in AI Safety',
+			description: 'Career paths in AI safety, opportunities for MAIA members, and next steps.',
 			available: false
 		}
 	];
