@@ -13,6 +13,8 @@ export const CONFIG = {
         deadline: "",
         deadline_short: "",
         applicationLink:
+            "https://airtable.com/appHwdJxaquLCsb75/pagWI2NzqQcyF37iQ/form",
+        fallInterestFormLink:
             "https://airtable.com/appHwdJxaquLCsb75/pagMgBP9vydmwnBF4/form"
     },
     aisf_gov: {

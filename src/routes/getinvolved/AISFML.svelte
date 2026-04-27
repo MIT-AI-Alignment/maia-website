@@ -33,13 +33,26 @@
 		Applicants with machine learning experience are especially encouraged to apply, but no prior
 		background is required—just curiosity and a willingness to engage with hard, open questions.
 	</p>
+	<p class="mt-2">
+		Applications for the <strong>Summer AISF</strong> are now live. If you cannot participate in the summer
+		cohort, you can fill out the fall interest form to hear when fall applications open.
+	</p>
 	<div class="mt-8">
-		<Button
-			text="Interest Form (Summer & Fall)"
-			icon="fa-solid fa-arrow-right"
-			type="fuchsia"
-			size="md"
-			href={CONFIG.aisf_ml.applicationLink}
-		/>
+		<div class="flex flex-col sm:flex-row gap-3">
+			<Button
+				text="Apply for Summer AISF"
+				icon="fa-solid fa-arrow-right"
+				type="fuchsia"
+				size="md"
+				href={CONFIG.aisf_ml.applicationLink}
+			/>
+			<Button
+				text="Fall AISF Interest Form"
+				icon="fa-solid fa-arrow-right"
+				type="outline"
+				size="md"
+				href={CONFIG.aisf_ml.fallInterestFormLink}
+			/>
+		</div>
 	</div>
 </section>

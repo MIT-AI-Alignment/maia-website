@@ -112,54 +112,143 @@
 	</svelte:fragment>
 
 	<!-- AISF: flagship program, feature card treatment -->
-	<section
-		id="aisf"
-		class="mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
-	>
-		<span
-			class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-white/15 text-white mb-4"
+	{#if mounted}
+		<section
+			id="aisf"
+			class="mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+			in:fly={{ y: 24, duration: 700, delay: 600 }}
 		>
-			Flagship program
-		</span>
-
-		<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
-			<i class="fa-solid fa-graduation-cap mr-2"></i>
-			AI Safety Fundamentals
-		</h2>
-
-		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
-			The main way people get involved with MIT AI Alignment—an 8-week reading 
-			group on why AI safety matters and what's being done about it. Covers AI's 
-			trajectory, misalignment, technical safety, policy, and careers in the field. 
-			Fall and spring run in our office with dinner included, and summer is virtual. 
-			Open to anyone, with preference for MIT undergrad and grad students.
-		</p>
-
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
-			{#each aisfBenefits as benefit}
-				<div class="flex items-center gap-3 text-white/90">
-					<i class="fa-solid fa-check text-maia-300 w-4 text-center"></i>
-					<span>{@html benefit}</span>
-				</div>
-			{/each}
-		</div>
-
-		<div class="flex flex-col sm:flex-row gap-3">
-			<a
-				href={CONFIG.aisf_ml.applicationLink}
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+			<span
+				class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-white/15 text-white mb-4"
+				in:fly={{ y: 18, duration: 600, delay: 750 }}
 			>
-				Fill interest form
-				<i class="fa-solid fa-arrow-right"></i>
-			</a>
-			<a
-				href="/aisf/"
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+				Flagship program
+			</span>
+
+			<h2
+				class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight"
+				in:fly={{ y: 18, duration: 600, delay: 850 }}
 			>
-				See the curriculum
-			</a>
-		</div>
-	</section>
+				<i class="fa-solid fa-graduation-cap mr-2"></i>
+				AI Safety Fundamentals
+			</h2>
+
+			<p
+				class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed"
+				in:fly={{ y: 18, duration: 600, delay: 950 }}
+			>
+				The main way people get involved with MIT AI Alignment—an 8-week reading 
+				group on why AI safety matters and what's being done about it. Covers AI's 
+				trajectory, misalignment, technical safety, policy, and careers in the field. 
+				Fall and spring run in our office with dinner included, and summer is virtual. 
+				Open to anyone, with preference for MIT undergrad and grad students.
+			</p>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
+				{#each aisfBenefits as benefit, index}
+					<div
+						class="flex items-center gap-3 text-white/90"
+						in:fly={{ y: 12, duration: 500, delay: 1050 + index * 80 }}
+					>
+						<span
+							class="inline-flex w-4 justify-center"
+							in:scale={{ duration: 300, delay: 1130 + index * 80, start: 0.4, opacity: 0, easing: backOut }}
+						>
+							<i class="fa-solid fa-check text-maia-300"></i>
+						</span>
+						<span
+							class="inline-block"
+							in:fly={{ y: 6, duration: 350, delay: 1180 + index * 80 }}
+						>
+							{@html benefit}
+						</span>
+					</div>
+				{/each}
+			</div>
+
+			<div class="flex flex-col sm:flex-row gap-3">
+				<a
+					href={CONFIG.aisf_ml.applicationLink}
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+					in:scale={{ duration: 350, delay: 1350, start: 0.9, opacity: 0, easing: backOut }}
+				>
+					Apply for Summer AISF
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+				<a
+					href={CONFIG.aisf_ml.fallInterestFormLink}
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+					in:scale={{ duration: 350, delay: 1450, start: 0.9, opacity: 0, easing: backOut }}
+				>
+					Fall AISF Interest Form
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+				<a
+					href="/aisf/"
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+					in:scale={{ duration: 350, delay: 1550, start: 0.9, opacity: 0, easing: backOut }}
+				>
+					See the curriculum
+				</a>
+			</div>
+		</section>
+	{:else}
+		<section
+			id="aisf"
+			class="mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+		>
+			<span
+				class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-white/15 text-white mb-4"
+			>
+				Flagship program
+			</span>
+
+			<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
+				<i class="fa-solid fa-graduation-cap mr-2"></i>
+				AI Safety Fundamentals
+			</h2>
+
+			<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
+				The main way people get involved with MIT AI Alignment—an 8-week reading 
+				group on why AI safety matters and what's being done about it. Covers AI's 
+				trajectory, misalignment, technical safety, policy, and careers in the field. 
+				Fall and spring run in our office with dinner included, and summer is virtual. 
+				Open to anyone, with preference for MIT undergrad and grad students.
+			</p>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
+				{#each aisfBenefits as benefit}
+					<div class="flex items-center gap-3 text-white/90">
+						<i class="fa-solid fa-check text-maia-300 w-4 text-center"></i>
+						<span>{@html benefit}</span>
+					</div>
+				{/each}
+			</div>
+
+			<div class="flex flex-col sm:flex-row gap-3">
+				<a
+					href={CONFIG.aisf_ml.applicationLink}
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+				>
+					Apply for Summer AISF
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+				<a
+					href={CONFIG.aisf_ml.fallInterestFormLink}
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+				>
+					Fall AISF Interest Form
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+				<a
+					href="/aisf/"
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+				>
+					See the curriculum
+				</a>
+			</div>
+		</section>
+	{/if}
 </PageLayout>
 
 <style>
