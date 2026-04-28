@@ -12,64 +12,68 @@
 
 <div>
 	<p>
-		Being a member of the MAIA community has both a number of opportunities and a number of
-		responsibilities. Membership entails:
+		MAIA membership is structured to move you toward a full-time role in AI safety. Members get
+		the resources, research experience, and professional connections needed to be competitive for
+		positions at leading AI safety organizations. Specifically, membership includes:
 	</p>
 	<ul class="list-disc pl-6 mt-4 space-y-2">
-		<li>24/7 access to our office, where you can co-work on AI safety with MAIA Members.</li>
-		<li>Compute and research tools</li>
-		<li>Weekly member meetings to read and discuss alignment research</li>
 		<li>
-			Small group discussions with alignment researchers and professors (recent guests included
-			<a href="https://colah.github.io/about.html" class="text-maia-800 dark:text-maia-400"
-				>Chris Olah</a
+			<strong>Workspace and infrastructure:</strong> 24/7 office access for focused research, plus
+			compute and research tools
+		</li>
+		<li>
+			<strong>Technical development:</strong> Weekly meetings to engage with current AI safety
+			research alongside other members working toward the same goal
+		</li>
+		<li>
+			<strong>Upskilling programs:</strong> Structured technical programs like ARENA with hired
+			TAs, plus additional upskilling programs in development to help members build the skills
+			needed for safety research roles
+		</li>
+		<li>
+			<strong>Direct access to researchers:</strong> Small-group discussions with safety
+			researchers shaping the field. Recent guests include <a
+				href="https://www.linkedin.com/in/aryanbhatt17/"
+				>Aryan Bhatt</a
 			>
-			from Anthropic and
-			<a
-				href="https://www.nytimes.com/2024/06/04/technology/openai-culture-whistleblowers.html"
-				class="text-maia-800 dark:text-maia-400">Daniel Kokotajlo</a
-			> from OpenAI)
-		</li>
-		<li>
-			Connections with and potential opportunities to collaborate with top alignment organizations
-			like <a href="https://www.redwoodresearch.org/" class="text-maia-800 dark:text-maia-400"
-				>Redwood Research</a
-			>,
-			<a href="https://www.nist.gov/aisi" class="text-maia-800 dark:text-maia-400"
-				>The U.S. AI Safety Institute</a
-			>, and <a href="https://metr.org/" class="text-maia-800 dark:text-maia-400">METR</a>
-		</li>
-		<li>
-			Opportunities to participate in AI safety community workshops and connect with leaders in
-			policy, academia, and technical research. (Ex: Professors <a
-				href="https://sites.google.com/view/htanaka/home"
-				class="text-maia-800 dark:text-maia-400">Hidenori Tanaka</a
+			(Redwood Research), <a href="https://www.linkedin.com/in/joshua-clymer/"
+				>Josh Clymer</a
 			>
-			and <a href="http://davidbau.com/" class="text-maia-800 dark:text-maia-400">David Bau</a>)
+			(OpenAI), and <a href="https://intelligence.org/team/nate-soares/">Nate Soares</a> (MIRI)
 		</li>
 		<li>
-			Participating in a community of talented undergraduate and graduate students interested in
-			reducing risks from advanced AI (Social events and talks, but also fantastic spontaneous
-			discussions.)
+			<strong>Pathways to top organizations:</strong> We have connections across nearly every major
+			AI safety organization, and our members have gone on to work at OpenAI, Anthropic, <a
+				href="https://metr.org/">METR</a
+			>, <a href="https://www.redwoodresearch.org/">Redwood Research</a>, the <a
+				href="https://ai-futures.org/">AI Futures Project</a
+			>, and the <a href="https://www.nist.gov/aisi">Center for AI Standards and Innovation</a>
+			(formerly the U.S. AI Safety Institute). While many members pursue technical research, alumni
+			have also moved into policy, government, and other non-technical roles shaping the trajectory
+			of AI.
+		</li>
+		<li>
+			<strong>A serious peer group:</strong> Undergraduate and graduate researchers oriented around
+			the same career trajectory, who become collaborators, references, and future colleagues
 		</li>
 	</ul>
 	<p class="mt-4">
-		Members generally contribute to the community by running or participating in workshops,
-		discussions, socials, hackathons, initiatives and more. While we are an MIT-recognized student
-		group, membership is not restricted to MIT students. Independent researchers and students from
-		other universities are welcome!
+		Beyond participating, many of our top members are also organizers who help run these
+		programs—leading workshops, discussions, hackathons, and the initiatives that bring the next
+		cohort into AI safety work.
 	</p>
 	<p class="mt-4">
-		If you aren't very familiar with AI safety, we recommend applying for AI Safety Fundamentals
-		above. We typically offer AISF alumni priority in the application process.
+		While MAIA is an MIT-recognized student group, membership is not restricted to MIT students;
+		independent researchers and students from other universities are welcome to apply. If you're
+		newer to AI safety, we recommend applying for <a
+			href="https://aialignment.mit.edu/getinvolved#aisf">AI Safety Fundamentals</a
+		>
+		first, as AISF alumni typically receive priority in the membership process.
 	</p>
 	<p class="mt-4">
-		The application has both technical and non-technical portions and typically takes around an hour
-		to complete. Membership admission is rolling, but the board tends to make decisions every month.
-		If we are slow to respond, please don't hesitate to email us at <a
-			href="mailto:maia-exec@mit.edu"
-			class="text-maia-800 dark:text-maia-400">maia-exec@mit.edu</a
-		>.
+		The application itself has technical and non-technical portions and takes about an hour.
+		Admissions are rolling, with the board reviewing applications monthly—and if we're slow to
+		respond, feel free to email <a href="mailto:maia-exec@mit.edu">maia-exec@mit.edu</a>.
 	</p>
 	<div class="mt-8 space-y-4">
 		<a href={CONFIG.membership.applicationLink}>
