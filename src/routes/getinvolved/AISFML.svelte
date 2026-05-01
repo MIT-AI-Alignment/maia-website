@@ -34,8 +34,9 @@
 		background is required—just curiosity and a willingness to engage with hard, open questions.
 	</p>
 	<p class="mt-2">
-		Applications for the <strong>Summer AISF</strong> are now live. If you cannot participate in the summer
-		cohort, you can fill out the fall interest form to hear when fall applications open.
+		Applications for the <strong>Summer AISF</strong> are now live and are due <strong>May 22nd</strong>.
+		If you cannot participate in the summer cohort, you can fill out the fall interest form to hear
+		when fall applications open.
 	</p>
 	<div class="mt-8">
 		<div class="flex flex-col sm:flex-row gap-3">

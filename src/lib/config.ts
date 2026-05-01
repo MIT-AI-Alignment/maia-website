@@ -1,7 +1,10 @@
 // Use this to make high-level changes to the website in one place.
 export const CONFIG = {
     banner: {
-        visible: false
+        visible: true,
+        text: "Applications for our virtual Summer AISF are now open!",
+        link: "https://airtable.com/appHwdJxaquLCsb75/pagWI2NzqQcyF37iQ/form",
+        ctaText: "Apply now by May 22nd!"
     },
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",

@@ -34,8 +34,8 @@
 					class={`fa-solid fa-circle-exclamation ${animateIcon ? 'fa-flip' : ''}`}
 					style="--fa-animation-duration: 1.0s;"
 				></i>
-				Deadline extended! Stages 1 &amp; 2 are now merged into a single application.
-				Apply <a href={CONFIG.aisf_ml.applicationLink} class="underline font-semibold">here</a> by {CONFIG.aisf_ml.deadline}.
+				{CONFIG.banner.text}
+				<a href={CONFIG.banner.link} class="underline font-semibold ml-1">{CONFIG.banner.ctaText}</a>
 			</p>
 		</div>
 		<button
