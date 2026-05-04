@@ -47,6 +47,8 @@ export type Section = {
 
 export type Part = {
 	id: string;
+	/** Short label for navbar in-page links */
+	navLabel: string;
 	title: string;
 	icon: string;
 	intro?: string;
@@ -75,7 +77,7 @@ export const PILLAR_LABELS: Record<Pillar, { label: string; icon: string; color:
 		color: 'bg-tag-openai-light dark:bg-tag-openai-dark'
 	},
 	local: {
-		label: 'Harvard / MIT',
+		label: 'MIT / Harvard',
 		icon: 'fa-solid fa-graduation-cap',
 		color: 'bg-tag-scaling-light dark:bg-tag-scaling-dark'
 	}
@@ -84,6 +86,7 @@ export const PILLAR_LABELS: Record<Pillar, { label: string; icon: string; color:
 export const PARTS: Part[] = [
 	{
 		id: 'start',
+		navLabel: 'Meta resources',
 		title: 'Start Here — Meta-Resources',
 		icon: 'fa-solid fa-compass',
 		intro:
@@ -137,31 +140,460 @@ export const PARTS: Part[] = [
 		]
 	},
 	{
+		id: 'reading',
+		navLabel: 'Media',
+		title: 'Part VI — Newsletters, Podcasts, Books, Reading',
+		icon: 'fa-solid fa-book-open',
+		intro: 'Subscribe to 4–6 of these to follow the field.',
+		sections: [
+			{
+				id: 'newsletters',
+				title: 'Best Single-Stop Weekly News',
+				items: [
+					{
+						name: 'Transformer News',
+						description: 'Best single-stop weekly news on AI safety. Shakeel Hashim.',
+						url: 'https://www.transformernews.ai',
+						pillars: ['policy', 'technical'],
+						tags: ['Top Pick']
+					},
+					{
+						name: "Don't Worry About the Vase",
+						description: 'Comprehensive weekly AI news commentary by Zvi Mowshowitz.',
+						url: 'https://thezvi.substack.com',
+						pillars: ['policy', 'technical', 'comms'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'AI Safety Newsletter (CAIS)',
+						description: 'Curated weekly summary from the Center for AI Safety.',
+						url: 'https://newsletter.safe.ai',
+						pillars: ['technical', 'policy'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'ML Safety Newsletter',
+						description: 'Technical ML safety newsletter from Hendrycks.',
+						url: 'https://newsletter.mlsafety.org',
+						pillars: ['technical']
+					},
+					{
+						name: '80,000 Hours Newsletter',
+						description: 'Career-focused newsletter from 80,000 Hours.',
+						url: 'https://80000hours.org/newsletter/',
+						pillars: ['fieldbuilding']
+					}
+				]
+			},
+			{
+				id: 'newsletters-tech',
+				title: 'Technical and Research-Focused',
+				items: [
+					{
+						name: 'Import AI',
+						description: 'Jack Clark — research-focused weekly AI news.',
+						url: 'https://importai.substack.com',
+						pillars: ['technical'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'AI Snake Oil',
+						description: 'Narayanan & Kapoor on AI hype and reality.',
+						url: 'https://www.aisnakeoil.com',
+						pillars: ['comms']
+					},
+					{
+						name: 'Alignment Forum',
+						description: 'Technical AI alignment discussion forum.',
+						url: 'https://www.alignmentforum.org',
+						pillars: ['technical'],
+						tags: ['Alignment']
+					},
+					{
+						name: 'LessWrong',
+						description: 'Rationalist/safety community discussion site.',
+						url: 'https://www.lesswrong.com',
+						pillars: ['technical', 'comms']
+					},
+					{
+						name: 'AI Frontiers',
+						description: 'Frontier-AI-focused newsletter.',
+						url: 'https://aifrontiers.com',
+						pillars: ['technical']
+					},
+					{
+						name: 'AI Evaluation Newsletter',
+						description: 'Focused on evaluations and dangerous-capability testing.',
+						url: 'https://aievaluation.substack.com',
+						pillars: ['technical'],
+						tags: ['Evaluations']
+					}
+				]
+			},
+			{
+				id: 'newsletters-policy',
+				title: 'Policy Newsletters',
+				items: [
+					{
+						name: 'Hyperdimensional',
+						description: 'Dean W. Ball on AI policy.',
+						url: 'https://www.hyperdimensional.co',
+						pillars: ['policy'],
+						tags: ['Top Pick', 'US']
+					},
+					{
+						name: 'Rising Tide',
+						description: 'Helen Toner on AI policy.',
+						url: 'https://helentoner.substack.com',
+						pillars: ['policy'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'ChinaTalk',
+						description: 'Jordan Schneider on China and tech.',
+						url: 'https://www.chinatalk.media',
+						pillars: ['policy']
+					},
+					{
+						name: 'Navigating AI Risks',
+						description: 'AI risk-focused newsletter.',
+						url: 'https://www.navigatingrisks.ai',
+						pillars: ['policy']
+					},
+					{
+						name: 'AI Lab Watch',
+						description: "Zach Stein-Perlman's tracker of frontier-lab safety practices.",
+						url: 'https://ailabwatch.org',
+						pillars: ['policy']
+					},
+					{
+						name: 'Obsolete',
+						description: 'Garrison Lovely on AI and the future.',
+						url: 'https://www.garrisonlovely.com',
+						pillars: ['comms', 'policy']
+					}
+				]
+			},
+			{
+				id: 'newsletters-strategy',
+				title: 'Strategy and Forecasting',
+				items: [
+					{
+						name: 'AI 2027',
+						description: 'AI Futures Project scenario forecast.',
+						url: 'https://ai-2027.com',
+						pillars: ['technical', 'policy'],
+						tags: ['Strategy']
+					},
+					{
+						name: 'Astral Codex Ten',
+						description: 'Scott Alexander on AI, science, and rationality.',
+						url: 'https://www.astralcodexten.com',
+						pillars: ['comms', 'technical']
+					},
+					{
+						name: 'Peter Wildeford',
+						description: 'Strategy, forecasting, and AI safety community updates.',
+						url: 'https://blog.peterwildeford.com',
+						pillars: ['policy', 'fieldbuilding']
+					},
+					{
+						name: 'Miles Brundage',
+						description: 'Former OpenAI on AI policy and governance.',
+						url: 'https://milesbrundage.substack.com',
+						pillars: ['policy']
+					}
+				]
+			},
+			{
+				id: 'podcasts',
+				title: 'Podcasts',
+				items: [
+					{
+						name: '80,000 Hours Podcast',
+						description: 'Long-form interviews on impactful careers.',
+						url: 'https://80000hours.org/podcast/',
+						pillars: ['fieldbuilding', 'technical', 'policy'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'Dwarkesh Podcast',
+						description: 'Long, technical interviews with AI researchers.',
+						url: 'https://www.dwarkesh.com',
+						pillars: ['technical', 'policy'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'AXRP',
+						description: 'Daniel Filan — AI X-risk Research Podcast. Technical alignment interviews.',
+						url: 'https://axrp.net',
+						pillars: ['technical'],
+						tags: ['Alignment', 'Top Pick']
+					},
+					{
+						name: 'The Cognitive Revolution',
+						description: 'Nathan Labenz — interviews and analysis.',
+						url: 'https://www.cognitiverevolution.ai',
+						pillars: ['technical', 'policy']
+					},
+					{
+						name: 'Doom Debates',
+						description: 'Liron Shapira — debates on AI x-risk.',
+						url: 'https://doomdebates.com',
+						pillars: ['comms']
+					},
+					{
+						name: 'The Inside View',
+						description: 'AI safety interviews.',
+						url: 'https://theinsideview.ai',
+						pillars: ['technical']
+					},
+					{
+						name: 'FLI Podcast',
+						description: 'Future of Life Institute podcast.',
+						url: 'https://futureoflife.org/podcasts/',
+						pillars: ['technical', 'policy']
+					},
+					{
+						name: 'Emerging Tech Policy Podcast',
+						description: 'Horizon-run podcast on emerging tech policy careers.',
+						url: 'https://emergingtechpolicy.org/podcast/',
+						pillars: ['policy']
+					},
+					{
+						name: 'CSIS AI Policy Podcast',
+						description: 'Policy podcast from CSIS.',
+						url: 'https://www.csis.org/podcasts',
+						pillars: ['policy']
+					},
+					{
+						name: 'Lawfare Podcast',
+						description: 'National security and law podcast — frequent AI coverage.',
+						url: 'https://www.lawfaremedia.org/podcasts',
+						pillars: ['policy'],
+						tags: ['Law']
+					}
+				]
+			},
+			{
+				id: 'books',
+				title: 'Books',
+				items: [
+					{
+						name: 'The Precipice',
+						description: 'Toby Ord on existential risks. Foundational.',
+						url: 'https://theprecipice.com',
+						pillars: ['policy', 'technical'],
+						tags: ['Strategy']
+					},
+					{
+						name: 'Superintelligence',
+						description: 'Nick Bostrom — foundational text on advanced AI risks.',
+						url: 'https://www.amazon.com/Superintelligence-Dangers-Strategies-Nick-Bostrom/dp/0198739834',
+						pillars: ['technical', 'policy'],
+						tags: ['Strategy']
+					},
+					{
+						name: 'Human Compatible',
+						description: 'Stuart Russell on building safer AI.',
+						url: 'https://en.wikipedia.org/wiki/Human_Compatible',
+						pillars: ['technical'],
+						tags: ['Alignment']
+					},
+					{
+						name: 'The Alignment Problem',
+						description: 'Brian Christian — accessible introduction to alignment.',
+						url: 'https://brianchristian.org/the-alignment-problem/',
+						pillars: ['technical'],
+						tags: ['Alignment']
+					},
+					{
+						name: 'If Anyone Builds It, Everyone Dies',
+						description: 'Yudkowsky & Soares (2025).',
+						url: 'https://ifanyonebuildsit.com',
+						pillars: ['comms']
+					},
+					{
+						name: 'Introduction to AI Safety, Ethics, and Society',
+						description: 'Hendrycks textbook (free PDF).',
+						url: 'https://www.aisafetybook.com',
+						pillars: ['technical'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'The Coming Wave',
+						description: 'Mustafa Suleyman on the future of AI and biotech.',
+						url: 'https://the-coming-wave.com/',
+						pillars: ['policy']
+					},
+					{
+						name: 'Power and Progress',
+						description: 'Acemoglu & Johnson on technology and shared prosperity.',
+						url: 'https://shapingwork.mit.edu/power-and-progress/',
+						pillars: ['policy']
+					}
+				]
+			},
+			{
+				id: 'papers',
+				title: 'Foundational Papers and Reports',
+				items: [
+					{
+						name: 'Concrete Problems in AI Safety',
+						description: 'Amodei et al., 2016. The canonical introduction to technical AI safety.',
+						url: 'https://arxiv.org/abs/1606.06565',
+						pillars: ['technical'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'Unsolved Problems in ML Safety',
+						description: 'Hendrycks et al., 2021.',
+						url: 'https://arxiv.org/abs/2109.13916',
+						pillars: ['technical']
+					},
+					{
+						name: "DeepMind's Approach to Technical AGI Safety",
+						description: 'Google DeepMind\'s published safety agenda.',
+						url: 'https://deepmind.google/discover/blog/taking-a-responsible-path-to-agi/',
+						pillars: ['technical']
+					},
+					{
+						name: "Anthropic's Recommended Research Directions",
+						description: "Curated alignment research agenda from Anthropic's alignment team.",
+						url: 'https://alignment.anthropic.com/2025/recommended-directions/',
+						pillars: ['technical'],
+						tags: ['Alignment']
+					},
+					{
+						name: 'Coefficient Giving Technical AI Safety RFP',
+						description: 'RFP outlining priority technical safety research areas.',
+						url: 'https://www.openphilanthropy.org/request-for-proposals-technical-ai-safety-research/',
+						pillars: ['technical']
+					},
+					{
+						name: 'International AI Safety Report (2025/2026)',
+						description: 'Bengio et al. International expert assessment of AI risks.',
+						url: 'https://www.gov.uk/government/publications/international-ai-safety-report-2025',
+						pillars: ['policy', 'technical'],
+						tags: ['Strategy']
+					}
+				]
+			}
+		]
+	},
+	{
+		id: 'events',
+		navLabel: 'Events',
+		title: 'Part VII — Major Conferences and Events',
+		icon: 'fa-solid fa-calendar-days',
+		sections: [
+			{
+				id: 'eag',
+				title: 'EA Globals',
+				items: [
+					{
+						name: 'EA Global',
+						description: 'EAG conferences (Bay Area, London, NYC) plus regional EAGxs. Strong AI safety presence.',
+						url: 'https://www.eaglobal.org',
+						pillars: ['fieldbuilding', 'technical', 'policy'],
+						tags: ['Top Pick']
+					}
+				]
+			},
+			{
+				id: 'tech-conferences',
+				title: 'Technical Safety Conferences and Workshops',
+				items: [
+					{
+						name: 'NeurIPS',
+						description: 'Major ML venue. Workshops include Regulatable ML, SoLaR, SafeML, Safe Generative AI, Safe and Trustworthy Agentic AI.',
+						url: 'https://neurips.cc',
+						pillars: ['technical']
+					},
+					{
+						name: 'ICML',
+						description: 'International Conference on Machine Learning.',
+						url: 'https://icml.cc',
+						pillars: ['technical']
+					},
+					{
+						name: 'ICLR',
+						description: 'International Conference on Learning Representations.',
+						url: 'https://iclr.cc',
+						pillars: ['technical']
+					},
+					{
+						name: 'AAAI',
+						description: 'AAAI Conference on Artificial Intelligence.',
+						url: 'https://aaai.org',
+						pillars: ['technical']
+					},
+					{
+						name: 'FAccT',
+						description: 'Conference on Fairness, Accountability, and Transparency.',
+						url: 'https://facctconference.org',
+						pillars: ['technical', 'policy']
+					},
+					{
+						name: 'AIES',
+						description: 'AAAI/ACM Conference on AI, Ethics, and Society.',
+						url: 'https://www.aies-conference.com',
+						pillars: ['policy']
+					},
+					{
+						name: 'ControlConf / FAR.AI Alignment Workshops',
+						description: 'Technical-heavy workshops on AI control and alignment.',
+						url: 'https://far.ai/events',
+						pillars: ['technical'],
+						tags: ['Control']
+					},
+					{
+						name: 'The Curve / Constellation Events',
+						description: 'Constellation-organized AI strategy conference.',
+						url: 'https://www.thecurve-conference.com',
+						pillars: ['fieldbuilding', 'policy']
+					},
+					{
+						name: 'AI Security Forum',
+						description: 'Annual AI security event.',
+						url: 'https://www.aisecurityforum.org',
+						pillars: ['technical', 'policy']
+					}
+				]
+			},
+			{
+				id: 'policy-conferences',
+				title: 'Policy Conferences',
+				items: [
+					{
+						name: 'IASEAI',
+						description: 'International Association for Safe and Ethical AI.',
+						url: 'https://www.iaseai.org',
+						pillars: ['policy']
+					},
+					{
+						name: 'AI Action Summits',
+						description: 'Successor to the UK/Paris AI Safety Summits.',
+						url: 'https://www.aiactionsummit.com',
+						pillars: ['policy'],
+						tags: ['Global']
+					}
+				]
+			}
+		]
+	},
+	{
 		id: 'local',
-		title: 'Part I — The Harvard / MIT-Specific Section',
+		navLabel: 'MIT / Harvard',
+		title: 'Part I — The MIT / Harvard-Specific Section',
 		icon: 'fa-solid fa-graduation-cap',
 		intro:
-			"This is the most important section if you're at Harvard or MIT, and the part of the guide most likely to be obsolete elsewhere. The Cambridge ecosystem (AISST, MAIA, CBAI, Kempner, CDML, Algorithmic Alignment Group, Belfer, Berkman Klein) is extraordinarily dense — use it.",
+			"This is the most important section if you're at MIT or Harvard, and the part of the guide most likely to be obsolete elsewhere. The Cambridge ecosystem (MAIA, AISST, CBAI, CDML, Algorithmic Alignment Group, Kempner, Belfer, Berkman Klein) is extraordinarily dense — use it.",
 		sections: [
 			{
 				id: 'local-groups',
 				title: 'Local Student Groups (Your First Stop)',
 				items: [
-					{
-						name: 'AI Safety Student Team (AISST) — Harvard',
-						description:
-							"Harvard's research-focused AI safety group (formerly HAIST). 8-week intro tech and policy fellowships each semester; office near Harvard Square. Past fellows have moved to MATS, Anthropic, Goodfire, Redwood, METR, AISI/CAISI, and ML PhD programs.",
-						url: 'https://aisst.ai',
-						pillars: ['local', 'fieldbuilding', 'technical'],
-						tags: ['Harvard', 'Boston', 'Undergrad-friendly', 'Top Pick']
-					},
-					{
-						name: 'AISST Tech Fellowship',
-						description: 'The canonical Harvard on-ramp into technical AI safety.',
-						url: 'https://aisst.ai/tech-fellowship',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Boston', 'Undergrad-friendly']
-					},
 					{
 						name: 'MIT AI Alignment (MAIA)',
 						description:
@@ -171,16 +603,9 @@ export const PARTS: Part[] = [
 						tags: ['MIT', 'Boston', 'Undergrad-friendly', 'Top Pick']
 					},
 					{
-						name: 'MAIA — Get Involved',
-						description: 'Apply to MAIA programs, fellowships, and events.',
-						url: 'https://web.mit.edu/aialignment/www/getinvolved/',
-						pillars: ['local'],
-						tags: ['MIT', 'Boston', 'Undergrad-friendly']
-					},
-					{
 						name: 'Cambridge Boston Alignment Initiative (CBAI)',
 						description:
-							'Umbrella org supporting AISST and MAIA. Runs the CBAI Summer Fellowship (9 weeks, Cambridge MA) and ML bootcamps. Probably the single most important institution to know about if you are at Harvard or MIT and serious about safety.',
+							'Umbrella org supporting MAIA and AISST. Runs the CBAI Summer Fellowship (9 weeks, Cambridge MA) and ML bootcamps. Probably the single most important institution to know about if you are at MIT or Harvard and serious about safety.',
 						url: 'https://www.cbai.ai',
 						pillars: ['local', 'fieldbuilding', 'technical'],
 						tags: ['Boston', 'Harvard', 'MIT', 'Top Pick']
@@ -194,187 +619,12 @@ export const PARTS: Part[] = [
 						tags: ['Boston', 'Harvard', 'MIT', 'Paid', 'Undergrad-friendly']
 					},
 					{
-						name: 'AISST — Mignone Career Services Listing',
-						description: "Harvard's career-services recognition page for AISST.",
-						url: 'https://careerservices.fas.harvard.edu/organizations/harvard-ai-safety-team/',
-						pillars: ['local'],
-						tags: ['Harvard']
-					}
-				]
-			},
-			{
-				id: 'harvard-courses',
-				title: 'Specific Harvard Courses Worth Taking',
-				items: [
-					{
-						name: 'CS 2881r: AI Safety (Boaz Barak)',
-						description: "Harvard's first dedicated AI safety course. Graduate seminar; lectures and student projects public. Prereqs: CS 181 / equivalent ML course, mathematical maturity.",
-						url: 'https://boazbk.github.io/mltheoryseminar',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'CS 1810: Introduction to Machine Learning',
-						description: 'Standard ML foundation at Harvard (David Alvarez-Melis & Yilun Du, 2026).',
-						url: 'https://harvard-ml-courses.github.io/cs181-web/',
-						pillars: ['local'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'CS 2822r / Stat 234, CS 282br',
+						name: 'AI Safety Student Team (AISST) — Harvard',
 						description:
-							"Sequential decision-making, RL, and ML theory at Harvard. Course offerings rotate; recent topics include interpretability, robustness, and foundation models.",
-						url: 'https://courses.my.harvard.edu',
-						pillars: ['local'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'HKS DPI Courses (DPI-662, 686, 687, 688)',
-						description: 'Digital governance and AI policy challenges at Harvard Kennedy School.',
-						url: 'https://www.coursicle.com/harvard/courses/DPI/',
-						pillars: ['local', 'policy'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'HKS Belfer Center Seminars',
-						description: 'Emerging Technology, Scientific Advancement, and Global Policy Program; AI+X+G Initiative.',
-						url: 'https://www.belfercenter.org',
-						pillars: ['local', 'policy'],
-						tags: ['Harvard']
-					}
-				]
-			},
-			{
-				id: 'harvard-faculty',
-				title: 'Specific Harvard Faculty Working on Safety-Relevant Topics',
-				intro:
-					'Reach out for UROPs, theses, RA roles, or just to learn. Most senior people in the field will take a coffee with a serious Harvard or MIT undergrad who has done the BlueDot or AISST/MAIA intro fellowship.',
-				items: [
-					{
-						name: 'Boaz Barak (Harvard SEAS, OpenAI MTS)',
-						description: 'Theoretical CS and AI safety; taught CS 2881r.',
-						url: 'https://www.boazbarak.org',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Sham Kakade (Kempner co-director)',
-						description: 'Foundations of deep learning, RL theory, generalization.',
-						url: 'https://shamulent.github.io',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Martin Wattenberg & Fernanda Viégas (Harvard SEAS)',
-						description: 'Interpretability, mechanistic understanding, and visualization of model behavior.',
-						url: 'https://insightplusinteraction.com',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Interpretability']
-					},
-					{
-						name: 'Hima Lakkaraju (Harvard SEAS / HBS)',
-						description: 'Trustworthy ML, explanations, interpretability, model evaluation.',
-						url: 'https://himalakkaraju.github.io',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Interpretability', 'Evaluations']
-					},
-					{
-						name: 'David Parkes (SEAS Dean)',
-						description: 'Multi-agent systems, mechanism design, ML/economics.',
-						url: 'https://parkes.seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Cynthia Dwork (Harvard SEAS)',
-						description: 'Differential privacy, algorithmic fairness, foundations.',
-						url: 'https://dwork.seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Finale Doshi-Velez (Harvard SEAS)',
-						description: 'Interpretability, RL, probabilistic methods.',
-						url: 'https://finale.seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Interpretability']
-					},
-					{
-						name: 'Yaron Singer (Harvard SEAS)',
-						description: 'Adversarial robustness and ML security.',
-						url: 'https://www.yaronsinger.com',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Adversarial']
-					},
-					{
-						name: 'Milind Tambe (Harvard SEAS, CRCS)',
-						description: 'Multi-agent systems, AI for social impact.',
-						url: 'https://teamcore.seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Nada Amin (Harvard SEAS)',
-						description: 'Programming languages, formal verification, neuro-symbolic methods.',
-						url: 'https://namin.seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Yilun Du (Kempner / Harvard SEAS)',
-						description: 'Generative models, world models, robotics.',
-						url: 'https://yilundu.github.io',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					}
-				]
-			},
-			{
-				id: 'harvard-orgs',
-				title: 'Harvard Institutes & Centers',
-				items: [
-					{
-						name: 'Kempner Institute',
-						description:
-							'Houses one of the largest academic AI clusters (~1.79 exaFLOPS). Programs: KURE (term-time undergrad), KRANIUM (10-week summer), Graduate Fellowship, Accelerator Awards.',
-						url: 'https://kempnerinstitute.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Boston', 'Undergrad-friendly']
-					},
-					{
-						name: 'KURE — Kempner Undergraduate Research Experience',
-						description: 'Term-time funding for Harvard undergraduates doing AI research.',
-						url: 'https://kempnerinstitute.harvard.edu/about/training-program/kure/',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Undergrad-friendly', 'Paid']
-					},
-					{
-						name: 'KRANIUM Summer Program',
-						description: '10-week residential summer undergraduate program at the Kempner Institute.',
-						url: 'https://kempnerinstitute.harvard.edu/about/training-program/kranium/',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Boston', 'Undergrad-friendly', 'Paid']
-					},
-					{
-						name: 'Berkman Klein Center',
-						description: 'AI ethics, policy, governance, and internet law at Harvard.',
-						url: 'https://cyber.harvard.edu',
-						pillars: ['local', 'policy'],
-						tags: ['Harvard', 'Law']
-					},
-					{
-						name: 'Belfer Center (HKS)',
-						description: 'Tech policy and national security at the Harvard Kennedy School.',
-						url: 'https://www.belfercenter.org',
-						pillars: ['local', 'policy'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Berkman Klein Fellowships',
-						description: 'Fellowships at the Berkman Klein Center for Internet & Society.',
-						url: 'https://cyber.harvard.edu/getinvolved/fellowships',
-						pillars: ['local', 'policy'],
-						tags: ['Harvard', 'Law']
+							"Harvard's research-focused AI safety group (formerly HAIST). 8-week intro tech and policy fellowships each semester; office near Harvard Square. Past fellows have moved to MATS, Anthropic, Goodfire, Redwood, METR, AISI/CAISI, and ML PhD programs.",
+						url: 'https://aisst.ai',
+						pillars: ['local', 'fieldbuilding', 'technical'],
+						tags: ['Harvard', 'Boston', 'Undergrad-friendly', 'Top Pick']
 					}
 				]
 			},
@@ -566,11 +816,420 @@ export const PARTS: Part[] = [
 						tags: ['MIT']
 					}
 				]
+			},
+			{
+				id: 'harvard-courses',
+				title: 'Specific Harvard Courses Worth Taking',
+				items: [
+					{
+						name: 'CS 2881r: AI Safety (Boaz Barak)',
+						description: "Harvard's first dedicated AI safety course. Graduate seminar; lectures and student projects public. Prereqs: CS 181 / equivalent ML course, mathematical maturity.",
+						url: 'https://boazbk.github.io/mltheoryseminar',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'CS 1810: Introduction to Machine Learning',
+						description: 'Standard ML foundation at Harvard (David Alvarez-Melis & Yilun Du, 2026).',
+						url: 'https://harvard-ml-courses.github.io/cs181-web/',
+						pillars: ['local'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'CS 2822r / Stat 234, CS 282br',
+						description:
+							"Sequential decision-making, RL, and ML theory at Harvard. Course offerings rotate; recent topics include interpretability, robustness, and foundation models.",
+						url: 'https://courses.my.harvard.edu',
+						pillars: ['local'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'HKS DPI Courses (DPI-662, 686, 687, 688)',
+						description: 'Digital governance and AI policy challenges at Harvard Kennedy School.',
+						url: 'https://www.coursicle.com/harvard/courses/DPI/',
+						pillars: ['local', 'policy'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'HKS Belfer Center Seminars',
+						description: 'Emerging Technology, Scientific Advancement, and Global Policy Program; AI+X+G Initiative.',
+						url: 'https://www.belfercenter.org',
+						pillars: ['local', 'policy'],
+						tags: ['Harvard']
+					}
+				]
+			},
+			{
+				id: 'harvard-faculty',
+				title: 'Specific Harvard Faculty Working on Safety-Relevant Topics',
+				intro:
+					'Reach out for UROPs, theses, RA roles, or just to learn. Most senior people in the field will take a coffee with a serious MIT or Harvard undergrad who has done the BlueDot or MAIA/AISST intro fellowship.',
+				items: [
+					{
+						name: 'Boaz Barak (Harvard SEAS, OpenAI MTS)',
+						description: 'Theoretical CS and AI safety; taught CS 2881r.',
+						url: 'https://www.boazbarak.org',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Sham Kakade (Kempner co-director)',
+						description: 'Foundations of deep learning, RL theory, generalization.',
+						url: 'https://shamulent.github.io',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Martin Wattenberg & Fernanda Viégas (Harvard SEAS)',
+						description: 'Interpretability, mechanistic understanding, and visualization of model behavior.',
+						url: 'https://insightplusinteraction.com',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Interpretability']
+					},
+					{
+						name: 'Hima Lakkaraju (Harvard SEAS / HBS)',
+						description: 'Trustworthy ML, explanations, interpretability, model evaluation.',
+						url: 'https://himalakkaraju.github.io',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Interpretability', 'Evaluations']
+					},
+					{
+						name: 'David Parkes (SEAS Dean)',
+						description: 'Multi-agent systems, mechanism design, ML/economics.',
+						url: 'https://parkes.seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Cynthia Dwork (Harvard SEAS)',
+						description: 'Differential privacy, algorithmic fairness, foundations.',
+						url: 'https://dwork.seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Finale Doshi-Velez (Harvard SEAS)',
+						description: 'Interpretability, RL, probabilistic methods.',
+						url: 'https://finale.seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Interpretability']
+					},
+					{
+						name: 'Yaron Singer (Harvard SEAS)',
+						description: 'Adversarial robustness and ML security.',
+						url: 'https://www.yaronsinger.com',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Adversarial']
+					},
+					{
+						name: 'Milind Tambe (Harvard SEAS, CRCS)',
+						description: 'Multi-agent systems, AI for social impact.',
+						url: 'https://teamcore.seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Nada Amin (Harvard SEAS)',
+						description: 'Programming languages, formal verification, neuro-symbolic methods.',
+						url: 'https://namin.seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Yilun Du (Kempner / Harvard SEAS)',
+						description: 'Generative models, world models, robotics.',
+						url: 'https://yilundu.github.io',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					}
+				]
+			},
+			{
+				id: 'harvard-orgs',
+				title: 'Harvard Institutes & Centers',
+				items: [
+					{
+						name: 'Kempner Institute',
+						description:
+							'Houses one of the largest academic AI clusters (~1.79 exaFLOPS). Programs: KURE (term-time undergrad), KRANIUM (10-week summer), Graduate Fellowship, Accelerator Awards.',
+						url: 'https://kempnerinstitute.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Boston', 'Undergrad-friendly']
+					},
+					{
+						name: 'KURE — Kempner Undergraduate Research Experience',
+						description: 'Term-time funding for Harvard undergraduates doing AI research.',
+						url: 'https://kempnerinstitute.harvard.edu/about/training-program/kure/',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Undergrad-friendly', 'Paid']
+					},
+					{
+						name: 'KRANIUM Summer Program',
+						description: '10-week residential summer undergraduate program at the Kempner Institute.',
+						url: 'https://kempnerinstitute.harvard.edu/about/training-program/kranium/',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Boston', 'Undergrad-friendly', 'Paid']
+					},
+					{
+						name: 'Berkman Klein Center',
+						description: 'AI ethics, policy, governance, and internet law at Harvard.',
+						url: 'https://cyber.harvard.edu',
+						pillars: ['local', 'policy'],
+						tags: ['Harvard', 'Law']
+					},
+					{
+						name: 'Belfer Center (HKS)',
+						description: 'Tech policy and national security at the Harvard Kennedy School.',
+						url: 'https://www.belfercenter.org',
+						pillars: ['local', 'policy'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Berkman Klein Fellowships',
+						description: 'Fellowships at the Berkman Klein Center for Internet & Society.',
+						url: 'https://cyber.harvard.edu/getinvolved/fellowships',
+						pillars: ['local', 'policy'],
+						tags: ['Harvard', 'Law']
+					}
+				]
+			}
+		]
+	},
+	{
+		id: 'career-capital',
+		navLabel: 'Career capital',
+		title: 'Part IX — Career Capital and Practical Considerations',
+		icon: 'fa-solid fa-route',
+		sections: [
+			{
+				id: 'phds',
+				title: 'ML PhDs Strong on Safety',
+				intro: 'The Vitalik Buterin PhD Fellowship can fully fund safety-focused PhDs at any of these.',
+				items: [
+					{
+						name: 'CHAI / BAIR (UC Berkeley)',
+						description: 'Top university lab pairing for safety-focused PhDs.',
+						url: 'https://humancompatible.ai',
+						pillars: ['technical'],
+						tags: ['US', 'Alignment']
+					},
+					{
+						name: 'MIT (Algorithmic Alignment Group, CDML, CSAIL)',
+						description: 'Hadfield-Menell, Madry, Andreas, Isola.',
+						url: 'https://algorithmicalignment.csail.mit.edu',
+						pillars: ['local', 'technical'],
+						tags: ['MIT', 'Boston']
+					},
+					{
+						name: 'Harvard SEAS / Kempner',
+						description: 'Barak, Kakade, Doshi-Velez, Wattenberg/Viégas, Lakkaraju.',
+						url: 'https://seas.harvard.edu',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard', 'Boston']
+					},
+					{
+						name: 'Stanford HAI',
+						description: 'Stanford Institute for Human-Centered AI.',
+						url: 'https://hai.stanford.edu',
+						pillars: ['technical', 'policy'],
+						tags: ['US']
+					},
+					{
+						name: 'CMU Machine Learning',
+						description: 'Carnegie Mellon ML department.',
+						url: 'https://www.ml.cmu.edu',
+						pillars: ['technical'],
+						tags: ['US']
+					},
+					{
+						name: 'Princeton CITP',
+						description: 'Center for Information Technology Policy.',
+						url: 'https://citp.princeton.edu',
+						pillars: ['policy', 'technical'],
+						tags: ['US']
+					},
+					{
+						name: 'NYU Center for Data Science',
+						description: 'Strong group for ML PhD students.',
+						url: 'https://cds.nyu.edu',
+						pillars: ['technical'],
+						tags: ['US']
+					},
+					{
+						name: 'Cambridge / Oxford',
+						description: 'University of Cambridge CS and University of Oxford CS — including the Krueger group.',
+						url: 'https://www.cl.cam.ac.uk',
+						pillars: ['technical'],
+						tags: ['UK']
+					},
+					{
+						name: 'Mila',
+						description: 'Quebec AI Institute.',
+						url: 'https://mila.quebec',
+						pillars: ['technical'],
+						tags: ['Global']
+					}
+				]
+			},
+			{
+				id: 'mpp',
+				title: 'Law School and MPP / MPA Programs',
+				intro:
+					'Top law schools for AI policy: Yale, Harvard, Stanford, Georgetown, NYU, Chicago, Penn, Columbia. Look for clinics or centers on AI/tech.',
+				items: [
+					{
+						name: 'Harvard Kennedy School (Belfer Center)',
+						description: 'MPP/MPA programs strong on tech policy.',
+						url: 'https://www.hks.harvard.edu',
+						pillars: ['policy', 'local'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'Princeton SPIA / CITP',
+						description: 'School of Public and International Affairs.',
+						url: 'https://citp.princeton.edu',
+						pillars: ['policy'],
+						tags: ['US']
+					},
+					{
+						name: 'Stanford Public Policy / FSI',
+						description: 'Stanford public policy and Freeman Spogli Institute.',
+						url: 'https://publicpolicy.stanford.edu',
+						pillars: ['policy'],
+						tags: ['US']
+					},
+					{
+						name: 'Georgetown McCourt',
+						description: 'Public policy school adjacent to CSET.',
+						url: 'https://mccourt.georgetown.edu',
+						pillars: ['policy'],
+						tags: ['US']
+					},
+					{
+						name: 'CMU Heinz College',
+						description: 'Public policy school with technical focus.',
+						url: 'https://www.heinz.cmu.edu',
+						pillars: ['policy'],
+						tags: ['US']
+					},
+					{
+						name: 'Oxford Blavatnik / GovAI',
+						description: 'School of Government home to GovAI.',
+						url: 'https://www.bsg.ox.ac.uk',
+						pillars: ['policy'],
+						tags: ['UK']
+					},
+					{
+						name: 'Cambridge POLIS / CFI',
+						description: 'POLIS plus Centre for the Future of Intelligence.',
+						url: 'https://www.polis.cam.ac.uk',
+						pillars: ['policy'],
+						tags: ['UK']
+					}
+				]
+			},
+			{
+				id: 'clearance',
+				title: 'Security Clearance Pathways',
+				items: [
+					{
+						name: 'RAND CAST Fellowship',
+						description: 'Cleared AI security and technology fellowship.',
+						url: 'https://www.rand.org/global-and-emerging-risks/centers/ai-security-and-technology/fellows.html',
+						pillars: ['policy', 'technical'],
+						tags: ['US', 'Paid']
+					},
+					{
+						name: 'MITRE',
+						description: 'Federally-funded R&D center.',
+						url: 'https://www.mitre.org/careers',
+						pillars: ['policy', 'technical'],
+						tags: ['US']
+					},
+					{
+						name: 'MIT Lincoln Laboratory',
+						description: 'Cleared AI work for national security.',
+						url: 'https://www.ll.mit.edu/careers',
+						pillars: ['local', 'technical', 'policy'],
+						tags: ['MIT', 'Boston', 'US']
+					},
+					{
+						name: 'CAISI / NIST',
+						description: 'Standards and unclassified national-security evaluations.',
+						url: 'https://www.nist.gov/caisi',
+						pillars: ['technical', 'policy'],
+						tags: ['US']
+					},
+					{
+						name: 'DoD Joint AI Center / CDAO',
+						description: 'Chief Digital and AI Office in the Department of Defense.',
+						url: 'https://www.ai.mil',
+						pillars: ['policy', 'technical'],
+						tags: ['US']
+					},
+					{
+						name: 'Horizon Fellowship Executive Branch Track',
+						description: 'Horizon track for the executive branch.',
+						url: 'https://horizonpublicservice.org',
+						pillars: ['policy'],
+						tags: ['US']
+					}
+				]
+			},
+			{
+				id: 'advising',
+				title: '1-1 Career Advising',
+				items: [
+					{
+						name: '80,000 Hours Advising',
+						description: 'Free 1-1 career advising. The strongest default option.',
+						url: 'https://80000hours.org/speak-with-us/',
+						pillars: ['fieldbuilding', 'technical', 'policy', 'comms'],
+						tags: ['Top Pick']
+					},
+					{
+						name: 'Probably Good',
+						description: 'Career advising for high-impact paths.',
+						url: 'https://probablygood.org',
+						pillars: ['fieldbuilding']
+					},
+					{
+						name: 'Successif',
+						description: 'Mid-career switcher advising.',
+						url: 'https://www.successif.org',
+						pillars: ['fieldbuilding']
+					},
+					{
+						name: 'AI Safety Quest',
+						description: 'Volunteer-staffed advising for newcomers.',
+						url: 'https://aisafety.quest',
+						pillars: ['fieldbuilding']
+					},
+					{
+						name: 'Animal Advocacy Careers',
+						description: 'Career advising for animal advocacy work (some AI overlap).',
+						url: 'https://www.animaladvocacycareers.org',
+						pillars: ['fieldbuilding']
+					},
+					{
+						name: 'Magnify Mentoring',
+						description: 'Mentoring for women, non-binary, and trans people in EA/AI safety.',
+						url: 'https://www.magnifymentoring.org',
+						pillars: ['fieldbuilding', 'technical']
+					},
+					{
+						name: 'BlueDot Career Support',
+						description: 'Career help for BlueDot course alumni.',
+						url: 'https://bluedot.org',
+						pillars: ['fieldbuilding']
+					}
+				]
 			}
 		]
 	},
 	{
 		id: 'technical',
+		navLabel: 'Technical',
 		title: 'Part II — Technical AI Safety',
 		icon: 'fa-solid fa-microchip',
 		intro:
@@ -812,11 +1471,88 @@ export const PARTS: Part[] = [
 				]
 			},
 			{
-				id: 'tech-fellowships',
-				title: 'Major Technical Fellowships and Training Programs',
-				intro:
-					'Acceptance rates at the most selective programs (MATS, Pivotal, Astra, Anthropic Fellows) are 1–5%. Apply to several — acceptance is heavily influenced by signal and fit, not just credentials.',
+				id: 'compute',
+				title: 'Compute and Research Tooling for Students',
 				items: [
+					{
+						name: 'Kempner AI Cluster',
+						description: '~1,144 GPUs available to Harvard researchers.',
+						url: 'https://kempnerinstitute.harvard.edu/research/aicluster/',
+						pillars: ['local', 'technical'],
+						tags: ['Harvard']
+					},
+					{
+						name: 'MIT SuperCloud',
+						description: 'High-performance computing for MIT students.',
+						url: 'https://supercloud.mit.edu',
+						pillars: ['local', 'technical'],
+						tags: ['MIT']
+					},
+					{
+						name: 'CAIS Compute Cluster',
+						description: 'Compute access program from the Center for AI Safety.',
+						url: 'https://www.safe.ai/work/compute-cluster',
+						pillars: ['technical']
+					},
+					{
+						name: 'Coefficient Giving Compute Grants',
+						description: 'Compute grants via the Technical AI Safety RFP.',
+						url: 'https://www.openphilanthropy.org/request-for-proposals-technical-ai-safety-research/',
+						pillars: ['technical']
+					},
+					{
+						name: 'Schmidt Sciences Safety Science',
+						description: 'Funding for safety-focused research, including compute.',
+						url: 'https://www.schmidtsciences.org/safety-science/',
+						pillars: ['technical']
+					},
+					{
+						name: 'Vast.ai',
+						description: 'Cheap on-demand GPU rental.',
+						url: 'https://vast.ai',
+						pillars: ['technical']
+					},
+					{
+						name: 'Lambda Labs',
+						description: 'GPU cloud and rentals.',
+						url: 'https://lambda.ai',
+						pillars: ['technical']
+					},
+					{
+						name: 'RunPod',
+						description: 'On-demand GPU cloud.',
+						url: 'https://runpod.io',
+						pillars: ['technical']
+					},
+					{
+						name: 'Together.ai',
+						description: 'Inference and training infrastructure.',
+						url: 'https://together.ai',
+						pillars: ['technical']
+					},
+					{
+						name: 'Manifund "AI Safety Compute"',
+						description: 'Manifund regranting program for compute.',
+						url: 'https://manifund.org',
+						pillars: ['technical']
+					}
+				]
+			}
+		]
+	},
+	{
+		id: 'tech-fellowships',
+		navLabel: 'Tech fellowships',
+		title: 'Major Technical Fellowships and Training Programs',
+		icon: 'fa-solid fa-user-graduate',
+		intro:
+			'Acceptance rates at the most selective programs (MATS, Pivotal, Astra, Anthropic Fellows) are 1–5%. Apply to several — acceptance is heavily influenced by signal and fit, not just credentials.',
+		sections: [
+			{
+				id: 'tech-fellowships-list',
+				title: 'Programs',
+				items: [
+
 					{
 						name: 'MATS — ML Alignment & Theory Scholars',
 						description:
@@ -938,135 +1674,12 @@ export const PARTS: Part[] = [
 						tags: ['UK', 'US', 'Undergrad-friendly']
 					}
 				]
-			},
-			{
-				id: 'self-study',
-				title: 'Self-Study Curricula (Free, Online)',
-				items: [
-					{
-						name: 'BlueDot Impact AI Safety Fundamentals',
-						description: 'AGI Strategy, Technical AI Safety, AI Governance, and Biosecurity courses. Best on-ramp.',
-						url: 'https://aisafetyfundamentals.com',
-						pillars: ['technical', 'policy'],
-						tags: ['Top Pick', 'Remote', 'Undergrad-friendly']
-					},
-					{
-						name: 'ARENA Curriculum (free)',
-						description: 'Self-paced version of the ARENA technical bootcamp.',
-						url: 'https://learn.arena.education',
-						pillars: ['technical'],
-						tags: ['Remote']
-					},
-					{
-						name: "Intro to ML Safety + Hendrycks's Textbook",
-						description: 'CAIS course plus the free Introduction to AI Safety, Ethics, and Society textbook.',
-						url: 'https://course.mlsafety.org',
-						pillars: ['technical']
-					},
-					{
-						name: 'Alignment Forum — Sequences',
-						description: 'Foundational technical AI safety writing.',
-						url: 'https://www.alignmentforum.org/library',
-						pillars: ['technical']
-					},
-					{
-						name: 'AI Safety Atlas Self-Study',
-						description: 'Curated self-study path.',
-						url: 'https://aisafety.com/self-study',
-						pillars: ['technical', 'policy']
-					},
-					{
-						name: 'Stampy.ai / aisafety.info',
-						description: 'Q&A-style introduction to AI safety.',
-						url: 'https://aisafety.info',
-						pillars: ['technical', 'policy']
-					},
-					{
-						name: 'AI Safety Collab Hub',
-						description: 'Collaborative self-study hub.',
-						url: 'https://aisafetycollab.com',
-						pillars: ['technical']
-					},
-					{
-						name: "Boaz Barak's CS 2881r Lectures",
-						description: 'Course materials and YouTube recordings.',
-						url: 'https://boazbk.github.io/mltheoryseminar',
-						pillars: ['technical']
-					}
-				]
-			},
-			{
-				id: 'compute',
-				title: 'Compute and Research Tooling for Students',
-				items: [
-					{
-						name: 'Kempner AI Cluster',
-						description: '~1,144 GPUs available to Harvard researchers.',
-						url: 'https://kempnerinstitute.harvard.edu/research/aicluster/',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'MIT SuperCloud',
-						description: 'High-performance computing for MIT students.',
-						url: 'https://supercloud.mit.edu',
-						pillars: ['local', 'technical'],
-						tags: ['MIT']
-					},
-					{
-						name: 'CAIS Compute Cluster',
-						description: 'Compute access program from the Center for AI Safety.',
-						url: 'https://www.safe.ai/work/compute-cluster',
-						pillars: ['technical']
-					},
-					{
-						name: 'Coefficient Giving Compute Grants',
-						description: 'Compute grants via the Technical AI Safety RFP.',
-						url: 'https://www.openphilanthropy.org/request-for-proposals-technical-ai-safety-research/',
-						pillars: ['technical']
-					},
-					{
-						name: 'Schmidt Sciences Safety Science',
-						description: 'Funding for safety-focused research, including compute.',
-						url: 'https://www.schmidtsciences.org/safety-science/',
-						pillars: ['technical']
-					},
-					{
-						name: 'Vast.ai',
-						description: 'Cheap on-demand GPU rental.',
-						url: 'https://vast.ai',
-						pillars: ['technical']
-					},
-					{
-						name: 'Lambda Labs',
-						description: 'GPU cloud and rentals.',
-						url: 'https://lambda.ai',
-						pillars: ['technical']
-					},
-					{
-						name: 'RunPod',
-						description: 'On-demand GPU cloud.',
-						url: 'https://runpod.io',
-						pillars: ['technical']
-					},
-					{
-						name: 'Together.ai',
-						description: 'Inference and training infrastructure.',
-						url: 'https://together.ai',
-						pillars: ['technical']
-					},
-					{
-						name: 'Manifund "AI Safety Compute"',
-						description: 'Manifund regranting program for compute.',
-						url: 'https://manifund.org',
-						pillars: ['technical']
-					}
-				]
 			}
 		]
 	},
 	{
 		id: 'policy',
+		navLabel: 'Policy',
 		title: 'Part III — AI Policy and Governance',
 		icon: 'fa-solid fa-landmark',
 		sections: [
@@ -1475,6 +2088,7 @@ export const PARTS: Part[] = [
 	},
 	{
 		id: 'fieldbuilding',
+		navLabel: 'Field building',
 		title: 'Part IV — Field-Building and Event Organizing',
 		icon: 'fa-solid fa-people-group',
 		intro:
@@ -1625,6 +2239,7 @@ export const PARTS: Part[] = [
 	},
 	{
 		id: 'comms',
+		navLabel: 'Comms',
 		title: 'Part V — Public Communications, Writing, and Journalism',
 		icon: 'fa-solid fa-bullhorn',
 		sections: [
@@ -1668,448 +2283,8 @@ export const PARTS: Part[] = [
 		]
 	},
 	{
-		id: 'reading',
-		title: 'Part VI — Newsletters, Podcasts, Books, Reading',
-		icon: 'fa-solid fa-book-open',
-		intro: 'Subscribe to 4–6 of these to follow the field.',
-		sections: [
-			{
-				id: 'newsletters',
-				title: 'Best Single-Stop Weekly News',
-				items: [
-					{
-						name: 'Transformer News',
-						description: 'Best single-stop weekly news on AI safety. Shakeel Hashim.',
-						url: 'https://www.transformernews.ai',
-						pillars: ['policy', 'technical'],
-						tags: ['Top Pick']
-					},
-					{
-						name: "Don't Worry About the Vase",
-						description: 'Comprehensive weekly AI news commentary by Zvi Mowshowitz.',
-						url: 'https://thezvi.substack.com',
-						pillars: ['policy', 'technical', 'comms'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'AI Safety Newsletter (CAIS)',
-						description: 'Curated weekly summary from the Center for AI Safety.',
-						url: 'https://newsletter.safe.ai',
-						pillars: ['technical', 'policy'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'ML Safety Newsletter',
-						description: 'Technical ML safety newsletter from Hendrycks.',
-						url: 'https://newsletter.mlsafety.org',
-						pillars: ['technical']
-					},
-					{
-						name: '80,000 Hours Newsletter',
-						description: 'Career-focused newsletter from 80,000 Hours.',
-						url: 'https://80000hours.org/newsletter/',
-						pillars: ['fieldbuilding']
-					}
-				]
-			},
-			{
-				id: 'newsletters-tech',
-				title: 'Technical and Research-Focused',
-				items: [
-					{
-						name: 'Import AI',
-						description: 'Jack Clark — research-focused weekly AI news.',
-						url: 'https://importai.substack.com',
-						pillars: ['technical'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'AI Snake Oil',
-						description: 'Narayanan & Kapoor on AI hype and reality.',
-						url: 'https://www.aisnakeoil.com',
-						pillars: ['comms']
-					},
-					{
-						name: 'Alignment Forum',
-						description: 'Technical AI alignment discussion forum.',
-						url: 'https://www.alignmentforum.org',
-						pillars: ['technical'],
-						tags: ['Alignment']
-					},
-					{
-						name: 'LessWrong',
-						description: 'Rationalist/safety community discussion site.',
-						url: 'https://www.lesswrong.com',
-						pillars: ['technical', 'comms']
-					},
-					{
-						name: 'AI Frontiers',
-						description: 'Frontier-AI-focused newsletter.',
-						url: 'https://aifrontiers.com',
-						pillars: ['technical']
-					},
-					{
-						name: 'AI Evaluation Newsletter',
-						description: 'Focused on evaluations and dangerous-capability testing.',
-						url: 'https://aievaluation.substack.com',
-						pillars: ['technical'],
-						tags: ['Evaluations']
-					}
-				]
-			},
-			{
-				id: 'newsletters-policy',
-				title: 'Policy Newsletters',
-				items: [
-					{
-						name: 'Hyperdimensional',
-						description: 'Dean W. Ball on AI policy.',
-						url: 'https://www.hyperdimensional.co',
-						pillars: ['policy'],
-						tags: ['Top Pick', 'US']
-					},
-					{
-						name: 'Rising Tide',
-						description: 'Helen Toner on AI policy.',
-						url: 'https://helentoner.substack.com',
-						pillars: ['policy'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'ChinaTalk',
-						description: 'Jordan Schneider on China and tech.',
-						url: 'https://www.chinatalk.media',
-						pillars: ['policy']
-					},
-					{
-						name: 'Navigating AI Risks',
-						description: 'AI risk-focused newsletter.',
-						url: 'https://www.navigatingrisks.ai',
-						pillars: ['policy']
-					},
-					{
-						name: 'AI Lab Watch',
-						description: "Zach Stein-Perlman's tracker of frontier-lab safety practices.",
-						url: 'https://ailabwatch.org',
-						pillars: ['policy']
-					},
-					{
-						name: 'Obsolete',
-						description: 'Garrison Lovely on AI and the future.',
-						url: 'https://www.garrisonlovely.com',
-						pillars: ['comms', 'policy']
-					}
-				]
-			},
-			{
-				id: 'newsletters-strategy',
-				title: 'Strategy and Forecasting',
-				items: [
-					{
-						name: 'AI 2027',
-						description: 'AI Futures Project scenario forecast.',
-						url: 'https://ai-2027.com',
-						pillars: ['technical', 'policy'],
-						tags: ['Strategy']
-					},
-					{
-						name: 'Astral Codex Ten',
-						description: 'Scott Alexander on AI, science, and rationality.',
-						url: 'https://www.astralcodexten.com',
-						pillars: ['comms', 'technical']
-					},
-					{
-						name: 'Peter Wildeford',
-						description: 'Strategy, forecasting, and AI safety community updates.',
-						url: 'https://blog.peterwildeford.com',
-						pillars: ['policy', 'fieldbuilding']
-					},
-					{
-						name: 'Miles Brundage',
-						description: 'Former OpenAI on AI policy and governance.',
-						url: 'https://milesbrundage.substack.com',
-						pillars: ['policy']
-					}
-				]
-			},
-			{
-				id: 'podcasts',
-				title: 'Podcasts',
-				items: [
-					{
-						name: '80,000 Hours Podcast',
-						description: 'Long-form interviews on impactful careers.',
-						url: 'https://80000hours.org/podcast/',
-						pillars: ['fieldbuilding', 'technical', 'policy'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'Dwarkesh Podcast',
-						description: 'Long, technical interviews with AI researchers.',
-						url: 'https://www.dwarkesh.com',
-						pillars: ['technical', 'policy'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'AXRP',
-						description: 'Daniel Filan — AI X-risk Research Podcast. Technical alignment interviews.',
-						url: 'https://axrp.net',
-						pillars: ['technical'],
-						tags: ['Alignment', 'Top Pick']
-					},
-					{
-						name: 'The Cognitive Revolution',
-						description: 'Nathan Labenz — interviews and analysis.',
-						url: 'https://www.cognitiverevolution.ai',
-						pillars: ['technical', 'policy']
-					},
-					{
-						name: 'Doom Debates',
-						description: 'Liron Shapira — debates on AI x-risk.',
-						url: 'https://doomdebates.com',
-						pillars: ['comms']
-					},
-					{
-						name: 'The Inside View',
-						description: 'AI safety interviews.',
-						url: 'https://theinsideview.ai',
-						pillars: ['technical']
-					},
-					{
-						name: 'FLI Podcast',
-						description: 'Future of Life Institute podcast.',
-						url: 'https://futureoflife.org/podcasts/',
-						pillars: ['technical', 'policy']
-					},
-					{
-						name: 'Emerging Tech Policy Podcast',
-						description: 'Horizon-run podcast on emerging tech policy careers.',
-						url: 'https://emergingtechpolicy.org/podcast/',
-						pillars: ['policy']
-					},
-					{
-						name: 'CSIS AI Policy Podcast',
-						description: 'Policy podcast from CSIS.',
-						url: 'https://www.csis.org/podcasts',
-						pillars: ['policy']
-					},
-					{
-						name: 'Lawfare Podcast',
-						description: 'National security and law podcast — frequent AI coverage.',
-						url: 'https://www.lawfaremedia.org/podcasts',
-						pillars: ['policy'],
-						tags: ['Law']
-					}
-				]
-			},
-			{
-				id: 'books',
-				title: 'Books',
-				items: [
-					{
-						name: 'The Precipice',
-						description: 'Toby Ord on existential risks. Foundational.',
-						url: 'https://theprecipice.com',
-						pillars: ['policy', 'technical'],
-						tags: ['Strategy']
-					},
-					{
-						name: 'Superintelligence',
-						description: 'Nick Bostrom — foundational text on advanced AI risks.',
-						url: 'https://www.amazon.com/Superintelligence-Dangers-Strategies-Nick-Bostrom/dp/0198739834',
-						pillars: ['technical', 'policy'],
-						tags: ['Strategy']
-					},
-					{
-						name: 'Human Compatible',
-						description: 'Stuart Russell on building safer AI.',
-						url: 'https://en.wikipedia.org/wiki/Human_Compatible',
-						pillars: ['technical'],
-						tags: ['Alignment']
-					},
-					{
-						name: 'The Alignment Problem',
-						description: 'Brian Christian — accessible introduction to alignment.',
-						url: 'https://brianchristian.org/the-alignment-problem/',
-						pillars: ['technical'],
-						tags: ['Alignment']
-					},
-					{
-						name: 'If Anyone Builds It, Everyone Dies',
-						description: 'Yudkowsky & Soares (2025).',
-						url: 'https://ifanyonebuildsit.com',
-						pillars: ['comms']
-					},
-					{
-						name: 'Introduction to AI Safety, Ethics, and Society',
-						description: 'Hendrycks textbook (free PDF).',
-						url: 'https://www.aisafetybook.com',
-						pillars: ['technical'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'The Coming Wave',
-						description: 'Mustafa Suleyman on the future of AI and biotech.',
-						url: 'https://the-coming-wave.com/',
-						pillars: ['policy']
-					},
-					{
-						name: 'Power and Progress',
-						description: 'Acemoglu & Johnson on technology and shared prosperity.',
-						url: 'https://shapingwork.mit.edu/power-and-progress/',
-						pillars: ['policy']
-					}
-				]
-			},
-			{
-				id: 'papers',
-				title: 'Foundational Papers and Reports',
-				items: [
-					{
-						name: 'Concrete Problems in AI Safety',
-						description: 'Amodei et al., 2016. The canonical introduction to technical AI safety.',
-						url: 'https://arxiv.org/abs/1606.06565',
-						pillars: ['technical'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'Unsolved Problems in ML Safety',
-						description: 'Hendrycks et al., 2021.',
-						url: 'https://arxiv.org/abs/2109.13916',
-						pillars: ['technical']
-					},
-					{
-						name: "DeepMind's Approach to Technical AGI Safety",
-						description: 'Google DeepMind\'s published safety agenda.',
-						url: 'https://deepmind.google/discover/blog/taking-a-responsible-path-to-agi/',
-						pillars: ['technical']
-					},
-					{
-						name: "Anthropic's Recommended Research Directions",
-						description: "Curated alignment research agenda from Anthropic's alignment team.",
-						url: 'https://alignment.anthropic.com/2025/recommended-directions/',
-						pillars: ['technical'],
-						tags: ['Alignment']
-					},
-					{
-						name: 'Coefficient Giving Technical AI Safety RFP',
-						description: 'RFP outlining priority technical safety research areas.',
-						url: 'https://www.openphilanthropy.org/request-for-proposals-technical-ai-safety-research/',
-						pillars: ['technical']
-					},
-					{
-						name: 'International AI Safety Report (2025/2026)',
-						description: 'Bengio et al. International expert assessment of AI risks.',
-						url: 'https://www.gov.uk/government/publications/international-ai-safety-report-2025',
-						pillars: ['policy', 'technical'],
-						tags: ['Strategy']
-					}
-				]
-			}
-		]
-	},
-	{
-		id: 'events',
-		title: 'Part VII — Major Conferences and Events',
-		icon: 'fa-solid fa-calendar-days',
-		sections: [
-			{
-				id: 'eag',
-				title: 'EA Globals',
-				items: [
-					{
-						name: 'EA Global',
-						description: 'EAG conferences (Bay Area, London, NYC) plus regional EAGxs. Strong AI safety presence.',
-						url: 'https://www.eaglobal.org',
-						pillars: ['fieldbuilding', 'technical', 'policy'],
-						tags: ['Top Pick']
-					}
-				]
-			},
-			{
-				id: 'tech-conferences',
-				title: 'Technical Safety Conferences and Workshops',
-				items: [
-					{
-						name: 'NeurIPS',
-						description: 'Major ML venue. Workshops include Regulatable ML, SoLaR, SafeML, Safe Generative AI, Safe and Trustworthy Agentic AI.',
-						url: 'https://neurips.cc',
-						pillars: ['technical']
-					},
-					{
-						name: 'ICML',
-						description: 'International Conference on Machine Learning.',
-						url: 'https://icml.cc',
-						pillars: ['technical']
-					},
-					{
-						name: 'ICLR',
-						description: 'International Conference on Learning Representations.',
-						url: 'https://iclr.cc',
-						pillars: ['technical']
-					},
-					{
-						name: 'AAAI',
-						description: 'AAAI Conference on Artificial Intelligence.',
-						url: 'https://aaai.org',
-						pillars: ['technical']
-					},
-					{
-						name: 'FAccT',
-						description: 'Conference on Fairness, Accountability, and Transparency.',
-						url: 'https://facctconference.org',
-						pillars: ['technical', 'policy']
-					},
-					{
-						name: 'AIES',
-						description: 'AAAI/ACM Conference on AI, Ethics, and Society.',
-						url: 'https://www.aies-conference.com',
-						pillars: ['policy']
-					},
-					{
-						name: 'ControlConf / FAR.AI Alignment Workshops',
-						description: 'Technical-heavy workshops on AI control and alignment.',
-						url: 'https://far.ai/events',
-						pillars: ['technical'],
-						tags: ['Control']
-					},
-					{
-						name: 'The Curve / Constellation Events',
-						description: 'Constellation-organized AI strategy conference.',
-						url: 'https://www.thecurve-conference.com',
-						pillars: ['fieldbuilding', 'policy']
-					},
-					{
-						name: 'AI Security Forum',
-						description: 'Annual AI security event.',
-						url: 'https://www.aisecurityforum.org',
-						pillars: ['technical', 'policy']
-					}
-				]
-			},
-			{
-				id: 'policy-conferences',
-				title: 'Policy Conferences',
-				items: [
-					{
-						name: 'IASEAI',
-						description: 'International Association for Safe and Ethical AI.',
-						url: 'https://www.iaseai.org',
-						pillars: ['policy']
-					},
-					{
-						name: 'AI Action Summits',
-						description: 'Successor to the UK/Paris AI Safety Summits.',
-						url: 'https://www.aiactionsummit.com',
-						pillars: ['policy'],
-						tags: ['Global']
-					}
-				]
-			}
-		]
-	},
-	{
 		id: 'funding',
+		navLabel: 'Funding',
 		title: 'Part VIII — Funding for Early-Career Projects',
 		icon: 'fa-solid fa-sack-dollar',
 		sections: [
@@ -2203,237 +2378,6 @@ export const PARTS: Part[] = [
 			}
 		]
 	},
-	{
-		id: 'career-capital',
-		title: 'Part IX — Career Capital and Practical Considerations',
-		icon: 'fa-solid fa-route',
-		sections: [
-			{
-				id: 'phds',
-				title: 'ML PhDs Strong on Safety',
-				intro: 'The Vitalik Buterin PhD Fellowship can fully fund safety-focused PhDs at any of these.',
-				items: [
-					{
-						name: 'CHAI / BAIR (UC Berkeley)',
-						description: 'Top university lab pairing for safety-focused PhDs.',
-						url: 'https://humancompatible.ai',
-						pillars: ['technical'],
-						tags: ['US', 'Alignment']
-					},
-					{
-						name: 'MIT (Algorithmic Alignment Group, CDML, CSAIL)',
-						description: 'Hadfield-Menell, Madry, Andreas, Isola.',
-						url: 'https://algorithmicalignment.csail.mit.edu',
-						pillars: ['local', 'technical'],
-						tags: ['MIT', 'Boston']
-					},
-					{
-						name: 'Harvard SEAS / Kempner',
-						description: 'Barak, Kakade, Doshi-Velez, Wattenberg/Viégas, Lakkaraju.',
-						url: 'https://seas.harvard.edu',
-						pillars: ['local', 'technical'],
-						tags: ['Harvard', 'Boston']
-					},
-					{
-						name: 'Stanford HAI',
-						description: 'Stanford Institute for Human-Centered AI.',
-						url: 'https://hai.stanford.edu',
-						pillars: ['technical', 'policy'],
-						tags: ['US']
-					},
-					{
-						name: 'CMU Machine Learning',
-						description: 'Carnegie Mellon ML department.',
-						url: 'https://www.ml.cmu.edu',
-						pillars: ['technical'],
-						tags: ['US']
-					},
-					{
-						name: 'Princeton CITP',
-						description: 'Center for Information Technology Policy.',
-						url: 'https://citp.princeton.edu',
-						pillars: ['policy', 'technical'],
-						tags: ['US']
-					},
-					{
-						name: 'NYU Center for Data Science',
-						description: 'Strong group for ML PhD students.',
-						url: 'https://cds.nyu.edu',
-						pillars: ['technical'],
-						tags: ['US']
-					},
-					{
-						name: 'Cambridge / Oxford',
-						description: 'University of Cambridge CS and University of Oxford CS — including the Krueger group.',
-						url: 'https://www.cl.cam.ac.uk',
-						pillars: ['technical'],
-						tags: ['UK']
-					},
-					{
-						name: 'Mila',
-						description: 'Quebec AI Institute.',
-						url: 'https://mila.quebec',
-						pillars: ['technical'],
-						tags: ['Global']
-					}
-				]
-			},
-			{
-				id: 'mpp',
-				title: 'Law School and MPP / MPA Programs',
-				intro:
-					'Top law schools for AI policy: Yale, Harvard, Stanford, Georgetown, NYU, Chicago, Penn, Columbia. Look for clinics or centers on AI/tech.',
-				items: [
-					{
-						name: 'Harvard Kennedy School (Belfer Center)',
-						description: 'MPP/MPA programs strong on tech policy.',
-						url: 'https://www.hks.harvard.edu',
-						pillars: ['policy', 'local'],
-						tags: ['Harvard']
-					},
-					{
-						name: 'Princeton SPIA / CITP',
-						description: 'School of Public and International Affairs.',
-						url: 'https://citp.princeton.edu',
-						pillars: ['policy'],
-						tags: ['US']
-					},
-					{
-						name: 'Stanford Public Policy / FSI',
-						description: 'Stanford public policy and Freeman Spogli Institute.',
-						url: 'https://publicpolicy.stanford.edu',
-						pillars: ['policy'],
-						tags: ['US']
-					},
-					{
-						name: 'Georgetown McCourt',
-						description: 'Public policy school adjacent to CSET.',
-						url: 'https://mccourt.georgetown.edu',
-						pillars: ['policy'],
-						tags: ['US']
-					},
-					{
-						name: 'CMU Heinz College',
-						description: 'Public policy school with technical focus.',
-						url: 'https://www.heinz.cmu.edu',
-						pillars: ['policy'],
-						tags: ['US']
-					},
-					{
-						name: 'Oxford Blavatnik / GovAI',
-						description: 'School of Government home to GovAI.',
-						url: 'https://www.bsg.ox.ac.uk',
-						pillars: ['policy'],
-						tags: ['UK']
-					},
-					{
-						name: 'Cambridge POLIS / CFI',
-						description: 'POLIS plus Centre for the Future of Intelligence.',
-						url: 'https://www.polis.cam.ac.uk',
-						pillars: ['policy'],
-						tags: ['UK']
-					}
-				]
-			},
-			{
-				id: 'clearance',
-				title: 'Security Clearance Pathways',
-				items: [
-					{
-						name: 'RAND CAST Fellowship',
-						description: 'Cleared AI security and technology fellowship.',
-						url: 'https://www.rand.org/global-and-emerging-risks/centers/ai-security-and-technology/fellows.html',
-						pillars: ['policy', 'technical'],
-						tags: ['US', 'Paid']
-					},
-					{
-						name: 'MITRE',
-						description: 'Federally-funded R&D center.',
-						url: 'https://www.mitre.org/careers',
-						pillars: ['policy', 'technical'],
-						tags: ['US']
-					},
-					{
-						name: 'MIT Lincoln Laboratory',
-						description: 'Cleared AI work for national security.',
-						url: 'https://www.ll.mit.edu/careers',
-						pillars: ['local', 'technical', 'policy'],
-						tags: ['MIT', 'Boston', 'US']
-					},
-					{
-						name: 'CAISI / NIST',
-						description: 'Standards and unclassified national-security evaluations.',
-						url: 'https://www.nist.gov/caisi',
-						pillars: ['technical', 'policy'],
-						tags: ['US']
-					},
-					{
-						name: 'DoD Joint AI Center / CDAO',
-						description: 'Chief Digital and AI Office in the Department of Defense.',
-						url: 'https://www.ai.mil',
-						pillars: ['policy', 'technical'],
-						tags: ['US']
-					},
-					{
-						name: 'Horizon Fellowship Executive Branch Track',
-						description: 'Horizon track for the executive branch.',
-						url: 'https://horizonpublicservice.org',
-						pillars: ['policy'],
-						tags: ['US']
-					}
-				]
-			},
-			{
-				id: 'advising',
-				title: '1-1 Career Advising',
-				items: [
-					{
-						name: '80,000 Hours Advising',
-						description: 'Free 1-1 career advising. The strongest default option.',
-						url: 'https://80000hours.org/speak-with-us/',
-						pillars: ['fieldbuilding', 'technical', 'policy', 'comms'],
-						tags: ['Top Pick']
-					},
-					{
-						name: 'Probably Good',
-						description: 'Career advising for high-impact paths.',
-						url: 'https://probablygood.org',
-						pillars: ['fieldbuilding']
-					},
-					{
-						name: 'Successif',
-						description: 'Mid-career switcher advising.',
-						url: 'https://www.successif.org',
-						pillars: ['fieldbuilding']
-					},
-					{
-						name: 'AI Safety Quest',
-						description: 'Volunteer-staffed advising for newcomers.',
-						url: 'https://aisafety.quest',
-						pillars: ['fieldbuilding']
-					},
-					{
-						name: 'Animal Advocacy Careers',
-						description: 'Career advising for animal advocacy work (some AI overlap).',
-						url: 'https://www.animaladvocacycareers.org',
-						pillars: ['fieldbuilding']
-					},
-					{
-						name: 'Magnify Mentoring',
-						description: 'Mentoring for women, non-binary, and trans people in EA/AI safety.',
-						url: 'https://www.magnifymentoring.org',
-						pillars: ['fieldbuilding', 'technical']
-					},
-					{
-						name: 'BlueDot Career Support',
-						description: 'Career help for BlueDot course alumni.',
-						url: 'https://bluedot.org',
-						pillars: ['fieldbuilding']
-					}
-				]
-			}
-		]
-	}
 ];
 
 // Flat list of all resources for filtering counts
