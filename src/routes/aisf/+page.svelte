@@ -59,9 +59,9 @@
 		},
 		{
 			number: 8,
-			title: 'Careers in AI Safety',
-			description: 'Career paths in AI safety, opportunities for MAIA members, and next steps.',
-			available: false
+			title: 'Research & Careers in Safety',
+			description: 'Empirical research workflow, active alignment agendas, and career paths in AI safety.',
+			available: true
 		}
 	];
 </script>
