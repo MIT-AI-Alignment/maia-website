@@ -121,10 +121,10 @@
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
-		<p class="text-center text-maia-600 dark:text-maia-400 text-lg mb-2">
+		<p class="text-center text-zinc-700 dark:text-zinc-300 text-lg mb-2">
 			May 9, 2026 · CIC Cambridge · 10:00am – 6:30pm
 		</p>
-		<p class="text-center text-maia-500 dark:text-maia-500 text-sm mb-8">
+		<p class="text-center text-zinc-600 dark:text-zinc-400 text-sm mb-8">
 			Capstone hackathon for MAIA AI Safety Fundamentals fellows · Spring 2026
 		</p>
 		<div class="flex flex-wrap justify-center gap-3 mb-8">
@@ -142,7 +142,7 @@
 				icon="fas fa-users"
 				type="outline"
 				size="md"
-				href="#"
+				href="https://airtable.com/appHwdJxaquLCsb75/pag8hzrNHkHhOy5DU/form"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
@@ -168,7 +168,7 @@
 		{#each [{ icon: 'fas fa-calendar', label: 'Date', value: 'May 9, 2026' }, { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'CIC Cambridge' }, { icon: 'fas fa-code-branch', label: 'Tracks', value: '3 tracks' }, { icon: 'fas fa-users', label: 'Team size', value: '2–4 people' }] as stat}
 			<div class="p-4 rounded-xl border border-border-light dark:border-border-dark text-center">
 				<i class="{stat.icon} text-maia-600 dark:text-maia-400 mb-2 block"></i>
-				<p class="text-xs text-maia-500 dark:text-maia-500 mb-1">{stat.label}</p>
+				<p class="text-xs text-zinc-600 dark:text-zinc-400 mb-1">{stat.label}</p>
 				<p class="text-sm font-medium">{stat.value}</p>
 			</div>
 		{/each}
@@ -186,7 +186,7 @@
 					</span>
 					<i class="{step.icon} text-maia-600 dark:text-maia-400 text-lg mb-3 block"></i>
 					<h3 class="font-semibold mb-2 text-sm">{step.title}</h3>
-					<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">{step.description}</p>
+					<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">{step.description}</p>
 				</div>
 			{/each}
 		</div>
@@ -194,7 +194,7 @@
 
 	<!-- Tracks -->
 	<SectionContainer id="tracks" title="Tracks" icon="fas fa-code-branch">
-		<p class="text-sm text-maia-600 dark:text-maia-400 mb-8">
+		<p class="text-sm text-zinc-700 dark:text-zinc-300 mb-8">
 			Pick one track per team. Each has a starter notebook, a GitHub template repo, and an idea bank
 			to help you get started fast. Not sure which track? The idea banks are open to everyone —
 			browse before you decide.
@@ -213,19 +213,19 @@
 							</div>
 							<div>
 								<h3 class="font-semibold text-lg leading-tight">{track.name}</h3>
-								<span class="text-xs text-maia-500 dark:text-maia-500">{track.difficulty}</span>
+								<span class="text-xs text-zinc-600 dark:text-zinc-400">{track.difficulty}</span>
 							</div>
 						</div>
 					</div>
 
 					<!-- Description -->
-					<p class="text-sm text-maia-600 dark:text-maia-400 mb-3 leading-relaxed">
+					<p class="text-sm text-zinc-700 dark:text-zinc-300 mb-3 leading-relaxed">
 						{track.description}
 					</p>
 
 					<!-- TransformerLens note for interp only -->
 					{#if track.id === 'interp'}
-						<p class="text-xs text-maia-500 dark:text-maia-500 mb-3 leading-relaxed">
+						<p class="text-xs text-zinc-600 dark:text-zinc-400 mb-3 leading-relaxed">
 							<i class="fas fa-info-circle mr-1"></i>
 							TransformerLens is a Python library for mechanistic interpretability — it gives you clean
 							access to activations, attention patterns, and hooks at every layer of GPT-2 and similar
@@ -241,20 +241,20 @@
 							<i class="fas fa-compress-arrows-alt mr-1"></i>Scoping your project
 						</p>
 						{#if track.id === 'interp'}
-							<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+							<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 								Good: one model, one mechanism, one metric, first result in 90 min.<br />
 								Bad: "we'll study attention heads" / "we'll replicate the IOI paper".<br />
 								When in doubt: do less, go deeper.
 							</p>
 						{:else if track.id === 'control'}
-							<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+							<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 								Good: one behavior, two conditions, scoring rubric defined before data collection.<br
 								/>
 								Bad: "we'll study sycophancy" / "we'll test five different models".<br />
 								Rule: define your scoring function before you run a single trial.
 							</p>
 						{:else if track.id === 'strategy'}
-							<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+							<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 								Good: one mechanism, one audience, one concrete recommendation.<br />
 								Bad: "a survey of AI risks" / "we'll cover compute governance broadly".<br />
 								Rule: if your recommendation is "more research is needed," keep writing.
@@ -266,7 +266,7 @@
 					<div class="flex flex-wrap gap-2 mb-5">
 						{#each track.tags as tag}
 							<span
-								class="text-xs px-2.5 py-1 rounded-full bg-maia-50 dark:bg-maia-950/30 text-maia-600 dark:text-maia-400 border border-border-light dark:border-border-dark"
+								class="text-xs px-2.5 py-1 rounded-full bg-maia-50 dark:bg-maia-950/30 text-zinc-700 dark:text-zinc-300 border border-border-light dark:border-border-dark"
 							>
 								{tag}
 							</span>
@@ -276,13 +276,13 @@
 					<!-- Deliverables -->
 					<div class="mb-5">
 						<p
-							class="text-xs font-medium text-maia-500 dark:text-maia-500 uppercase tracking-wide mb-2"
+							class="text-xs font-medium text-zinc-600 dark:text-zinc-400 uppercase tracking-wide mb-2"
 						>
 							Deliverables (due 4:30pm)
 						</p>
 						<ul class="space-y-1">
 							{#each track.deliverables as deliverable}
-								<li class="text-xs text-maia-600 dark:text-maia-400 flex items-center gap-2">
+								<li class="text-xs text-zinc-700 dark:text-zinc-300 flex items-center gap-2">
 									<i class="fas fa-check text-maia-400 dark:text-maia-600 text-xs shrink-0"></i>
 									{deliverable}
 								</li>
@@ -329,7 +329,7 @@
 		<div
 			class="mt-6 p-4 rounded-xl bg-maia-50 dark:bg-maia-950/20 border border-border-light dark:border-border-dark"
 		>
-			<p class="text-sm text-maia-600 dark:text-maia-400">
+			<p class="text-sm text-zinc-700 dark:text-zinc-300">
 				<i class="fas fa-layer-group mr-2 text-maia-500"></i>
 				<span class="font-medium">All tracks, one place — </span>
 				browse the full brainstorming hub across all three tracks before picking yours.
@@ -358,10 +358,10 @@
 					class="flex gap-6 px-5 py-3 text-sm {i === 5 ? 'bg-maia-50/50 dark:bg-maia-950/20' : ''}"
 				>
 					<span
-						class="font-mono text-maia-500 dark:text-maia-400 whitespace-nowrap w-36 shrink-0 text-xs pt-0.5"
+						class="font-mono text-zinc-600 dark:text-zinc-400 whitespace-nowrap w-36 shrink-0 text-xs pt-0.5"
 						>{time}</span
 					>
-					<span class="text-maia-800 dark:text-maia-200">{activity}</span>
+					<span class="text-zinc-800 dark:text-zinc-200">{activity}</span>
 				</div>
 			{/each}
 		</div>
@@ -373,7 +373,7 @@
 				<p class="text-xs font-medium text-maia-700 dark:text-maia-300 mb-1">
 					Submissions close at 4:30pm sharp
 				</p>
-				<p class="text-xs text-maia-600 dark:text-maia-400 mb-3">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 mb-3">
 					Submit your project via the form below before 4:30pm. Make your repo public before
 					submitting — judges will read it.
 				</p>
@@ -382,7 +382,7 @@
 					icon="fas fa-paper-plane"
 					type="primary"
 					size="sm"
-					href="#"
+					href="https://airtable.com/appHwdJxaquLCsb75/pagRhnbGjU9KUJXvB/form"
 					target="_blank"
 					rel="noopener noreferrer"
 				/>
@@ -396,7 +396,7 @@
 			<div class="p-5 rounded-xl border border-border-light dark:border-border-dark">
 				<i class="fas fa-microchip text-maia-600 dark:text-maia-400 mb-3 block"></i>
 				<h3 class="font-semibold text-sm mb-2">Interpretability</h3>
-				<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 					GPU compute via RunPod. Request an API key in <span class="font-mono"
 						>#aisf-hack-s26-compute-request</span
 					> — a MAIA exec will DM you your key within minutes.
@@ -405,7 +405,7 @@
 			<div class="p-5 rounded-xl border border-border-light dark:border-border-dark">
 				<i class="fas fa-robot text-maia-600 dark:text-maia-400 mb-3 block"></i>
 				<h3 class="font-semibold text-sm mb-2">Control & Oversight</h3>
-				<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 					Anthropic API (and OpenAI if needed). Request in <span class="font-mono"
 						>#aisf-hack-s26-compute-request</span
 					>. No GPU required — runs on your laptop or Colab.
@@ -414,7 +414,7 @@
 			<div class="p-5 rounded-xl border border-border-light dark:border-border-dark">
 				<i class="fas fa-pen-nib text-maia-600 dark:text-maia-400 mb-3 block"></i>
 				<h3 class="font-semibold text-sm mb-2">AI Governance & Strategy</h3>
-				<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 					No compute needed. No API keys, no GPU, no setup. Open your template repo and start
 					writing.
 				</p>
@@ -427,7 +427,7 @@
 			<p class="text-xs font-medium text-maia-700 dark:text-maia-300 mb-1">
 				<i class="fas fa-lock mr-1.5"></i>API key rules
 			</p>
-			<p class="text-xs text-maia-600 dark:text-maia-400">
+			<p class="text-xs text-zinc-700 dark:text-zinc-300">
 				Keys are for your team only. Never commit them to your repo — use <span class="font-mono"
 					>.env</span
 				>
@@ -443,7 +443,7 @@
 			<div class="p-5 rounded-xl border border-border-light dark:border-border-dark">
 				<i class="fab fa-slack text-maia-600 dark:text-maia-400 mb-3 block text-lg"></i>
 				<h3 class="font-semibold text-sm mb-2">Mentor queue</h3>
-				<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed mb-3">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed mb-3">
 					Post in <span class="font-mono">#aisf-hack-s26-mentor-queue</span> when you're stuck. Use the
 					pinned format — mentors will claim and come to you.
 				</p>
@@ -456,7 +456,7 @@
 			<div class="p-5 rounded-xl border border-border-light dark:border-border-dark">
 				<i class="fas fa-walking text-maia-600 dark:text-maia-400 mb-3 block text-lg"></i>
 				<h3 class="font-semibold text-sm mb-2">Office hours</h3>
-				<p class="text-xs text-maia-600 dark:text-maia-400 leading-relaxed">
+				<p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
 					MAIA members will be floating 13:30–16:00 during hacking block 2. Flag someone down or
 					post in the mentor queue. Don't debug alone for more than 15 minutes.
 				</p>
@@ -469,7 +469,7 @@
 		class="mt-8 mb-4 p-8 rounded-xl border border-border-light dark:border-border-dark text-center"
 	>
 		<h2 class="text-2xl font-heading font-semibold mb-2">Ready?</h2>
-		<p class="text-sm text-maia-600 dark:text-maia-400 mb-6">
+		<p class="text-sm text-zinc-700 dark:text-zinc-300 mb-6">
 			Register on Luma to save your spot. Team formation happens on the day.
 		</p>
 		<div class="flex flex-wrap justify-center gap-3">
