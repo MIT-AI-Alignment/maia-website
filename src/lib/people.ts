@@ -51,6 +51,7 @@ export type Person = {
 	isAdvisor?: boolean; // Whether the person is an advisor
 	isExec?: boolean; // Whether the person is an executive
 	isOrg?: boolean; // Whether the person is an organizer
+	execOrder?: number; // Order in which to display person on the executive board
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
@@ -60,23 +61,25 @@ export const PEOPLE: Record<string, Person> = {
 	'ionel-chiosa': {
 		id: 'ionel-chiosa',
 		name: 'Ionel Chiosa',
-		position: 'Director',
+		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		mitEmail: 'ichiosa@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/ionelchiosa/',
 		isExec: true,
-		isActive: true
+		isActive: true,
+		execOrder: 3,
 	},
 
 	'felix-tudose': {
 		id: 'felix-tudose',
 		name: 'Felix Tudose',
-		position: 'Deputy Director',
+		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
 		mitEmail: 'felixrt@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
 		isExec: true,
 		isActive: true,
+		execOrder: 6,
 	},
 
 	'ryan-baylon': {
@@ -89,18 +92,20 @@ export const PEOPLE: Record<string, Person> = {
 		personalPage: 'https://ryanbaylon.neocities.org',
 		isExec: true,
 		isActive: true,
+		execOrder: 7,
 	},
 
 	'anna-krolik': {
 		id: 'anna-krolik',
 		name: 'Anna Krolik',
-		position: 'Board Member',
+		position: 'Director',
 		imageUrl: '/images/people/anna.png',
 		mitEmail: 'akrolik@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/anna-krolik/',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
+		execOrder: 1,
 	},
 
 	'nixon-hanna': {
@@ -114,6 +119,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
+		execOrder: 2,
 	},
 
 
@@ -144,7 +150,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -221,7 +227,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: '/images/people/zsofia.jpeg',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -238,23 +244,25 @@ export const PEOPLE: Record<string, Person> = {
 	'jurgis-kemeklis': {
 		id: 'jurgis-kemeklis',
 		name: 'Jurgis Kemeklis',
-		position: '',
+		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
-		isExec: false,
-		isOrg: true,
+		isExec: true,
+		isOrg: false,
 		isActive: true,
+		execOrder: 4,
 	},
 
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
 		name: 'Ionut Gabriel Stan',
-		position: '',
+		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
-		isExec: false,
-		isOrg: true,
+		isExec: true,
+		isOrg: false,
 		isActive: true,
+		execOrder: 5,
 	},
 
 	'reshma-kosaraju': {
@@ -263,7 +271,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: '/images/people/reshma.jpeg',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -500,7 +508,9 @@ export const PEOPLE: Record<string, Person> = {
 
 // Helper functions to get filtered lists of people
 export const getActiveExecs = () =>
-	Object.values(PEOPLE).filter((person) => person.isExec && person.isActive);
+	Object.values(PEOPLE)
+		.filter((person) => person.isExec && person.isActive)
+		.sort((a, b) => (a.execOrder ?? 999) - (b.execOrder ?? 999));
 
 export const getInactiveExecs = () =>
 	Object.values(PEOPLE).filter((person) => person.isExec && !person.isActive);

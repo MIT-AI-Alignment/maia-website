@@ -373,14 +373,14 @@
 	id={profileId}
 >
 	{#if name && imageUrl}
-		<div class="flex">
-			<img src={imageUrl} alt={name} class="rounded-lg h-24 w-24 object-cover" />
-			<div class="flex flex-col ml-4 mr-4">
-				<p class="text-2xl font-heading font-[550]">{name}</p>
-				<p class="text-sm text-maia-800 dark:text-maia-400">{subtitle || position}</p>
+		<div class="flex items-center">
+			<img src={imageUrl} alt={name} class="rounded-lg h-24 w-24 object-cover shrink-0" />
+			<div class="flex flex-col ml-4 mr-4 min-w-0">
+				<p class="text-xl font-heading font-[550] leading-none m-0">{name}</p>
+				<p class="text-sm text-maia-800 dark:text-maia-400 leading-none m-0 mt-0.5">{subtitle || position}</p>
 
 				{#if showSocials}
-					<div class="flex flex-wrap gap-2 mt-2">
+					<div class="flex flex-wrap items-center gap-1 mt-0.5 text-sm leading-none">
 						{#each socialLinks as link}
 							{#if link.url}
 								{#if link.platform === 'email'}
