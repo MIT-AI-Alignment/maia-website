@@ -34,23 +34,24 @@
 		background is required—just curiosity and a willingness to engage with hard, open questions.
 	</p>
 	<p class="mt-2">
-		Applications for the <strong>Summer AISF</strong> are now live and are due <strong>May 22nd</strong>.
-		If you cannot participate in the summer cohort, you can fill out the fall interest form to hear
-		when fall applications open.
+		Applications for the Summer AISF are now closed. <strong>Fill out the fall interest
+		form to hear when fall applications open. </strong>
 	</p>
 	<div class="mt-8">
 		<div class="flex flex-col sm:flex-row gap-3">
-			<Button
-				text="Apply for Summer AISF"
-				icon="fa-solid fa-arrow-right"
-				type="fuchsia"
-				size="md"
-				href={CONFIG.aisf_ml.applicationLink}
-			/>
+			{#if CONFIG.aisf_ml.applicationLink}
+				<Button
+					text="Apply for Summer AISF"
+					icon="fa-solid fa-arrow-right"
+					type="fuchsia"
+					size="md"
+					href={CONFIG.aisf_ml.applicationLink}
+				/>
+			{/if}
 			<Button
 				text="Fall AISF Interest Form"
 				icon="fa-solid fa-arrow-right"
-				type="outline"
+				type="fuchsia"
 				size="md"
 				href={CONFIG.aisf_ml.fallInterestFormLink}
 			/>

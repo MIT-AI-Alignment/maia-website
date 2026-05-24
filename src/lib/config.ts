@@ -1,7 +1,7 @@
 // Use this to make high-level changes to the website in one place.
 export const CONFIG = {
     banner: {
-        visible: true,
+        visible: false,
         text: "Applications for our virtual Summer AISF are now open!",
         link: "https://airtable.com/appHwdJxaquLCsb75/pagWI2NzqQcyF37iQ/form",
         ctaText: "Apply now by May 22nd!"
@@ -15,8 +15,7 @@ export const CONFIG = {
         visible: true,
         deadline: "",
         deadline_short: "",
-        applicationLink:
-            "https://airtable.com/appHwdJxaquLCsb75/pagWI2NzqQcyF37iQ/form",
+        applicationLink: "",
         fallInterestFormLink:
             "https://airtable.com/appHwdJxaquLCsb75/pagMgBP9vydmwnBF4/form"
     },

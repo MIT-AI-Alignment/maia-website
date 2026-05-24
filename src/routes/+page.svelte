@@ -167,17 +167,19 @@
 			</div>
 
 			<div class="flex flex-col sm:flex-row gap-3">
-				<a
-					href={CONFIG.aisf_ml.applicationLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
-					in:scale={{ duration: 350, delay: 1350, start: 0.9, opacity: 0, easing: backOut }}
-				>
-					Apply for Summer AISF
-					<i class="fa-solid fa-arrow-right"></i>
-				</a>
+				{#if CONFIG.aisf_ml.applicationLink}
+					<a
+						href={CONFIG.aisf_ml.applicationLink}
+						class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+						in:scale={{ duration: 350, delay: 1350, start: 0.9, opacity: 0, easing: backOut }}
+					>
+						Apply for Summer AISF
+						<i class="fa-solid fa-arrow-right"></i>
+					</a>
+				{/if}
 				<a
 					href={CONFIG.aisf_ml.fallInterestFormLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
 					in:scale={{ duration: 350, delay: 1450, start: 0.9, opacity: 0, easing: backOut }}
 				>
 					Fall AISF Interest Form
@@ -226,16 +228,18 @@
 			</div>
 
 			<div class="flex flex-col sm:flex-row gap-3">
-				<a
-					href={CONFIG.aisf_ml.applicationLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
-				>
-					Apply for Summer AISF
-					<i class="fa-solid fa-arrow-right"></i>
-				</a>
+				{#if CONFIG.aisf_ml.applicationLink}
+					<a
+						href={CONFIG.aisf_ml.applicationLink}
+						class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+					>
+						Apply for Summer AISF
+						<i class="fa-solid fa-arrow-right"></i>
+					</a>
+				{/if}
 				<a
 					href={CONFIG.aisf_ml.fallInterestFormLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
 				>
 					Fall AISF Interest Form
 					<i class="fa-solid fa-arrow-right"></i>
