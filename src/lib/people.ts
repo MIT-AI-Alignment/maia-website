@@ -27,6 +27,9 @@ export type Person = {
 	whatsapp?: string; // WhatsApp phone number
 	imessage?: string; // iMessage phone number or email
 
+	// Scheduling / booking
+	calendly?: string; // cal.com or calendly.com booking link
+
 	// Academic profiles
 	googleScholar?: string; // Google Scholar profile
 	orcid?: string; // ORCID identifier
@@ -65,6 +68,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		mitEmail: 'ichiosa@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/ionelchiosa/',
+		calendly: 'https://cal.com/ionel-chiosa',
 		isExec: true,
 		isActive: true,
 		execOrder: 3,
@@ -77,6 +81,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
 		mitEmail: 'felixrt@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
+		calendly: 'https://cal.com/felixrt',
 		isExec: true,
 		isActive: true,
 		execOrder: 6,
@@ -90,6 +95,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'rfbaylon@gmail.com',
 		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
 		personalPage: 'https://ryanbaylon.neocities.org',
+		calendly: 'https://cal.com/rfbaylon',
 		isExec: true,
 		isActive: true,
 		execOrder: 7,
@@ -102,6 +108,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: '/images/people/anna.png',
 		mitEmail: 'akrolik@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/anna-krolik/',
+		calendly: 'https://cal.com/akrolik',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -116,6 +123,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
 		personalPage: 'nixonhanna.com',
+		calendly: 'https://calendly.com/nixonhanna95/30min',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -521,6 +529,19 @@ export const getOrganizers = () => Object.values(PEOPLE).filter((person) => pers
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
+
+// People who have a public booking link (cal.com / calendly.com).
+// Sorted by execOrder when present so the homepage strip stays in a sensible order;
+// non-execs (if added later) get sorted after, alphabetically by name.
+export const getBookablePeople = () =>
+	Object.values(PEOPLE)
+		.filter((person) => person.isActive && !!person.calendly)
+		.sort((a, b) => {
+			const orderA = a.execOrder ?? 999;
+			const orderB = b.execOrder ?? 999;
+			if (orderA !== orderB) return orderA - orderB;
+			return a.name.localeCompare(b.name);
+		});
 
 // For backward compatibility with existing code
 export const ACTIVE_EXECS = getActiveExecs();

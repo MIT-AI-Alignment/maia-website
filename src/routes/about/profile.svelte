@@ -38,6 +38,7 @@
 	export let medium: string | undefined = undefined;
 	export let slack: string | undefined = undefined;
 	export let signal: string | undefined = undefined; // Kept for backward compatibility but not used
+	export let calendly: string | undefined = undefined;
 	export let googleScholar: string | undefined = undefined;
 	export let orcid: string | undefined = undefined;
 	export let arxiv: string | undefined = undefined;
@@ -69,6 +70,7 @@
 		instagram = instagram || person?.instagram;
 		medium = medium || person?.medium;
 		slack = slack || person?.slack;
+		calendly = calendly || person?.calendly;
 		googleScholar = googleScholar || person?.googleScholar;
 		orcid = orcid || person?.orcid;
 		arxiv = arxiv || person?.arxiv;
@@ -89,6 +91,14 @@
 	// Define all profile links with consistent structure
 	const allLinks: LinkObject[] = [
 		// Basic contact
+		{
+			platform: 'calendly',
+			icon: 'fa-regular fa-calendar',
+			url: calendly,
+			title: 'Find a time to chat',
+			category: 'basic',
+			priority: 0
+		},
 		{
 			platform: 'personalPage',
 			icon: 'fa-solid fa-globe',

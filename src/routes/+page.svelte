@@ -2,6 +2,7 @@
 	import PageLayout from '../components/PageLayout.svelte';
 	import Button from '../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
+	import { getBookablePeople } from '$lib/people';
 	import { onMount } from 'svelte';
 	import { fly, scale } from 'svelte/transition';
 	import { backOut } from 'svelte/easing';
@@ -13,6 +14,8 @@
 		'Small groups led by MAIA facilitators',
 		'No prior AI background required'
 	];
+
+	const bookablePeople = getBookablePeople();
 	
 	onMount(() => {
 		mounted = true;
@@ -44,7 +47,7 @@
 					Join our mailing list →
 					</a></p> -->
 					<p><a 
-					href="mailto:maia-exec@mit.edu" 
+					href="#chat-with-us" 
 					class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
 					in:fly={{ y: 20, duration: 800, delay: 100 }}>
 					Chat with us →
@@ -253,6 +256,100 @@
 			</div>
 		</section>
 	{/if}
+
+	<!-- Chat with us: bookable team members -->
+	<section
+		id="chat-with-us"
+		class="mb-16 rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800 scroll-mt-24"
+	>
+		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+			<div>
+				<span
+					class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-maia-100 text-maia-800 dark:bg-maia-900/50 dark:text-maia-300 mb-3"
+				>
+					Talk to a MAIA student
+				</span>
+				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
+					<i class="fa-solid fa-mug-hot mr-2 text-maia-800 dark:text-maia-400"></i>
+					Want to talk with us?
+				</h2>
+				<p class="text-lg text-maia-950/80 dark:text-maia-100/80 max-w-2xl leading-relaxed">
+					We're MIT students working on AI alignment, and we're always happy to chat with
+					people who are curious. You can ask about AISF, research, careers, or just what
+					MAIA is like.
+				</p>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+			{#each bookablePeople as person, index}
+				{#if mounted}
+					<a
+						href={person.calendly}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+						in:fly={{ y: 18, duration: 500, delay: 100 + index * 80 }}
+					>
+						<img
+							src={person.imageUrl}
+							alt={person.name}
+							class="w-20 h-20 rounded-full object-cover mb-3 ring-2 ring-maia-200 dark:ring-maia-800 group-hover:ring-maia-800 dark:group-hover:ring-maia-400 transition-all"
+						/>
+						<p class="font-heading font-[550] text-base leading-tight m-0">{person.name}</p>
+						{#if person.position}
+							<p class="text-xs text-maia-950/60 dark:text-maia-200/70 leading-tight mt-1 m-0">
+								{person.position}
+							</p>
+						{/if}
+						<span
+							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
+						>
+							<i class="fa-regular fa-calendar"></i>
+							Chat with {person.name.split(' ')[0]}
+							<i class="fa-solid fa-arrow-right text-xs"></i>
+						</span>
+					</a>
+				{:else}
+					<a
+						href={person.calendly}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+					>
+						<img
+							src={person.imageUrl}
+							alt={person.name}
+							class="w-20 h-20 rounded-full object-cover mb-3 ring-2 ring-maia-200 dark:ring-maia-800 group-hover:ring-maia-800 dark:group-hover:ring-maia-400 transition-all"
+						/>
+						<p class="font-heading font-[550] text-base leading-tight m-0">{person.name}</p>
+						{#if person.position}
+							<p class="text-xs text-maia-950/60 dark:text-maia-200/70 leading-tight mt-1 m-0">
+								{person.position}
+							</p>
+						{/if}
+						<span
+							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
+						>
+							<i class="fa-regular fa-calendar"></i>
+							Chat with {person.name.split(' ')[0]}
+							<i class="fa-solid fa-arrow-right text-xs"></i>
+						</span>
+					</a>
+				{/if}
+			{/each}
+		</div>
+
+		<p class="mt-8 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
+			Prefer email? Reach the whole team at
+			<a
+				href="mailto:maia-exec@mit.edu"
+				class="text-maia-800 dark:text-maia-400 underline underline-offset-2 hover:no-underline"
+			>
+				maia-exec@mit.edu
+			</a>.
+		</p>
+	</section>
 </PageLayout>
 
 <style>
