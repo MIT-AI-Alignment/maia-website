@@ -123,7 +123,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
 		personalPage: 'nixonhanna.com',
-		calendly: 'https://calendly.com/nixonhanna95/30min',
+		calendly: 'https://cal.com/nixon-hanna',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
