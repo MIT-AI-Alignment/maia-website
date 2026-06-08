@@ -1,5 +1,6 @@
 <script lang="ts">
-	import PageLayout from '../../components/PageLayout.svelte';
+	import PageLayout from '../../../components/PageLayout.svelte';
+	import BackLink from '../../../components/BackLink.svelte';
 
 	type Week = {
 		number: number;
@@ -17,7 +18,7 @@
 		},
 		{
 			number: 1,
-			title: 'Trends & Timelines',
+			title: 'Transformative AI and Current Trajectory',
 			description: 'Scaling drivers, capability trends, and time-horizon forecasting toward AGI.',
 			available: true
 		},
@@ -25,57 +26,57 @@
 			number: 2,
 			title: 'Outer Alignment',
 			description: 'Reward misspecification, specification gaming, RLHF, and the gap between intended and operationalized goals.',
-			available: false
+			available: true
 		},
 		{
 			number: 3,
 			title: 'Inner Alignment',
 			description: 'Deception, reward tampering, alignment faking, and goal misgeneralization.',
-			available: false
+			available: true
 		},
 		{
 			number: 4,
 			title: 'Threat Models',
 			description: 'Instrumental convergence, power-seeking, bioterrorism, cyberwarfare, and gradual disempowerment.',
-			available: false
+			available: true
 		},
 		{
 			number: 5,
 			title: 'Control & Scalable Oversight',
 			description: 'AI control framework, resampling, monitoring, weak-to-strong generalization, and debate.',
-			available: false
+			available: true
 		},
 		{
 			number: 6,
 			title: 'Interpretability & Evals',
 			description: 'Attribution graphs, linear probes, capability and propensity evals, and alignment auditing.',
-			available: false
+			available: true
 		},
 		{
 			number: 7,
 			title: 'AI Governance & Liability',
 			description: 'Tort law, compute governance, US export controls on China, and the regulator\'s toolbox.',
-			available: false
+			available: true
 		},
 		{
 			number: 8,
 			title: 'Research & Careers in Safety',
 			description: 'Empirical research workflow, active alignment agendas, and career paths in AI safety.',
-			available: false
+			available: true
 		}
 	];
 </script>
 
 <PageLayout
-	title="AISF Curriculum"
-	description="MAIA AI Safety Fundamentals (AISF) Summer 2026 curriculum — an 8-week reading group covering AI safety from foundations to policy."
+	title="AISF Curriculum — Spring 2026 (Archive)"
+	description="Archived MAIA AI Safety Fundamentals (AISF) Spring 2026 curriculum — an 8-week reading group covering AI safety from foundations to policy."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-4 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Summer 2026 Curriculum
+			Spring 2026 Curriculum
 		</p>
 		<p class="text-center text-base mb-8 max-w-3xl mx-auto text-maia-950/60 dark:text-maia-300">
 			An 8-week introductory reading group covering the current trajectory of AI, evidence for misalignment,
@@ -83,6 +84,14 @@
 			sections facilitated by experienced TAs. No work is assigned outside of weekly meetings.
 		</p>
 	</svelte:fragment>
+
+	<div class="mb-8 rounded-lg p-4 bg-maia-200/30 dark:bg-maia-800/30 border border-border-light dark:border-maia-800 text-center">
+		<p class="text-sm text-maia-950/70 dark:text-maia-200">
+			<i class="fa-solid fa-box-archive mr-1"></i>
+			This is the archived Spring 2026 curriculum. For the current curriculum, visit the
+			<a href=".." class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">AISF Curriculum</a> page.
+		</p>
+	</div>
 
 	<!-- Week Cards Grid -->
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -128,8 +137,7 @@
 		{/each}
 	</div>
 
-	<p class="text-center text-sm text-maia-950/60 dark:text-maia-300 mb-12">
-		Looking for a previous cohort? View the
-		<a href="spring-2026" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">Spring 2026 curriculum archive</a>.
-	</p>
+	<div class="mt-12 flex justify-center">
+		<BackLink href=".." />
+	</div>
 </PageLayout>

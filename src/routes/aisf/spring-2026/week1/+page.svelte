@@ -1,20 +1,20 @@
 <script lang="ts">
-	import PageLayout from '../../../components/PageLayout.svelte';
-	import SectionContainer from '../../../components/SectionContainer.svelte';
-	import BackLink from '../../../components/BackLink.svelte';
-	import Button from '../../../components/Button.svelte';
+	import PageLayout from '../../../../components/PageLayout.svelte';
+	import SectionContainer from '../../../../components/SectionContainer.svelte';
+	import BackLink from '../../../../components/BackLink.svelte';
+	import Button from '../../../../components/Button.svelte';
 </script>
 
 <PageLayout
 	title="AISF Week 1"
-	description="MAIA AISF Week 1: Trends & Timelines — scaling drivers, capability trends, and forecasting."
+	description="MAIA AISF Week 1: Transformative AI and Current Trajectory — scaling drivers, capability trends, and forecasting."
 	heroIcon="fa-solid fa-chart-line"
-	heroTitle="Week 1: Trends & Timelines"
+	heroTitle="Week 1: Current Trajectory"
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-4 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Trends &amp; Timelines
+			Transformative AI and Current Trajectory
 		</p>
 	</svelte:fragment>
 
@@ -40,7 +40,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1XVKjcQQI5GcY_HEdmxu7wt03-qZbaWdZHGj6DKcjclc/edit?usp=sharing"
+				href="https://docs.google.com/document/d/1TUwzVIeuRCN0PailHzKIZ3dJsFygDwoU5m4f5E7q-_o/edit?usp=drive_link"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
@@ -112,49 +112,42 @@
 					Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity (2025)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (Short, surprising result)</span>
 			</li>
 			<li>
 				<a href="https://bounded-regret.ghost.io/future-ml-systems-will-be-qualitatively-different/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Future ML Systems will be Qualitatively Different (Steinhardt, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (trends will break)</span>
 			</li>
 			<li>
 				<a href="https://www.youtube.com/watch?v=QMqPAM_knrE" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Neural scaling laws and GPT-3 (Kaplan, 2020)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> <strong class="font-semibold">(only up to 30:30)</strong> (somewhat old but still informative)</span>
 			</li>
 			<li>
 				<a href="https://arxiv.org/pdf/2203.15556.pdf" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Training Compute-Optimal Large Language Models (GDM, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (Technical)</span>
 			</li>
 			<li>
 				<a href="https://astralcodexten.substack.com/p/biological-anchors-a-trick-that-might" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Biological Anchors: A Trick That Might Or Might Not Work (Alexander, 2022)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (Both sides)</span>
 			</li>
 			<li>
 				<a href="https://arxiv.org/abs/2102.06701" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Explaining Neural Scaling Laws (Bahri, 2024)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (Technical)</span>
 			</li>
 			<li>
 				<a href="https://intelligence.org/files/AIFoomDebate.pdf" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					The Hanson-Yudkowsky AI-Foom Debate (2008)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
-				<span class="text-maia-950/60 dark:text-maia-300"> (long, debate about RSI)</span>
 			</li>
 		</ul>
 	</SectionContainer>
