@@ -70,6 +70,10 @@
 		>
 		first, as AISF alumni typically receive priority in the membership process.
 	</p>
+	<p>
+		<b>Membership is exclusive to Boston area applicants</b> as we lack the infrastructure to thoroughly support distant members.
+		If you have any questions, please reach out to us at <a href="mailto: maia-exec@mit.edu">maia-exec@mit.edu</a>; we may still be able to send resources your way!
+	</p>
 	<p class="mt-4">
 		The application itself has technical and non-technical portions and takes about an hour.
 		Admissions are rolling, with the board reviewing applications monthly—and if we're slow to
