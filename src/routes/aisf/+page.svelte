@@ -25,13 +25,13 @@
 			number: 2,
 			title: 'Outer Alignment',
 			description: 'Reward misspecification, specification gaming, RLHF, and the gap between intended and operationalized goals.',
-			available: false
+			available: true
 		},
 		{
 			number: 3,
 			title: 'Inner Alignment',
 			description: 'Deception, reward tampering, alignment faking, and goal misgeneralization.',
-			available: false
+			available: true
 		},
 		{
 			number: 4,

@@ -40,7 +40,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/10oryBDtZ1immV00EARWN_MdgJcuuqc1BD9rYgQ6_Hhg/edit?usp=drive_link"
+				href="https://docs.google.com/document/d/1znpOrEiD6oR7BdSJk7Ohe0KHNri379iITb9emSQOuh8/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>

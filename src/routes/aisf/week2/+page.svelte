@@ -41,7 +41,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1a7zRrb3LuMVoh2uTZjhMIcsFsEPyxwNkM4ancfLuxks/edit?usp=drive_link"
+				href="https://docs.google.com/document/d/1ltXDgK6pGMXYAPpSyYrK-pvjLSVOKGXwzuSPXuYSj5c/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
