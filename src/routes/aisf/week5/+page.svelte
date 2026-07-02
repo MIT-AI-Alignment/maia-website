@@ -20,22 +20,23 @@
 
 	<SectionContainer title="Overview" icon="fa-solid fa-book-open">
 		<p>
-			Even if we can't guarantee that a powerful AI is aligned, can we still deploy it safely? This session
-			begins with the AI control framework, which aims to prevent catastrophic outcomes from AI systems that
-			may be actively trying to subvert human oversight. We explore concrete control techniques like resampling
-			and monitoring, then broaden to the problem of scalable oversight — how weaker overseers (including
-			humans) can reliably supervise systems more capable than themselves. We examine empirical results on
-			weak-to-strong generalization that test whether simple oversight signals can elicit trustworthy behavior
-			from stronger models, and consider what these findings imply for the long-term viability of human
-			supervision over increasingly capable AI.
+			How do we supervise AI systems that are becoming more capable than the humans overseeing them? This
+			session works through two answers that make progressively more pessimistic assumptions about the model.
+			We begin with scalable oversight: techniques like debate, task decomposition, and weak-to-strong
+			generalization that aim to help limited overseers judge tasks too complex to evaluate directly. We then
+			examine a concrete oversight channel available today — reading a model's chain of thought — and why this
+			window into model reasoning may be fragile. Finally, we turn to AI control, which asks: can we prevent
+			catastrophic outcomes even if the model is actively scheming to subvert our safety measures? We close with
+			control's core techniques — trusted monitoring, resampling, and adversarial control evaluations.
 		</p>
 
 		<h3 class="text-xl font-heading font-[550] mt-6 mb-3">Learning Objectives</h3>
 		<p>By the end of Week 5, fellows should be able to:</p>
 		<ul class="list-disc pl-6 mt-2 space-y-1">
-			<li>Explain the AI control framework and how it differs from alignment as a safety strategy, including the assumption that the model may be intentionally subversive</li>
-			<li>Describe concrete control techniques (e.g., resampling, monitoring, trusted models) and evaluate their strengths and limitations</li>
-			<li>Articulate the core challenge of scalable oversight — supervising systems more capable than the overseer — and assess approaches like weak-to-strong generalization and debate</li>
+			<li>Articulate the core challenge of scalable oversight and compare approaches such as debate, task decomposition, and weak-to-strong generalization</li>
+			<li>Explain why chain-of-thought monitoring is a promising but fragile safety opportunity</li>
+			<li>Explain how AI control differs from alignment, and why assuming the model is scheming makes safety claims easier to evaluate</li>
+			<li>Describe concrete control techniques (e.g., trusted monitoring, resampling) and their limitations</li>
 		</ul>
 		<div class="mt-8 not-prose">
 			<Button
@@ -43,7 +44,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1joeDjV1Zo_sMpaggnO0bcKVw0oZ1_ZLONTG2Wm219P0/edit?usp=sharing"
+				href="https://docs.google.com/document/d/17pFurG4EcUTduAvwMp0KjkZfFbWR3tIUgcomWRJhAto/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
@@ -53,6 +54,18 @@
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">
 		<ul class="list-disc pl-6 space-y-3">
 			<li>
+				<a href="https://bluedot.org/blog/scalable-oversight-intro" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Can we scale human feedback for complex AI tasks? An intro to scalable oversight. (BlueDot Impact, 2025)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://arxiv.org/abs/2507.11473" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety (2025)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>
+			</li>
+			<li>
 				<a href="https://www.lesswrong.com/posts/kcKrE9mzEHrdqtDpE/the-case-for-ensuring-that-powerful-ais-are-controlled" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					The case for ensuring that powerful AIs are controlled (Redwood Research, 2024)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
@@ -61,18 +74,6 @@
 			<li>
 				<a href="https://arxiv.org/abs/2312.06942" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					AI Control: Improving Safety Despite Intentional Subversion (Redwood Research, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://arxiv.org/abs/2407.04622" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					On scalable oversight with weak LLMs judging strong LLMs (GDM, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://arxiv.org/abs/2312.09390" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Weak-to-strong generalization (OpenAI, 2023)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>
@@ -248,18 +249,6 @@
 			<li>
 				<a href="https://80000hours.org/podcast/episodes/ryan-greenblatt-ai-automation-sabotage-takeover/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					80,000 Hours: Ryan Greenblatt on AI R&D automation and misaligned takeover (2025)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://openai.com/index/chain-of-thought-monitoring/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Detecting Misbehavior in Frontier Reasoning Models (OpenAI, 2025)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://arxiv.org/abs/2507.11473" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety (Korbak et al., 2025)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>

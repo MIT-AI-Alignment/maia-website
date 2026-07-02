@@ -37,13 +37,13 @@
 			number: 4,
 			title: 'Threat Models',
 			description: 'Instrumental convergence, power-seeking, bioterrorism, cyberwarfare, and gradual disempowerment.',
-			available: false
+			available: true
 		},
 		{
 			number: 5,
 			title: 'Control & Scalable Oversight',
 			description: 'AI control framework, resampling, monitoring, weak-to-strong generalization, and debate.',
-			available: false
+			available: true
 		},
 		{
 			number: 6,
