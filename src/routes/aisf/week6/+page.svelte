@@ -7,32 +7,34 @@
 
 <PageLayout
 	title="AISF Week 6"
-	description="MAIA AISF Week 6: Interpretability & Evals — Mechanistic interpretability, evaluations, and alignment auditing."
+	description="MAIA AISF Week 6: Interpretability & Evals — Mechanistic interpretability, evaluation awareness, and detecting deceptive AI."
 	heroIcon="fa-solid fa-magnifying-glass-chart"
 	heroTitle="Week 6: Interpretability & Evals"
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-4 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Mechanistic Interpretability, Evaluations, and Alignment Auditing
+			Mechanistic Interpretability, Evaluation Awareness, and Detecting Deceptive AI
 		</p>
 	</svelte:fragment>
 
 	<SectionContainer title="Overview" icon="fa-solid fa-book-open">
 		<p>
-			This week introduces two of the most important empirical approaches to understanding what frontier
-			models are doing under the hood: mechanistic interpretability (reverse-engineering model internals
-			into human-understandable structures) and evaluations (measuring capabilities, propensities, and
-			safety-relevant behaviors). The week emphasizes how these two threads are converging into alignment
-			auditing — using interp tools to check whether a model has the goals it appears to have.
+			This week focuses on mechanistic interpretability: why understanding model internals matters for
+			safety (Amodei), what circuit tracing has revealed about how frontier models actually think
+			(Anthropic's attribution graph work), and how newer techniques like natural language autoencoders
+			can surface what models think but don't say — including awareness that they're being evaluated. We
+			close with Nanda's counterpoint that interpretability will never reliably catch deceptive AI and
+			belongs in a defense-in-depth portfolio rather than at its center.
 		</p>
 
 		<h3 class="text-xl font-heading font-[550] mt-6 mb-3">Learning Objectives</h3>
 		<p>By the end of Week 6, fellows should be able to:</p>
 		<ul class="list-disc pl-6 mt-2 space-y-1">
-			<li>Describe at a high level what attribution graphs and linear probes are, and what each lets researchers discover about model internals</li>
-			<li>Point to at least one concrete finding from modern interp on a frontier model (planning, multi-step reasoning, unfaithful chain of thought, etc.)</li>
-			<li>Distinguish capability evals, propensity evals, dangerous-capability evals, and alignment audits</li>
+			<li>Describe at a high level what attribution graphs, linear probes, and natural language autoencoders let researchers discover about model internals</li>
+			<li>Point to at least one concrete interp finding on a frontier model (planning, unfaithful chain of thought, unverbalized evaluation awareness, etc.)</li>
+			<li>Distinguish capability evals, propensity evals, dangerous-capability evals, and alignment audits, and explain why evaluation awareness threatens their validity</li>
+			<li>Give the strongest case for and against relying on interpretability to detect deceptive AI</li>
 		</ul>
 		<div class="mt-8 not-prose">
 			<Button
@@ -40,7 +42,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1IfL9qoxDprXTjdtWYqT7HBdXS8Hq_GU3FHOUU61MV_c/edit?usp=sharing"
+				href="https://docs.google.com/document/d/1JtCPriIy71qaLuIIKw-mrigZ9YqnQGzL961f_OaJ-GA/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
@@ -50,19 +52,35 @@
 	<SectionContainer title="Core Readings" icon="fa-solid fa-book">
 		<ul class="list-disc pl-6 space-y-3">
 			<li>
+				<a href="https://www.darioamodei.com/post/the-urgency-of-interpretability" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					The Urgency of Interpretability (Amodei, 2025)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>			</li>
+			<li>
 				<a href="https://www.anthropic.com/research/tracing-thoughts-language-model" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Tracing the Thoughts of a Large Language Model (Anthropic, 2025)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://www.anthropic.com/research/probes-catch-sleeper-agents" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Simple Probes Can Catch Sleeper Agents (Anthropic, 2024)
+				<a href="https://www.anthropic.com/research/natural-language-autoencoders" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Natural Language Autoencoders (Anthropic, 2026)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://arxiv.org/abs/2511.22662" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+				<a href="https://www.lesswrong.com/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Interpretability Will Not Reliably Find Deceptive AI (Nanda, 2025)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>
+			</li>
+		</ul>
+	</SectionContainer>
+
+	<SectionContainer title="Recommended Readings" icon="fa-solid fa-bookmark">
+		<ul class="list-disc pl-6 space-y-3">
+			<li>
+				<a href="https://www.alignmentforum.org/posts/zmngpxsvGbotFeQca/paper-difficulties-with-evaluating-a-deception-detector-for" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Difficulties with Evaluating a Deception Detector for AIs (GDM, 2025)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
@@ -74,16 +92,23 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://www.lesswrong.com/posts/HzjssjeQqhf3kRw9r/every-benchmark-is-broken" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Every Benchmark is Broken (Jonathan Gabor, 2026)
+				<a href="https://www.anthropic.com/research/global-workspace" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					A Global Workspace in Language Models (Anthropic, 2026)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>
-		</ul>
-	</SectionContainer>
-
-	<SectionContainer title="Recommended Readings" icon="fa-solid fa-bookmark">
-		<ul class="list-disc pl-6 space-y-3">
+			<li>
+				<a href="https://www.anthropic.com/research/probes-catch-sleeper-agents" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Simple Probes Can Catch Sleeper Agents (Anthropic, 2024)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.anthropic.com/research/introspection" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Signs of Introspection in Large Language Models (Anthropic, 2025)
+					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+				</a>
+			</li>
 			<li>
 				<a href="https://transformer-circuits.pub/2023/interpretability-dreams/index.html" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					Interpretability Dreams (Olah, 2023)
@@ -91,32 +116,14 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://metr.org/blog/2023-09-26-rsp/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Responsible Scaling Policies (METR / ARC Evals, 2023)
+				<a href="https://www.lesswrong.com/posts/LNA8mubrByG7SFacm/against-almost-every-theory-of-impact-of-interpretability-1" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					Against Almost Every Theory of Impact of Interpretability (Segerie, 2023)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>
 			<li>
-				<a href="https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Frontier Models Are Capable of In-Context Scheming (Apollo Research, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Measuring AI Ability to Complete Long Tasks (METR, 2025)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					Demystifying Evals for AI Agents (Anthropic, 2024)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.lesswrong.com/posts/gwG9uqw255gafjYN4/eis-iii-broad-critiques-of-interpretability-research" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					EIS III: Broad Critiques of Interpretability Research (Stephen Casper, 2023)
+				<a href="https://www.apolloresearch.ai/blog/we-need-a-science-of-evals" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
+					We Need a Science of Evals (Apollo Research, 2024)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>

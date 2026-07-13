@@ -48,8 +48,8 @@
 		{
 			number: 6,
 			title: 'Interpretability & Evals',
-			description: 'Attribution graphs, linear probes, capability and propensity evals, and alignment auditing.',
-			available: false
+			description: 'Attribution graphs, linear probes, natural language autoencoders, evaluation awareness, and detecting deceptive AI.',
+			available: true
 		},
 		{
 			number: 7,
