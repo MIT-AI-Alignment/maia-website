@@ -43,7 +43,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1npgeKNTg9VF2gaDWCX9RArmZ-dullYu6bNQTIt7y98Q/edit?usp=sharing"
+				href="https://docs.google.com/document/d/1iP_1I7cnSHWntx7GY5DLUermzLN_5tDFTEOEdijWvo4/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>

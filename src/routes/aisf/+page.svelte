@@ -55,7 +55,7 @@
 			number: 7,
 			title: 'AI Governance & Liability',
 			description: 'Tort law, compute governance, US export controls on China, and the regulator\'s toolbox.',
-			available: false
+			available: true
 		},
 		{
 			number: 8,
