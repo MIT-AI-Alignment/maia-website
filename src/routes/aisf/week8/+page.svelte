@@ -41,7 +41,7 @@
 				icon="fa-solid fa-arrow-right"
 				type="fuchsia"
 				size="md"
-				href="https://docs.google.com/document/d/1euJojL3RK58IFDyi243JgDWYxjElYbudVs5HJ_n07j8/edit?usp=sharing"
+				href="https://docs.google.com/document/d/1VzLdbtfN3Iurt3wEEfnwnvuDGYEpST2hYTSQTLwWPFU/edit?usp=sharing"
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
@@ -65,12 +65,6 @@
 			<li>
 				<a href="https://www.alignmentforum.org/posts/cbBwwm4jW6AZctymL/my-research-process-key-mindsets-truth-seeking" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
 					My Research Process: Key Mindsets - Truth-Seeking, Prioritisation, Moving Fast (Nanda, 2025)
-					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://docs.google.com/document/d/16C257JKkzwDuDG4EGRpSnmZKXQkdI8Nq7yzlhUS3tKw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">
-					AI Safety Careers Guide for Undergraduates and Early-Career Students (MAIA, 2026)
 					<i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
 				</a>
 			</li>

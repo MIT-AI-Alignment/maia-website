@@ -61,7 +61,7 @@
 			number: 8,
 			title: 'Research & Careers in Safety',
 			description: 'Empirical research workflow, active alignment agendas, and career paths in AI safety.',
-			available: false
+			available: true
 		}
 	];
 </script>
