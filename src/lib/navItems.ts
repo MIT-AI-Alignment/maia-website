@@ -29,7 +29,12 @@ export const NAVIGATION_ITEMS = [
 		label: 'Resources',
 		href: '/resources',
 		icon: 'fas fa-book',
-		dropdownItems: [{ href: '/aisf', label: 'AISF Curriculum' }]
+		dropdownItems: [
+			{ href: '/aisf', label: 'AISF Curriculum' },
+			{ href: '/resources/mit-classes', label: 'Relevant MIT Classes' },
+			{ href: '/resources/faculty-labs', label: 'MIT Faculty and Labs' },
+			{ href: '/resources/fellowships', label: 'AI Safety Fellowships' }
+		]
 	},
 	{
 		label: 'About',
