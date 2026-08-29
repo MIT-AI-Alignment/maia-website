@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 174.84162895927602" role="img" aria-labelledby="title desc">
+  <title id="title">MAIA mark - dark - size 5 construction</title>
+  <desc id="desc">Official MAIA mark, exact approved row-05 geometry.</desc>
+
+  <defs><clipPath id="mark-clip" clipPathUnits="userSpaceOnUse">
+  <rect x="-560" y="0" width="1400" height="174.84162895927602"/>
+</clipPath></defs>
+<polyline points="205.0271,0.0000 140.0000,174.8416 74.9729,0.0000 72.1855,174.8416 205.0271,0.0000 4.3774,174.8416 74.9729,0.0000 275.6226,174.8416 205.0271,0.0000 207.8145,174.8416 74.9729,0.0000"
+  fill="none" stroke="#9A70D6" stroke-width="12.402" stroke-linecap="square"
+  stroke-linejoin="miter" stroke-miterlimit="8" clip-path="url(#mark-clip)"/>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 430" role="img" aria-labelledby="title desc">
+  <title id="title">MAIA vertical lockup - dark - size 5</title>
+  <desc id="desc">Official MAIA size 5 lockup. Exact approved row-05 geometry and outlined Manrope 650 wordmark.</desc>
+
+  <defs><clipPath id="mark-clip" clipPathUnits="userSpaceOnUse">
+  <rect x="-520.0" y="47.57918552036199" width="1400" height="174.84162895927602"/>
+</clipPath></defs>
+<polyline points="245.0271,47.5792 180.0000,222.4208 114.9729,47.5792 112.1855,222.4208 245.0271,47.5792 44.3774,222.4208 114.9729,47.5792 315.6226,222.4208 245.0271,47.5792 247.8145,222.4208 114.9729,47.5792"
+  fill="none" stroke="#9A70D6" stroke-width="12.402" stroke-linecap="square"
+  stroke-linejoin="miter" stroke-miterlimit="8" clip-path="url(#mark-clip)"/>
+  <g id="wordmark" fill="#F7F3FA" transform="translate(14.150841508415056 58.50160288752204) scale(1.3162631626316266)" data-font-family="Manrope" data-font-weight="650"><path id="letter-m" transform="translate(12 225) scale(.044444 -.044444)"
+      d="M140 0V1440H343L853 389L1362 1440H1566V1H1354V955L901 0H805L352 955V0Z"/>
+<path id="letter-a-1" transform="translate(90.02 225) scale(.044444 -.044444)"
+      d="M40 0 501 1440H828L1289 0H1057L635 1303H689L273 0ZM288 319V529H1042V319Z"/>
+<path id="letter-i" transform="translate(150.09 225) scale(.044444 -.044444)"
+      d="M160 0V1440H385V0Z"/>
+<path id="letter-a-2" transform="translate(176.11 225) scale(.044444 -.044444)"
+      d="M40 0 501 1440H828L1289 0H1057L635 1303H689L273 0ZM288 319V529H1042V319Z"/></g>
+</svg>

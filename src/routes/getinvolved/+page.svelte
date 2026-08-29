@@ -129,12 +129,12 @@
 					{@html renderResult.html}
 				</div>
 				{#if renderResult.components.showML}
-					<div class="mt-6 p-4 rounded-lg bg-surface-light-alt dark:bg-surface-dark/40 border-l-4 border-maia-800 dark:border-maia-500">
+					<div class="mt-6 maia-program-detail">
 						<Aisfml />
 					</div>
 				{/if}
 				{#if renderResult.components.showGov}
-					<div class="mt-6 p-4 rounded-lg bg-surface-light-alt dark:bg-surface-dark/40 border-l-4 border-maia-800 dark:border-maia-500">
+					<div class="mt-6 maia-program-detail">
 						<AisfGov />
 					</div>
 				{/if}

@@ -118,16 +118,9 @@
 	{#if mounted}
 		<section
 			id="aisf"
-			class="mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+			class="maia-feature mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
 			in:fly={{ y: 24, duration: 700, delay: 600 }}
 		>
-			<span
-				class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-white/15 text-white mb-4"
-				in:fly={{ y: 18, duration: 600, delay: 750 }}
-			>
-				Flagship program
-			</span>
-
 			<h2
 				class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight"
 				in:fly={{ y: 18, duration: 600, delay: 850 }}
@@ -200,14 +193,8 @@
 	{:else}
 		<section
 			id="aisf"
-			class="mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+			class="maia-feature mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
 		>
-			<span
-				class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-white/15 text-white mb-4"
-			>
-				Flagship program
-			</span>
-
 			<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
 				<i class="fa-solid fa-graduation-cap mr-2"></i>
 				AI Safety Fundamentals
@@ -264,11 +251,6 @@
 	>
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
 			<div>
-				<span
-					class="inline-flex items-center px-3 py-1 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-maia-100 text-maia-800 dark:bg-maia-900/50 dark:text-maia-300 mb-3"
-				>
-					Talk to a MAIA student
-				</span>
 				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 					<i class="fa-solid fa-mug-hot mr-2 text-maia-800 dark:text-maia-400"></i>
 					Want to talk with us?

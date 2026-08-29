@@ -1,0 +1,25 @@
+/* Companion to tokens.json. The implementation keeps the same semantic names. */
+:root {
+  --maia-canvas: #F5F3EF;
+  --maia-ink: #191522;
+  --maia-muted: #736B7E;
+  --maia-border: #D9D4DF;
+  --maia-accent: #6B43B8;
+  --maia-action: #6B43B8;
+  --maia-feature: #6B43B8;
+  --maia-nav-surface: #FFFFFF;
+  --maia-font: 'Manrope', Arial, sans-serif;
+  --maia-font-mono: 'IBM Plex Mono', monospace;
+  --maia-font-weight: 650;
+}
+
+.dark {
+  --maia-canvas: #1D1427;
+  --maia-ink: #F7F3FA;
+  --maia-muted: #B8AFC4;
+  --maia-border: #463650;
+  --maia-accent: #9A70D6;
+  --maia-action: #7954B6;
+  --maia-feature: #7954B6;
+  --maia-nav-surface: #251A31;
+}
