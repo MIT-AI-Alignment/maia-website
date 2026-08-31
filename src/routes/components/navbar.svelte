@@ -16,36 +16,20 @@
 	// Navbar state
 	let scrollY = 0;
 	let isScrolled = false;
+	let isNavHovering = false;
+	let hasNavSurface = false;
 	let isMobileMenuOpen = false;
 	let activeDropdown: string | null = null;
 	
-	// CSS variables for dynamic styling
+	// The header only becomes compact after scroll; hovering the desktop navigation
+	// reveals the same surface without moving the layout.
 	let navbarHeight = '4rem'; // Default height
-	let navbarBg = 'transparent';
-	let navbarBorder = 'transparent';
-	let navbarShadow = 'none';
 	
-	// Update navbar appearance based on scroll position
+	// Update navbar appearance based on scroll position and navigation focus.
 	$: {
-		if (scrollY > 20) {
-			isScrolled = true;
-			navbarHeight = '3.5rem';
-		navbarBg = $theme === 'dark' 
-			? 'bg-surface-dark/95' 
-			: 'bg-surface-light-elevated/95';
-		navbarBorder = $theme === 'dark'
-			? 'border-border-dark'
-			: 'border-border-light';
-		navbarShadow = $theme === 'dark'
-			? 'shadow-sm shadow-maia-900/10'
-			: 'shadow-sm';
-		} else {
-			isScrolled = false;
-			navbarHeight = '4rem';
-			navbarBg = 'bg-transparent';
-			navbarBorder = 'border-transparent';
-			navbarShadow = 'shadow-none';
-		}
+		isScrolled = scrollY > 20;
+		navbarHeight = isScrolled ? '3.5rem' : '4rem';
+		hasNavSurface = isScrolled || isNavHovering || activeDropdown !== null;
 	}
 	
 	// Handle scroll events
@@ -126,7 +110,8 @@
 	{/if}
 	
 	<header 
-		class="navbar-container w-full border-b backdrop-blur-sm {navbarBg} {navbarBorder} {navbarShadow}"
+		class="navbar-container w-full border-b backdrop-blur-sm"
+		class:maia-nav-surface={hasNavSurface}
 	>
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
 			<div class="flex items-center justify-between h-full">
@@ -134,15 +119,19 @@
 				<div class="flex-shrink-0 flex items-center">
 					<a href="/" class="flex items-center">
 						<img 
-							src={$theme === 'dark' ? "/images/maia_dark.svg" : "/images/maia.svg"} 
+							src={$theme === 'dark' ? "/images/brand/maia-horizontal-size-5-dark-transparent.svg" : "/images/brand/maia-horizontal-size-5-light-transparent.svg"}
 							alt="MAIA logo" 
-							class="h-7 w-auto"
+							class="h-8 w-auto"
 						/>
 					</a>
 				</div>
 				
 				<!-- Desktop Navigation -->
-				<nav class="hidden md:flex items-center space-x-1">
+				<nav
+					class="hidden md:flex items-center space-x-1"
+					on:mouseenter={() => (isNavHovering = true)}
+					on:mouseleave={() => (isNavHovering = false)}
+				>
 					{#each navItems as item}
 						<NavItem 
 							{item} 
@@ -164,8 +153,7 @@
 							{#if activeDropdown === 'page'}
 								<div
 									transition:slide={{ duration: 150 }}
-							class="absolute top-full right-0 bg-surface-light-elevated dark:bg-surface-dark shadow-lg dark:shadow-maia-900/20 
-									rounded-md py-1 min-w-[200px] border border-border-light dark:border-border-dark backdrop-blur-sm"
+							class="maia-nav-dropdown absolute top-full right-0 rounded-md py-1 min-w-[200px] border backdrop-blur-sm"
 									role="menu"
 									tabindex="0"
 									on:mouseleave={() => setActiveDropdown(null)}
@@ -173,8 +161,7 @@
 									{#each $pageNavItems as item}
 										<a
 											href={item.href}
-										class="block px-4 py-2 transition-colors duration-200
-												hover:bg-maia-50 dark:hover:bg-maia-950/30 hover:text-maia-800 dark:hover:text-maia-400"
+										class="block px-4 py-2 transition-colors duration-200"
 										>
 											{item.label}
 										</a>

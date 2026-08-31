@@ -129,7 +129,7 @@ export default {
       },
 
       fontFamily: {
-        heading: ['Inconsolata', 'Commit Mono', 'monospace'],
+        heading: ['Manrope', 'sans-serif'],
       },
 
       // ===========================================
@@ -143,4 +143,3 @@ export default {
   },
   plugins: [],
 }
-

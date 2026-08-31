@@ -1,4 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { imagetools } from 'vite-imagetools';
@@ -10,6 +11,7 @@ export default defineConfig({
 	},
 	plugins: [
 		sveltekit({
+			preprocess: vitePreprocess(),
 			onwarn: (warning, handler) => {
 				if (warning.code.startsWith('a11y-')) return;
 				if (warning.message.includes('@splidejs/svelte-splide') || 

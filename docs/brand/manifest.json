@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "primary_font": "Manrope 650",
+  "canonical_assets": {
+    "horizontal": {
+      "light_transparent": "logos/maia-horizontal-size-5-light-transparent.svg",
+      "light_background": "logos/maia-horizontal-size-5-light-offwhite.svg",
+      "dark_transparent": "logos/maia-horizontal-size-5-dark-transparent.svg",
+      "dark_background": "logos/maia-horizontal-size-5-dark-plum.svg"
+    },
+    "vertical": {
+      "light_transparent": "logos/maia-vertical-size-5-light-transparent.svg",
+      "light_background": "logos/maia-vertical-size-5-light-offwhite.svg",
+      "dark_transparent": "logos/maia-vertical-size-5-dark-transparent.svg",
+      "dark_background": "logos/maia-vertical-size-5-dark-plum.svg"
+    },
+    "mark_only": {
+      "light_transparent": "logos/marks/maia-mark-size-5-light-transparent.svg",
+      "light_background": "logos/marks/maia-mark-size-5-light-offwhite.svg",
+      "dark_transparent": "logos/marks/maia-mark-size-5-dark-transparent.svg",
+      "dark_background": "logos/marks/maia-mark-size-5-dark-plum.svg"
+    }
+  },
+  "selection_rules": {
+    "website_header": "horizontal",
+    "website_footer_or_narrow_column": "vertical",
+    "favicon_avatar_or_square_badge": "mark_only",
+    "light_field": "light_*",
+    "dark_field": "dark_*"
+  }
+}

@@ -16,14 +16,12 @@
 
 	// Determine classes based on props
 	// !text-white / hover:!text-white: beat :global(.prose a) when Button renders as <a> inside SectionContainer
-	const solid =
-		'bg-maia-800 hover:bg-maia-700 !text-white hover:!text-white dark:bg-maia-700 dark:!text-white dark:hover:bg-maia-600 dark:hover:!text-white';
+	const solid = 'maia-action !text-white hover:!text-white';
 	$: typeClasses = {
 		primary: solid,
 		secondary: solid,
-		outline:
-			'bg-transparent border border-maia-800 text-maia-800 dark:border-maia-400 dark:text-maia-300 hover:bg-maia-50 dark:hover:bg-maia-950/50',
-		text: 'bg-transparent text-maia-800 dark:text-maia-300 hover:bg-maia-50 dark:hover:bg-maia-950/50',
+		outline: solid,
+		text: 'maia-text-action',
 		purple: solid,
 		fuchsia: solid
 	}[type];
