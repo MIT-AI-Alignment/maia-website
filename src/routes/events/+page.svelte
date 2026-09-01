@@ -24,6 +24,9 @@
 			{#if section.events.length}
 				<h2 class="mb-4 {section.title === 'Past' ? 'mt-16' : ''} font-heading text-2xl font-[650]">
 					{section.title}
+					{#if section.title === 'Upcoming'}
+						<span class="ml-2 text-sm font-medium text-maia-950/60 dark:text-maia-100/60">(times in EST)</span>
+					{/if}
 				</h2>
 				<div class="border-y border-maia-950/15 dark:border-maia-100/15">
 					{#each section.events as event}
