@@ -5,25 +5,8 @@
   
   onMount(() => {
     if (browser) {
-      // Apply the theme from the store
-      if ($theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      
-      // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem('theme')) { // Only auto-switch if user hasn't manually set a preference
-          theme.set(e.matches ? 'dark' : 'light');
-          
-          if (e.matches) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        }
-      });
+      theme.set('light');
+      document.documentElement.classList.remove('dark');
     }
   });
-</script> 
+</script>

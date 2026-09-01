@@ -6,7 +6,7 @@
 
 <section 
 	id={id} 
-	class="maia-section mb-16 p-6"
+	class="maia-section mb-16 scroll-mt-24 p-6"
 >
 	{#if title}
 		<div class="flex items-center mb-6">
