@@ -26,7 +26,7 @@ export function readCalendarEvents(calendar: string): CalendarEvent[] {
 		.split('BEGIN:VEVENT')
 		.slice(1)
 		.map((event) => {
-			const start = valueFor(event, 'DTSTART')?.slice(0, 8);
+			const start = valueFor(event, 'DTSTART');
 			return {
 				title: clean(valueFor(event, 'SUMMARY')) ?? '',
 				start: start ?? '',
@@ -46,4 +46,29 @@ export function displayDate(value: string) {
 		year: 'numeric',
 		timeZone: 'UTC'
 	}).format(date);
+}
+
+export function displayTime(value: string) {
+	const match = value.match(/T(\d{2})(\d{2})/);
+	if (!match) return;
+
+	if (value.endsWith('Z')) {
+		const date = new Date(
+			Date.UTC(
+				Number(value.slice(0, 4)),
+				Number(value.slice(4, 6)) - 1,
+				Number(value.slice(6, 8)),
+				Number(match[1]),
+				Number(match[2])
+			)
+		);
+		return new Intl.DateTimeFormat('en-US', {
+			hour: 'numeric',
+			minute: '2-digit',
+			timeZone: 'America/New_York'
+		}).format(date);
+	}
+
+	const hour = Number(match[1]);
+	return `${hour % 12 || 12}:${match[2]} ${hour >= 12 ? 'PM' : 'AM'}`;
 }
