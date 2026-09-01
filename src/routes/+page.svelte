@@ -3,6 +3,7 @@
 	import Button from '../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
 	import { getBookablePeople } from '$lib/people';
+	import Orgs from './components/orgs.svelte';
 	import { onMount } from 'svelte';
 	import { fly, scale } from 'svelte/transition';
 	import { backOut } from 'svelte/easing';
@@ -331,6 +332,14 @@
 				maia-exec@mit.edu
 			</a>.
 		</p>
+	</section>
+
+	<section class="mb-16" aria-labelledby="organizations-title">
+		<h2 id="organizations-title" class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
+			<i class="fa-solid fa-building-columns mr-2 text-maia-800 dark:text-maia-400"></i>
+			Organizations MAIA Works With
+		</h2>
+		<Orgs />
 	</section>
 </PageLayout>
 
