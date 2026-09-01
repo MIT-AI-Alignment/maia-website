@@ -2,7 +2,7 @@
 	import PageLayout from '../../components/PageLayout.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
-	import { displayDate, displayTime, type CalendarEvent } from '$lib/events';
+	import { displayDate, displayTimeRange, type CalendarEvent } from '$lib/events';
 
 	export let data: { upcoming: CalendarEvent[]; past: CalendarEvent[] };
 
@@ -30,8 +30,8 @@
 					<article class="grid gap-3 border-b border-maia-950/15 py-6 last:border-0 md:grid-cols-[10rem_1fr] md:gap-8 dark:border-maia-100/15">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
 							{displayDate(event.start)}
-							{#if displayTime(event.start)}
-								<span class="mt-1 block">{displayTime(event.start)}</span>
+							{#if displayTimeRange(event.start, event.end)}
+								<span class="mt-1 block">{displayTimeRange(event.start, event.end)}</span>
 							{/if}
 						</time>
 						<div>
