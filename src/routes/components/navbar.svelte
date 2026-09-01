@@ -9,7 +9,6 @@
 	import Banner from './banner.svelte';
 	import NavItem from './NavItem.svelte';
 	import MobileMenu from './MobileMenu.svelte';
-	import ThemeToggle from './ThemeToggle.svelte';
 	import { fade, slide } from 'svelte/transition';
 	import type { NavItem as NavItemType } from '$lib/stores/navigation';
 
@@ -171,10 +170,6 @@
 						</div>
 					{/if}
 					
-					<!-- Theme Toggle -->
-					<div class="ml-2 flex items-center">
-						<ThemeToggle />
-					</div>
 				</nav>
 				
 				<!-- Mobile Menu Button -->
