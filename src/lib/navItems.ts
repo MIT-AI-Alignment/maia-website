@@ -5,6 +5,12 @@ export const NAVIGATION_ITEMS = [
 		icon: 'fas fa-home'
 	},
 	{
+		label: 'Orientation 2026',
+		href: '/orientation-2026/',
+		icon: 'fas fa-compass',
+		dropdownItems: [{ href: '/orientation-2026/#schedule', label: 'Schedule' }]
+	},
+	{
 		label: 'Initiatives',
 		href: '/initiatives',
 		icon: 'fas fa-lightbulb',
