@@ -31,7 +31,7 @@
 		{
 			title: 'AI 2027',
 			by: 'AI Futures Project',
-			blurb: 'A concrete, month-by-month scenario for how the next few years of AI could go. Coauthored by MAIA alumni.',
+			blurb: 'A concrete, month-by-month scenario for how the next few years of AI could go.',
 			link: 'https://ai-2027.com/'
 		},
 		{
