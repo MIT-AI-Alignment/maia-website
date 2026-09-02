@@ -5,6 +5,16 @@ export const NAVIGATION_ITEMS = [
 		icon: 'fas fa-home'
 	},
 	{
+		label: 'Orientation 2026',
+		href: '/orientation-2026/',
+		icon: 'fas fa-compass',
+		dropdownItems: [
+			{ href: '/orientation-2026#schedule', label: 'Schedule' },
+			{ href: '/orientation-2026#calendar', label: 'Google Calendar' },
+			{ href: '/orientation-2026#rsvp', label: 'RSVP Links' }
+		]
+	},
+	{
 		label: 'Research',
 		href: '/initiatives',
 		icon: 'fas fa-flask',
