@@ -28,7 +28,10 @@
 						<span class="ml-2 text-sm font-medium text-maia-950/60 dark:text-maia-100/60">(times in EST)</span>
 					{/if}
 				</h2>
-				<div class="border-y border-maia-950/15 dark:border-maia-100/15">
+				<div
+					class="border-y border-maia-950/15 dark:border-maia-100/15"
+					class:opacity-50={section.title === 'Past'}
+				>
 					{#each section.events as event}
 					<article class="grid gap-3 border-b border-maia-950/15 py-6 last:border-0 md:grid-cols-[10rem_1fr] md:gap-8 dark:border-maia-100/15">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
