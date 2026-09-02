@@ -59,37 +59,37 @@
 			href: '/aisf',
 			icon: 'fas fa-book',
 			title: 'AISF Curriculum',
-			blurb: 'The full reading curriculum from our AI Safety Fundamentals fellowship, week by week.'
+			blurb: 'AI Safety Fundamentals reading curriculum for fellows.'
 		},
 		{
 			href: '/resources/mit-classes',
 			icon: 'fas fa-chalkboard-teacher',
 			title: 'Relevant MIT Classes',
-			blurb: 'Which MIT classes to take for the math, ML, and policy background that AI safety work needs.'
+			blurb: 'MIT classes relevant to AI safety.'
 		},
 		{
 			href: '/resources/faculty-labs',
 			icon: 'fas fa-flask',
 			title: 'MIT Faculty and Labs',
-			blurb: 'Professors and labs at MIT doing alignment, interpretability, and governance research.'
+			blurb: 'MIT faculty and labs working on AI safety and related areas.'
 		},
 		{
 			href: '/resources/fellowships',
 			icon: 'fas fa-user-graduate',
 			title: 'AI Safety Fellowships',
-			blurb: 'Funded programs like MATS, SPAR, Astra, and the CBAI fellowship that turn students into researchers.'
+			blurb: 'Fellowships and programs for getting involved in AI safety.'
 		},
 		{
 			href: '/initiatives#research',
 			icon: 'fas fa-file-lines',
 			title: 'Research by MAIA Members',
-			blurb: 'Papers our members have published, from adversarial Go policies to the limits of RLHF.'
+			blurb: 'Papers published by MAIA members.'
 		},
 		{
 			href: '/initiatives#orgs',
 			icon: 'fas fa-building',
 			title: 'Organizations We Work With',
-			blurb: 'The labs, nonprofits, and policy groups our members collaborate with and go on to join.'
+			blurb: 'Labs, nonprofits, and policy groups MAIA works with.'
 		}
 	];
 
@@ -149,8 +149,7 @@
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Why AI safety matters, how to learn it at MIT, and how to keep up with a field that moves
-			every week.
+			Why AI safety matters, how to learn it at MIT, and how to keep up with the field.
 		</p>
 		<div class="flex flex-wrap justify-center gap-3 mb-8">
 			{#each sections as section}
@@ -166,55 +165,80 @@
 	</svelte:fragment>
 
 	<SectionContainer id="why-ai-safety" title="Why care about AI safety?" icon="fa-solid fa-triangle-exclamation">
+		<div class="not-prose rounded-xl border-2 border-maia-500 bg-maia-500/5 p-5 mb-6">
+			<p class="font-medium">
+				MAIA's core mission is to empower MIT students to recognize and reduce the potentially
+				existential risks posed by the development of powerful AI systems.
+			</p>
+		</div>
 		<p>
-			The largest AI companies are explicitly trying to build systems that match or exceed human
-			ability at essentially every cognitive task, and they expect to get there within years, not
-			decades. Whether or not they are right about the timeline, the people building this
-			technology describe it as the most consequential and possibly the most dangerous one in
-			history. In 2023, the heads of OpenAI, Anthropic, and Google DeepMind, alongside Geoffrey
-			Hinton and Yoshua Bengio, signed a
-			<a href="https://www.safe.ai/work/statement-on-ai-risk">one-sentence statement</a> saying
-			that mitigating the risk of extinction from AI should be a global priority alongside pandemics
-			and nuclear war.
-		</p>
-		<p>
-			The core problem is simple to state and hard to solve: we do not know how to make sure that a
-			system smarter than us reliably does what we intend. Modern models are grown from data, not
-			engineered line by line. We cannot read their goals off their weights, and we already see them
-			gaming their training signals, telling users what they want to hear, and behaving differently
-			when they think they are being tested. Those are small problems today. They stop being small
-			once the systems are capable enough to run companies, write most of the world's code, or
-			conduct their own research.
+			AI is expected to reshape every pillar of modern society: the economy, science and mathematics,
+			military strategy, culture at large. This isn't mere speculation. Unprecedented capital
+			investment, rapid algorithmic progress, and consistent gains across frontier benchmarks suggest
+			transformative AI is not a distant hypothetical, but a defining feature of this coming decade.
+			This transformation comes with certain risks. The ones we take most seriously are:
 		</p>
 		<ul>
 			<li>
-				<strong>Misalignment.</strong> Highly capable systems pursuing goals we did not intend,
-				and being capable enough that we cannot easily correct them.
+				<strong>Loss of control:</strong> As AI systems become more autonomous and self-improving,
+				while being deployed with super-human speed at super-human scales across all levels of
+				society, maintaining meaningful human oversight becomes harder, and the consequences of
+				failure become catastrophic.
 			</li>
 			<li>
-				<strong>Misuse.</strong> The same capabilities lowering the bar for bioweapons, large-scale
-				cyberattacks, and manipulation.
+				<strong>Geopolitical instability:</strong> Accelerating capabilities create pressure for
+				rushed deployment and risky preemptive actions, raising the likelihood of accidents and
+				conflict.
 			</li>
 			<li>
-				<strong>Concentration of power.</strong> Whoever controls the most capable systems,
-				whether a company or a government, gaining an unprecedented and hard-to-reverse advantage
-				over everyone else.
+				<strong>Concentration of power:</strong> Even in optimistic scenarios where alignment is
+				solved, transformative AI risks centralizing power in ways that are incompatible with
+				meaningful notions of democracy and personal self-determination.
+			</li>
+			<li>
+				<strong>Gradual disempowerment:</strong> Even in optimistic scenarios where all of the above
+				are solved, transformative AI will lead to unprecedented cultural changes dominated by
+				disempowerment and the unpredictable predispositions of the deployed powerful AIs.
 			</li>
 		</ul>
 		<p>
-			We think this is one of the best problems an MIT student can work on. The field is young and
-			small relative to the stakes, the open questions are genuinely technical (interpretability,
-			robustness, evaluations, control, formal verification) as well as political, and students
-			regularly contribute real research within a year of starting. MAIA members have gone on to
-			work at Anthropic, OpenAI, Google DeepMind, METR, Redwood Research, and the AI Futures
-			Project, and to write papers you will find in the NeurIPS and ICLR proceedings. See
-			<a href="/initiatives#research">research by MAIA members</a>.
+			Given these predictable challenges, we believe talented and highly motivated young people have
+			a great opportunity to steer the world towards safer, prosperous futures. In particular, we
+			believe MIT students are uniquely positioned to shape their careers in ways that are aimed at
+			such impact. Some of the key features that set them apart are:
 		</p>
-		<p>
-			You do not need to already agree with any of this to get involved. Most of us started
-			skeptical. The reading below is where we would send a smart friend who asked "wait, is this
-			actually a real thing?"
-		</p>
+		<ul>
+			<li>
+				<strong>MIT selects for extraordinary people.</strong> Many students here, if sufficiently
+				motivated, have the potential to become world-leading experts in AI governance or agendas of
+				technical safety research.
+			</li>
+			<li>
+				<strong>MIT's resources help its students realize their potential.</strong> For most
+				upperclassmen, their time at the Institute provided the research skills and work experience
+				necessary to quickly adapt to new fields and achieve impact.
+			</li>
+			<li>
+				<strong>Unlike other leading universities, many MIT faculty members are concerned about AI
+				risk.</strong> This includes Max Tegmark, Dylan Hadfield-Menell, Michiel Bakker, and
+				Aleksander Madry, among many others. See <a href="/resources/faculty-labs">MIT faculty and labs</a>.
+			</li>
+			<li>
+				<strong>Graduating from MIT is a strong credential.</strong> By virtue of carrying a degree
+				from this institution, one can pursue many more opportunities. Therefore, empowering students
+				to pursue opportunities that steer the incoming wave, as opposed to merely riding it, can be
+				especially impactful.
+			</li>
+			<li>
+				<strong>MIT has strong communities that support students interested in having a positive
+				impact.</strong> MAIA is well connected and recognized by dozens of safety organizations. Many
+				MAIA alumni work on safety problems at frontier labs. The support from
+				<a href="https://www.cbai.ai/">CBAI</a> through philanthropic funds enables us to pursue
+				initiatives that other student organizations can only dream of. The proximity to
+				<a href="https://aisst.ai/">AISST</a> and other student groups animated by the same mission
+				helps MAIA join a community that expands well outside the bounds of MIT's campus.
+			</li>
+		</ul>
 
 		<h3 class="mt-8 mb-4 text-xl font-heading">Start here</h3>
 		<div class="not-prose flex flex-col gap-3">
@@ -251,10 +275,7 @@
 	</div>
 
 	<SectionContainer id="learn" title="Learn" icon="fa-solid fa-graduation-cap">
-		<p>
-			Everything we maintain for people who want to go from curious to capable: what to read, which
-			classes to take, who at MIT works on this, and which programs will pay you to do research.
-		</p>
+		<p>Curricula, classes, labs, and fellowships.</p>
 		<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
 			{#each learn as item}
 				<a
@@ -276,10 +297,7 @@
 	</div>
 
 	<SectionContainer id="stay-informed" title="Stay informed" icon="fa-solid fa-newspaper">
-		<p>
-			The field changes weekly. These are the sources our organizers actually read and listen to.
-			Pick one newsletter and one podcast; that is enough to keep up.
-		</p>
+		<p>Newsletters, podcasts, forums, and job boards for keeping up with the field.</p>
 		<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
 			{#each stayInformed as group}
 				<div class="p-6 rounded-xl border border-border-light dark:border-border-dark">
