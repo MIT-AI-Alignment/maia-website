@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { fade, scale } from 'svelte/transition';
-	
-	let mounted = false;
-	
-	onMount(() => {
-		mounted = true;
-	});
-	
-	const organizations = [
+	type Organization = {
+		name: string;
+		link: string;
+		imagePath?: string;
+		wordmark?: string;
+		invert?: boolean;
+	};
+
+	const organizations: Organization[] = [
 		{
 			imagePath: '/images/logos/chai.png',
 			name: 'CHAI',
@@ -56,6 +55,34 @@
 			name: 'METR',
 			link: 'https://metr.org/',
 			invert: true
+		},
+		{
+			imagePath: '/images/logos/google-deepmind.svg',
+			name: 'Google DeepMind',
+			link: 'https://deepmind.google/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/xai.svg',
+			name: 'xAI',
+			link: 'https://x.ai/',
+			invert: true
+		},
+		{
+			wordmark: 'ARC',
+			name: 'ARC Evals',
+			link: 'https://arcevals.org/'
+		},
+		{
+			imagePath: '/images/logos/forethought.svg',
+			name: 'Forethought',
+			link: 'https://www.forethought.org/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/rand.png',
+			name: 'RAND',
+			link: 'https://www.rand.org/'
 		}
 	];
 </script>
@@ -65,50 +92,23 @@
 </p>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
-	{#each organizations as { imagePath, name, link, invert }, i}
-		{#if mounted}
-			<div 
-				in:scale={{ duration: 400, delay: 100 + i * 50, start: 0.8, opacity: 0 }}
-				class="org-card flex flex-col items-center justify-center p-4 transition-all duration-300"
-			>
-				<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
-					<div class="h-24 flex items-center justify-center">
+	{#each organizations as { imagePath, wordmark, name, link, invert }}
+		<div class="org-card last:md:col-span-2 last:md:col-start-2 flex flex-col items-center justify-center p-4 transition-all duration-300">
+			<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
+				<div class="h-24 flex items-center justify-center">
+					{#if imagePath}
 						<img
 							src={imagePath}
 							alt={name}
-							class="max-h-20 max-w-full object-contain transition-transform duration-300 hover:scale-110"
+							class="h-14 max-w-full object-contain transition-transform duration-300 hover:scale-110"
 							class:dark:invert={invert}
 						/>
-					</div>
-					<span class="text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
-				</a>
-			</div>
-		{:else}
-			<div class="org-card flex flex-col items-center justify-center p-4 transition-all duration-300">
-				<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
-					<div class="h-24 flex items-center justify-center">
-						<img
-							src={imagePath}
-							alt={name}
-							class="max-h-20 max-w-full object-contain transition-transform duration-300 hover:scale-110"
-							class:dark:invert={invert}
-						/>
-					</div>
-					<span class="text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
-				</a>
-			</div>
-		{/if}
+					{:else}
+						<span class="max-w-full px-2 text-center text-2xl font-extrabold tracking-[-0.06em] text-maia-950 dark:text-maia-50">{wordmark}</span>
+					{/if}
+				</div>
+				<span class="text-sm font-medium text-maia-950/70 dark:text-maia-200 mt-2">{name}</span>
+			</a>
+		</div>
 	{/each}
 </div>
-
-<style>
-	@media (prefers-reduced-motion: reduce) {
-		.org-card {
-			transition: none !important;
-		}
-		
-		.org-card img {
-			transition: none !important;
-		}
-	}
-</style>

@@ -15,13 +15,18 @@ export const NAVIGATION_ITEMS = [
 		]
 	},
 	{
-		label: 'Initiatives',
+		label: 'Research',
 		href: '/initiatives',
-		icon: 'fas fa-lightbulb',
+		icon: 'fas fa-flask',
 		dropdownItems: [
-			{ href: '/initiatives#research', label: 'Research' },
-			{ href: '/initiatives#current', label: 'Current Projects' }
+			{ href: '/initiatives#research', label: 'Research by MAIA Members' },
+			{ href: '/initiatives#orgs', label: 'Organizations MAIA Works With' }
 		]
+	},
+	{
+		label: 'Events',
+		href: '/events',
+		icon: 'far fa-calendar'
 	},
 	{
 		label: 'Get Involved',

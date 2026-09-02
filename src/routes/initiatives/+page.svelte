@@ -48,10 +48,10 @@
 
 
 <PageLayout
-	title="Initiatives"
-	description="MIT AI Alignment (MAIA) initiatives page."
-	heroTitle="Initiatives"
-	heroIcon="fa-solid fa-lightbulb"
+	title="Research"
+	description="Research and organizations connected to MIT AI Alignment (MAIA)."
+	heroTitle="Research"
+	heroIcon="fa-solid fa-flask"
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
