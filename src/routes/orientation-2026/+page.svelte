@@ -1,18 +1,46 @@
 <script lang="ts">
 	import PageLayout from '../../components/PageLayout.svelte';
 	import SectionContainer from '../../components/SectionContainer.svelte';
+	import Button from '../../components/Button.svelte';
+
+	const sections = [
+		{ id: 'schedule', title: 'Schedule', icon: 'fa-solid fa-calendar-days' },
+		{ id: 'calendar', title: 'Google Calendar', icon: 'fa-solid fa-calendar' },
+		{ id: 'rsvp', title: 'RSVP Links', icon: 'fa-solid fa-ticket' }
+	];
 
 	const rsvpEvents = [
-		{ name: 'Rock Climbing', href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J' },
+		{
+			name: 'Rock Climbing',
+			href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J',
+			note: '(RSVP Required to Attend)'
+		},
 		{
 			name: 'AGI Tabletop Exercises',
-			href: 'https://partiful.com/e/UBZPLn8pwDSahW5WScIL'
+			href: 'https://partiful.com/e/UBZPLn8pwDSahW5WScIL',
+			note: '(RSVP Required to Attend)'
 		},
 		{
 			name: 'Sunset Cruise Ride',
-			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1'
+			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1',
+			note: '(RSVP Required to Attend)'
+		},
+		{
+			name: 'Estimation and Forecasting Challenge',
+			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
+		},
+		{
+			name: 'OpenAI Hacking Incident Explained',
+			href: 'https://partiful.com/e/wPAPgTYV7Rd3VonTVbt6?c=wf75zPOn'
 		}
 	];
+
+	function scrollToSection(id: string) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <PageLayout
@@ -22,26 +50,42 @@
 	heroTitle="Orientation 2026"
 	centerTitle={true}
 >
-	<!-- Anchor targets sit on wrappers so they can clear the fixed navbar. -->
-	<div id="schedule" class="scroll-mt-28">
-		<SectionContainer title="Schedule" icon="fas fa-calendar-days">
-			<figure class="w-full">
-				<img
-					src="/images/flyers/maia-orientation-flyer-v3.png"
-					alt="MAIA Orientation 2026 schedule flyer"
-					width="2176"
-					height="2264"
-					class="w-full h-auto border"
-					style="border-color: var(--maia-border);"
+	<svelte:fragment slot="hero-content">
+		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
+			Learn about MAIA through our orientation events, geared at incoming MIT first-years.
+		</p>
+
+		<!-- Navigation Buttons -->
+		<div class="flex flex-wrap justify-center gap-3 mb-8">
+			{#each sections as section}
+				<Button
+					text={section.title}
+					icon={section.icon}
+					type="purple"
+					size="md"
+					on:click={() => scrollToSection(section.id)}
 				/>
-			</figure>
-		</SectionContainer>
-	</div>
+			{/each}
+		</div>
+	</svelte:fragment>
+
+	<SectionContainer id="schedule" title="Schedule" icon="fa-solid fa-calendar-days">
+		<figure class="w-full">
+			<img
+				src="/images/flyers/maia-2026-orientation-flyer.png"
+				alt="MAIA Orientation 2026 schedule flyer"
+				width="4040"
+				height="5228"
+				class="w-full h-auto border"
+				style="border-color: var(--maia-border);"
+			/>
+		</figure>
+	</SectionContainer>
 
 	<!-- The trailing -mb-8 trims SectionContainer's mb-16 so the calendar and RSVP
 	     panels read as a pair rather than two distant blocks. -->
-	<div id="calendar" class="scroll-mt-28 -mb-8">
-		<SectionContainer title="Google Calendar" icon="fas fa-calendar">
+	<div class="-mb-8">
+		<SectionContainer id="calendar" title="Google Calendar" icon="fa-solid fa-calendar">
 			<!-- The override layer in app.css makes the Tailwind border/background utilities
 			     transparent inside <main>, so this panel draws itself with the brand tokens. -->
 			<aside class="border p-6" style="border-color: var(--maia-border);">
@@ -62,27 +106,37 @@
 		</SectionContainer>
 	</div>
 
-	<div id="rsvp" class="scroll-mt-28">
-		<SectionContainer title="RSVP Links" icon="fas fa-ticket">
-			<aside class="border" style="border-color: var(--maia-border);">
-				<ul class="list-none m-0 p-0">
-					{#each rsvpEvents as event, index}
-						<li class={index > 0 ? 'border-t' : ''} style="border-color: var(--maia-border);">
-							<a
-								href={event.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex items-center gap-3 p-5 text-lg no-underline hover:underline underline-offset-4"
-								style="color: var(--maia-accent);"
-							>
-								<i class="fas fa-ticket" aria-hidden="true"></i>
-								<span>{event.name}</span>
-								<i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
-							</a>
-						</li>
-					{/each}
-				</ul>
-			</aside>
-		</SectionContainer>
+	<SectionContainer id="rsvp" title="RSVP Links" icon="fa-solid fa-ticket">
+		<aside class="border" style="border-color: var(--maia-border);">
+			<ul class="list-none m-0 p-0">
+				{#each rsvpEvents as event, index}
+					<li class={index > 0 ? 'border-t' : ''} style="border-color: var(--maia-border);">
+						<a
+							href={event.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center gap-3 p-5 text-lg no-underline hover:underline underline-offset-4"
+							style="color: var(--maia-accent);"
+						>
+							<i class="fas fa-ticket" aria-hidden="true"></i>
+							<span>{event.name}</span>
+							{#if event.note}
+								<span class="text-sm" style="color: var(--maia-muted);">{event.note}</span>
+							{/if}
+							<i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</aside>
+	</SectionContainer>
+
+	<div class="flex justify-center mt-8 mb-12">
+		<Button
+			text="Back to Top"
+			icon="fa-solid fa-arrow-up"
+			type="text"
+			on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+		/>
 	</div>
 </PageLayout>
