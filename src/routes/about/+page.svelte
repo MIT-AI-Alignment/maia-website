@@ -7,6 +7,7 @@
 	import Execs from './execs.svelte';
 	import About from './about.svelte';
 	import Organizers from './organizers.svelte';
+	import WhatIsMaia from './what-is-maia.svelte';
 	import type { DropdownItem } from '$lib/stores/navigation';
 
 	type Section = {
@@ -22,6 +23,12 @@
 			title: 'About MAIA',
 			icon: 'fa-solid fa-pencil',
 			component: About
+		},
+		{
+			id: 'what-is-maia',
+			title: 'What is MAIA?',
+			icon: 'fa-solid fa-sitemap',
+			component: WhatIsMaia
 		},
 		{
 			id: 'executives',

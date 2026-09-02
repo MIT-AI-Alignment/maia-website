@@ -252,7 +252,7 @@ export const PEOPLE: Record<string, Person> = {
 	'jurgis-kemeklis': {
 		id: 'jurgis-kemeklis',
 		name: 'Jurgis Kemeklis',
-		position: 'Board Member',
+		position: 'Exec',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
 		isExec: true,
 		isOrg: false,
@@ -263,7 +263,7 @@ export const PEOPLE: Record<string, Person> = {
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
 		name: 'Ionut Gabriel Stan',
-		position: 'Board Member',
+		position: 'Exec',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
