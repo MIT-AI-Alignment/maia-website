@@ -15,7 +15,7 @@
 		<SectionContainer title="Schedule" icon="fas fa-calendar-days">
 			<figure class="max-w-2xl mx-auto">
 				<img
-					src="/images/flyers/maia-orientation-flyer-v2.png"
+					src="/images/flyers/maia-orientation-flyer-v3.png"
 					alt="MAIA Orientation 2026 schedule flyer"
 					width="2176"
 					height="2264"
