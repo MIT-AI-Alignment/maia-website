@@ -52,6 +52,7 @@ export const NAVIGATION_ITEMS = [
 		icon: 'fas fa-info-circle',
 		dropdownItems: [
 			{ href: '/about#about', label: 'About MAIA' },
+			{ href: '/about#what-is-maia', label: 'What is MAIA?' },
 			{ href: '/about#executives', label: 'Executives' },
 			{ href: '/about#organizers', label: 'Organizers' },
 			{ href: '/about#advisors', label: 'Advisors' }
