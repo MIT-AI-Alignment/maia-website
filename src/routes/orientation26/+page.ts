@@ -5,5 +5,5 @@ import { redirect } from '@sveltejs/kit';
 export const prerender = true;
 
 export function load() {
-	throw redirect(302, '/orientation-2026');
+	throw redirect(302, 'https://aialignment.mit.edu/orientation-2026/');
 }
