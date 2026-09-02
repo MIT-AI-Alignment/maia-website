@@ -31,7 +31,7 @@
 		},
 		{
 			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/wPAPgTYV7Rd3VonTVbt6?c=wf75zPOn'
+			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ'
 		}
 	];
 
