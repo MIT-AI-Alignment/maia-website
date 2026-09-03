@@ -54,7 +54,6 @@ export type Person = {
 	isAdvisor?: boolean; // Whether the person is an advisor
 	isExec?: boolean; // Whether the person is an executive
 	isOrg?: boolean; // Whether the person is an organizer
-	isHomepageContact?: boolean; // Whether to show an email-only contact card on the homepage
 	execOrder?: number; // Order in which to display person on the executive board
 	orgOrder?: number; // Order in which to display person in the organizers list
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
@@ -242,7 +241,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
 		mitEmail: 'kemeklis@mit.edu',
-		isHomepageContact: true,
+		calendly: 'https://cal.com/jurgis/30min',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -522,10 +521,10 @@ export const getOrganizers = () =>
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
 
-// Active executives with a public booking link or an explicitly approved email card.
+// Active executives with a public booking link for the homepage contact section.
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isActive && person.isExec && (!!person.calendly || person.isHomepageContact))
+		.filter((person) => person.isActive && person.isExec && !!person.calendly)
 		.sort((a, b) => {
 			const orderA = a.execOrder ?? 999;
 			const orderB = b.execOrder ?? 999;
