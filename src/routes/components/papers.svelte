@@ -13,6 +13,7 @@
 	let mounted = false;
 
 	onMount(() => {
+		innerWidth = window.innerWidth;
 		mounted = true;
 	});
 
@@ -25,12 +26,12 @@
 	<div in:fade={{ duration: 800, delay: 200 }}>
 		<Splide
 			aria-label="Research images/papers"
-			options={{ 
-				perPage, 
-				gap: '1.5rem', 
+			options={{
+				perPage,
+				gap: '1.5rem',
 				pagination: true,
 				arrows: true,
-				autoplay: true,
+				autoplay: innerWidth >= 768,
 				interval: 5000,
 				pauseOnHover: true,
 				pauseOnFocus: true,
@@ -52,14 +53,14 @@
 				{/each}
 			</SplideTrack>
 			<div class="splide__arrows">
-			<button
-				class="splide__arrow splide__arrow--prev transition-all duration-300 absolute left-[-30px] md:left-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
-				><IconArrowLeftBold class="text-maia-800 dark:text-maia-400" /></button
-			>
-			<button
-				class="splide__arrow splide__arrow--next transition-all duration-300 absolute right-[-30px] md:right-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
-				><IconArrowRightBold class="text-maia-800 dark:text-maia-400" /></button
-			>
+				<button
+					class="splide__arrow splide__arrow--prev transition-all duration-300 absolute left-[-30px] md:left-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
+					><IconArrowLeftBold class="text-maia-800 dark:text-maia-400" /></button
+				>
+				<button
+					class="splide__arrow splide__arrow--next transition-all duration-300 absolute right-[-30px] md:right-[-50px] top-1/3 bg-surface-light-elevated dark:bg-surface-dark-elevated h-10 w-10 rounded-full flex items-center justify-center border border-solid border-maia-200 dark:border-maia-900 shadow-md hover:scale-110 hover:bg-maia-50 dark:hover:bg-maia-900/30"
+					><IconArrowRightBold class="text-maia-800 dark:text-maia-400" /></button
+				>
 			</div>
 		</Splide>
 	</div>
@@ -94,32 +95,32 @@
 	:global(.papers-carousel .splide__pagination) {
 		bottom: -2rem;
 	}
-	
+
 	:global(.papers-carousel .splide__pagination__page) {
 		background: var(--maia-300, #d8b4fe);
 		opacity: 0.5;
 		transition: all 0.3s ease;
 	}
-	
+
 	:global(.papers-carousel .splide__pagination__page.is-active) {
 		background: var(--maia-800, #663399);
 		opacity: 1;
 		transform: scale(1.3);
 	}
-	
+
 	.slide-in {
 		animation: slideIn 0.8s ease-out forwards;
 		opacity: 0;
 		transform: translateY(20px);
 	}
-	
+
 	@keyframes slideIn {
 		to {
 			opacity: 1;
 			transform: translateY(0);
 		}
 	}
-	
+
 	@media (prefers-reduced-motion: reduce) {
 		.slide-in {
 			animation: none;

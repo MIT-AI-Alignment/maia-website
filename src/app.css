@@ -3,89 +3,106 @@
 @tailwind utilities;
 
 :root {
-  --navbar-height: 4rem;
-  
-  /* 
+	--navbar-height: 4rem;
+
+	/*
    * Note: Most colors are defined in tailwind.config.js
    * Only add CSS variables here if you need them in:
    * - <style> blocks (animations, keyframes)
    * - Inline styles with var()
    * - JavaScript access
    */
-  
-  /* Light mode */
-  --background-color: #f5f3ef;
-  --primary: #6b43b8;
-  --maia-canvas: #f5f3ef;
-  --maia-ink: #191522;
-  --maia-muted: #736b7e;
-  --maia-border: #d9d4df;
-  --maia-accent: #6b43b8;
-  --maia-action: #6b43b8;
-  --maia-feature: #6b43b8;
-  --maia-nav-surface: #ffffff;
+
+	/* Light mode */
+	--background-color: #f5f3ef;
+	--primary: #6b43b8;
+	--maia-canvas: #f5f3ef;
+	--maia-ink: #191522;
+	--maia-muted: #736b7e;
+	--maia-border: #d9d4df;
+	--maia-accent: #6b43b8;
+	--maia-action: #6b43b8;
+	--maia-feature: #6b43b8;
+	--maia-nav-surface: #ffffff;
 }
 
 .dark {
-  /* Dark mode */
-  --background-color: #1d1427;
-  --primary: #9a70d6;
-  --maia-canvas: #1d1427;
-  --maia-ink: #f7f3fa;
-  --maia-muted: #b8afc4;
-  --maia-border: #463650;
-  --maia-accent: #9a70d6;
-  --maia-action: #7954b6;
-  --maia-feature: #7954b6;
-  --maia-nav-surface: #251a31;
+	/* Dark mode */
+	--background-color: #1d1427;
+	--primary: #9a70d6;
+	--maia-canvas: #1d1427;
+	--maia-ink: #f7f3fa;
+	--maia-muted: #b8afc4;
+	--maia-border: #463650;
+	--maia-accent: #9a70d6;
+	--maia-action: #7954b6;
+	--maia-feature: #7954b6;
+	--maia-nav-surface: #251a31;
 }
 
 @layer base {
-  body {
-    @apply bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50;
-    font-family: 'Manrope', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+	html {
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		@apply bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50;
+		font-family: 'Manrope', sans-serif;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }
 
 /* MAIA 2026 baseline: a deliberately small visual pass over the existing site. */
 body,
 .bg-surface-light,
 .bg-surface-light-elevated {
-  background-color: var(--maia-canvas) !important;
-  color: var(--maia-ink);
+	background-color: var(--maia-canvas) !important;
+	color: var(--maia-ink);
 }
 
 .dark body,
 .dark .dark\:bg-surface-dark,
 .dark .dark\:bg-surface-dark-elevated {
-  background-color: var(--maia-canvas) !important;
-  color: var(--maia-ink);
+	background-color: var(--maia-canvas) !important;
+	color: var(--maia-ink);
 }
 
 .font-heading {
-  font-family: 'Manrope', sans-serif !important;
-  font-weight: 650 !important;
-  letter-spacing: -0.035em;
+	font-family: 'Manrope', sans-serif !important;
+	font-weight: 650 !important;
+	letter-spacing: -0.035em;
 }
 
 .font-mono,
 .tracking-wider,
 .uppercase {
-  font-family: 'IBM Plex Mono', monospace;
+	font-family: 'IBM Plex Mono', monospace;
 }
 
 main .bg-gradient-to-b {
-  background: none !important;
+	background: none !important;
 }
 
 main .flowing-dots,
 main .bottom-gradient {
-  display: none;
+	display: none;
 }
 
 main :is(.rounded-xl, .rounded-lg, .rounded-md) {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 main .shadow-maia,
@@ -93,116 +110,130 @@ main .shadow-maia-lg,
 main .shadow-sm,
 main .shadow-md,
 main .shadow-lg {
-  box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 /* One controlled interaction surface in each theme. It is intentionally darker
    than link text in dark mode so white labels meet contrast requirements. */
 .maia-action {
-  background: var(--maia-action) !important;
-  border-color: transparent !important;
-  color: #fff !important;
+	background: var(--maia-action) !important;
+	border-color: transparent !important;
+	color: #fff !important;
 }
 
 .maia-action:hover {
-  filter: brightness(0.94);
+	filter: brightness(0.94);
 }
 
 .maia-text-action {
-  background: transparent !important;
-  border-color: transparent !important;
-  color: var(--maia-accent) !important;
+	background: transparent !important;
+	border-color: transparent !important;
+	color: var(--maia-accent) !important;
 }
 
 .maia-section {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
 }
 
 .maia-section-icon {
-  color: var(--maia-accent) !important;
+	color: var(--maia-accent) !important;
 }
 
 /* The header uses its elevated neutral while scrolling or while the desktop
    navigation is engaged. Dropdowns share that same surface. */
 .maia-nav-surface,
 .maia-nav-dropdown {
-  background-color: var(--maia-nav-surface) !important;
-  border-color: var(--maia-border) !important;
-  box-shadow: none !important;
+	background-color: var(--maia-nav-surface) !important;
+	border-color: var(--maia-border) !important;
+	box-shadow: none !important;
 }
 
 .maia-nav-dropdown-link:hover,
 .maia-nav-dropdown-active {
-  background-color: var(--maia-action) !important;
-  color: #fff !important;
+	background-color: var(--maia-action) !important;
+	color: #fff !important;
 }
 
 /* Keep the fixed header anchored without drawing attention away from the
    top-of-page composition in dark mode. */
 .dark .navbar-container:not(.maia-nav-surface) {
-  border-color: rgba(247, 243, 250, 0.07) !important;
+	border-color: rgba(247, 243, 250, 0.07) !important;
 }
 
 .maia-feature {
-  background: var(--maia-accent) !important;
-  background-image: none !important;
-  border-color: var(--maia-accent) !important;
-  box-shadow: none !important;
+	background: var(--maia-accent) !important;
+	background-image: none !important;
+	border-color: var(--maia-accent) !important;
+	box-shadow: none !important;
 }
 
 .dark .maia-feature {
-  background-color: var(--maia-feature) !important;
-  border-color: var(--maia-feature) !important;
+	background-color: var(--maia-feature) !important;
+	border-color: var(--maia-feature) !important;
 }
 
 .maia-feature :is(.text-white, .text-white\/90) {
-  color: #fff !important;
+	color: #fff !important;
 }
 
 .maia-feature a {
-  border-radius: 0;
-  box-shadow: none !important;
+	border-radius: 0;
+	box-shadow: none !important;
 }
 
 .maia-feature a.bg-white {
-  background: var(--maia-canvas) !important;
-  color: var(--maia-ink) !important;
+	background: var(--maia-canvas) !important;
+	color: var(--maia-ink) !important;
 }
 
 .maia-feature a.bg-white\/10 {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.7) !important;
+	background: transparent !important;
+	border-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 main :is(.bg-surface-light-alt, .bg-surface-dark-alt) {
-  background: transparent !important;
-  border-color: transparent !important;
+	background: transparent !important;
+	border-color: transparent !important;
 }
 
 main .dark\:bg-surface-dark\/40 {
-  background: transparent !important;
+	background: transparent !important;
 }
 
 /* Old card treatment: remove the faint outlines rather than multiplying
    color variants. Individual program/logotype imagery stays untouched. */
-main :is(.border-maia-200, .border-maia-800, .border-border-light, .border-border-dark,
-  .border-border-maia-subtle, .border-border-maia-subtle-dark) {
-  border-color: transparent !important;
+main
+	:is(
+		.border-maia-200,
+		.border-maia-800,
+		.border-border-light,
+		.border-border-dark,
+		.border-border-maia-subtle,
+		.border-border-maia-subtle-dark
+	) {
+	border-color: transparent !important;
 }
 
 main .border-l-4 {
-  border-left-width: 0 !important;
+	border-left-width: 0 !important;
 }
 
-main :is(.text-maia-800, .text-maia-700, .text-maia-600, .text-maia-500,
-  .dark\:text-maia-500, .dark\:text-maia-400) {
-  color: var(--maia-accent) !important;
+main
+	:is(
+		.text-maia-800,
+		.text-maia-700,
+		.text-maia-600,
+		.text-maia-500,
+		.dark\:text-maia-500,
+		.dark\:text-maia-400
+	) {
+	color: var(--maia-accent) !important;
 }
 
 main .w-16.h-1 {
-  display: none;
+	display: none;
 }
 
 /* 

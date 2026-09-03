@@ -2,9 +2,10 @@
 	import { onMount } from 'svelte';
 	import { CONFIG } from '$lib/config';
 
+	export let isVisible = true;
+
 	// Control the animation for the icon
 	let animateIcon = true;
-	let isVisible = true;  // New state to control banner visibility
 
 	// When the component mounts, remove the animation after 3 seconds.
 	onMount(() => {
@@ -35,7 +36,8 @@
 					style="--fa-animation-duration: 1.0s;"
 				></i>
 				{CONFIG.banner.text}
-				<a href={CONFIG.banner.link} class="underline font-semibold ml-1">{CONFIG.banner.ctaText}</a>
+				<a href={CONFIG.banner.link} class="underline font-semibold ml-1">{CONFIG.banner.ctaText}</a
+				>
 			</p>
 		</div>
 		<button

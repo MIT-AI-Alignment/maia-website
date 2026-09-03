@@ -4,12 +4,20 @@
 			>AISST</a
 		>) collaborate to run weekend retreats on AI safety. We gather students, professors, and
 		professionals working on AI safety to discuss and collaborate on the cutting edge of AI safety
-		research and policy. 
-		<br><br>
-		In the past, we have run workshops building transformers from scratch,
-		replicating papers in the field, and learning from industry leaders.
+		research and policy.
+		<br /><br />
+		In the past, we have run workshops building transformers from scratch, replicating papers in the
+		field, and learning from industry leaders.
 	</p>
-	<img src="/images/initiatives/2025workshop.JPG" alt="2025 Workshop with all participants">
+	<img
+		src="/images/initiatives/2025workshop.JPG"
+		alt="2025 Workshop with all participants"
+		width="4032"
+		height="3024"
+		loading="lazy"
+		decoding="async"
+		class="mt-6 h-auto w-full"
+	/>
 	<!-- <p class="mt-2 italic mb-8">
 	 	More information to come out Spring 2026
 		If you are interested in attending events open to the public, 
