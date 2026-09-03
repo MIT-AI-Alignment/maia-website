@@ -4,9 +4,9 @@
 	export let icon = '';
 </script>
 
-<section 
-	id={id} 
-	class="maia-section mb-16 scroll-mt-24 p-6"
+<section
+	id={id}
+	class="maia-section mb-10 md:mb-16 scroll-mt-24 p-4 sm:p-6"
 >
 	{#if title}
 		<div class="flex items-center mb-6">

@@ -10,6 +10,7 @@
 	export let heroIcon = '';
 	export let heroTitle: string;
 	export let centerTitle = false;
+	export let compactHero = false;
 	export let pageNavItems: DropdownItem[] = [];
 
 	// Update the navigation store with page-specific items
@@ -37,7 +38,7 @@
 	<div
 		class="bg-gradient-to-b {$theme === 'dark'
 			? 'from-maia-500/5 via-maia-500/3 to-transparent'
-			: 'from-maia-500/3 via-maia-500/2 to-transparent'} pt-10 sm:pt-28 md:pt-32 pb-10 sm:pb-12 relative z-10"
+			: 'from-maia-500/3 via-maia-500/2 to-transparent'} pt-10 sm:pt-28 md:pt-32 {compactHero ? 'pb-4 sm:pb-12' : 'pb-10 sm:pb-12'} relative z-10"
 	>
 		<div class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl">
 			<h1

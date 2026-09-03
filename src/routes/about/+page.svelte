@@ -63,6 +63,7 @@
 	heroIcon="fa-solid fa-users-gear"
 	heroTitle="About MAIA"
 	centerTitle={true}
+	compactHero={true}
 	{pageNavItems}
 >
 
@@ -91,7 +92,7 @@
 		</SectionContainer>
 		
 		{#if i < sections.length - 1}
-			<div class="flex justify-center mb-16">
+			<div class="flex justify-center mb-4 md:mb-16">
 				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
