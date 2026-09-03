@@ -55,6 +55,7 @@ export type Person = {
 	isExec?: boolean; // Whether the person is an executive
 	isOrg?: boolean; // Whether the person is an organizer
 	execOrder?: number; // Order in which to display person on the executive board
+	orgOrder?: number; // Order in which to display person in the organizers list
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
@@ -122,12 +123,10 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: '/images/people/nixon-hanna.jpeg',
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
-		personalPage: 'nixonhanna.com',
-		calendly: 'https://cal.com/nixon-hanna',
-		isExec: true,
-		isOrg: false,
+		personalPage: 'https://nixonhanna.com',
+		isExec: false,
+		isOrg: true,
 		isActive: true,
-		execOrder: 2,
 	},
 
 
@@ -227,6 +226,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		orgOrder: 1,
 	},
 
 	'zsofia-keresztely': {
@@ -525,7 +525,10 @@ export const getInactiveExecs = () =>
 
 export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person.isAdvisor);
 
-export const getOrganizers = () => Object.values(PEOPLE).filter((person) => person.isOrg);
+export const getOrganizers = () =>
+	Object.values(PEOPLE)
+		.filter((person) => person.isOrg)
+		.sort((a, b) => (a.orgOrder ?? 999) - (b.orgOrder ?? 999));
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
