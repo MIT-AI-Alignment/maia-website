@@ -264,14 +264,14 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
+		<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
 			{#each bookablePeople as person, index}
 				{#if mounted}
 					<a
-						href={person.calendly}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+						href={person.calendly ?? `mailto:${person.mitEmail}`}
+						target={person.calendly ? '_blank' : undefined}
+						rel={person.calendly ? 'noopener noreferrer' : undefined}
+						class="group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
 						in:fly={{ y: 18, duration: 500, delay: 100 + index * 80 }}
 					>
 						<img
@@ -288,17 +288,17 @@
 						<span
 							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
 						>
-							<i class="fa-regular fa-calendar"></i>
-							Chat with {person.name.split(' ')[0]}
+							<i class={person.calendly ? 'fa-regular fa-calendar' : 'fa-regular fa-envelope'}></i>
+							{person.calendly ? 'Chat with' : 'Email'} {person.name.split(' ')[0]}
 							<i class="fa-solid fa-arrow-right text-xs"></i>
 						</span>
 					</a>
 				{:else}
 					<a
-						href={person.calendly}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+						href={person.calendly ?? `mailto:${person.mitEmail}`}
+						target={person.calendly ? '_blank' : undefined}
+						rel={person.calendly ? 'noopener noreferrer' : undefined}
+						class="group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
 					>
 						<img
 							src={person.imageUrl}
@@ -314,15 +314,15 @@
 						<span
 							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
 						>
-							<i class="fa-regular fa-calendar"></i>
-							Chat with {person.name.split(' ')[0]}
+							<i class={person.calendly ? 'fa-regular fa-calendar' : 'fa-regular fa-envelope'}></i>
+							{person.calendly ? 'Chat with' : 'Email'} {person.name.split(' ')[0]}
 							<i class="fa-solid fa-arrow-right text-xs"></i>
 						</span>
 					</a>
 				{/if}
 			{/each}
 
-			<p class="col-span-2 sm:col-span-4 mt-4 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
+			<p class="basis-full mt-4 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
 			Prefer email? Reach the whole team at
 			<a
 				href="mailto:maia-exec@mit.edu"
