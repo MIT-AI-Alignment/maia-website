@@ -72,10 +72,10 @@
 	<SectionContainer id="schedule" title="Schedule" icon="fa-solid fa-calendar-days">
 		<figure class="w-full">
 			<img
-				src="/images/flyers/maia-2026-orientation-flyer.png"
+				src="/images/flyers/maia-2026-orientation-flyer.jpg"
 				alt="MAIA Orientation 2026 schedule flyer"
-				width="4040"
-				height="5228"
+				width="1920"
+				height="2484"
 				class="w-full h-auto border"
 				style="border-color: var(--maia-border);"
 			/>
