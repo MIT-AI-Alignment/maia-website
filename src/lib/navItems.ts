@@ -24,11 +24,6 @@ export const NAVIGATION_ITEMS = [
 		]
 	},
 	{
-		label: 'Events',
-		href: '/events',
-		icon: 'far fa-calendar'
-	},
-	{
 		label: 'Get Involved',
 		href: '/getinvolved',
 		icon: 'fas fa-hands-helping',
