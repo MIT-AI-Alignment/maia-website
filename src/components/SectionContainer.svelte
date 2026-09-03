@@ -2,11 +2,12 @@
 	export let id: string | undefined = undefined;
 	export let title = '';
 	export let icon = '';
+	export let className = '';
 </script>
 
 <section
 	id={id}
-	class="maia-section mb-10 md:mb-16 scroll-mt-24 p-4 sm:p-6"
+	class="maia-section mb-6 md:mb-16 scroll-mt-24 p-4 sm:p-6 {className}"
 >
 	{#if title}
 		<div class="flex items-center mb-6">

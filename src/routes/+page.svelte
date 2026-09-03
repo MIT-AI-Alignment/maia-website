@@ -25,27 +25,32 @@
 				<p>
 					<a
 						href="#chat-with-us"
-						class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
+						class="desktop-reveal inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
+						style="--reveal-delay: 100ms"
 					>
 						Chat with us →
 					</a>
 				</p>
-				<p class="text-lg md:w-2/3">
+				<p class="desktop-reveal text-lg md:w-2/3" style="--reveal-delay: 200ms">
 					Reducing risks from advanced artificial intelligence may be one of the most important
 					challenges of our time. And one where real progress is possible.
 				</p>
-				<p class="text-lg md:w-2/3">
+				<p class="desktop-reveal text-lg md:w-2/3" style="--reveal-delay: 400ms">
 					MAIA supports undergraduate and graduate students contributing to that progress.
 				</p>
 
 				<div class="flex flex-col sm:flex-row gap-4 mt-8">
 					{#if CONFIG.aisf_ml.visible}
-						<a href="/getinvolved/">
+						<a href="/getinvolved/" class="desktop-reveal" style="--reveal-delay: 800ms">
 							<Button text="See our opportunities" icon="fa-solid fa-arrow-right" type="purple" />
 						</a>
 					{/if}
 					{#if CONFIG.aisf_gov.visible}
-						<a href={CONFIG.mailingListLink} class="hover:scale-105 transition-transform">
+						<a
+							href={CONFIG.mailingListLink}
+							class="desktop-reveal hover:scale-105 transition-transform"
+							style="--reveal-delay: 1000ms"
+						>
 							<Button text="Get event updates" icon="fa-solid fa-arrow-right" type="fuchsia" />
 						</a>
 					{/if}
@@ -57,14 +62,21 @@
 	<!-- AISF: flagship program, feature card treatment -->
 	<section
 		id="aisf"
-		class="maia-feature mb-16 rounded-xl p-6 sm:p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+		class="desktop-reveal maia-feature mb-16 rounded-xl p-6 sm:p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
+		style="--reveal-delay: 600ms"
 	>
-		<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
+		<h2
+			class="desktop-reveal text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight"
+			style="--reveal-delay: 850ms"
+		>
 			<i class="fa-solid fa-graduation-cap mr-2"></i>
 			AI Safety Fundamentals
 		</h2>
 
-		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
+		<p
+			class="desktop-reveal text-lg text-white/90 mb-8 max-w-3xl leading-relaxed"
+			style="--reveal-delay: 950ms"
+		>
 			The main way people get involved with MIT AI Alignment—an 8-week reading group on why AI
 			safety matters and what's being done about it. Covers AI's trajectory, misalignment, technical
 			safety, policy, and careers in the field. Fall and spring run in our office with dinner
@@ -73,8 +85,11 @@
 		</p>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
-			{#each aisfBenefits as benefit}
-				<div class="flex items-center gap-3 text-white/90">
+			{#each aisfBenefits as benefit, index}
+				<div
+					class="desktop-reveal flex items-center gap-3 text-white/90"
+					style={`--reveal-delay: ${1050 + index * 80}ms`}
+				>
 					<span class="inline-flex w-4 justify-center">
 						<i class="fa-solid fa-check text-maia-300"></i>
 					</span>
@@ -89,7 +104,8 @@
 			{#if CONFIG.aisf_ml.applicationLink}
 				<a
 					href={CONFIG.aisf_ml.applicationLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+					class="desktop-reveal inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+					style="--reveal-delay: 1350ms"
 				>
 					Apply for Summer AISF
 					<i class="fa-solid fa-arrow-right"></i>
@@ -97,14 +113,16 @@
 			{/if}
 			<a
 				href={CONFIG.aisf_ml.fallInterestFormLink}
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+				class="desktop-reveal inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
+				style="--reveal-delay: 1450ms"
 			>
 				Fall AISF Interest Form
 				<i class="fa-solid fa-arrow-right"></i>
 			</a>
 			<a
 				href="/aisf/"
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+				class="desktop-reveal inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
+				style="--reveal-delay: 1550ms"
 			>
 				See the curriculum
 			</a>
@@ -129,12 +147,13 @@
 		<div
 			class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800"
 		>
-			{#each bookablePeople as person}
+			{#each bookablePeople as person, index}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail}`}
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
-					class="group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+					class="desktop-reveal group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 transition-all duration-200"
+					style={`--reveal-delay: ${100 + index * 80}ms`}
 				>
 					<img
 						src={person.imageUrl}
@@ -183,3 +202,23 @@
 		<Orgs />
 	</section>
 </PageLayout>
+
+<style>
+	@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+		.desktop-reveal {
+			animation: desktop-reveal 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+		}
+
+		@keyframes desktop-reveal {
+			from {
+				opacity: 0;
+				transform: translateY(18px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+</style>

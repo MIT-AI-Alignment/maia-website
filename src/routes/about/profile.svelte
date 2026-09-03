@@ -39,6 +39,7 @@
 	export let slack: string | undefined = undefined;
 	export let signal: string | undefined = undefined; // Kept for backward compatibility but not used
 	export let calendly: string | undefined = undefined;
+	export let compact = false;
 	export let googleScholar: string | undefined = undefined;
 	export let orcid: string | undefined = undefined;
 	export let arxiv: string | undefined = undefined;
@@ -379,7 +380,7 @@
 </script>
 
 <div
-	class="flex flex-col basis-full sm:basis-1/2 lg:basis-1/3 mb-8 profile-container"
+	class="flex flex-col basis-full sm:basis-1/2 lg:basis-1/3 {compact ? 'mb-0 md:mb-8' : 'mb-8'} profile-container"
 	id={profileId}
 >
 	{#if name && imageUrl}

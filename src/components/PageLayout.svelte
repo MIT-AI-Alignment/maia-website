@@ -11,6 +11,7 @@
 	export let heroTitle: string;
 	export let centerTitle = false;
 	export let compactHero = false;
+	export let compactBottom = false;
 	export let pageNavItems: DropdownItem[] = [];
 
 	// Update the navigation store with page-specific items
@@ -56,7 +57,9 @@
 	</div>
 
 	<!-- Main Content -->
-	<div class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl pb-16 relative z-10">
+	<div
+		class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl {compactBottom ? 'pb-6 md:pb-16' : 'pb-16'} relative z-10"
+	>
 		<slot />
 	</div>
 

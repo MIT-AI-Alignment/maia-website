@@ -5,7 +5,7 @@
 	const orgs = getOrganizers();
 </script>
 
-<div class="flex my-6 flex-wrap">
+<div class="flex mt-4 mb-0 md:my-6 flex-wrap">
 	{#each orgs as org}
 		<Profile 
 			personId={org.id} 

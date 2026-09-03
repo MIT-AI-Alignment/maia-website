@@ -6,7 +6,7 @@
 	const inactiveExecs = getInactiveExecs();
 </script>
 
-<div class="flex my-6 flex-wrap">
+<div class="flex mt-4 mb-0 md:my-6 flex-wrap">
 	<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
 	{#each activeExecs as exec}
 		<Profile 

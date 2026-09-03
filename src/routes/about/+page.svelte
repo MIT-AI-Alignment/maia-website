@@ -64,6 +64,7 @@
 	heroTitle="About MAIA"
 	centerTitle={true}
 	compactHero={true}
+	compactBottom={true}
 	{pageNavItems}
 >
 
@@ -87,18 +88,19 @@
 			id={section.id}
 			title={section.title}
 			icon={section.icon}
+			className="mb-0 md:mb-16"
 		>
 			<svelte:component this={section.component} />
 		</SectionContainer>
 		
 		{#if i < sections.length - 1}
-			<div class="flex justify-center mb-4 md:mb-16">
+			<div class="flex justify-center mb-0 md:mb-16">
 				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
 			</div>
 		{/if}
 	{/each}
 	
-	<div class="flex justify-center mt-8 mb-12">
+	<div class="flex justify-center mt-0 mb-0 md:mt-8 md:mb-12">
 		<Button 
 			text="Back to Top" 
 			icon="fa-solid fa-arrow-up" 
