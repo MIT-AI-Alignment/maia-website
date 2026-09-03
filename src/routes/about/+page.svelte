@@ -88,7 +88,7 @@
 			id={section.id}
 			title={section.title}
 			icon={section.icon}
-			className="mb-0 md:mb-16"
+			compact={true}
 		>
 			<svelte:component this={section.component} />
 		</SectionContainer>

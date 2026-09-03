@@ -5,12 +5,13 @@
 	const orgs = getOrganizers();
 </script>
 
-<div class="flex mt-4 mb-0 md:my-6 flex-wrap">
+<div class="flex mt-4 mb-0 md:my-6 flex-wrap gap-y-8 md:gap-y-0">
 	{#each orgs as org}
 		<Profile 
 			personId={org.id} 
 			showSocials={true}
 			showExpandButton={true}
+			compact={true}
 		/>
 	{/each}
 </div>

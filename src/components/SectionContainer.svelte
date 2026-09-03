@@ -3,11 +3,12 @@
 	export let title = '';
 	export let icon = '';
 	export let className = '';
+	export let compact = false;
 </script>
 
 <section
 	id={id}
-	class="maia-section mb-6 md:mb-16 scroll-mt-24 p-4 sm:p-6 {className}"
+	class="maia-section {compact ? 'mb-2' : 'mb-6'} md:mb-16 scroll-mt-24 p-4 sm:p-6 {className}"
 >
 	{#if title}
 		<div class="flex items-center mb-6">
