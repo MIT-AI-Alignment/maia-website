@@ -248,7 +248,7 @@
 	<!-- Chat with us: bookable team members -->
 	<section
 		id="chat-with-us"
-		class="mb-16 rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800 scroll-mt-24"
+		class="mb-16 scroll-mt-24"
 	>
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
 			<div>
@@ -264,7 +264,7 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+		<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
 			{#each bookablePeople as person, index}
 				{#if mounted}
 					<a
@@ -321,9 +321,8 @@
 					</a>
 				{/if}
 			{/each}
-		</div>
 
-		<p class="mt-8 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
+			<p class="col-span-2 sm:col-span-4 mt-4 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
 			Prefer email? Reach the whole team at
 			<a
 				href="mailto:maia-exec@mit.edu"
@@ -331,7 +330,8 @@
 			>
 				maia-exec@mit.edu
 			</a>.
-		</p>
+			</p>
+		</div>
 	</section>
 
 	<section class="mb-16" aria-labelledby="organizations-title">
