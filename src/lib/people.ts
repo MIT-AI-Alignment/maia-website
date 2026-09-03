@@ -54,6 +54,7 @@ export type Person = {
 	isAdvisor?: boolean; // Whether the person is an advisor
 	isExec?: boolean; // Whether the person is an executive
 	isOrg?: boolean; // Whether the person is an organizer
+	isHomepageContact?: boolean; // Whether to show an email-only contact card on the homepage
 	execOrder?: number; // Order in which to display person on the executive board
 	orgOrder?: number; // Order in which to display person in the organizers list
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
@@ -86,20 +87,6 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isActive: true,
 		execOrder: 6,
-	},
-
-	'ryan-baylon': {
-		id: 'ryan-baylon',
-		name: 'Ryan Baylon',
-		position: 'Operations',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-09a10e1453ee-512',
-		mitEmail: 'rfbaylon@gmail.com',
-		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
-		personalPage: 'https://ryanbaylon.neocities.org',
-		calendly: 'https://cal.com/rfbaylon',
-		isExec: true,
-		isActive: true,
-		execOrder: 7,
 	},
 
 	'anna-krolik': {
@@ -254,6 +241,8 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Jurgis Kemeklis',
 		position: 'Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
+		mitEmail: 'kemeklis@mit.edu',
+		isHomepageContact: true,
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -533,12 +522,10 @@ export const getOrganizers = () =>
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
 
-// People who have a public booking link (cal.com / calendly.com).
-// Sorted by execOrder when present so the homepage strip stays in a sensible order;
-// non-execs (if added later) get sorted after, alphabetically by name.
+// Active executives with a public booking link or an explicitly approved email card.
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isActive && !!person.calendly)
+		.filter((person) => person.isActive && person.isExec && (!!person.calendly || person.isHomepageContact))
 		.sort((a, b) => {
 			const orderA = a.execOrder ?? 999;
 			const orderB = b.execOrder ?? 999;
