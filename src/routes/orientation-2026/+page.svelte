@@ -2,8 +2,10 @@
 	import PageLayout from '../../components/PageLayout.svelte';
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
+	import { CONFIG } from '$lib/config';
 
 	const sections = [
+		{ id: 'form', title: 'Interest Form', icon: 'fa-solid fa-pen-to-square' },
 		{ id: 'schedule', title: 'Schedule', icon: 'fa-solid fa-calendar-days' },
 		{ id: 'calendar', title: 'Google Calendar', icon: 'fa-solid fa-calendar' },
 		{ id: 'rsvp', title: 'RSVP Links', icon: 'fa-solid fa-ticket' }
@@ -77,6 +79,25 @@
 			{/each}
 		</div>
 	</svelte:fragment>
+
+	<SectionContainer id="form" title="Interest Form" icon="fa-solid fa-pen-to-square">
+		<aside class="border p-6" style="border-color: var(--maia-border);">
+			<p class="text-lg mb-4">
+				Fill out the MAIA interest form so we can keep you in the loop about AISF, workshops and
+				events. <strong>Submitting it is also how you get MAIA merch at our orientation events</strong>,
+				so do it before you come by the table.
+			</p>
+			<Button
+				text="Fill out the interest form"
+				icon="fa-solid fa-pen-to-square"
+				type="purple"
+				size="lg"
+				href={CONFIG.orientation.interestFormLink}
+				target="_blank"
+				rel="noopener noreferrer"
+			/>
+		</aside>
+	</SectionContainer>
 
 	<SectionContainer id="schedule" title="Schedule" icon="fa-solid fa-calendar-days">
 		<figure class="w-full">

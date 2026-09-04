@@ -1,10 +1,15 @@
 // Use this to make high-level changes to the website in one place.
 export const CONFIG = {
     banner: {
-        visible: false,
-        text: "Applications for our virtual Summer AISF are now open!",
-        link: "https://airtable.com/appHwdJxaquLCsb75/pagWI2NzqQcyF37iQ/form",
-        ctaText: "Apply now by May 22nd!"
+        visible: true,
+        text: "Orientation 2026: fill out the MAIA interest form to grab merch at our events!",
+        link: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
+        ctaText: "Fill it out"
+    },
+    orientation: {
+        // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
+        // Submitting it is what unlocks merch at orientation events.
+        interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form"
     },
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",
