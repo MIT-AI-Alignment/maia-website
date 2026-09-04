@@ -12,7 +12,8 @@
 	const rsvpEvents = [
 		{
 			name: 'Google Rooftop Social',
-			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv'
+			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv',
+			note: '(RSVP Required to Attend)'
 		},
 		{
 			name: 'Rock Climbing',
@@ -21,11 +22,13 @@
 		},
 		{
 			name: 'Estimation and Forecasting Challenge',
-			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
+			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D',
+			note: '(RSVP Required to Attend)'
 		},
 		{
 			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ'
+			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ',
+			note: '(RSVP Required to Attend)'
 		},
 		{
 			name: 'AGI Tabletop Exercises',
