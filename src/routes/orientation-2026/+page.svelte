@@ -26,6 +26,10 @@
 			note: '(RSVP Required to Attend)'
 		},
 		{
+			name: 'Google Rooftop Social',
+			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv'
+		},
+		{
 			name: 'Estimation and Forecasting Challenge',
 			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
 		},
