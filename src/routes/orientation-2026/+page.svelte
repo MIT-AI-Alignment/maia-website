@@ -96,6 +96,16 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			/>
+			<!-- Same form embedded so people can fill it in without leaving the page. -->
+			<iframe
+				class="airtable-embed mt-6 w-full"
+				src={CONFIG.orientation.interestFormLink.replace('https://airtable.com/', 'https://airtable.com/embed/')}
+				title="MAIA interest form"
+				frameborder="0"
+				width="100%"
+				height="900"
+				style="background: transparent; border: 1px solid var(--maia-border);"
+			></iframe>
 		</aside>
 	</SectionContainer>
 
