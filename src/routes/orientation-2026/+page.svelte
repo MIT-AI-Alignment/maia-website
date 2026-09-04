@@ -11,9 +11,21 @@
 
 	const rsvpEvents = [
 		{
+			name: 'Google Rooftop Social',
+			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv'
+		},
+		{
 			name: 'Rock Climbing',
 			href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J',
 			note: '(RSVP Required to Attend)'
+		},
+		{
+			name: 'Estimation and Forecasting Challenge',
+			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
+		},
+		{
+			name: 'OpenAI Hacking Incident Explained',
+			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ'
 		},
 		{
 			name: 'AGI Tabletop Exercises',
@@ -24,18 +36,6 @@
 			name: 'Sunset Cruise Ride',
 			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1',
 			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Google Rooftop Social',
-			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv'
-		},
-		{
-			name: 'Estimation and Forecasting Challenge',
-			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
-		},
-		{
-			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ'
 		}
 	];
 
@@ -56,7 +56,9 @@
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Learn about MAIA through our orientation events, geared at incoming MIT first-years.
+			Learn about MAIA through our orientation events, geared at incoming MIT first-years. The most
+			up to date and on-the-day information is shared in Partifuls, so be sure to submit RSVPs early
+			if you plan to attend!
 		</p>
 
 		<!-- Navigation Buttons -->
@@ -78,8 +80,8 @@
 			<img
 				src="/images/flyers/maia-2026-orientation-flyer.jpg"
 				alt="MAIA Orientation 2026 schedule flyer"
-				width="1920"
-				height="2484"
+				width="1400"
+				height="1811"
 				class="w-full h-auto border"
 				style="border-color: var(--maia-border);"
 			/>
