@@ -9,7 +9,17 @@ export const CONFIG = {
     orientation: {
         // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
         // Submitting it is what unlocks merch at orientation events.
-        interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form"
+        interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
+        // Popup shown on first load (once per browser session) that sends people to the orientation page.
+        // Hidden automatically on the orientation page itself.
+        popup: {
+            visible: true,
+            title: "Welcome to MAIA!",
+            text: "Orientation 2026 is happening now. See the schedule, RSVP to events, and fill out the interest form to grab merch.",
+            ctaText: "Go to Orientation 2026",
+            dismissText: "Maybe later",
+            href: "/orientation-2026/"
+        }
     },
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",

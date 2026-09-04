@@ -1,6 +1,7 @@
 <script>
     import "../app.css";
     import ThemeInitializer from '$lib/components/ThemeInitializer.svelte';
+    import OrientationPopup from '$lib/components/OrientationPopup.svelte';
 </script>
 
 <svelte:head>
@@ -10,5 +11,6 @@
 </svelte:head>
 
 <ThemeInitializer />
+<OrientationPopup />
 
 <slot />
