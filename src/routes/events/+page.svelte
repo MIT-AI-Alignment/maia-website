@@ -6,6 +6,12 @@
 
 	export let data: { upcoming: CalendarEvent[]; past: CalendarEvent[] };
 
+	// Split a description into plain text and URL segments (odd indices are URLs).
+	const urlPattern = /(https?:\/\/[^\s]+?)(?=[.,;:!?)]*(?:\s|$))/;
+	function segments(text: string) {
+		return text.split(urlPattern).map((part, i) => ({ text: part, isLink: i % 2 === 1 }));
+	}
+
 	$: sections = [
 		{ title: 'Upcoming', events: data.upcoming },
 		{ title: 'Past', events: data.past }
@@ -40,12 +46,12 @@
 								<span class="mt-1 block">{displayTimeRange(event.start, event.end)}</span>
 							{/if}
 						</time>
-						<div>
+						<div class="min-w-0">
 							<h3 class="font-heading text-2xl font-[650]">{event.title}</h3>
 							{#if event.description || event.location}
-								<p class="mt-2 max-w-2xl text-maia-950/70 dark:text-maia-100/70">
+								<p class="mt-2 max-w-2xl break-words text-maia-950/70 dark:text-maia-100/70">
 									{#if event.description}
-										{event.description}{event.location ? ' · ' : ''}
+										{#each segments(event.description) as part}{#if part.isLink}<a href={part.text} target="_blank" rel="noopener noreferrer" class="break-all text-maia-800 underline underline-offset-4 hover:text-maia-700 dark:text-maia-400 dark:hover:text-maia-300">{part.text}</a>{:else}{part.text}{/if}{/each}{event.location ? ' · ' : ''}
 									{/if}{#if event.location}{event.location}{/if}
 								</p>
 							{/if}

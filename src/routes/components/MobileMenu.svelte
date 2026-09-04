@@ -16,7 +16,7 @@
 {#if isOpen}
   <div 
     transition:slide={{ duration: 200 }}
-    class="fixed inset-x-0 top-[var(--navbar-height)] h-[calc(100vh-var(--navbar-height))] z-50 
+    class="fixed inset-x-0 top-[var(--header-height,var(--navbar-height))] h-[calc(100vh-var(--header-height,var(--navbar-height)))] supports-[height:100dvh]:h-[calc(100dvh-var(--header-height,var(--navbar-height)))] z-50 
            {$theme === 'dark' ? 'bg-surface-dark/95 border-border-dark' : 'bg-surface-light-elevated/95 border-border-light'}
            backdrop-blur-sm border-t overflow-y-auto pb-20"
   >

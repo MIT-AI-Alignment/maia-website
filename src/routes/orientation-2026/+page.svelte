@@ -98,7 +98,7 @@
 			/>
 			<!-- Same form embedded so people can fill it in without leaving the page. -->
 			<iframe
-				class="airtable-embed mt-6 w-full"
+				class="airtable-embed mt-6 hidden w-full md:block"
 				src={CONFIG.orientation.interestFormLink.replace('https://airtable.com/', 'https://airtable.com/embed/')}
 				title="MAIA interest form"
 				frameborder="0"
@@ -158,12 +158,10 @@
 							class="flex items-center gap-3 p-5 text-lg no-underline hover:underline underline-offset-4"
 							style="color: var(--maia-accent);"
 						>
-							<i class="fas fa-ticket" aria-hidden="true"></i>
-							<span>{event.name}</span>
-							{#if event.note}
-								<span class="text-sm" style="color: var(--maia-muted);">{event.note}</span>
-							{/if}
-							<i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+							<i class="fas fa-ticket shrink-0" aria-hidden="true"></i>
+							<!-- No whitespace between name and note so the inline spacing matches the old gap-3 exactly -->
+							<span class="min-w-0">{event.name}{#if event.note}<span class="block text-sm sm:ml-3 sm:inline" style="color: var(--maia-muted);">{event.note}</span>{/if}</span>
+							<i class="fas fa-external-link-alt shrink-0 text-xs" aria-hidden="true"></i>
 						</a>
 					</li>
 				{/each}
