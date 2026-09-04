@@ -40,6 +40,18 @@
 			{/if}
 
 			<div class="prose dark:prose-invert max-w-none relative z-10">
+				<!-- Orientation 2026: the printed banner + foam-board QR codes land here, so keep this first and loud. -->
+				<div class="mb-6 not-prose">
+					<Button
+						text="Orientation 2026: fill out the interest form to get merch"
+						icon="fa-solid fa-pen-to-square"
+						type="purple"
+						size="lg"
+						href={CONFIG.orientation.interestFormLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					/>
+				</div>
 				{#if mounted}
 					<!-- <p><a 
 					href="https://mailchi.mp/0b6484dd282e/public" 
