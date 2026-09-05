@@ -68,7 +68,7 @@
 		</div>
 	</svelte:fragment>
 	
-	{#each sections as section, i}
+	{#each sections as section}
 		<SectionContainer
 			id={section.id}
 			title={section.title}
@@ -80,12 +80,6 @@
 				<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />
 			{/if}
 		</SectionContainer>
-		
-		{#if i < sections.length - 1}
-			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
-			</div>
-		{/if}
 	{/each}
 	
 	<div class="flex justify-center mt-8 mb-12">
