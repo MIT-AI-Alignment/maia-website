@@ -55,6 +55,7 @@ export type Person = {
 	isExec?: boolean; // Whether the person is an executive
 	isOrg?: boolean; // Whether the person is an organizer
 	execOrder?: number; // Order in which to display person on the executive board
+	orgOrder?: number; // Order in which to display person in the organizers list
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
@@ -87,20 +88,6 @@ export const PEOPLE: Record<string, Person> = {
 		execOrder: 2,
 	},
 
-	'ryan-baylon': {
-		id: 'ryan-baylon',
-		name: 'Ryan Baylon',
-		position: 'Operations',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09C7BJ7X51-09a10e1453ee-512',
-		mitEmail: 'rfbaylon@gmail.com',
-		linkedin: 'https://www.linkedin.com/in/ryan-f-baylon/',
-		personalPage: 'https://ryanbaylon.neocities.org',
-		calendly: 'https://cal.com/rfbaylon',
-		isExec: true,
-		isActive: false,
-		execOrder: 7,
-	},
-
 	'anna-krolik': {
 		id: 'anna-krolik',
 		name: 'Anna Krolik',
@@ -122,12 +109,10 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: '/images/people/nixon-hanna.jpeg',
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
-		personalPage: 'nixonhanna.com',
-		calendly: 'https://cal.com/nixon-hanna',
-		isExec: true,
-		isOrg: false,
-		isActive: false,
-		execOrder: 2,
+		personalPage: 'https://nixonhanna.com',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
 	},
 
 
@@ -227,6 +212,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		orgOrder: 1,
 	},
 
 	'zsofia-keresztely': {
@@ -252,8 +238,10 @@ export const PEOPLE: Record<string, Person> = {
 	'jurgis-kemeklis': {
 		id: 'jurgis-kemeklis',
 		name: 'Jurgis Kemeklis',
-		position: 'Board Member',
+		position: 'Exec',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
+		mitEmail: 'kemeklis@mit.edu',
+		calendly: 'https://cal.com/jurgis/30min',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -263,7 +251,7 @@ export const PEOPLE: Record<string, Person> = {
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
 		name: 'Ionut Gabriel Stan',
-		position: 'Board Member',
+		position: 'Exec',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
@@ -525,17 +513,18 @@ export const getInactiveExecs = () =>
 
 export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person.isAdvisor);
 
-export const getOrganizers = () => Object.values(PEOPLE).filter((person) => person.isOrg);
+export const getOrganizers = () =>
+	Object.values(PEOPLE)
+		.filter((person) => person.isOrg)
+		.sort((a, b) => (a.orgOrder ?? 999) - (b.orgOrder ?? 999));
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
 
-// People who have a public booking link (cal.com / calendly.com).
-// Sorted by execOrder when present so the homepage strip stays in a sensible order;
-// non-execs (if added later) get sorted after, alphabetically by name.
+// Active executives with a public booking link for the homepage contact section.
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isActive && !!person.calendly)
+		.filter((person) => person.isActive && person.isExec && !!person.calendly)
 		.sort((a, b) => {
 			const orderA = a.execOrder ?? 999;
 			const orderB = b.execOrder ?? 999;

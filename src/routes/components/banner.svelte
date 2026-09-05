@@ -5,11 +5,13 @@
 	// Control the animation for the icon
 	let animateIcon = true;
 	let isVisible = true;  // New state to control banner visibility
+	// Keyed on the link so a dismissed old banner does not hide a new one.
+	const dismissKey = `bannerDismissed:${CONFIG.banner.link}`;
 
 	// When the component mounts, remove the animation after 3 seconds.
 	onMount(() => {
 		// Check localStorage for banner state on mount
-		const bannerDismissed = localStorage.getItem('bannerDismissed');
+		const bannerDismissed = localStorage.getItem(dismissKey);
 		if (bannerDismissed === 'true') {
 			isVisible = false;
 		}
@@ -22,7 +24,7 @@
 	// Function to handle banner dismissal
 	const dismissBanner = () => {
 		isVisible = false;
-		localStorage.setItem('bannerDismissed', 'true');
+		localStorage.setItem(dismissKey, 'true');
 	};
 </script>
 

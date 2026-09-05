@@ -266,7 +266,6 @@
 				size="md"
 				href="/getinvolved#aisf"
 			/>
-			<Button text="Come to an event" icon="fa-regular fa-calendar" type="outline" size="md" href="/events" />
 		</div>
 	</SectionContainer>
 

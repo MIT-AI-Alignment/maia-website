@@ -2,8 +2,10 @@
 	import PageLayout from '../../components/PageLayout.svelte';
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
+	import { CONFIG } from '$lib/config';
 
 	const sections = [
+		{ id: 'form', title: 'Interest Form', icon: 'fa-solid fa-pen-to-square' },
 		{ id: 'schedule', title: 'Schedule', icon: 'fa-solid fa-calendar-days' },
 		{ id: 'calendar', title: 'Google Calendar', icon: 'fa-solid fa-calendar' },
 		{ id: 'rsvp', title: 'RSVP Links', icon: 'fa-solid fa-ticket' }
@@ -11,8 +13,23 @@
 
 	const rsvpEvents = [
 		{
+			name: 'Google Rooftop Social',
+			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv',
+			note: '(RSVP Required to Attend)'
+		},
+		{
 			name: 'Rock Climbing',
 			href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J',
+			note: '(RSVP Required to Attend)'
+		},
+		{
+			name: 'Estimation and Forecasting Challenge',
+			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D',
+			note: '(RSVP Required to Attend)'
+		},
+		{
+			name: 'OpenAI Hacking Incident Explained',
+			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ',
 			note: '(RSVP Required to Attend)'
 		},
 		{
@@ -24,14 +41,6 @@
 			name: 'Sunset Cruise Ride',
 			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1',
 			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Estimation and Forecasting Challenge',
-			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D'
-		},
-		{
-			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/wPAPgTYV7Rd3VonTVbt6?c=wf75zPOn'
 		}
 	];
 
@@ -52,7 +61,9 @@
 >
 	<svelte:fragment slot="hero-content">
 		<p class="text-center text-lg mb-8 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Learn about MAIA through our orientation events, geared at incoming MIT first-years.
+			Learn about MAIA through our orientation events, geared at incoming MIT first-years. The most
+			up to date and on-the-day information is shared in Partifuls, so be sure to submit RSVPs early
+			if you plan to attend!
 		</p>
 
 		<!-- Navigation Buttons -->
@@ -69,13 +80,42 @@
 		</div>
 	</svelte:fragment>
 
+	<SectionContainer id="form" title="Interest Form" icon="fa-solid fa-pen-to-square">
+		<aside class="border p-6" style="border-color: var(--maia-border);">
+			<p class="text-lg mb-4">
+				Fill out the MAIA interest form so we can keep you in the loop about AISF, workshops and
+				events. <strong>Submitting it is also how you get MAIA merch at our orientation events</strong>,
+				so do it before you come by the table.
+			</p>
+			<Button
+				text="Fill out the interest form"
+				icon="fa-solid fa-pen-to-square"
+				type="purple"
+				size="lg"
+				href={CONFIG.orientation.interestFormLink}
+				target="_blank"
+				rel="noopener noreferrer"
+			/>
+			<!-- Same form embedded so people can fill it in without leaving the page. -->
+			<iframe
+				class="airtable-embed mt-6 hidden w-full md:block"
+				src={CONFIG.orientation.interestFormLink.replace('https://airtable.com/', 'https://airtable.com/embed/')}
+				title="MAIA interest form"
+				frameborder="0"
+				width="100%"
+				height="900"
+				style="background: transparent; border: 1px solid var(--maia-border);"
+			></iframe>
+		</aside>
+	</SectionContainer>
+
 	<SectionContainer id="schedule" title="Schedule" icon="fa-solid fa-calendar-days">
 		<figure class="w-full">
 			<img
-				src="/images/flyers/maia-2026-orientation-flyer.png"
+				src="/images/flyers/maia-2026-orientation-flyer.jpg"
 				alt="MAIA Orientation 2026 schedule flyer"
-				width="4040"
-				height="5228"
+				width="1400"
+				height="1811"
 				class="w-full h-auto border"
 				style="border-color: var(--maia-border);"
 			/>
@@ -118,12 +158,10 @@
 							class="flex items-center gap-3 p-5 text-lg no-underline hover:underline underline-offset-4"
 							style="color: var(--maia-accent);"
 						>
-							<i class="fas fa-ticket" aria-hidden="true"></i>
-							<span>{event.name}</span>
-							{#if event.note}
-								<span class="text-sm" style="color: var(--maia-muted);">{event.note}</span>
-							{/if}
-							<i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+							<i class="fas fa-ticket shrink-0" aria-hidden="true"></i>
+							<!-- No whitespace between name and note so the inline spacing matches the old gap-3 exactly -->
+							<span class="min-w-0">{event.name}{#if event.note}<span class="block text-sm sm:ml-3 sm:inline" style="color: var(--maia-muted);">{event.note}</span>{/if}</span>
+							<i class="fas fa-external-link-alt shrink-0 text-xs" aria-hidden="true"></i>
 						</a>
 					</li>
 				{/each}

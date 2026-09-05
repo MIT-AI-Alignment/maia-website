@@ -15,6 +15,10 @@
 		'Small groups led by MAIA facilitators',
 		'No prior AI background required'
 	];
+	const maiaStats = [
+		{ value: '300+', label: 'active members' },
+		{ value: '1,000+', label: 'people in the MAIA Slack community' }
+	];
 
 	const bookablePeople = getBookablePeople();
 	
@@ -40,6 +44,18 @@
 			{/if}
 
 			<div class="prose dark:prose-invert max-w-none relative z-10">
+				<!-- Orientation 2026: the printed banner + foam-board QR codes land here, so keep this first and loud. -->
+				<div class="mb-6 not-prose">
+					<Button
+						text="Orientation 2026: fill out the interest form to get merch"
+						icon="fa-solid fa-pen-to-square"
+						type="purple"
+						size="lg"
+						href={CONFIG.orientation.interestFormLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					/>
+				</div>
 				{#if mounted}
 					<!-- <p><a 
 					href="https://mailchi.mp/0b6484dd282e/public" 
@@ -114,6 +130,25 @@
 			</div>
 		</div>
 	</svelte:fragment>
+
+	<section class="mb-16" aria-labelledby="maia-by-the-numbers-title">
+		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
+			MAIA by the numbers
+		</h2>
+		<p class="mt-3 text-lg text-maia-950/80 dark:text-maia-100/80">
+			A student-run community at MIT and beyond.
+		</p>
+		<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+			{#each maiaStats as stat}
+				<div>
+					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
+						{stat.value}
+					</p>
+					<p class="mt-2 text-base text-maia-950/80 dark:text-maia-100/80">{stat.label}</p>
+				</div>
+			{/each}
+		</div>
+	</section>
 
 	<!-- AISF: flagship program, feature card treatment -->
 	{#if mounted}
@@ -248,7 +283,7 @@
 	<!-- Chat with us: bookable team members -->
 	<section
 		id="chat-with-us"
-		class="mb-16 rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800 scroll-mt-24"
+		class="mb-16 scroll-mt-24"
 	>
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
 			<div>
@@ -264,14 +299,14 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+		<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
 			{#each bookablePeople as person, index}
 				{#if mounted}
 					<a
-						href={person.calendly}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+						href={person.calendly ?? `mailto:${person.mitEmail}`}
+						target={person.calendly ? '_blank' : undefined}
+						rel={person.calendly ? 'noopener noreferrer' : undefined}
+						class="group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
 						in:fly={{ y: 18, duration: 500, delay: 100 + index * 80 }}
 					>
 						<img
@@ -288,17 +323,17 @@
 						<span
 							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
 						>
-							<i class="fa-regular fa-calendar"></i>
-							Chat with {person.name.split(' ')[0]}
+							<i class={person.calendly ? 'fa-regular fa-calendar' : 'fa-regular fa-envelope'}></i>
+							{person.calendly ? 'Chat with' : 'Email'} {person.name.split(' ')[0]}
 							<i class="fa-solid fa-arrow-right text-xs"></i>
 						</span>
 					</a>
 				{:else}
 					<a
-						href={person.calendly}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+						href={person.calendly ?? `mailto:${person.mitEmail}`}
+						target={person.calendly ? '_blank' : undefined}
+						rel={person.calendly ? 'noopener noreferrer' : undefined}
+						class="group flex w-[calc((100%-0.5rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
 					>
 						<img
 							src={person.imageUrl}
@@ -314,16 +349,15 @@
 						<span
 							class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
 						>
-							<i class="fa-regular fa-calendar"></i>
-							Chat with {person.name.split(' ')[0]}
+							<i class={person.calendly ? 'fa-regular fa-calendar' : 'fa-regular fa-envelope'}></i>
+							{person.calendly ? 'Chat with' : 'Email'} {person.name.split(' ')[0]}
 							<i class="fa-solid fa-arrow-right text-xs"></i>
 						</span>
 					</a>
 				{/if}
 			{/each}
-		</div>
 
-		<p class="mt-8 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
+			<p class="basis-full mt-4 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
 			Prefer email? Reach the whole team at
 			<a
 				href="mailto:maia-exec@mit.edu"
@@ -331,7 +365,8 @@
 			>
 				maia-exec@mit.edu
 			</a>.
-		</p>
+			</p>
+		</div>
 	</section>
 
 	<section class="mb-16" aria-labelledby="organizations-title">

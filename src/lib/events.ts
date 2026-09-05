@@ -11,11 +11,13 @@ function valueFor(event: string, property: string) {
 }
 
 function clean(value?: string) {
+	// HTML line breaks, block endings, and links glued to the next word become spaces.
 	return value
 		?.replace(/\\n/g, ' ')
 		.replace(/\\,/g, ',')
 		.replace(/\\;/g, ';')
 		.replace(/\\\\/g, '\\')
+		.replace(/<br\s*\/?>|<\/(?:p|div|li)>|<\/a>(?=\w)/gi, ' ')
 		.replace(/<[^>]*>/g, '')
 		.replace(/\s+/g, ' ')
 		.trim();

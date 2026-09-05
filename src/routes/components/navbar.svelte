@@ -19,6 +19,8 @@
 	let hasNavSurface = false;
 	let isMobileMenuOpen = false;
 	let activeDropdown: string | null = null;
+	// Measured height of the fixed header (banner + navbar); drives the spacer and mobile menu offset.
+	let headerHeight = 0;
 	
 	// The header only becomes compact after scroll; hovering the desktop navigation
 	// reveals the same surface without moving the layout.
@@ -103,7 +105,11 @@
 	}
 </style>
 
-<div class="fixed top-0 left-0 right-0 z-50 w-full">
+<div
+	class="fixed top-0 left-0 right-0 z-50 w-full"
+	bind:clientHeight={headerHeight}
+	style="--header-height: {headerHeight ? `${headerHeight}px` : 'var(--navbar-height)'}"
+>
 	{#if CONFIG.banner.visible}
 		<Banner />
 	{/if}
@@ -199,7 +205,8 @@
 </div>
 
 <!-- Spacer to prevent content from being hidden under the navbar -->
-<div style="height: var(--navbar-height)"></div>
-{#if CONFIG.banner.visible}
+<div style="height: {headerHeight ? `${headerHeight}px` : 'var(--navbar-height)'}"></div>
+{#if CONFIG.banner.visible && !headerHeight}
+	<!-- Server-side fallback until the header has been measured -->
 	<div class="h-12"></div>
 {/if}
