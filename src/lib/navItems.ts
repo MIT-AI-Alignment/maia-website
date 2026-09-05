@@ -43,7 +43,7 @@ export const NAVIGATION_ITEMS = [
 		dropdownItems: [
 			{ href: '/resources#why-ai-safety', label: 'Why AI Safety?' },
 			{ href: '/aisf', label: 'AISF Curriculum' },
-			{ href: '/resources/mit-classes', label: 'Relevant MIT Classes' },
+			{ href: '/resources/mit-classes', label: 'MIT & Harvard Classes' },
 			{ href: '/resources/faculty-labs', label: 'MIT Faculty and Labs' },
 			{ href: '/resources/fellowships', label: 'AI Safety Fellowships' }
 		]

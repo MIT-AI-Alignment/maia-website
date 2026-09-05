@@ -64,8 +64,8 @@
 		{
 			href: '/resources/mit-classes',
 			icon: 'fas fa-chalkboard-teacher',
-			title: 'Relevant MIT Classes',
-			blurb: 'MIT classes relevant to AI safety.'
+			title: 'MIT & Harvard Classes',
+			blurb: 'MIT and Harvard classes relevant to AI safety.'
 		},
 		{
 			href: '/resources/faculty-labs',

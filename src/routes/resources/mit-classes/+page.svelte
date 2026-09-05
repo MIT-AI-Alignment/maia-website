@@ -7,7 +7,7 @@
 		number: string;
 		title: string;
 		note: string;
-		prereqs: string;
+		prereqs?: string;
 		description: string;
 		link: string;
 	};
@@ -166,6 +166,65 @@
 		}
 	];
 
+	// Harvard SEAS 2026–27 listings; teaching page used for CS 2680 prerequisites.
+	const harvardTechnical: Course[] = [
+		{
+			number: 'Harvard CS 1810',
+			title: 'Machine Learning',
+			note: 'Spring 2027 · Finale Doshi-Velez',
+			prereqs:
+				'Multivariable calculus, linear algebra, probability, complexity theory, and Python programming',
+			description:
+				'A probabilistic introduction to supervised and unsupervised learning, neural networks, and inference.',
+			link: 'https://my.harvard.edu/?hq=148156'
+		},
+		{
+			number: 'Harvard CS 1840',
+			title: 'Introduction to Reinforcement Learning',
+			note: 'Fall 2026 · Kiante Brantley',
+			description:
+				'Study how agents learn through interaction, including reinforcement-learning problem formulations, algorithms, and theory.',
+			link: 'https://my.harvard.edu/?hq=220124'
+		},
+		{
+			number: 'Harvard CS 2680',
+			title: 'Modern AI Systems: Agents and Systems Optimization',
+			note: 'Fall 2026 · Juncheng Yang',
+			prereqs:
+				'At least one of Harvard CS 61, CS 1610, or CS 2620; proficiency in Python and PyTorch',
+			description:
+				'Build and evaluate AI agents, then examine serving, caching, quantization, and other systems-level performance trade-offs.',
+			link: 'https://juncheng.seas.harvard.edu/teaching'
+		},
+		{
+			number: 'Harvard CS 2822R',
+			title: 'Topics in Machine Learning: Effective AI Support in Human+AI Settings',
+			note: 'Fall 2026 · Finale Doshi-Velez',
+			description:
+				'Investigate whether AI systems improve human outcomes through readings, discussion, and a semester-long project.',
+			link: 'https://my.harvard.edu/?hq=156936'
+		}
+	];
+	const harvardEthics: Course[] = [
+		{
+			number: 'Harvard CS 1050',
+			title: 'Privacy and Technology',
+			note: 'Fall 2026 · Jim Waldo',
+			prereqs: 'The course listing describes it as accessible to students across disciplines',
+			description:
+				'Examine privacy, surveillance, database anonymity, and the policy and ethical questions raised by technology.',
+			link: 'https://my.harvard.edu/?hq=125407'
+		},
+		{
+			number: 'Harvard CS 1261',
+			title: 'Privacy, Fairness, and Validity Through the Lens of Theoretical CS',
+			note: 'Spring 2027 · Cynthia Dwork',
+			description:
+				'Explore mathematical foundations of algorithmic fairness, differential privacy, and statistical validity.',
+			link: 'https://my.harvard.edu/?hq=226548'
+		}
+	];
+
 	const groups: ClassGroup[] = [
 		{ title: 'Programming', classes: [programming] },
 		{ title: 'Multivariable calculus', classes: [calculus] },
@@ -181,9 +240,9 @@
 		},
 		{
 			title: 'Machine learning, deep learning, and language models',
-			classes: [...mlClasses, languageModels]
+			classes: [...mlClasses, languageModels, ...harvardTechnical]
 		},
-		{ title: 'Ethics and societal impacts', classes: ethicsClasses },
+		{ title: 'Ethics and societal impacts', classes: [...ethicsClasses, ...harvardEthics] },
 		{
 			title: 'AI Safety Classes',
 			note: 'Check Harvard course admission requirements and MIT cross-registration rules before applying.',
@@ -193,10 +252,10 @@
 </script>
 
 <PageLayout
-	title="MIT Classes"
-	description="MIT classes relevant to AI safety."
+	title="MIT & Harvard Classes"
+	description="MIT and Harvard classes relevant to AI safety."
 	heroIcon="fas fa-chalkboard-teacher"
-	heroTitle="Relevant MIT Classes"
+	heroTitle="MIT & Harvard Classes"
 	centerTitle={true}
 >
 	<SectionContainer title="Classes" icon="fas fa-chalkboard-teacher">
@@ -206,9 +265,19 @@
 			policy. Advanced coursework is not a prerequisite for joining MAIA.
 		</p>
 		<p class="text-sm mb-6">
-			MIT recommendations checked against the 2026–27 catalog. Terms describe catalog offerings;
-			check the linked course pages and current registration listings for schedules and enrollment
-			restrictions.
+			MIT recommendations follow the 2026–27 catalog. Harvard terms follow its
+			<a href="https://seas.harvard.edu/computer-science/courses"
+				>Fall 2026 and Spring 2027 listings</a
+			>, checked September 5, 2026. Check current course pages for prerequisites, schedules, and
+			enrollment restrictions.
+		</p>
+		<p class="text-sm mb-6">
+			MIT first-year undergraduates cannot cross-register at Harvard. Eligible students need
+			instructor, Harvard registrar, and MIT advisor approval; a listing here does not guarantee a
+			place. See <a
+				href="https://registrar.mit.edu/registration-academics/registration-information/cross-registration/harvard"
+				>MIT’s Harvard cross-registration guidance</a
+			>.
 		</p>
 		{#each groups as group}
 			<h3 class="text-xl font-heading font-[550] mt-8 mb-4">{group.title}</h3>
@@ -222,14 +291,14 @@
 							<span class="font-semibold">{course.number}</span>
 							<span class="text-maia-600 dark:text-maia-400">{course.title}</span>
 						</svelte:fragment>
-						<p class="text-xs uppercase tracking-wide text-maia-600 dark:text-maia-400 mb-2">
+						<p class="text-sm text-maia-600 dark:text-maia-400 mb-2">
 							{course.note}
 						</p>
 						<p class="text-sm mb-3">{course.description}</p>
-						<p class="text-sm text-maia-600 dark:text-maia-400 mb-3">
-							<span class="font-semibold">Prerequisites:</span>
-							{course.prereqs}
-						</p>
+						{#if course.prereqs}<p class="text-sm text-maia-600 dark:text-maia-400 mb-3">
+								<span class="font-semibold">Prerequisites:</span>
+								{course.prereqs}
+							</p>{/if}
 						<a
 							href={course.link}
 							target="_blank"
