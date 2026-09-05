@@ -94,11 +94,11 @@
 		{
 			number: 'Harvard CS 2881r',
 			title: 'AI Safety',
-			note: 'Grad seminar · Fall · Taught by Boaz Barak',
+			note: 'Grad seminar · Fall 2026 · Taught by Boaz Barak',
 			prereqs:
 				'Comfort with proofs, probability, and information theory; undergraduate ML (e.g., 6.3900); Python experience training neural networks',
 			description:
-				'A graduate seminar on challenges in the alignment and safety of artificial intelligence, covering both technical questions and broader societal impacts of AI. Combines lectures, readings, and homework spanning theoretical and practical perspectives on AI safety.',
+				'A graduate course on technical and societal AI safety, with lectures, readings, and a group experiment. In-person attendance is required; see the course page for admission requirements.',
 			link: 'https://boazbk.github.io/mltheoryseminar/'
 		}
 	];
@@ -109,12 +109,84 @@
 		classes: Course[];
 	};
 
+	// New recommendations checked against MIT's 2026–27 catalog, September 2026.
+	const programming: Course = {
+		number: '6.100A',
+		title: 'Introduction to Computer Science Programming in Python',
+		note: 'Undergrad · Fall, Spring · 6 units',
+		prereqs: 'None',
+		description:
+			'Build a programming foundation through Python, algorithms, testing, and debugging.',
+		link: 'https://catalog.mit.edu/search/?P=6.100A'
+	};
+	const calculus: Course = {
+		number: '18.02',
+		title: 'Calculus (multivariable)',
+		note: 'Undergrad · Fall, Spring · 12 units',
+		prereqs: 'Calculus I (GIR)',
+		description:
+			'Study partial derivatives, gradients, optimization, and multiple integrals—the mathematical tools used throughout machine learning.',
+		link: 'https://catalog.mit.edu/search/?P=18.02'
+	};
+	const probability: Course = {
+		number: '6.3700',
+		title: 'Introduction to Probability',
+		note: 'Undergrad · Fall, Spring · 12 units',
+		prereqs: 'Calculus II (GIR)',
+		description:
+			'Learn probabilistic modeling, inference, and random processes. Credit cannot also be received for 18.600.',
+		link: 'https://catalog.mit.edu/search/?P=6.3700'
+	};
+	const languageModels: Course = {
+		number: '6.4610',
+		title: 'Natural Language Processing',
+		note: 'Undergrad · Fall · 15 units',
+		prereqs: '6.3900, (6.3700 or 6.3800), and (18.06 or 18.C06)',
+		description: 'Study statistical and neural language models, with a substantial final project.',
+		link: 'https://catalog.mit.edu/search/?P=6.4610'
+	};
+	const ethicsClasses: Course[] = [
+		{
+			number: '6.C40 / 24.C40',
+			title: 'Ethics of Computing',
+			note: 'Undergrad · Fall · 12 units',
+			prereqs: 'None',
+			description:
+				'Examine AI alignment, existential risk, privacy, fairness, and the ethical choices involved in building computing systems.',
+			link: 'https://computing.mit.edu/cross-cutting/common-ground-for-computing-education/common-ground-subjects/c40-ethics-of-computing/'
+		},
+		{
+			number: '6.3950',
+			title: 'AI, Decision Making, and Society',
+			note: 'Undergrad · Fall · 12 units',
+			prereqs: 'None; corequisite: 6.1200, 6.3700, 6.3800, 18.05, or 18.600',
+			description:
+				'Examine how data-driven decisions affect society, including feedback loops and unintended consequences.',
+			link: 'https://catalog.mit.edu/search/?P=6.3950'
+		}
+	];
+
 	const groups: ClassGroup[] = [
-		{ title: 'Foundational Classes', classes: foundationalClasses },
-		{ title: 'ML Classes', classes: mlClasses },
+		{ title: 'Programming', classes: [programming] },
+		{ title: 'Multivariable calculus', classes: [calculus] },
+		{
+			title: 'Linear algebra and optimization',
+			note: 'Choose an appropriate route, not both: 18.06 and 18.C06 are alternatives and cannot both receive credit.',
+			classes: foundationalClasses.slice(0, 2)
+		},
+		{
+			title: 'Probability and statistics',
+			note: 'These are alternative foundations, not a required sequence. In particular, 6.3700 and 18.600 cannot both receive credit.',
+			classes: [...foundationalClasses.slice(2), probability]
+		},
+		{
+			title: 'Machine learning, deep learning, and language models',
+			classes: [...mlClasses, languageModels]
+		},
+		{ title: 'Ethics and societal impacts', classes: ethicsClasses },
 		{
 			title: 'AI Safety Classes',
-			note: 'MIT students can take Harvard classes like this one for credit through cross-registration.',
+			note: 'Check Harvard course admission requirements and MIT cross-registration rules before applying.',
 			classes: aiSafetyClasses
 		}
 	];
@@ -129,7 +201,14 @@
 >
 	<SectionContainer title="Classes" icon="fas fa-chalkboard-teacher">
 		<p class="mb-6">
-			Classes are a great way to build a technical foundation for AI safety work, but advanced coursework is by no means a hard prerequisite for making an impact. Because AI safety is a young field, being smart, perseverant, and quick to pick up new ideas often matters more than formal training. Many MAIA members have gone on to do impactful work at places like Redwood Research with relatively little ML background. That said, while you're at MIT, we think taking advantage of these classes is well worth it!
+			Use these subjects to build the skills relevant to the work you want to do. You do not need to
+			take every course: choose suitable foundations, then explore technical research or ethics and
+			policy. Advanced coursework is not a prerequisite for joining MAIA.
+		</p>
+		<p class="text-sm mb-6">
+			MIT recommendations checked against the 2026–27 catalog. Terms describe catalog offerings;
+			check the linked course pages and current registration listings for schedules and enrollment
+			restrictions.
 		</p>
 		{#each groups as group}
 			<h3 class="text-xl font-heading font-[550] mt-8 mb-4">{group.title}</h3>

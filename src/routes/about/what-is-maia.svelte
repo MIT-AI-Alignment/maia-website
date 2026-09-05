@@ -43,8 +43,8 @@
 </script>
 
 <p>
-	Everything that happens in MAIA is ultimately due to its organizers and execs. MAIA is structured
-	as follows:
+	MAIA supports students learning about AI safety, doing research, and finding collaborators.
+	Members take part in the community, organizers run programs, and the executive board coordinates the work.
 </p>
 
 <div class="maia-roles not-prose flex flex-col gap-2 mt-6">

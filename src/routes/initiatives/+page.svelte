@@ -3,7 +3,7 @@
 	import PageLayout from '../../components/PageLayout.svelte';
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
-	import PapersExpandable from '../components/PapersExpandable.svelte';
+	import ResearchShowcase from '../../components/ResearchShowcase.svelte';
 	import Orgs from '../components/orgs.svelte';
 	import UpdateNotification from '../components/UpdateNotification.svelte';
 	import CongressionalExhibition from '../../components/CongressionalExhibition.svelte';
@@ -28,7 +28,7 @@
 			id: 'research',
 			title: 'Research by MAIA Members',
 			icon: 'fa-solid fa-book-open',
-			component: PapersExpandable
+			component: ResearchShowcase
 		},
 		// {
 		// 	id: 'current',
