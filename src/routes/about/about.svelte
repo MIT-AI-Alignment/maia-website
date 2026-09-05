@@ -7,7 +7,7 @@
 
 <div class="flex my-6 flex-wrap">
 	<p>
-		MAIA is an MIT club for people worried about human extinction due to AI.  <sup><a href="https://aisst.ai/non-technical-intro-to-ai-safety">[Why care about AI Safety?]</a></sup>
+		MAIA is an MIT club for people worried about human extinction due to AI.  <sup><a href="/resources#why-ai-safety">[Why care about AI Safety?]</a></sup>
 	</p>
 	<p>
 		Our job is to support education, research, and careers for our members. In doing 

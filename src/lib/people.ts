@@ -78,14 +78,14 @@ export const PEOPLE: Record<string, Person> = {
 	'felix-tudose': {
 		id: 'felix-tudose',
 		name: 'Felix Tudose',
-		position: 'Board Member',
+		position: 'Director',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
 		mitEmail: 'felixrt@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
 		calendly: 'https://cal.com/felixrt',
 		isExec: true,
 		isActive: true,
-		execOrder: 6,
+		execOrder: 2,
 	},
 
 	'anna-krolik': {

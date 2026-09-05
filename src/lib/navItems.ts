@@ -41,6 +41,7 @@ export const NAVIGATION_ITEMS = [
 		href: '/resources',
 		icon: 'fas fa-book',
 		dropdownItems: [
+			{ href: '/resources#why-ai-safety', label: 'Why AI Safety?' },
 			{ href: '/aisf', label: 'AISF Curriculum' },
 			{ href: '/resources/mit-classes', label: 'Relevant MIT Classes' },
 			{ href: '/resources/faculty-labs', label: 'MIT Faculty and Labs' },
