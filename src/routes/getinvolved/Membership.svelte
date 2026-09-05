@@ -12,8 +12,8 @@
 
 <div>
 	<p>
-		Membership is for people who want to take a more active role in MAIA. Members use the office,
-		join weekly discussions, and help run research, workshops, and events.
+		Membership is a way to work on AI safety alongside other students and researchers. Members use
+		the shared workspace, discuss research, and take part in MAIA programs; some also help organize them.
 	</p>
 	<h3 class="mt-8 mb-3 text-xl font-heading">What membership includes</h3>
 	<ul class="list-disc pl-6 mt-4 space-y-2">
