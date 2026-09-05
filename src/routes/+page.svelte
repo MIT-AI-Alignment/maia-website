@@ -15,6 +15,10 @@
 		'Small groups led by MAIA facilitators',
 		'No prior AI background required'
 	];
+	const maiaStats = [
+		{ value: '300+', label: 'active members' },
+		{ value: '1,000+', label: 'people in the MAIA Slack community' }
+	];
 
 	const bookablePeople = getBookablePeople();
 	
@@ -126,6 +130,25 @@
 			</div>
 		</div>
 	</svelte:fragment>
+
+	<section class="mb-16" aria-labelledby="maia-by-the-numbers-title">
+		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
+			MAIA by the numbers
+		</h2>
+		<p class="mt-3 text-lg text-maia-950/80 dark:text-maia-100/80">
+			A student-run community at MIT and beyond.
+		</p>
+		<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+			{#each maiaStats as stat}
+				<div>
+					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
+						{stat.value}
+					</p>
+					<p class="mt-2 text-base text-maia-950/80 dark:text-maia-100/80">{stat.label}</p>
+				</div>
+			{/each}
+		</div>
+	</section>
 
 	<!-- AISF: flagship program, feature card treatment -->
 	{#if mounted}
