@@ -166,7 +166,7 @@
 
 	<SectionContainer id="why-ai-safety" title="Why care about AI safety?" icon="fa-solid fa-triangle-exclamation">
 		<div class="not-prose rounded-xl border-2 border-maia-500 bg-maia-500/5 p-5 mb-6">
-			<p class="font-medium">
+			<p class="font-medium !m-0">
 				MAIA's core mission is to empower MIT students to recognize and reduce the potentially
 				existential risks posed by the development of powerful AI systems.
 			</p>
@@ -269,10 +269,6 @@
 		</div>
 	</SectionContainer>
 
-	<div class="flex justify-center mb-16">
-		<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
-	</div>
-
 	<SectionContainer id="learn" title="Learn" icon="fa-solid fa-graduation-cap">
 		<p>Curricula, classes, labs, and fellowships.</p>
 		<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -290,10 +286,6 @@
 			{/each}
 		</div>
 	</SectionContainer>
-
-	<div class="flex justify-center mb-16">
-		<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
-	</div>
 
 	<SectionContainer id="stay-informed" title="Stay informed" icon="fa-solid fa-newspaper">
 		<p>Newsletters, podcasts, forums, and job boards for keeping up with the field.</p>

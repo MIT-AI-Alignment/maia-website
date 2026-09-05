@@ -116,7 +116,7 @@
 	</svelte:fragment>
 	
 	<!-- Content Sections -->
-	{#each sections as section, i}
+	{#each sections as section}
 		{@const sectionContent = section.content()}
 		<SectionContainer
 			id={section.id}
@@ -144,12 +144,6 @@
 				</div>
 			{/if}
 		</SectionContainer>
-		
-		{#if i < sections.length - 1}
-			<div class="flex justify-center mb-16">
-				<div class="w-16 h-1 bg-maia-200 dark:bg-maia-800 rounded-full"></div>
-			</div>
-		{/if}
 	{/each}
 	
 	<div class="flex justify-center mt-8 mb-12">

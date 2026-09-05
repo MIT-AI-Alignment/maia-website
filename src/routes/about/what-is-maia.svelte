@@ -47,7 +47,7 @@
 	as follows:
 </p>
 
-<div class="not-prose flex flex-col gap-4 mt-6">
+<div class="maia-roles not-prose flex flex-col gap-2 mt-6">
 	<ExpandableCard open={true}>
 		<svelte:fragment slot="summary">
 			<span class="font-semibold">Members</span>
@@ -170,3 +170,30 @@
 		<li><strong>{program.name}.</strong> {program.text}</li>
 	{/each}
 </ul>
+
+<style>
+	.maia-roles :global(details) {
+		margin: 0;
+		border: 0;
+		background: var(--maia-nav-surface);
+	}
+
+	.maia-roles :global(summary) {
+		min-height: 48px;
+		padding: 12px 16px;
+		line-height: 1.5;
+	}
+
+	.maia-roles :global(summary:focus-visible) {
+		outline: 2px solid var(--maia-accent);
+		outline-offset: -2px;
+	}
+
+	.maia-roles :global(details > div) {
+		padding: 4px 16px 16px 42px;
+	}
+
+	.maia-roles :global(details > div > :last-child) {
+		margin-bottom: 0;
+	}
+</style>

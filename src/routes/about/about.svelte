@@ -5,7 +5,7 @@
 	const advisors = getAdvisors();
 </script>
 
-<div class="flex my-6 flex-wrap">
+<div class="flex mt-6 flex-wrap">
 	<p>
 		MAIA is an MIT club for people worried about human extinction due to AI.  <sup><a href="/resources#why-ai-safety">[Why care about AI Safety?]</a></sup>
 	</p>
