@@ -29,6 +29,11 @@
 	function categoryDetails(event: CalendarEvent) {
 		return TIMELINE_CATEGORIES.find(category => category.id === eventCategory(event))!;
 	}
+	function openEventImage(button: HTMLButtonElement) {
+		const details = button.closest('article')!.querySelector('details')!;
+		details.open = true;
+		details.querySelector<HTMLAnchorElement>('.event-artwork')!.focus();
+	}
 	function eventLinks(event: CalendarEvent, mediaSource?: string) {
 		const links = new Map<string, { href: string; label: string; caption: string; icon: string }>();
 		for (const href of [...(event.url ? [event.url] : []), ...(mediaSource ? [mediaSource] : []), ...(event.descriptionParts ?? []).flatMap(part => part.href ? [part.href] : [])]) {
@@ -112,14 +117,19 @@
 							{:else}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
-						<div class="min-w-0">
-							<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
-							<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
+						<div class="event-body">
+							<div class="event-heading" class:has-media={media}>
+								<div class="min-w-0">
+									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
+									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
+								</div>
+								{#if media}<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind === 'photo' ? 'photo' : 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>{/if}
+							</div>
 							{#if event.description || event.location || links.length || media}
-								<details class="event-details">
+								<details class="event-details" id={`details-${encodeURIComponent(event.id)}`}>
 									<summary>Event details</summary>
 									<div class="detail-panel">
-										{#if media}<a class="event-artwork" href={media.sourceUrl} target="_blank" rel="noopener noreferrer"><img src={media.imageUrl} alt={media.imageAlt} loading="lazy" /></a>{/if}
+										{#if media}<a class="event-artwork" href={media.imageUrl} target="_blank" rel="noopener noreferrer"><img src={media.imageUrl} alt={media.imageAlt} loading="lazy" /><span class="image-caption">View full size <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></a>{/if}
 										{#if event.location}<p class="event-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{event.location}</span></p>{/if}
 										{#if event.description}
 											<p class="event-description">{#each event.descriptionParts ?? [{ text: event.description, href: undefined }] as part}{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a>{:else}{part.text}{/if}{/each}</p>
@@ -175,18 +185,29 @@
 	.event-category i { color: var(--category-color); }
 	.empty-category { color: var(--maia-muted); font-size: .85rem; padding: .5rem 0 1.5rem; }
 	.event-run + .event-run { margin-top: 1.5rem; }
-	.event-run.collection { position: relative; border-left: 2px solid var(--maia-accent); padding: 0 0 .25rem 1.1rem; margin: 1.5rem 0; }
+	.event-run.collection { position: relative; border-left: 4px solid var(--maia-accent); padding: 0 0 .4rem 1rem; margin: 1.5rem 0 1.5rem -1.25rem; }
 	.event-run.collection:first-child { margin-top: 0; }
-	.event-run.collection::after { content: ''; position: absolute; bottom: 0; left: 0; width: .5rem; border-bottom: 2px solid var(--maia-accent); }
-	.collection-label { display: flex; align-items: center; gap: .45rem; margin-bottom: 1.15rem; color: var(--maia-accent); font-size: .8rem; font-weight: 650; }
-	.event-run.collection .event-row:last-child { border-bottom: 0; }
-	.collection-label + .event-row { padding-top: 0; }
+	.event-run.collection::before, .event-run.collection::after { content: ''; position: absolute; left: 0; width: .65rem; border-top: 4px solid var(--maia-accent); }
+	.event-run.collection::before { top: 0; }
+	.event-run.collection::after { bottom: 0; }
+	.collection-label { display: flex; align-items: center; gap: .45rem; margin-bottom: 1.15rem; color: var(--maia-accent); font-size: .85rem; font-weight: 700; }
+	.event-body { min-width: 0; container-type: inline-size; }
+	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
+	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
+	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
+	.event-thumbnail.photo img { object-fit: cover; }
+	.event-thumbnail > span { position: absolute; right: .3rem; bottom: .3rem; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: .25rem; background: var(--maia-nav-surface); color: var(--maia-ink); font-size: .65rem; }
+	.event-thumbnail:hover { border-color: var(--maia-accent); }
+	.event-thumbnail:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
+	@container (max-width: 24rem) { .event-heading.has-media { grid-template-columns: minmax(0, 1fr) 5.5rem; gap: .75rem; } }
+	@container (max-width: 16rem) { .event-heading.has-media { grid-template-columns: minmax(0, 1fr); } .event-thumbnail { max-width: 12rem; } }
 	.event-details { margin-top: .6rem; }
 	.event-details > summary { width: fit-content; min-height: 36px; padding: .4rem 0; cursor: pointer; font-size: .85rem; color: var(--maia-accent); }
 	.event-details > summary:focus-visible, .source-card:focus-visible, .event-artwork:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
 	.detail-panel { padding-top: .65rem; }
 	.event-artwork { display: block; overflow: hidden; margin-bottom: 1rem; background: var(--maia-nav-surface); border: 1px solid var(--maia-border); border-radius: .5rem; }
 	.event-artwork img { display: block; width: 100%; max-height: 22rem; object-fit: contain; }
+	.image-caption { display: flex; justify-content: center; align-items: center; gap: .4rem; padding: .55rem; border-top: 1px solid var(--maia-border); color: var(--maia-accent); font-size: .75rem; }
 	.event-location { display: flex; align-items: baseline; gap: .55rem; margin-bottom: .85rem; font-size: .8rem; line-height: 1.6; color: var(--maia-muted); }
 	.event-location i { color: var(--maia-accent); }
 	.event-description { white-space: pre-line; overflow-wrap: anywhere; font-size: .9rem; line-height: 1.8; color: var(--maia-ink); }
@@ -200,8 +221,8 @@
 	.source-card .external-icon { margin-left: auto; font-size: .65rem; }
 	.section-grid { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2.5rem; align-items: start; }
 	.event-list { grid-column: 1; grid-row: 1; min-width: 0; }
-	.event-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--maia-border); }
-	.event-row:first-child { padding-top: 0; }
+	.event-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem; margin-bottom: .85rem; border: 1px solid var(--maia-border); border-radius: .6rem; background: var(--maia-nav-surface); }
+	.event-row:last-child { margin-bottom: 0; }
 	.programs { grid-column: 2; grid-row: 1; min-width: 0; }
 	.programs > h3 { display: flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; }
 	.programs > h3 i { color: var(--maia-accent); }
@@ -220,8 +241,8 @@
 		.event-list:first-child { grid-row: 1; }
 	}
 	@media (max-width: 540px) {
-		.event-row { grid-template-columns: minmax(0, 1fr); gap: .6rem; }
-		.event-run.collection { padding-left: .8rem; }
+		.event-row { grid-template-columns: minmax(0, 1fr); gap: .75rem; padding: .9rem; }
+		.event-run.collection { margin-left: 0; padding-left: .75rem; }
 	}
 	summary { overflow-wrap: anywhere; }
 </style>
