@@ -2,15 +2,25 @@ import type { CalendarEvent } from './events';
 
 type Attendance = { count: number | string; approximate: boolean };
 
-// Reported turnout from the retrospectives and Jurgis’s September 15 updates; excludes RSVPs and form submissions.
+// Reported turnout from retrospectives, Jurgis’s updates, and event pages' post-event “Went” totals.
 const attendanceByEvent: Record<string, Attendance> = {
+  'aisf-capstone-2026': { count: 43, approximate: true },
+  'bp05urquk4n6l0cbj12at0rcno@google.com/2026-05-12T22:00:00Z': { count: 65, approximate: true },
+  '8v1dac1vpdp8qo14ruan4glmn0@google.com/2026-05-01T22:00:00Z': { count: 12, approximate: false },
+  'maia-archive-2f07819f618e0d9abb5e3cb65b650ad3@mitaialignment.org/2026-04-22': { count: 65, approximate: false },
+  'kkfkde5t51ah5qp8jsh3hmln3s@google.com/2026-04-19T00:30:00Z': { count: 113, approximate: true },
+  'ihbf247eorb6sscc2g5lmfiqsc@google.com/2026-04-18T17:00:00Z': { count: '330+', approximate: true },
+  'lajp0v94h503pbjnakll1ccpcc@google.com/2026-04-18T17:00:00Z': { count: '430+', approximate: true },
+  '10npmtes54dj298dqlmks4f49k@google.com/2026-04-17T19:30:00Z': { count: '350+', approximate: true },
+  'ilspfi4b0qaign5i6rlgchb5e4@google.com/2026-04-18T01:00:00Z': { count: '120+', approximate: true },
+  'f0iig47o8k1u4ehgiovpsfjfg0@google.com/2026-04-16T23:00:00Z': { count: 34, approximate: true },
   'maia-archive-8347ee4073a667a4157573ba06ee8f8f@mitaialignment.org/2026-04-02': { count: 16, approximate: true },
   'maia-archive-3eead03ea045f7dc1715b386d271e6e8@mitaialignment.org/2026-03-31': { count: 14, approximate: true },
   '5lq1ffguo8nlpvv6vfn4a1nn44@google.com/2026-02-12T21:30:00Z': { count: 240, approximate: true },
   'maia-archive-33a39a9fe19563f56735abe5684b7fa5@mitaialignment.org/2026-02-10': { count: '220+', approximate: true },
   '78sbl0kojpb3vcq37mi471qhde@google.com/2026-09-06T19:00:00Z': { count: 21, approximate: true },
   '4fbqug2piuv7hniunr01jd0hgr@google.com/2026-09-05T14:00:00Z': { count: 19, approximate: true },
-  'maia-archive-ca2869a6e8b429f9d52e4757a70b52dd@mitaialignment.org/2026-08-28': { count: 40, approximate: true },
+  'maia-archive-ca2869a6e8b429f9d52e4757a70b52dd@mitaialignment.org/2026-08-28': { count: 32, approximate: true },
   'maia-archive-afdbbd6393f424b4e44b8855bdb346b6@mitaialignment.org/2025-11-14': { count: 40, approximate: true },
   'maia-archive-24894dcb2b87170d2691fe8d6607192a@mitaialignment.org/2025-11-07': { count: 40, approximate: true },
   'maia-archive-f186911bb32c98a3e7c529626bcac594@mitaialignment.org/2025-04-11': { count: 40, approximate: true },
