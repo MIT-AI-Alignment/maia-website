@@ -1,8 +1,21 @@
 import type { CalendarEvent } from './events';
 
-// Only dated, source-backed program ranges belong here. End dates are exclusive.
+// Program-month ranges are for the archive overview, not individual meeting times.
+// dateLabel explains their precision. End dates are exclusive.
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
+ {
+  id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals',
+  start: '2026-03-01', end: '2026-06-01', dateLabel: 'March–May 2026 · program months', kind: 'initiative',
+  description: 'An eight-week reading and discussion fellowship on AI safety, with multiple weekly cohorts. This overview shows the months in which the spring program ran, rather than exact first and last meeting dates. Cohort schedules varied; final sessions continued after the May 9 capstone hackathon.',
+  url: '/aisf/'
+ },
+ {
+  id: 'arena-spring-2026', title: 'Spring 2026 ARENA technical upskilling',
+  start: '2026-02-01', end: '2026-06-01', dateLabel: 'February–May 2026 · program months', kind: 'initiative',
+  description: 'A technical AI safety upskilling series using the ARENA curriculum. The program began with a February 19 kickoff; session reminders continued through May 9, and organizers announced on May 14 that remaining sessions would stop for the semester. The bar shows program months, not uninterrupted meetings or exact course boundaries.',
+  url: 'https://www.arena.education/curriculum'
+ },
  {
   id: 'aisf-summer-2026', title: 'Summer 2026 AI Safety Fundamentals',
   start: '2026-06-01', end: '2026-08-01', dateLabel: 'June–July 2026', kind: 'initiative',
