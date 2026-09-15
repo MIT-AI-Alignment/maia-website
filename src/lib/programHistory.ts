@@ -5,6 +5,12 @@ import type { CalendarEvent } from './events';
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
+  id: 'aisf-iap-2027', title: 'IAP 2027 Intensive AI Safety Fundamentals',
+  start: '2027-01-01', end: '2027-02-01', dateLabel: 'January 2027 · exact dates TBD', kind: 'initiative',
+  description: 'A planned intensive version of AI Safety Fundamentals during IAP, bringing together foundational readings and discussions in a concentrated format. Exact dates and the session schedule are to be confirmed; this overview shows January as a placeholder month.',
+  url: '/aisf/'
+ },
+ {
   id: 'arena-fall-2025', title: 'Fall 2025 AISST/MAIA ARENA Technical Upskilling',
   start: '2025-09-01', end: '2026-01-01', dateLabel: 'Fall 2025 · approximate semester range', kind: 'initiative',
   description: 'Technical AI safety upskilling using the ARENA curriculum for the AISST and MAIA community. This entry represents the fall semester; exact session dates are not reconstructed.',
