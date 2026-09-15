@@ -4,6 +4,13 @@ export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: strin
 
 const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string })[] = [
   {
+    calendarId: "arena-spring-2026",
+    imageUrl: "/images/logos/arena.png",
+    imageAlt: "ARENA technical AI safety curriculum logo",
+    sourceUrl: "https://www.arena.education/curriculum",
+    kind: "artwork"
+  },
+  {
     "calendarId": "lajp0v94h503pbjnakll1ccpcc",
     "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
     "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
