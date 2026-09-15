@@ -6,8 +6,8 @@ const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
 export const TIMELINE_CATEGORIES = [
  { id: 'programs', label: 'Programs', icon: 'fa-layer-group' },
  { id: 'workshops', label: 'Workshops', icon: 'fa-chalkboard-user' },
- { id: 'hackathons', label: 'Hackathons & Challenges', icon: 'fa-laptop-code' },
  { id: 'talks', label: 'Talks', icon: 'fa-microphone' },
+ { id: 'hackathons', label: 'Hackathons & Challenges', icon: 'fa-laptop-code' },
  { id: 'socials', label: 'Socials', icon: 'fa-comments' },
  { id: 'tabling', label: 'Tabling', icon: 'maia-table-icon' },
  { id: 'other', label: 'Other', icon: 'fa-calendar-day' }
@@ -107,7 +107,7 @@ export function eventCategory(event: CalendarEvent): TimelineCategory {
  if (/\bhackathons?\b|\bbattleprompting\b|\breward hacking event\b|\bmission strawberry\b|\b(?:estimation and )?forecasting challenge\b/.test(title)) return 'hackathons';
  if (/workshop|arena|upskilling|\blab$|\btabletop exercises?\b/.test(title)) return 'workshops';
  if (/social|mixer|movie|avalon|waffles|bagels|game|dinner|extravaganza|celebration|rock[ -]?climbing|cruise|escape room|office tours?|open house/.test(title)) return 'socials';
- if (/tabling|midway|food truck|bon me|orientation|\bcpw\b|demo booths?/.test(title)) return 'tabling';
+ if (/tabling|resource fair|midway|food truck|bon me|orientation|\bcpw\b|demo booths?/.test(title)) return 'tabling';
  if (/talk|speaker|q\s*&\s*a|conversation|member meeting|lecture|fireside/.test(title)) return 'talks';
  const verifiedCategory = VERIFIED_EVENT_CATEGORIES[event.id?.split('/')[0]];
  if (verifiedCategory) return verifiedCategory;

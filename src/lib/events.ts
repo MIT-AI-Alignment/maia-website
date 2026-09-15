@@ -3,6 +3,7 @@ export type EventDescriptionPart = { text: string; href?: string };
 export type CalendarEvent = {
  id: string;
  title: string;
+ summary?: string;
  start: string;
  end?: string;
  description?: string;
