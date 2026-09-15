@@ -71,7 +71,7 @@ export const PEOPLE: Record<string, Person> = {
 	'roman-ross': {
 		id: 'roman-ross',
 		name: 'Roman Ross',
-		position: 'Board Member',
+		position: 'Exec Board Member',
 		imageUrl: '/images/people/roman-ross-fall-2026.jpg',
 		isExec: true,
 		isOrg: false,
@@ -84,7 +84,7 @@ export const PEOPLE: Record<string, Person> = {
 	'jason-chin': {
 		id: 'jason-chin',
 		name: 'Jason Chin',
-		position: 'Board Member',
+		position: 'Exec Board Member',
 		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
 		isExec: true,
 		isOrg: false,
@@ -97,7 +97,7 @@ export const PEOPLE: Record<string, Person> = {
 	'ionel-chiosa': {
 		id: 'ionel-chiosa',
 		name: 'Ionel Chiosa',
-		position: 'Board Member',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		mitEmail: 'ichiosa@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/ionelchiosa/',
@@ -156,6 +156,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'surajrdy@mit.edu',
 	},
 
 	'sam-warman': {
@@ -166,15 +167,18 @@ export const PEOPLE: Record<string, Person> = {
 		isOrg: true,
 		isActive: true,
 		linkedin: 'https://www.linkedin.com/in/sam-warman-843964257/',
+		mitEmail: 'swarman@mit.edu',
 	},
 
 	'adeeb-alshehry': {
 		id: 'adeeb-alshehry',
 		name: 'Adeeb Alshehry',
-		imageUrl: initialsAvatar('AA'),
+		imageUrl: '/images/people/adeeb-alshehry.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'alshehry@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/alshehry',
 	},
 
 	'amita-shukla': {
@@ -184,6 +188,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'ajshukla@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/amita-shukla',
 	},
 
 	'anango-prabhat': {
@@ -194,6 +200,7 @@ export const PEOPLE: Record<string, Person> = {
 		isOrg: true,
 		isActive: true,
 		linkedin: 'https://www.linkedin.com/in/anango-prabhat-28506a361/',
+		mitEmail: 'anango@mit.edu',
 	},
 
 	'anlan-xu': {
@@ -204,6 +211,7 @@ export const PEOPLE: Record<string, Person> = {
 		isOrg: true,
 		isActive: true,
 		linkedin: 'https://www.linkedin.com/in/anlan-xu-1658922b6/',
+		mitEmail: 'anlanxu@mit.edu',
 	},
 
 	'april-sun': {
@@ -222,6 +230,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'fpernice@mit.edu',
 	},
 
 	'isabella-wu': {
@@ -231,24 +240,20 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'isawu888@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/isabella-wu-356982279',
 	},
 
-	'lauren-slater-siegmund': {
-		id: 'lauren-slater-siegmund',
-		name: 'Lauren Slater Siegmund',
-		imageUrl: initialsAvatar('LS'),
-		isExec: false,
-		isOrg: true,
-		isActive: true,
-	},
 
 	'leon-chen': {
 		id: 'leon-chen',
 		name: 'Leon Chen',
-		imageUrl: initialsAvatar('LC'),
+		imageUrl: '/images/people/leon-chen.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'leoncgy@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/guangyuan-leon-chen',
 	},
 
 	'melat-ghebreselassie': {
@@ -259,6 +264,7 @@ export const PEOPLE: Record<string, Person> = {
 		isOrg: true,
 		isActive: true,
 		linkedin: 'https://www.linkedin.com/in/melatg/',
+		mitEmail: 'melatg@mit.edu',
 	},
 
 	'melissa-li': {
@@ -268,6 +274,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'li_me@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/melissa-li-16271b272',
 	},
 
 	'michelle-gao': {
@@ -277,6 +285,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'mgao7@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/michelle-gao-6aa8a2262',
 	},
 
 	'paulius-aleknavicius': {
@@ -295,6 +305,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'rayzhang@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/ray-y-zhang',
 	},
 
 	'thanush-patlolla': {
@@ -305,6 +317,7 @@ export const PEOPLE: Record<string, Person> = {
 		isOrg: true,
 		isActive: true,
 		linkedin: 'https://www.linkedin.com/in/thanush-patlolla/',
+		mitEmail: 'thanush@mit.edu',
 	},
 
 	'weian-xie': {
@@ -314,6 +327,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'weianxie@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/weian-xie-7583392b6',
 	},
 
 	'david-turturean': {
@@ -354,6 +369,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'djzhang@mit.edu',
 	},
 
 	'anooshka-pendyal': {
@@ -385,11 +401,12 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'talha-ashraf',
 		name: 'Talha Ashraf',
 		position: '',
-		// Initials until an approved photo is available; the previous URL belonged to Atticus.
-		imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"%3E%3Crect width="96" height="96" rx="8" fill="%23e5e7eb"/%3E%3Ctext x="48" y="50" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="32" fill="%234b5563"%3ETA%3C/text%3E%3C/svg%3E',
+		imageUrl: '/images/people/talha-ashraf-fall-2026.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'talha05@mit.edu',
+		linkedin: 'https://pk.linkedin.com/in/talha-ashraf-885b7a270',
 	},
 
 	'daniel-wu': {
@@ -437,12 +454,14 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'erslaugh@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/erslaugh',
 	},
 
 	'jurgis-kemeklis': {
 		id: 'jurgis-kemeklis',
 		name: 'Jurgis Kemeklis',
-		position: 'Exec',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
 		mitEmail: 'kemeklis@mit.edu',
 		calendly: 'https://cal.com/jurgis/30min',
@@ -456,7 +475,7 @@ export const PEOPLE: Record<string, Person> = {
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
 		name: 'Ionut Gabriel Stan',
-		position: 'Exec',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
@@ -484,6 +503,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'neham@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/nehamuramalla',
 	},
 
 	// ADVISORS
