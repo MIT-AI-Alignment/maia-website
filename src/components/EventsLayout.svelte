@@ -28,12 +28,14 @@
  .event-content { min-width: 0; }
  .event-content :global([data-category='programs']) { --category-color: #7650af; }
  .event-content :global([data-category='workshops']) { --category-color: #35766d; }
+ .event-content :global([data-category='hackathons']) { --category-color: #9b5c82; }
  .event-content :global([data-category='talks']) { --category-color: #557ca9; }
  .event-content :global([data-category='socials']) { --category-color: #b7714f; }
  .event-content :global([data-category='tabling']) { --category-color: #997942; }
  .event-content :global([data-category='other']) { --category-color: #7a7385; }
  :global(.dark) .event-content :global([data-category='programs']) { --category-color: #ad85e0; }
  :global(.dark) .event-content :global([data-category='workshops']) { --category-color: #70b9ac; }
+ :global(.dark) .event-content :global([data-category='hackathons']) { --category-color: #dba4c4; }
  :global(.dark) .event-content :global([data-category='talks']) { --category-color: #8fb6e2; }
  :global(.dark) .event-content :global([data-category='socials']) { --category-color: #e6a889; }
  :global(.dark) .event-content :global([data-category='tabling']) { --category-color: #d5b47c; }
