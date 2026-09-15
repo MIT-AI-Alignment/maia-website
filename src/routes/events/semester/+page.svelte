@@ -1,7 +1,7 @@
 <script lang="ts">
  import { onMount } from 'svelte';
  import { goto } from '$app/navigation';
- import PageLayout from '../../../components/PageLayout.svelte';
+ import EventsLayout from '../../../components/EventsLayout.svelte';
  import { displayDateRange, displayTimeRange, localDate, type CalendarEvent } from '$lib/events';
  import {
   TIMELINE_CATEGORIES, availableSemesters, semesterForDate, semesterMonths,
@@ -49,22 +49,8 @@
  }
 </script>
 
-<PageLayout
- title="Semester view"
- description="See how MAIA's programs, workshops, talks, and socials fit together across a semester."
- heroTitle="A semester at MAIA"
- heroIcon="fa-solid fa-chart-gantt"
->
- <div slot="hero-content" class="intro">
-  <p>Ongoing programs and the moments in between. Explore how the semester fits together.</p>
- </div>
-
- <section class="semester-view" aria-label="Semester event explorer">
-  <div class="topline">
-   <nav class="view-switch" aria-label="Events view">
-    <a href="/events/"><i class="fa-solid fa-list-ul" aria-hidden="true"></i> List</a>
-    <a href="/events/semester/" aria-current="page"><i class="fa-solid fa-chart-gantt" aria-hidden="true"></i> Semester</a>
-   </nav>
+<EventsLayout view="semester">
+  <svelte:fragment slot="toolbar">
    {#if terms.length}
     <div class="term-control">
      <label for="semester-select">Semester</label>
@@ -73,8 +59,9 @@
      </select>
     </div>
    {/if}
-  </div>
+  </svelte:fragment>
 
+ <section class="semester-view" aria-label="Semester event explorer">
   {#if semester}
    <div class="semester-heading">
     <div>
@@ -182,15 +169,10 @@
 
   <p class="source-note">Times are Eastern (EST/EDT). Program bars show the available program periods, including month-level ranges where noted in the details. This view reflects the available calendar records and does not reconstruct missing sessions.</p>
  </section>
-</PageLayout>
+</EventsLayout>
 
 <style>
- .intro { max-width: 38rem; color: var(--maia-muted); font-size: 1.05rem; line-height: 1.7; }
  .semester-view { min-width: 0; }
- .topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-bottom: 2rem; border-bottom: 1px solid var(--maia-border); }
- .view-switch { display: inline-flex; gap: .25rem; background: var(--maia-nav-surface); border: 1px solid var(--maia-border); padding: .25rem; border-radius: .55rem; }
- .view-switch a { display: inline-flex; align-items: center; gap: .5rem; padding: .65rem .9rem; border-radius: .3rem; font-size: .85rem; color: var(--maia-muted); }
- .view-switch a[aria-current] { color: white; background: var(--maia-action); }
  .term-control { display: flex; align-items: center; gap: .65rem; font-size: .85rem; }
  .term-control label { color: var(--maia-muted); }
  select { border: 1px solid var(--maia-border); background: var(--maia-nav-surface); color: var(--maia-ink); border-radius: .4rem; padding: .7rem 1rem; min-height: 44px; }
@@ -269,7 +251,6 @@
   .semester-heading { align-items: flex-start; flex-direction: column; gap: .6rem; }
   .term-control { width: 100%; justify-content: space-between; }
   .term-control select { flex: 1; max-width: 15rem; }
-  .topline { gap: 1.2rem; }
   .event-detail { padding: 1.1rem; }
  }
 </style>
