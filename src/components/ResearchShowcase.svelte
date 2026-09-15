@@ -36,12 +36,12 @@
 			</a>
 			<h4><a href={paper.link} target="_blank" rel="noopener noreferrer">{paper.title}</a></h4>
 			<time datetime={paper.date}>{formatDate(paper.date)}</time>
-			<a class="citation-count" href={'https://openalex.org/' + paper.openAlex} target="_blank" rel="noopener noreferrer">{paper.citations} indexed citations</a>
+			<a class="citation-count" href={'https://www.semanticscholar.org/paper/' + paper.semanticScholar} target="_blank" rel="noopener noreferrer">{paper.citations} indexed citations</a>
 			<p class="authors">MAIA coauthors: {paper.authors.join(', ')}</p>
 		</article>
 	{/each}
 </div>
-<p class="citation-note">Citation counts from OpenAlex, checked {formatDate(CITATIONS_CHECKED)}. Coverage varies; zero means no citations indexed in that record.</p>
+<p class="citation-note">Citation counts from Semantic Scholar, checked {formatDate(CITATIONS_CHECKED)}. Counts reflect that index's coverage and are not live totals.</p>
 <h3 class="section-label">All research</h3>
 
 <div class="research-grid not-prose">
