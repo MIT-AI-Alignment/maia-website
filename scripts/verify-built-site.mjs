@@ -9,8 +9,8 @@ const htmlFiles = files('build').filter(path => path.endsWith('.html'));
 assert.ok(htmlFiles.length >= 38, 'Expected all public routes to prerender');
 for (const path of htmlFiles) {
   const html = read(path);
-  assert.doesNotMatch(html, /Felix Tudose|felixrt|Ryan Baylon|ryan-baylon/);
-  assert.doesNotMatch(html, /mailto:undefined|orientation2026QrRedirected/);
+  assert.ok(!/Felix Tudose|felixrt|Ryan Baylon|ryan-baylon/.test(html), `Removed person in ${path}`);
+  assert.ok(!/mailto:undefined|orientation2026QrRedirected/.test(html), `Invalid link or redirect in ${path}`);
 }
 const home = read('build/index.html');
 const about = read('build/about/index.html');

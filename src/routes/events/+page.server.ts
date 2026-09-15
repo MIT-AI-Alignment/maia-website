@@ -8,6 +8,13 @@ const orientationLinks = new Map(ORIENTATION_2026_RSVP_EVENTS
  .filter(event => event.calendarId)
  .map(event => [event.calendarId, event.href]));
 
+// Website-only roster removal; leave the source calendar unchanged.
+function publicDescription(text: string): string {
+ return text.replace(/\b(?:Felix Tudose|Ryan Baylon),\s*/g, '')
+  .replace(/,\s*(?:Felix Tudose|Ryan Baylon)\b/g, '')
+  .replace(/\b(?:Felix Tudose|Ryan Baylon)\b/g, '');
+}
+
 // Based on the joint workshop overview at https://aisst.ai/workshops and archived schedules.
 function workshopSummary(event: CalendarEvent): string | undefined {
  if (!/workshop/i.test(event.title) || !/residential|MAIA.*AISST|AISST.*MAIA|summer technical AI safety/i.test(event.title)) return;
@@ -21,7 +28,12 @@ export async function load({ fetch }) {
  if (!response.ok) throw new Error('Public calendar unavailable; refusing to publish an empty event archive.');
  const events = readCalendarEvents(await response.text()).map(event => {
   const url = orientationLinks.get(event.id.split('/')[0]);
-  return { ...event, url: url ?? event.url, summary: orientationSummary(event) ?? workshopSummary(event) };
+  return {
+   ...event,
+   description: event.description ? publicDescription(event.description) : event.description,
+   descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: publicDescription(part.text) })),
+   url: url ?? event.url, summary: orientationSummary(event) ?? workshopSummary(event)
+  };
  });
  return { events: [...events, ...PROGRAM_HISTORY], fetchedAt: new Date().toISOString() };
 }

@@ -73,7 +73,8 @@
 				class="w-full h-full object-cover"
 			/>
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-light/70 to-surface-light dark:via-surface-dark/70 dark:to-surface-dark"
+				class="absolute inset-0"
+				style="background: var(--maia-canvas); opacity: 0.95;"
 			/>
 		</div>
 
