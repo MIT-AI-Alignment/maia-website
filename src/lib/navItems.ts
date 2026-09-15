@@ -5,21 +5,11 @@ export const NAVIGATION_ITEMS = [
 		icon: 'fas fa-home'
 	},
 	{
-		label: 'Orientation 2026',
-		href: '/orientation-2026/',
-		icon: 'fas fa-compass',
-		dropdownItems: [
-			{ href: '/orientation-2026#form', label: 'Interest Form' },
-			{ href: '/orientation-2026#schedule', label: 'Schedule' },
-			{ href: '/orientation-2026#calendar', label: 'Google Calendar' },
-			{ href: '/orientation-2026#rsvp', label: 'RSVP Links' }
-		]
-	},
-	{
 		label: 'Events',
 		href: '/events/',
 		icon: 'fas fa-calendar',
 		dropdownItems: [
+			{ href: '/events/#highlights', label: 'Highlights' },
 			{ href: '/events/#upcoming', label: 'Upcoming events' },
 			{ href: '/events/#past', label: 'Past events & initiatives' },
 			{ href: '/orientation-2026/', label: 'Orientation 2026' }
