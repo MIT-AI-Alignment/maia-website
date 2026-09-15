@@ -222,7 +222,7 @@ html { -webkit-text-size-adjust: 100%; }
 
   @media (hover: hover) and (pointer: fine) {
     .maia-action:hover, .maia-text-action:hover { transform: translateY(-2px); }
-    .event-thumbnail:not(.fallback):hover img { transform: scale(1.035); }
+    .event-thumbnail:hover img { transform: scale(1.035); }
     #playing-card-gallery a:hover img { transform: translateY(-5px) rotate(-1deg); }
   }
 }
