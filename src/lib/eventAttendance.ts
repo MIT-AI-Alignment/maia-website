@@ -4,8 +4,9 @@ type Attendance = { count: number | string; approximate: boolean };
 
 // Reported turnout from retrospectives, Jurgis’s updates, and event pages' post-event “Went” totals.
 const attendanceByEvent: Record<string, Attendance> = {
+  't01e428lq1kfpikvld0k2otm8o@google.com/2026-09-15T15:00:00Z': { count: '350+', approximate: true },
   'aisf-capstone-2026': { count: 43, approximate: true },
-  'bp05urquk4n6l0cbj12at0rcno@google.com/2026-05-12T22:00:00Z': { count: 65, approximate: true },
+  'bp05urquk4n6l0cbj12at0rcno@google.com/2026-05-12T22:00:00Z': { count: 37, approximate: false },
   '8v1dac1vpdp8qo14ruan4glmn0@google.com/2026-05-01T22:00:00Z': { count: 12, approximate: false },
   'maia-archive-2f07819f618e0d9abb5e3cb65b650ad3@mitaialignment.org/2026-04-22': { count: 65, approximate: false },
   'kkfkde5t51ah5qp8jsh3hmln3s@google.com/2026-04-19T00:30:00Z': { count: 113, approximate: true },

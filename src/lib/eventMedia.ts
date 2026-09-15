@@ -403,7 +403,15 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  const linkedContent = [event.url, event.description, ...(event.descriptionParts ?? []).map(part => part.href)].filter(Boolean).join(' ');
  const partifulIds = [...linkedContent.matchAll(/https?:\/\/(?:www\.)?partiful\.com\/e\/([A-Za-z0-9]+)/g)].map(match => match[1]);
  const matched = eventMediaEntries.find(artwork => artwork.calendarId === calendarId || (artwork.partifulId !== undefined && partifulIds.includes(artwork.partifulId)));
- if (matched) return matched;
+ // Refresh image URLs after earlier preview builds left cached failed requests.
+ if (matched) return { ...matched, imageUrl: `${matched.imageUrl}?v=20260915` };
+ if (/\bAISF\b|AI Safety Fundamentals/i.test(event.title)) {
+  return {
+   imageUrl: '/images/logos/aisf.png',
+   imageAlt: 'MAIA AI Safety Fundamentals logo',
+   kind: 'artwork'
+  };
+ }
  if (event.start.length === 10 && /workshop/i.test(event.title)) {
   return {
    imageUrl: '/images/events/workshop-representative.jpg',
