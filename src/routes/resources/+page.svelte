@@ -95,7 +95,7 @@
 			href: '/resources/merch/',
 			icon: 'fas fa-layer-group',
 			title: 'MAIA Merch',
-			blurb: 'Explore the V0 draft of our AI safety playing cards.'
+			blurb: 'Explore our shirts, stickers, pens, and V0 AI safety playing cards.'
 		}
 	];
 
