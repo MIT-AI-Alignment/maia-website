@@ -46,7 +46,7 @@
 
 			<!-- Introduction Section -->
 			<div class="mt-12 space-y-8">
-				<div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 					{#each phoneLineTeam as person}
 						<Profile
 							personId={person.id}
