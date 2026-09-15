@@ -5,12 +5,6 @@ import type { CalendarEvent } from './events';
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
-  id: 'aisst-technical-fall-2022', title: 'Fall 2022 Technical AI Safety Fellowship · AISST',
-  start: '2022-09-01', end: '2023-01-01', dateLabel: 'Fall 2022 · exact session dates unavailable', kind: 'initiative',
-  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AISST’s fellowship history; the timeline uses an approximate semester range.',
-  url: 'https://aisst.ai/tech-fellowship'
- },
- {
   id: 'aisst-technical-spring-2023', title: 'Spring 2023 Technical AI Safety Fellowship · AISST',
   start: '2023-02-01', end: '2023-06-01', dateLabel: 'Spring 2023 · exact session dates unavailable', kind: 'initiative',
   description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AISST’s fellowship history; the timeline uses an approximate semester range.',
