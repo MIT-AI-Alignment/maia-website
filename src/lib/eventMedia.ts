@@ -4,6 +4,13 @@ export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: strin
 
 const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string })[] = [
   {
+    calendarId: "67nup42v5rga1hd39984n05da5",
+    imageUrl: "/images/events/boba-representative.jpg",
+    imageAlt: "Representative bubble tea photograph, not a photograph of the MAIA open house.",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bubble-tea.jpg",
+    kind: "artwork"
+  },
+  {
     calendarId: "arena-spring-2026",
     imageUrl: "/images/logos/arena.png",
     imageAlt: "ARENA technical AI safety curriculum logo",
