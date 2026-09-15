@@ -126,7 +126,7 @@
 						<img 
 							src={$theme === 'dark' ? "/images/brand/maia-horizontal-size-5-dark-transparent.svg" : "/images/brand/maia-horizontal-size-5-light-transparent.svg"}
 							alt="MAIA logo" 
-							class="h-8 w-auto"
+							class="h-10 w-auto"
 						/>
 					</a>
 				</div>

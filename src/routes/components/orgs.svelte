@@ -9,6 +9,24 @@
 
 	const organizations: Organization[] = [
 		{
+			imagePath: '/images/logos/anthropic.png',
+			name: 'Anthropic',
+			link: 'https://www.anthropic.com/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/openai.png',
+			name: 'OpenAI',
+			link: 'https://www.openai.com/',
+			invert: true
+		},
+		{
+			imagePath: '/images/logos/google-deepmind.svg',
+			name: 'Google DeepMind',
+			link: 'https://deepmind.google/',
+			invert: true
+		},
+		{
 			imagePath: '/images/logos/chai.png',
 			name: 'CHAI',
 			link: 'https://humancompatible.ai/',
@@ -33,18 +51,6 @@
 			invert: false
 		},
 		{
-			imagePath: '/images/logos/anthropic.png',
-			name: 'Anthropic',
-			link: 'https://www.anthropic.com/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/openai.png',
-			name: 'OpenAI',
-			link: 'https://www.openai.com/',
-			invert: true
-		},
-		{
 			imagePath: '/images/logos/epoch.png',
 			name: 'Epoch AI',
 			link: 'https://www.epoch.ai/',
@@ -54,12 +60,6 @@
 			imagePath: '/images/logos/metr.png',
 			name: 'METR',
 			link: 'https://metr.org/',
-			invert: true
-		},
-		{
-			imagePath: '/images/logos/google-deepmind.svg',
-			name: 'Google DeepMind',
-			link: 'https://deepmind.google/',
 			invert: true
 		},
 		{
