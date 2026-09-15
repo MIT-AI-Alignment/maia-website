@@ -71,6 +71,7 @@ export const PEOPLE: Record<string, Person> = {
 	'roman-ross': {
 		id: 'roman-ross',
 		name: 'Roman Ross',
+		email: 'roman.alex.ross@gmail.com',
 		position: 'Exec Board Member',
 		imageUrl: '/images/people/roman-ross-fall-2026.jpg',
 		isExec: true,
@@ -84,6 +85,7 @@ export const PEOPLE: Record<string, Person> = {
 	'jason-chin': {
 		id: 'jason-chin',
 		name: 'Jason Chin',
+		email: 'jasonchin098@gmail.com',
 		position: 'Exec Board Member',
 		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
 		isExec: true,
@@ -226,7 +228,7 @@ export const PEOPLE: Record<string, Person> = {
 	'francisco-pernice': {
 		id: 'francisco-pernice',
 		name: 'Francisco Pernice',
-		imageUrl: initialsAvatar('FP'),
+		imageUrl: '/images/people/francisco-pernice.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -292,7 +294,9 @@ export const PEOPLE: Record<string, Person> = {
 	'paulius-aleknavicius': {
 		id: 'paulius-aleknavicius',
 		name: 'Paulius Aleknavicius',
-		imageUrl: initialsAvatar('PA'),
+		imageUrl: '/images/people/paulius-aleknavicius.jpg',
+		mitEmail: 'paulius@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/paulius-aleknavicius-a14904291/',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
