@@ -1,6 +1,6 @@
 import type { CalendarEvent } from './events';
 
-export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: string; kind?: 'photo' | 'artwork' };
+export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: string; kind?: 'photo' | 'artwork' | 'portrait' };
 
 const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string })[] = [
   {
@@ -143,7 +143,7 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "calendarId": "nj234ep9ok8rm082i86eg8ijd4",
     "partifulId": "SlfSVkbyXF0G9qGg6hDn",
     "imageUrl": "/images/events/archive-maia-2026-008-cover.jpg",
-    "imageAlt": "Original MAIA and AISF social invitation artwork with a pizza and You\u2019re Invited lettering",
+    "imageAlt": "Original MAIA and AISF social invitation artwork with a pizza and You’re Invited lettering",
     "sourceUrl": "https://partiful.com/e/SlfSVkbyXF0G9qGg6hDn",
     "kind": "artwork"
   },
@@ -162,6 +162,42 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "imageAlt": "Original MAIA May social invitation artwork with colorful gradients and Party Immediately lettering",
     "sourceUrl": "https://partiful.com/e/IlcfjCpKufDe2prerMoE",
     "kind": "artwork"
+  },
+  {
+    "calendarId": "_dlgmio9dc5p66q39epiiqe1j6grmap9k60rj6o9m6orm2d1h6krjadpjc9gj0dj5cks6ce3681mmit31d5gmoqb7dpmmarjk5pnn4po",
+    "imageUrl": "/images/events/speaker-josh-clymer.jpg",
+    "imageAlt": "Josh Clymer portrait",
+    "sourceUrl": "https://joshclymer.substack.com/",
+    "kind": "portrait",
+    "partifulId": "wOCjVImmlyvdKsvQwVcN"
+  },
+  {
+    "calendarId": "_dlgmio9dc5p66q39epiiqcr5clgm8c1jclgj0d1lcorm8oph6sojaohj70r68chn65ijcp9o81mmit31d5gmoqb7dpmmarjk5pnn4po",
+    "imageUrl": "/images/events/speaker-aryan-bhatt.jpg",
+    "imageAlt": "Aryan Bhatt portrait",
+    "sourceUrl": "https://www.matsprogram.org/mentor/bhatt",
+    "kind": "portrait"
+  },
+  {
+    "calendarId": "6eqvq9hv6osj2mjhmt3sudpi6j",
+    "imageUrl": "/images/events/speaker-neel-nanda.jpg",
+    "imageAlt": "Neel Nanda portrait",
+    "sourceUrl": "https://www.neelnanda.io/about",
+    "kind": "portrait"
+  },
+  {
+    "calendarId": "4gkbk3ftq8peoqse7jio33eaa9",
+    "imageUrl": "/images/events/archive-maia-2026-014-cover.jpg",
+    "imageAlt": "Max Tegmark portrait",
+    "sourceUrl": "https://partiful.com/e/stdhTf8es2xF2fdNeIBT",
+    "kind": "portrait"
+  },
+  {
+    "calendarId": "5di00sqis1am2hom7g2l8fne0b",
+    "imageUrl": "/images/events/archive-maia-2026-014-cover.jpg",
+    "imageAlt": "Max Tegmark portrait",
+    "sourceUrl": "https://partiful.com/e/stdhTf8es2xF2fdNeIBT",
+    "kind": "portrait"
   }
 ];
 
