@@ -3,6 +3,7 @@
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
+	import { ORIENTATION_2026_RSVP_EVENTS as rsvpEvents } from '$lib/eventCollections';
 
 	const sections = [
 		{ id: 'form', title: 'Mailing List', icon: 'fa-solid fa-envelope' },
@@ -11,38 +12,6 @@
 		{ id: 'rsvp', title: 'RSVP Links', icon: 'fa-solid fa-ticket' }
 	];
 
-	const rsvpEvents = [
-		{
-			name: 'Google Rooftop Social',
-			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Rock Climbing',
-			href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Estimation and Forecasting Challenge',
-			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'AGI Tabletop Exercises',
-			href: 'https://partiful.com/e/UBZPLn8pwDSahW5WScIL',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Sunset Cruise Ride',
-			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1',
-			note: '(RSVP Required to Attend)'
-		}
-	];
 
 	function scrollToSection(id: string) {
 		const element = document.getElementById(id);
