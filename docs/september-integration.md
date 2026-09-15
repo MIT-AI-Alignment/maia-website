@@ -11,6 +11,7 @@ This combines the event-archive draft, the website follow-ups, and Ionut's booki
 - 45 Summer 2026 AISF fellows, each with recorded completion approval, photo and publication consent. The latest response check on September 15 found no additional eligible fellows. The public data contains only names and local photo paths.
 - Consented Fall organizer photos, shorter About/Resources copy, clearer course guidance, and removal of unreliable citation counts.
 - Automatic phone-to-Airtable homepage redirect removed.
+- Orientation popup disabled and orientation navigation/promotion removed; the direct URL remains available as an archive.
 - Readable background shading on all three CAIP exhibition pages. The old gradient overlay was disabled by the site's global gradient reset.
 
 ## Checks

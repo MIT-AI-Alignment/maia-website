@@ -88,7 +88,6 @@
 			<section class="highlights" aria-labelledby="highlights">
 				<div class="highlights-header">
 					<h2 id="highlights" class="font-heading">Highlights</h2>
-					<a href="/orientation-2026/">Orientation 2026 <span aria-hidden="true">→</span></a>
 				</div>
 				<div class="highlight-grid">
 					{#each highlights as event}
@@ -228,7 +227,6 @@
 	.highlights { margin-bottom: 2.5rem; }
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
-	.highlights-header a { font-size: .85rem; }
 	.highlight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 	.highlight-card { overflow: hidden; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); color: var(--maia-ink); text-decoration: none; }
 	.highlight-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }

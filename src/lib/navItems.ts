@@ -11,8 +11,7 @@ export const NAVIGATION_ITEMS = [
 		dropdownItems: [
 			{ href: '/events/#highlights', label: 'Highlights' },
 			{ href: '/events/#upcoming', label: 'Upcoming events' },
-			{ href: '/events/#past', label: 'Past events & initiatives' },
-			{ href: '/orientation-2026/', label: 'Orientation 2026' }
+			{ href: '/events/#past', label: 'Past events & initiatives' }
 		]
 	},
 	{
