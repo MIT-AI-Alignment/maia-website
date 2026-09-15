@@ -90,6 +90,12 @@
 			icon: 'fas fa-building',
 			title: 'Organizations We Work With',
 			blurb: 'Labs, nonprofits, and policy groups MAIA works with.'
+		},
+		{
+			href: '/resources/merch/',
+			icon: 'fas fa-layer-group',
+			title: 'MAIA Merch',
+			blurb: 'Explore the V0 draft of our AI safety playing cards.'
 		}
 	];
 
