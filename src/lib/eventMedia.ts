@@ -198,6 +198,110 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "imageAlt": "Max Tegmark portrait",
     "sourceUrl": "https://partiful.com/e/stdhTf8es2xF2fdNeIBT",
     "kind": "portrait"
+  },
+  {
+    "imageUrl": "/images/events/speaker-nicholas-carlini.jpg",
+    "imageAlt": "Nicholas Carlini portrait",
+    "sourceUrl": "https://nicholas.carlini.com/",
+    "kind": "portrait",
+    "calendarId": "maia-archive-33a39a9fe19563f56735abe5684b7fa5"
+  },
+  {
+    "imageUrl": "/images/events/speaker-stephen-casper.jpg",
+    "imageAlt": "Stephen Casper portrait",
+    "sourceUrl": "https://www.hks.harvard.edu/faculty/stephen-casper",
+    "kind": "portrait",
+    "calendarId": "maia-archive-62b356a491ad269628775890256f64ee"
+  },
+  {
+    "imageUrl": "/images/events/speaker-andreea-bobu.jpg",
+    "imageAlt": "Andreea Bobu portrait",
+    "sourceUrl": "https://www.mit.edu/~abobu/",
+    "kind": "portrait",
+    "calendarId": "maia-archive-2f07819f618e0d9abb5e3cb65b650ad3"
+  },
+  {
+    "imageUrl": "/images/events/speaker-lucas-sato.jpg",
+    "imageAlt": "Lucas Sato portrait",
+    "sourceUrl": "https://metr.org/team/lucas-sato/",
+    "kind": "portrait",
+    "calendarId": "531gc0t6lb2acgl7av05boh5ej"
+  },
+  {
+    "imageUrl": "/images/events/speaker-stephen-mcaleer.jpg",
+    "imageAlt": "Stephen McAleer portrait",
+    "sourceUrl": "https://mcaleste.github.io/",
+    "kind": "portrait",
+    "calendarId": "maia-archive-f36deedb40b64b2dfbc8ff7c2fd0cc4b"
+  },
+  {
+    "imageUrl": "/images/events/speaker-david-krueger.jpg",
+    "imageAlt": "David Krueger portrait",
+    "sourceUrl": "https://www.davidscottkrueger.com/",
+    "kind": "portrait",
+    "calendarId": "maia-archive-4016c187705cd8eb2d5b35cfc8ca4ed4"
+  },
+  {
+    "imageUrl": "/images/events/speaker-ajeya-cotra.jpg",
+    "imageAlt": "Ajeya Cotra portrait",
+    "sourceUrl": "https://metr.org/team/ajeya-cotra/",
+    "kind": "portrait",
+    "calendarId": "maia-archive-6d19eb17467c8dd87ae76c7141c59ce6"
+  },
+  {
+    "imageUrl": "/images/events/speaker-daniel-kokotajlo.jpg",
+    "imageAlt": "Daniel Kokotajlo portrait",
+    "sourceUrl": "https://ai-futures.org/about",
+    "kind": "portrait",
+    "calendarId": "gvr4sus35riemvgvq8mbpet28g"
+  },
+  {
+    "imageUrl": "/images/events/speaker-daniel-kokotajlo.jpg",
+    "imageAlt": "Daniel Kokotajlo portrait",
+    "sourceUrl": "https://ai-futures.org/about",
+    "kind": "portrait",
+    "calendarId": "01bfgfsoel54ollocm5in0i5hs"
+  },
+  {
+    "imageUrl": "/images/events/speaker-richard-ngo.jpg",
+    "imageAlt": "Richard Ngo portrait",
+    "sourceUrl": "https://www.richardcngo.com/home",
+    "kind": "portrait",
+    "calendarId": "1co92gdrhi7b5sabo41ilkcr40"
+  },
+  {
+    "imageUrl": "/images/events/speaker-adam-jermyn.jpg",
+    "imageAlt": "Adam Jermyn portrait",
+    "sourceUrl": "https://adamjermyn.com/",
+    "kind": "portrait",
+    "calendarId": "2gd2030tkofav427h76h9ec3nn"
+  },
+  {
+    "imageUrl": "/images/events/speaker-zac-hatfield-dodds.jpg",
+    "imageAlt": "Zac Hatfield-Dodds portrait",
+    "sourceUrl": "https://zhd.dev/",
+    "kind": "portrait",
+    "calendarId": "mdnokn2m6nlhp5pc7ddc5na2mk"
+  },
+  {
+    "imageUrl": "/images/events/speaker-nick-bostrom.jpg",
+    "imageAlt": "Nick Bostrom portrait",
+    "sourceUrl": "https://nickbostrom.com/",
+    "kind": "portrait",
+    "calendarId": "5lq1ffguo8nlpvv6vfn4a1nn44"
+  },
+  {
+    "imageUrl": "/images/events/archive-extra-ai2027-report.png",
+    "imageAlt": "AI 2027 report artwork showing branching AI development scenarios",
+    "sourceUrl": "https://ai-2027.com/",
+    "kind": "artwork",
+    "calendarId": "ilspfi4b0qaign5i6rlgchb5e4"
+  },
+  {
+    "imageUrl": "/images/events/workshop-2026-08-28-group.jpg",
+    "imageAlt": "Participants outside Essex Woods at the August 2026 MAIA and AISST summer workshop.",
+    "kind": "photo",
+    "calendarId": "maia-archive-ca2869a6e8b429f9d52e4757a70b52dd"
   }
 ];
 
@@ -205,5 +309,13 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  const calendarId = event.id.split('@')[0];
  const linkedContent = [event.url, event.description, ...(event.descriptionParts ?? []).map(part => part.href)].filter(Boolean).join(' ');
  const partifulIds = [...linkedContent.matchAll(/https?:\/\/(?:www\.)?partiful\.com\/e\/([A-Za-z0-9]+)/g)].map(match => match[1]);
- return eventMediaEntries.find(artwork => artwork.calendarId === calendarId || (artwork.partifulId !== undefined && partifulIds.includes(artwork.partifulId)));
+ const matched = eventMediaEntries.find(artwork => artwork.calendarId === calendarId || (artwork.partifulId !== undefined && partifulIds.includes(artwork.partifulId)));
+ if (matched) return matched;
+ if (event.start.length === 10 && /workshop/i.test(event.title)) {
+  return {
+   imageUrl: '/images/events/workshop-representative.jpg',
+   imageAlt: 'Representative MAIA/AISST workshop group photo from 2025, reused across workshop listings.',
+   kind: 'photo'
+  };
+ }
 }
