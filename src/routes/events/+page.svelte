@@ -11,9 +11,10 @@
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
 	let activeCategory: Exclude<TimelineCategory, 'programs'> | 'all' = 'all';
-	const categories = TIMELINE_CATEGORIES.filter(category => category.id !== 'programs');
+	const eventCategories = TIMELINE_CATEGORIES.filter(category => category.id !== 'programs');
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
-	$: categoryCounts = new Map(categories.map(category => [category.id, eventRows.filter(event => eventCategory(event) === category.id).length]));
+	$: categoryCounts = new Map(eventCategories.map(category => [category.id, eventRows.filter(event => eventCategory(event) === category.id).length]));
+	$: categories = eventCategories.filter(category => categoryCounts.get(category.id)! > 0);
 	$: visibleCount = activeCategory === 'all' ? eventRows.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
@@ -72,9 +73,9 @@
 		</nav>
 		{#each sections as section}
 			{@const visibleEvents = section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory)}
-			{#if section === sections[1]}<div id="past" class="scroll-mt-28"></div>{/if}
+			{#if section === sections[1]}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
 			{#if section.events.length || section.programs.length}
-				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-28 font-heading text-2xl font-[650]">
+				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
 					{section.title}
 					{#if section.title === 'Upcoming'}
 						<span class="ml-2 text-sm">(times in Eastern Time)</span>
