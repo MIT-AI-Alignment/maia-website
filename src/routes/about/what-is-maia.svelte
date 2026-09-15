@@ -32,12 +32,16 @@
 			text: 'A set of challenges which require MIT students to engage with the main arguments for AI safety. There are cash prizes.'
 		},
 		{
-			name: 'AISST workshops',
+			name: 'MAIA & AISST workshops',
 			text: 'Every semester, we coordinate with AISST on running 2-3 workshop retreats where MAIA members have the chance to connect with professionals in AI safety over a weekend. The activities can range from heated debates about research agendas to singing "Let It Go" by a fire pit.'
 		},
 		{
+			name: 'MAIA Orientation',
+			text: 'Talks, games, socials, and hands-on activities introduce incoming MIT students to MAIA, AI safety, and ways to get involved.'
+		},
+		{
 			name: 'CPW',
-			text: 'Every spring, MAIA organizers set up a stand and table for 3-4 hours, helping prefrosh learn about AI and connect with us once they choose to come to MIT.'
+			text: 'During Campus Preview Weekend, we welcome admitted students with meals, games, AI discussions, film screenings, and food-truck tabling, alongside the Activities Midway. These events give prefrosh a chance to meet MAIA members and explore AI safety before arriving at MIT.'
 		}
 	];
 </script>
