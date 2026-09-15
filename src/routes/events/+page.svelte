@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import PageLayout from '../../components/PageLayout.svelte';
+	import EventsLayout from '../../components/EventsLayout.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
 	import { displayDateRange, displayTimeRange, splitEvents, type CalendarEvent } from '$lib/events';
@@ -22,19 +22,8 @@
 	];
 </script>
 
-<PageLayout
-	title="Events"
-	description="Upcoming events and the MAIA event archive."
-	heroTitle="Events"
-	heroIcon="fa-regular fa-calendar"
-	centerTitle={true}
->
-	<section class="mx-auto max-w-4xl">
-		<p class="mb-6">Events, workshops, and conversations from the public MAIA calendar. Times are Eastern (EST/EDT).</p>
-		<nav aria-label="Events view" class="mb-6 flex flex-wrap items-center gap-5 text-sm">
-			<a href="/events/" aria-current="page" class="font-semibold"><i class="fa-solid fa-list-ul mr-2" aria-hidden="true"></i>List view</a>
-			<a href="/events/semester/" class="underline underline-offset-4"><i class="fa-solid fa-chart-gantt mr-2" aria-hidden="true"></i>Semester view</a>
-		</nav>
+<EventsLayout view="list">
+	<section>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
 			{#each sections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
@@ -96,7 +85,7 @@
 			/>
 		</div>
 	</section>
-</PageLayout>
+</EventsLayout>
 
 <style>
 	.past-events article { opacity: .5; transition: opacity .15s; }
