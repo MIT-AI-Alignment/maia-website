@@ -420,7 +420,6 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: '/images/people/daniel-wu.jpeg',
 		mitEmail: 'ddwu@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/daniel-wu-925445324/',
-		calendly: 'https://cal.com/daniel-wu-qnhszk',
 		isHomepageContact: true,
 		isExec: false,
 		isOrg: true,
