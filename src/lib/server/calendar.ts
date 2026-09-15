@@ -12,6 +12,7 @@ function decodeEntities(value: string): string {
 
 function plainText(value: string): string {
  return decodeEntities(value.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '')
+  .replace(/<li\b[^>]*>/gi, '\n• ')
   .replace(/<br\s*\/?>|<\/(?:p|div|li)>/gi, '\n').replace(/<[^>]*>/g, ''))
   .replace(/[^\S\n]+/g, ' ').replace(/ *\n */g, '\n').replace(/\n{3,}/g, '\n\n');
 }
