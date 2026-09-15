@@ -23,7 +23,7 @@ test('orientation membership uses the public flyer records, not dates or similar
  assert.equal(eventCollection(rockClimbing).id, 'orientation-2026');
  assert.equal(eventCollection({ ...rockClimbing, id: 'unrelated' }), null);
  assert.equal(eventCollection({ ...rockClimbing, start: '2026-10-05T15:00:00Z' }), null);
- assert.equal(eventCollection({ id: '048peimga0769t74arerciidtn@google.com/2026-09-08T17:00:00Z', title: 'Tabling at Grad Resource Fair', start: '2026-09-08T17:00:00Z' }), null);
+ assert.equal(eventCollection({ id: '048peimga0769t74arerciidtn@google.com/2026-09-08T17:00:00Z', title: 'MAIA at the Graduate Resource Fair', start: '2026-09-08T17:00:00Z' }).id, 'orientation-2026');
 });
 
 test('grouped runs preserve chronological order and split around unrelated records', () => {
