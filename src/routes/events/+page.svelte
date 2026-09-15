@@ -8,6 +8,7 @@
 	import { groupEventRuns } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
 	import { getEventAttendance } from '$lib/eventAttendance';
+	import { reveal } from '$lib/reveal';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
@@ -93,7 +94,7 @@
 							<h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {section.id === 'upcoming' ? 'Running this semester' : 'Programs that year'}</h3>
 							<p class="programs-intro">Longer-running programs alongside our events.</p>
 							{#each section.programs as program}
-								<article class="program-card">
+								<article class="program-card" use:reveal>
 									<h4>{program.title}</h4>
 									<p class="program-dates">{displayDateRange(program)}</p>
 									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
@@ -106,12 +107,12 @@
 					{#each groupEventRuns(visibleEvents) as run}
 					<div class="event-run" class:collection={run.collection}>
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
-					{#each run.events as event}
+					{#each run.events as event (event.id)}
 						{@const category = categoryDetails(event)}
 						{@const media = getEventMedia(event)}
 						{@const attendance = section.id !== 'upcoming' ? getEventAttendance(event) : undefined}
 						{@const links = eventLinks(event, media?.sourceUrl)}
-						<article class="event-row">
+						<article class="event-row" use:reveal>
 						<div class="event-meta">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
 							{displayDateRange(event)}
@@ -123,12 +124,16 @@
 						{#if attendance}<span class="event-attendance" role="img" aria-label={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`} title={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`}><i class="fa-solid fa-user-group" aria-hidden="true"></i><span aria-hidden="true">{attendance.count}</span></span>{/if}
 						</div>
 						<div class="event-body">
-							<div class="event-heading" class:has-media={media}>
+							<div class="event-heading has-media">
 								<div class="min-w-0">
 									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
 									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
 								</div>
-								{#if media}<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind ?? 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>{/if}
+								{#if media}
+									<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind ?? 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>
+								{:else}
+									<div class="event-thumbnail fallback" aria-hidden="true"><img src="/images/maia_mark.svg" alt="" loading="lazy" /></div>
+								{/if}
 							</div>
 							{#if event.description || event.location || links.length || media}
 								<details class="event-details" id={`details-${encodeURIComponent(event.id)}`}>
@@ -203,6 +208,8 @@
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
 	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
 	.event-thumbnail.photo img { object-fit: cover; }
+	.event-thumbnail.fallback { cursor: default; border-color: transparent; background: color-mix(in srgb, var(--maia-accent) 6%, var(--maia-nav-surface)); }
+	.event-thumbnail.fallback img { padding: 20%; }
 	.event-thumbnail > span { position: absolute; right: .3rem; bottom: .3rem; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: .25rem; background: var(--maia-nav-surface); color: var(--maia-ink); font-size: .65rem; }
 	.event-thumbnail:hover { border-color: var(--maia-accent); }
 	.event-thumbnail:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
