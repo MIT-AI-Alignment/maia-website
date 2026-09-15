@@ -7,7 +7,7 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     calendarId: "67nup42v5rga1hd39984n05da5",
     imageUrl: "/images/events/boba-representative.jpg",
     imageAlt: "Representative bubble tea photograph, not a photograph of the MAIA open house.",
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bubble-tea.jpg",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:A_bubble_tea_with_tapioca_pearls,_July_2018.jpg",
     kind: "artwork"
   },
   {
