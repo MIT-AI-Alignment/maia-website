@@ -29,6 +29,7 @@ export type Person = {
 
 	// Scheduling / booking
 	calendly?: string; // cal.com or calendly.com booking link
+	isHomepageContact?: boolean;
 
 	// Academic profiles
 	googleScholar?: string; // Google Scholar profile
@@ -186,7 +187,8 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'talha-ashraf',
 		name: 'Talha Ashraf',
 		position: '',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		// Initials until an approved photo is available; the previous URL belonged to Atticus.
+		imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"%3E%3Crect width="96" height="96" rx="8" fill="%23e5e7eb"/%3E%3Ctext x="48" y="50" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="32" fill="%234b5563"%3ETA%3C/text%3E%3C/svg%3E',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -197,6 +199,10 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Daniel Wu',
 		position: '',
 		imageUrl: '/images/people/daniel-wu.jpeg',
+		mitEmail: 'ddwu@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/daniel-wu-925445324/',
+		calendly: 'https://cal.com/daniel-wu-qnhszk',
+		isHomepageContact: true,
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -242,6 +248,7 @@ export const PEOPLE: Record<string, Person> = {
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
 		mitEmail: 'kemeklis@mit.edu',
 		calendly: 'https://cal.com/jurgis/30min',
+		linkedin: 'https://www.linkedin.com/in/jurgis-kemeklis-739b73236/',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -521,10 +528,10 @@ export const getOrganizers = () =>
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
 
-// Active executives with a booking link or MIT email for the homepage contact section.
+// Active executives and designated organizers with contact details appear on the homepage.
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isActive && person.isExec && !!(person.calendly || person.mitEmail))
+		.filter((person) => person.isActive && (person.isExec || person.isHomepageContact) && !!(person.calendly || person.mitEmail))
 		.sort((a, b) => {
 			const orderA = a.execOrder ?? 999;
 			const orderB = b.execOrder ?? 999;
