@@ -13,6 +13,8 @@
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
 	let activeCategory: TimelineCategory | 'all' = 'all';
+	// MAIA Activities Calendar, Fall '26 Planning column; dates are not confirmed.
+	const plannedTalks = ['Stephen Casper', 'Garrison Lovely'];
 	const programCategory = TIMELINE_CATEGORIES.find(category => category.id === 'programs')!;
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
@@ -32,9 +34,9 @@
 		details.querySelector('summary')!.focus({ preventScroll: true });
 		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 	}
-	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length]));
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + (category.id === 'talks' ? plannedTalks.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? data.events.length : categoryCounts.get(activeCategory) ?? 0;
+	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedTalks.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		const timer = setInterval(() => now = new Date(), 60000);
@@ -108,7 +110,7 @@
 			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
 			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
 				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length}</span>
+					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedTalks.length}</span>
 				</button>
 				{#each categories as category}
 					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
@@ -116,11 +118,27 @@
 					</button>
 				{/each}
 			</div>
-			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
+			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedTalks.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
+			{#if activeCategory === 'all' || activeCategory === 'talks'}<a href="#planned-talks">Planned talks</a>{/if}
 			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
+		{#if activeCategory === 'all' || activeCategory === 'talks'}
+			<section class="planned-talks" aria-labelledby="planned-talks">
+				<h2 id="planned-talks" class="font-heading text-2xl font-[650]">Planned Fall 2026 Talks</h2>
+				<p class="text-sm text-maia-950/70 dark:text-maia-100/70">Dates, times, locations, and topics will be announced once confirmed.</p>
+				<div class="grid gap-4 sm:grid-cols-2 mt-4">
+					{#each plannedTalks as speaker}
+						<article class="planned-talk">
+							<p class="event-category" data-category="talks"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Talks</p>
+							<h3 class="font-heading text-xl font-[650]">Talk with {speaker}</h3>
+							<p class="mt-2 text-sm text-maia-950/70 dark:text-maia-100/70">Fall 2026 · Date TBD</p>
+						</article>
+					{/each}
+				</div>
+			</section>
+		{/if}
 		{#each filteredSections as section}
 			{@const visibleEvents = section.events}
 			{#if section.id === sections[1]?.id}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
@@ -203,7 +221,7 @@
 			{/if}
 		{/each}
 
-		{#if !grouped.upcoming.length}<p>No upcoming events are currently listed.</p>{/if}
+		{#if !grouped.upcoming.length}<p>No dated upcoming events are currently listed.</p>{/if}
 		{#if !data.events.length}
 			<p class="text-maia-950/70 dark:text-maia-100/70">No events are listed yet.</p>
 		{/if}
@@ -224,6 +242,9 @@
 </EventsLayout>
 
 <style>
+	.planned-talks { margin-block: 2rem; }
+	#planned-talks { scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); margin-bottom: .5rem; }
+	.planned-talk { padding: 1.25rem; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); }
 	.highlights { margin-bottom: 2.5rem; }
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
