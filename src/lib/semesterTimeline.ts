@@ -5,11 +5,11 @@ const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
 
 export const TIMELINE_CATEGORIES = [
  { id: 'programs', label: 'Programs', icon: 'fa-layer-group' },
- { id: 'workshops', label: 'Workshops', icon: 'fa-laptop-code' },
- { id: 'hackathons', label: 'Hackathons & challenges', icon: 'fa-code' },
+ { id: 'workshops', label: 'Workshops', icon: 'fa-chalkboard-user' },
+ { id: 'hackathons', label: 'Hackathons & challenges', icon: 'fa-laptop-code' },
  { id: 'talks', label: 'Talks', icon: 'fa-microphone' },
  { id: 'socials', label: 'Socials', icon: 'fa-comments' },
- { id: 'tabling', label: 'Tabling', icon: 'fa-flag' },
+ { id: 'tabling', label: 'Tabling', icon: 'maia-table-icon' },
  { id: 'other', label: 'Other', icon: 'fa-calendar-day' }
 ] as const;
 
