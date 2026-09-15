@@ -30,12 +30,6 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "kind": "photo"
   },
   {
-    "calendarId": "701ccrubcd042rpqedga9qb9h0",
-    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
-    "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
-    "kind": "photo"
-  },
-  {
     "calendarId": "up63jilcdd95uijsr8omes9v9k",
     "imageUrl": "/images/events/cpw-bagels-2026-04-16.jpg",
     "imageAlt": "MAIA bagel table and sign outside Kresge Auditorium during CPW 2026.",
