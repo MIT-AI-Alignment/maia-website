@@ -13,7 +13,7 @@ export const CONFIG = {
         // Popup shown on first load (once per browser session) that sends people to the orientation page.
         // Hidden automatically on the orientation page itself.
         popup: {
-            visible: true,
+            visible: false,
             title: "Welcome to MAIA!",
             text: "Orientation 2026 is happening now. See the schedule, RSVP to events, and fill out the interest form to grab merch.",
             ctaText: "Go to Orientation 2026",
