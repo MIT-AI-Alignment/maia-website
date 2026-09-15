@@ -6,6 +6,7 @@ const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
 export const TIMELINE_CATEGORIES = [
  { id: 'programs', label: 'Programs', icon: 'fa-layer-group' },
  { id: 'workshops', label: 'Workshops', icon: 'fa-laptop-code' },
+ { id: 'hackathons', label: 'Hackathons & challenges', icon: 'fa-code' },
  { id: 'talks', label: 'Talks', icon: 'fa-microphone' },
  { id: 'socials', label: 'Socials', icon: 'fa-comments' },
  { id: 'tabling', label: 'Tabling', icon: 'fa-flag' },
@@ -13,6 +14,13 @@ export const TIMELINE_CATEGORIES = [
 ] as const;
 
 export type TimelineCategory = typeof TIMELINE_CATEGORIES[number]['id'];
+// These older calendar entries omit their format in the title and description.
+// Their original MAIA event announcements identify them as talks.
+const VERIFIED_EVENT_CATEGORIES: Readonly<Record<string, TimelineCategory>> = {
+ '2gd2030tkofav427h76h9ec3nn@google.com': 'talks',
+ '531gc0t6lb2acgl7av05boh5ej@google.com': 'talks',
+ '5oa8mnfra5idfaeotp3g5s0clc@google.com': 'talks'
+};
 export type Semester = { id: string; label: string; start: number; end: number };
 export type TimelineItem = {
  event: CalendarEvent;
@@ -95,14 +103,18 @@ export function semesterMonths(semester: Semester) {
 export function eventCategory(event: CalendarEvent): TimelineCategory {
  if (event.kind === 'initiative') return 'programs';
  const title = event.title.toLowerCase();
- if (/workshop|arena|upskilling/.test(title)) return 'workshops';
- if (/social|mixer|movie|avalon|waffles|bagels|game|dinner|extravaganza|rock[ -]?climbing|cruise|escape room/.test(title)) return 'socials';
- if (/tabling|midway|food truck|bon me|orientation|\bcpw\b/.test(title)) return 'tabling';
+ if (/\bhackathons?\b|\bbattleprompting\b|\breward hacking event\b|\bmission strawberry\b|\b(?:estimation and )?forecasting challenge\b/.test(title)) return 'hackathons';
+ if (/workshop|arena|upskilling|\blab$|\btabletop exercises?\b/.test(title)) return 'workshops';
+ if (/social|mixer|movie|avalon|waffles|bagels|game|dinner|extravaganza|celebration|rock[ -]?climbing|cruise|escape room|office tours?|open house/.test(title)) return 'socials';
+ if (/tabling|midway|food truck|bon me|orientation|\bcpw\b|demo booths?/.test(title)) return 'tabling';
  if (/talk|speaker|q\s*&\s*a|conversation|member meeting|lecture|fireside/.test(title)) return 'talks';
+ const verifiedCategory = VERIFIED_EVENT_CATEGORIES[event.id?.split('/')[0]];
+ if (verifiedCategory) return verifiedCategory;
  // Archive titles often name only the researcher and topic. Explicit format words
  // in the description fill that gap without overriding a workshop or social title.
  const description = event.description?.toLowerCase() ?? '';
- if (/\bmember[ -]meetings?\b|\b(?:the|a|this|guest|research|member) talk\b|\bpresented\b|\bpresentation\b|\blecture\b|\bspeaker event\b/.test(description)) return 'talks';
+ if (/\bhackathons?\b/.test(description)) return 'hackathons';
+ if (/\bmember[ -]meetings?\b|\b(?:the|a|this|his|her|their|guest|research|member) talk\b|\bpresented\b|\bpresentation\b|\blecture\b|\bspeaker event\b/.test(description)) return 'talks';
  return 'other';
 }
 
