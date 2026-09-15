@@ -1,6 +1,6 @@
 import type { CalendarEvent } from './events';
 
-type Attendance = { count: number | string; approximate: boolean };
+type Attendance = { count: number | string; approximate: boolean; sourceUrl?: string };
 
 // Reported turnout from retrospectives, Jurgis’s updates, and event pages' post-event “Went” totals.
 const attendanceByEvent: Record<string, Attendance> = {
@@ -18,7 +18,7 @@ const attendanceByEvent: Record<string, Attendance> = {
   'maia-archive-8347ee4073a667a4157573ba06ee8f8f@mitaialignment.org/2026-04-02': { count: 16, approximate: true },
   'maia-archive-3eead03ea045f7dc1715b386d271e6e8@mitaialignment.org/2026-03-31': { count: 14, approximate: true },
   '5lq1ffguo8nlpvv6vfn4a1nn44@google.com/2026-02-12T21:30:00Z': { count: 240, approximate: true },
-  'maia-archive-33a39a9fe19563f56735abe5684b7fa5@mitaialignment.org/2026-02-10': { count: '220+', approximate: true },
+  'maia-archive-33a39a9fe19563f56735abe5684b7fa5@mitaialignment.org/2026-02-10': { count: 560, approximate: false, sourceUrl: 'https://luma.com/qqrie5o3' },
   '78sbl0kojpb3vcq37mi471qhde@google.com/2026-09-06T19:00:00Z': { count: 21, approximate: true },
   '4fbqug2piuv7hniunr01jd0hgr@google.com/2026-09-05T14:00:00Z': { count: 19, approximate: true },
   'maia-archive-ca2869a6e8b429f9d52e4757a70b52dd@mitaialignment.org/2026-08-28': { count: 32, approximate: true },
@@ -41,10 +41,10 @@ const attendanceByEvent: Record<string, Attendance> = {
   'maia-archive-109e0f5334435411b23c4e054f13bf90@mitaialignment.org/2026-03-27': { count: 40, approximate: true },
   '6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': { count: 102, approximate: false },
   '67nup42v5rga1hd39984n05da5@google.com/2026-09-07T21:00:00Z': { count: '40+', approximate: false },
-  '7ncgb2npn6k3ipn5atj981hs56@google.com/2026-09-06T14:00:00Z': { count: 14, approximate: true },
-  '5oa8mnfra5idfaeotp3g5s0clc@google.com/2026-09-05T22:00:00Z': { count: 109, approximate: true },
-  '545d2vne11hmvund2no6csn2fd@google.com/2026-09-05T15:00:00Z': { count: 20, approximate: true },
-  '7e81i63hh3mg753dh2ar60bq81@google.com/2026-09-04T23:30:00Z': { count: 120, approximate: true },
+  '7ncgb2npn6k3ipn5atj981hs56@google.com/2026-09-06T14:00:00Z': { count: 21, approximate: false, sourceUrl: 'https://partiful.com/e/UBZPLn8pwDSahW5WScIL' },
+  '5oa8mnfra5idfaeotp3g5s0clc@google.com/2026-09-05T22:00:00Z': { count: 109, approximate: false, sourceUrl: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ' },
+  '545d2vne11hmvund2no6csn2fd@google.com/2026-09-05T15:00:00Z': { count: 19, approximate: false, sourceUrl: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J' },
+  '7e81i63hh3mg753dh2ar60bq81@google.com/2026-09-04T23:30:00Z': { count: 132, approximate: false, sourceUrl: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv' },
   '7im0v34jts1e6d2csfcg0lr5ta@google.com/2026-09-02T23:00:00Z': { count: 17, approximate: true }
 };
 
