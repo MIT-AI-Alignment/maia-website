@@ -43,7 +43,7 @@
 			const host = new URL(href).hostname.replace(/^www\./, '');
 			const ticket = host === 'partiful.com' || host === 'luma.com' || host === 'lu.ma';
 			links.set(href, {
-				href, label: host === 'partiful.com' ? 'View on Partiful' : ticket ? 'View on Luma' : 'Explore the source',
+				href, label: host === 'partiful.com' ? 'View on Partiful' : ticket ? 'View on Luma' : host === 'arena.education' ? 'Visit ARENA' : 'Explore the source',
 				caption: ticket ? 'Original event page' : host, icon: ticket ? 'fa-ticket' : 'fa-arrow-up-right-from-square'
 			});
 		}
@@ -94,11 +94,13 @@
 							<h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {section.id === 'upcoming' ? 'Running this semester' : 'Programs that year'}</h3>
 							<p class="programs-intro">Longer-running programs alongside our events.</p>
 							{#each section.programs as program}
+								{@const programMedia = getEventMedia(program)}
 								<article class="program-card" use:reveal>
+									{#if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
 									<h4>{program.title}</h4>
 									<p class="program-dates">{displayDateRange(program)}</p>
 									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
-									{#if program.url}<a href={program.url}>Explore the program <span aria-hidden="true">→</span></a>{/if}
+									{#if program.url}<a href={program.url}>{program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
 								</article>
 							{/each}
 						</aside>
@@ -203,6 +205,7 @@
 	.event-attendance { display: flex; align-items: center; gap: .5rem; width: fit-content; margin-top: .85rem; color: var(--maia-muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
 	.event-attendance i { color: var(--maia-accent); font-size: .9rem; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
+	.program-logo { width: 7.5rem; max-height: 5rem; object-fit: contain; margin-bottom: .75rem; }
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
 	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
 	.event-thumbnail.photo img { object-fit: cover; }
