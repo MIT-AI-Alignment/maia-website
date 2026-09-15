@@ -4,6 +4,42 @@ export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: strin
 
 const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string })[] = [
   {
+    "calendarId": "lajp0v94h503pbjnakll1ccpcc",
+    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
+    "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
+    "kind": "photo"
+  },
+  {
+    "calendarId": "t01e428lq1kfpikvld0k2otm8o",
+    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
+    "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
+    "kind": "photo"
+  },
+  {
+    "calendarId": "701ccrubcd042rpqedga9qb9h0",
+    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
+    "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
+    "kind": "photo"
+  },
+  {
+    "calendarId": "up63jilcdd95uijsr8omes9v9k",
+    "imageUrl": "/images/events/cpw-bagels-2026-04-16.jpg",
+    "imageAlt": "MAIA bagel table and sign outside Kresge Auditorium during CPW 2026.",
+    "kind": "photo"
+  },
+  {
+    "calendarId": "10npmtes54dj298dqlmks4f49k",
+    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
+    "imageAlt": "Students around the MAIA table and Bon Me food truck outside the MIT Student Center during CPW 2026.",
+    "kind": "photo"
+  },
+  {
+    "calendarId": "ihbf247eorb6sscc2g5lmfiqsc",
+    "imageUrl": "/images/events/cpw-midway-2026-04-18.jpg",
+    "imageAlt": "Visitors at MAIA’s CPW 2026 Midway booth beneath the MIT Class of 2040 banner.",
+    "kind": "photo"
+  },
+  {
     "partifulId": "ThtJyAbrVrOAMDe89ObM",
     "calendarId": "uonmr030p3ivdk1c0avcktvihs",
     "imageUrl": "/images/events/stephen-casper-spring-2026.png",
@@ -302,6 +338,55 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "imageAlt": "Participants outside Essex Woods at the August 2026 MAIA and AISST summer workshop.",
     "kind": "photo",
     "calendarId": "maia-archive-ca2869a6e8b429f9d52e4757a70b52dd"
+  },
+  {
+    "imageUrl": "/images/events/activity-her-film.jpg",
+    "imageAlt": "Official poster for the film Her",
+    "sourceUrl": "https://www.warnerbros.com/movies/her",
+    "kind": "artwork",
+    "calendarId": "4vtr8rmgq19k1rvpl7i1opfg70"
+  },
+  {
+    "imageUrl": "/images/events/activity-dr-strangelove-film.jpg",
+    "imageAlt": "Official poster for Dr. Strangelove",
+    "sourceUrl": "https://www.sonypictures.com/movies/drstrangeloveorhowilearnedtostopworryingandlovethebomb",
+    "kind": "artwork",
+    "calendarId": "cen5qmsppilf96j6taemar6lh0"
+  },
+  {
+    "imageUrl": "/images/events/activity-avalon-game.jpg",
+    "imageAlt": "The Resistance: Avalon board game box artwork",
+    "sourceUrl": "https://www.asmodee.co.uk/products/ibcava1-the-resistance-avalon",
+    "kind": "artwork",
+    "calendarId": "7im0v34jts1e6d2csfcg0lr5ta"
+  },
+  {
+    "imageUrl": "/images/events/activity-avalon-game.jpg",
+    "imageAlt": "The Resistance: Avalon board game box artwork",
+    "sourceUrl": "https://www.asmodee.co.uk/products/ibcava1-the-resistance-avalon",
+    "kind": "artwork",
+    "calendarId": "f0iig47o8k1u4ehgiovpsfjfg0"
+  },
+  {
+    "imageUrl": "/images/events/activity-avalon-game.jpg",
+    "imageAlt": "The Resistance: Avalon board game box artwork",
+    "sourceUrl": "https://www.asmodee.co.uk/products/ibcava1-the-resistance-avalon",
+    "kind": "artwork",
+    "calendarId": "lvmhj9ts7qpanqpn48cij0kdgg"
+  },
+  {
+    "calendarId": "arena-spring-2026-kickoff",
+    "imageUrl": "/images/logos/arena.png",
+    "imageAlt": "ARENA technical AI safety curriculum logo",
+    "sourceUrl": "https://www.arena.education/curriculum",
+    "kind": "artwork"
+  },
+  {
+    "calendarId": "arena-spring-2025-kickoff",
+    "imageUrl": "/images/logos/arena.png",
+    "imageAlt": "ARENA technical AI safety curriculum logo",
+    "sourceUrl": "https://www.arena.education/curriculum",
+    "kind": "artwork"
   }
 ];
 
