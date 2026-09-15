@@ -79,6 +79,7 @@
 	afterUpdate(() => {
 		if (browser) {
 			document.documentElement.style.setProperty('--navbar-height', navbarHeight);
+			document.documentElement.style.setProperty('--header-height', headerHeight ? `${headerHeight}px` : navbarHeight);
 		}
 	});
 	

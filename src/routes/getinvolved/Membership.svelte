@@ -64,17 +64,22 @@
 		independent researchers and students from other universities are welcome to apply. Membership is
 		for Boston-area applicants, since MAIA cannot thoroughly support distant members.
 	</p>
-	<p>
-		If you're newer to AI safety, we recommend applying for <a
+	<p class="mt-4">
+		Membership requires prior AI safety context, for example through AI Safety Fundamentals (AISF),
+		prior safety research, or other relevant experience. The MAIA executive board reviews each
+		application case by case.
+	</p>
+	<p class="mt-4">
+		If you're newer to AI safety, we recommend starting with <a
 			href="https://aialignment.mit.edu/getinvolved#aisf">AI Safety Fundamentals</a
-		>
-		first, as AISF alumni typically receive priority in the membership process.
+		>. You can also <a href={CONFIG.orientation.interestFormLink}>join our mailing list</a> to hear
+		about events, programs, and opportunities throughout the year without applying for membership.
 	</p>
 	<h3 class="mt-8 mb-3 text-xl font-heading">Applying</h3>
 	<p class="mt-4">
 		The application itself has technical and non-technical portions and takes about an hour.
-		Admissions are rolling, with the board reviewing applications monthly—and if we're slow to
-		respond, feel free to email <a href="mailto:maia-exec@mit.edu">maia-exec@mit.edu</a>.
+		Applications are accepted on a rolling basis. If we're slow to respond, feel free to email
+		<a href="mailto:maia-exec@mit.edu">maia-exec@mit.edu</a>.
 	</p>
 	<div class="mt-8 space-y-4">
 		<a href={CONFIG.membership.applicationLink}>

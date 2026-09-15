@@ -30,6 +30,7 @@ export type Person = {
 
 	// Scheduling / booking
 	calendly?: string; // cal.com or calendly.com booking link
+	isHomepageContact?: boolean;
 
 	// Academic profiles
 	googleScholar?: string; // Google Scholar profile
@@ -60,34 +61,55 @@ export type Person = {
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
+function initialsAvatar(initials: string): string {
+	const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="8" fill="#e5e7eb"/><text x="48" y="50" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="32" fill="#4b5563">${initials}</text></svg>`;
+	return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 // Main people database
 export const PEOPLE: Record<string, Person> = {
 	// Executives
+	'roman-ross': {
+		id: 'roman-ross',
+		name: 'Roman Ross',
+		email: 'roman.alex.ross@gmail.com',
+		position: 'Exec Board Member',
+		imageUrl: '/images/people/roman-ross-fall-2026.jpg',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
+		execOrder: 2,
+		linkedin: 'https://www.linkedin.com/in/roman-ross/',
+		calendly: 'https://calendly.com/roman-alex-ross/30min',
+	},
+
+	'jason-chin': {
+		id: 'jason-chin',
+		name: 'Jason Chin',
+		email: 'jasonchin098@gmail.com',
+		position: 'Exec Board Member',
+		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
+		execOrder: 3,
+		linkedin: 'https://www.linkedin.com/in/jasonchin9/',
+		personalPage: 'https://jasonchin.dev',
+	},
+
 	'ionel-chiosa': {
 		id: 'ionel-chiosa',
 		name: 'Ionel Chiosa',
-		position: 'Board Member',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07A579UA5D-0d8bc847926d-512',
 		mitEmail: 'ichiosa@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/ionelchiosa/',
 		calendly: 'https://cal.com/ionel-chiosa',
 		isExec: true,
 		isActive: true,
-		execOrder: 3,
+		execOrder: 5,
 	},
 
-	'felix-tudose': {
-		id: 'felix-tudose',
-		name: 'Felix Tudose',
-		position: 'Director',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
-		mitEmail: 'felixrt@mit.edu',
-		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
-		calendly: 'https://cal.com/felixrt',
-		isExec: true,
-		isActive: true,
-		execOrder: 2,
-	},
 
 	'anna-krolik': {
 		id: 'anna-krolik',
@@ -106,8 +128,8 @@ export const PEOPLE: Record<string, Person> = {
 	'nixon-hanna': {
 		id: 'nixon-hanna',
 		name: 'Nixon Hanna',
-		position: 'Director of AISF',
-		imageUrl: '/images/people/nixon-hanna.jpeg',
+		position: '',
+		imageUrl: '/images/people/nixon-hanna-fall-2026.png',
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
 		personalPage: 'https://nixonhanna.com',
@@ -118,6 +140,191 @@ export const PEOPLE: Record<string, Person> = {
 
 
 	// ORGANIZERS 
+	'suraj-reddy': {
+		id: 'suraj-reddy',
+		name: 'Suraj Reddy',
+		imageUrl: '/images/people/suraj-reddy-fall-2026.png',
+		linkedin: 'https://www.linkedin.com/in/smrdy/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'surajrdy@mit.edu',
+	},
+
+	'sam-warman': {
+		id: 'sam-warman',
+		name: 'Sam Warman',
+		imageUrl: '/images/people/sam-warman-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/sam-warman-843964257/',
+		mitEmail: 'swarman@mit.edu',
+	},
+
+	'adeeb-alshehry': {
+		id: 'adeeb-alshehry',
+		name: 'Adeeb Alshehry',
+		imageUrl: '/images/people/adeeb-alshehry.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'alshehry@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/alshehry',
+	},
+
+	'amita-shukla': {
+		id: 'amita-shukla',
+		name: 'Amita Shukla',
+		imageUrl: initialsAvatar('AS'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'ajshukla@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/amita-shukla',
+	},
+
+	'anango-prabhat': {
+		id: 'anango-prabhat',
+		name: 'Anango Prabhat',
+		imageUrl: '/images/people/anango-prabhat-fall-2026.png',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/anango-prabhat-28506a361/',
+		mitEmail: 'anango@mit.edu',
+	},
+
+	'anlan-xu': {
+		id: 'anlan-xu',
+		name: 'AnLan Xu',
+		imageUrl: '/images/people/anlan-xu-fall-2026.png',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/anlan-xu-1658922b6/',
+		mitEmail: 'anlanxu@mit.edu',
+	},
+
+	'april-sun': {
+		id: 'april-sun',
+		name: 'April Sun',
+		imageUrl: initialsAvatar('AS'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'francisco-pernice': {
+		id: 'francisco-pernice',
+		name: 'Francisco Pernice',
+		imageUrl: '/images/people/francisco-pernice.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'fpernice@mit.edu',
+	},
+
+	'isabella-wu': {
+		id: 'isabella-wu',
+		name: 'Isabella Wu',
+		imageUrl: initialsAvatar('IW'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'isawu888@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/isabella-wu-356982279',
+	},
+
+
+	'leon-chen': {
+		id: 'leon-chen',
+		name: 'Leon Chen',
+		imageUrl: '/images/people/leon-chen.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'leoncgy@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/guangyuan-leon-chen',
+	},
+
+	'melat-ghebreselassie': {
+		id: 'melat-ghebreselassie',
+		name: 'Melat Ghebreselassie',
+		imageUrl: '/images/people/melat-ghebreselassie-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/melatg/',
+		mitEmail: 'melatg@mit.edu',
+	},
+
+	'melissa-li': {
+		id: 'melissa-li',
+		name: 'Melissa Li',
+		imageUrl: initialsAvatar('ML'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'li_me@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/melissa-li-16271b272',
+	},
+
+	'michelle-gao': {
+		id: 'michelle-gao',
+		name: 'Michelle Gao',
+		imageUrl: initialsAvatar('MG'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'mgao7@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/michelle-gao-6aa8a2262',
+	},
+
+	'paulius-aleknavicius': {
+		id: 'paulius-aleknavicius',
+		name: 'Paulius Aleknavicius',
+		imageUrl: '/images/people/paulius-aleknavicius.jpg',
+		mitEmail: 'paulius@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/paulius-aleknavicius-a14904291/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'ray-zhang': {
+		id: 'ray-zhang',
+		name: 'Ray Zhang',
+		imageUrl: '/images/people/ray-zhang-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'rayzhang@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/ray-y-zhang',
+	},
+
+	'thanush-patlolla': {
+		id: 'thanush-patlolla',
+		name: 'Thanush Patlolla',
+		imageUrl: '/images/people/thanush-patlolla-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/thanush-patlolla/',
+		mitEmail: 'thanush@mit.edu',
+	},
+
+	'weian-xie': {
+		id: 'weian-xie',
+		name: 'Weian Xie (Andrew)',
+		imageUrl: initialsAvatar('WX'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'weianxie@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/weian-xie-7583392b6',
+	},
+
 	'david-turturean': {
 		id: 'david-turturean',
 		name: 'David Turturean',
@@ -128,7 +335,7 @@ export const PEOPLE: Record<string, Person> = {
 		// mitEmail: 'davidct@mit.edu',
 		isExec: false,
 		isActive: true,
-		isOrg: true,
+		isOrg: false,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
 			'phone-line-attacks': 'Phone-line Attacks - Lead'
@@ -156,6 +363,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'djzhang@mit.edu',
 	},
 
 	'anooshka-pendyal': {
@@ -166,7 +374,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'anpen118@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/anooshka-pendyal',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -179,7 +387,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'emily_yu@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/emily-yu-398249278/',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -187,10 +395,12 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'talha-ashraf',
 		name: 'Talha Ashraf',
 		position: '',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05TF6CE28K-gcaa68241fce-512',
+		imageUrl: '/images/people/talha-ashraf-fall-2026.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'talha05@mit.edu',
+		linkedin: 'https://pk.linkedin.com/in/talha-ashraf-885b7a270',
 	},
 
 	'daniel-wu': {
@@ -198,6 +408,9 @@ export const PEOPLE: Record<string, Person> = {
 		name: 'Daniel Wu',
 		position: '',
 		imageUrl: '/images/people/daniel-wu.jpeg',
+		mitEmail: 'ddwu@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/daniel-wu-925445324/',
+		isHomepageContact: true,
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -234,15 +447,18 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'erslaugh@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/erslaugh',
 	},
 
 	'jurgis-kemeklis': {
 		id: 'jurgis-kemeklis',
 		name: 'Jurgis Kemeklis',
-		position: 'Exec',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09FX8P4TF0-ba6bbeca07d6-512',
 		mitEmail: 'kemeklis@mit.edu',
 		calendly: 'https://cal.com/jurgis/30min',
+		linkedin: 'https://www.linkedin.com/in/jurgis-kemeklis-739b73236/',
 		isExec: true,
 		isOrg: false,
 		isActive: true,
@@ -252,7 +468,7 @@ export const PEOPLE: Record<string, Person> = {
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
 		name: 'Ionut Stan',
-		position: 'Exec',
+		position: 'Exec Board Member',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
 		calendly: 'https://calendar.app.google/GL1Zcbd9FEFQTQPr9',
@@ -260,7 +476,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
-		execOrder: 5,
+		execOrder: 6,
 	},
 
 	'reshma-kosaraju': {
@@ -281,6 +497,8 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'neham@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/nehamuramalla',
 	},
 
 	// ADVISORS
@@ -524,16 +742,16 @@ export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person
 
 export const getOrganizers = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isOrg)
+		.filter((person) => person.isOrg && person.isActive)
 		.sort((a, b) => (a.orgOrder ?? 999) - (b.orgOrder ?? 999));
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
 
-// Active executives with a booking link or MIT email for the homepage contact section.
+// Active executives and designated organizers with contact details appear on the homepage.
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isActive && person.isExec && !!(person.calendly || person.mitEmail))
+		.filter((person) => person.isActive && (person.isExec || person.isHomepageContact) && !!(person.calendly || person.mitEmail || person.email))
 		.sort((a, b) => {
 			const orderA = a.execOrder ?? 999;
 			const orderB = b.execOrder ?? 999;

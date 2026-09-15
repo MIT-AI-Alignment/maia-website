@@ -9,6 +9,7 @@ export const NAVIGATION_ITEMS = [
 		href: '/events/',
 		icon: 'fas fa-calendar',
 		dropdownItems: [
+			{ href: '/events/#highlights', label: 'Highlights' },
 			{ href: '/events/#upcoming', label: 'Upcoming events' },
 			{ href: '/events/#past', label: 'Past events & initiatives' },
 			{ href: '/orientation-2026/', label: 'Orientation 2026' }
@@ -44,7 +45,8 @@ export const NAVIGATION_ITEMS = [
 			{ href: '/aisf', label: 'AISF Curriculum' },
 			{ href: '/resources/mit-classes', label: 'MIT & Harvard Classes' },
 			{ href: '/resources/faculty-labs', label: 'MIT Faculty and Labs' },
-			{ href: '/resources/fellowships', label: 'AI Safety Fellowships' }
+			{ href: '/resources/fellowships', label: 'AI Safety Fellowships' },
+			{ href: '/resources/merch/', label: 'MAIA Merch' }
 		]
 	},
 	{

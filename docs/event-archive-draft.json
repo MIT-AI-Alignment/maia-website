@@ -1,0 +1,2995 @@
+{
+  "drafted_on": "2026-09-15",
+  "publication_status": "draft",
+  "purpose": "Editorial source archive with separate verified public-calendar import status. This file is not imported by the website application; the draft branch has not been deployed.",
+  "date_semantics": "Research start_date and end_date are inclusive event dates; unknown original times remain null. calendar_import records the actual Calendar representation separately, with exclusive all-day end dates.",
+  "usage": "Use description for full website copy and calendar_description for the researched short summary. calendar_import records publication to the public Calendar, without changing source evidence or converting estimated times into historical facts. Collections and held programs are not duplicate event entries.",
+  "evidence_statuses": {
+    "confirmed_held": "Retrospective evidence supports occurrence.",
+    "day_of_evidence": "A day-of announcement or reminder was located; completion is not independently confirmed.",
+    "live_event_evidence": "Contemporaneous activity supports the event being underway.",
+    "past_event_listing": "An event platform lists this past event; completion is not independently confirmed.",
+    "announcement_only": "Announced or scheduled; actual occurrence needs confirmation.",
+    "partially_confirmed": "Part of the program is confirmed; another portion remains scheduled-only."
+  },
+  "events": [
+    {
+      "id": "maia-2026-001",
+      "title": "Stephen Casper: What Makes AI Safety Research Impactful?",
+      "category": "Speaker events",
+      "start_date": "2026-02-05",
+      "end_date": "2026-02-05",
+      "start_time": "17:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT, Room 32-144",
+      "description": "MAIA opened its spring member-meeting series with Stephen Casper on what makes AI safety research impactful. The talk was followed by a pizza social, giving members a chance to meet one another and discuss research directions before the semester's workshops, technical upskilling, and speaker events.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Stephen Casper",
+          "affiliation": "MIT"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/ThtJyAbrVrOAMDe89ObM"
+        }
+      ],
+      "calendar_description": "MAIA opened its spring member-meeting series with Stephen Casper on what makes AI safety research impactful. The talk was followed by a pizza social, giving members a chance to meet one another and discuss research directions before the semester's workshops, technical upskilling, and speaker events.\n\nOriginal Partiful event: https://partiful.com/e/ThtJyAbrVrOAMDe89ObM",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "uonmr030p3ivdk1c0avcktvihs",
+        "event_url": "https://www.google.com/calendar/event?eid=dW9ubXIwMzBwM2l2ZGsxYzBhdmNrdHZpaHMgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-02-05T17:00:00-05:00",
+        "end": "2026-02-05T18:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "17–18 is the advertised talk; pizza follows with no stated social end.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-002",
+      "title": "Nicholas Carlini: AI Security Talk and Q&A",
+      "category": "Speaker events",
+      "start_date": "2026-02-10",
+      "end_date": "2026-02-10",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT, Room 10-250, with speaker joining virtually and an online audience",
+      "description": "Nicholas Carlini of Anthropic joined MAIA virtually for an AI security talk and audience Q&A. The event introduced his work on vulnerabilities in AI systems, including adversarial examples, language-model jailbreaks, and failure modes that make models difficult to secure. Students gathered in MIT's 10-250 to watch together, with an online attendance option.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Nicholas Carlini",
+          "affiliation": "Anthropic",
+          "participation": "virtual"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Luma event",
+          "url": "https://luma.com/qqrie5o3"
+        }
+      ],
+      "calendar_description": "Nicholas Carlini of Anthropic joined MAIA virtually for an AI security talk and audience Q&A. The event introduced his work on vulnerabilities in AI systems, including adversarial examples, language-model jailbreaks, and failure modes that make models difficult to secure. Students gathered in MIT's 10-250 to watch together, with an online attendance option.\n\nOriginal Luma event: https://luma.com/qqrie5o3",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqcpjc4pjio9pcpij2e9l6opmcd9m6spjaob2ckqjce1kc8rmco9l81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNwamM0cGppbzlwY3BpajJlOWw2b3BtY2Q5bTZzcGphb2IyY2txamNlMWtjOHJtY285bDgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-02-10T00:00:00",
+        "end": "2026-02-11T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-003",
+      "title": "Nick Bostrom in Conversation with Max Tegmark",
+      "category": "Speaker events",
+      "start_date": "2026-02-12",
+      "end_date": "2026-02-12",
+      "start_time": "16:30",
+      "end_time": "17:30",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 26-100; Nick Bostrom virtual, Max Tegmark in person; online option",
+      "description": "Nick Bostrom, author of Superintelligence and founding director of Oxford's Future of Humanity Institute, joined Max Tegmark for a fireside conversation about advanced AI and humanity's future. Bostrom joined remotely while Tegmark was on stage at MIT. The event connected longstanding arguments about existential risk with the questions raised by rapidly improving AI, followed by audience questions.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Nick Bostrom",
+          "affiliation": "Former founding director, Future of Humanity Institute, University of Oxford",
+          "participation": "virtual"
+        },
+        {
+          "name": "Max Tegmark",
+          "affiliation": "MIT; Future of Life Institute",
+          "participation": "in person"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Luma event",
+          "url": "https://luma.com/481vlkkx"
+        }
+      ],
+      "calendar_description": "Nick Bostrom, author of Superintelligence and founding director of Oxford's Future of Humanity Institute, joined Max Tegmark for a fireside conversation about advanced AI and humanity's future. Bostrom joined remotely while Tegmark was on stage at MIT. The event connected longstanding arguments about existential risk with the questions raised by rapidly improving AI, followed by audience questions.\n\nOriginal Luma event: https://luma.com/481vlkkx",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "5lq1ffguo8nlpvv6vfn4a1nn44",
+        "event_url": "https://www.google.com/calendar/event?eid=NWxxMWZmZ3VvOG5scHZ2NnZmbjRhMW5uNDQgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-02-12T16:30:00-05:00",
+        "end": "2026-02-12T17:30:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-004",
+      "title": "Daniel Kokotajlo: Virtual Q&A",
+      "category": "Speaker events",
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-05",
+      "start_time": "17:00",
+      "end_time": "18:00",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 32-141, with Daniel Kokotajlo joining virtually; online option",
+      "description": "Daniel Kokotajlo joined MAIA for a virtual Q&A on AI forecasting, the pace of AI development, and risks from misaligned systems. A former OpenAI researcher and co-author of AI 2027, he discussed questions about when transformative AI might arrive and how to reason about what comes next. The audience joined from MIT's 32-141 and online.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Daniel Kokotajlo",
+          "affiliation": "AI 2027 co-author; former OpenAI researcher",
+          "participation": "virtual"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Luma event",
+          "url": "https://luma.com/d0ajetx0"
+        }
+      ],
+      "calendar_description": "Daniel Kokotajlo joined MAIA for a virtual Q&A on AI forecasting, the pace of AI development, and risks from misaligned systems. A former OpenAI researcher and co-author of AI 2027, he discussed questions about when transformative AI might arrive and how to reason about what comes next. The audience joined from MIT's 32-141 and online.\n\nOriginal Luma event: https://luma.com/d0ajetx0",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "gvr4sus35riemvgvq8mbpet28g",
+        "event_url": "https://www.google.com/calendar/event?eid=Z3ZyNHN1czM1cmllbXZndnE4bWJwZXQyOGcgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-03-05T17:00:00-05:00",
+        "end": "2026-03-05T18:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-005",
+      "title": "MAIA × CBAI Social",
+      "category": "Socials",
+      "start_date": "2026-02-27",
+      "end_date": "2026-02-27",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, Cambridge",
+      "description": "MAIA and research fellows from the Cambridge Boston Alignment Initiative met for a joint social at CIC. Pizza, non-alcoholic drinks, and informal conversation gave the two AI safety communities time to get to know one another outside their regular programs.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/WrZC5kG5fFGOW5NHcgQL"
+        }
+      ],
+      "calendar_description": "MAIA and research fellows from the Cambridge Boston Alignment Initiative met for a joint social at CIC. Pizza, non-alcoholic drinks, and informal conversation gave the two AI safety communities time to get to know one another outside their regular programs.\n\nOriginal Partiful event: https://partiful.com/e/WrZC5kG5fFGOW5NHcgQL",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "phkqklrejfr8v6h8tpg3j77074",
+        "event_url": "https://www.google.com/calendar/event?eid=cGhrcWtscmVqZnI4djZoOHRwZzNqNzcwNzQgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-02-27T18:00:00-05:00",
+        "end": "2026-02-27T21:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-006",
+      "title": "MAIA × AISF Social",
+      "category": "Socials",
+      "start_date": "2026-03-06",
+      "end_date": "2026-03-06",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, Cambridge",
+      "description": "MAIA welcomed the newest AI Safety Fundamentals cohort with a social at CIC. Fellows and existing community members met over pizza, drinks, and snacks, with time for casual conversation about AI safety and the coming fellowship.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/R8arDcMFNH7MkCPMrdVK"
+        }
+      ],
+      "calendar_description": "MAIA welcomed the newest AI Safety Fundamentals cohort with a social at CIC. Fellows and existing community members met over pizza, drinks, and snacks, with time for casual conversation about AI safety and the coming fellowship.\n\nOriginal Partiful event: https://partiful.com/e/R8arDcMFNH7MkCPMrdVK",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "0vetqlmuqg7hiedhc7habinj18",
+        "event_url": "https://www.google.com/calendar/event?eid=MHZldHFsbXVxZzdoaWVkaGM3aGFiaW5qMTggZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-03-06T18:00:00-05:00",
+        "end": "2026-03-06T21:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-008",
+      "title": "MAIA × AISF Social",
+      "category": "Socials",
+      "start_date": "2026-03-20",
+      "end_date": "2026-03-20",
+      "start_time": "18:00",
+      "end_time": "21:00",
+      "timezone": "America/New_York",
+      "location": "CIC, 3rd floor, Cambridge",
+      "description": "MAIA members and AI Safety Fundamentals fellows celebrated the fellowship’s first week with pizza, drinks, and snacks. The social offered a chance to get to know cohort members beyond the sessions and continue conversations about the readings and AI alignment.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/SlfSVkbyXF0G9qGg6hDn"
+        }
+      ],
+      "calendar_description": "MAIA members and AI Safety Fundamentals fellows celebrated the fellowship’s first week with pizza, drinks, and snacks. The social offered a chance to get to know cohort members beyond the sessions and continue conversations about the readings and AI alignment.\n\nOriginal Partiful event: https://partiful.com/e/SlfSVkbyXF0G9qGg6hDn",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "nj234ep9ok8rm082i86eg8ijd4",
+        "event_url": "https://www.google.com/calendar/event?eid=bmoyMzRlcDlvazhybTA4Mmk4NmVnOGlqZDQgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-03-20T18:00:00-04:00",
+        "end": "2026-03-20T21:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-009",
+      "title": "AISST/MAIA Technical AI Safety Workshop",
+      "category": "Workshops",
+      "start_date": "2026-03-27",
+      "end_date": "2026-03-29",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Sydney Von Arx",
+          "topic": "Propensity evaluations"
+        },
+        {
+          "name": "David Bau"
+        },
+        {
+          "name": "Tzu Kit Chan",
+          "topic": "How to Not Be Useless in AI Safety"
+        },
+        {
+          "name": "Kaivu Hariharan",
+          "topic": "Scaling human intent in software"
+        },
+        {
+          "name": "Aryan Bhatt",
+          "topic": "AI control"
+        },
+        {
+          "name": "Steven Byrnes",
+          "topic": "Challenges for safe and beneficial brain-like AGI"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.\n\nSpeakers / session contributors: Sydney Von Arx, David Bau, Tzu Kit Chan, Kaivu Hariharan, Aryan Bhatt, Steven Byrnes.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqc9g75ij0phl6cpj8d1j6kq32cb268pm6d3560qj8phh6dh6ce9g81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWM5Zzc1aWowcGhsNmNwajhkMWo2a3EzMmNiMjY4cG02ZDM1NjBxajhwaGg2ZGg2Y2U5ZzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-03-27T00:00:00",
+        "end": "2026-03-30T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-010",
+      "title": "Aryan Bhatt: AI Control and Early Schemers",
+      "category": "Speaker events",
+      "start_date": "2026-03-31",
+      "end_date": "2026-03-31",
+      "start_time": "17:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Cambridge",
+      "description": "Aryan Bhatt of Redwood Research joined MAIA for a member meeting on AI control: how to use powerful AI systems safely even when they might pursue hidden goals. The discussion included Redwood's proposal for making deals with early scheming systems, shared during the meeting. Bhatt's work spans control evaluations, scheming, and model organisms of misalignment.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Aryan Bhatt",
+          "affiliation": "Redwood Research"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Related research article",
+          "url": "https://blog.redwoodresearch.org/p/making-deals-with-early-schemers"
+        }
+      ],
+      "calendar_description": "Aryan Bhatt of Redwood Research joined MAIA for a member meeting on AI control: how to use powerful AI systems safely even when they might pursue hidden goals. The discussion included Redwood's proposal for making deals with early scheming systems, shared during the meeting. Bhatt's work spans control evaluations, scheming, and model organisms of misalignment.\n\nRelated research article: https://blog.redwoodresearch.org/p/making-deals-with-early-schemers",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqcr5clgm8c1jclgj0d1lcorm8oph6sojaohj70r68chn65ijcp9o81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNyNWNsZ204YzFqY2xnajBkMWxjb3JtOG9waDZzb2phb2hqNzByNjhjaG42NWlqY3A5bzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-03-31T00:00:00",
+        "end": "2026-04-01T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-011",
+      "title": "Josh Clymer: Recursive Alignment",
+      "category": "Speaker events",
+      "start_date": "2026-04-02",
+      "end_date": "2026-04-02",
+      "start_time": "17:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Cambridge; Josh Clymer joining virtually",
+      "description": "Josh Clymer of OpenAI joined MAIA remotely for a member meeting on recursive alignment: keeping AI systems aligned through successive rounds of modification and self-improvement. The session drew on his technical safety work, including earlier research at Redwood Research and METR on AI control, alignment faking, and evaluations of self-improvement capabilities.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Josh Clymer",
+          "affiliation": "OpenAI",
+          "participation": "virtual"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/wOCjVImmlyvdKsvQwVcN"
+        }
+      ],
+      "calendar_description": "Josh Clymer of OpenAI joined MAIA remotely for a member meeting on recursive alignment: keeping AI systems aligned through successive rounds of modification and self-improvement. The session drew on his technical safety work, including earlier research at Redwood Research and METR on AI control, alignment faking, and evaluations of self-improvement capabilities.\n\nOriginal Partiful event: https://partiful.com/e/wOCjVImmlyvdKsvQwVcN",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqe1j6grmap9k60rj6o9m6orm2d1h6krjadpjc9gj0dj5cks6ce3681mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWUxajZncm1hcDlrNjByajZvOW02b3JtMmQxaDZrcmphZHBqYzlnajBkajVja3M2Y2UzNjgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-04-02T00:00:00",
+        "end": "2026-04-03T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-012",
+      "title": "AISST/MAIA Technical AI Safety Workshop",
+      "category": "Workshops",
+      "start_date": "2026-04-03",
+      "end_date": "2026-04-05",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "The second spring AISST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "David Bau"
+        },
+        {
+          "name": "Abra Ganz"
+        },
+        {
+          "name": "Joshua Clymer"
+        },
+        {
+          "name": "Aryan Bhatt"
+        },
+        {
+          "name": "Alex Turner"
+        },
+        {
+          "name": "Nikola Jurkovic"
+        },
+        {
+          "name": "Dillon Plunkett"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "The second spring AISST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqd316csm4ob16or68p1g6spm8pb3c4sjee1g68o62cpg61i64c3381mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWQzMTZjc200b2IxNm9yNjhwMWc2c3BtOHBiM2M0c2plZTFnNjhvNjJjcGc2MWk2NGMzMzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-04-03T00:00:00",
+        "end": "2026-04-06T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-013",
+      "title": "Phillip Christoffersen: Beyond Guardrails",
+      "category": "Speaker events",
+      "start_date": "2026-04-06",
+      "end_date": "2026-04-06",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Gooseberry, Cambridge",
+      "description": "Phillip Christoffersen, a PhD researcher in MIT CSAIL's Algorithmic Alignment Group, presented Beyond Guardrails: Towards a Common Specification Language for AI Agent Domains. The talk examined why existing guardrails often constrain outcomes rather than processes and introduced a specification language for describing agent environments and safety requirements. It explored generating training data for safety-constrained policies and using coding agents to make specification more scalable, with implications for oversight of language-model agents.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Phillip Christoffersen",
+          "affiliation": "MIT CSAIL, Algorithmic Alignment Group"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/mKBekZGAMMXLlWwtHzQs"
+        }
+      ],
+      "calendar_description": "Phillip Christoffersen, a PhD researcher in MIT CSAIL's Algorithmic Alignment Group, presented Beyond Guardrails: Towards a Common Specification Language for AI Agent Domains. The talk examined why existing guardrails often constrain outcomes rather than processes and introduced a specification language for describing agent environments and safety requirements. It explored generating training data for safety-constrained policies and using coding agents to make specification more scalable, with implications for oversight of language-model agents.\n\nOriginal Partiful event: https://partiful.com/e/mKBekZGAMMXLlWwtHzQs",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "83ovgqog39pf060aqg8aoo0em8",
+        "event_url": "https://www.google.com/calendar/event?eid=ODNvdmdxb2czOXBmMDYwYXFnOGFvbzBlbTggZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-06T18:00:00-04:00",
+        "end": "2026-04-06T20:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Newsletter week April5–11 plus Monday places event April6; 6–8 evening matches existing6PM start.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-014",
+      "title": "Member Meeting with Max Tegmark",
+      "category": "Speaker events",
+      "start_date": "2026-04-09",
+      "end_date": "2026-04-09",
+      "start_time": "17:30",
+      "end_time": "19:30",
+      "timezone": "America/New_York",
+      "location": "CIC, Gooseberry, Cambridge",
+      "description": "MAIA's member meeting with Max Tegmark combined dinner with discussion about AI safety. Tegmark, an MIT physics professor and co-founder of the Future of Life Institute, brought a research perspective spanning mechanistic interpretability and provably safe systems. This was a smaller member gathering, distinct from his public February speaker event.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Max Tegmark",
+          "affiliation": "MIT; Future of Life Institute"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/stdhTf8es2xF2fdNeIBT"
+        }
+      ],
+      "calendar_description": "MAIA's member meeting with Max Tegmark combined dinner with discussion about AI safety. Tegmark, an MIT physics professor and co-founder of the Future of Life Institute, brought a research perspective spanning mechanistic interpretability and provably safe systems. This was a smaller member gathering, distinct from his public February speaker event.\n\nOriginal Partiful event: https://partiful.com/e/stdhTf8es2xF2fdNeIBT",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "jmcg3j485nmn7ku752nrgqgc50",
+        "event_url": "https://www.google.com/calendar/event?eid=am1jZzNqNDg1bm1uN2t1NzUybnJncWdjNTAgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-09T17:30:00-04:00",
+        "end": "2026-04-09T19:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-015",
+      "title": "AISST/MAIA AI Policy Workshop",
+      "category": "Workshops",
+      "start_date": "2026-04-10",
+      "end_date": "2026-04-12",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Nathan Calvin"
+        },
+        {
+          "name": "Jason Hausenloy"
+        },
+        {
+          "name": "Gabriel Weil"
+        },
+        {
+          "name": "Fin Moorhouse"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqd9i64p64cj46lh3gcj669gjaob268pjcchi6cr36dpl6di66d9k81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWQ5aTY0cDY0Y2o0NmxoM2djajY2OWdqYW9iMjY4cGpjY2hpNmNyMzZkcGw2ZGk2NmQ5azgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-04-10T00:00:00",
+        "end": "2026-04-13T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-017",
+      "title": "MAIA at Campus Preview Weekend 2026",
+      "category": "CPW",
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-19",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT campus and CIC, Cambridge",
+      "description": "MAIA welcomed prospective MIT students during Campus Preview Weekend through nine activities: bagels on Kresge, an Avalon dinner, social deduction at Next House, waffles with a screening of Her, two Bon Me food truck events, an AI 2027 video and discussion, the activities midway, and a sushi social. The events combined introductions to AI safety with food, games, and opportunities to meet MAIA members.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "collection",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": null,
+      "calendar_import": {
+        "status": "held",
+        "reason": "Collection overview; not imported as a duplicate event."
+      }
+    },
+    {
+      "id": "maia-2026-018",
+      "title": "Andreea Bobu: Four Pillars of Human-Aligned AI Representations",
+      "category": "Speaker events",
+      "start_date": "2026-04-22",
+      "end_date": "2026-04-22",
+      "start_time": "17:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT, Room 35-225",
+      "description": "Andreea Bobu, an MIT AeroAstro and CSAIL professor who leads the CLEAR Lab, presented a framework for AI systems that understand the concepts people care about. Four Pillars of Human-Aligned AI Representations focused on completeness, minimality, efficiency, and interpretability. Drawing on robot learning, the talk examined generating concepts as code with language models and using language-guided abstractions to ignore irrelevant information, connecting these methods to meaningful human oversight.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Andreea Bobu",
+          "affiliation": "MIT AeroAstro and CSAIL; CLEAR Lab"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Luma event",
+          "url": "https://luma.com/jzn4bgy9"
+        }
+      ],
+      "calendar_description": "Andreea Bobu, an MIT AeroAstro and CSAIL professor who leads the CLEAR Lab, presented a framework for AI systems that understand the concepts people care about. Four Pillars of Human-Aligned AI Representations focused on completeness, minimality, efficiency, and interpretability. Drawing on robot learning, the talk examined generating concepts as code with language models and using language-guided abstractions to ignore irrelevant information, connecting these methods to meaningful human oversight.\n\nOriginal Luma event: https://luma.com/jzn4bgy9",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqcj660rjgc9pcor32e3561i3iob2c8qmacr3c8r3aohm6ko62p1j81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNqNjYwcmpnYzlwY29yMzJlMzU2MWkzaW9iMmM4cW1hY3IzYzhyM2FvaG02a282MnAxajgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-04-22T00:00:00",
+        "end": "2026-04-23T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-019",
+      "title": "MAIA Technical Governance Competition",
+      "category": "Policy",
+      "start_date": null,
+      "end_date": null,
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT, Cambridge, MA; multiweek competition. Scheduled workshops at MIT Room 3-333.",
+      "description": "MAIA's Technical Governance Competition brought students together to turn technical knowledge of AI into practical policy proposals. Over several weeks, participants developed a concise policy artifact and supporting report explaining how their proposal would work, how it could be enforced, and why it was technically sound. The competition offered a $10,000 prize pool and encouraged concrete ideas such as improvements to existing legislation, auditing requirements, and rules for AI deployment.\n\nWinning projects addressed three different governance problems: transparency and grid stewardship for AI data centers in Maine; financial responsibility and insurance for advanced AI systems; and liability for autonomous code generation and deployment. The competition was organized by Anooshka Pendyal and Neha Muramalla, with Ionel Chiosa also listed on the organizing team. Judge Paulo Carvão later wrote about the competition and its proposals in Forbes.",
+      "date_display": "Spring 2026",
+      "publication_status": "draft",
+      "record_type": "program",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_date",
+        "end_date",
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Winning projects",
+          "url": "https://github.com/anpendyal/Modern-Tech-Policy"
+        },
+        {
+          "label": "Forbes coverage by judge Paulo Carvão, May 13, 2026",
+          "url": "https://www.forbes.com/sites/paulocarvao/2026/05/13/build-modern-tech-policy-by-hiring-the-students-who-already-understand-it/"
+        },
+        {
+          "label": "First-place participant announcement",
+          "url": "https://www.linkedin.com/posts/ambrosemcc_modern-tech-policymaine-transparency-actpolicy-artifactmcculloughpdf-activity-7460724811074277376-hxzx"
+        },
+        {
+          "label": "Second-place participant announcement",
+          "url": "https://www.linkedin.com/posts/agastya-sridharan_build-modern-tech-policy-by-hiring-the-students-activity-7460350055745490945-1gze"
+        }
+      ],
+      "winning_projects": [
+        {
+          "place": 1,
+          "authors": [
+            "Ambrose McCullough"
+          ],
+          "title": "Maine AI Compute Transparency and Grid Stewardship Act",
+          "url": "https://github.com/anpendyal/Modern-Tech-Policy/blob/main/Maine-Transparency-Act_Policy-Artifact_McCullough.pdf"
+        },
+        {
+          "place": 2,
+          "authors": [
+            "Agastya Sridharan",
+            "Anchal Bhardwaj"
+          ],
+          "title": "Title VI: Financial Responsibility for Advanced AI Systems",
+          "url": "https://github.com/anpendyal/Modern-Tech-Policy/blob/main/Title-VI_Policy-Artifact_Sridharan-Bhardwaj.pdf"
+        },
+        {
+          "place": 3,
+          "authors": [
+            "Khushi Parikh",
+            "Dashiell DeStefano"
+          ],
+          "title": "Standard AI-800-74: Liability Allocation for Autonomous Code Generation and Deployment",
+          "url": "https://github.com/anpendyal/Modern-Tech-Policy/blob/main/Standard-AI-800-74_Policy-Artifact_Parikh-DeStefano.pdf"
+        }
+      ],
+      "calendar_description": "MAIA's Technical Governance Competition brought students together to turn technical knowledge of AI into practical policy proposals. Over several weeks, participants developed a concise policy artifact and supporting report explaining how their proposal would work, how it could be enforced, and why it was technically sound. The competition offered a $10,000 prize pool and encouraged concrete ideas such as improvements to existing legislation, auditing requirements, and rules for AI deployment.\n\nWinning projects addressed three different governance problems: transparency and grid stewardship for AI data centers in Maine; financial responsibility and insurance for advanced AI systems; and liability for autonomous code generation and deployment. The competition was organized by Anooshka Pendyal and Neha Muramalla, with Ionel Chiosa also listed on the organizing team. Judge Paulo Carvão later wrote about the competition and its proposals in Forbes.\n\nWinning projects: https://github.com/anpendyal/Modern-Tech-Policy\nForbes coverage by judge Paulo Carvão, May 13, 2026: https://www.forbes.com/sites/paulocarvao/2026/05/13/build-modern-tech-policy-by-hiring-the-students-who-already-understand-it/\nFirst-place participant announcement: https://www.linkedin.com/posts/ambrosemcc_modern-tech-policymaine-transparency-actpolicy-artifactmcculloughpdf-activity-7460724811074277376-hxzx\nSecond-place participant announcement: https://www.linkedin.com/posts/agastya-sridharan_build-modern-tech-policy-by-hiring-the-students-activity-7460350055745490945-1gze",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Program overview; a separate dated representation is still needed."
+      }
+    },
+    {
+      "id": "maia-2026-020",
+      "title": "MAIA × Science Policy Initiative Social",
+      "category": "Socials",
+      "start_date": "2026-05-01",
+      "end_date": "2026-05-01",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "timezone": "America/New_York",
+      "location": "Cambridge, Massachusetts",
+      "description": "MAIA and MIT’s Science Policy Initiative brought their communities together for an evening of pizza, games, and conversation. The joint social helped members meet students working on science policy and discuss shared interests in AI policy.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/wXqpUXtaJOzHY29mDQcR"
+        }
+      ],
+      "calendar_description": "MAIA and MIT’s Science Policy Initiative brought their communities together for an evening of pizza, games, and conversation. The joint social helped members meet students working on science policy and discuss shared interests in AI policy.\n\nOriginal Partiful event: https://partiful.com/e/wXqpUXtaJOzHY29mDQcR",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "8v1dac1vpdp8qo14ruan4glmn0",
+        "event_url": "https://www.google.com/calendar/event?eid=OHYxZGFjMXZwZHA4cW8xNHJ1YW40Z2xtbjAgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-05-01T18:00:00-04:00",
+        "end": "2026-05-01T20:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-021",
+      "title": "End-of-Year Rooftop Social",
+      "category": "Socials",
+      "start_date": "2026-05-12",
+      "end_date": "2026-05-12",
+      "start_time": "18:00",
+      "end_time": "20:30",
+      "timezone": "America/New_York",
+      "location": "Kendall Square Urban Park Roof Garden, 325 Main Street, Cambridge",
+      "description": "MAIA’s end-of-year gathering brought the community together at the Kendall Square rooftop park. The social featured Indian food and space for conversation, icebreakers, and board games, with vegetarian, vegan, and gluten-free food options. It was open to MIT community members and affiliates.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/1avgHD75AlzHBjzHMJQC"
+        }
+      ],
+      "calendar_description": "MAIA’s end-of-year gathering brought the community together at the Kendall Square rooftop park. The social featured Indian food and space for conversation, icebreakers, and board games, with vegetarian, vegan, and gluten-free food options. It was open to MIT community members and affiliates.\n\nOriginal Partiful event: https://partiful.com/e/1avgHD75AlzHBjzHMJQC",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "bp05urquk4n6l0cbj12at0rcno",
+        "event_url": "https://www.google.com/calendar/event?eid=YnAwNXVycXVrNG42bDBjYmoxMmF0MHJjbm8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-05-12T18:00:00-04:00",
+        "end": "2026-05-12T20:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-022",
+      "title": "Summer Technical AI Safety Workshop",
+      "category": "Workshops",
+      "start_date": "2026-08-28",
+      "end_date": "2026-08-30",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A summer residential AI safety workshop hosted by AISST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Nikola Jurkovic"
+        },
+        {
+          "name": "Stephen Casper"
+        },
+        {
+          "name": "David Bau"
+        },
+        {
+          "name": "Tzu Kit Chan"
+        },
+        {
+          "name": "James Sanders"
+        },
+        {
+          "name": "Alex Turner"
+        },
+        {
+          "name": "Zac Hatfield-Dodds"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A summer residential AI safety workshop hosted by AISST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqor168s3ceb16pijgohk68smceb46kp6ad1n6krm2dpgc8qj4p3481mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcW9yMTY4czNjZWIxNnBpamdvaGs2OHNtY2ViNDZrcDZhZDFuNmtybTJkcGdjOHFqNHAzNDgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2026-08-28T00:00:00",
+        "end": "2026-08-31T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-023",
+      "title": "Bagels on Kresge",
+      "category": "CPW",
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-16",
+      "start_time": "09:00",
+      "end_time": "11:30",
+      "timezone": "America/New_York",
+      "location": "Kresge Oval, MIT",
+      "description": "MAIA kicked off Campus Preview Weekend with bagels on Kresge. Prospective students could stop by for breakfast, meet organizers, and hear about the club and its AI safety activities.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA kicked off Campus Preview Weekend with bagels on Kresge. Prospective students could stop by for breakfast, meet organizers, and hear about the club and its AI safety activities.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "up63jilcdd95uijsr8omes9v9k",
+        "event_url": "https://www.google.com/calendar/event?eid=dXA2M2ppbGNkZDk1dWlqc3I4b21lczl2OWsgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-16T09:00:00-04:00",
+        "end": "2026-04-16T11:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-024",
+      "title": "Avalon Dinner: Trust Issues",
+      "category": "CPW",
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-16",
+      "start_time": "17:00",
+      "end_time": "19:00",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 4-149",
+      "description": "Prospective students joined MAIA for dinner and Avalon, a social deduction game built around hidden roles, trust, and teamwork. Sweetgreen meals accompanied the games, offering an informal way to meet the community during Campus Preview Weekend.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "Prospective students joined MAIA for dinner and Avalon, a social deduction game built around hidden roles, trust, and teamwork. Sweetgreen meals accompanied the games, offering an informal way to meet the community during Campus Preview Weekend.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "lvmhj9ts7qpanqpn48cij0kdgg",
+        "event_url": "https://www.google.com/calendar/event?eid=bHZtaGo5dHM3cXBhbnFwbjQ4Y2lqMGtkZ2cgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-16T17:00:00-04:00",
+        "end": "2026-04-16T19:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-025",
+      "title": "Social Deduction at Next House",
+      "category": "CPW",
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-17",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Next House Country Kitchen, MIT",
+      "description": "A late-night Campus Preview Weekend gathering centered on social deduction games at Next House. Prospective students and MAIA members played several simultaneous games of Avalon, with boba served during the evening.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "A late-night Campus Preview Weekend gathering centered on social deduction games at Next House. Prospective students and MAIA members played several simultaneous games of Avalon, with boba served during the evening.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "f0iig47o8k1u4ehgiovpsfjfg0",
+        "event_url": "https://www.google.com/calendar/event?eid=ZjBpaWc0N284azF1NGVoZ2lvdnBzZmpmZzAgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-16T19:00:00-04:00",
+        "end": "2026-04-16T22:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-026",
+      "title": "Waffles + Her",
+      "category": "CPW",
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-17",
+      "start_time": "22:00",
+      "end_time": "01:00",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 4-237",
+      "description": "MAIA hosted a late-night screening of Her with freshly made waffles during Campus Preview Weekend. The film offered a fictional perspective on relationships with AI, alongside an informal opportunity for prospective students to meet the club.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA hosted a late-night screening of Her with freshly made waffles during Campus Preview Weekend. The film offered a fictional perspective on relationships with AI, alongside an informal opportunity for prospective students to meet the club.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "4vtr8rmgq19k1rvpl7i1opfg70",
+        "event_url": "https://www.google.com/calendar/event?eid=NHZ0cjhybWdxMTlrMXJ2cGw3aTFvcGZnNzAgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-16T22:00:00-04:00",
+        "end": "2026-04-17T01:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-027",
+      "title": "Bon Me Food Truck at CPW: Friday",
+      "category": "CPW",
+      "start_date": "2026-04-17",
+      "end_date": "2026-04-17",
+      "start_time": "15:30",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Student Center Plaza, MIT",
+      "description": "MAIA brought the Bon Me food truck to the Student Center for Campus Preview Weekend. Prospective students stopped by for free food and conversations with MAIA members about AI safety and the club. The truck finished early after running out of food.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA brought the Bon Me food truck to the Student Center for Campus Preview Weekend. Prospective students stopped by for free food and conversations with MAIA members about AI safety and the club. The truck finished early after running out of food.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "10npmtes54dj298dqlmks4f49k",
+        "event_url": "https://www.google.com/calendar/event?eid=MTBucG10ZXM1NGRqMjk4ZHFsbWtzNGY0OWsgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-17T15:30:00-04:00",
+        "end": "2026-04-17T18:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-028",
+      "title": "AI 2027 Video and Discussion",
+      "category": "CPW",
+      "start_date": "2026-04-17",
+      "end_date": "2026-04-18",
+      "start_time": "21:00",
+      "end_time": "00:00",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 4-237, with overflow in 4-249 and 4-257",
+      "description": "MAIA introduced prospective students to the AI 2027 scenario through a video and discussion about possible developments in advanced AI. The Campus Preview Weekend event combined an introduction to MAIA with a presentation, lobster rolls, and boba.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA introduced prospective students to the AI 2027 scenario through a video and discussion about possible developments in advanced AI. The Campus Preview Weekend event combined an introduction to MAIA with a presentation, lobster rolls, and boba.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "ilspfi4b0qaign5i6rlgchb5e4",
+        "event_url": "https://www.google.com/calendar/event?eid=aWxzcGZpNGIwcWFpZ241aTZybGdjaGI1ZTQgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-17T21:00:00-04:00",
+        "end": "2026-04-18T00:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-029",
+      "title": "Bon Me Food Truck at CPW: Saturday",
+      "category": "CPW",
+      "start_date": "2026-04-18",
+      "end_date": "2026-04-18",
+      "start_time": "13:00",
+      "end_time": "16:00",
+      "timezone": "America/New_York",
+      "location": "Student Center Plaza, MIT",
+      "description": "The Bon Me food truck returned for a second Campus Preview Weekend afternoon with MAIA. Prospective students could get free food and talk with club members about AI safety, upcoming programs, and ways to get involved.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "The Bon Me food truck returned for a second Campus Preview Weekend afternoon with MAIA. Prospective students could get free food and talk with club members about AI safety, upcoming programs, and ways to get involved.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "lajp0v94h503pbjnakll1ccpcc",
+        "event_url": "https://www.google.com/calendar/event?eid=bGFqcDB2OTRoNTAzcGJqbmFrbGwxY2NwY2MgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-18T13:00:00-04:00",
+        "end": "2026-04-18T16:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-030",
+      "title": "CPW Activities Midway",
+      "category": "CPW",
+      "start_date": "2026-04-18",
+      "end_date": "2026-04-18",
+      "start_time": "13:00",
+      "end_time": "15:00",
+      "timezone": "America/New_York",
+      "location": "Johnson Ice Rink, MIT",
+      "description": "MAIA joined MIT’s Campus Preview Weekend Activities Midway to introduce prospective students to the club. Organizers spoke with visitors about AI safety, the AI Safety Fundamentals fellowship, and ways to join MAIA, with club materials and merchandise at the table.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA joined MIT’s Campus Preview Weekend Activities Midway to introduce prospective students to the club. Organizers spoke with visitors about AI safety, the AI Safety Fundamentals fellowship, and ways to join MAIA, with club materials and merchandise at the table.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "ihbf247eorb6sscc2g5lmfiqsc",
+        "event_url": "https://www.google.com/calendar/event?eid=aWhiZjI0N2VvcmI2c3NjYzJnNWxtZmlxc2MgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-18T13:00:00-04:00",
+        "end": "2026-04-18T15:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-031",
+      "title": "CPW Sushi Social",
+      "category": "CPW",
+      "start_date": "2026-04-18",
+      "end_date": "2026-04-18",
+      "start_time": "20:30",
+      "end_time": "23:30",
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 245 Main Street, Cambridge",
+      "description": "MAIA closed its Campus Preview Weekend activities with an evening social for prospective students and community members. Sushi, pizza, and informal conversation offered another chance to meet the club. Originally planned for a rooftop, the gathering moved indoors to CIC because of the cold.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "parent_collection": "MAIA at Campus Preview Weekend 2026",
+      "calendar_description": "MAIA closed its Campus Preview Weekend activities with an evening social for prospective students and community members. Sushi, pizza, and informal conversation offered another chance to meet the club. Originally planned for a rooftop, the gathering moved indoors to CIC because of the cold.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "kkfkde5t51ah5qp8jsh3hmln3s",
+        "event_url": "https://www.google.com/calendar/event?eid=a2tma2RlNXQ1MWFoNXFwOGpzaDNobWxuM3MgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2026-04-18T20:30:00-04:00",
+        "end": "2026-04-18T23:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-arena-series",
+      "title": "Spring ARENA Technical Upskilling",
+      "category": "Technical programs",
+      "start_date": "2026-02-19",
+      "end_date": null,
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Cambridge; later weekend sessions at AISST, 66 Church Street",
+      "description": "MAIA ran a spring technical upskilling series using the ARENA curriculum. Participants worked through machine-learning and AI-safety exercises together, including fundamentals, optimization, and later technical material at their own pace. Sessions generally met on Thursday evenings and Sundays, with some later weekend meetings hosted at AISST.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "collection",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_date",
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": null,
+      "calendar_import": {
+        "status": "held",
+        "reason": "Collection overview; not imported as a duplicate event."
+      }
+    },
+    {
+      "id": "maia-2025-033",
+      "title": "MAIA February Social",
+      "category": "Socials",
+      "start_date": "2025-02-28",
+      "end_date": "2025-02-28",
+      "start_time": "18:30",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 255 Main Street, Cambridge",
+      "description": "A MAIA community social with pizza, drinks, and board games at CIC. The invitation welcomed both returning and new members for a relaxed evening of conversation and games.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "A MAIA community social with pizza, drinks, and board games at CIC. The invitation welcomed both returning and new members for a relaxed evening of conversation and games.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "n5v1hv9u9n00c94mdqkdpb88i4",
+        "event_url": "https://www.google.com/calendar/event?eid=bjV2MWh2OXU5bjAwYzk0bWRxa2RwYjg4aTQgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-02-28T18:30:00-05:00",
+        "end": "2025-02-28T21:30:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-034",
+      "title": "MAIA × AISST Social",
+      "category": "Socials",
+      "start_date": "2025-03-06",
+      "end_date": "2025-03-06",
+      "start_time": "20:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, Cambridge",
+      "description": "MAIA and Harvard’s AI Safety Student Team met for a joint evening social at CIC. The gathering brought the two student AI safety communities together for food and conversation, following MAIA’s member meeting with Leo Gao.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "MAIA and Harvard’s AI Safety Student Team met for a joint evening social at CIC. The gathering brought the two student AI safety communities together for food and conversation, following MAIA’s member meeting with Leo Gao.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "rfkb4j5ujn0el1rq3k92dc91lg",
+        "event_url": "https://www.google.com/calendar/event?eid=cmZrYjRqNXVqbjBlbDFycTNrOTJkYzkxbGcgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-03-06T20:00:00-05:00",
+        "end": "2025-03-06T23:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-035",
+      "title": "Q&A with Ajeya Cotra",
+      "category": "Speaker events",
+      "start_date": "2025-03-18",
+      "end_date": "2025-03-18",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": null,
+      "description": "Ajeya Cotra of Open Philanthropy joined the AI safety community for a Q&A on rapidly improving AI and its effects on the world. The event drew on her forecasting work and experience leading Open Philanthropy's technical AI safety program, offering participants a chance to ask questions about AI progress and how to make its impact positive.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Ajeya Cotra",
+          "affiliation": "Open Philanthropy"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "Ajeya Cotra of Open Philanthropy joined the AI safety community for a Q&A on rapidly improving AI and its effects on the world. The event drew on her forecasting work and experience leading Open Philanthropy's technical AI safety program, offering participants a chance to ask questions about AI progress and how to make its impact positive.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqdj464smaohh6sq3cdr371i68e1nc5ijedj36soj8cb36ksm6p9m81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWRqNDY0c21hb2hoNnNxM2NkcjM3MWk2OGUxbmM1aWplZGozNnNvajhjYjM2a3NtNnA5bTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-03-18T00:00:00",
+        "end": "2025-03-19T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-036",
+      "title": "Spring Technical AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2025-03-28",
+      "end_date": "2025-03-30",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "David Bau",
+          "topic": "Cracking open the mystery of large-scale AI"
+        },
+        {
+          "name": "Martin Wattenberg"
+        },
+        {
+          "name": "Corin Katzke",
+          "topic": "Superintelligence and international security"
+        },
+        {
+          "name": "Zac Hatfield-Dodds",
+          "topic": "Overview of AI risk and Q&A"
+        },
+        {
+          "name": "Nikola Jurkovic",
+          "topic": "Evaluations and timelines"
+        },
+        {
+          "name": "Joshua Clymer",
+          "topic": "Safely passing the buck to AI: an endgame strategy"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.\n\nSpeakers / session contributors: David Bau, Martin Wattenberg, Corin Katzke, Zac Hatfield-Dodds, Nikola Jurkovic, Joshua Clymer.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqcj561h3ec3470qjgob2ccr6cp9j61i3idpl6cs3icj26hj30cpn81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNqNTYxaDNlYzM0NzBxamdvYjJjY3I2Y3A5ajYxaTNpZHBsNmNzM2ljajI2aGozMGNwbjgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-03-28T00:00:00",
+        "end": "2025-03-31T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-037",
+      "title": "Spring AI Policy Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2025-04-04",
+      "end_date": "2025-04-06",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A residential AISST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Peter Salib",
+          "topic": "AI rights for human safety"
+        },
+        {
+          "name": "Sandhini Agarwal"
+        },
+        {
+          "name": "Nitarshan Rajkumar"
+        },
+        {
+          "name": "Joel Burke",
+          "topic": "US-China competition in the age of AI; Doing AI Policy panel"
+        },
+        {
+          "name": "Thomas Larsen",
+          "topic": "Timelines are short. What should we do?"
+        },
+        {
+          "name": "Arushi Gupta",
+          "topic": "Doing AI Policy panel"
+        },
+        {
+          "name": "Kevin Wei",
+          "topic": "Doing AI Policy panel moderator"
+        },
+        {
+          "name": "Mackenzie Arnold"
+        },
+        {
+          "name": "Yusuf Mahmood",
+          "topic": "AI strategy and theories of victory panel"
+        },
+        {
+          "name": "Chris Byrd",
+          "topic": "AI strategy and theories of victory panel"
+        },
+        {
+          "name": "Corin Katzke",
+          "topic": "AI strategy and theories of victory panel moderator"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A residential AISST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.\n\nSpeakers / session contributors: Peter Salib, Sandhini Agarwal, Nitarshan Rajkumar, Joel Burke, Thomas Larsen, Arushi Gupta, Kevin Wei, Mackenzie Arnold, Yusuf Mahmood, Chris Byrd, Corin Katzke.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqe1gcgs68cpk64p66p1i71h64cho60q68p1j6di32cb66kp3ge1n81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWUxZ2NnczY4Y3BrNjRwNjZwMWk3MWg2NGNobzYwcTY4cDFqNmRpMzJjYjY2a3AzZ2UxbjgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-04-04T00:00:00",
+        "end": "2025-04-07T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-038",
+      "title": "Spring Technical AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2025-04-11",
+      "end_date": "2025-04-13",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Sam Marks"
+        },
+        {
+          "name": "Brad Knox"
+        },
+        {
+          "name": "David Bau"
+        },
+        {
+          "name": "Cody Rushing"
+        },
+        {
+          "name": "Adam Kaufman"
+        },
+        {
+          "name": "Kevin Liu",
+          "topic": "Interview"
+        },
+        {
+          "name": "Neev Parikh"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.\n\nSpeakers / session contributors: Sam Marks, Brad Knox, David Bau, Cody Rushing, Adam Kaufman, Kevin Liu, Neev Parikh.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqphh70r3ic9hc9h36cj374s62cr56thjachp6op3coj3c5hjae9k81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcXBoaDcwcjNpYzloYzloMzZjajM3NHM2MmNyNTZ0aGphY2hwNm9wM2NvajNjNWhqYWU5azgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-04-11T00:00:00",
+        "end": "2025-04-14T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-039",
+      "title": "MAIA May Social",
+      "category": "Socials",
+      "start_date": "2025-05-09",
+      "end_date": "2025-05-09",
+      "start_time": "18:30",
+      "end_time": "20:30",
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, Cambridge",
+      "description": "An end-of-year MAIA social centered on saying farewell to graduating members and sharing plans for the summer and life after MIT. The gathering offered pizza and a break from the lead-up to finals.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/IlcfjCpKufDe2prerMoE"
+        }
+      ],
+      "calendar_description": "An end-of-year MAIA social centered on saying farewell to graduating members and sharing plans for the summer and life after MIT. The gathering offered pizza and a break from the lead-up to finals.\n\nOriginal Partiful event: https://partiful.com/e/IlcfjCpKufDe2prerMoE",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "2ir3qh0prtmkm9dqbgooda2k9g",
+        "event_url": "https://www.google.com/calendar/event?eid=MmlyM3FoMHBydG1rbTlkcWJnb29kYTJrOWcgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-05-09T18:30:00-04:00",
+        "end": "2025-05-09T20:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-040",
+      "title": "MAIA × Impact@MIT Social",
+      "category": "Socials",
+      "start_date": "2025-09-13",
+      "end_date": "2025-09-13",
+      "start_time": "18:00",
+      "end_time": "20:30",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 1-150",
+      "description": "A joint MAIA and Impact@MIT social welcoming the wider MIT community. Over pizza, the gathering connected students interested in AI safety with students exploring positive impact through careers, donations, and other projects. Membership in either club was not required.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/VezKYKeNbNceYeB6GYN7"
+        }
+      ],
+      "calendar_description": "A joint MAIA and Impact@MIT social welcoming the wider MIT community. Over pizza, the gathering connected students interested in AI safety with students exploring positive impact through careers, donations, and other projects. Membership in either club was not required.\n\nOriginal Partiful event: https://partiful.com/e/VezKYKeNbNceYeB6GYN7",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "lue4c75au1mtu4e6qearhhfqbk",
+        "event_url": "https://www.google.com/calendar/event?eid=bHVlNGM3NWF1MW10dTRlNnFlYXJoaGZxYmsgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-09-13T18:00:00-04:00",
+        "end": "2025-09-13T20:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-041",
+      "title": "Emergent Misalignment Paper Replication",
+      "category": "Technical programs",
+      "start_date": "2025-09-27",
+      "end_date": "2025-09-27",
+      "start_time": "10:30",
+      "end_time": "15:30",
+      "timezone": "America/New_York",
+      "location": "MAIA office, CIC, Cambridge",
+      "description": "Riya Tyagi planned a hands-on session on emergent misalignment, where training a model on narrowly problematic data can lead to broader changes in behavior. The proposed morning combined reading and discussion of three papers, followed by a short synthesis over lunch. Afternoon exercises were designed to use small model organisms in Google Colab to explore sparse-autoencoder comparisons, model steering, and directions associated with misalignment.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "announcement_only",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Riya Tyagi",
+          "role": "facilitator"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Research paper",
+          "url": "https://arxiv.org/abs/2502.17424"
+        },
+        {
+          "label": "Research paper",
+          "url": "https://arxiv.org/abs/2506.11618"
+        },
+        {
+          "label": "Research paper",
+          "url": "https://cdn.openai.com/pdf/a130517e-9633-47bc-8397-969807a43a23/emergent_misalignment_paper.pdf"
+        }
+      ],
+      "calendar_description": "Riya Tyagi planned a hands-on session on emergent misalignment, where training a model on narrowly problematic data can lead to broader changes in behavior. The proposed morning combined reading and discussion of three papers, followed by a short synthesis over lunch. Afternoon exercises were designed to use small model organisms in Google Colab to explore sparse-autoencoder comparisons, model steering, and directions associated with misalignment.\n\nResearch paper: https://arxiv.org/abs/2502.17424\nResearch paper: https://arxiv.org/abs/2506.11618\nResearch paper: https://cdn.openai.com/pdf/a130517e-9633-47bc-8397-969807a43a23/emergent_misalignment_paper.pdf",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Announcement only; occurrence needs confirmation."
+      }
+    },
+    {
+      "id": "maia-2025-042",
+      "title": "Dr. Strangelove Movie Night",
+      "category": "Socials",
+      "start_date": "2025-10-11",
+      "end_date": "2025-10-11",
+      "start_time": "18:30",
+      "end_time": "20:30",
+      "timezone": "America/New_York",
+      "location": "MIT, Room 3-333",
+      "description": "A MAIA movie night featuring Dr. Strangelove, the Cold War satire about nuclear escalation and decision-making. The screening offered a social evening around a film concerned with technology, institutions, and catastrophic risk.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "live_event_evidence",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "A MAIA movie night featuring Dr. Strangelove, the Cold War satire about nuclear escalation and decision-making. The screening offered a social evening around a film concerned with technology, institutions, and catastrophic risk.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "cen5qmsppilf96j6taemar6lh0",
+        "event_url": "https://www.google.com/calendar/event?eid=Y2VuNXFtc3BwaWxmOTZqNnRhZW1hcjZsaDAgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-10-11T18:30:00-04:00",
+        "end": "2025-10-11T20:30:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-043",
+      "title": "MAIA Pizza Social",
+      "category": "Socials",
+      "start_date": "2025-10-17",
+      "end_date": "2025-10-17",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 245 Main Street, Cambridge",
+      "description": "A Friday-evening MAIA pizza social at CIC, open to community members and their friends. The event focused on informal conversation and meeting others interested in AI safety at the start of the weekend.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "past_event_listing",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/pUfxCM59MDu1w8Bv99Ji"
+        }
+      ],
+      "calendar_description": "A Friday-evening MAIA pizza social at CIC, open to community members and their friends. The event focused on informal conversation and meeting others interested in AI safety at the start of the weekend.\n\nOriginal Partiful event: https://partiful.com/e/pUfxCM59MDu1w8Bv99Ji",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "d9vh5151ijvt2ntf42t3rhd83o",
+        "event_url": "https://www.google.com/calendar/event?eid=ZDl2aDUxNTFpanZ0Mm50ZjQydDNyaGQ4M28gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-10-17T18:00:00-04:00",
+        "end": "2025-10-17T21:00:00-04:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-044",
+      "title": "AISST/MAIA Fall Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2025-11-07",
+      "end_date": "2025-11-09",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "The first fall AISST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "David Bau",
+          "topic": "AI systems that improve human understanding"
+        },
+        {
+          "name": "Aryan Bhatt",
+          "topic": "Scheming"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "The first fall AISST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.\n\nSpeakers / session contributors: David Bau, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqchk70sj8p33c8p64e1n64rj0p1i6osj2pj571i3cdhg6sojicj181mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNoazcwc2o4cDMzYzhwNjRlMW42NHJqMHAxaTZvc2oycGo1NzFpM2NkaGc2c29qaWNqMTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-11-07T00:00:00",
+        "end": "2025-11-10T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-045",
+      "title": "AISST/MAIA Fall Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2025-11-14",
+      "end_date": "2025-11-16",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "The second fall AISST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Sam Marks"
+        },
+        {
+          "name": "David Bau",
+          "topic": "Introduction to mechanistic interpretability"
+        },
+        {
+          "name": "Tyler Tracy"
+        },
+        {
+          "name": "Aryan Bhatt",
+          "topic": "AI control"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "The second fall AISST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.\n\nSpeakers / session contributors: Sam Marks, David Bau, Tyler Tracy, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqob6chh64p1m6csj6phk68q64d356gq64e1o6kqm4p326cq3cohm81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcW9iNmNoaDY0cDFtNmNzajZwaGs2OHE2NGQzNTZncTY0ZTFvNmtxbTRwMzI2Y3EzY29obTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-11-14T00:00:00",
+        "end": "2025-11-17T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-046",
+      "title": "AISF Hackathon",
+      "category": "Technical programs",
+      "start_date": "2025-11-22",
+      "end_date": "2025-11-22",
+      "start_time": "09:00",
+      "end_time": "21:00",
+      "timezone": "America/New_York",
+      "location": "MAIA office, CIC, Cambridge",
+      "description": "AISF fellows spent a full day turning ideas from the fellowship into hands-on AI safety projects, with team formation, mentorship, meals, and evening presentations. Documented projects included adding a small learned module to a language model to resist jailbreaks, using Petri to compare lying and reward hacking under ordinary versus competitive task settings, and building an agent to demonstrate manipulative persuasion. Teams presented their work at the end of the day and participants voted on projects.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Riya Tyagi",
+          "role": "organizer and mentor"
+        },
+        {
+          "name": "Felix Tudose",
+          "role": "organizer and mentor"
+        },
+        {
+          "name": "Ionel Chiosa",
+          "role": "organizer and mentor"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "AISF fellows spent a full day turning ideas from the fellowship into hands-on AI safety projects, with team formation, mentorship, meals, and evening presentations. Documented projects included adding a small learned module to a language model to resist jailbreaks, using Petri to compare lying and reward hacking under ordinary versus competitive task settings, and building an agent to demonstrate manipulative persuasion. Teams presented their work at the end of the day and participants voted on projects.\n\nSpeakers / session contributors: Riya Tyagi, Felix Tudose, Ionel Chiosa.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "39r84ce8hblk658h3rl6ehupqg",
+        "event_url": "https://www.google.com/calendar/event?eid=MzlyODRjZThoYmxrNjU4aDNybDZlaHVwcWcgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-11-22T09:00:00-05:00",
+        "end": "2025-11-22T21:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-047",
+      "title": "Mission Strawberry: Fool the Language Model",
+      "category": "Technical programs",
+      "start_date": "2025-11-26",
+      "end_date": "2025-11-26",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT, Room 3-370",
+      "description": "MAIA members and AISF fellows competed to devise questions that people could solve but leading language models would get wrong. Mission Strawberry put human teams up against GPT-5-Thinking and Gemini 3 in a playful test of model reasoning, with food and strawberry-themed treats. The organizer's post-event recap highlighted four submissions that fooled both models while every human team found the correct answer.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/iOKPpKoS7l36jCMiInMB"
+        },
+        {
+          "label": "Mission Strawberry activity",
+          "url": "https://mission-strawberry.replit.app/"
+        }
+      ],
+      "calendar_description": "MAIA members and AISF fellows competed to devise questions that people could solve but leading language models would get wrong. Mission Strawberry put human teams up against GPT-5-Thinking and Gemini 3 in a playful test of model reasoning, with food and strawberry-themed treats. The organizer's post-event recap highlighted four submissions that fooled both models while every human team found the correct answer.\n\nOriginal Partiful event: https://partiful.com/e/iOKPpKoS7l36jCMiInMB\nMission Strawberry activity: https://mission-strawberry.replit.app/",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqob26gr3ic1o6som4oj46lj6ap9k60q68cr368pj6p336lj6ae3581mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcW9iMjZncjNpYzFvNnNvbTRvajQ2bGo2YXA5azYwcTY4Y3IzNjhwajZwMzM2bGo2YWUzNTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2025-11-26T00:00:00",
+        "end": "2025-11-27T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2025-048",
+      "title": "End-of-Semester Extravaganza",
+      "category": "Socials",
+      "start_date": "2025-12-12",
+      "end_date": "2025-12-12",
+      "start_time": "18:00",
+      "end_time": "20:30",
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 245 Main Street, Cambridge",
+      "description": "MAIA’s final social of the fall semester brought pizza, non-alcoholic drinks, board games, and conversation to CIC. The gathering was intended as a chance to reconnect with the community and relax before finals.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "past_event_listing",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Original Partiful event",
+          "url": "https://partiful.com/e/zH6l5jKsx9yR1TtKU7N7"
+        }
+      ],
+      "calendar_description": "MAIA’s final social of the fall semester brought pizza, non-alcoholic drinks, board games, and conversation to CIC. The gathering was intended as a chance to reconnect with the community and relax before finals.\n\nOriginal Partiful event: https://partiful.com/e/zH6l5jKsx9yR1TtKU7N7",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "1sjrug1fsass2lcmb6jkn3jn9o",
+        "event_url": "https://www.google.com/calendar/event?eid=MXNqcnVnMWZzYXNzMmxjbWI2amtuM2puOW8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-12-12T18:00:00-05:00",
+        "end": "2025-12-12T20:30:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2023-049",
+      "title": "HAIST/MAIA Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2023-11-10",
+      "end_date": "2023-11-12",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": null,
+      "description": "A joint HAIST/MAIA residential AI safety workshop, bringing the Harvard and MIT communities together for a weekend of discussion and connection.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "HAIST"
+      ],
+      "calendar_description": "A joint HAIST/MAIA residential AI safety workshop, bringing the Harvard and MIT communities together for a weekend of discussion and connection.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqc3569i3gopp61ijacr570rjedj3c9ijedpk60p3gd1icgo62phi81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWMzNTY5aTNnb3BwNjFpamFjcjU3MHJqZWRqM2M5aWplZHBrNjBwM2dkMWljZ282MnBoaTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2023-11-10T00:00:00",
+        "end": "2023-11-13T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2023-050",
+      "title": "HAIST/MAIA Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2023-11-17",
+      "end_date": "2023-11-19",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": null,
+      "description": "A joint HAIST/MAIA residential AI safety workshop, bringing the Harvard and MIT communities together for a weekend of discussion and connection.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "HAIST"
+      ],
+      "calendar_description": "A joint HAIST/MAIA residential AI safety workshop, bringing the Harvard and MIT communities together for a weekend of discussion and connection.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqe1i60smcpb175gj2o9ic9gjce34cgs32opo6sq3copjc4o38d3581mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWUxaTYwc21jcGIxNzVnajJvOWljOWdqY2UzNGNnczMyb3BvNnNxM2NvcGpjNG8zOGQzNTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2023-11-17T00:00:00",
+        "end": "2023-11-20T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-051",
+      "title": "Spring Technical AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2024-03-22",
+      "end_date": "2024-03-24",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Thomas Larsen",
+          "topic": "AI safety landscape; predicting AI progress"
+        },
+        {
+          "name": "David Bau"
+        },
+        {
+          "name": "Ethan Perez",
+          "topic": "Adversarial robustness, responsible scaling policies, and threat models"
+        },
+        {
+          "name": "Daniel Kokotajlo"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "topic": "AI control; common mistakes in AI safety"
+        },
+        {
+          "name": "Adam Jermyn"
+        },
+        {
+          "name": "Nikola Jurkovic",
+          "topic": "AISST's AI predictions"
+        },
+        {
+          "name": "Romeo Dean",
+          "topic": "AISST's AI predictions"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.\n\nSpeakers / session contributors: Thomas Larsen, David Bau, Ethan Perez, Daniel Kokotajlo, Buck Shlegeris, Adam Jermyn, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqe346kpjcphn71hjie1i6hhj6ob474rjipj2cosm4pj3copjgdpg81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWUzNDZrcGpjcGhuNzFoamllMWk2aGhqNm9iNDc0cmppcGoyY29zbTRwajNjb3BqZ2RwZzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-03-22T00:00:00",
+        "end": "2024-03-25T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-052",
+      "title": "Spring AI Policy Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2024-03-29",
+      "end_date": "2024-03-31",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Trevor Levin",
+          "topic": "AI safety strategic landscape"
+        },
+        {
+          "name": "Gabriel Weil",
+          "topic": "AI liability"
+        },
+        {
+          "name": "Timothy Fist",
+          "topic": "Compute governance"
+        },
+        {
+          "name": "Sam Marks",
+          "topic": "Technical research in AI safety"
+        },
+        {
+          "name": "Stephen Casper",
+          "topic": "Technical research in AI safety"
+        },
+        {
+          "name": "Daniel Kokotajlo",
+          "topic": "AI timelines"
+        },
+        {
+          "name": "Chris Byrd",
+          "topic": "AI and national security"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.\n\nSpeakers / session contributors: Trevor Levin, Gabriel Weil, Timothy Fist, Sam Marks, Stephen Casper, Daniel Kokotajlo, Chris Byrd.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqohpcco3ie34chgjed9jc4pj2cr1c8q3aeb375gj0o9l6pgj6p1k81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcW9ocGNjbzNpZTM0Y2hnamVkOWpjNHBqMmNyMWM4cTNhZWIzNzVnajBvOWw2cGdqNnAxazgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-03-29T00:00:00",
+        "end": "2024-04-01T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-053",
+      "title": "Spring Technical AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2024-04-05",
+      "end_date": "2024-04-07",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A joint AISST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Daniel Kokotajlo",
+          "topic": "AGI timelines; threat models"
+        },
+        {
+          "name": "Lucas Sato",
+          "topic": "AI evaluations"
+        },
+        {
+          "name": "Zac Hatfield-Dodds",
+          "topic": "Moderated Q&A on Anthropic"
+        },
+        {
+          "name": "Sam Marks",
+          "topic": "Lifecycle of a technical AI safety project"
+        },
+        {
+          "name": "Tamay Besiroglu",
+          "topic": "Predicting AI progress"
+        },
+        {
+          "name": "Neil Chowdhury",
+          "topic": "Preparedness"
+        },
+        {
+          "name": "Nikola Jurkovic",
+          "topic": "AISST's AI predictions"
+        },
+        {
+          "name": "Romeo Dean",
+          "topic": "AISST's AI predictions"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A joint AISST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.\n\nSpeakers / session contributors: Daniel Kokotajlo, Lucas Sato, Zac Hatfield-Dodds, Sam Marks, Tamay Besiroglu, Neil Chowdhury, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqphp61h66dj16cs6ccr575i3id3470pm4e3564rm8phh71imco9l81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcXBocDYxaDY2ZGoxNmNzNmNjcjU3NWkzaWQzNDcwcG00ZTM1NjRybThwaGg3MWltY285bDgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-04-05T00:00:00",
+        "end": "2024-04-08T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-054",
+      "title": "MAIA September Social",
+      "category": "Socials",
+      "start_date": "2024-09-20",
+      "end_date": "2024-09-20",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 3rd floor, 245 Main Street, Cambridge",
+      "description": "An early-semester MAIA social with food and board games at CIC. Members were invited to reconnect after the summer, meet newcomers, and share their plans for the semester.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "announcement_only",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "An early-semester MAIA social with food and board games at CIC. Members were invited to reconnect after the summer, meet newcomers, and share their plans for the semester.",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Announcement only; occurrence needs confirmation."
+      }
+    },
+    {
+      "id": "maia-2024-055",
+      "title": "Stephen McAleer: LLM Agents, Alignment, and Control",
+      "category": "Speaker events",
+      "start_date": "2024-10-16",
+      "end_date": "2024-10-16",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Gooseberry, Cambridge; speaker virtual",
+      "description": "Stephen McAleer of OpenAI joined MAIA virtually to discuss language-model agents that can carry out general tasks on computers. His talk connected the promise of these agents, including their potential to accelerate AI research, with the open problem of deploying them safely. The announced discussion covered his agent research and directions for alignment and control, with members gathering at CIC over dinner.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Stephen McAleer",
+          "affiliation": "OpenAI",
+          "participation": "virtual"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "Stephen McAleer of OpenAI joined MAIA virtually to discuss language-model agents that can carry out general tasks on computers. His talk connected the promise of these agents, including their potential to accelerate AI research, with the open problem of deploying them safely. The announced discussion covered his agent research and directions for alignment and control, with members gathering at CIC over dinner.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqphj6pi6apb4c8q30ohm6hh34p36c9hjgpj66thj4pj461hm6d3281mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcXBoajZwaTZhcGI0YzhxMzBvaG02aGgzNHAzNmM5aGpncGo2NnRoajRwajQ2MWhtNmQzMjgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-10-16T00:00:00",
+        "end": "2024-10-17T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-056",
+      "title": "David Krueger: MAIA × AISST Talk",
+      "category": "Speaker events",
+      "start_date": "2024-10-20",
+      "end_date": "2024-10-20",
+      "start_time": "12:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "AISST office, 66 Church Street, Cambridge",
+      "description": "MAIA and AISST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AISST's AI forecasting contest at the same venue.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "David Krueger",
+          "affiliation": "University of Cambridge"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "MAIA and AISST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AISST's AI forecasting contest at the same venue.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqd1g64r66c9o6srj0db3cgs6aohicgqm4cplcdj66e33c4q6ap1k81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWQxZzY0cjY2YzlvNnNyajBkYjNjZ3M2YW9oaWNncW00Y3BsY2RqNjZlMzNjNHE2YXAxazgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-10-20T00:00:00",
+        "end": "2024-10-21T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-057",
+      "title": "MAIA October Social",
+      "category": "Socials",
+      "start_date": "2024-10-25",
+      "end_date": "2024-10-25",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 3rd floor, 245 Main Street, Cambridge",
+      "description": "A MAIA community social at CIC with food, board games, and informal conversation. The gathering was open to members looking to spend time together outside the club’s fellowship and research activities.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "announcement_only",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "A MAIA community social at CIC with food, board games, and informal conversation. The gathering was open to members looking to spend time together outside the club’s fellowship and research activities.",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Announcement only; occurrence needs confirmation."
+      }
+    },
+    {
+      "id": "maia-2024-058",
+      "title": "Fall AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2024-11-01",
+      "end_date": "2024-11-03",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "A residential AISST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Buck Shlegeris",
+          "topic": "AI safety situation; AI control"
+        },
+        {
+          "name": "Lucas Sato",
+          "topic": "Evaluations"
+        },
+        {
+          "name": "Alan Chan",
+          "topic": "Outlines of a Plan"
+        },
+        {
+          "name": "Richard Ngo"
+        },
+        {
+          "name": "Lawrence Chan",
+          "topic": "AI R&D evaluations"
+        },
+        {
+          "name": "David Bau",
+          "topic": "Interpretability and resilience"
+        },
+        {
+          "name": "Nikola Jurkovic",
+          "topic": "AGI 2026 drill"
+        },
+        {
+          "name": "Leo Gao"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "A residential AISST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.\n\nSpeakers / session contributors: Buck Shlegeris, Lucas Sato, Alan Chan, Richard Ngo, Lawrence Chan, David Bau, Nikola Jurkovic, Leo Gao.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqe1jckrjcdhh60q3adhh64o38d9ocgqmcpb460sm4chi6dj6coho81mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWUxamNrcmpjZGhoNjBxM2FkaGg2NG8zOGQ5b2NncW1jcGI0NjBzbTRjaGk2ZGo2Y29obzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-11-01T00:00:00",
+        "end": "2024-11-04T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-059",
+      "title": "Fall AI Safety Residential Workshop",
+      "category": "Workshops",
+      "start_date": "2024-11-15",
+      "end_date": "2024-11-17",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "Essex Woods Retreat Center, Essex, Massachusetts",
+      "description": "The second fall AISST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Hidenori Tanaka",
+          "topic": "Physics of intelligence for AI safety"
+        },
+        {
+          "name": "David Bau",
+          "topic": "Resilience and interpretability"
+        },
+        {
+          "name": "Neev Parikh",
+          "topic": "AI R&D evaluations at METR"
+        },
+        {
+          "name": "Sam Marks",
+          "topic": "Lifecycle of a technical AI safety project"
+        },
+        {
+          "name": "Kevin Liu"
+        },
+        {
+          "name": "Leo Gao",
+          "topic": "Sparse autoencoders"
+        },
+        {
+          "name": "Janet Egan",
+          "topic": "Compute governance"
+        },
+        {
+          "name": "Nikola Jurkovic",
+          "topic": "2026 AGI planning"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [
+        {
+          "label": "Workshop program",
+          "url": "https://aisst.ai/workshops"
+        }
+      ],
+      "cohosts": [
+        "MAIA",
+        "AISST"
+      ],
+      "calendar_description": "The second fall AISST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.\n\nSpeakers / session contributors: Hidenori Tanaka, David Bau, Neev Parikh, Sam Marks, Kevin Liu, Leo Gao, Janet Egan, Nikola Jurkovic.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqchnccpjgp9m6ko62dhgclh36p9h64r3ee34chij2cpl6ks3gpb381mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWNobmNjcGpncDltNmtvNjJkaGdjbGgzNnA5aDY0cjNlZTM0Y2hpajJjcGw2a3MzZ3BiMzgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-11-15T00:00:00",
+        "end": "2024-11-18T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-061",
+      "title": "MAIA November Social",
+      "category": "Socials",
+      "start_date": "2024-11-08",
+      "end_date": "2024-11-08",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 255 Main Street, Cambridge",
+      "description": "MAIA members gathered at CIC for food, refreshments, and board games. The social made space to catch up during the fall semester and discuss plans for the coming winter.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "MAIA members gathered at CIC for food, refreshments, and board games. The social made space to catch up during the fall semester and discuss plans for the coming winter.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "12a1tohlqembpcmo2ns6j686jk",
+        "event_url": "https://www.google.com/calendar/event?eid=MTJhMXRvaGxxZW1icGNtbzJuczZqNjg2amsgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2024-11-08T18:00:00-05:00",
+        "end": "2024-11-08T21:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-062",
+      "title": "Stephen Casper: Pitfalls of Evidence-Based AI Policy",
+      "category": "Speaker events",
+      "start_date": "2024-11-20",
+      "end_date": "2024-11-20",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Cambridge",
+      "description": "Stephen Casper, a MAIA graduate-student member, spoke about pitfalls in evidence-based AI policy. The member talk invited discussion of how evidence is used to guide AI policy and where that approach can go wrong, with food provided for attendees.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "live_event_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Stephen Casper",
+          "affiliation": "MIT; MAIA graduate-student member"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "Stephen Casper, a MAIA graduate-student member, spoke about pitfalls in evidence-based AI policy. The member talk invited discussion of how evidence is used to guide AI policy and where that approach can go wrong, with food provided for attendees.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "_dlgmio9dc5p66q39epiiqdhic8pjadj16gsj2ob468r3idhi70rjed9o74o34d9mcor38pb581mmit31d5gmoqb7dpmmarjk5pnn4po",
+        "event_url": "https://www.google.com/calendar/event?eid=X2RsZ21pbzlkYzVwNjZxMzllcGlpcWRoaWM4cGphZGoxNmdzajJvYjQ2OHIzaWRoaTcwcmplZDlvNzRvMzRkOW1jb3IzOHBiNTgxbW1pdDMxZDVnbW9xYjdkcG1tYXJqazVwbm40cG8gZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "all_day",
+        "start": "2024-11-20T00:00:00",
+        "end": "2024-11-21T00:00:00",
+        "timezone": "America/New_York",
+        "timing_basis": "date_only_unknown_times",
+        "note": "Archival date-only entry; does not imply the activity lasted all day. Original known starts and unknown ends remain in the research fields.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2024-063",
+      "title": "MAIA December Social",
+      "category": "Socials",
+      "start_date": "2024-12-06",
+      "end_date": "2024-12-06",
+      "start_time": "18:00",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, 12th floor, 255 Main Street, Cambridge",
+      "description": "A December MAIA social with food, desserts, and board games at CIC. The event invited members to catch up near the end of the semester and talk about winter plans.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "A December MAIA social with food, desserts, and board games at CIC. The event invited members to catch up near the end of the semester and talk about winter plans.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "9q4tjgmol5j4r21fs9e8a180sg",
+        "event_url": "https://www.google.com/calendar/event?eid=OXE0dGpnbW9sNWo0cjIxZnM5ZThhMTgwc2cgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2024-12-06T18:00:00-05:00",
+        "end": "2024-12-06T21:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "user_estimate",
+        "note": "User-supplied historical estimate: three-hour duration.",
+        "verified": true
+      }
+    }
+  ],
+  "additional_candidates": [
+    {
+      "id": "candidate-2023-11-20-open-source-zac",
+      "title": "Open-Source Contribution Workshop with Zac Hatfield-Dodds",
+      "category": "Workshops",
+      "start_date": "2023-11-20",
+      "end_date": "2023-11-20",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "timezone": "America/New_York",
+      "location": "HAIST office, Cambridge, Massachusetts",
+      "description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AISST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "confirmed_held",
+      "timing_unresolved": [],
+      "speakers": [
+        {
+          "name": "Zac Hatfield-Dodds",
+          "topic": "Contributing to open-source projects"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AISST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "mdnokn2m6nlhp5pc7ddc5na2mk",
+        "event_url": "https://www.google.com/calendar/event?eid=bWRub2tuMm02bmxocDVwYzdkZGM1bmEybWsgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2023-11-20T10:00:00-05:00",
+        "end": "2023-11-20T11:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Uses the researched event schedule.",
+        "verified": true
+      }
+    },
+    {
+      "id": "candidate-2023-iap-causal-interpretability",
+      "title": "Causal Interventions for Interpretability: IAP Workshop",
+      "category": "Workshops",
+      "start_date": "2023-01-23",
+      "end_date": "2023-02-03",
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "MIT4-149 (January23-26 lectures); MIT4-159 (January27 lecture)",
+      "description": "A two-week, not-for-credit IAP workshop supported by MIT AI Alignment introducing causal methods for interpreting neural networks. The January 23–27 lecture week covered causal mediation analysis, induction heads and in-context learning, toy models and algorithmic tasks, probing language models, and broader perspectives on interpretability, with optional hands-on notebook sessions. A following project week was scheduled for January 30–February 3.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "program",
+      "occurrence_evidence": "partially_confirmed",
+      "timing_unresolved": [
+        "start_time",
+        "end_time"
+      ],
+      "speakers": [],
+      "scheduled_speakers": [
+        {
+          "name": "Neel Nanda",
+          "topic": "Project-week kickoff, January 30 at 10:00"
+        }
+      ],
+      "links": [],
+      "calendar_description": "A two-week, not-for-credit IAP workshop supported by MIT AI Alignment introducing causal methods for interpreting neural networks. The January 23–27 lecture week covered causal mediation analysis, induction heads and in-context learning, toy models and algorithmic tasks, probing language models, and broader perspectives on interpretability, with optional hands-on notebook sessions. A following project week was scheduled for January 30–February 3.",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Program overview; a separate dated representation is still needed."
+      }
+    },
+    {
+      "id": "maia-2025-leo-gao-0306",
+      "title": "Member Q&A with Leo Gao",
+      "category": null,
+      "start_date": "2025-03-06",
+      "end_date": "2025-03-06",
+      "start_time": "19:30",
+      "end_time": null,
+      "timezone": "America/New_York",
+      "location": "CIC, Floor 11, Cambridge",
+      "description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AISST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "day_of_evidence",
+      "timing_unresolved": [
+        "end_time"
+      ],
+      "speakers": [
+        {
+          "name": "Leo Gao"
+        }
+      ],
+      "scheduled_speakers": [],
+      "links": [],
+      "calendar_description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AISST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
+      "calendar_import": {
+        "status": "imported",
+        "event_id": "v2didfjhdu472uoh6inmi1t9ms",
+        "event_url": "https://www.google.com/calendar/event?eid=djJkaWRmamhkdTQ3MnVvaDZpbm1pMXQ5bXMgZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBn",
+        "representation": "timed",
+        "start": "2025-03-06T19:30:00-05:00",
+        "end": "2025-03-06T20:00:00-05:00",
+        "timezone": "America/New_York",
+        "timing_basis": "researched_schedule",
+        "note": "Organizer explicitly states30-minute meeting then rollover into social.20:00 ends separate meeting segment; does not imply all interaction with speaker ended.",
+        "verified": true
+      }
+    },
+    {
+      "id": "maia-2026-019-workshop-1",
+      "title": "Technical AI Governance Crash Course",
+      "category": null,
+      "start_date": "2026-04-16",
+      "end_date": "2026-04-16",
+      "start_time": "18:00",
+      "end_time": "19:00",
+      "timezone": "America/New_York",
+      "location": "MIT Room 3-333",
+      "description": "A technical AI governance crash course, scheduled as part of MAIA's Technical Governance Competition, with Adam Billen and Stephen Casper. The session introduced the AI policy landscape and explored how technical knowledge can translate into practical governance mechanisms for participants developing their own proposals.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "announcement_only",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [
+        {
+          "name": "Adam Billen"
+        },
+        {
+          "name": "Stephen Casper"
+        }
+      ],
+      "links": [],
+      "parent_id": "maia-2026-019",
+      "calendar_description": "A technical AI governance crash course, scheduled as part of MAIA's Technical Governance Competition, with Adam Billen and Stephen Casper. The session introduced the AI policy landscape and explored how technical knowledge can translate into practical governance mechanisms for participants developing their own proposals.",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Announcement only; occurrence needs confirmation."
+      }
+    },
+    {
+      "id": "maia-2026-019-workshop-2",
+      "title": "Technical Governance Competition: Policy Deep Dive",
+      "category": null,
+      "start_date": "2026-04-21",
+      "end_date": "2026-04-21",
+      "start_time": "18:00",
+      "end_time": "19:00",
+      "timezone": "America/New_York",
+      "location": "MIT Room 3-333",
+      "description": "A policy deep-dive panel, scheduled as part of MAIA's Technical Governance Competition, with Jeremy Wertheimer and Massachusetts Representative Francisco Paulino. The session complemented the competition's introductory governance workshop as participants developed concrete AI policy proposals and supporting reports.",
+      "date_display": null,
+      "publication_status": "draft",
+      "record_type": "event",
+      "occurrence_evidence": "announcement_only",
+      "timing_unresolved": [],
+      "speakers": [],
+      "scheduled_speakers": [
+        {
+          "name": "Jeremy Wertheimer"
+        },
+        {
+          "name": "Francisco Paulino"
+        }
+      ],
+      "links": [],
+      "parent_id": "maia-2026-019",
+      "calendar_description": "A policy deep-dive panel, scheduled as part of MAIA's Technical Governance Competition, with Jeremy Wertheimer and Massachusetts Representative Francisco Paulino. The session complemented the competition's introductory governance workshop as participants developed concrete AI policy proposals and supporting reports.",
+      "calendar_import": {
+        "status": "held",
+        "reason": "Announcement only; occurrence needs confirmation."
+      }
+    }
+  ],
+  "calendar_import_summary": {
+    "imported_on": "2026-09-15",
+    "calendar_id": "e11a0576562133f0383f64cbca8dad84b0de285f16008b48eed6e80ea3d1f468@group.calendar.google.com",
+    "calendar_name": "🤖 MAIA (public)",
+    "imported": 56,
+    "timed": 31,
+    "date_only": 25,
+    "held": 9,
+    "website_deployed": false,
+    "note": "Calendar entries are public. This website branch remains an undeployed draft. Date-only entries do not imply all-day activity; user-estimated timings remain estimates."
+  }
+}
