@@ -148,7 +148,7 @@
 					{#each run.events as event (event.id)}
 						{@const category = categoryDetails(event)}
 						{@const media = getEventMedia(event)}
-						{@const attendance = section.id !== 'upcoming' ? getEventAttendance(event) : undefined}
+						{@const attendance = getEventAttendance(event)}
 						{@const links = eventLinks(event, media?.sourceUrl)}
 						<article class="event-row" use:reveal>
 						<div class="event-meta">
