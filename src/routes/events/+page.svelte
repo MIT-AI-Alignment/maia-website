@@ -156,7 +156,9 @@
 							{#each section.programs as program}
 								{@const programMedia = getEventMedia(program)}
 								<article class="program-card" use:reveal>
-									{#if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
+									{#if /AI Safety Fundamentals/.test(program.title)}
+										<img class="program-logo" src="/images/maia_mark.svg" alt="MAIA logo" loading="lazy" />
+									{:else if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
 									<h4>{program.title}</h4>
 									<p class="program-dates">{displayDateRange(program)}</p>
 									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
@@ -165,6 +167,7 @@
 							{/each}
 							{#each section.undatedPrograms as program}
 								<article class="program-card" use:reveal>
+									<img class="program-logo" src={program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
 									<h4>{program.title} · {program.organizer}</h4>
 									<p class="program-dates">{program.timing}</p>
 									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
