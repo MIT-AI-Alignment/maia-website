@@ -186,18 +186,6 @@
  .filters button.enabled { background: var(--maia-nav-surface); color: var(--maia-ink); opacity: 1; }
  .filters i { color: var(--category-color); font-size: .8rem; }
  .filter-count { color: var(--maia-muted); font-size: .7rem; padding-left: .15rem; }
- [data-category='programs'] { --category-color: #7650af; }
- [data-category='workshops'] { --category-color: #35766d; }
- [data-category='talks'] { --category-color: #557ca9; }
- [data-category='socials'] { --category-color: #b7714f; }
- [data-category='tabling'] { --category-color: #997942; }
- [data-category='other'] { --category-color: #7a7385; }
- :global(.dark) [data-category='programs'] { --category-color: #ad85e0; }
- :global(.dark) [data-category='workshops'] { --category-color: #70b9ac; }
- :global(.dark) [data-category='talks'] { --category-color: #8fb6e2; }
- :global(.dark) [data-category='socials'] { --category-color: #e6a889; }
- :global(.dark) [data-category='tabling'] { --category-color: #d5b47c; }
- :global(.dark) [data-category='other'] { --category-color: #b8afc4; }
  .timeline-help { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; color: var(--maia-muted); font-size: .72rem; margin-bottom: .8rem; }
  .timeline-help > span { display: inline-flex; align-items: center; gap: .4rem; }
  .bar-key { width: 1.4rem; height: .45rem; background: var(--maia-accent); border-radius: 2px; }
