@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import EventsLayout from '../../components/EventsLayout.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
@@ -15,6 +15,21 @@
 	let activeCategory: Exclude<TimelineCategory, 'programs'> | 'all' = 'all';
 	const eventCategories = TIMELINE_CATEGORIES.filter(category => category.id !== 'programs');
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
+	const highlightTitles: Record<string, string> = {
+		'6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': 'Sunset Cruise',
+		'5oa8mnfra5idfaeotp3g5s0clc@google.com/2026-09-05T22:00:00Z': 'OpenAI Hacking Incident Explained'
+	};
+	$: highlights = eventRows.filter(event => highlightTitles[event.id]);
+	async function openHighlight(click: MouseEvent, event: CalendarEvent) {
+		if (click.ctrlKey || click.metaKey || click.shiftKey || click.altKey) return;
+		click.preventDefault();
+		activeCategory = 'all';
+		await tick();
+		const details = document.getElementById(`details-${encodeURIComponent(event.id)}`) as HTMLDetailsElement;
+		details.open = true;
+		details.querySelector('summary')!.focus({ preventScroll: true });
+		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+	}
 	$: categoryCounts = new Map(eventCategories.map(category => [category.id, eventRows.filter(event => eventCategory(event) === category.id).length]));
 	$: categories = eventCategories.filter(category => categoryCounts.get(category.id)! > 0);
 	$: visibleCount = activeCategory === 'all' ? eventRows.length : categoryCounts.get(activeCategory) ?? 0;
@@ -61,6 +76,27 @@
 
 <EventsLayout view="list">
 	<section>
+		{#if highlights.length}
+			<section class="highlights" aria-labelledby="highlights">
+				<div class="highlights-header">
+					<h2 id="highlights" class="font-heading">Highlights</h2>
+					<a href="/orientation-2026/">Orientation 2026 <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="highlight-grid">
+					{#each highlights as event}
+						{@const media = getEventMedia(event)}
+						<a class="highlight-card" href={`#details-${encodeURIComponent(event.id)}`} on:click={(click) => openHighlight(click, event)}>
+							{#if media}<img src={media.imageUrl} alt={media.imageAlt} />{/if}
+							<div class="highlight-copy">
+								<p>{displayDateRange(event)}</p>
+								<h3>{highlightTitles[event.id]}</h3>
+								<span class="highlight-link">View event <span aria-hidden="true">→</span></span>
+							</div>
+						</a>
+					{/each}
+				</div>
+			</section>
+		{/if}
 		<div class="category-controls">
 			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
 			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
@@ -180,6 +216,20 @@
 </EventsLayout>
 
 <style>
+	.highlights { margin-bottom: 2.5rem; }
+	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.highlights-header a { font-size: .85rem; }
+	.highlight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+	.highlight-card { overflow: hidden; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); color: var(--maia-ink); text-decoration: none; }
+	.highlight-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+	.highlight-copy { padding: 1.1rem 1.25rem 1.25rem; }
+	.highlight-copy p { color: var(--maia-muted); font-size: .8rem; margin: 0 0 .45rem; }
+	.highlight-copy h3 { font-size: 1.2rem; font-weight: 650; line-height: 1.35; margin: 0 0 .7rem; }
+	.highlight-link { color: var(--maia-accent); font-size: .85rem; }
+	.highlight-card:hover { border-color: var(--maia-accent); }
+	.highlight-card:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
+	@media (max-width: 600px) { .highlight-grid { grid-template-columns: 1fr; } }
 	.category-controls { margin-bottom: 1.75rem; }
 	.filter-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: .45rem 1rem; margin-bottom: .7rem; font-size: .85rem; font-weight: 600; }
 	.filter-label span { font-size: .75rem; font-weight: 400; color: var(--maia-muted); }
