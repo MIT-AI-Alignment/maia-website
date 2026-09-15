@@ -31,6 +31,10 @@
 >
 	<section class="mx-auto max-w-4xl">
 		<p class="mb-6">Events, workshops, and conversations from the public MAIA calendar. Times are Eastern (EST/EDT).</p>
+		<nav aria-label="Events view" class="mb-6 flex flex-wrap items-center gap-5 text-sm">
+			<a href="/events/" aria-current="page" class="font-semibold"><i class="fa-solid fa-list-ul mr-2" aria-hidden="true"></i>List view</a>
+			<a href="/events/semester/" class="underline underline-offset-4"><i class="fa-solid fa-chart-gantt mr-2" aria-hidden="true"></i>Semester view</a>
+		</nav>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
 			{#each sections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
