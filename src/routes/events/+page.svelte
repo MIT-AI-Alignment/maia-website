@@ -17,6 +17,8 @@
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
 		'6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': 'Sunset Cruise',
+		'maia-archive-33a39a9fe19563f56735abe5684b7fa5@mitaialignment.org/2026-02-10': 'Nicholas Carlini: AI Security Talk and Q&A',
+		'ihbf247eorb6sscc2g5lmfiqsc@google.com/2026-04-18T17:00:00Z': 'CPW Midway (MIT’s Club Fair)',
 		'5oa8mnfra5idfaeotp3g5s0clc@google.com/2026-09-05T22:00:00Z': 'OpenAI Hacking Incident Explained'
 	};
 	$: highlights = eventRows.filter(event => highlightTitles[event.id]);
