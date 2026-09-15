@@ -18,6 +18,7 @@ export type TimelineCategory = typeof TIMELINE_CATEGORIES[number]['id'];
 // Their original MAIA event announcements identify them as talks.
 const VERIFIED_EVENT_CATEGORIES: Readonly<Record<string, TimelineCategory>> = {
  '2gd2030tkofav427h76h9ec3nn@google.com': 'talks',
+ '5di00sqis1am2hom7g2l8fne0b@google.com': 'talks',
  '531gc0t6lb2acgl7av05boh5ej@google.com': 'talks',
  '5oa8mnfra5idfaeotp3g5s0clc@google.com': 'talks'
 };

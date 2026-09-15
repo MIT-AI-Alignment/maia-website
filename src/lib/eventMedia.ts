@@ -164,7 +164,7 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "kind": "artwork"
   },
   {
-    "calendarId": "_dlgmio9dc5p66q39epiiqe1j6grmap9k60rj6o9m6orm2d1h6krjadpjc9gj0dj5cks6ce3681mmit31d5gmoqb7dpmmarjk5pnn4po",
+    "calendarId": "maia-archive-8347ee4073a667a4157573ba06ee8f8f",
     "imageUrl": "/images/events/speaker-josh-clymer.jpg",
     "imageAlt": "Josh Clymer portrait",
     "sourceUrl": "https://joshclymer.substack.com/",
@@ -172,7 +172,7 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
     "partifulId": "wOCjVImmlyvdKsvQwVcN"
   },
   {
-    "calendarId": "_dlgmio9dc5p66q39epiiqcr5clgm8c1jclgj0d1lcorm8oph6sojaohj70r68chn65ijcp9o81mmit31d5gmoqb7dpmmarjk5pnn4po",
+    "calendarId": "maia-archive-3eead03ea045f7dc1715b386d271e6e8",
     "imageUrl": "/images/events/speaker-aryan-bhatt.jpg",
     "imageAlt": "Aryan Bhatt portrait",
     "sourceUrl": "https://www.matsprogram.org/mentor/bhatt",
