@@ -12,8 +12,8 @@
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
-	let activeCategory: Exclude<TimelineCategory, 'programs'> | 'all' = 'all';
-	const eventCategories = TIMELINE_CATEGORIES.filter(category => category.id !== 'programs');
+	let activeCategory: TimelineCategory | 'all' = 'all';
+	const programCategory = TIMELINE_CATEGORIES.find(category => category.id === 'programs')!;
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
 		'6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': 'Sunset Cruise',
@@ -30,9 +30,9 @@
 		details.querySelector('summary')!.focus({ preventScroll: true });
 		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 	}
-	$: categoryCounts = new Map(eventCategories.map(category => [category.id, eventRows.filter(event => eventCategory(event) === category.id).length]));
-	$: categories = eventCategories.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? eventRows.length : categoryCounts.get(activeCategory) ?? 0;
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length]));
+	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
+	$: visibleCount = activeCategory === 'all' ? data.events.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		const timer = setInterval(() => now = new Date(), 60000);
@@ -72,6 +72,12 @@
 			programs: programs.past.filter(event => eventYear(event) === year)
 		}))
 	];
+	$: filteredSections = sections.map(section => ({
+		...section,
+		events: section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory),
+		programs: activeCategory === 'all' || activeCategory === 'programs' ? section.programs : []
+	})).filter(section => section.events.length || section.programs.length);
+
 </script>
 
 <EventsLayout view="list">
@@ -101,7 +107,7 @@
 			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
 			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
 				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All events <span>{eventRows.length}</span>
+					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length}</span>
 				</button>
 				{#each categories as category}
 					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
@@ -109,25 +115,26 @@
 					</button>
 				{/each}
 			</div>
-			<p class="filter-status" role="status">{visibleCount} {activeCategory === 'all' ? 'events shown' : 'matching events'}</p>
+			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
-			{#each sections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
+			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
-		{#each sections as section}
-			{@const visibleEvents = section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory)}
-			{#if section === sections[1]}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
+		{#each filteredSections as section}
+			{@const visibleEvents = section.events}
+			{#if section.id === sections[1]?.id}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
 			{#if section.events.length || section.programs.length}
 				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
 					{section.title}
-					{#if section.title === 'Upcoming'}
+					{#if section.title === 'Upcoming' && visibleEvents.length}
 						<span class="ml-2 text-sm">(times in Eastern Time)</span>
 					{/if}
 				</h2>
-				<div class="section-grid">
+				<div class="section-grid" class:programs-only={activeCategory === 'programs'} class:events-only={!section.programs.length}>
 					{#if section.programs.length}
 						<aside class="programs" aria-label={`${section.title} programs`}>
-							<h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> {section.id === 'upcoming' ? 'Running this semester' : 'Programs that year'}</h3>
+							<p class="event-category" data-category={programCategory.id}><i class="fa-solid {programCategory.icon}" aria-hidden="true"></i> Programs</p>
+							<h3> {section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'}</h3>
 							<p class="programs-intro">Longer-running programs alongside our events.</p>
 							{#each section.programs as program}
 								{@const programMedia = getEventMedia(program)}
@@ -141,7 +148,7 @@
 							{/each}
 						</aside>
 					{/if}
-					<div class="event-list">
+					{#if activeCategory !== 'programs'}<div class="event-list">
 					{#each groupEventRuns(visibleEvents) as run}
 					<div class="event-run" class:collection={run.collection}>
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
@@ -189,8 +196,8 @@
 					{/each}
 					</div>
 					{/each}
-					{#if !visibleEvents.length}<p class="empty-category">{activeCategory === 'all' ? 'No individual events listed for this period.' : 'No matching events listed for this period.'}</p>{/if}
-					</div>
+					{#if !visibleEvents.length}<p class="empty-category">No individual events listed for this period.</p>{/if}
+					</div>{/if}
 				</div>
 			{/if}
 		{/each}
@@ -286,7 +293,13 @@
 	.event-list { grid-column: 1; grid-row: 1; min-width: 0; }
 	.event-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem; margin-bottom: .85rem; border: 1px solid var(--maia-border); border-radius: .6rem; background: var(--maia-nav-surface); }
 	.event-row:last-child { margin-bottom: 0; }
+	.section-grid.programs-only, .section-grid.events-only { grid-template-columns: minmax(0, 1fr); }
+	.programs-only .programs { grid-column: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+	.programs-only .programs > h3, .programs-only .programs > p { grid-column: 1 / -1; margin-bottom: 0; }
+	.programs-only .program-card { margin-bottom: 0; }
+	@media (max-width: 600px) { .programs-only .programs { grid-template-columns: minmax(0, 1fr); } }
 	.programs { grid-column: 2; grid-row: 1; min-width: 0; }
+	.programs > .event-category { width: fit-content; }
 	.programs > h3 { display: flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; }
 	.programs > h3 i { color: var(--maia-accent); }
 	.programs-intro { font-size: .78rem; line-height: 1.6; color: var(--maia-muted); margin: .5rem 0 1.2rem; }
