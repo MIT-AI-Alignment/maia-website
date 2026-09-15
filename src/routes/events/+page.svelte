@@ -173,6 +173,7 @@
 								<div class="min-w-0">
 									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
 									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
+									{#if event.summary}<p class="event-intro">{event.summary}</p>{/if}
 								</div>
 								{#if media}
 									<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind ?? 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>
@@ -282,6 +283,7 @@
 	.event-location i { color: var(--maia-accent); }
 	.event-description { white-space: pre-line; overflow-wrap: anywhere; font-size: .9rem; line-height: 1.8; color: var(--maia-ink); }
 	.event-description a { color: var(--maia-accent); text-decoration: underline; text-underline-offset: 3px; }
+	.event-intro { margin-top: .5rem; color: var(--maia-muted); font-size: .9rem; line-height: 1.6; max-width: 65ch; }
 	.event-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .6rem; margin-top: 1.15rem; }
 	.source-card { display: flex; align-items: center; gap: .65rem; padding: .85rem; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-nav-surface); font-size: .82rem; font-weight: 600; color: var(--maia-ink); }
 	.source-card:hover { border-color: var(--maia-accent); }
