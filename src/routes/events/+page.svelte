@@ -7,6 +7,7 @@
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
 	import { groupEventRuns } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
+	import { getEventAttendance } from '$lib/eventAttendance';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
@@ -108,8 +109,10 @@
 					{#each run.events as event}
 						{@const category = categoryDetails(event)}
 						{@const media = getEventMedia(event)}
+						{@const attendance = section.id !== 'upcoming' ? getEventAttendance(event) : undefined}
 						{@const links = eventLinks(event, media?.sourceUrl)}
 						<article class="event-row">
+						<div class="event-meta">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
 							{displayDateRange(event)}
 							{#if displayTimeRange(event.start, event.end)}
@@ -117,13 +120,15 @@
 							{:else}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
+						{#if attendance}<span class="event-attendance" role="img" aria-label={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`} title={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`}><i class="fa-solid fa-user-group" aria-hidden="true"></i><span aria-hidden="true">{attendance.count}</span></span>{/if}
+						</div>
 						<div class="event-body">
 							<div class="event-heading" class:has-media={media}>
 								<div class="min-w-0">
 									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
 									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
 								</div>
-								{#if media}<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind === 'photo' ? 'photo' : 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>{/if}
+								{#if media}<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind ?? 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>{/if}
 							</div>
 							{#if event.description || event.location || links.length || media}
 								<details class="event-details" id={`details-${encodeURIComponent(event.id)}`}>
@@ -192,6 +197,8 @@
 	.event-run.collection::after { bottom: 0; }
 	.collection-label { display: flex; align-items: center; gap: .45rem; margin-bottom: 1.15rem; color: var(--maia-accent); font-size: .85rem; font-weight: 700; }
 	.event-body { min-width: 0; container-type: inline-size; }
+	.event-attendance { display: flex; align-items: center; gap: .5rem; width: fit-content; margin-top: .85rem; color: var(--maia-muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+	.event-attendance i { color: var(--maia-accent); font-size: .9rem; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
 	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
