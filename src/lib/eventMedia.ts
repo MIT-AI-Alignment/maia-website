@@ -405,6 +405,12 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  const matched = eventMediaEntries.find(artwork => artwork.calendarId === calendarId || (artwork.partifulId !== undefined && partifulIds.includes(artwork.partifulId)));
  // Refresh image URLs after earlier preview builds left cached failed requests.
  if (matched) return { ...matched, imageUrl: `${matched.imageUrl}?v=20260915` };
+ if (event.kind === 'initiative' && event.url?.includes('cbai.ai/cambria')) {
+  return { imageUrl: '/images/logos/cbai.png', imageAlt: 'Cambridge Boston Alignment Initiative logo', kind: 'artwork' };
+ }
+ if (event.kind === 'initiative' && event.url?.includes('arena.education')) {
+  return { imageUrl: '/images/logos/arena.png', imageAlt: 'ARENA technical AI safety curriculum logo', kind: 'artwork' };
+ }
  if (/\bAISF\b|AI Safety Fundamentals/i.test(event.title)) {
   return {
    imageUrl: '/images/logos/aisf.png',
