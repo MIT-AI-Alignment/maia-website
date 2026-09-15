@@ -14,12 +14,6 @@
 	});
 	$: grouped = splitEvents(data.events, now);
 
-	// Split a description into plain text and URL segments (odd indices are URLs).
-	const urlPattern = /(https?:\/\/[^\s]+?)(?=[.,;:!?)]*(?:\s|$))/;
-	function segments(text: string) {
-		return text.split(urlPattern).map((part, i) => ({ text: part, isLink: i % 2 === 1 }));
-	}
-
 	$: sections = [
 		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming },
 		...Array.from(new Set(grouped.past.map(event => displayDateRange(event).match(/\d{4}/)?.[0]))).map(year => ({
@@ -66,9 +60,9 @@
 							{#if event.description || event.location}
 								<details class="mt-2">
 									<summary class="cursor-pointer">Details{event.location ? ` · ${event.location}` : ''}</summary>
-								<p class="mt-2 max-w-2xl break-words text-maia-950/70 dark:text-maia-100/70">
+								<p class="mt-2 max-w-2xl whitespace-pre-line break-words text-maia-950/70 dark:text-maia-100/70">
 									{#if event.description}
-										{#each segments(event.description) as part}{#if part.isLink}<a href={part.text} target="_blank" rel="noopener noreferrer" class="break-all text-maia-800 underline underline-offset-4 hover:text-maia-700 dark:text-maia-400 dark:hover:text-maia-300">{part.text}</a>{:else}{part.text}{/if}{/each}{event.location ? ' · ' : ''}
+										{#each event.descriptionParts ?? [{ text: event.description, href: undefined }] as part}{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer" class="text-maia-800 underline underline-offset-4 hover:text-maia-700 dark:text-maia-400 dark:hover:text-maia-300">{part.text}</a>{:else}{part.text}{/if}{/each}{event.location ? ' · ' : ''}
 									{/if}{#if event.location}{event.location}{/if}
 								</p>
 								{#if event.url}<a href={event.url}>More about this program →</a>{/if}
