@@ -7,7 +7,7 @@
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
 	import { groupEventRuns } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
-	import { getEventAttendance } from '$lib/eventAttendance';
+	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { reveal } from '$lib/reveal';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
@@ -96,7 +96,7 @@
 						<a class="highlight-card" href={`#details-${encodeURIComponent(event.id)}`} on:click={(click) => openHighlight(click, event)}>
 							{#if media}<img src={media.imageUrl} alt={media.imageAlt} />{/if}
 							<div class="highlight-copy">
-								<p>{displayDateRange(event)}</p>
+								<div class="highlight-meta"><p>{displayDateRange(event)}</p><EventAttendance {event} /></div>
 								<h3>{highlightTitles[event.id]}</h3>
 								<span class="highlight-link">View event <span aria-hidden="true">→</span></span>
 							</div>
@@ -150,14 +150,13 @@
 							{/each}
 						</aside>
 					{/if}
-					{#if activeCategory !== 'programs'}<div class="event-list">
+					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0}>
 					{#each groupEventRuns(visibleEvents) as run}
 					<div class="event-run" class:collection={run.collection}>
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
 					{#each run.events as event (event.id)}
 						{@const category = categoryDetails(event)}
 						{@const media = getEventMedia(event)}
-						{@const attendance = getEventAttendance(event)}
 						{@const links = eventLinks(event, media?.sourceUrl)}
 						<article class="event-row" use:reveal>
 						<div class="event-meta">
@@ -168,7 +167,7 @@
 							{:else}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
-						{#if attendance}<span class="event-attendance" role="img" aria-label={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`} title={`${attendance.approximate ? 'Approximately ' : ''}${attendance.count} attendees`}><i class="fa-solid fa-user-group" aria-hidden="true"></i><span aria-hidden="true">{attendance.count}</span></span>{/if}
+						<EventAttendance {event} />
 						</div>
 						<div class="event-body">
 							<div class="event-heading" class:has-media={!!media}>
@@ -235,6 +234,8 @@
 	.highlight-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 	.highlight-copy { padding: 1.1rem 1.25rem 1.25rem; }
 	.highlight-copy p { color: var(--maia-muted); font-size: .8rem; margin: 0 0 .45rem; }
+	.highlight-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1rem; margin-bottom: .6rem; }
+	.highlight-meta p { margin: 0; }
 	.highlight-copy h3 { font-size: 1.2rem; font-weight: 650; line-height: 1.35; margin: 0 0 .7rem; }
 	.highlight-link { color: var(--maia-accent); font-size: .85rem; }
 	.highlight-card:hover { border-color: var(--maia-accent); }
@@ -255,15 +256,13 @@
 	.event-category i { color: var(--category-color); }
 	.empty-category { color: var(--maia-muted); font-size: .85rem; padding: .5rem 0 1.5rem; }
 	.event-run + .event-run { margin-top: 1.5rem; }
-	.event-run.collection { position: relative; border-left: 4px solid var(--maia-accent); padding: 0 0 .4rem 1rem; margin: 1.5rem 0 1.5rem -1.25rem; }
+	.event-run.collection { position: relative; margin-block: 1.5rem; }
+	.event-run.collection::before { content: ''; position: absolute; top: 0; bottom: 0; left: calc(var(--timeline-axis) - var(--timeline-gutter) - 1.5px); width: .7rem; border-left: 4px solid var(--maia-accent); border-top: 4px solid var(--maia-accent); border-bottom: 4px solid var(--maia-accent); pointer-events: none; }
 	.event-run.collection:first-child { margin-top: 0; }
-	.event-run.collection::before, .event-run.collection::after { content: ''; position: absolute; left: 0; width: .65rem; border-top: 4px solid var(--maia-accent); }
-	.event-run.collection::before { top: 0; }
-	.event-run.collection::after { bottom: 0; }
+	.event-run.collection:last-child { margin-bottom: 0; }
 	.collection-label { display: flex; align-items: center; gap: .45rem; margin-bottom: 1.15rem; color: var(--maia-accent); font-size: .85rem; font-weight: 700; }
 	.event-body { min-width: 0; container-type: inline-size; }
-	.event-attendance { display: flex; align-items: center; gap: .5rem; width: fit-content; margin-top: .85rem; color: var(--maia-muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
-	.event-attendance i { color: var(--maia-accent); font-size: .9rem; }
+	.event-meta :global(.event-attendance) { margin-top: .85rem; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
 	.program-logo { width: 7.5rem; max-height: 5rem; object-fit: contain; margin-bottom: .75rem; }
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
@@ -294,8 +293,11 @@
 	.source-card small { display: block; margin-top: .2rem; color: var(--maia-muted); font-size: .72rem; font-weight: 400; }
 	.source-card .external-icon { margin-left: auto; font-size: .65rem; }
 	.section-grid { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2.5rem; align-items: start; }
-	.event-list { grid-column: 1; grid-row: 1; min-width: 0; }
-	.event-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem; margin-bottom: .85rem; border: 1px solid var(--maia-border); border-radius: .6rem; background: var(--maia-nav-surface); }
+	.event-list { --timeline-gutter: 1.75rem; --timeline-axis: .35rem; position: relative; grid-column: 1; grid-row: 1; min-width: 0; }
+	.event-list.has-events { padding-left: var(--timeline-gutter); }
+	.event-list.has-events::before { content: ''; position: absolute; top: .35rem; bottom: .35rem; left: var(--timeline-axis); width: 1px; background: color-mix(in srgb, var(--maia-accent) 35%, var(--maia-border)); pointer-events: none; }
+	.event-row::before { content: ''; position: absolute; top: 1.7rem; left: calc(var(--timeline-axis) - var(--timeline-gutter) - 1px); width: .6rem; height: .6rem; transform: translateX(-50%); border: 2px solid var(--maia-accent); border-radius: 50%; background: var(--maia-canvas); pointer-events: none; }
+	.event-row { position: relative; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem; margin-bottom: .85rem; border: 1px solid var(--maia-border); border-radius: .6rem; background: var(--maia-nav-surface); }
 	.event-row:last-child { margin-bottom: 0; }
 	.section-grid.programs-only, .section-grid.events-only { grid-template-columns: minmax(0, 1fr); }
 	.programs-only .programs { grid-column: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -322,7 +324,8 @@
 	}
 	@media (max-width: 540px) {
 		.event-row { grid-template-columns: minmax(0, 1fr); gap: .75rem; padding: .9rem; }
-		.event-run.collection { margin-left: 0; padding-left: .75rem; }
+		.event-list { --timeline-gutter: 1.2rem; --timeline-axis: .25rem; }
+		.event-row::before { top: 1.45rem; width: .5rem; height: .5rem; }
 	}
 	summary { overflow-wrap: anywhere; }
 </style>
