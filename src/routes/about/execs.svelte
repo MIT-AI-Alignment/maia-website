@@ -6,6 +6,7 @@
 	const inactiveExecs = getInactiveExecs();
 </script>
 
+<p class="text-sm text-gray-600 dark:text-gray-400">Fall 2026</p>
 <div class="flex my-6 flex-wrap">
 	<!-- <UpdateNotification message="🌹 To be updated Spring 2025! 🌹" /> -->
 	{#each activeExecs as exec}
