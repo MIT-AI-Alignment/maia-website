@@ -5,6 +5,12 @@ import type { CalendarEvent } from './events';
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
+  id: 'cbai-research-fall-2026', title: 'Fall 2026 AI Safety Research Fellowship · CBAI',
+  start: '2026-10-13', end: '2026-12-19', dateLabel: 'October 13–December 18, 2026', kind: 'initiative',
+  description: 'A fully funded, ten-week research fellowship run by the Cambridge Boston Alignment Initiative in Cambridge, Massachusetts. Fellows work with mentors on technical AI safety and governance research, with weekly speaker events, research workshops, and community socials. Applications for this cohort closed September 6; see CBAI for future opportunities.',
+  url: 'https://www.cbai.ai/ais-research-fellowship'
+ },
+ {
   id: 'aisf-iap-2027', title: 'IAP 2027 Intensive AI Safety Fundamentals',
   start: '2027-01-01', end: '2027-02-01', dateLabel: 'January 2027 · exact dates TBD', kind: 'initiative',
   description: 'A planned intensive version of AI Safety Fundamentals during IAP, bringing together foundational readings and discussions in a concentrated format. Exact dates and the session schedule are to be confirmed; this overview shows January as a placeholder month.',
@@ -125,5 +131,34 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
   location: 'Hogsmeade, second floor',
   description: 'Technical AI safety coworking with the ARENA curriculum and TA support.',
   url: 'https://www.arena.education/curriculum'
+ }
+];
+
+// These offerings have no confirmed next-session dates, so they stay outside the dated timeline.
+export const PARTNER_PROGRAMS = [
+ {
+  title: 'Technical AI Safety Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  description: 'Weekly, two-hour discussions in Harvard Square covering AI progress, alignment, interpretability, and technical approaches to AI safety. The published fall application deadline was September 13.',
+  url: 'https://aisst.ai/tech-fellowship'
+ },
+ {
+  title: 'AI Policy Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  description: 'An introductory reading group on AI governance and strategy, meeting weekly in small groups in Harvard Square. The published fall application deadline was September 13.',
+  url: 'https://aisst.ai/policy-fellowship'
+ },
+ {
+  title: 'AI × Biorisk Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  description: 'A new reading group exploring AI-driven biological risks, biodefense, safeguards, and governance. Cohorts meet weekly for two hours in Harvard Square. The published fall application deadline was September 13.',
+  url: 'https://aisst.ai/biorisk-fellowship'
+ },
+ {
+  title: 'AI Safety Workshop Series', organizer: 'AISST / MAIA', timing: 'Joint workshops each semester',
+  description: 'Weekend workshops bringing students and researchers together for talks, small-group discussions, and research sprints on technical AI safety and policy. Individual confirmed workshops appear in the event timeline.',
+  url: 'https://aisst.ai/workshops'
+ },
+ {
+  title: 'CAMBRIA', organizer: 'CBAI', timing: 'Future cohorts · dates not yet announced',
+  description: 'A three-week machine-learning and AI safety bootcamp based on the ARENA curriculum, focused on interpretability and reinforcement learning. Summer 2026 cohorts have finished; register interest with CBAI for future cohorts.',
+  url: 'https://www.cbai.ai/cambria'
  }
 ];
