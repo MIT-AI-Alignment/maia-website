@@ -85,6 +85,11 @@
 			link: 'https://www.rand.org/'
 		}
 	];
+	const priority = ['Anthropic', 'OpenAI', 'Google DeepMind'];
+	organizations.sort((a, b) => {
+		const rank = (name: string) => priority.includes(name) ? priority.indexOf(name) : priority.length;
+		return rank(a.name) - rank(b.name);
+	});
 </script>
 <p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
 		This is a list of some of the organizations our members have worked with.<br>

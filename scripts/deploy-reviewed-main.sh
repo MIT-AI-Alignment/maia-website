@@ -27,6 +27,7 @@ git merge-base --is-ancestor "$approved_commit" HEAD || {
   echo "The approved commit is not on main. Nothing uploaded." >&2
   exit 1
 }
+git checkout --detach "$approved_commit"
 if command -v npm >/dev/null; then
   npm ci
 else

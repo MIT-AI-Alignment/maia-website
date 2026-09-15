@@ -4,6 +4,20 @@ import type { CalendarEvent } from './events';
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
+  id: 'summer-technical-workshop-2026', title: 'MAIA & AISST Summer Technical Workshop',
+  start: '2026-08-28', end: '2026-08-31', kind: 'initiative',
+  location: 'Essex Woods',
+  description: 'A weekend of technical AI safety talks, small-group discussions, and one-on-ones with researchers.',
+  url: '/getinvolved/#workshops'
+ },
+ {
+  id: 'tegmark-member-meeting-2026', title: 'Member meeting with Max Tegmark',
+  start: '2026-04-09T21:30:00Z', end: '2026-04-09T23:30:00Z', kind: 'event',
+  location: 'CIC Gooseberry',
+  description: 'Dinner and discussion on AI safety, mechanistic interpretability, and provably safe systems.',
+  url: 'https://partiful.com/e/stdhTf8es2xF2fdNeIBT'
+ },
+ {
   id: 'aisf-summer-2026', title: 'Summer 2026 AI Safety Fundamentals',
   start: '2026-06-01', end: '2026-08-01', dateLabel: 'June–July 2026', kind: 'initiative',
   description: 'An eight-week reading and discussion program on AI safety. Cohorts met on different days; the archive shows the program months rather than a single session schedule.',

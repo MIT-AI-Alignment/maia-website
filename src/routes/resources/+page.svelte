@@ -10,6 +10,7 @@
 	];
 
 	const startHere = [
+		{ title: 'AI Safety Fundamentals at MAIA', by: 'MIT AI Alignment', blurb: 'Start with our eight-week reading and discussion program. No prior AI safety background required.', link: '/getinvolved/#aisf' },
 		{
 			title: 'AI Safety: a non-technical introduction',
 			by: 'AISST (our sister group at Harvard)',
@@ -19,7 +20,7 @@
 		{
 			title: 'Robert Miles on YouTube',
 			by: 'Robert Miles',
-			blurb: 'The best 10-minute explainers of the core alignment problems. Start with "Intro to AI Safety".',
+			blurb: 'Video explanations of core alignment problems. Start with "Intro to AI Safety".',
 			link: 'https://www.youtube.com/@RobertMilesAI'
 		},
 		{
@@ -46,12 +47,6 @@
 			blurb: 'The careful, step-by-step version of the argument, with probabilities attached to each step.',
 			link: 'https://arxiv.org/abs/2206.13353'
 		},
-		{
-			title: 'AI Safety Fundamentals (online)',
-			by: 'BlueDot Impact',
-			blurb: 'The free online course our own AISF program is based on, if you want to go through it on your own.',
-			link: 'https://bluedot.org/courses/'
-		}
 	];
 
 	const learn = [
@@ -165,18 +160,14 @@
 	</svelte:fragment>
 
 	<SectionContainer id="why-ai-safety" title="Why care about AI safety?" icon="fa-solid fa-triangle-exclamation">
-		<div class="not-prose rounded-xl border-2 border-maia-500 bg-maia-500/5 p-5 mb-6">
+		<div class="not-prose bg-white dark:bg-maia-950 p-5 mb-6">
 			<p class="font-medium !m-0">
 				MAIA's core mission is to empower MIT students to recognize and reduce the potentially
 				existential risks posed by the development of powerful AI systems.
 			</p>
 		</div>
 		<p>
-			AI is expected to reshape every pillar of modern society: the economy, science and mathematics,
-			military strategy, culture at large. This isn't mere speculation. Unprecedented capital
-			investment, rapid algorithmic progress, and consistent gains across frontier benchmarks suggest
-			transformative AI is not a distant hypothetical, but a defining feature of this coming decade.
-			This transformation comes with certain risks. The ones we take most seriously are:
+			More capable AI systems could change how people work, conduct research, and make decisions. We study how to prevent serious harm from these systems, including:
 		</p>
 		<ul>
 			<li>
@@ -196,57 +187,18 @@
 				meaningful notions of democracy and personal self-determination.
 			</li>
 			<li>
-				<strong>Gradual disempowerment:</strong> Even in optimistic scenarios where all of the above
-				are solved, transformative AI will lead to unprecedented cultural changes dominated by
-				disempowerment and the unpredictable predispositions of the deployed powerful AIs.
+				<strong>Gradual disempowerment:</strong> People could gradually lose influence over important decisions as institutions rely more heavily on AI.
 			</li>
 		</ul>
-		<p>
-			Given these predictable challenges, we believe talented and highly motivated young people have
-			a great opportunity to steer the world towards safer, prosperous futures. In particular, we
-			believe MIT students are uniquely positioned to shape their careers in ways that are aimed at
-			such impact. Some of the key features that set them apart are:
-		</p>
-		<ul>
-			<li>
-				<strong>MIT selects for extraordinary people.</strong> Many students here, if sufficiently
-				motivated, have the potential to become world-leading experts in AI governance or agendas of
-				technical safety research.
-			</li>
-			<li>
-				<strong>MIT's resources help its students realize their potential.</strong> For most
-				upperclassmen, their time at the Institute provided the research skills and work experience
-				necessary to quickly adapt to new fields and achieve impact.
-			</li>
-			<li>
-				<strong>Unlike other leading universities, many MIT faculty members are concerned about AI
-				risk.</strong> This includes Max Tegmark, Dylan Hadfield-Menell, Michiel Bakker, and
-				Aleksander Madry, among many others. See <a href="/resources/faculty-labs">MIT faculty and labs</a>.
-			</li>
-			<li>
-				<strong>Graduating from MIT is a strong credential.</strong> By virtue of carrying a degree
-				from this institution, one can pursue many more opportunities. Therefore, empowering students
-				to pursue opportunities that steer the incoming wave, as opposed to merely riding it, can be
-				especially impactful.
-			</li>
-			<li>
-				<strong>MIT has strong communities that support students interested in having a positive
-				impact.</strong> MAIA is well connected and recognized by dozens of safety organizations. Many
-				MAIA alumni work on safety problems at frontier labs. The support from
-				<a href="https://www.cbai.ai/">CBAI</a> through philanthropic funds enables us to pursue
-				initiatives that other student organizations can only dream of. The proximity to
-				<a href="https://aisst.ai/">AISST</a> and other student groups animated by the same mission
-				helps MAIA join a community that expands well outside the bounds of MIT's campus.
-			</li>
-		</ul>
+		<p>MAIA helps students explore these questions through <a href="/getinvolved/#aisf">AI Safety Fundamentals</a>, research projects, and conversations with researchers. You can learn alongside other students and find a concrete problem to work on.</p>
 
-		<h3 class="mt-8 mb-4 text-xl font-heading">Start here</h3>
+		<h3 id="start-here" class="mt-8 mb-4 text-xl font-heading scroll-mt-28">Start here</h3>
 		<div class="not-prose flex flex-col gap-3">
 			{#each startHere as item}
 				<a
 					href={item.link}
-					target="_blank"
-					rel="noopener noreferrer"
+					target={item.link.startsWith("/") ? undefined : "_blank"}
+					rel={item.link.startsWith("/") ? undefined : "noopener noreferrer"}
 					class="block p-4 rounded-xl border border-border-light dark:border-border-dark hover:bg-maia-500/5 transition"
 				>
 					<div class="flex flex-wrap items-baseline gap-x-3">

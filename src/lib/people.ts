@@ -1,3 +1,4 @@
+import organizerPhotos from './organizerPhotos2026.json';
 // Define the Person type with all possible fields
 export type Person = {
 	id: string; // Unique identifier (kebab-case of name)
@@ -163,7 +164,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U08ETD9HPAP-37443c44c576-512',
 		mitEmail: 'anpen118@mit.edu',
-		linkedin: 'linkedin.com/in/anooshka-pendyal',
+		linkedin: 'https://www.linkedin.com/in/anooshka-pendyal',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
@@ -250,10 +251,11 @@ export const PEOPLE: Record<string, Person> = {
 
 	'ionut-gabriel-stan': {
 		id: 'ionut-gabriel-stan',
-		name: 'Ionut Gabriel Stan',
+		name: 'Ionut Stan',
 		position: 'Exec',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09HZL7LYGN-757fb16f89da-512',
 		mitEmail: 'igstan@mit.edu',
+		calendly: 'https://calendar.app.google/GL1Zcbd9FEFQTQPr9',
 		linkedin: 'https://www.linkedin.com/in/stan-ionut-gabriel-3a8aa71a5/',
 		isExec: true,
 		isOrg: false,
@@ -501,6 +503,13 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true,
 	},
 };
+
+// Consented Fall 2026 submissions update existing profiles without replacing contact details.
+for (const submitted of organizerPhotos) {
+ const existing = Object.values(PEOPLE).find(person => person.name.toLowerCase() === submitted.name.toLowerCase());
+ if (existing) existing.imageUrl = submitted.imageUrl;
+ else PEOPLE[submitted.id] = { ...submitted, position: 'Organizer', isOrg: true, isActive: true };
+}
 
 // Helper functions to get filtered lists of people
 export const getActiveExecs = () =>
