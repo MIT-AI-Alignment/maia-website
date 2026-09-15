@@ -60,9 +60,40 @@ export type Person = {
 	joinDate?: string; // When they joined MAIA (YYYY-MM format)
 };
 
+function initialsAvatar(initials: string): string {
+	const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="8" fill="#e5e7eb"/><text x="48" y="50" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="32" fill="#4b5563">${initials}</text></svg>`;
+	return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 // Main people database
 export const PEOPLE: Record<string, Person> = {
 	// Executives
+	'roman-ross': {
+		id: 'roman-ross',
+		name: 'Roman Ross',
+		position: 'Board Member',
+		imageUrl: '/images/people/roman-ross-fall-2026.jpg',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
+		execOrder: 2,
+		linkedin: 'https://www.linkedin.com/in/roman-ross/',
+		calendly: 'https://calendly.com/roman-alex-ross/30min',
+	},
+
+	'jason-chin': {
+		id: 'jason-chin',
+		name: 'Jason Chin',
+		position: 'Board Member',
+		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
+		isExec: true,
+		isOrg: false,
+		isActive: true,
+		execOrder: 3,
+		linkedin: 'https://www.linkedin.com/in/jasonchin9/',
+		personalPage: 'https://jasonchin.dev',
+	},
+
 	'ionel-chiosa': {
 		id: 'ionel-chiosa',
 		name: 'Ionel Chiosa',
@@ -73,20 +104,19 @@ export const PEOPLE: Record<string, Person> = {
 		calendly: 'https://cal.com/ionel-chiosa',
 		isExec: true,
 		isActive: true,
-		execOrder: 3,
+		execOrder: 5,
 	},
 
 	'felix-tudose': {
 		id: 'felix-tudose',
 		name: 'Felix Tudose',
-		position: 'Director',
+		position: 'Former Executive',
 		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U09DYAN0R24-a041db176925-512',
 		mitEmail: 'felixrt@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/rares-felix-tudose-774aab23b/',
 		calendly: 'https://cal.com/felixrt',
-		isExec: true,
+		isExec: false,
 		isActive: true,
-		execOrder: 2,
 	},
 
 	'anna-krolik': {
@@ -106,8 +136,8 @@ export const PEOPLE: Record<string, Person> = {
 	'nixon-hanna': {
 		id: 'nixon-hanna',
 		name: 'Nixon Hanna',
-		position: 'Director of AISF',
-		imageUrl: '/images/people/nixon-hanna.jpeg',
+		position: '',
+		imageUrl: '/images/people/nixon-hanna-fall-2026.png',
 		mitEmail: 'noxin@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/nixon-hanna/',
 		personalPage: 'https://nixonhanna.com',
@@ -118,6 +148,174 @@ export const PEOPLE: Record<string, Person> = {
 
 
 	// ORGANIZERS 
+	'suraj-reddy': {
+		id: 'suraj-reddy',
+		name: 'Suraj Reddy',
+		imageUrl: '/images/people/suraj-reddy-fall-2026.png',
+		linkedin: 'https://www.linkedin.com/in/smrdy/',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'sam-warman': {
+		id: 'sam-warman',
+		name: 'Sam Warman',
+		imageUrl: '/images/people/sam-warman-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/sam-warman-843964257/',
+	},
+
+	'adeeb-alshehry': {
+		id: 'adeeb-alshehry',
+		name: 'Adeeb Alshehry',
+		imageUrl: initialsAvatar('AA'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'amita-shukla': {
+		id: 'amita-shukla',
+		name: 'Amita Shukla',
+		imageUrl: initialsAvatar('AS'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'anango-prabhat': {
+		id: 'anango-prabhat',
+		name: 'Anango Prabhat',
+		imageUrl: '/images/people/anango-prabhat-fall-2026.png',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/anango-prabhat-28506a361/',
+	},
+
+	'anlan-xu': {
+		id: 'anlan-xu',
+		name: 'AnLan Xu',
+		imageUrl: '/images/people/anlan-xu-fall-2026.png',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/anlan-xu-1658922b6/',
+	},
+
+	'april-sun': {
+		id: 'april-sun',
+		name: 'April Sun',
+		imageUrl: initialsAvatar('AS'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'francisco-pernice': {
+		id: 'francisco-pernice',
+		name: 'Francisco Pernice',
+		imageUrl: initialsAvatar('FP'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'isabella-wu': {
+		id: 'isabella-wu',
+		name: 'Isabella Wu',
+		imageUrl: initialsAvatar('IW'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'lauren-slater-siegmund': {
+		id: 'lauren-slater-siegmund',
+		name: 'Lauren Slater Siegmund',
+		imageUrl: initialsAvatar('LS'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'leon-chen': {
+		id: 'leon-chen',
+		name: 'Leon Chen',
+		imageUrl: initialsAvatar('LC'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'melat-ghebreselassie': {
+		id: 'melat-ghebreselassie',
+		name: 'Melat Ghebreselassie',
+		imageUrl: '/images/people/melat-ghebreselassie-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/melatg/',
+	},
+
+	'melissa-li': {
+		id: 'melissa-li',
+		name: 'Melissa Li',
+		imageUrl: initialsAvatar('ML'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'michelle-gao': {
+		id: 'michelle-gao',
+		name: 'Michelle Gao',
+		imageUrl: initialsAvatar('MG'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'paulius-aleknavicius': {
+		id: 'paulius-aleknavicius',
+		name: 'Paulius Aleknavicius',
+		imageUrl: initialsAvatar('PA'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'ray-zhang': {
+		id: 'ray-zhang',
+		name: 'Ray Zhang',
+		imageUrl: '/images/people/ray-zhang-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
+	'thanush-patlolla': {
+		id: 'thanush-patlolla',
+		name: 'Thanush Patlolla',
+		imageUrl: '/images/people/thanush-patlolla-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		linkedin: 'https://www.linkedin.com/in/thanush-patlolla/',
+	},
+
+	'weian-xie': {
+		id: 'weian-xie',
+		name: 'Weian Xie (Andrew)',
+		imageUrl: initialsAvatar('WX'),
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
 	'david-turturean': {
 		id: 'david-turturean',
 		name: 'David Turturean',
@@ -128,7 +326,7 @@ export const PEOPLE: Record<string, Person> = {
 		// mitEmail: 'davidct@mit.edu',
 		isExec: false,
 		isActive: true,
-		isOrg: true,
+		isOrg: false,
 		projects: ['phone-line-attacks'],
 		projectRoles: {
 			'phone-line-attacks': 'Phone-line Attacks - Lead'
@@ -166,7 +364,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'anpen118@mit.edu',
 		linkedin: 'linkedin.com/in/anooshka-pendyal',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -179,7 +377,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'emily_yu@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/emily-yu-398249278/',
 		isExec: false,
-		isOrg: true,
+		isOrg: false,
 		isActive: true,
 	},
 
@@ -265,7 +463,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
-		execOrder: 5,
+		execOrder: 6,
 	},
 
 	'reshma-kosaraju': {
@@ -522,7 +720,7 @@ export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person
 
 export const getOrganizers = () =>
 	Object.values(PEOPLE)
-		.filter((person) => person.isOrg)
+		.filter((person) => person.isOrg && person.isActive)
 		.sort((a, b) => (a.orgOrder ?? 999) - (b.orgOrder ?? 999));
 
 export const getPeopleByProject = (projectId: string) =>
