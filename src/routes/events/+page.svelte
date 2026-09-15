@@ -5,7 +5,7 @@
 	import { CONFIG } from '$lib/config';
 	import { displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
-	import { groupEventRuns } from '$lib/eventCollections';
+	import { groupEventRuns, type EventRun } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { reveal } from '$lib/reveal';
@@ -70,18 +70,31 @@
 		return [...links.values()].sort((a, b) => Number(b.icon === 'fa-ticket') - Number(a.icon === 'fa-ticket'));
 	}
 
+	function eventRuns(events: CalendarEvent[], includePlanned: boolean): (EventRun & { planned?: boolean })[] {
+		if (!includePlanned) return groupEventRuns(events);
+		const foodTruckIndex = events.findLastIndex(event => /bon me.*food truck/i.test(event.title));
+		const insertionIndex = foodTruckIndex + 1;
+		return [
+			...groupEventRuns(events.slice(0, insertionIndex)),
+			{ collection: null, events: [], planned: true },
+			...groupEventRuns(events.slice(insertionIndex))
+		];
+	}
+
 	$: sections = [
-		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming },
+		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, hasPlannedTalks: true },
 		...Array.from(new Set([...grouped.past, ...programs.past].map(eventYear))).sort().reverse().map(year => ({
 			title: `Past · ${year}`, id: `year-${year}`, events: grouped.past.filter(event => eventYear(event) === year),
-			programs: programs.past.filter(event => eventYear(event) === year)
+			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], hasPlannedTalks: false
 		}))
 	];
 	$: filteredSections = sections.map(section => ({
 		...section,
+		hasPlannedTalks: section.hasPlannedTalks && (activeCategory === 'all' || activeCategory === 'talks'),
 		events: section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory),
-		programs: activeCategory === 'all' || activeCategory === 'programs' ? section.programs : []
-	})).filter(section => section.events.length || section.programs.length);
+		programs: activeCategory === 'all' || activeCategory === 'programs' ? section.programs : [],
+		undatedPrograms: activeCategory === 'all' || activeCategory === 'programs' ? section.undatedPrograms : []
+	})).filter(section => section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedTalks);
 
 </script>
 
@@ -122,58 +135,24 @@
 			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedTalks.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
-			{#if activeCategory === 'all' || activeCategory === 'talks'}<a href="#planned-talks">Planned talks</a>{/if}
-			{#if activeCategory === 'all' || activeCategory === 'programs'}<a href="#partner-programs">Partner programs</a>{/if}
 			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
-		{#if activeCategory === 'all' || activeCategory === 'talks'}
-			<section class="planned-talks" aria-labelledby="planned-talks">
-				<h2 id="planned-talks" class="font-heading text-2xl font-[650]">Planned Fall 2026 Talks</h2>
-				<p class="text-sm text-maia-950/70 dark:text-maia-100/70">Dates, times, locations, and topics will be announced once confirmed.</p>
-				<div class="grid gap-4 sm:grid-cols-2 mt-4">
-					{#each plannedTalks as speaker}
-						<article class="planned-talk">
-							<p class="event-category" data-category="talks"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Talks</p>
-							<h3 class="font-heading text-xl font-[650]">Talk with {speaker}</h3>
-							<p class="mt-2 text-sm text-maia-950/70 dark:text-maia-100/70">Fall 2026 · Date TBD</p>
-						</article>
-					{/each}
-				</div>
-			</section>
-		{/if}
-		{#if activeCategory === 'all' || activeCategory === 'programs'}
-			<section class="partner-programs" aria-labelledby="partner-programs">
-				<h2 id="partner-programs" class="font-heading text-2xl font-[650]">Partner Programs & Workshops</h2>
-				<p class="text-sm text-maia-950/70 dark:text-maia-100/70">Explore opportunities from AISST at Harvard and the Cambridge Boston Alignment Initiative (CBAI), alongside our joint workshops. Check each organizer’s page for participation details and the latest schedule.</p>
-				<div class="grid gap-4 sm:grid-cols-2 mt-4">
-					{#each PARTNER_PROGRAMS as program}
-						<article class="partner-program">
-							<p class="event-category" data-category="programs"><i class="fa-solid {programCategory.icon}" aria-hidden="true"></i> {program.organizer}</p>
-							<h3 class="font-heading text-xl font-[650]">{program.title}</h3>
-							<p class="mt-2 text-sm font-medium">{program.timing}</p>
-							<p class="my-3 text-sm text-maia-950/70 dark:text-maia-100/70">{program.description}</p>
-							<a class="text-sm" href={program.url}>Explore the program <span aria-hidden="true">→</span></a>
-						</article>
-					{/each}
-				</div>
-			</section>
-		{/if}
 		{#each filteredSections as section}
 			{@const visibleEvents = section.events}
 			{#if section.id === sections[1]?.id}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
-			{#if section.events.length || section.programs.length}
+			{#if section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedTalks}
 				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
 					{section.title}
 					{#if section.title === 'Upcoming' && visibleEvents.length}
 						<span class="ml-2 text-sm">(times in Eastern Time)</span>
 					{/if}
 				</h2>
-				<div class="section-grid" class:programs-only={activeCategory === 'programs'} class:events-only={!section.programs.length}>
-					{#if section.programs.length}
+				<div class="section-grid" class:programs-only={activeCategory === 'programs'} class:events-only={!section.programs.length && !section.undatedPrograms.length}>
+					{#if section.programs.length || section.undatedPrograms.length}
 						<aside class="programs" aria-label={`${section.title} programs`}>
 							<p class="event-category" data-category={programCategory.id}><i class="fa-solid {programCategory.icon}" aria-hidden="true"></i> Programs</p>
 							<h3> {section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'}</h3>
-							<p class="programs-intro">Longer-running programs alongside our events.</p>
+							<p class="programs-intro">{#if section.id === 'upcoming'}Alongside MAIA’s programs, we share opportunities from AISST at Harvard and CBAI, closely connected groups in our local AI safety community. Each listing names its organizer.{:else}Programs that ran alongside our events throughout the year.{/if}</p>
 							{#each section.programs as program}
 								{@const programMedia = getEventMedia(program)}
 								<article class="program-card" use:reveal>
@@ -184,10 +163,30 @@
 									{#if program.url}<a href={program.url}>{program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
 								</article>
 							{/each}
+							{#each section.undatedPrograms as program}
+								<article class="program-card" use:reveal>
+									<h4>{program.title} · {program.organizer}</h4>
+									<p class="program-dates">{program.timing}</p>
+									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
+									<a href={program.url}>Explore the program <span aria-hidden="true">→</span></a>
+								</article>
+							{/each}
 						</aside>
 					{/if}
-					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0}>
-					{#each groupEventRuns(visibleEvents) as run}
+					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedTalks}>
+					{#each eventRuns(visibleEvents, section.hasPlannedTalks) as run}
+					{#if run.planned}
+						{#each plannedTalks as speaker}
+							<article class="event-row" use:reveal>
+								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">Fall 2026<span class="mt-1 block">Date TBD</span></p></div>
+								<div class="event-body">
+									<p class="event-category" data-category="talks"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Talks</p>
+									<h3 class="font-heading text-xl font-[650]">Talk with {speaker}</h3>
+									<p class="event-intro">Planned for fall. Date, time, location, and topic will be announced once confirmed.</p>
+								</div>
+							</article>
+						{/each}
+					{:else}
 					<div class="event-run" class:collection={run.collection}>
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
 					{#each run.events as event (event.id)}
@@ -233,8 +232,9 @@
 					</article>
 					{/each}
 					</div>
+					{/if}
 					{/each}
-					{#if !visibleEvents.length}<p class="empty-category">No individual events listed for this period.</p>{/if}
+					{#if !visibleEvents.length && !section.hasPlannedTalks}<p class="empty-category">No individual events listed for this period.</p>{/if}
 					</div>{/if}
 				</div>
 			{/if}
@@ -261,9 +261,6 @@
 </EventsLayout>
 
 <style>
-	.planned-talks, .partner-programs { margin-block: 2rem; }
-	#planned-talks, #partner-programs { scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); margin-bottom: .5rem; }
-	.planned-talk, .partner-program { padding: 1.25rem; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); }
 	.highlights { margin-bottom: 2.5rem; }
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
