@@ -63,11 +63,36 @@ test('invalid calendar dates fail; empty data produces no fictional semesters', 
 
 test('archived researcher-and-topic titles use explicit talk formats from their descriptions', async () => {
  const archive = JSON.parse(await readFile(new URL('../docs/event-archive-draft.json', import.meta.url), 'utf8'));
- for (const id of ['maia-2026-001', 'maia-2026-010', 'maia-2026-011', 'maia-2026-013', 'maia-2026-018']) {
+ for (const id of ['maia-2026-001', 'maia-2026-010', 'maia-2026-011', 'maia-2026-013', 'maia-2026-018', 'maia-2024-055']) {
   const archivedEvent = archive.events.find(item => item.id === id);
   assert.ok(archivedEvent, `Missing regression fixture ${id}`);
   assert.equal(eventCategory(archivedEvent), 'talks', archivedEvent.title);
  }
+});
+
+test('hackathons and verified challenges stay distinct from talks and workshops', () => {
+ for (const title of ['AISF Capstone Hackathon', 'Misalign your own Model: Workshop & Hackathon', 'GPT BattlePrompting', 'Reward Hacking Event', 'Mission Strawberry: Fool the Language Model', 'Estimation and Forecasting Challenge']) {
+  assert.equal(eventCategory({ title, description: 'Teams presented their projects, then heard a guest talk.' }), 'hackathons', title);
+ }
+ assert.equal(eventCategory({ title: 'Talk: Designing AI Evaluations', description: 'The speaker discussed a previous hackathon.' }), 'talks');
+ assert.equal(eventCategory({ title: 'Researcher: Hands-on Workshop', description: 'A researcher presented an exercise.' }), 'workshops');
+ assert.equal(eventCategory({ title: 'Planning afternoon', description: 'Bring a challenge you are working on.' }), 'other');
+});
+
+test('verified empty-description speakers use event identities instead of guessing from names', () => {
+ for (const id of ['2gd2030tkofav427h76h9ec3nn@google.com', '531gc0t6lb2acgl7av05boh5ej@google.com', '5oa8mnfra5idfaeotp3g5s0clc@google.com']) {
+  assert.equal(eventCategory({ id: `${id}/2024-04-04`, title: 'Named researcher and research topic', description: '' }), 'talks');
+ }
+ assert.equal(eventCategory({ id: 'unverified', title: 'Named researcher: Research topic', description: '' }), 'other');
+});
+
+test('labs, tabletop exercises, office socials and demo booths use their concrete event formats', () => {
+ for (const [title, expected] of [
+  ['Introduction to AI Safety lab', 'workshops'], ['AGI Tabletop Exercises + Food & Drinks', 'workshops'],
+  ['Office Tours + Boba', 'socials'], ['MAIA Open House + Boba', 'socials'],
+  ['MAIA Office Opening Celebration', 'socials'], ['Demo Booths', 'tabling'],
+  ['Due: AI Safety Fundamentals Application', 'other']
+ ]) assert.equal(eventCategory({ title }), expected, title);
 });
 
 test('title categories take precedence over incidental speaker descriptions', () => {
