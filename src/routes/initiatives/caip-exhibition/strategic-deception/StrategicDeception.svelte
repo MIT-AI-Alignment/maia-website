@@ -6,6 +6,7 @@
 	import ContentCardsMasonry from '../../../../components/ContentCardsMasonry.svelte';
 	import Link from '../../../../components/Link.svelte';
 	import ImageWithCaption from '../../../../components/ImageWithCaption.svelte';
+	const alignmentFaking = PAPERS.find((paper) => paper.title === 'Alignment faking in large language models');
 </script>
 
 <div class="mt-8 space-y-8">
@@ -40,10 +41,12 @@
 				</p>
 			</div>
 			<div class="md:w-1/4">
+				{#if alignmentFaking}
 				<Paper
 					textSize="sm"
-					{...PAPERS.find((paper) => paper.title === 'Alignment faking in large language models')}
+					{...alignmentFaking}
 				/>
+				{/if}
 			</div>
 		</div>
 	</DarkModeCard>

@@ -79,6 +79,7 @@
 	afterUpdate(() => {
 		if (browser) {
 			document.documentElement.style.setProperty('--navbar-height', navbarHeight);
+			document.documentElement.style.setProperty('--header-height', headerHeight ? `${headerHeight}px` : navbarHeight);
 		}
 	});
 	
@@ -126,7 +127,7 @@
 						<img 
 							src={$theme === 'dark' ? "/images/brand/maia-horizontal-size-5-dark-transparent.svg" : "/images/brand/maia-horizontal-size-5-light-transparent.svg"}
 							alt="MAIA logo" 
-							class="h-8 w-auto"
+							class="h-10 sm:h-12 w-auto"
 						/>
 					</a>
 				</div>

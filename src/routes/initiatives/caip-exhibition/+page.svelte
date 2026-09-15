@@ -73,7 +73,8 @@
 				class="w-full h-full object-cover"
 			/>
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-light/70 to-surface-light dark:via-surface-dark/70 dark:to-surface-dark"
+				class="absolute inset-0"
+				style="background: var(--maia-canvas); opacity: 0.95;"
 			/>
 		</div>
 
@@ -90,7 +91,7 @@
 
 			<!-- Introduction Section -->
 			<div class="mt-12 space-y-8 max-w-5xl">
-				<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 					{#each phoneLineTeam as person}
 						<Profile
 							personId={person.id}

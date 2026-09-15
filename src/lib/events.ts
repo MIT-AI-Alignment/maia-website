@@ -1,9 +1,13 @@
+export type EventDescriptionPart = { text: string; href?: string };
+
 export type CalendarEvent = {
  id: string;
  title: string;
+ summary?: string;
  start: string;
  end?: string;
  description?: string;
+ descriptionParts?: EventDescriptionPart[];
  location?: string;
  url?: string;
  kind?: 'event' | 'initiative';

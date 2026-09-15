@@ -2,20 +2,19 @@
 export const CONFIG = {
     banner: {
         visible: true,
-        text: "Orientation 2026: fill out the MAIA interest form to grab merch at our events!",
+        text: "Join the MAIA mailing list for updates on events, programs, and opportunities.",
         link: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
-        ctaText: "Fill it out"
+        ctaText: "Join mailing list"
     },
     orientation: {
         // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
-        // Submitting it is what unlocks merch at orientation events.
         interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
         // Popup shown on first load (once per browser session) that sends people to the orientation page.
         // Hidden automatically on the orientation page itself.
         popup: {
-            visible: true,
+            visible: false,
             title: "Welcome to MAIA!",
-            text: "Orientation 2026 is happening now. See the schedule, RSVP to events, and fill out the interest form to grab merch.",
+            text: "Explore MAIA's orientation events and join our mailing list for updates throughout the year.",
             ctaText: "Go to Orientation 2026",
             dismissText: "Maybe later",
             href: "/orientation-2026/"
@@ -23,7 +22,7 @@ export const CONFIG = {
         // The printed banner + foam-board QR codes encode the bare homepage URL (and MIT's http->https
         // redirect drops any path), so the homepage sends phone visitors that arrive with no referrer
         // (= QR scans) straight to the form, once per device. Set to "" to turn this off.
-        homepageQrRedirectUntil: "2026-10-01"
+        homepageQrRedirectUntil: ""
     },
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",

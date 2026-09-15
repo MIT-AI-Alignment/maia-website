@@ -258,7 +258,13 @@
 	heroTitle="MIT & Harvard Classes"
 	centerTitle={true}
 >
-	<SectionContainer title="Classes" icon="fas fa-chalkboard-teacher">
+	<SectionContainer title="Choose a starting point" icon="fas fa-chalkboard-teacher">
+ <div class="not-prose grid gap-4 md:grid-cols-3 mb-8">
+  <div class="p-5 bg-surface-light-alt"><h3 class="font-semibold mb-2">New to AI safety?</h3><p>Start with <a href="/getinvolved/#aisf">MAIA’s AISF program</a>. You do not need an ML course to join the discussion.</p></div>
+  <div class="p-5 bg-surface-light-alt"><h3 class="font-semibold mb-2">Technical research</h3><p>Build Python, linear algebra, and probability foundations before introductory ML. Choose advanced classes around a project—not a checklist.</p></div>
+  <div class="p-5 bg-surface-light-alt"><h3 class="font-semibold mb-2">Governance and ethics</h3><p>Explore Ethics of Computing and societal-impact courses. Talk with someone working in your area before choosing a full course load.</p></div>
+ </div>
+ <p>This is a subject directory, not a ranking or a claim that every course is necessary for AI safety. <a href="/#chat-with-us">Talk with a MAIA member</a> about your background and goals.</p>
 		<p class="mb-6">
 			Use these subjects to build the skills relevant to the work you want to do. You do not need to
 			take every course: choose suitable foundations, then explore technical research or ethics and

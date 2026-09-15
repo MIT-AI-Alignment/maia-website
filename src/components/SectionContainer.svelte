@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
 	export let id: string | undefined = undefined;
 	export let title = '';
 	export let icon = '';
 </script>
 
-<section 
+<section use:reveal
 	id={id} 
 	class="maia-section mb-6 sm:mb-8 scroll-mt-24 p-4 sm:p-6"
 >

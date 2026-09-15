@@ -44,3 +44,40 @@ test('all-day DTEND is exclusive; ongoing events stay upcoming', () => {
 test('invalid input fails instead of masquerading as an empty calendar', () => {
  assert.throws(() => readCalendarEvents('<html>Unavailable</html>'));
 });
+
+test('calendar HTML retains labeled RSVP and resource links without exposing markup', () => {
+ const [item] = readCalendarEvents(calendar(event('UID:links', 'DTSTART:20260901T180000Z', 'SUMMARY:Talk',
+  'DESCRIPTION:<p>Join our discussion.</p><p><a href="https://partiful.com/e/abc?x=1&amp;y=2"><b>RSVP here</b></a> or read <a href="https://example.org/paper">the paper</a>.</p>'
+ )));
+ assert.equal(item.description, 'Join our discussion.\nRSVP here or read the paper.');
+ assert.deepEqual(item.descriptionParts.filter(part => part.href), [
+  {text:'RSVP here',href:'https://partiful.com/e/abc?x=1&y=2'},
+  {text:'the paper',href:'https://example.org/paper'}
+ ]);
+});
+
+test('bare calendar URLs get concise labels and retain balanced parentheses', () => {
+ const [item] = readCalendarEvents(calendar(event('UID:bare', 'DTSTART:20260901T180000Z', 'SUMMARY:Talk',
+  'DESCRIPTION:RSVP: https://luma.com/example. Read (https://example.org/paper_(version)).'
+ )));
+ assert.equal(item.description, 'RSVP: Luma event. Read (example.org).');
+ assert.deepEqual(item.descriptionParts.filter(part => part.href).map(part => part.href),
+  ['https://luma.com/example', 'https://example.org/paper_(version)']);
+});
+
+test('unsafe protocols and HTML stay inert while safe encoded HTTP links remain usable', () => {
+ const [item] = readCalendarEvents(calendar(event('UID:untrusted', 'DTSTART:20260901T180000Z', 'SUMMARY:Talk',
+  'DESCRIPTION:<script>https://evil.example/</script><a href="javascript:alert(1)">bad</a> <a href="data:text/html,test">data</a> <a href="/relative">relative</a> <a href="https://">broken</a> <a href="https&#58;//example.org/?x=1&amp;y=2" onclick="alert(1)">&lt;img src=x onerror=alert(1)&gt;</a>'
+ )));
+ assert.deepEqual(item.descriptionParts.filter(part => part.href), [
+  {text:'<img src=x onerror=alert(1)>',href:'https://example.org/?x=1&y=2'}
+ ]);
+ assert.equal(item.description, 'bad data relative broken <img src=x onerror=alert(1)>');
+});
+
+test('plain-text calendar paragraph breaks survive description parsing', () => {
+ const [item] = readCalendarEvents(calendar(event('UID:paragraphs', 'DTSTART:20260901T180000Z', 'SUMMARY:Talk',
+  'DESCRIPTION:First paragraph.\\n\\nSecond paragraph.\\nhttps://partiful.com/e/abc'
+ )));
+ assert.equal(item.description, 'First paragraph.\n\nSecond paragraph.\nPartiful event');
+});

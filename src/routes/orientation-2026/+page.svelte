@@ -3,46 +3,15 @@
 	import SectionContainer from '../../components/SectionContainer.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
+	import { ORIENTATION_2026_RSVP_EVENTS as rsvpEvents } from '$lib/eventCollections';
 
 	const sections = [
-		{ id: 'form', title: 'Interest Form', icon: 'fa-solid fa-pen-to-square' },
+		{ id: 'form', title: 'Mailing List', icon: 'fa-solid fa-envelope' },
 		{ id: 'schedule', title: 'Schedule', icon: 'fa-solid fa-calendar-days' },
 		{ id: 'calendar', title: 'Google Calendar', icon: 'fa-solid fa-calendar' },
 		{ id: 'rsvp', title: 'RSVP Links', icon: 'fa-solid fa-ticket' }
 	];
 
-	const rsvpEvents = [
-		{
-			name: 'Google Rooftop Social',
-			href: 'https://partiful.com/e/z9BcsIsKg9lJ3OLqqqCv',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Rock Climbing',
-			href: 'https://partiful.com/e/sHHsvkCC5JQ0WBFw3b7J',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Estimation and Forecasting Challenge',
-			href: 'https://partiful.com/e/l78vbKK6kExCPvVnvNPl?c=hBong26D',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'OpenAI Hacking Incident Explained',
-			href: 'https://partiful.com/e/MeP3Pu6eCsri65ml6MOQ',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'AGI Tabletop Exercises',
-			href: 'https://partiful.com/e/UBZPLn8pwDSahW5WScIL',
-			note: '(RSVP Required to Attend)'
-		},
-		{
-			name: 'Sunset Cruise Ride',
-			href: 'https://partiful.com/e/wf8Xd77SWvf29p42iHV1',
-			note: '(RSVP Required to Attend)'
-		}
-	];
 
 	function scrollToSection(id: string) {
 		const element = document.getElementById(id);
@@ -80,16 +49,16 @@
 		</div>
 	</svelte:fragment>
 
-	<SectionContainer id="form" title="Interest Form" icon="fa-solid fa-pen-to-square">
+	<SectionContainer id="form" title="Join the mailing list" icon="fa-solid fa-envelope">
 		<aside class="border p-6" style="border-color: var(--maia-border);">
 			<p class="text-lg mb-4">
-				Fill out the MAIA interest form so we can keep you in the loop about AISF, workshops and
-				events. <strong>Submitting it is also how you get MAIA merch at our orientation events</strong>,
-				so do it before you come by the table.
+				Leave your contact details to hear about MAIA events, programs, and opportunities throughout
+				the semester and year.
 			</p>
+			<p class="mb-6">For membership requirements and the separate application, visit <a href="/getinvolved#membership">MAIA membership</a>.</p>
 			<Button
-				text="Fill out the interest form"
-				icon="fa-solid fa-pen-to-square"
+				text="Join mailing list"
+				icon="fa-solid fa-envelope"
 				type="purple"
 				size="lg"
 				href={CONFIG.orientation.interestFormLink}
@@ -100,7 +69,7 @@
 			<iframe
 				class="airtable-embed mt-6 hidden w-full md:block"
 				src={CONFIG.orientation.interestFormLink.replace('https://airtable.com/', 'https://airtable.com/embed/')}
-				title="MAIA interest form"
+				title="MAIA mailing list signup"
 				frameborder="0"
 				width="100%"
 				height="900"
