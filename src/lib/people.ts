@@ -209,10 +209,12 @@ export const PEOPLE: Record<string, Person> = {
 	'april-sun': {
 		id: 'april-sun',
 		name: 'April Sun',
-		imageUrl: initialsAvatar('AS'),
+		imageUrl: '/images/people/april-sun-fall-2026.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
+		mitEmail: 'aprilsun@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/april-sun-67b89b279/',
 	},
 
 	'francisco-pernice': {
@@ -262,7 +264,7 @@ export const PEOPLE: Record<string, Person> = {
 	'melissa-li': {
 		id: 'melissa-li',
 		name: 'Melissa Li',
-		imageUrl: initialsAvatar('ML'),
+		imageUrl: '/images/people/melissa-li-fall-2026.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
