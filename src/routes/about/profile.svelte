@@ -387,7 +387,9 @@
 			<img src={imageUrl} alt={name} loading="lazy" decoding="async" class="rounded-lg h-24 w-24 object-cover shrink-0" />
 			<div class="flex flex-col ml-4 mr-4 min-w-0">
 				<p class="text-xl font-heading font-[550] leading-none m-0">{name}</p>
-				<p class="text-sm text-maia-800 dark:text-maia-400 leading-none m-0 mt-0.5">{subtitle || position}</p>
+				{#if subtitle || position}
+					<p class="text-sm text-maia-800 dark:text-maia-400 leading-none m-0 mt-0.5">{subtitle || position}</p>
+				{/if}
 
 				{#if showSocials}
 					<div class="flex flex-wrap items-center gap-1 mt-0.5 text-sm leading-none">
