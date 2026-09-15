@@ -28,11 +28,11 @@
  .event-content { min-width: 0; }
  .event-content :global(.maia-table-icon) {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   flex-shrink: 0;
   background: currentColor;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 8h18v4H3zM6 12v8m12-8v8M6 16h12' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 8l7-5 13 5-7 5z' fill='black'/%3E%3Cpath d='M3 11v7m12-2v6m6-11v7M3 11l12 5 6-5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
  }
  .event-content :global([data-category='programs']) { --category-color: #7650af; }
  .event-content :global([data-category='workshops']) { --category-color: #35766d; }
