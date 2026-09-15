@@ -9,6 +9,7 @@
 	import { getEventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { reveal } from '$lib/reveal';
+	import { PARTNER_PROGRAMS } from '$lib/programHistory';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
@@ -34,9 +35,9 @@
 		details.querySelector('summary')!.focus({ preventScroll: true });
 		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 	}
-	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + (category.id === 'talks' ? plannedTalks.length : 0)]));
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + (category.id === 'talks' ? plannedTalks.length : category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedTalks.length : categoryCounts.get(activeCategory) ?? 0;
+	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedTalks.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		const timer = setInterval(() => now = new Date(), 60000);
@@ -110,7 +111,7 @@
 			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
 			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
 				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedTalks.length}</span>
+					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedTalks.length + PARTNER_PROGRAMS.length}</span>
 				</button>
 				{#each categories as category}
 					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
@@ -122,6 +123,7 @@
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
 			{#if activeCategory === 'all' || activeCategory === 'talks'}<a href="#planned-talks">Planned talks</a>{/if}
+			{#if activeCategory === 'all' || activeCategory === 'programs'}<a href="#partner-programs">Partner programs</a>{/if}
 			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
 		</nav>
 		{#if activeCategory === 'all' || activeCategory === 'talks'}
@@ -134,6 +136,23 @@
 							<p class="event-category" data-category="talks"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Talks</p>
 							<h3 class="font-heading text-xl font-[650]">Talk with {speaker}</h3>
 							<p class="mt-2 text-sm text-maia-950/70 dark:text-maia-100/70">Fall 2026 · Date TBD</p>
+						</article>
+					{/each}
+				</div>
+			</section>
+		{/if}
+		{#if activeCategory === 'all' || activeCategory === 'programs'}
+			<section class="partner-programs" aria-labelledby="partner-programs">
+				<h2 id="partner-programs" class="font-heading text-2xl font-[650]">Partner Programs & Workshops</h2>
+				<p class="text-sm text-maia-950/70 dark:text-maia-100/70">Explore opportunities from AISST at Harvard and the Cambridge Boston Alignment Initiative (CBAI), alongside our joint workshops. Check each organizer’s page for participation details and the latest schedule.</p>
+				<div class="grid gap-4 sm:grid-cols-2 mt-4">
+					{#each PARTNER_PROGRAMS as program}
+						<article class="partner-program">
+							<p class="event-category" data-category="programs"><i class="fa-solid {programCategory.icon}" aria-hidden="true"></i> {program.organizer}</p>
+							<h3 class="font-heading text-xl font-[650]">{program.title}</h3>
+							<p class="mt-2 text-sm font-medium">{program.timing}</p>
+							<p class="my-3 text-sm text-maia-950/70 dark:text-maia-100/70">{program.description}</p>
+							<a class="text-sm" href={program.url}>Explore the program <span aria-hidden="true">→</span></a>
 						</article>
 					{/each}
 				</div>
@@ -242,9 +261,9 @@
 </EventsLayout>
 
 <style>
-	.planned-talks { margin-block: 2rem; }
-	#planned-talks { scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); margin-bottom: .5rem; }
-	.planned-talk { padding: 1.25rem; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); }
+	.planned-talks, .partner-programs { margin-block: 2rem; }
+	#planned-talks, #partner-programs { scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); margin-bottom: .5rem; }
+	.planned-talk, .partner-program { padding: 1.25rem; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); }
 	.highlights { margin-bottom: 2.5rem; }
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
