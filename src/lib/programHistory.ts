@@ -1,9 +1,15 @@
 import type { CalendarEvent } from './events';
 
-// Program-month ranges are for the archive overview, not individual meeting times.
+// Program periods are for the semester overview, not individual meeting times.
 // dateLabel explains their precision. End dates are exclusive.
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
+ {
+  id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals',
+  start: '2026-10-01', end: '2026-11-26', dateLabel: 'October 1–November 25, 2026 · eight weeks', kind: 'initiative',
+  description: 'An eight-week reading and discussion fellowship on AI safety, planned to begin October 1. Participants meet in weekly cohorts to discuss the fundamentals of AI safety.',
+  url: '/aisf/'
+ },
  {
   id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals',
   start: '2026-03-01', end: '2026-06-01', dateLabel: 'March–May 2026 · program months', kind: 'initiative',
