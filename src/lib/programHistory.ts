@@ -11,12 +11,6 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
   url: 'https://www.cbai.ai/ais-research-fellowship'
  },
  {
-  id: 'aisf-iap-2027', title: 'IAP 2027 Intensive AI Safety Fundamentals',
-  start: '2027-01-01', end: '2027-02-01', dateLabel: 'January 2027 · exact dates TBD', kind: 'initiative',
-  description: 'A planned intensive version of AI Safety Fundamentals during IAP, bringing together foundational readings and discussions in a concentrated format. Exact dates and the session schedule are to be confirmed; this overview shows January as a placeholder month.',
-  url: '/aisf/'
- },
- {
   id: 'arena-fall-2025', title: 'Fall 2025 AISST/MAIA ARENA Technical Upskilling',
   start: '2025-09-01', end: '2026-01-01', dateLabel: 'Fall 2025 · approximate semester range', kind: 'initiative',
   description: 'Technical AI safety upskilling using the ARENA curriculum for the AISST and MAIA community. This entry represents the fall semester; exact session dates are not reconstructed.',
@@ -53,49 +47,49 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
   url: 'https://www.arena.education/curriculum'
  },
  {
-  id: 'aisf-fall-2025', title: 'Fall 2025 AI Safety Fundamentals',
+  id: 'aisf-fall-2025', title: 'Fall 2025 AI Safety Fundamentals · MAIA',
   start: '2025-09-01', end: '2025-12-01', dateLabel: 'Fall 2025 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-spring-2025', title: 'Spring 2025 AI Safety Fundamentals',
+  id: 'aisf-spring-2025', title: 'Spring 2025 AI Safety Fundamentals · MAIA',
   start: '2025-02-01', end: '2025-05-01', dateLabel: 'Spring 2025 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-fall-2024', title: 'Fall 2024 AI Safety Fundamentals',
+  id: 'aisf-fall-2024', title: 'Fall 2024 AI Safety Fundamentals · MAIA',
   start: '2024-09-01', end: '2025-01-01', dateLabel: 'Fall 2024 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-spring-2024', title: 'Spring 2024 AI Safety Fundamentals',
+  id: 'aisf-spring-2024', title: 'Spring 2024 AI Safety Fundamentals · MAIA',
   start: '2024-02-01', end: '2024-05-01', dateLabel: 'Spring 2024 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-fall-2023', title: 'Fall 2023 AI Safety Fundamentals',
+  id: 'aisf-fall-2023', title: 'Fall 2023 AI Safety Fundamentals · MAIA',
   start: '2023-09-01', end: '2024-01-01', dateLabel: 'Fall 2023 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-spring-2023', title: 'Spring 2023 AI Safety Fundamentals',
+  id: 'aisf-spring-2023', title: 'Spring 2023 AI Safety Fundamentals · MAIA',
   start: '2023-02-01', end: '2023-06-01', dateLabel: 'Spring 2023 · approximate semester range', kind: 'initiative',
   description: 'A reading and discussion program introducing participants to AI safety. This entry represents the semester in which the program ran; the displayed range does not reconstruct exact cohort or session dates.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals',
+  id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals · MAIA',
   start: '2026-10-01', end: '2026-11-26', dateLabel: 'October 1–November 25, 2026 · eight weeks', kind: 'initiative',
   description: 'An eight-week reading and discussion fellowship on AI safety, planned to begin October 1. Participants meet in weekly cohorts to discuss the fundamentals of AI safety.',
   url: '/aisf/'
  },
  {
-  id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals',
+  id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals · MAIA',
   start: '2026-03-01', end: '2026-06-01', dateLabel: 'March–May 2026 · program months', kind: 'initiative',
   description: 'An eight-week reading and discussion fellowship on AI safety, with multiple weekly cohorts. This overview shows the months in which the spring program ran, rather than exact first and last meeting dates. Cohort schedules varied; final sessions continued after the May 9 capstone hackathon.',
   url: '/aisf/'
@@ -107,7 +101,7 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
   url: 'https://www.arena.education/curriculum'
  },
  {
-  id: 'aisf-summer-2026', title: 'Summer 2026 AI Safety Fundamentals',
+  id: 'aisf-summer-2026', title: 'Summer 2026 AI Safety Fundamentals · MAIA',
   start: '2026-06-01', end: '2026-08-01', dateLabel: 'June–July 2026', kind: 'initiative',
   description: 'An eight-week reading and discussion program on AI safety. Cohorts met on different days; the archive shows the program months rather than a single session schedule.',
   url: '/aisf/'
@@ -150,11 +144,6 @@ export const PARTNER_PROGRAMS = [
   title: 'AI × Biorisk Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'A new reading group exploring AI-driven biological risks, biodefense, safeguards, and governance. Cohorts meet weekly for two hours in Harvard Square. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/biorisk-fellowship'
- },
- {
-  title: 'AI Safety Workshop Series', organizer: 'AISST / MAIA', timing: 'Joint workshops each semester',
-  description: 'Weekend workshops bringing students and researchers together for talks, small-group discussions, and research sprints on technical AI safety and policy. Individual confirmed workshops appear in the event timeline.',
-  url: 'https://aisst.ai/workshops'
  },
  {
   title: 'CAMBRIA', organizer: 'CBAI', timing: 'Future cohorts · dates not yet announced',
