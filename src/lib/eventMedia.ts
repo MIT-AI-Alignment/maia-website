@@ -25,8 +25,8 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
   },
   {
     "calendarId": "t01e428lq1kfpikvld0k2otm8o",
-    "imageUrl": "/images/events/cpw-bon-me-2026-04-17.jpg",
-    "imageAlt": "Representative photo of MAIA’s Bon Me food truck event on April 17, 2026, reused for this listing.",
+    "imageUrl": "/images/events/tabling-2026-09-15.jpg",
+    "imageAlt": "Students lining up beside MAIA’s tabling event near the MIT Student Center on September 15, 2026.",
     "kind": "photo"
   },
   {
