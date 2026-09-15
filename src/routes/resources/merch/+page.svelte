@@ -71,7 +71,7 @@
 		alt: index === 0 ? 'Purple MAIA logo on the back of a playing card' : index === cardTitles.length - 1 ? 'MAIA introduction and guide to the four suits' : `${title} AI safety playing card`
 	}));
 	const designs = [
-		{ image: 'cpw-shirt-spring-2026.png', title: 'CPW ’26 T-shirt', label: 'Spring 2026 · Design artwork', alt: 'Purple character with a CPW 26 MAIA laptop and a playful wall of words' },
+		{ image: 'cpw-shirt-spring-2026.png', title: 'CPW ’26 T-shirt', label: 'Spring 2026 · Final back design', alt: 'Final shirt-back artwork: purple character with a CPW 26 MAIA laptop and a playful wall of words' },
 		{ image: 'pixel-shoggoth-shirt-design.png', title: 'Pixel shoggoth T-shirt', label: 'Fall 2026 · Design artwork', alt: 'Purple pixel-art shoggoth with MIT AI Alignment lettering on a black background' },
 		{ image: 'beaver-shoggoth-shirt-design.png', title: 'Beaver and shoggoth T-shirt', label: 'Fall 2026 · Design artwork', alt: 'A purple MIT beaver riding a shoggoth above MIT AI Alignment lettering' },
 		{ image: 'cityscape-sticker-design.png', title: 'Cityscape sticker', label: 'Fall 2026 · Design artwork', alt: 'A friendly purple AI creature among city buildings and a MAIA computer screen' },
