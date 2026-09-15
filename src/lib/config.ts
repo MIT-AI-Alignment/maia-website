@@ -2,9 +2,9 @@
 export const CONFIG = {
     banner: {
         visible: true,
-        text: "Orientation 2026: fill out the MAIA interest form to grab merch at our events!",
+        text: "Fill out the MAIA interest form to join our mailing list and get more involved with MAIA.",
         link: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
-        ctaText: "Fill it out"
+        ctaText: "Get involved"
     },
     orientation: {
         // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
