@@ -1,5 +1,6 @@
 <script>
 	import { CONFIG } from '$lib/config';
+	import Button from '../../components/Button.svelte';
 </script>
 
 <section>
@@ -62,4 +63,14 @@
 			<i class="fa-solid fa-arrow-right shrink-0 text-xl" style="color: var(--maia-accent);" aria-hidden="true"></i>
 		</a>
 	{/if}
+	<!-- Shown regardless of whether applications are open. -->
+	<div class="mt-4">
+		<Button
+			text="See past curriculum"
+			icon="fa-solid fa-book-open"
+			type="purple"
+			size="md"
+			href="/aisf/"
+		/>
+	</div>
 </section>
