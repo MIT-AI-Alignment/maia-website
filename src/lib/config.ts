@@ -38,11 +38,9 @@ export const CONFIG = {
     },
     aisf_ml: {
         visible: true,
-        deadline: "",
-        deadline_short: "",
-        applicationLink: "",
-        fallInterestFormLink:
-            "https://airtable.com/appHwdJxaquLCsb75/pagMgBP9vydmwnBF4/form"
+        deadline: "Wednesday, September 23 at 11:59 PM Eastern Time",
+        deadline_short: "September 23",
+        applicationLink: "https://airtable.com/appl0nOt45L6eUfMu/pagJvamt09btxpfB3/form"
     },
     aisf_gov: {
         visible: true,

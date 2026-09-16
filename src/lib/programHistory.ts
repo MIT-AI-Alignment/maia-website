@@ -1,4 +1,5 @@
 import type { CalendarEvent } from './events';
+import { CONFIG } from './config';
 
 // Program periods are for the semester overview, not individual meeting times.
 // dateLabel explains their precision. End dates are exclusive.
@@ -103,8 +104,8 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
   id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals · MAIA',
   start: '2026-09-28', end: '2026-11-23', dateLabel: 'Starts the week of September 28, 2026 · eight weeks', kind: 'initiative',
-  description: 'An eight-week reading and discussion fellowship on AI safety, beginning the week of September 28. Applications are planned to close September 23; the application form and exact cutoff time are still being finalized. Participants meet in weekly cohorts to discuss the fundamentals of AI safety.',
-  url: '/aisf/'
+  description: `An eight-week reading and discussion fellowship on AI safety, beginning the week of September 28. Applications close ${CONFIG.aisf_ml.deadline}. Participants meet in weekly cohorts at MAIA’s office in Kendall Square. Each two-hour session includes reading time, so no additional work is required outside of sessions.`,
+  url: CONFIG.aisf_ml.applicationLink
  },
  {
   id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals · MAIA',
