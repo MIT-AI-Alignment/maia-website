@@ -182,7 +182,7 @@
 									<h4>{program.title}</h4>
 									<p class="program-dates">{displayDateRange(program)}</p>
 									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
-									{#if program.url}<a href={program.url}>{program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
+									{#if program.url}<a href={program.url}>{program.id === 'aisf-fall-2026' ? 'Apply for Fall AISF' : program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
 								</article>
 							{/each}
 							{#each section.undatedPrograms as program}
@@ -226,7 +226,7 @@
 							{displayDateRange(event, false)}
 							{#if displayTimeRange(event.start, event.end, false)}
 								<span class="mt-1 block">{displayTimeRange(event.start, event.end, false)}</span>
-							{:else if category.id !== 'workshops'}<span class="mt-1 block">All day</span>
+							{:else if category.id !== 'workshops' && category.id !== 'deadlines'}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
 						<EventAttendance {event} />
