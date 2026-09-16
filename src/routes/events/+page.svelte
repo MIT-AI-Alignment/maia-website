@@ -193,6 +193,7 @@
 					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedEvents}>
 					{#each eventRuns(visibleEvents, section.hasPlannedEvents) as run}
 					{#if run.planned}
+					<div class="event-run">
 						{#each visiblePlannedEvents as event}
 							{@const category = categoryDetails(event)}
 							<article class="event-row" use:reveal>
@@ -205,6 +206,7 @@
 								</div>
 							</article>
 						{/each}
+					</div>
 					{:else}
 					<div class="event-run" class:collection={run.collection}>
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
