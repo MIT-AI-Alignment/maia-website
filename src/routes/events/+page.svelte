@@ -5,7 +5,7 @@
 	import { CONFIG } from '$lib/config';
 	import { displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
-	import { groupEventRuns, type EventRun } from '$lib/eventCollections';
+	import { groupEventRuns, ORIENTATION_2026_RSVP_EVENTS, type EventRun } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { reveal } from '$lib/reveal';
@@ -14,8 +14,20 @@
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
 	let activeCategory: TimelineCategory | 'all' = 'all';
-	// MAIA Activities Calendar, Fall '26 Planning column; dates are not confirmed.
-	const plannedTalks = ['Stephen Casper', 'Garrison Lovely'];
+	// Fall activities planning sheet and the orientation Partiful; dates are not confirmed.
+	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string }[] = [
+		...['Stephen Casper', 'Garrison Lovely'].map(speaker => ({
+			title: `Talk with ${speaker}`,
+			category: 'talks' as const,
+			description: 'Planned for fall. Date, time, location, and topic will be announced once confirmed.'
+		})),
+		{
+			title: 'Estimation & Forecasting Challenge',
+			category: 'hackathons',
+			description: 'Test your intuition, confidence, and calibration through interactive questions and puzzles in a friendly small-team competition. Come with friends or meet new teammates. Planned for Fall 2026; date and time TBD.',
+			url: ORIENTATION_2026_RSVP_EVENTS.find(event => event.name === 'Estimation and Forecasting Challenge')!.href
+		}
+	];
 	const programCategory = TIMELINE_CATEGORIES.find(category => category.id === 'programs')!;
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
@@ -35,9 +47,9 @@
 		details.querySelector('summary')!.focus({ preventScroll: true });
 		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 	}
-	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + (category.id === 'talks' ? plannedTalks.length : category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + plannedEvents.filter(event => event.category === category.id).length + (category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedTalks.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
+	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		const timer = setInterval(() => now = new Date(), 60000);
@@ -48,8 +60,9 @@
 	function eventYear(event: CalendarEvent) {
 		return (event.start.length === 10 ? event.start : localDate(new Date(event.start))).slice(0, 4);
 	}
-	function categoryDetails(event: CalendarEvent) {
-		return TIMELINE_CATEGORIES.find(category => category.id === eventCategory(event))!;
+	function categoryDetails(event: CalendarEvent | { category: TimelineCategory }) {
+		const categoryId = 'category' in event ? event.category : eventCategory(event);
+		return TIMELINE_CATEGORIES.find(category => category.id === categoryId)!;
 	}
 	function openEventImage(button: HTMLButtonElement) {
 		const details = button.closest('article')!.querySelector('details')!;
@@ -82,19 +95,20 @@
 	}
 
 	$: sections = [
-		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, hasPlannedTalks: true },
+		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, hasPlannedEvents: true },
 		...Array.from(new Set([...grouped.past, ...programs.past].map(eventYear))).sort().reverse().map(year => ({
 			title: `Past · ${year}`, id: `year-${year}`, events: grouped.past.filter(event => eventYear(event) === year),
-			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], hasPlannedTalks: false
+			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], hasPlannedEvents: false
 		}))
 	];
+	$: visiblePlannedEvents = plannedEvents.filter(event => activeCategory === 'all' || event.category === activeCategory);
 	$: filteredSections = sections.map(section => ({
 		...section,
-		hasPlannedTalks: section.hasPlannedTalks && (activeCategory === 'all' || activeCategory === 'talks'),
+		hasPlannedEvents: section.hasPlannedEvents && visiblePlannedEvents.length > 0,
 		events: section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory),
 		programs: activeCategory === 'all' || activeCategory === 'programs' ? section.programs : [],
 		undatedPrograms: activeCategory === 'all' || activeCategory === 'programs' ? section.undatedPrograms : []
-	})).filter(section => section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedTalks);
+	})).filter(section => section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedEvents);
 
 </script>
 
@@ -124,7 +138,7 @@
 			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
 			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
 				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedTalks.length + PARTNER_PROGRAMS.length}</span>
+					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length}</span>
 				</button>
 				{#each categories as category}
 					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
@@ -132,7 +146,7 @@
 					</button>
 				{/each}
 			</div>
-			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedTalks.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
+			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedEvents.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
 			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
@@ -140,7 +154,7 @@
 		{#each filteredSections as section}
 			{@const visibleEvents = section.events}
 			{#if section.id === sections[1]?.id}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
-			{#if section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedTalks}
+			{#if section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedEvents}
 				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
 					{section.title}
 					{#if section.title === 'Upcoming' && visibleEvents.length}
@@ -176,16 +190,18 @@
 							{/each}
 						</aside>
 					{/if}
-					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedTalks}>
-					{#each eventRuns(visibleEvents, section.hasPlannedTalks) as run}
+					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedEvents}>
+					{#each eventRuns(visibleEvents, section.hasPlannedEvents) as run}
 					{#if run.planned}
-						{#each plannedTalks as speaker}
+						{#each visiblePlannedEvents as event}
+							{@const category = categoryDetails(event)}
 							<article class="event-row" use:reveal>
 								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">Fall 2026<span class="mt-1 block">Date TBD</span></p></div>
 								<div class="event-body">
-									<p class="event-category" data-category="talks"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Talks</p>
-									<h3 class="font-heading text-xl font-[650]">Talk with {speaker}</h3>
-									<p class="event-intro">Planned for fall. Date, time, location, and topic will be announced once confirmed.</p>
+									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
+									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
+									<p class="event-intro">{event.description}</p>
+									{#if event.url}<a href={event.url} target="_blank" rel="noopener noreferrer">View on Partiful <span aria-hidden="true">→</span></a>{/if}
 								</div>
 							</article>
 						{/each}
@@ -237,7 +253,7 @@
 					</div>
 					{/if}
 					{/each}
-					{#if !visibleEvents.length && !section.hasPlannedTalks}<p class="empty-category">No individual events listed for this period.</p>{/if}
+					{#if !visibleEvents.length && !section.hasPlannedEvents}<p class="empty-category">No individual events listed for this period.</p>{/if}
 					</div>{/if}
 				</div>
 			{/if}
