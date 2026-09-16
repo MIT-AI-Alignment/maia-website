@@ -34,27 +34,20 @@
 		background is required—just curiosity and a willingness to engage with hard, open questions.
 	</p>
 	<p class="mt-2">
-		Applications for the Summer AISF are now closed. <strong>Fill out the fall interest
-		form to hear when fall applications open. </strong>
+		Applications for Fall 2026 AISF are open. <strong>Apply by {CONFIG.aisf_ml.deadline}.</strong>
+		The eight-week fellowship begins the week of September 28.
 	</p>
 	<div class="mt-8">
 		<div class="flex flex-col sm:flex-row gap-3">
 			{#if CONFIG.aisf_ml.applicationLink}
 				<Button
-					text="Apply for Summer AISF"
+					text="Apply for Fall AISF"
 					icon="fa-solid fa-arrow-right"
 					type="fuchsia"
 					size="md"
 					href={CONFIG.aisf_ml.applicationLink}
 				/>
 			{/if}
-			<Button
-				text="Fall AISF Interest Form"
-				icon="fa-solid fa-arrow-right"
-				type="fuchsia"
-				size="md"
-				href={CONFIG.aisf_ml.fallInterestFormLink}
-			/>
 		</div>
 	</div>
 </section>
