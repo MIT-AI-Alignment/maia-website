@@ -3,7 +3,7 @@
 	import EventsLayout from '../../components/EventsLayout.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
-	import { displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
+	import { displayDate, displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
 	import { groupEventRuns, ORIENTATION_2026_RSVP_EVENTS, type EventRun } from '$lib/eventCollections';
 	import { getEventMedia } from '$lib/eventMedia';
@@ -14,8 +14,14 @@
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
 	let activeCategory: TimelineCategory | 'all' = 'all';
-	// Fall activities planning sheet and the orientation Partiful; dates are not confirmed.
-	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string }[] = [
+	// Planned fall events from the activities sheet, Partiful, and organizer updates.
+	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string; date?: string }[] = [
+		{
+			title: 'MAIA Information Session',
+			category: 'talks',
+			date: '2026-09-22',
+			description: 'A presentation on what MAIA does, what being a member entails, and how to get involved. Learn about our AI safety programs, events, and research opportunities, and bring your questions.'
+		},
 		...['Stephen Casper', 'Garrison Lovely'].map(speaker => ({
 			title: `Talk with ${speaker}`,
 			category: 'talks' as const,
@@ -197,7 +203,7 @@
 						{#each visiblePlannedEvents as event}
 							{@const category = categoryDetails(event)}
 							<article class="event-row" use:reveal>
-								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">Fall 2026<span class="mt-1 block">Date TBD</span></p></div>
+								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">{event.date ? displayDate(event.date, false) : 'Fall 2026'}<span class="mt-1 block">{event.date ? 'Time TBD' : 'Date TBD'}</span></p></div>
 								<div class="event-body">
 									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
 									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
