@@ -239,6 +239,17 @@ export const PEOPLE: Record<string, Person> = {
 	},
 
 
+	'jer-ren-wong': {
+		id: 'jer-ren-wong',
+		name: 'Jer Ren Wong',
+		imageUrl: '/images/people/jer-ren-wong.png',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'jrwong@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/jerrenwong',
+	},
+
 	'leon-chen': {
 		id: 'leon-chen',
 		name: 'Leon Chen',
