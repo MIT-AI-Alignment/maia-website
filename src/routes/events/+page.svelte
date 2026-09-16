@@ -217,10 +217,10 @@
 						<article class="event-row" use:reveal>
 						<div class="event-meta">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
-							{displayDateRange(event)}
-							{#if displayTimeRange(event.start, event.end)}
-								<span class="mt-1 block">{displayTimeRange(event.start, event.end)}</span>
-							{:else}<span class="mt-1 block">All day</span>
+							{displayDateRange(event, false)}
+							{#if displayTimeRange(event.start, event.end, false)}
+								<span class="mt-1 block">{displayTimeRange(event.start, event.end, false)}</span>
+							{:else if category.id !== 'workshops'}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
 						<EventAttendance {event} />
