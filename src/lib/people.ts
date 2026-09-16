@@ -250,6 +250,17 @@ export const PEOPLE: Record<string, Person> = {
 		linkedin: 'https://www.linkedin.com/in/guangyuan-leon-chen',
 	},
 
+	'linda-xue': {
+		id: 'linda-xue',
+		name: 'Linda Xue',
+		imageUrl: '/images/people/linda-xue-fall-2026.jpg',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+		mitEmail: 'lexue28@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/linda-xue-24b6a1265/',
+	},
+
 	'melat-ghebreselassie': {
 		id: 'melat-ghebreselassie',
 		name: 'Melat Ghebreselassie',
@@ -319,12 +330,12 @@ export const PEOPLE: Record<string, Person> = {
 	'weian-xie': {
 		id: 'weian-xie',
 		name: 'Weian Xie (Andrew)',
-		imageUrl: initialsAvatar('WX'),
+		imageUrl: '/images/people/weian-xie-fall-2026.jpg',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
 		mitEmail: 'weianxie@mit.edu',
-		linkedin: 'https://www.linkedin.com/in/weian-xie-7583392b6',
+		linkedin: 'https://www.linkedin.com/in/weian-andrew-xie-7583392b6/',
 	},
 
 	'david-turturean': {
