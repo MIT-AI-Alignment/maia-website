@@ -81,3 +81,13 @@ test('plain-text calendar paragraph breaks survive description parsing', () => {
  )));
  assert.equal(item.description, 'First paragraph.\n\nSecond paragraph.\nPartiful event');
 });
+
+
+test('compact date ranges collapse repeated months and retain cross-year context', () => {
+ const workshop = { id: 'workshop', title: 'Workshop', start: '2026-11-20', end: '2026-11-23' };
+ assert.equal(displayDateRange(workshop, false), 'Nov 20–22');
+ assert.equal(displayDateRange({ ...workshop, start: '2026-10-30', end: '2026-11-02' }, false), 'Oct 30–Nov 1');
+ assert.equal(displayDateRange({ ...workshop, start: '2026-12-31', end: '2027-01-03' }, false), 'Dec 31, 2026–Jan 2, 2027');
+ assert.equal(displayDateRange({ ...workshop, start: '2026-11-20', end: '2026-11-21' }, false), 'Nov 20');
+ assert.equal(displayDateRange({ ...workshop, start: '2026-11-21T00:00:00Z', end: undefined }, false), 'Nov 20');
+});
