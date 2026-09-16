@@ -6,19 +6,25 @@ export const CONFIG = {
         link: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
         ctaText: "Join mailing list"
     },
+    // Modal shown the first time someone opens one of `showOnPaths` (or any page, if that list is
+    // empty). Dismissal is remembered per `remember`: "device" = once ever in that browser
+    // (localStorage), "session" = once per browser tab session. The key includes `href`, so
+    // pointing it at a new campaign shows it again to people who dismissed the old one.
+    // Never shown on the page `href` points to when that is an internal path.
+    popup: {
+        visible: true,
+        showOnPaths: ["/"],
+        remember: "device",
+        icon: "fa-solid fa-graduation-cap",
+        title: "Apply to AISF",
+        text: "Apply to AISF - our introductory reading group about topics in AI safety.",
+        ctaText: "Apply to AISF",
+        dismissText: "Maybe later",
+        href: "https://airtable.com/appl0nOt45L6eUfMu/pagJvamt09btxpfB3/form"
+    },
     orientation: {
         // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
         interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
-        // Popup shown on first load (once per browser session) that sends people to the orientation page.
-        // Hidden automatically on the orientation page itself.
-        popup: {
-            visible: false,
-            title: "Welcome to MAIA!",
-            text: "Explore MAIA's orientation events and join our mailing list for updates throughout the year.",
-            ctaText: "Go to Orientation 2026",
-            dismissText: "Maybe later",
-            href: "/orientation-2026/"
-        },
         // The printed banner + foam-board QR codes encode the bare homepage URL (and MIT's http->https
         // redirect drops any path), so the homepage sends phone visitors that arrive with no referrer
         // (= QR scans) straight to the form, once per device. Set to "" to turn this off.

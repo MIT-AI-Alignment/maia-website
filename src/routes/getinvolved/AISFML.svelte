@@ -37,17 +37,40 @@
 		Applications for Fall 2026 AISF are open. <strong>Apply by {CONFIG.aisf_ml.deadline}.</strong>
 		The eight-week fellowship begins the week of September 28.
 	</p>
-	<div class="mt-8">
-		<div class="flex flex-col sm:flex-row gap-3">
-			{#if CONFIG.aisf_ml.applicationLink}
-				<Button
-					text="Apply for Fall AISF"
-					icon="fa-solid fa-arrow-right"
-					type="fuchsia"
-					size="md"
-					href={CONFIG.aisf_ml.applicationLink}
-				/>
-			{/if}
-		</div>
+	{#if CONFIG.aisf_ml.applicationLink}
+		<!-- The whole box is the link. Inline colors beat the global .prose a rule and the
+		     app.css override that makes Tailwind border utilities transparent inside <main>. -->
+		<a
+			href={CONFIG.aisf_ml.applicationLink}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="mt-8 flex items-center gap-5 border p-6 no-underline transition-colors hover:bg-maia-800/5 dark:hover:bg-maia-400/10"
+			style="border-color: var(--maia-border); color: var(--maia-ink);"
+		>
+			<div
+				class="flex h-12 w-12 shrink-0 items-center justify-center"
+				style="background: var(--maia-accent); color: #fff;"
+			>
+				<i class="fa-solid fa-graduation-cap text-2xl" aria-hidden="true"></i>
+			</div>
+			<div class="min-w-0 flex-1">
+				<p class="m-0 font-heading text-xl" style="color: var(--maia-accent);">Apply to AISF</p>
+				<p class="m-0 mt-1 text-sm" style="color: var(--maia-muted);">
+					Our introductory reading group about topics in AI safety.{#if CONFIG.aisf_ml.deadline_short}
+						Applications close {CONFIG.aisf_ml.deadline_short}.{/if}
+				</p>
+			</div>
+			<i class="fa-solid fa-arrow-right shrink-0 text-xl" style="color: var(--maia-accent);" aria-hidden="true"></i>
+		</a>
+	{/if}
+	<!-- Shown regardless of whether applications are open. -->
+	<div class="mt-4">
+		<Button
+			text="See past curriculum"
+			icon="fa-solid fa-book-open"
+			type="purple"
+			size="md"
+			href="/aisf/"
+		/>
 	</div>
 </section>
