@@ -102,8 +102,8 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
  },
  {
   id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals · MAIA',
-  start: '2026-10-01', end: '2026-11-26', dateLabel: 'October 1–November 25, 2026 · eight weeks', kind: 'initiative',
-  description: 'An eight-week reading and discussion fellowship on AI safety, planned to begin October 1. Participants meet in weekly cohorts to discuss the fundamentals of AI safety.',
+  start: '2026-09-28', end: '2026-11-23', dateLabel: 'Starts the week of September 28, 2026 · eight weeks', kind: 'initiative',
+  description: 'An eight-week reading and discussion fellowship on AI safety, beginning the week of September 28. Applications are planned to close September 23; the application form and exact cutoff time are still being finalized. Participants meet in weekly cohorts to discuss the fundamentals of AI safety.',
   url: '/aisf/'
  },
  {

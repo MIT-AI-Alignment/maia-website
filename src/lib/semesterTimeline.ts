@@ -10,6 +10,7 @@ export const TIMELINE_CATEGORIES = [
  { id: 'hackathons', label: 'Hackathons & Challenges', icon: 'fa-laptop-code' },
  { id: 'socials', label: 'Socials', icon: 'fa-comments' },
  { id: 'tabling', label: 'Tabling', icon: 'maia-table-icon' },
+ { id: 'deadlines', label: 'Deadlines', icon: 'fa-hourglass-end' },
  { id: 'other', label: 'Other', icon: 'fa-calendar-day' }
 ] as const;
 
@@ -104,6 +105,7 @@ export function semesterMonths(semester: Semester) {
 export function eventCategory(event: CalendarEvent): TimelineCategory {
  if (event.kind === 'initiative') return 'programs';
  const title = event.title.toLowerCase();
+ if (/application deadline/.test(title)) return 'deadlines';
  if (/\bhackathons?\b|\bbattleprompting\b|\breward hacking event\b|\bmission strawberry\b|\b(?:estimation and )?forecasting challenge\b/.test(title)) return 'hackathons';
  if (/workshop|arena|upskilling|\blab$|\btabletop exercises?\b/.test(title)) return 'workshops';
  if (/social|mixer|movie|avalon|waffles|bagels|game|dinner|extravaganza|celebration|rock[ -]?climbing|cruise|escape room|office tours?|open house/.test(title)) return 'socials';
