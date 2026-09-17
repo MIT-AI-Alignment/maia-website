@@ -78,7 +78,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
-		execOrder: 2,
+		execOrder: 3,
 		linkedin: 'https://www.linkedin.com/in/roman-ross/',
 		calendly: 'https://calendly.com/roman-alex-ross/30min',
 	},
@@ -92,7 +92,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
-		execOrder: 3,
+		execOrder: 4,
 		linkedin: 'https://www.linkedin.com/in/jasonchin9/',
 		personalPage: 'https://jasonchin.dev',
 	},
@@ -486,7 +486,7 @@ export const PEOPLE: Record<string, Person> = {
 		isExec: true,
 		isOrg: false,
 		isActive: true,
-		execOrder: 4,
+		execOrder: 2,
 	},
 
 	'ionut-gabriel-stan': {
