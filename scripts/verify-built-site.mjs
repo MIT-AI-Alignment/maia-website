@@ -17,7 +17,8 @@ const about = read('build/about/index.html');
 for (const page of [home, read('build/events/index.html')]) {
   assert.doesNotMatch(page, /href="\/orientation-2026\/"/, 'Orientation archive must not be promoted');
 }
-assert.match(read('src/lib/config.ts'), /popup:\s*\{\s*visible:\s*false/, 'Orientation popup must remain disabled');
+const popupConfig = read('src/lib/config.ts').match(/popup:\s*\{[^}]*\}/)[0];
+assert.doesNotMatch(popupConfig, /orientation/i, 'Retired orientation popup must not return');
 for (const name of ['Roman Ross', 'Jason Chin', 'Ionut Stan']) {
   assert.ok(home.includes(name), `Homepage missing ${name}`);
   assert.ok(about.includes(name), `About missing ${name}`);
