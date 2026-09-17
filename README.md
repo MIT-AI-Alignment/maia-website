@@ -1,5 +1,7 @@
 # MAIA website
 
+For AI-assisted maintenance, start with [AGENTS.md](./AGENTS.md): content locations, preview checks, and the Athena deployment workflow.
+
 Tutorial video: [https://youtu.be/R00G5PhiKNw](https://youtu.be/R00G5PhiKNw)
 
 The [MAIA website](https://aialignment.mit.edu/) is created using [SvelteKit](https://kit.svelte.dev/) and hosted on MIT Athena. This README should tell you everything you need to know about updating and deploying the site.
