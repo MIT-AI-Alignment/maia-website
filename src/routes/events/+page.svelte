@@ -22,11 +22,23 @@
 			date: '2026-09-22',
 			description: 'A presentation on what MAIA does, what being a member entails, and how to get involved. Learn about our AI safety programs, events, and research opportunities, and bring your questions.'
 		},
-		...['Stephen Casper', 'Garrison Lovely'].map(speaker => ({
-			title: `Talk with ${speaker}`,
-			category: 'talks' as const,
+		{
+			title: 'Dwarkesh Fireside Chat with MAIA Members',
+			category: 'talks',
+			date: '2026-09-23',
+			description: 'A fireside chat with Dwarkesh for MAIA members on Wednesday, September 23. Time and location to be announced.'
+		},
+		{
+			title: 'Talk with Stephen Casper',
+			category: 'talks',
+			date: '2026-10-06',
+			description: 'Tuesday, October 6. Time, location, and topic to be announced.'
+		},
+		{
+			title: 'Talk with Garrison Lovely',
+			category: 'talks',
 			description: 'Planned for fall. Date, time, location, and topic will be announced once confirmed.'
-		})),
+		},
 		{
 			title: 'Estimation & Forecasting Challenge',
 			category: 'hackathons',
