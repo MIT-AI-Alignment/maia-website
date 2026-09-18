@@ -130,10 +130,35 @@
 
 <EventsLayout view="list">
 	<section>
+		<div class="category-controls">
+			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
+			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
+				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
+					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length}</span>
+				</button>
+				{#each categories as category}
+					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
+						<i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label} <span>{categoryCounts.get(category.id)}</span>
+					</button>
+				{/each}
+			</div>
+			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedEvents.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
+		</div>
+		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
+			{#each filteredSections as section}<a class:upcoming-link={section.id === 'upcoming'} href={'#' + section.id}>{section.id === 'upcoming' ? 'Upcoming events' : section.title}</a>{/each}
+		</nav>
+		{#each filteredSections as section}
+			{@const visibleEvents = section.events}
+			{#if section.id === filteredSections.find(period => period.id !== 'upcoming')?.id}
+				<header class="archive-divider" id="past">
+					<p class="period-label"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Event archive</p>
+					<h2 class="font-heading">Past events</h2>
+					<p>Previous talks, workshops, and community gatherings.</p>
+				</header>
 		{#if highlights.length}
 			<section class="highlights" aria-labelledby="highlights">
 				<div class="highlights-header">
-					<h2 id="highlights" class="font-heading">Highlights</h2>
+					<h2 id="highlights" class="font-heading">Past event highlights</h2>
 				</div>
 				<div class="highlight-grid">
 					{#each highlights as event}
@@ -150,33 +175,18 @@
 				</div>
 			</section>
 		{/if}
-		<div class="category-controls">
-			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
-			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
-				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length}</span>
-				</button>
-				{#each categories as category}
-					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
-						<i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label} <span>{categoryCounts.get(category.id)}</span>
-					</button>
-				{/each}
-			</div>
-			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedEvents.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
-		</div>
-		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
-			{#each filteredSections as section}<a href={'#' + section.id}>{section.title}</a>{/each}
-		</nav>
-		{#each filteredSections as section}
-			{@const visibleEvents = section.events}
-			{#if section.id === sections[1]?.id}<div id="past" class="scroll-mt-[calc(var(--header-height,4rem)+1rem)]"></div>{/if}
+			{/if}
 			{#if section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedEvents}
-				<h2 id={section.id} class="mb-4 mt-10 scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
-					{section.title}
+				<section class="event-period" class:upcoming={section.id === 'upcoming'} aria-labelledby={section.id}>
+				<header class="period-header">
+					{#if section.id === 'upcoming'}<p class="period-label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Coming up at MAIA</p>{/if}
+				<h2 id={section.id} class="scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
+					{section.id === 'upcoming' ? 'Upcoming events' : section.title}
 					{#if section.title === 'Upcoming' && visibleEvents.length}
 						<span class="ml-2 text-sm">(times in Eastern Time)</span>
 					{/if}
 				</h2>
+				</header>
 				<div class="section-grid" class:programs-only={activeCategory === 'programs'} class:events-only={!section.programs.length && !section.undatedPrograms.length}>
 					{#if section.programs.length || section.undatedPrograms.length}
 						<aside class="programs" aria-label={`${section.title} programs`}>
@@ -284,6 +294,7 @@
 					{#if !visibleEvents.length && !section.hasPlannedEvents}<p class="empty-category">No individual events listed for this period.</p>{/if}
 					</div>{/if}
 				</div>
+				</section>
 			{/if}
 		{/each}
 
@@ -308,6 +319,27 @@
 </EventsLayout>
 
 <style>
+	.event-period { margin-top: 2rem; }
+	.period-header { margin-bottom: 1.5rem; }
+	.period-label { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+	.upcoming { padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--maia-accent) 35%, var(--maia-border)); border-top: 4px solid var(--maia-accent); border-radius: .8rem; background: color-mix(in srgb, var(--maia-accent) 6%, var(--maia-canvas)); }
+	.upcoming .period-label { color: var(--maia-accent); }
+	.upcoming h2 { font-size: clamp(1.65rem, 4vw, 2.15rem); }
+	.upcoming .event-row { border-left: 3px solid var(--maia-accent); }
+	.upcoming .event-meta > p, .upcoming .event-meta time { color: var(--maia-accent); font-weight: 650; }
+	.upcoming-link { font-weight: 700; color: var(--maia-accent); text-decoration: underline; text-underline-offset: .3rem; }
+	.archive-divider { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--maia-border); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.archive-divider h2 { font-size: 2rem; font-weight: 650; margin-bottom: .5rem; }
+	.archive-divider > p { color: var(--maia-muted); }
+	.archive-divider + .highlights { margin-top: 2rem; }
+	@media (max-width: 1000px) {
+		.upcoming .event-list { grid-row: 1; }
+		.upcoming .programs { grid-row: 2; }
+	}
+	@media (max-width: 600px) {
+		.upcoming { padding: 1rem .75rem; }
+		.archive-divider { margin-top: 3rem; }
+	}
 	.highlights { margin-bottom: 2.5rem; }
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
