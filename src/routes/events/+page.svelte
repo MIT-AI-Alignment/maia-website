@@ -6,7 +6,7 @@
 	import { displayDate, displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
 	import { groupEventRuns, ORIENTATION_2026_RSVP_EVENTS, type EventRun } from '$lib/eventCollections';
-	import { getEventMedia } from '$lib/eventMedia';
+	import { getEventMedia, type EventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { reveal } from '$lib/reveal';
 	import { PARTNER_PROGRAMS } from '$lib/programHistory';
@@ -15,28 +15,26 @@
 	let now = new Date();
 	let activeCategory: TimelineCategory | 'all' = 'all';
 	// Planned fall events from the activities sheet, Partiful, and organizer updates.
-	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string; date?: string }[] = [
-		{
-			title: 'MAIA Information Session',
-			category: 'talks',
-			date: '2026-09-22',
-			description: 'A presentation on what MAIA does, what being a member entails, and how to get involved. Learn about our AI safety programs, events, and research opportunities, and bring your questions.'
-		},
+	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string; date?: string; media?: EventMedia; imageCredit?: string }[] = [
 		{
 			title: 'Dwarkesh Fireside Chat with MAIA Members',
 			category: 'talks',
 			date: '2026-09-23',
+			media: { imageUrl: '/images/events/speaker-dwarkesh-patel.jpg', imageAlt: 'Dwarkesh Patel portrait', sourceUrl: 'https://www.dwarkesh.com/about', kind: 'portrait' },
 			description: 'A fireside chat with Dwarkesh for MAIA members on Wednesday, September 23. Time and location to be announced.'
 		},
 		{
 			title: 'Talk with Stephen Casper',
 			category: 'talks',
 			date: '2026-10-06',
+			media: { imageUrl: '/images/events/speaker-stephen-casper.jpg', imageAlt: 'Stephen Casper portrait', sourceUrl: 'https://www.hks.harvard.edu/faculty/stephen-casper', kind: 'portrait' },
 			description: 'Tuesday, October 6. Time, location, and topic to be announced.'
 		},
 		{
 			title: 'Talk with Garrison Lovely',
 			category: 'talks',
+			media: { imageUrl: '/images/events/speaker-garrison-lovely.jpg', imageAlt: 'Garrison Lovely portrait', sourceUrl: 'https://www.garrisonlovely.com/', kind: 'portrait' },
+			imageCredit: 'Photo: Min Goodman-Cheng',
 			description: 'Planned for fall. Date, time, location, and topic will be announced once confirmed.'
 		},
 		{
@@ -217,10 +215,20 @@
 							<article class="event-row" use:reveal>
 								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">{event.date ? displayDate(event.date, false) : 'Fall 2026'}<span class="mt-1 block">{event.date ? 'Time TBD' : 'Date TBD'}</span></p></div>
 								<div class="event-body">
-									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
-									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
-									<p class="event-intro">{event.description}</p>
-									{#if event.url}<a href={event.url} target="_blank" rel="noopener noreferrer">View on Partiful <span aria-hidden="true">→</span></a>{/if}
+									<div class="event-heading" class:has-media={!!event.media}>
+										<div class="min-w-0">
+											<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
+											<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
+											<p class="event-intro">{event.description}</p>
+											{#if event.url}<a href={event.url} target="_blank" rel="noopener noreferrer">View on Partiful <span aria-hidden="true">→</span></a>{/if}
+										</div>
+									{#if event.media}
+										<figure>
+											<a class="event-thumbnail" href={event.media.imageUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${event.media.imageAlt}`}><img src={event.media.imageUrl} alt={event.media.imageAlt} loading="lazy" /></a>
+											{#if event.imageCredit}<figcaption class="mt-1 text-xs text-maia-950/60 dark:text-maia-100/60"><a href={event.media.sourceUrl} target="_blank" rel="noopener noreferrer">{event.imageCredit}</a></figcaption>{/if}
+										</figure>
+									{/if}
+									</div>
 								</div>
 							</article>
 						{/each}
