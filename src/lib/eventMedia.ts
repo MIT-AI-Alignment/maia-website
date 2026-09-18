@@ -50,10 +50,10 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
   {
     "partifulId": "ThtJyAbrVrOAMDe89ObM",
     "calendarId": "uonmr030p3ivdk1c0avcktvihs",
-    "imageUrl": "/images/events/stephen-casper-spring-2026.png",
-    "imageAlt": "Original event illustration of a MAIA character riding a shoggoth",
+    "imageUrl": "/images/events/speaker-stephen-casper.jpg",
+    "imageAlt": "Stephen Casper portrait",
     "sourceUrl": "https://partiful.com/e/ThtJyAbrVrOAMDe89ObM",
-    "kind": "artwork"
+    "kind": "portrait"
   },
   {
     "partifulId": "WrZC5kG5fFGOW5NHcgQL",
