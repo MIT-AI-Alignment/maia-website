@@ -21,21 +21,21 @@
 			category: 'talks',
 			date: '2026-09-23',
 			media: { imageUrl: '/images/events/speaker-dwarkesh-patel.jpg', imageAlt: 'Dwarkesh Patel portrait', sourceUrl: 'https://www.dwarkesh.com/about', kind: 'portrait' },
-			description: 'A fireside chat with Dwarkesh for MAIA members on Wednesday, September 23. Time and location to be announced.'
+			description: 'A fireside chat with Dwarkesh for MAIA members on Wednesday, September 23.'
 		},
 		{
 			title: 'Talk with Stephen Casper',
 			category: 'talks',
 			date: '2026-10-06',
 			media: { imageUrl: '/images/events/speaker-stephen-casper.jpg', imageAlt: 'Stephen Casper portrait', sourceUrl: 'https://www.hks.harvard.edu/faculty/stephen-casper', kind: 'portrait' },
-			description: 'Tuesday, October 6. Time, location, and topic to be announced.'
+			description: 'Tuesday, October 6.'
 		},
 		{
 			title: 'Talk with Garrison Lovely',
 			category: 'talks',
 			media: { imageUrl: '/images/events/speaker-garrison-lovely.jpg', imageAlt: 'Garrison Lovely portrait', sourceUrl: 'https://www.garrisonlovely.com/', kind: 'portrait' },
 			imageCredit: 'Photo: Min Goodman-Cheng',
-			description: 'Planned for fall. Date, time, location, and topic will be announced once confirmed.'
+			description: 'Planned for fall.'
 		},
 		{
 			title: 'Estimation & Forecasting Challenge',
