@@ -83,11 +83,11 @@
 		</h2>
 
 		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
-			The main way people get involved with MIT AI Alignment—an 8-week reading
-			group on why AI safety matters and what's being done about it. Covers AI's
-			trajectory, misalignment, technical safety, policy, and careers in the field.
-			Fall and spring run in our office with dinner included, and summer is virtual.
-			Open to anyone, with preference for MIT undergrad and grad students.
+			AISF is MAIA’s eight-week introduction to AI safety. In small groups, we read
+			and discuss why increasingly capable AI systems might be difficult to control,
+			and what could make them safer. The readings include experiments with deceptive
+			models, methods for monitoring AI behavior, and proposals for AI policy.
+			Open to anyone, with preference for MIT undergraduate and graduate students.
 		</p>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
