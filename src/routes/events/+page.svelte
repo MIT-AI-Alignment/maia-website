@@ -423,7 +423,7 @@
 	.programs > summary span { color: var(--maia-muted); font-weight: 400; }
 	details.event-period { border-top: 1px solid var(--maia-border); }
 	details.event-period > summary { cursor: pointer; padding: 1rem 0; margin-bottom: 0; }
-	details.event-period > summary h2 { display: inline; margin-left: .5rem; }
+	details.event-period > summary h2 { margin: 0; }
 	details.event-period:global([open]) > summary { margin-bottom: 1.5rem; }
 	details.event-period > summary:focus-visible, .programs > summary:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 4px; }
 	.event-list { --timeline-gutter: 1.75rem; --timeline-axis: .35rem; position: relative; min-width: 0; }
@@ -447,5 +447,16 @@
 		.event-list { --timeline-gutter: 1.2rem; --timeline-axis: .25rem; }
 		.event-row::before { top: 1.45rem; width: .5rem; height: .5rem; }
 	}
-	summary { overflow-wrap: anywhere; }
+	summary { display: flex; align-items: center; gap: .65rem; list-style: none; overflow-wrap: anywhere; }
+	summary::-webkit-details-marker { display: none; }
+	summary::marker { content: ''; }
+	summary::before {
+		content: '';
+		width: .5rem;
+		height: .625rem;
+		flex: 0 0 .5rem;
+		background: currentColor;
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
+	}
+	details:global([open]) > summary::before { transform: rotate(90deg); }
 </style>
