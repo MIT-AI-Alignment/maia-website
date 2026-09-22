@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import EventsLayout from '../../components/EventsLayout.svelte';
 	import Button from '../../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
@@ -44,7 +45,6 @@
 			url: ORIENTATION_2026_RSVP_EVENTS.find(event => event.name === 'Estimation and Forecasting Challenge')!.href
 		}
 	];
-	const programCategory = TIMELINE_CATEGORIES.find(category => category.id === 'programs')!;
 	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
 		'6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': 'Sunset Cruise',
@@ -59,17 +59,41 @@
 		activeCategory = 'all';
 		await tick();
 		const details = document.getElementById(`details-${encodeURIComponent(event.id)}`) as HTMLDetailsElement;
-		details.open = true;
+		openParents(details);
 		details.querySelector('summary')!.focus({ preventScroll: true });
 		details.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 	}
+	// Open collapsed archive years when following existing event or year links.
+	function openParents(target: HTMLElement) {
+		let element: HTMLElement | null = target;
+		while (element) {
+			if (element instanceof HTMLDetailsElement) element.open = true;
+			element = element.parentElement;
+		}
+	}
+	async function revealHashTarget() {
+		const id = window.location.hash.slice(1);
+		if (!id) return;
+		if (id.startsWith('details-') || id.startsWith('year-')) activeCategory = 'all';
+		await tick();
+		const target = document.getElementById(id);
+		if (!target) return;
+		openParents(target);
+		target.scrollIntoView({ block: 'start' });
+	}
+	afterNavigate(() => { void revealHashTarget(); });
+
 	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + plannedEvents.filter(event => event.category === category.id).length + (category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
 	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
+		window.addEventListener('hashchange', revealHashTarget);
 		const timer = setInterval(() => now = new Date(), 60000);
-		return () => clearInterval(timer);
+		return () => {
+			clearInterval(timer);
+			window.removeEventListener('hashchange', revealHashTarget);
+		};
 	});
 	$: grouped = splitEvents(eventRows, now);
 	$: programs = splitEvents(data.events.filter(event => event.kind === 'initiative'), now);
@@ -131,31 +155,29 @@
 <EventsLayout view="list">
 	<section>
 		<div class="category-controls">
-			<p class="filter-label" id="category-filter-label">Browse by category <span>Counts across all dates</span></p>
-			<div class="category-filters" role="group" aria-labelledby="category-filter-label">
-				<button type="button" class:active={activeCategory === 'all'} aria-pressed={activeCategory === 'all'} on:click={() => activeCategory = 'all'}>
-					<i class="fa-solid fa-list-ul" aria-hidden="true"></i> All <span>{data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length}</span>
-				</button>
-				{#each categories as category}
-					<button type="button" data-category={category.id} class:active={activeCategory === category.id} aria-pressed={activeCategory === category.id} on:click={() => activeCategory = category.id}>
-						<i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label} <span>{categoryCounts.get(category.id)}</span>
-					</button>
-				{/each}
+			<div class="category-select">
+				<label for="event-category">Category</label>
+				<select id="event-category" bind:value={activeCategory}>
+					<option value="all">All events & programs</option>
+					{#each categories as category}<option value={category.id}>{category.label}</option>{/each}
+				</select>
 			</div>
-			<p class="filter-status" role="status">{#if activeCategory === 'all'}{eventRows.length + plannedEvents.length} events and {categoryCounts.get('programs') ?? 0} programs shown{:else}{visibleCount} {activeCategory === 'programs' ? 'programs' : 'matching events'}{/if}</p>
+			<a href={CONFIG.events.calendarLink} target="_blank" rel="noopener noreferrer">View calendar <span aria-hidden="true">↗</span></a>
+			<p class="sr-only" role="status">{visibleCount} listings across all dates</p>
 		</div>
 		<nav aria-label="Event archive" class="mb-8 flex flex-wrap gap-x-6 gap-y-3">
-			{#each filteredSections as section}<a class:upcoming-link={section.id === 'upcoming'} href={'#' + section.id}>{section.id === 'upcoming' ? 'Upcoming events' : section.title}</a>{/each}
+			{#if filteredSections.some(section => section.id === 'upcoming')}<a href="#upcoming" class="upcoming-link">Upcoming</a>{/if}
+			{#if filteredSections.some(section => section.id !== 'upcoming')}<a href="#past">Past events</a>{/if}
+			<a href="/events/semester/">Semester timeline</a>
 		</nav>
 		{#each filteredSections as section}
 			{@const visibleEvents = section.events}
 			{#if section.id === filteredSections.find(period => period.id !== 'upcoming')?.id}
 				<header class="archive-divider" id="past">
-					<p class="period-label"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Event archive</p>
 					<h2 class="font-heading">Past events</h2>
 					<p>Previous talks, workshops, and community gatherings.</p>
 				</header>
-		{#if highlights.length}
+		{#if highlights.length && activeCategory === 'all'}
 			<section class="highlights" aria-labelledby="highlights">
 				<div class="highlights-header">
 					<h2 id="highlights" class="font-heading">Past event highlights</h2>
@@ -164,7 +186,7 @@
 					{#each highlights as event}
 						{@const media = getEventMedia(event)}
 						<a class="highlight-card" href={`#details-${encodeURIComponent(event.id)}`} on:click={(click) => openHighlight(click, event)}>
-							{#if media}<img src={media.imageUrl} alt={media.imageAlt} />{/if}
+							{#if media}<img src={media.imageUrl} alt={media.imageAlt} loading="lazy" />{/if}
 							<div class="highlight-copy">
 								<div class="highlight-meta"><p>{displayDateRange(event)}</p><EventAttendance {event} /></div>
 								<h3>{highlightTitles[event.id]}</h3>
@@ -177,45 +199,14 @@
 		{/if}
 			{/if}
 			{#if section.events.length || section.programs.length || section.undatedPrograms.length || section.hasPlannedEvents}
-				<section class="event-period" class:upcoming={section.id === 'upcoming'} aria-labelledby={section.id}>
-				<header class="period-header">
-					{#if section.id === 'upcoming'}<p class="period-label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Coming up at MAIA</p>{/if}
+				<svelte:element this={section.id === 'upcoming' ? 'section' : 'details'} class="event-period" class:upcoming={section.id === 'upcoming'} aria-labelledby={section.id}>
+				<svelte:element this={section.id === 'upcoming' ? 'header' : 'summary'} class="period-header">
 				<h2 id={section.id} class="scroll-mt-[calc(var(--header-height,4rem)+1rem)] font-heading text-2xl font-[650]">
-					{section.id === 'upcoming' ? 'Upcoming events' : section.title}
-					{#if section.title === 'Upcoming' && visibleEvents.length}
-						<span class="ml-2 text-sm">(times in Eastern Time)</span>
-					{/if}
+					{section.id === 'upcoming' ? (activeCategory === 'programs' ? 'Upcoming programs' : 'Upcoming events') : section.title}
 				</h2>
-				</header>
-				<div class="section-grid" class:programs-only={activeCategory === 'programs'} class:events-only={!section.programs.length && !section.undatedPrograms.length}>
-					{#if section.programs.length || section.undatedPrograms.length}
-						<aside class="programs" aria-label={`${section.title} programs`}>
-							<p class="event-category" data-category={programCategory.id}><i class="fa-solid {programCategory.icon}" aria-hidden="true"></i> Programs</p>
-							<h3> {section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'}</h3>
-							<p class="programs-intro">{#if section.id === 'upcoming'}Alongside MAIA’s programs, we share opportunities from AISST at Harvard and CBAI, closely connected groups in our local AI safety community. Each listing names its organizer.{:else}Programs that ran alongside our events throughout the year.{/if}</p>
-							{#each section.programs as program}
-								{@const programMedia = getEventMedia(program)}
-								<article class="program-card" use:reveal>
-									{#if /AI Safety Fundamentals/.test(program.title)}
-										<img class="program-logo" src="/images/maia_mark.svg" alt="MAIA logo" loading="lazy" />
-									{:else if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
-									<h4>{program.title}</h4>
-									<p class="program-dates">{displayDateRange(program)}</p>
-									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
-									{#if program.url}<a href={program.url}>{program.id === 'aisf-fall-2026' ? 'Apply for Fall AISF' : program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
-								</article>
-							{/each}
-							{#each section.undatedPrograms as program}
-								<article class="program-card" use:reveal>
-									<img class="program-logo" src={program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
-									<h4>{program.title} · {program.organizer}</h4>
-									<p class="program-dates">{program.timing}</p>
-									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
-									<a href={program.url}>Explore the program <span aria-hidden="true">→</span></a>
-								</article>
-							{/each}
-						</aside>
-					{/if}
+				{#if section.id === 'upcoming' && visibleEvents.length}<p class="mt-2 text-sm text-maia-950/70 dark:text-maia-100/70">Times in Eastern Time</p>{/if}
+				</svelte:element>
+				<div class="section-grid">
 					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedEvents}>
 					{#each eventRuns(visibleEvents, section.hasPlannedEvents) as run}
 					{#if run.planned}
@@ -293,8 +284,37 @@
 					{/each}
 					{#if !visibleEvents.length && !section.hasPlannedEvents}<p class="empty-category">No individual events listed for this period.</p>{/if}
 					</div>{/if}
+					{#if section.programs.length || section.undatedPrograms.length}
+						<details class="programs" open={activeCategory === 'programs'}>
+							<summary>{section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'} <span>({section.programs.length + section.undatedPrograms.length})</span></summary>
+							<p class="programs-intro">MAIA programs and opportunities from AISST at Harvard and CBAI. Each listing names its organizer.</p>
+							<div class="program-grid">
+							{#each section.programs as program}
+								{@const programMedia = getEventMedia(program)}
+								<article class="program-card" use:reveal>
+									{#if /AI Safety Fundamentals/.test(program.title)}
+										<img class="program-logo" src="/images/maia_mark.svg" alt="MAIA logo" loading="lazy" />
+									{:else if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
+									<h4>{program.title}</h4>
+									<p class="program-dates">{displayDateRange(program)}</p>
+									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
+									{#if program.url}<a href={program.url}>{program.id === 'aisf-fall-2026' ? 'Apply for Fall AISF' : program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
+								</article>
+							{/each}
+							{#each section.undatedPrograms as program}
+								<article class="program-card" use:reveal>
+									<img class="program-logo" src={program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
+									<h4>{program.title} · {program.organizer}</h4>
+									<p class="program-dates">{program.timing}</p>
+									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
+									<a href={program.url}>Explore the program <span aria-hidden="true">→</span></a>
+								</article>
+							{/each}
+							</div>
+						</details>
+					{/if}
 				</div>
-				</section>
+				</svelte:element>
 			{/if}
 		{/each}
 
@@ -321,23 +341,16 @@
 <style>
 	.event-period { margin-top: 2rem; }
 	.period-header { margin-bottom: 1.5rem; }
-	.period-label { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-	.upcoming { padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--maia-accent) 35%, var(--maia-border)); border-top: 4px solid var(--maia-accent); border-radius: .8rem; background: color-mix(in srgb, var(--maia-accent) 6%, var(--maia-canvas)); }
-	.upcoming .period-label { color: var(--maia-accent); }
+	.upcoming { padding-top: 1.5rem; border-top: 2px solid var(--maia-accent); }
 	.upcoming h2 { font-size: clamp(1.65rem, 4vw, 2.15rem); }
-	.upcoming .event-row { border-left: 3px solid var(--maia-accent); }
 	.upcoming .event-meta > p, .upcoming .event-meta time { color: var(--maia-accent); font-weight: 650; }
 	.upcoming-link { font-weight: 700; color: var(--maia-accent); text-decoration: underline; text-underline-offset: .3rem; }
 	.archive-divider { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--maia-border); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
 	.archive-divider h2 { font-size: 2rem; font-weight: 650; margin-bottom: .5rem; }
 	.archive-divider > p { color: var(--maia-muted); }
 	.archive-divider + .highlights { margin-top: 2rem; }
-	@media (max-width: 1000px) {
-		.upcoming .event-list { grid-row: 1; }
-		.upcoming .programs { grid-row: 2; }
-	}
+
 	@media (max-width: 600px) {
-		.upcoming { padding: 1rem .75rem; }
 		.archive-divider { margin-top: 3rem; }
 	}
 	.highlights { margin-bottom: 2.5rem; }
@@ -355,18 +368,13 @@
 	.highlight-card:hover { border-color: var(--maia-accent); }
 	.highlight-card:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
 	@media (max-width: 600px) { .highlight-grid { grid-template-columns: 1fr; } }
-	.category-controls { margin-bottom: 1.75rem; }
-	.filter-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: .45rem 1rem; margin-bottom: .7rem; font-size: .85rem; font-weight: 600; }
-	.filter-label span { font-size: .75rem; font-weight: 400; color: var(--maia-muted); }
-	.category-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
-	.category-filters button { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: .5rem .8rem; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-nav-surface); color: var(--maia-muted); font-size: .8rem; }
-	.category-filters button i { color: var(--category-color, var(--maia-accent)); }
-	.category-filters button span { font-size: .7rem; font-variant-numeric: tabular-nums; opacity: .8; }
-	.category-filters button:hover { border-color: var(--category-color, var(--maia-accent)); color: var(--maia-ink); }
-	.category-filters button.active { color: var(--maia-ink); border-color: var(--category-color, var(--maia-accent)); background: color-mix(in srgb, var(--category-color, var(--maia-accent)) 12%, var(--maia-nav-surface)); font-weight: 600; }
-	.category-filters button:focus-visible { outline: 3px solid var(--maia-accent); outline-offset: 3px; }
-	.filter-status { margin-top: .65rem; color: var(--maia-muted); font-size: .75rem; line-height: 1.5; }
-	.event-category { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: .5rem; padding: .2rem .5rem; border: 1px solid color-mix(in srgb, var(--category-color) 25%, transparent); border-radius: .3rem; background: color-mix(in srgb, var(--category-color) 10%, var(--maia-nav-surface)); color: var(--maia-ink); font-size: .72rem; font-weight: 500; }
+	.category-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+	.category-select { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+	.category-select label { font-size: 1rem; }
+	.category-select select { min-height: 44px; max-width: 100%; padding: .5rem 2rem .5rem .75rem; border: 1px solid var(--maia-border); border-radius: .3rem; background: var(--maia-nav-surface); color: var(--maia-ink); font: inherit; }
+	.category-controls a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
+	.category-select select:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 3px; }
+	.event-category { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: .5rem; padding: 0; color: var(--maia-ink); font-size: .85rem; font-weight: 500; }
 	.event-category i { color: var(--category-color); }
 	.empty-category { color: var(--maia-muted); font-size: .85rem; padding: .5rem 0 1.5rem; }
 	.event-run + .event-run { margin-top: 1.5rem; }
@@ -406,37 +414,35 @@
 	.source-card span { min-width: 0; overflow-wrap: anywhere; }
 	.source-card small { display: block; margin-top: .2rem; color: var(--maia-muted); font-size: .72rem; font-weight: 400; }
 	.source-card .external-icon { margin-left: auto; font-size: .65rem; }
-	.section-grid { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2.5rem; align-items: start; }
-	.event-list { --timeline-gutter: 1.75rem; --timeline-axis: .35rem; position: relative; grid-column: 1; grid-row: 1; min-width: 0; }
+	.section-grid { display: flex; flex-direction: column; gap: 2rem; }
+	.section-grid > * { width: 100%; }
+	.event-list { order: 0; }
+	.programs { order: 1; }
+	.program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+	.programs > summary { cursor: pointer; padding: 1rem 0; border-top: 1px solid var(--maia-border); font-size: 1.1rem; font-weight: 600; }
+	.programs > summary span { color: var(--maia-muted); font-weight: 400; }
+	details.event-period { border-top: 1px solid var(--maia-border); }
+	details.event-period > summary { cursor: pointer; padding: 1rem 0; margin-bottom: 0; }
+	details.event-period > summary h2 { display: inline; margin-left: .5rem; }
+	details.event-period:global([open]) > summary { margin-bottom: 1.5rem; }
+	details.event-period > summary:focus-visible, .programs > summary:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 4px; }
+	.event-list { --timeline-gutter: 1.75rem; --timeline-axis: .35rem; position: relative; min-width: 0; }
 	.event-list.has-events { padding-left: var(--timeline-gutter); }
 	.event-list.has-events::before { content: ''; position: absolute; top: .35rem; bottom: .35rem; left: var(--timeline-axis); width: 1px; background: color-mix(in srgb, var(--maia-accent) 35%, var(--maia-border)); pointer-events: none; }
 	.event-row::before { content: ''; position: absolute; top: 1.7rem; left: calc(var(--timeline-axis) - var(--timeline-gutter) - 1px); width: .6rem; height: .6rem; transform: translateX(-50%); border: 2px solid var(--maia-accent); border-radius: 50%; background: var(--maia-canvas); pointer-events: none; }
-	.event-row { position: relative; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem; margin-bottom: .85rem; border: 1px solid var(--maia-border); border-radius: .6rem; background: var(--maia-nav-surface); }
+	.event-row { position: relative; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem 0; margin-bottom: .5rem; border-bottom: 1px solid var(--maia-border); }
 	.event-row:last-child { margin-bottom: 0; }
-	.section-grid.programs-only, .section-grid.events-only { grid-template-columns: minmax(0, 1fr); }
-	.programs-only .programs { grid-column: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-	.programs-only .programs > h3, .programs-only .programs > p { grid-column: 1 / -1; margin-bottom: 0; }
-	.programs-only .program-card { margin-bottom: 0; }
-	@media (max-width: 600px) { .programs-only .programs { grid-template-columns: minmax(0, 1fr); } }
-	.programs { grid-column: 2; grid-row: 1; min-width: 0; }
-	.programs > .event-category { width: fit-content; }
-	.programs > h3 { display: flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; }
-	.programs > h3 i { color: var(--maia-accent); }
-	.programs-intro { font-size: .78rem; line-height: 1.6; color: var(--maia-muted); margin: .5rem 0 1.2rem; }
-	.program-card { border-left: 3px solid var(--maia-accent); background: var(--maia-nav-surface); padding: 1.15rem; margin-bottom: 1rem; border-radius: 0 .5rem .5rem 0; }
+	.programs-intro { font-size: .9rem; line-height: 1.6; color: var(--maia-muted); margin: .5rem 0 1.2rem; }
+	.program-card { border-top: 1px solid var(--maia-border); padding: 1.25rem 0; }
 	.program-card h4 { font-size: 1rem; font-weight: 650; line-height: 1.4; }
 	.program-dates { font-size: .8rem; line-height: 1.65; margin: .65rem 0; color: var(--maia-muted); }
 	.program-card details { font-size: .78rem; margin: .85rem 0; }
 	.program-description { margin-top: .65rem; line-height: 1.7; }
 	.program-card > a, .timeline-link { display: inline-block; color: var(--maia-accent); font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; padding: .4rem 0; }
 	.timeline-link { margin-bottom: 1rem; }
-	@media (max-width: 1000px) {
-		.section-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
-		.programs { grid-column: 1; grid-row: 1; }
-		.event-list { grid-row: 2; }
-		.event-list:first-child { grid-row: 1; }
-	}
+
 	@media (max-width: 540px) {
+		.program-grid { grid-template-columns: 1fr; }
 		.event-row { grid-template-columns: minmax(0, 1fr); gap: .75rem; padding: .9rem; }
 		.event-list { --timeline-gutter: 1.2rem; --timeline-axis: .25rem; }
 		.event-row::before { top: 1.45rem; width: .5rem; height: .5rem; }

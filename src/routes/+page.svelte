@@ -31,47 +31,23 @@
 >
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
-			<div class="mb-6 not-prose">
+			<p class="text-lg max-w-2xl">
+				Reducing risks from advanced artificial intelligence may be one of the
+				most important challenges of our time. MAIA supports undergraduate and
+				graduate students contributing to that progress.
+			</p>
+			<div class="not-prose flex flex-wrap items-center gap-x-6 gap-y-3 mt-6">
 				<Button
-					text="Join the MAIA mailing list"
-					icon="fa-solid fa-pen-to-square"
+					text="Apply for membership"
+					icon="fa-solid fa-arrow-right"
 					type="purple"
 					size="lg"
-					href={CONFIG.mailingListLink}
+					href={CONFIG.membership.applicationLink}
 					target="_blank"
 					rel="noopener noreferrer"
 				/>
-			</div>
-			<p><a
-				href="#chat-with-us"
-				class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
-			>
-				Chat with us →
-			</a></p>
-			<p class="text-lg md:w-2/3">
-				Reducing risks from advanced artificial intelligence may be one of the
-				most important challenges of our time. And one where real progress is possible.
-			</p>
-			<p class="text-lg md:w-2/3">
-				MAIA supports undergraduate and graduate students contributing to that progress.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 mt-8">
-				{#if CONFIG.aisf_ml.visible}
-					<Button
-						text="See our opportunities"
-						icon="fa-solid fa-arrow-right"
-						type="purple"
-						href="/getinvolved/"
-					/>
-				{/if}
-				{#if CONFIG.aisf_gov.visible}
-					<Button
-						text="Get event updates"
-						icon="fa-solid fa-arrow-right"
-						type="fuchsia"
-						href={CONFIG.mailingListLink}
-					/>
-				{/if}
+				<a href="/events/" class="py-3 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events</a>
+				<a href="#chat-with-us" class="py-3 text-maia-800 dark:text-maia-400 underline underline-offset-4">Chat with us</a>
 			</div>
 		</div>
 	</svelte:fragment>
@@ -162,7 +138,7 @@
 			</div>
 		</div>
 
-		<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
+		<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
 			{#each bookablePeople as person}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail ?? person.email}`}

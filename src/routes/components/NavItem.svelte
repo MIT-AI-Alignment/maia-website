@@ -105,7 +105,6 @@
                         'hover:text-maia-800 dark:hover:text-maia-400'}"
       href={item.href}
     >
-      <i class="{item.icon} text-sm"></i>
       <span>{item.label}</span>
       {#if item.dropdownItems}
         <i class="fas fa-chevron-down text-xs opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>

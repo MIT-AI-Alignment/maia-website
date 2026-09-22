@@ -81,12 +81,6 @@
 		return content.customContent === true && typeof content.render === 'function';
 	}
 
-	function scrollToSection(id: string) {
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
-	}
 </script>
 
 <PageLayout
@@ -101,18 +95,11 @@
 			Join the MAIA community and contribute to AI safety research and education at MIT.
 		</p>
 		
-		<!-- Navigation Buttons -->
-		<div class="flex flex-wrap justify-center gap-3 mb-8">
+		<nav aria-label="Ways to get involved" class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
 			{#each sections as section}
-				<Button 
-					text={section.title} 
-					icon={section.icon} 
-					type="outline" 
-					size="md" 
-					on:click={() => scrollToSection(section.id)} 
-				/>
+				<a href={`#${section.id}`} class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">{section.title}</a>
 			{/each}
-		</div>
+		</nav>
 	</svelte:fragment>
 	
 	<!-- Content Sections -->
