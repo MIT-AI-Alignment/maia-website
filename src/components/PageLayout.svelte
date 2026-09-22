@@ -32,6 +32,10 @@
 <svelte:head>
 	<title>MAIA - {title}</title>
 	<meta name="description" content={description} />
+	<meta property="og:title" content={`MAIA - ${title}`} />
+	<meta property="og:description" content={description} />
+	<meta name="twitter:title" content={`MAIA - ${title}`} />
+	<meta name="twitter:description" content={description} />
 </svelte:head>
 
 <main class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden">

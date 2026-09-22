@@ -11,9 +11,19 @@ for (const path of htmlFiles) {
   const html = read(path);
   assert.ok(!/Felix Tudose|felixrt|Ryan Baylon|ryan-baylon/.test(html), `Removed person in ${path}`);
   assert.ok(!/mailto:undefined|orientation2026QrRedirected/.test(html), `Invalid link or redirect in ${path}`);
+  if (!html.includes('http-equiv="refresh"')) {
+    assert.match(html, /property="og:image" content="https:\/\/aialignment\.mit\.edu\/images\/brand\/maia-social-preview\.png"/, `Missing MAIA preview image in ${path}`);
+    assert.equal((html.match(/property="og:image" /g) ?? []).length, 1, `Conflicting preview images in ${path}`);
+  }
 }
 const home = read('build/index.html');
 const about = read('build/about/index.html');
+assert.match(home, /property="og:title" content="MAIA - MIT AI Alignment"/);
+assert.match(home, /property="og:description" content="MIT AI Alignment \(MAIA\)/);
+const previewImage = readFileSync('build/images/brand/maia-social-preview.png');
+assert.equal(previewImage.subarray(1, 4).toString(), 'PNG');
+assert.equal(previewImage.readUInt32BE(16), 1200);
+assert.equal(previewImage.readUInt32BE(20), 630);
 for (const page of [home, read('build/events/index.html')]) {
   assert.doesNotMatch(page, /href="\/orientation-2026\/"/, 'Orientation archive must not be promoted');
 }
