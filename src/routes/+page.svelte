@@ -83,10 +83,10 @@
 		</h2>
 
 		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
-			AISF is MAIA’s eight-week introduction to AI safety. In small groups, we read
-			and discuss why increasingly capable AI systems might be difficult to control,
-			and what could make them safer. The readings include experiments with deceptive
-			models, methods for monitoring AI behavior, and proposals for AI policy.
+			AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
+			we discuss the current trends in AI, evidence for misalignment, and potential
+			risks from advanced AI. We also explore technical approaches to AI safety,
+			AI policy, and paths into safety research.
 			Open to anyone, with preference for MIT undergraduate and graduate students.
 		</p>
 
