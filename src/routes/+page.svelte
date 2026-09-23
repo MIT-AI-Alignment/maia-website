@@ -36,19 +36,20 @@
 			</p>
 
 		</div>
-	</svelte:fragment>
-
-
-		<nav aria-label="Explore MAIA" class="home-links mb-10 flex flex-wrap gap-x-6 gap-y-2">
+		<nav aria-label="Explore MAIA" class="home-links mt-4 flex flex-wrap gap-x-6 gap-y-2">
 			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Member research <span aria-hidden="true">→</span></a>
 			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
 		</nav>
+	</svelte:fragment>
 
-	<section use:reveal class="mb-16" aria-labelledby="maia-by-the-numbers-title">
+
+
+
+	<section use:reveal class="home-section" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
 			Our community
 		</h2>
-		<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+		<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
 			{#each maiaStats as stat}
 				<div>
 					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
@@ -101,7 +102,7 @@
 	<!-- Chat with us: bookable team members -->
 	<section
 		id="chat-with-us"
-		class="mb-16 scroll-mt-24"
+		class="home-section scroll-mt-24"
 	>
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
 			<div>
@@ -133,7 +134,7 @@
 				</a>
 			{/each}
 
-			<p class="team-email mt-4 text-base text-maia-950/70 dark:text-maia-200/70">
+			<p class="team-email text-base text-maia-950/70 dark:text-maia-200/70">
 			Email the team:
 			<a
 				href="mailto:maia-exec@mit.edu"
@@ -145,7 +146,7 @@
 		</div>
 	</section>
 
-	<section use:reveal class="mb-16" aria-labelledby="organizations-title">
+	<section use:reveal class="home-section" aria-labelledby="organizations-title">
 		<h2 id="organizations-title" class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 			<i class="fa-solid fa-building-columns mr-2 text-maia-800 dark:text-maia-400"></i>
 			Organizations MAIA Works With
@@ -155,13 +156,16 @@
 </PageLayout>
 
 <style>
-	.home-description { text-wrap: pretty; }
-	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin-bottom: 4rem; }
+	.home-description { text-wrap: pretty; margin-bottom: 0; }
+	.home-section, .participation { margin-bottom: 3rem; }
+	.home-section:last-child { margin-bottom: 0; }
+	@media (max-width: 600px) { .home-section, .participation { margin-bottom: 2.5rem; } }
+	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
 	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
 	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
-	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1.25rem; }
-	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; }
-	.fellowship-details { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
+	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1rem; }
+	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+	.fellowship-details { margin: 0 0 1rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
 	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: auto; padding-top: .5rem; }
 	.participation-actions > a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
 	@media (max-width: 760px) {
