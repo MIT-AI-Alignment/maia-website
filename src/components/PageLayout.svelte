@@ -43,7 +43,7 @@
 	<Navbar />
 	
 	<!-- Hero Section -->
-	<div class="page-hero pt-10 md:pt-16 pb-8 md:pb-12 relative z-10">
+	<div class="page-hero pt-8 md:pt-14 pb-8 md:pb-10 relative z-10">
 		<div class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}

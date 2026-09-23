@@ -104,7 +104,7 @@
 		id="chat-with-us"
 		class="home-section scroll-mt-24"
 	>
-		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
 			<div>
 				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 					<i class="fa-solid fa-mug-hot mr-2 text-maia-800 dark:text-maia-400"></i>
@@ -157,12 +157,12 @@
 
 <style>
 	.home-description { text-wrap: pretty; margin-bottom: 0; }
-	.home-section, .participation { margin-bottom: 3rem; }
+	.home-section, .participation { margin-bottom: 2.5rem; }
 	.home-section:last-child { margin-bottom: 0; }
-	@media (max-width: 600px) { .home-section, .participation { margin-bottom: 2.5rem; } }
+	@media (max-width: 600px) { .home-section, .participation { margin-bottom: 2rem; } }
 	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
 	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
-	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
 	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1rem; }
 	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
 	.fellowship-details { margin: 0 0 1rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
@@ -174,7 +174,7 @@
 		.participation section { padding: 1.5rem; }
 	}
 
-	.team-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 1.5rem; }
+	.team-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 1.5rem; }
 	.team-person { display: flex; flex-direction: column; align-items: center; width: calc((100% - 6rem) / 5); min-width: 0; gap: .75rem; text-align: center; }
 	.team-person img { width: 6rem; height: 6rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
 	.team-person > div { min-width: 0; }
