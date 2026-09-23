@@ -65,9 +65,9 @@
 		for Boston-area applicants, since MAIA cannot thoroughly support distant members.
 	</p>
 	<p class="mt-4">
-		Membership requires prior AI safety context, for example through AI Safety Fundamentals (AISF),
-		prior safety research, or other relevant experience. The MAIA executive board reviews each
-		application case by case.
+		Applicants should have completed <a href="/aisf/">AI Safety Fundamentals (AISF)</a>
+		or have equivalent AI safety experience, such as prior safety research. The MAIA executive
+		board reviews each application case by case.
 	</p>
 	<p class="mt-4">
 		If you're newer to AI safety, we recommend starting with <a
