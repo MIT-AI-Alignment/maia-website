@@ -217,13 +217,30 @@ html { -webkit-text-size-adjust: 100%; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .page-hero .prose { animation: maia-enter 550ms 80ms cubic-bezier(.22, 1, .36, 1) backwards; }
   main h1 { animation: maia-enter 550ms cubic-bezier(.22, 1, .36, 1); }
   main details[open] > :not(summary) { animation: maia-enter 260ms ease-out; }
   .maia-action, .maia-text-action { transition: transform 180ms ease-out, filter 180ms ease-out; }
   .event-thumbnail img, #playing-card-gallery img { transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
   .category-filters button, .source-card { transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
 
+  .participation section, .highlight-card {
+    transition: border-color 180ms ease, background-color 180ms ease;
+  }
+  .participation section:focus-within, .highlight-card:focus-visible {
+    border-color: var(--maia-accent);
+  }
+  .home-links a, .participation-actions > a, .person-action {
+    text-decoration-thickness: 1px;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+  }
+  .team-person img {
+    transition: filter 180ms ease;
+  }
+
   @media (hover: hover) and (pointer: fine) {
+    .participation section:hover, .highlight-card:hover { border-color: var(--maia-accent); }
+    .team-person:hover img { filter: brightness(1.08); }
     .maia-action:hover, .maia-text-action:hover { transform: translateY(-2px); }
     .event-thumbnail:hover img { transform: scale(1.035); }
     #playing-card-gallery a:hover img { transform: translateY(-5px) rotate(-1deg); }

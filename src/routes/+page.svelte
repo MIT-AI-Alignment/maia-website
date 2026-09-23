@@ -39,6 +39,11 @@
 	</svelte:fragment>
 
 
+		<nav aria-label="Explore MAIA" class="home-links mb-10 flex flex-wrap gap-x-6 gap-y-2">
+			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Member research <span aria-hidden="true">→</span></a>
+			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
+		</nav>
+
 	<section use:reveal class="mb-16" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
 			Our community
@@ -53,10 +58,7 @@
 				</div>
 			{/each}
 		</div>
-		<div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Member research <span aria-hidden="true">→</span></a>
-			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
-		</div>
+
 	</section>
 
 
@@ -78,7 +80,7 @@
 				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
-		<section id="membership" aria-labelledby="membership-title" use:reveal>
+		<section id="membership" aria-labelledby="membership-title" use:reveal={{ delay: 80 }}>
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
 				Members get 24/7 office access, free compute, and access to research discussions and MAIA programs.
@@ -98,7 +100,6 @@
 
 	<!-- Chat with us: bookable team members -->
 	<section
-		use:reveal
 		id="chat-with-us"
 		class="mb-16 scroll-mt-24"
 	>
@@ -115,12 +116,13 @@
 		</div>
 
 		<div class="team-list">
-			{#each bookablePeople as person}
+			{#each bookablePeople as person, index}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail ?? person.email}`}
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
 					class="team-person"
+					use:reveal={{ delay: (index % 5) * 45 }}
 				>
 					<img src={person.imageUrl} alt="" loading="lazy" />
 					<div>

@@ -1,4 +1,4 @@
-export function reveal(node: HTMLElement) {
+export function reveal(node: HTMLElement, { delay = 0 }: { delay?: number } = {}) {
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (preference.matches || !('IntersectionObserver' in window)) return;
 
@@ -9,7 +9,7 @@ export function reveal(node: HTMLElement) {
     // Content stays visible before JavaScript and after interruption. Nothing waits hidden for a scroll.
     animation = node.animate(
       [{ opacity: 0.72, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
-      { duration: 480, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+      { duration: 480, delay, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
     );
   }, { rootMargin: '0px 0px -32px 0px' });
 
