@@ -30,7 +30,7 @@
 >
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
-			<p class="text-lg max-w-2xl">
+			<p class="home-description text-lg">
 				MIT AI Alignment (MAIA) supports students learning about and working on AI safety.
 				We run fellowships, support student research, and host talks and workshops.
 			</p>
@@ -153,6 +153,7 @@
 </PageLayout>
 
 <style>
+	.home-description { text-wrap: pretty; }
 	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin-bottom: 4rem; }
 	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
 	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
