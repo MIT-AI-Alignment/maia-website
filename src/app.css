@@ -14,9 +14,10 @@
    */
   
   /* Light mode */
-  --background-color: #f5f3ef;
+  --background-color: #ffffff;
   --primary: #6b43b8;
-  --maia-canvas: #f5f3ef;
+  --maia-canvas: #ffffff;
+  --maia-card: #faf5ff;
   --maia-ink: #191522;
   --maia-muted: #736b7e;
   --maia-border: #d9d4df;
@@ -31,6 +32,7 @@
   --background-color: #1d1427;
   --primary: #9a70d6;
   --maia-canvas: #1d1427;
+  --maia-card: #251a31;
   --maia-ink: #f7f3fa;
   --maia-muted: #b8afc4;
   --maia-border: #463650;
@@ -126,6 +128,7 @@ main .shadow-lg {
 
 /* The header uses its elevated neutral while scrolling or while the desktop
    navigation is engaged. Dropdowns share that same surface. */
+.navbar-container,
 .maia-nav-surface,
 .maia-nav-dropdown {
   background-color: var(--maia-nav-surface) !important;

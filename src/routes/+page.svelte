@@ -26,6 +26,7 @@
 
 <PageLayout
 	title="MIT AI Alignment"
+	contrastHero={true}
 	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce catastrophic risk from advanced AI."
 	heroTitle="MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce risks from advanced AI</span>."
 >
@@ -156,17 +157,18 @@
 </PageLayout>
 
 <style>
-	.participation { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; margin-bottom: 4rem; padding-top: 2rem; border-top: 1px solid var(--maia-border); }
-	.participation section { min-width: 0; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
-	.participation section + section { padding-left: 2.5rem; border-left: 1px solid var(--maia-border); }
+	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin-bottom: 4rem; }
+	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
+	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-top: 3px solid var(--maia-accent); border-radius: .5rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
 	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1.25rem; }
 	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; }
 	.fellowship-details { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
-	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.5rem; }
+	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: auto; padding-top: .5rem; }
 	.participation-actions > a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
 	@media (max-width: 760px) {
-		.participation { grid-template-columns: 1fr; gap: 2rem; }
-		.participation section + section { border-left: 0; border-top: 1px solid var(--maia-border); padding: 2rem 0 0; }
+		.participation { grid-template-columns: 1fr; gap: 1.5rem; }
+		.participation::before { display: none; }
+		.participation section { padding: 1.5rem; }
 	}
 
 	.team-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
