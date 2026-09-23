@@ -93,7 +93,7 @@
 </script>
 <p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
 		This is a list of some of the organizations our members have worked with.<br>
-		Not all organisations listed endorse or are affiliated with MAIA.
+		Not all organizations listed endorse or are affiliated with MAIA.
 </p>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
