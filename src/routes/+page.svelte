@@ -80,7 +80,7 @@
 		<section id="membership" aria-labelledby="membership-title" use:reveal>
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
-				Join our shared workspace, research discussions, and MAIA programs.
+				Members get 24/7 office access, free compute, and access to research discussions and MAIA programs.
 			</p>
 			<p>
 				Applicants should have completed AISF or have equivalent AI safety experience.
