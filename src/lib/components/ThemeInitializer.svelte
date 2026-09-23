@@ -5,8 +5,7 @@
   
   onMount(() => {
     if (browser) {
-      theme.set('light');
-      document.documentElement.classList.remove('dark');
+      theme.set(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     }
   });
 </script>

@@ -14,16 +14,17 @@
    */
   
   /* Light mode */
-  --background-color: #f5f3ef;
+  --background-color: #e3e1e8;
   --primary: #6b43b8;
-  --maia-canvas: #f5f3ef;
+  --maia-canvas: #e3e1e8;
+  --maia-card: #eeecf2;
   --maia-ink: #191522;
   --maia-muted: #736b7e;
-  --maia-border: #d9d4df;
+  --maia-border: #cbc6d3;
   --maia-accent: #6b43b8;
   --maia-action: #6b43b8;
   --maia-feature: #6b43b8;
-  --maia-nav-surface: #ffffff;
+  --maia-nav-surface: #e3e1e8;
 }
 
 .dark {
@@ -31,6 +32,7 @@
   --background-color: #1d1427;
   --primary: #9a70d6;
   --maia-canvas: #1d1427;
+  --maia-card: #251a31;
   --maia-ink: #f7f3fa;
   --maia-muted: #b8afc4;
   --maia-border: #463650;
@@ -84,10 +86,6 @@ main .bottom-gradient {
   display: none;
 }
 
-main :is(.rounded-xl, .rounded-lg, .rounded-md) {
-  border-radius: 0;
-}
-
 main .shadow-maia,
 main .shadow-maia-lg,
 main .shadow-sm,
@@ -124,13 +122,18 @@ main .shadow-lg {
   color: var(--maia-accent) !important;
 }
 
-/* The header uses its elevated neutral while scrolling or while the desktop
-   navigation is engaged. Dropdowns share that same surface. */
+/* Navigation surfaces follow the selected theme. */
+.navbar-container,
 .maia-nav-surface,
 .maia-nav-dropdown {
   background-color: var(--maia-nav-surface) !important;
   border-color: var(--maia-border) !important;
   box-shadow: none !important;
+}
+
+.maia-nav-dropdown {
+  border-radius: .5rem;
+  overflow: hidden;
 }
 
 .maia-nav-dropdown-link:hover,
@@ -162,7 +165,7 @@ main .shadow-lg {
 }
 
 .maia-feature a {
-  border-radius: 0;
+  border-radius: .5rem;
   box-shadow: none !important;
 }
 
@@ -208,22 +211,23 @@ main .w-16.h-1 {
 /* Respect device text sizing and the reduced-motion preference (Neha's mobile pass). */
 html { -webkit-text-size-adjust: 100%; }
 
-@keyframes maia-enter {
-  from { opacity: .72; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes maia-fade {
+  from { opacity: .8; }
+  to { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  main h1 { animation: maia-enter 550ms cubic-bezier(.22, 1, .36, 1); }
-  main details[open] > :not(summary) { animation: maia-enter 260ms ease-out; }
-  .maia-action, .maia-text-action { transition: transform 180ms ease-out, filter 180ms ease-out; }
-  .event-thumbnail img, #playing-card-gallery img { transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
-  .category-filters button, .source-card { transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
-
+  .page-hero { animation: maia-fade 180ms ease-out; }
+  .maia-nav-dropdown { animation: maia-fade 120ms ease-out; }
+  .maia-action, .maia-text-action { transition: filter 150ms ease, background-color 150ms ease; }
+  .participation section, .highlight-card, .source-card {
+    transition: border-color 150ms ease;
+  }
+  .participation section:focus-within, .highlight-card:focus-visible {
+    border-color: var(--maia-accent);
+  }
   @media (hover: hover) and (pointer: fine) {
-    .maia-action:hover, .maia-text-action:hover { transform: translateY(-2px); }
-    .event-thumbnail:hover img { transform: scale(1.035); }
-    #playing-card-gallery a:hover img { transform: translateY(-5px) rotate(-1deg); }
+    .participation section:hover, .highlight-card:hover { border-color: var(--maia-accent); }
   }
 }
 

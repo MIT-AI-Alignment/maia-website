@@ -102,7 +102,7 @@
 		<Orgs />
 		<p class="mt-6 text-center text-maia-950/60 dark:text-maia-200 italic">
 			This is a list of some of the organizations our members have worked with. Not all
-			organisations listed endorse or are affiliated with MAIA.
+			organizations listed endorse or are affiliated with MAIA.
 		</p>
 	</SectionContainer> -->
 </PageLayout>

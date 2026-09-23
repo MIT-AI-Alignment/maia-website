@@ -5,18 +5,16 @@
 	import { getBookablePeople } from '$lib/people';
 	import { RESEARCH_PAPERS } from '$lib/researchShowcase';
 	import Orgs from './components/orgs.svelte';
-	import { reveal } from '$lib/reveal';
 
 	const aisfBenefits = [
-		'8 weeks, 2 hours per week',
-		'<strong>Free food</strong> at sessions',
-		'Small groups led by MAIA facilitators',
+		'2 hours per week',
+		'Free food at sessions',
 		'No prior AI background required'
 	];
 	const maiaStats = [
 		{ value: '300+', label: 'active members' },
-		{ value: '1,300+', label: 'people in the MAIA Slack community' },
-		{ value: String(RESEARCH_PAPERS.length), label: 'papers by members and alumni' }
+		{ value: '1,300+', label: 'in our Slack community' },
+		{ value: String(RESEARCH_PAPERS.length), label: 'papers by members & alumni' }
 	];
 
 	const bookablePeople = getBookablePeople();
@@ -27,63 +25,30 @@
 <PageLayout
 	title="MIT AI Alignment"
 	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce catastrophic risk from advanced AI."
-	heroTitle="We're a group of MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce catastrophic risk from advanced AI</span>."
+	heroTitle="We're a group of MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce risks from advanced AI</span>."
 >
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
-			<div class="mb-6 not-prose">
-				<Button
-					text="Join the MAIA mailing list"
-					icon="fa-solid fa-pen-to-square"
-					type="purple"
-					size="lg"
-					href={CONFIG.mailingListLink}
-					target="_blank"
-					rel="noopener noreferrer"
-				/>
-			</div>
-			<p><a
-				href="#chat-with-us"
-				class="inline-block text-2xl text-maia-800 dark:text-maia-500 underline decoration-2 underline-offset-4 transition-colors"
-			>
-				Chat with us →
-			</a></p>
-			<p class="text-lg md:w-2/3">
-				Reducing risks from advanced artificial intelligence may be one of the
-				most important challenges of our time. And one where real progress is possible.
+			<p class="home-description text-lg">
+				MIT AI Alignment (MAIA) supports students learning about and working on AI safety.
+				We run fellowships, support student research, and host talks and workshops.
 			</p>
-			<p class="text-lg md:w-2/3">
-				MAIA supports undergraduate and graduate students contributing to that progress.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 mt-8">
-				{#if CONFIG.aisf_ml.visible}
-					<Button
-						text="See our opportunities"
-						icon="fa-solid fa-arrow-right"
-						type="purple"
-						href="/getinvolved/"
-					/>
-				{/if}
-				{#if CONFIG.aisf_gov.visible}
-					<Button
-						text="Get event updates"
-						icon="fa-solid fa-arrow-right"
-						type="fuchsia"
-						href={CONFIG.mailingListLink}
-					/>
-				{/if}
-			</div>
+
 		</div>
+		<nav aria-label="Explore MAIA" class="home-links mt-4 flex flex-wrap gap-x-6 gap-y-2">
+			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Member research <span aria-hidden="true">→</span></a>
+			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
+		</nav>
 	</svelte:fragment>
 
-	<section use:reveal class="mb-16" aria-labelledby="maia-by-the-numbers-title">
+
+
+
+	<section class="home-section" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
-			MAIA by the numbers
+			Our community
 		</h2>
-		<p class="mt-3 text-lg text-maia-950/80 dark:text-maia-100/80">
-			A student-run community at MIT and beyond.
-		</p>
-		<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+		<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
 			{#each maiaStats as stat}
 				<div>
 					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
@@ -93,106 +58,82 @@
 				</div>
 			{/each}
 		</div>
+
 	</section>
 
-	<!-- AISF: flagship program, feature card treatment -->
-	<section
-		use:reveal
-		id="aisf"
-		class="maia-feature mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
-	>
-		<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
-			<i class="fa-solid fa-graduation-cap mr-2"></i>
-			AI Safety Fundamentals
-		</h2>
 
-		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
-			The main way people get involved with MIT AI Alignment—an 8-week reading
-			group on why AI safety matters and what's being done about it. Covers AI's
-			trajectory, misalignment, technical safety, policy, and careers in the field.
-			Fall and spring run in our office with dinner included, and summer is virtual.
-			Open to anyone, with preference for MIT undergrad and grad students.
-		</p>
+	<div class="participation">
+		<section id="aisf" aria-labelledby="aisf-title">
+			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
+			<p>
+				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
+				we discuss AI trends, evidence for misalignment, and approaches to AI safety and policy.
+			</p>
+			<ul class="fellowship-details">
+				{#each aisfBenefits as benefit}<li>{@html benefit}</li>{/each}
+			</ul>
+			<p>Open to anyone, with preference for MIT undergraduate and graduate students.</p>
+			<div class="participation-actions">
+				{#if CONFIG.aisf_ml.applicationLink}
+					<Button text="Apply for Fall AISF" type="purple" href={CONFIG.aisf_ml.applicationLink} />
+				{/if}
+				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+		<section id="membership" aria-labelledby="membership-title">
+			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
+			<p>
+				Members get 24/7 office access, free compute, and access to research discussions and MAIA programs.
+			</p>
+			<p>
+				Applicants should have completed AISF or have equivalent AI safety experience.
+				Membership is for people in the Boston area, including non-MIT students.
+			</p>
+			<div class="participation-actions">
+				<Button text="Apply for membership" type="purple" href={CONFIG.membership.applicationLink} target="_blank" rel="noopener noreferrer" />
+				<a href="/getinvolved/#membership">Membership details <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+	</div>
 
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
-			{#each aisfBenefits as benefit}
-				<div class="flex items-center gap-3 text-white/90">
-					<i class="fa-solid fa-check text-maia-300 w-4 text-center"></i>
-					<span>{@html benefit}</span>
-				</div>
-			{/each}
-		</div>
 
-		<div class="flex flex-col sm:flex-row gap-3">
-			{#if CONFIG.aisf_ml.applicationLink}
-				<a
-					href={CONFIG.aisf_ml.applicationLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
-				>
-					Apply for Fall AISF
-					<i class="fa-solid fa-arrow-right"></i>
-				</a>
-			{/if}
-			<a
-				href="/aisf/"
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
-			>
-				See the curriculum
-			</a>
-		</div>
-	</section>
 
 	<!-- Chat with us: bookable team members -->
 	<section
-		use:reveal
 		id="chat-with-us"
-		class="mb-16 scroll-mt-24"
+		class="home-section scroll-mt-24"
 	>
-		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
 			<div>
 				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 					<i class="fa-solid fa-mug-hot mr-2 text-maia-800 dark:text-maia-400"></i>
 					Want to talk with us?
 				</h2>
 				<p class="text-lg text-maia-950/80 dark:text-maia-100/80 max-w-2xl leading-relaxed">
-					We're MIT students working on AI alignment, and we're always happy to chat with
-					people who are curious. You can ask about AISF, research, careers, or just what
-					MAIA is like.
+					We're always happy to chat with people who are curious. You can ask about AISF, research, careers, or just what MAIA is like.
 				</p>
 			</div>
 		</div>
 
-		<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto rounded-xl p-8 md:p-10 bg-surface-light-alt dark:bg-surface-dark-alt border border-maia-200 dark:border-maia-800">
+		<div class="team-list">
 			{#each bookablePeople as person}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail ?? person.email}`}
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
-					class="group flex w-[calc((100%-1rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] flex-col items-center text-center p-4 rounded-lg bg-surface-light-elevated dark:bg-surface-dark-elevated border border-maia-200 dark:border-maia-800 hover:border-maia-800 dark:hover:border-maia-400 hover:shadow-maia transition-all duration-200"
+					class="team-person"
 				>
-					<img
-						src={person.imageUrl}
-						alt={person.name}
-						class="w-20 h-20 rounded-full object-cover mb-3 ring-2 ring-maia-200 dark:ring-maia-800 group-hover:ring-maia-800 dark:group-hover:ring-maia-400 transition-all"
-					/>
-					<p class="font-heading font-[550] text-base leading-tight m-0">{person.name}</p>
-					{#if person.position}
-						<p class="text-xs text-maia-950/60 dark:text-maia-200/70 leading-tight mt-1 m-0">
-							{person.position}
-						</p>
-					{/if}
-					<span
-						class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-maia-800 dark:text-maia-400 group-hover:gap-2 transition-all"
-					>
-						<i class={person.calendly ? 'fa-regular fa-calendar' : 'fa-regular fa-envelope'}></i>
-						{person.calendly ? 'Chat with' : 'Email'} {person.name.split(' ')[0]}
-						<i class="fa-solid fa-arrow-right text-xs"></i>
-					</span>
+					<img src={person.imageUrl} alt="" loading="lazy" />
+					<div>
+						<p class="font-heading text-lg">{person.name}</p>
+						{#if person.position}<p class="person-role">{person.position}</p>{/if}
+						<span class="person-action">{person.calendly ? 'Book a chat' : 'Send an email'} <span aria-hidden="true">→</span></span>
+					</div>
 				</a>
 			{/each}
 
-			<p class="basis-full mt-4 text-sm text-maia-950/70 dark:text-maia-200/70 text-center">
-			Prefer email? Reach the whole team at
+			<p class="team-email text-base text-maia-950/70 dark:text-maia-200/70">
+			Email the team:
 			<a
 				href="mailto:maia-exec@mit.edu"
 				class="text-maia-800 dark:text-maia-400 underline underline-offset-2 hover:no-underline"
@@ -203,7 +144,7 @@
 		</div>
 	</section>
 
-	<section use:reveal class="mb-16" aria-labelledby="organizations-title">
+	<section class="home-section" aria-labelledby="organizations-title">
 		<h2 id="organizations-title" class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 			<i class="fa-solid fa-building-columns mr-2 text-maia-800 dark:text-maia-400"></i>
 			Organizations MAIA Works With
@@ -211,3 +152,35 @@
 		<Orgs />
 	</section>
 </PageLayout>
+
+<style>
+	.home-description { text-wrap: pretty; margin-bottom: 0; }
+	.home-section, .participation { margin-bottom: 2.5rem; }
+	.home-section:last-child { margin-bottom: 0; }
+	@media (max-width: 600px) { .home-section, .participation { margin-bottom: 2rem; } }
+	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
+	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1rem; }
+	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+	.fellowship-details { margin: 0 0 1rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
+	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: auto; padding-top: .5rem; }
+	.participation-actions > a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
+	@media (max-width: 760px) {
+		.participation { grid-template-columns: 1fr; gap: 1.5rem; }
+		.participation::before { display: none; }
+		.participation section { padding: 1.5rem; }
+	}
+
+	.team-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 1.5rem; }
+	.team-person { display: flex; flex-direction: column; align-items: center; width: calc((100% - 6rem) / 5); min-width: 0; gap: .75rem; text-align: center; }
+	.team-person img { width: 6rem; height: 6rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
+	.team-person > div { min-width: 0; }
+	.person-role { color: var(--maia-muted); font-size: .95rem; margin-top: .15rem; }
+	.person-action { display: inline-block; color: var(--maia-accent); margin-top: .4rem; font-size: 1rem; }
+	.team-person:hover .person-action { text-decoration: underline; text-underline-offset: .2rem; }
+	.team-person:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 4px; }
+	.team-email { width: 100%; text-align: center; }
+	@media (max-width: 900px) { .team-person { width: calc((100% - 3rem) / 3); } }
+	@media (max-width: 600px) { .team-person { width: calc((100% - 1.5rem) / 2); } }
+</style>

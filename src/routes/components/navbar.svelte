@@ -5,11 +5,10 @@
 	import { CONFIG } from '$lib/config';
 	import { NAVIGATION_ITEMS } from '$lib/navItems';
 	import { pageNavItems } from '$lib/stores/navigation';
-	import { theme } from '$lib/stores/theme';
+	import { theme, toggleTheme } from '$lib/stores/theme';
 	import Banner from './banner.svelte';
 	import NavItem from './NavItem.svelte';
 	import MobileMenu from './MobileMenu.svelte';
-	import { fade, slide } from 'svelte/transition';
 	import type { NavItem as NavItemType } from '$lib/stores/navigation';
 
 	// Navbar state
@@ -22,14 +21,13 @@
 	// Measured height of the fixed header (banner + navbar); drives the spacer and mobile menu offset.
 	let headerHeight = 0;
 	
-	// The header only becomes compact after scroll; hovering the desktop navigation
-	// reveals the same surface without moving the layout.
+	// Keep header height fixed so scrolling does not shift the page.
 	let navbarHeight = '4rem'; // Default height
 	
 	// Update navbar appearance based on scroll position and navigation focus.
 	$: {
 		isScrolled = scrollY > 20;
-		navbarHeight = isScrolled ? '3.5rem' : '4rem';
+		navbarHeight = '4rem';
 		hasNavSurface = isScrolled || isNavHovering || activeDropdown !== null;
 	}
 	
@@ -102,7 +100,7 @@
 	
 	.navbar-container {
 		height: var(--navbar-height);
-		transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+		transition: background-color 160ms ease, border-color 160ms ease;
 	}
 </style>
 
@@ -158,7 +156,6 @@
 							
 							{#if activeDropdown === 'page'}
 								<div
-									transition:slide={{ duration: 150 }}
 							class="maia-nav-dropdown absolute top-full right-0 rounded-md py-1 min-w-[200px] border backdrop-blur-sm"
 									role="menu"
 									tabindex="0"
@@ -179,22 +176,37 @@
 					
 				</nav>
 				
-				<!-- Mobile Menu Button -->
-				<div class="flex xl:hidden">
+				<!-- Theme and mobile navigation controls -->
+				<div class="flex items-center gap-2">
+					<button
+						type="button"
+						class="inline-flex h-11 w-11 shrink-0 items-center justify-center leading-none rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-maia-500 text-maia-950 dark:text-maia-100"
+						aria-label={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+						title={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+						on:click={toggleTheme}
+					>
+						{#if $theme === 'dark'}
+							<svg class="block h-5 w-5 shrink-0" fill="currentColor" aria-hidden="true" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+						{:else}
+							<svg class="block h-5 w-5 shrink-0" fill="currentColor" aria-hidden="true" viewBox="-64 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+						{/if}
+					</button>
 				<button
 					type="button"
-					class="inline-flex min-h-11 min-w-11 items-center justify-center p-2 rounded-md text-maia-950 dark:text-maia-100
+					class="inline-flex xl:hidden h-11 w-11 shrink-0 items-center justify-center leading-none p-2 rounded-md text-maia-950 dark:text-maia-100
 							hover:text-maia-800 dark:hover:text-maia-400 hover:bg-maia-50 dark:hover:bg-maia-950/30
 							focus:outline-none focus:ring-2 focus:ring-inset focus:ring-maia-500"
 						aria-expanded={isMobileMenuOpen}
 						on:click={toggleMobileMenu}
 					>
 						<span class="sr-only">{isMobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
-						{#if isMobileMenuOpen}
-							<i class="fas fa-times h-6 w-6"></i>
-						{:else}
-							<i class="fas fa-bars h-6 w-6"></i>
-						{/if}
+						<svg class="block h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+							{#if isMobileMenuOpen}
+								<path d="M6 6l12 12M18 6L6 18" />
+							{:else}
+								<path d="M4 6h16M4 12h16M4 18h16" />
+							{/if}
+						</svg>
 					</button>
 				</div>
 			</div>

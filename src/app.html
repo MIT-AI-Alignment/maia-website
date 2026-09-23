@@ -1,7 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
+		<script>
+			// Apply a saved light theme before paint; dark remains the default.
+			try {
+				document.documentElement.classList.toggle('dark', localStorage.getItem('theme') !== 'light');
+			} catch { /* Use the default when browser storage is unavailable. */ }
+		</script>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:site_name" content="MIT AI Alignment (MAIA)" />

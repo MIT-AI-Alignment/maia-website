@@ -2,7 +2,7 @@
 export const CONFIG = {
     banner: {
         visible: true,
-        text: "Join the MAIA mailing list for updates on events, programs, and opportunities.",
+        text: "Events, programs, and opportunities from MAIA.",
         link: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
         ctaText: "Join mailing list"
     },

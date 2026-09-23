@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
   import { page } from '$app/stores';
   import { theme } from '$lib/stores/theme';
 
@@ -75,7 +74,7 @@
     {/if}
 
     {#if item.dropdownItems && activeDropdown === item.label}
-      <div transition:slide={{ duration: 200 }}
+      <div
            class="{$theme === 'dark' ? 'bg-maia-950/20' : 'bg-maia-50/50'}">
         {#each item.dropdownItems as subItem}
           <a
@@ -105,7 +104,6 @@
                         'hover:text-maia-800 dark:hover:text-maia-400'}"
       href={item.href}
     >
-      <i class="{item.icon} text-sm"></i>
       <span>{item.label}</span>
       {#if item.dropdownItems}
         <i class="fas fa-chevron-down text-xs opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>
@@ -114,7 +112,6 @@
 
     {#if item.dropdownItems && activeDropdown === item.label}
       <div
-        transition:slide={{ duration: 150 }}
 		class="maia-nav-dropdown absolute top-full left-0 rounded-md py-1 min-w-[200px] border backdrop-blur-sm"
         role="menu"
         tabindex="0"
