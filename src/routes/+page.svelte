@@ -9,7 +9,7 @@
 
 	const aisfBenefits = [
 		'8 weeks, 2 hours per week',
-		'<strong>Free food</strong> at sessions',
+		'Free food at sessions',
 		'Small groups led by MAIA facilitators',
 		'No prior AI background required'
 	];
@@ -35,73 +35,47 @@
 				MIT AI Alignment (MAIA) supports students learning about and working on AI safety.
 				We run fellowships, support student research, and host talks and workshops.
 			</p>
-			<div class="not-prose flex flex-wrap items-center gap-x-6 gap-y-3 mt-6">
-				<Button
-					text="Apply for membership"
-					icon="fa-solid fa-arrow-right"
-					type="purple"
-					size="lg"
-					href={CONFIG.membership.applicationLink}
-					target="_blank"
-					rel="noopener noreferrer"
-				/>
-				<a href="/events/" class="py-3 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events</a>
-				<a href="#aisf" class="py-3 text-maia-800 dark:text-maia-400 underline underline-offset-4">Explore AISF</a>
-			</div>
-			<p class="mt-4 text-base max-w-2xl">
-				Membership criteria include completion of AISF or equivalent AI safety experience.
-				<a href="/getinvolved/#membership" class="underline underline-offset-4">See all criteria</a>.
-			</p>
+
 		</div>
 	</svelte:fragment>
 
 
-	<!-- AISF: flagship program, feature card treatment -->
-	<section
-		use:reveal
-		id="aisf"
-		class="maia-feature mb-16 rounded-xl p-8 md:p-10 bg-gradient-to-br from-maia-800 to-maia-900 dark:from-maia-700 dark:to-maia-900 text-white shadow-maia-lg border border-maia-700/50 dark:border-maia-600/40 scroll-mt-24"
-	>
-		<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-4 leading-tight">
-			<i class="fa-solid fa-graduation-cap mr-2"></i>
-			AI Safety Fundamentals
-		</h2>
-
-		<p class="text-lg text-white/90 mb-8 max-w-3xl leading-relaxed">
-			AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
-			we discuss the current trends in AI, evidence for misalignment, and potential
-			risks from advanced AI. We also explore technical approaches to AI safety,
-			AI policy, and paths into safety research.
-			Open to anyone, with preference for MIT undergraduate and graduate students.
-		</p>
-
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-3xl">
-			{#each aisfBenefits as benefit}
-				<div class="flex items-center gap-3 text-white/90">
-					<i class="fa-solid fa-check text-maia-300 w-4 text-center"></i>
-					<span>{@html benefit}</span>
-				</div>
-			{/each}
-		</div>
-
-		<div class="flex flex-col sm:flex-row gap-3">
-			{#if CONFIG.aisf_ml.applicationLink}
-				<a
-					href={CONFIG.aisf_ml.applicationLink}
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white text-maia-800 hover:bg-maia-50 font-medium transition-colors shadow-sm"
-				>
-					Apply for Fall AISF
-					<i class="fa-solid fa-arrow-right"></i>
-				</a>
-			{/if}
-			<a
-				href="/aisf/"
-				class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/30"
-			>
-				See the curriculum
-			</a>
-		</div>
-	</section>
+	<div class="participation">
+		<section id="aisf" aria-labelledby="aisf-title" use:reveal>
+			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
+			<p>
+				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
+				we discuss the current trends in AI, evidence for misalignment, and potential
+				risks from advanced AI. We also explore technical approaches to AI safety,
+				AI policy, and paths into safety research.
+			</p>
+			<ul class="fellowship-details">
+				{#each aisfBenefits as benefit}<li>{@html benefit}</li>{/each}
+			</ul>
+			<p>Open to anyone, with preference for MIT undergraduate and graduate students.</p>
+			<div class="participation-actions">
+				{#if CONFIG.aisf_ml.applicationLink}
+					<Button text="Apply for Fall AISF" type="purple" href={CONFIG.aisf_ml.applicationLink} />
+				{/if}
+				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+		<section id="membership" aria-labelledby="membership-title" use:reveal>
+			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
+			<p>
+				Work on AI safety alongside other students and researchers. Members use our
+				shared workspace, join research discussions, and take part in MAIA programs.
+			</p>
+			<p>
+				Applicants should have completed AISF or have equivalent AI safety experience.
+				Membership is for people based in the Boston area; you don't have to be an MIT student.
+			</p>
+			<div class="participation-actions">
+				<Button text="Apply for membership" type="purple" href={CONFIG.membership.applicationLink} target="_blank" rel="noopener noreferrer" />
+				<a href="/getinvolved/#membership">Membership details <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+	</div>
 
 	<section use:reveal class="mb-16" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
@@ -117,7 +91,10 @@
 				</div>
 			{/each}
 		</div>
-		<a href="/initiatives#research" class="inline-block mt-6 py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Read research by MAIA members <span aria-hidden="true">→</span></a>
+		<div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Read research by MAIA members <span aria-hidden="true">→</span></a>
+			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
+		</div>
 	</section>
 
 
@@ -179,6 +156,19 @@
 </PageLayout>
 
 <style>
+	.participation { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; margin-bottom: 4rem; padding-top: 2rem; border-top: 1px solid var(--maia-border); }
+	.participation section { min-width: 0; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.participation section + section { padding-left: 2.5rem; border-left: 1px solid var(--maia-border); }
+	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1.25rem; }
+	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; }
+	.fellowship-details { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
+	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.5rem; }
+	.participation-actions > a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
+	@media (max-width: 760px) {
+		.participation { grid-template-columns: 1fr; gap: 2rem; }
+		.participation section + section { border-left: 0; border-top: 1px solid var(--maia-border); padding: 2rem 0 0; }
+	}
+
 	.team-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
 	.team-person { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid var(--maia-border); }
 	.team-person img { width: 4rem; height: 4rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
