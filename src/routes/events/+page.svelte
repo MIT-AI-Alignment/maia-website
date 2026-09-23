@@ -357,7 +357,7 @@
 	.highlights-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
 	.highlights-header h2 { font-size: 1.5rem; font-weight: 650; scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
 	.highlight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-	.highlight-card { overflow: hidden; border: 1px solid var(--maia-border); border-radius: .65rem; background: var(--maia-nav-surface); color: var(--maia-ink); text-decoration: none; }
+	.highlight-card { overflow: hidden; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-nav-surface); color: var(--maia-ink); text-decoration: none; }
 	.highlight-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 	.highlight-copy { padding: 1.1rem 1.25rem 1.25rem; }
 	.highlight-copy p { color: var(--maia-muted); font-size: .8rem; margin: 0 0 .45rem; }
@@ -371,7 +371,7 @@
 	.category-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
 	.category-select { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
 	.category-select label { font-size: 1rem; }
-	.category-select select { min-height: 44px; max-width: 100%; padding: .5rem 2rem .5rem .75rem; border: 1px solid var(--maia-border); border-radius: .3rem; background: var(--maia-nav-surface); color: var(--maia-ink); font: inherit; }
+	.category-select select { min-height: 44px; max-width: 100%; padding: .5rem 2rem .5rem .75rem; border: 1px solid var(--maia-border); border-radius: .5rem; background: var(--maia-nav-surface); color: var(--maia-ink); font: inherit; }
 	.category-controls a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
 	.category-select select:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 3px; }
 	.event-category { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: .5rem; padding: 0; color: var(--maia-ink); font-size: .85rem; font-weight: 500; }
@@ -387,7 +387,7 @@
 	.event-meta :global(.event-attendance) { margin-top: .85rem; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
 	.program-logo { width: 7.5rem; max-height: 5rem; object-fit: contain; margin-bottom: .75rem; }
-	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-canvas); cursor: zoom-in; }
+	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .5rem; background: var(--maia-canvas); cursor: zoom-in; }
 	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
 	.event-thumbnail.photo img { object-fit: cover; }
 	.event-thumbnail > span { position: absolute; right: .3rem; bottom: .3rem; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: .25rem; background: var(--maia-nav-surface); color: var(--maia-ink); font-size: .65rem; }
@@ -408,7 +408,7 @@
 	.event-description a { color: var(--maia-accent); text-decoration: underline; text-underline-offset: 3px; }
 	.event-intro { margin-top: .5rem; color: var(--maia-muted); font-size: .9rem; line-height: 1.6; max-width: 65ch; }
 	.event-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .6rem; margin-top: 1.15rem; }
-	.source-card { display: flex; align-items: center; gap: .65rem; padding: .85rem; border: 1px solid var(--maia-border); border-radius: .45rem; background: var(--maia-nav-surface); font-size: .82rem; font-weight: 600; color: var(--maia-ink); }
+	.source-card { display: flex; align-items: center; gap: .65rem; padding: .85rem; border: 1px solid var(--maia-border); border-radius: .5rem; background: var(--maia-nav-surface); font-size: .82rem; font-weight: 600; color: var(--maia-ink); }
 	.source-card:hover { border-color: var(--maia-accent); }
 	.source-card > i { color: var(--maia-accent); }
 	.source-card span { min-width: 0; overflow-wrap: anywhere; }

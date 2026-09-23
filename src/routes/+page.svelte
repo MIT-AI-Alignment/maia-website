@@ -158,7 +158,7 @@
 <style>
 	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin-bottom: 4rem; }
 	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
-	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-radius: .25rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
+	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
 	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1.25rem; }
 	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; }
 	.fellowship-details { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }

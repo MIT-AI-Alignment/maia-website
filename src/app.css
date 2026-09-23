@@ -86,10 +86,6 @@ main .bottom-gradient {
   display: none;
 }
 
-main :is(.rounded-xl, .rounded-lg, .rounded-md) {
-  border-radius: 0;
-}
-
 main .shadow-maia,
 main .shadow-maia-lg,
 main .shadow-sm,
@@ -135,6 +131,11 @@ main .shadow-lg {
   box-shadow: none !important;
 }
 
+.maia-nav-dropdown {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
 .maia-nav-dropdown-link:hover,
 .maia-nav-dropdown-active {
   background-color: var(--maia-action) !important;
@@ -164,7 +165,7 @@ main .shadow-lg {
 }
 
 .maia-feature a {
-  border-radius: 0;
+  border-radius: .5rem;
   box-shadow: none !important;
 }
 
