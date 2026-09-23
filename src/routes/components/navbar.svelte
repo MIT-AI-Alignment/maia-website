@@ -5,7 +5,7 @@
 	import { CONFIG } from '$lib/config';
 	import { NAVIGATION_ITEMS } from '$lib/navItems';
 	import { pageNavItems } from '$lib/stores/navigation';
-	import { theme } from '$lib/stores/theme';
+	import { theme, toggleTheme } from '$lib/stores/theme';
 	import Banner from './banner.svelte';
 	import NavItem from './NavItem.svelte';
 	import MobileMenu from './MobileMenu.svelte';
@@ -179,11 +179,20 @@
 					
 				</nav>
 				
-				<!-- Mobile Menu Button -->
-				<div class="flex xl:hidden">
+				<!-- Theme and mobile navigation controls -->
+				<div class="flex items-center gap-2">
+					<button
+						type="button"
+						class="inline-flex min-h-11 min-w-11 items-center justify-center text-maia-950 dark:text-maia-100"
+						aria-label={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+						title={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+						on:click={toggleTheme}
+					>
+						<i class={$theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'} aria-hidden="true"></i>
+					</button>
 				<button
 					type="button"
-					class="inline-flex min-h-11 min-w-11 items-center justify-center p-2 rounded-md text-maia-950 dark:text-maia-100
+					class="inline-flex xl:hidden min-h-11 min-w-11 items-center justify-center p-2 rounded-md text-maia-950 dark:text-maia-100
 							hover:text-maia-800 dark:hover:text-maia-400 hover:bg-maia-50 dark:hover:bg-maia-950/30
 							focus:outline-none focus:ring-2 focus:ring-inset focus:ring-maia-500"
 						aria-expanded={isMobileMenuOpen}

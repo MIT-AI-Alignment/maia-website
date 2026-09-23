@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { theme } from '$lib/stores/theme';
 	import Footer from '../routes/components/footer.svelte';
 	import Navbar from '../routes/components/navbar.svelte';
 	import { updatePageNavItems, clearPageNavItems, type DropdownItem } from '$lib/stores/navigation';
@@ -11,7 +10,6 @@
 	export let heroIcon = '';
 	export let heroTitle: string;
 	export let centerTitle = false;
-	export let contrastHero = false;
 	export let pageNavItems: DropdownItem[] = [];
 	
 	let mounted = false;
@@ -45,7 +43,7 @@
 	<Navbar />
 	
 	<!-- Hero Section -->
-	<div class="page-hero pt-10 md:pt-16 pb-8 md:pb-12 relative z-10" class:contrast={contrastHero}>
+	<div class="page-hero pt-10 md:pt-16 pb-8 md:pb-12 relative z-10">
 		<div class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl">
 			<h1 class="pt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle ? 'text-center' : ''}">
 				{#if heroIcon}
@@ -66,18 +64,6 @@
 </main>
 
 <style lang="postcss">
-	.contrast {
-		--maia-accent: #d8b4fe;
-		background: #1b1023;
-		color: #fff;
-		padding-bottom: 3.5rem;
-		margin-bottom: 3rem;
-	}
-	.contrast :global(.prose) { color: #e9d5ff; }
-	@media (max-width: 600px) {
-		.contrast { padding-top: 1.5rem; padding-bottom: 2.5rem; margin-bottom: 2rem; }
-	}
-
 	:global(.prose) {
 		@apply text-maia-950 dark:text-maia-100;
 	}

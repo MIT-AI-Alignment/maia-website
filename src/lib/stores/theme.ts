@@ -1,8 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-// MAIA is presented in light mode. The dark token set remains available for a
-// future accessibility decision, but visitors are not switched automatically.
+// ThemeInitializer restores the saved choice or system preference on mount.
 export const theme = writable<'light' | 'dark'>('light');
 
 // Function to set theme
