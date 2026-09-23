@@ -110,7 +110,7 @@
 					Want to talk with us?
 				</h2>
 				<p class="text-lg text-maia-950/80 dark:text-maia-100/80 max-w-2xl leading-relaxed">
-					Ask us about AISF, research, or joining MAIA.
+					We're always happy to chat with people who are curious. You can ask about AISF, research, careers, or just what MAIA is like.
 				</p>
 			</div>
 		</div>
