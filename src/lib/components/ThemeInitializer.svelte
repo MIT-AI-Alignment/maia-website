@@ -8,7 +8,7 @@
       const savedTheme = localStorage.getItem('theme');
       const initialTheme = savedTheme === 'dark' || savedTheme === 'light'
         ? savedTheme
-        : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        : 'dark';
       theme.set(initialTheme);
       document.documentElement.classList.toggle('dark', initialTheme === 'dark');
     }
