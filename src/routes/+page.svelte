@@ -47,7 +47,7 @@
 
 	<section use:reveal class="home-section" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
-			Our community
+			Get involved
 		</h2>
 		<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
 			{#each maiaStats as stat}
