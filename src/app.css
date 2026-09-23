@@ -14,17 +14,17 @@
    */
   
   /* Light mode */
-  --background-color: #eeedf1;
+  --background-color: #e3e1e8;
   --primary: #6b43b8;
-  --maia-canvas: #eeedf1;
-  --maia-card: #f8f7fa;
+  --maia-canvas: #e3e1e8;
+  --maia-card: #eeecf2;
   --maia-ink: #191522;
   --maia-muted: #736b7e;
-  --maia-border: #d9d4df;
+  --maia-border: #cbc6d3;
   --maia-accent: #6b43b8;
   --maia-action: #6b43b8;
   --maia-feature: #6b43b8;
-  --maia-nav-surface: #eeedf1;
+  --maia-nav-surface: #e3e1e8;
 }
 
 .dark {
