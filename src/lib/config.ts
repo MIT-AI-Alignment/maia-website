@@ -33,7 +33,7 @@ export const CONFIG = {
     // TODO: See if up to date.
     mailingListLink: "https://mailchi.mp/0b6484dd282e/public",
     membership: {
-        applicationLink: "https://airtable.com/appmfPejcK3lp2StV/pagywO1vQtW28ZYpA/form"
+        applicationLink: "https://airtable.com/app3u6UqyNPuDm3bn/pag84Tv4M9yp4YGJp/form"
     },
     events: {
         // This is the public MAIA calendar, separate from the organizers' planning calendar.
