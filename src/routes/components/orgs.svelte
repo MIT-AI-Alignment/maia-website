@@ -105,7 +105,7 @@
 						<img
 							src={imagePath}
 							alt={name}
-							class="h-14 max-w-full object-contain transition-transform duration-300 hover:scale-110"
+							class="h-14 max-w-full object-contain"
 							class:dark:invert={invert}
 						/>
 					{:else}

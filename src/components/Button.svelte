@@ -50,10 +50,10 @@
 	rel={href ? rel : undefined}
 	{disabled}
 	aria-label={ariaLabel || text}
-	class="inline-flex items-center justify-center rounded-md font-medium transition-all duration-200
+	class="inline-flex items-center justify-center rounded-md font-medium transition-colors duration-150
 		{typeClasses} {sizeClasses} {widthClass} 
 		{disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-		active:scale-95 focus:outline-none focus:ring-2 focus:ring-maia-800/50 dark:focus:ring-maia-400/50"
+		focus:outline-none focus:ring-2 focus:ring-maia-800/50 dark:focus:ring-maia-400/50"
 	on:click={handleClick}
 >
 	{#if icon}

@@ -5,7 +5,6 @@
 	import { getBookablePeople } from '$lib/people';
 	import { RESEARCH_PAPERS } from '$lib/researchShowcase';
 	import Orgs from './components/orgs.svelte';
-	import { reveal } from '$lib/reveal';
 
 	const aisfBenefits = [
 		'2 hours per week',
@@ -45,7 +44,7 @@
 
 
 
-	<section use:reveal class="home-section" aria-labelledby="maia-by-the-numbers-title">
+	<section class="home-section" aria-labelledby="maia-by-the-numbers-title">
 		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
 			Our community
 		</h2>
@@ -64,7 +63,7 @@
 
 
 	<div class="participation">
-		<section id="aisf" aria-labelledby="aisf-title" use:reveal>
+		<section id="aisf" aria-labelledby="aisf-title">
 			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
 			<p>
 				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
@@ -81,7 +80,7 @@
 				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
-		<section id="membership" aria-labelledby="membership-title" use:reveal={{ delay: 80 }}>
+		<section id="membership" aria-labelledby="membership-title">
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
 				Members get 24/7 office access, free compute, and access to research discussions and MAIA programs.
@@ -117,13 +116,12 @@
 		</div>
 
 		<div class="team-list">
-			{#each bookablePeople as person, index}
+			{#each bookablePeople as person}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail ?? person.email}`}
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
 					class="team-person"
-					use:reveal={{ delay: (index % 5) * 45 }}
 				>
 					<img src={person.imageUrl} alt="" loading="lazy" />
 					<div>
@@ -146,7 +144,7 @@
 		</div>
 	</section>
 
-	<section use:reveal class="home-section" aria-labelledby="organizations-title">
+	<section class="home-section" aria-labelledby="organizations-title">
 		<h2 id="organizations-title" class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 			<i class="fa-solid fa-building-columns mr-2 text-maia-800 dark:text-maia-400"></i>
 			Organizations MAIA Works With

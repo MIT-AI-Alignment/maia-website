@@ -9,7 +9,6 @@
 	import Banner from './banner.svelte';
 	import NavItem from './NavItem.svelte';
 	import MobileMenu from './MobileMenu.svelte';
-	import { fade, slide } from 'svelte/transition';
 	import type { NavItem as NavItemType } from '$lib/stores/navigation';
 
 	// Navbar state
@@ -22,14 +21,13 @@
 	// Measured height of the fixed header (banner + navbar); drives the spacer and mobile menu offset.
 	let headerHeight = 0;
 	
-	// The header only becomes compact after scroll; hovering the desktop navigation
-	// reveals the same surface without moving the layout.
+	// Keep header height fixed so scrolling does not shift the page.
 	let navbarHeight = '4rem'; // Default height
 	
 	// Update navbar appearance based on scroll position and navigation focus.
 	$: {
 		isScrolled = scrollY > 20;
-		navbarHeight = isScrolled ? '3.5rem' : '4rem';
+		navbarHeight = '4rem';
 		hasNavSurface = isScrolled || isNavHovering || activeDropdown !== null;
 	}
 	
@@ -102,7 +100,7 @@
 	
 	.navbar-container {
 		height: var(--navbar-height);
-		transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+		transition: background-color 160ms ease, border-color 160ms ease;
 	}
 </style>
 
@@ -158,7 +156,6 @@
 							
 							{#if activeDropdown === 'page'}
 								<div
-									transition:slide={{ duration: 150 }}
 							class="maia-nav-dropdown absolute top-full right-0 rounded-md py-1 min-w-[200px] border backdrop-blur-sm"
 									role="menu"
 									tabindex="0"

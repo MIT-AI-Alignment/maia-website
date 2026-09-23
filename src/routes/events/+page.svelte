@@ -9,7 +9,6 @@
 	import { groupEventRuns, ORIENTATION_2026_RSVP_EVENTS, type EventRun } from '$lib/eventCollections';
 	import { getEventMedia, type EventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
-	import { reveal } from '$lib/reveal';
 	import { PARTNER_PROGRAMS } from '$lib/programHistory';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
@@ -214,7 +213,7 @@
 					<div class="event-run">
 						{#each visiblePlannedEvents as event}
 							{@const category = categoryDetails(event)}
-							<article class="event-row" use:reveal>
+							<article class="event-row">
 								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">{event.date ? displayDate(event.date, false) : 'Fall 2026'}<span class="mt-1 block">{event.date ? 'Time TBD' : 'Date TBD'}</span></p></div>
 								<div class="event-body">
 									<div class="event-heading" class:has-media={!!event.media}>
@@ -242,7 +241,7 @@
 						{@const category = categoryDetails(event)}
 						{@const media = getEventMedia(event)}
 						{@const links = eventLinks(event, media?.sourceUrl)}
-						<article class="event-row" use:reveal>
+						<article class="event-row">
 						<div class="event-meta">
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
 							{displayDateRange(event, false)}
@@ -292,7 +291,7 @@
 							<div class="program-grid">
 							{#each section.programs as program}
 								{@const programMedia = getEventMedia(program)}
-								<article class="program-card" use:reveal>
+								<article class="program-card">
 									{#if /AI Safety Fundamentals/.test(program.title)}
 										<img class="program-logo" src="/images/maia_mark.svg" alt="MAIA logo" loading="lazy" />
 									{:else if programMedia}<img class="program-logo" src={programMedia.imageUrl} alt={programMedia.imageAlt} loading="lazy" />{/if}
@@ -303,7 +302,7 @@
 								</article>
 							{/each}
 							{#each section.undatedPrograms as program}
-								<article class="program-card" use:reveal>
+								<article class="program-card">
 									<img class="program-logo" src={program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
 									<h4>{program.title} · {program.organizer}</h4>
 									<p class="program-dates">{program.timing}</p>
