@@ -5,12 +5,7 @@
   
   onMount(() => {
     if (browser) {
-      const savedTheme = localStorage.getItem('theme');
-      const initialTheme = savedTheme === 'dark' || savedTheme === 'light'
-        ? savedTheme
-        : 'dark';
-      theme.set(initialTheme);
-      document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+      theme.set(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     }
   });
 </script>

@@ -180,12 +180,19 @@
 				<div class="flex items-center gap-2">
 					<button
 						type="button"
-						class="inline-flex h-11 w-11 shrink-0 items-center justify-center leading-none text-maia-950 dark:text-maia-100"
+						class="inline-flex h-11 w-11 shrink-0 items-center justify-center leading-none rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-maia-500 text-maia-950 dark:text-maia-100"
 						aria-label={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
 						title={$theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
 						on:click={toggleTheme}
 					>
-						<i class="{$theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'} inline-flex h-6 w-6 items-center justify-center leading-none" aria-hidden="true"></i>
+						<svg class="block h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							{#if $theme === 'dark'}
+								<circle cx="12" cy="12" r="4" />
+								<path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+							{:else}
+								<path d="M20.5 13a8.5 8.5 0 0 1-9.5-9.5A8.5 8.5 0 1 0 20.5 13Z" />
+							{/if}
+						</svg>
 					</button>
 				<button
 					type="button"
