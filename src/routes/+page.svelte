@@ -27,7 +27,7 @@
 <PageLayout
 	title="MIT AI Alignment"
 	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce catastrophic risk from advanced AI."
-	heroTitle="MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce risks from advanced AI</span>."
+	heroTitle="We're a group of MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce risks from advanced AI</span>."
 >
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
