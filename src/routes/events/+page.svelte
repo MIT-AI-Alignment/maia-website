@@ -19,6 +19,7 @@
 	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string; date?: string; media?: EventMedia; imageCredit?: string }[] = [
 		{
 			title: 'Dwarkesh Fireside Chat with MAIA Members',
+			url: 'https://partiful.com/e/1qwsXEvYdRrjIDu8roeI',
 			category: 'talks',
 			date: '2026-09-23',
 			media: { imageUrl: '/images/events/speaker-dwarkesh-patel.jpg', imageAlt: 'Dwarkesh Patel portrait', sourceUrl: 'https://www.dwarkesh.com/about', kind: 'portrait' },
