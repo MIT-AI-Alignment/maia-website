@@ -31,6 +31,7 @@
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
 			<p class="text-lg max-w-2xl">
+				MIT AI Alignment (MAIA) supports students learning about and working on AI safety.
 				We run fellowships, support student research, and host talks and workshops.
 			</p>
 
