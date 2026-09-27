@@ -1,16 +1,21 @@
 <script>
-    import "../app.css";
-    import ThemeInitializer from '$lib/components/ThemeInitializer.svelte';
-    import SitePopup from '$lib/components/SitePopup.svelte';
+	import '../app.css';
+	import ThemeInitializer from '$lib/components/ThemeInitializer.svelte';
+	import SitePopup from '$lib/components/SitePopup.svelte';
+	import MotionOrchestrator from '../components/MotionOrchestrator.svelte';
 </script>
 
 <svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin={'true'}>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin={'true'} />
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400..800&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
 <ThemeInitializer />
 <SitePopup />
+<MotionOrchestrator />
 
 <slot />
