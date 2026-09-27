@@ -80,13 +80,14 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true,
 		execOrder: 3,
 		linkedin: 'https://www.linkedin.com/in/roman-ross/',
-		calendly: 'https://calendly.com/roman-alex-ross/30min',
+		calendly: 'https://cal.com/roman-ross',
 	},
 
 	'jason-chin': {
 		id: 'jason-chin',
 		name: 'Jason Chin',
 		email: 'jasonchin098@gmail.com',
+		calendly: 'https://savvycal.com/jasonchin098/chat-with-jason',
 		position: 'Exec Board Member',
 		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
 		isExec: true,
@@ -433,6 +434,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: '/images/people/daniel-wu.jpeg',
 		mitEmail: 'ddwu@mit.edu',
+		calendly: 'https://cal.com/daniel-wu-qnhszk/30min',
 		linkedin: 'https://www.linkedin.com/in/daniel-wu-925445324/',
 		isHomepageContact: true,
 		isExec: false,

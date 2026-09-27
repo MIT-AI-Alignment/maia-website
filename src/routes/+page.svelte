@@ -5,6 +5,7 @@
 	import { getBookablePeople } from '$lib/people';
 	import { RESEARCH_PAPERS } from '$lib/researchShowcase';
 	import Orgs from './components/orgs.svelte';
+	import MetricCounter from '../components/MetricCounter.svelte';
 
 	const aisfBenefits = [
 		'2 hours per week',
@@ -18,56 +19,58 @@
 	];
 
 	const bookablePeople = getBookablePeople();
-
 </script>
 
-
 <PageLayout
-	title="MIT AI Alignment"
-	description="MIT AI Alignment (MAIA) is a group of MIT students conducting research to reduce catastrophic risk from advanced AI."
+	title="MIT AI Alignment | AI Safety Research & Community"
+	description="MIT AI Alignment (MAIA) is MIT's student community for AI safety. Explore AI Safety Fundamentals, student research, talks, workshops, and membership in Boston."
 	heroTitle="We're a group of MIT students working to <span class='text-maia-800 dark:text-maia-500'>reduce risks from advanced AI</span>."
+	motionVariant="community"
 >
 	<svelte:fragment slot="hero-content">
 		<div class="prose dark:prose-invert max-w-none">
 			<p class="home-description text-lg">
-				MIT AI Alignment (MAIA) supports students learning about and working on AI safety.
-				We run fellowships, support student research, and host talks and workshops.
+				MIT AI Alignment (MAIA) supports students learning about and working on AI safety. We run
+				fellowships, support student research, and host talks and workshops.
 			</p>
-
 		</div>
 		<nav aria-label="Explore MAIA" class="home-links mt-4 flex flex-wrap gap-x-6 gap-y-2">
-			<a href="/initiatives#research" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Member research <span aria-hidden="true">→</span></a>
-			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4">Upcoming events <span aria-hidden="true">→</span></a>
+			<a
+				href="/initiatives#research"
+				class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4"
+				>Member research <span aria-hidden="true">→</span></a
+			>
+			<a href="/events/" class="py-2 text-maia-800 dark:text-maia-400 underline underline-offset-4"
+				>Upcoming events <span aria-hidden="true">→</span></a
+			>
 		</nav>
 	</svelte:fragment>
 
-
-
-
-	<section class="home-section" aria-labelledby="maia-by-the-numbers-title">
-		<h2 id="maia-by-the-numbers-title" class="text-3xl md:text-4xl font-heading font-[550] leading-tight">
+	<section class="home-section" aria-labelledby="maia-by-the-numbers-title" data-motion="quiet">
+		<h2
+			id="maia-by-the-numbers-title"
+			class="text-3xl md:text-4xl font-heading font-[550] leading-tight"
+		>
 			Our community
 		</h2>
 		<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
-			{#each maiaStats as stat}
-				<div>
+			{#each maiaStats as stat, index}
+				<div data-motion="quiet" style={`--motion-delay: ${index * 90}ms`}>
 					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
-						{stat.value}
+						<MetricCounter value={stat.value} />
 					</p>
 					<p class="mt-2 text-base text-maia-950/80 dark:text-maia-100/80">{stat.label}</p>
 				</div>
 			{/each}
 		</div>
-
 	</section>
 
-
-	<div class="participation">
+	<div class="participation" data-motion="quiet">
 		<section id="aisf" aria-labelledby="aisf-title">
 			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
 			<p>
-				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts,
-				we discuss AI trends, evidence for misalignment, and approaches to AI safety and policy.
+				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts, we discuss
+				AI trends, evidence for misalignment, and approaches to AI safety and policy.
 			</p>
 			<ul class="fellowship-details">
 				{#each aisfBenefits as benefit}<li>{@html benefit}</li>{/each}
@@ -83,26 +86,28 @@
 		<section id="membership" aria-labelledby="membership-title">
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
-				Members get 24/7 office access, free compute, and access to research discussions and MAIA programs.
+				Members get 24/7 office access, free compute, and access to research discussions and MAIA
+				programs.
 			</p>
 			<p>
-				Applicants should have completed AISF or have equivalent AI safety experience.
-				Membership is for people in the Boston area, including non-MIT students.
+				Applicants should have completed AISF or have equivalent AI safety experience. Membership is
+				for people in the Boston area, including non-MIT students.
 			</p>
 			<div class="participation-actions">
-				<Button text="Apply for membership" type="purple" href={CONFIG.membership.applicationLink} target="_blank" rel="noopener noreferrer" />
+				<Button
+					text="Apply for membership"
+					type="purple"
+					href={CONFIG.membership.applicationLink}
+					target="_blank"
+					rel="noopener noreferrer"
+				/>
 				<a href="/getinvolved/#membership">Membership details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
 	</div>
 
-
-
 	<!-- Chat with us: bookable team members -->
-	<section
-		id="chat-with-us"
-		class="home-section scroll-mt-24"
-	>
+	<section id="chat-with-us" class="home-section scroll-mt-24" data-motion="quiet">
 		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
 			<div>
 				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
@@ -110,42 +115,51 @@
 					Want to talk with us?
 				</h2>
 				<p class="text-lg text-maia-950/80 dark:text-maia-100/80 max-w-2xl leading-relaxed">
-					We're always happy to chat with people who are curious. You can ask about AISF, research, careers, or just what MAIA is like.
+					We're always happy to chat with people who are curious. You can ask about AISF, research,
+					careers, or just what MAIA is like.
 				</p>
 			</div>
 		</div>
 
 		<div class="team-list">
-			{#each bookablePeople as person}
+			{#each bookablePeople as person, index}
 				<a
 					href={person.calendly ?? `mailto:${person.mitEmail ?? person.email}`}
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
 					class="team-person"
+					data-motion="quiet"
+					style={`--motion-delay: ${Math.min(index, 5) * 60}ms`}
 				>
 					<img src={person.imageUrl} alt="" loading="lazy" />
 					<div>
 						<p class="font-heading text-lg">{person.name}</p>
 						{#if person.position}<p class="person-role">{person.position}</p>{/if}
-						<span class="person-action">{person.calendly ? 'Book a chat' : 'Send an email'} <span aria-hidden="true">→</span></span>
+						<span class="person-action"
+							>{person.calendly ? 'Book a chat' : 'Send an email'}
+							<span aria-hidden="true">→</span></span
+						>
 					</div>
 				</a>
 			{/each}
 
 			<p class="team-email text-base text-maia-950/70 dark:text-maia-200/70">
-			Email the team:
-			<a
-				href="mailto:maia-exec@mit.edu"
-				class="text-maia-800 dark:text-maia-400 underline underline-offset-2 hover:no-underline"
-			>
-				maia-exec@mit.edu
-			</a>.
+				Email the team:
+				<a
+					href="mailto:maia-exec@mit.edu"
+					class="text-maia-800 dark:text-maia-400 underline underline-offset-2 hover:no-underline"
+				>
+					maia-exec@mit.edu
+				</a>.
 			</p>
 		</div>
 	</section>
 
-	<section class="home-section" aria-labelledby="organizations-title">
-		<h2 id="organizations-title" class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
+	<section class="home-section" aria-labelledby="organizations-title" data-motion="quiet">
+		<h2
+			id="organizations-title"
+			class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight"
+		>
 			<i class="fa-solid fa-building-columns mr-2 text-maia-800 dark:text-maia-400"></i>
 			Organizations MAIA Works With
 		</h2>
@@ -154,33 +168,147 @@
 </PageLayout>
 
 <style>
-	.home-description { text-wrap: pretty; margin-bottom: 0; }
-	.home-section, .participation { margin-bottom: 2.5rem; }
-	.home-section:last-child { margin-bottom: 0; }
-	@media (max-width: 600px) { .home-section, .participation { margin-bottom: 2rem; } }
-	.participation { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
-	.participation::before { content: ''; position: absolute; left: calc(50% - .5px); top: 0; bottom: 0; width: 1px; background: var(--maia-border); }
-	.participation section { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-card); scroll-margin-top: calc(var(--header-height, 4rem) + 1rem); }
-	.participation h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 1rem; }
-	.participation p { font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
-	.fellowship-details { margin: 0 0 1rem; padding-left: 1.25rem; list-style: disc; line-height: 1.75; }
-	.participation-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: auto; padding-top: .5rem; }
-	.participation-actions > a { color: var(--maia-accent); padding-block: .5rem; text-decoration: underline; text-underline-offset: .25rem; }
+	.home-description {
+		text-wrap: pretty;
+		margin-bottom: 0;
+	}
+	.home-section,
+	.participation {
+		margin-bottom: 2.5rem;
+	}
+	.home-section:last-child {
+		margin-bottom: 0;
+	}
+	@media (max-width: 600px) {
+		.home-section,
+		.participation {
+			margin-bottom: 2rem;
+		}
+	}
+	.participation {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 3rem;
+	}
+	.participation::before {
+		content: '';
+		position: absolute;
+		left: calc(50% - 0.5px);
+		top: 0;
+		bottom: 0;
+		width: 1px;
+		background: var(--maia-border);
+	}
+	.participation section {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		padding: 1.5rem;
+		border: 1px solid var(--maia-border);
+		border-radius: 0.75rem;
+		background: var(--maia-card);
+		scroll-margin-top: calc(var(--header-height, 4rem) + 1rem);
+	}
+	.participation h2 {
+		font-size: clamp(1.5rem, 2.5vw, 2rem);
+		line-height: 1.25;
+		margin-bottom: 1rem;
+	}
+	.participation p {
+		font-size: 1rem;
+		line-height: 1.75;
+		margin-bottom: 1rem;
+	}
+	.fellowship-details {
+		margin: 0 0 1rem;
+		padding-left: 1.25rem;
+		list-style: disc;
+		line-height: 1.75;
+	}
+	.participation-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1.25rem;
+		margin-top: auto;
+		padding-top: 0.5rem;
+	}
+	.participation-actions > a {
+		color: var(--maia-accent);
+		padding-block: 0.5rem;
+		text-decoration: underline;
+		text-underline-offset: 0.25rem;
+	}
 	@media (max-width: 760px) {
-		.participation { grid-template-columns: 1fr; gap: 1.5rem; }
-		.participation::before { display: none; }
-		.participation section { padding: 1.5rem; }
+		.participation {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		.participation::before {
+			display: none;
+		}
+		.participation section {
+			padding: 1.5rem;
+		}
 	}
 
-	.team-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 1.5rem; }
-	.team-person { display: flex; flex-direction: column; align-items: center; width: calc((100% - 6rem) / 5); min-width: 0; gap: .75rem; text-align: center; }
-	.team-person img { width: 6rem; height: 6rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
-	.team-person > div { min-width: 0; }
-	.person-role { color: var(--maia-muted); font-size: .95rem; margin-top: .15rem; }
-	.person-action { display: inline-block; color: var(--maia-accent); margin-top: .4rem; font-size: 1rem; }
-	.team-person:hover .person-action { text-decoration: underline; text-underline-offset: .2rem; }
-	.team-person:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 4px; }
-	.team-email { width: 100%; text-align: center; }
-	@media (max-width: 900px) { .team-person { width: calc((100% - 3rem) / 3); } }
-	@media (max-width: 600px) { .team-person { width: calc((100% - 1.5rem) / 2); } }
+	.team-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem 1.5rem;
+	}
+	.team-person {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: calc((100% - 6rem) / 5);
+		min-width: 0;
+		gap: 0.75rem;
+		text-align: center;
+	}
+	.team-person img {
+		width: 6rem;
+		height: 6rem;
+		flex-shrink: 0;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	.team-person > div {
+		min-width: 0;
+	}
+	.person-role {
+		color: var(--maia-muted);
+		font-size: 0.95rem;
+		margin-top: 0.15rem;
+	}
+	.person-action {
+		display: inline-block;
+		color: var(--maia-accent);
+		margin-top: 0.4rem;
+		font-size: 1rem;
+	}
+	.team-person:hover .person-action {
+		text-decoration: underline;
+		text-underline-offset: 0.2rem;
+	}
+	.team-person:focus-visible {
+		outline: 2px solid var(--maia-accent);
+		outline-offset: 4px;
+	}
+	.team-email {
+		width: 100%;
+		text-align: center;
+	}
+	@media (max-width: 900px) {
+		.team-person {
+			width: calc((100% - 3rem) / 3);
+		}
+	}
+	@media (max-width: 600px) {
+		.team-person {
+			width: calc((100% - 1.5rem) / 2);
+		}
+	}
 </style>

@@ -18,7 +18,7 @@ for (const path of htmlFiles) {
 }
 const home = read('build/index.html');
 const about = read('build/about/index.html');
-assert.match(home, /property="og:title" content="MAIA - MIT AI Alignment"/);
+assert.match(home, /property="og:title" content="MAIA - MIT AI Alignment \| AI Safety Research &amp; Community"/);
 assert.match(home, /property="og:description" content="MIT AI Alignment \(MAIA\)/);
 const previewImage = readFileSync('build/images/brand/maia-social-preview.png');
 assert.equal(previewImage.subarray(1, 4).toString(), 'PNG');

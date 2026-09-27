@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aialignment.mit.edu/sitemap.xml
