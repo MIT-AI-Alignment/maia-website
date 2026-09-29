@@ -44,12 +44,10 @@
 
 <style>
 	.week-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0 0 2rem; padding: 0; list-style: none; }
-	.week-card { padding: 1.5rem; border: 1px solid #cbcbd0; border-radius: 12px; background: #dedee2; color: #71717a; }
-	.week-card h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+	.week-card { padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--maia-border) 65%, transparent); border-radius: 12px; background: color-mix(in srgb, var(--maia-card) 45%, transparent); color: var(--maia-muted); }
+	.week-card h2 { margin: 0 0 .75rem; font-size: 1.25rem; }
 	.availability { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
-	:global(.dark) .week-card { background: #29292e; border-color: #3d3d44; color: #a1a1aa; }
 	.available-card { display: block; height: 100%; background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); text-decoration: none; }
-	:global(.dark) .available-card { background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); }
 	.available-card:hover, .available-card:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 2px; }
 	@media (max-width: 900px) { .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 	@media (max-width: 540px) { .week-grid { grid-template-columns: 1fr; } .week-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; } .week-card h2 { margin: 0; } }
