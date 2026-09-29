@@ -5,7 +5,7 @@
 
 <PageLayout
 	title="AISF Fall 2026 Curriculum"
-	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0–8 are coming soon."
+	description="The Fall 2026 AI Safety Fundamentals curriculum. Week 0: Introduction to Machine Learning is available. Weeks 1–8 are coming soon."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
@@ -16,6 +16,14 @@
 
 	<ul class="week-grid" aria-label="Fall 2026 curriculum weeks">
 		{#each weeks as week}
+			{#if week === 0}
+				<li>
+					<a href="/aisf/week0/" class="week-card available-card">
+						<h2 class="font-heading">Week 0</h2>
+						<span class="availability">Introduction to Machine Learning <span aria-hidden="true">→</span></span>
+					</a>
+				</li>
+			{:else}
 			<li class="week-card">
 				<h2 class="font-heading">Week {week}</h2>
 				<span class="availability">
@@ -26,6 +34,7 @@
 					Coming soon
 				</span>
 			</li>
+			{/if}
 		{/each}
 	</ul>
 	<p class="text-center mb-8">
@@ -39,6 +48,9 @@
 	.week-card h2 { margin: 0 0 1rem; font-size: 1.25rem; }
 	.availability { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
 	:global(.dark) .week-card { background: #29292e; border-color: #3d3d44; color: #a1a1aa; }
+	.available-card { display: block; height: 100%; background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); text-decoration: none; }
+	:global(.dark) .available-card { background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); }
+	.available-card:hover, .available-card:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 2px; }
 	@media (max-width: 900px) { .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 	@media (max-width: 540px) { .week-grid { grid-template-columns: 1fr; } .week-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; } .week-card h2 { margin: 0; } }
 </style>
