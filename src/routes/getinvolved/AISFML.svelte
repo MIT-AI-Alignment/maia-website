@@ -66,7 +66,7 @@
 	<!-- Shown regardless of whether applications are open. -->
 	<div class="mt-4">
 		<Button
-			text="See past curriculum"
+			text="See the curriculum"
 			icon="fa-solid fa-book-open"
 			type="purple"
 			size="md"

@@ -1,135 +1,56 @@
 <script lang="ts">
 	import PageLayout from '../../components/PageLayout.svelte';
-
-	type Week = {
-		number: number;
-		title: string;
-		description: string;
-		available: boolean;
-	};
-
-	const weeks: Week[] = [
-		{
-			number: 0,
-			title: 'Introduction to Machine Learning',
-			description: 'Self-paced ML fundamentals: neural networks, transformers, and backpropagation.',
-			available: true
-		},
-		{
-			number: 1,
-			title: 'Trends & Timelines',
-			description: 'Scaling drivers, capability trends, and time-horizon forecasting toward AGI.',
-			available: true
-		},
-		{
-			number: 2,
-			title: 'Outer Alignment',
-			description: 'Reward misspecification, specification gaming, RLHF, and the gap between intended and operationalized goals.',
-			available: true
-		},
-		{
-			number: 3,
-			title: 'Inner Alignment',
-			description: 'Deception, reward tampering, alignment faking, and goal misgeneralization.',
-			available: true
-		},
-		{
-			number: 4,
-			title: 'Threat Models',
-			description: 'Instrumental convergence, power-seeking, bioterrorism, cyberwarfare, and gradual disempowerment.',
-			available: true
-		},
-		{
-			number: 5,
-			title: 'Control & Scalable Oversight',
-			description: 'AI control framework, resampling, monitoring, weak-to-strong generalization, and debate.',
-			available: true
-		},
-		{
-			number: 6,
-			title: 'Interpretability & Evals',
-			description: 'Attribution graphs, linear probes, natural language autoencoders, evaluation awareness, and detecting deceptive AI.',
-			available: true
-		},
-		{
-			number: 7,
-			title: 'AI Governance & Liability',
-			description: 'Tort law, compute governance, US export controls on China, and the regulator\'s toolbox.',
-			available: true
-		},
-		{
-			number: 8,
-			title: 'Research & Careers in Safety',
-			description: 'Empirical research workflow, active alignment agendas, and career paths in AI safety.',
-			available: true
-		}
-	];
+	const weeks = Array.from({ length: 9 }, (_, number) => number);
 </script>
 
 <PageLayout
-	title="AISF Curriculum"
-	description="MAIA AI Safety Fundamentals (AISF) Summer 2026 curriculum — an 8-week reading group covering AI safety from foundations to policy."
+	title="AISF Fall 2026 Curriculum"
+	description="The Fall 2026 AI Safety Fundamentals curriculum. Week 0: Introduction to Machine Learning is available. Weeks 1–8 are coming soon."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
 >
 	<svelte:fragment slot="hero-content">
-		<p class="text-center text-lg mb-4 max-w-2xl mx-auto text-maia-950/70 dark:text-maia-200">
-			Summer 2026 Curriculum
-		</p>
-		<p class="text-center text-base mb-8 max-w-3xl mx-auto text-maia-950/60 dark:text-maia-300">
-			An 8-week introductory reading group covering the current trajectory of AI, evidence for misalignment,
-			threat models, technical safety approaches, and the AI policy landscape. Participants meet weekly in small
-			sections facilitated by experienced TAs. No work is assigned outside of weekly meetings.
-		</p>
+		<p class="text-center text-lg text-maia-950/70 dark:text-maia-200">Fall 2026 Curriculum</p>
 	</svelte:fragment>
 
-	<!-- Week Cards Grid -->
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+	<ul class="week-grid" aria-label="Fall 2026 curriculum weeks">
 		{#each weeks as week}
-			{#if week.available}
-				<a
-					href="week{week.number}"
-					class="group block rounded-lg p-6 bg-surface-light-elevated dark:bg-maia-950/70 shadow-sm dark:shadow-maia border border-border-light dark:border-maia-800 hover:border-maia-400 dark:hover:border-maia-600 transition-all hover:shadow-md"
-				>
-					<div class="flex items-center justify-between mb-3">
-						<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-maia-500/10 dark:bg-maia-500/20 text-maia-600 dark:text-maia-400 font-heading font-bold text-lg">
-							{week.number}
-						</span>
-						<i class="fa-solid fa-arrow-right text-maia-400 dark:text-maia-600 group-hover:text-maia-600 dark:group-hover:text-maia-400 transition-colors"></i>
-					</div>
-					<h3 class="text-lg font-heading font-[550] mb-2 text-maia-900 dark:text-maia-100 group-hover:text-maia-700 dark:group-hover:text-maia-300 transition-colors">
-						{week.title}
-					</h3>
-					<p class="text-sm text-maia-950/60 dark:text-maia-300">
-						{week.description}
-					</p>
-				</a>
+			{#if week === 0}
+				<li>
+					<a href="/aisf/week0/" class="week-card available-card">
+						<h2 class="font-heading">Week 0</h2>
+						<span class="availability">Introduction to Machine Learning <span aria-hidden="true">→</span></span>
+					</a>
+				</li>
 			{:else}
-				<div
-					class="rounded-lg p-6 bg-surface-light-elevated/50 dark:bg-maia-950/40 shadow-sm border border-border-light/50 dark:border-maia-800/50 opacity-60"
-				>
-					<div class="flex items-center justify-between mb-3">
-						<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-maia-500/5 dark:bg-maia-500/10 text-maia-400 dark:text-maia-600 font-heading font-bold text-lg">
-							{week.number}
-						</span>
-						<span class="text-xs font-medium px-2 py-1 rounded-full bg-maia-200/50 dark:bg-maia-800/50 text-maia-600 dark:text-maia-400">
-							Coming Soon
-						</span>
-					</div>
-					<h3 class="text-lg font-heading font-[550] mb-2 text-maia-900/60 dark:text-maia-100/60">
-						{week.title}
-					</h3>
-					<p class="text-sm text-maia-950/40 dark:text-maia-300/50">
-						{week.description}
-					</p>
-				</div>
+			<li class="week-card">
+				<h2 class="font-heading">Week {week}</h2>
+				<span class="availability">
+					<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="9" />
+						<path d="M12 7v5l3 2" />
+					</svg>
+					Coming soon
+				</span>
+			</li>
 			{/if}
 		{/each}
-	</div>
-
-	<p class="text-center text-sm text-maia-950/60 dark:text-maia-300 mb-12">
-		Looking for a previous cohort? View the
-		<a href="spring-2026" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">Spring 2026 curriculum archive</a>.
+	</ul>
+	<p class="text-center mb-8">
+		<a href="/aisf/summer-2026/" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">View the Summer 2026 curriculum →</a>
 	</p>
 </PageLayout>
+
+<style>
+	.week-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0 0 2rem; padding: 0; list-style: none; }
+	.week-card { padding: 1.5rem; border: 1px solid #cbcbd0; border-radius: 12px; background: #dedee2; color: #71717a; }
+	.week-card h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+	.availability { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
+	:global(.dark) .week-card { background: #29292e; border-color: #3d3d44; color: #a1a1aa; }
+	.available-card { display: block; height: 100%; background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); text-decoration: none; }
+	:global(.dark) .available-card { background: var(--maia-card); color: var(--maia-ink); border-color: var(--maia-accent); }
+	.available-card:hover, .available-card:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 2px; }
+	@media (max-width: 900px) { .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+	@media (max-width: 540px) { .week-grid { grid-template-columns: 1fr; } .week-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; } .week-card h2 { margin: 0; } }
+</style>
