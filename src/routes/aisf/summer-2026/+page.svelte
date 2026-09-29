@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageLayout from '../../components/PageLayout.svelte';
+	import PageLayout from '../../../components/PageLayout.svelte';
 
 	type Week = {
 		number: number;
@@ -67,8 +67,8 @@
 </script>
 
 <PageLayout
-	title="AISF Summer 2026 Curriculum"
-	description="MAIA AI Safety Fundamentals (AISF) Summer 2026 curriculum — an 8-week reading group covering AI safety from foundations to policy."
+	title="AISF Curriculum — Summer 2026 (Archive)"
+	description="Archived MAIA AI Safety Fundamentals (AISF) Summer 2026 curriculum — an 8-week reading group covering AI safety from foundations to policy."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
@@ -84,14 +84,20 @@
 		</p>
 	</svelte:fragment>
 
-	<p class="text-center mb-8"><a href="/aisf/" class="text-maia-800 dark:text-maia-400 underline">View the Fall 2026 curriculum →</a></p>
+	<div class="mb-8 rounded-lg p-4 bg-maia-200/30 dark:bg-maia-800/30 border border-border-light dark:border-maia-800 text-center">
+		<p class="text-sm text-maia-950/70 dark:text-maia-200">
+			<i class="fa-solid fa-box-archive mr-1"></i>
+			This is the archived Summer 2026 curriculum. For the current curriculum, visit the
+			<a href="/aisf/" class="text-maia-800 dark:text-maia-400 font-medium hover:text-maia-700 dark:hover:text-maia-300 transition-colors">AISF Curriculum</a> page.
+		</p>
+	</div>
 
 	<!-- Week Cards Grid -->
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 		{#each weeks as week}
 			{#if week.available}
 				<a
-					href="/aisf-su26/week{week.number}/"
+					href="/aisf/summer-2026/week{week.number}/"
 					class="group block rounded-lg p-6 bg-surface-light-elevated dark:bg-maia-950/70 shadow-sm dark:shadow-maia border border-border-light dark:border-maia-800 hover:border-maia-400 dark:hover:border-maia-600 transition-all hover:shadow-md"
 				>
 					<div class="flex items-center justify-between mb-3">

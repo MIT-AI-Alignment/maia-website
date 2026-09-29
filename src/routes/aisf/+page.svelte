@@ -29,7 +29,7 @@
 		{/each}
 	</ul>
 	<p class="text-center mb-8">
-		<a href="/aisf-su26/" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">View the Summer 2026 curriculum →</a>
+		<a href="/aisf/summer-2026/" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">View the Summer 2026 curriculum →</a>
 	</p>
 </PageLayout>
 

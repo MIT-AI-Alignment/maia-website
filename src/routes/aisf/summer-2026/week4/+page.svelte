@@ -1,8 +1,8 @@
 <script lang="ts">
-	import PageLayout from '../../../components/PageLayout.svelte';
-	import SectionContainer from '../../../components/SectionContainer.svelte';
-	import BackLink from '../../../components/BackLink.svelte';
-	import Button from '../../../components/Button.svelte';
+	import PageLayout from '../../../../components/PageLayout.svelte';
+	import SectionContainer from '../../../../components/SectionContainer.svelte';
+	import BackLink from '../../../../components/BackLink.svelte';
+	import Button from '../../../../components/Button.svelte';
 </script>
 
 <PageLayout
