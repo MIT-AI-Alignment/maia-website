@@ -591,16 +591,6 @@ export const PEOPLE: Record<string, Person> = {
 		isActive: true
 	},
 
-	'misha-gerovitch': {
-		id: 'misha-gerovitch',
-		name: 'Misha Gerovitch',
-		position: '',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U04BP33K5FF-8efc14b37ea3-192',
-		// mitEmail: 'mgerov@mit.edu',
-		isExec: false,
-		isActive: true
-	},
-
 	// 'emre-yavuz': {
 	// 	id: 'emre-yavuz',
 	// 	name: 'Emre Yavuz',
@@ -755,11 +745,16 @@ for (const submitted of organizerPhotos) {
  else PEOPLE[submitted.id] = { ...submitted, position: 'Organizer', isOrg: true, isActive: true };
 }
 
-// Helper functions to get filtered lists of people
+// Keep the legacy fallback rank consistent across board, organizer, and project lists.
+function compareDisplayOrder(a: number | undefined, b: number | undefined): number {
+	return (a ?? 999) - (b ?? 999);
+}
+
+// Sorting uses fresh arrays, leaving the shared profile records in place.
 export const getActiveExecs = () =>
 	Object.values(PEOPLE)
 		.filter((person) => person.isExec && person.isActive)
-		.sort((a, b) => (a.execOrder ?? 999) - (b.execOrder ?? 999));
+		.sort((a, b) => compareDisplayOrder(a.execOrder, b.execOrder));
 
 export const getInactiveExecs = () =>
 	Object.values(PEOPLE).filter((person) => person.isExec && !person.isActive);
@@ -769,7 +764,7 @@ export const getAdvisors = () => Object.values(PEOPLE).filter((person) => person
 export const getOrganizers = () =>
 	Object.values(PEOPLE)
 		.filter((person) => person.isOrg && person.isActive)
-		.sort((a, b) => (a.orgOrder ?? 999) - (b.orgOrder ?? 999));
+		.sort((a, b) => compareDisplayOrder(a.orgOrder, b.orgOrder));
 
 export const getPeopleByProject = (projectId: string) =>
 	Object.values(PEOPLE).filter((person) => person.projects?.includes(projectId));
@@ -778,12 +773,7 @@ export const getPeopleByProject = (projectId: string) =>
 export const getBookablePeople = () =>
 	Object.values(PEOPLE)
 		.filter((person) => person.isActive && (person.isExec || person.isHomepageContact) && !!(person.calendly || person.mitEmail || person.email))
-		.sort((a, b) => {
-			const orderA = a.execOrder ?? 999;
-			const orderB = b.execOrder ?? 999;
-			if (orderA !== orderB) return orderA - orderB;
-			return a.name.localeCompare(b.name);
-		});
+		.sort((a, b) => compareDisplayOrder(a.execOrder, b.execOrder) || a.name.localeCompare(b.name));
 
 // For backward compatibility with existing code
 export const ACTIVE_EXECS = getActiveExecs();
@@ -803,10 +793,7 @@ export function getContactPreference(person: Person, platform: string): string |
 export function getSortedPeopleByProject(projectId: string): Person[] {
 	const people = getPeopleByProject(projectId);
 
-	// Sort people by their project order (if specified)
-	return people.sort((a, b) => {
-		const orderA = a.projectOrder?.[projectId] ?? 999; // Default to a high number if not specified
-		const orderB = b.projectOrder?.[projectId] ?? 999;
-		return orderA - orderB;
-	});
+	return people.sort((a, b) =>
+		compareDisplayOrder(a.projectOrder?.[projectId], b.projectOrder?.[projectId])
+	);
 }

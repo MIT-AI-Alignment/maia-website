@@ -153,7 +153,7 @@ const additionalPapers: Omit<ResearchPaper, 'date'>[] = [
 	},
 	{
 		title: 'Black-Box Access is Insufficient for Rigorous AI Audits',
-		authors: ['Stephen Casper', 'Marvin von Hagen', 'Misha Gerovitch', 'Wendy Sun'],
+		authors: ['Stephen Casper', 'Marvin von Hagen', 'Wendy Sun'],
 		description:
 			'Argues from concrete audit failure modes that query-only access cannot support rigorous external audits and specifies stronger access requirements.',
 		link: 'https://arxiv.org/abs/2401.14446'
@@ -251,13 +251,12 @@ const previousPapers: ResearchPaper[] = [
 		};
 	}),
 	...additionalPapers
-]
-	.map((paper) => {
-		const date = publicationDates[paper.link];
-		if (!date) throw new Error(`Missing research publication date: ${paper.title}`);
-		return { ...paper, date };
-	})
-	.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+].map((paper) => {
+	const date = publicationDates[paper.link];
+	if (!date) throw new Error(`Missing research publication date: ${paper.title}`);
+	return { ...paper, date };
+});
 
+// Sort once after combining the sources; titles break ties between publication dates.
 export const RESEARCH_PAPERS = [...previousPapers, ...RESEARCH_UPDATES]
 	.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));

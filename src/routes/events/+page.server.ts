@@ -9,7 +9,12 @@ const orientationLinks = new Map(ORIENTATION_2026_RSVP_EVENTS
  .map(event => [event.calendarId, event.href]));
 
 // Website-only roster removal; leave the source calendar unchanged.
-function publicDescription(text: string): string {
+function publicDescription(text: string, eventId: string): string {
+ // Website contributor list for the April 2025 policy workshop.
+ if (eventId === 'maia-archive-80d8d3412cd28bb2804dd33d11f52887@mitaialignment.org/2025-04-04') {
+  text = text.replace(/Speakers \/ session contributors:[^\n]*/,
+   'Speakers / session contributors: Peter Salib, Sandhini Agarwal, Nitarshan Rajkumar, Joel Burke, Thomas Larsen, Arushi Gupta, Kevin Wei, Mackenzie Arnold, Chris Byrd, Corin Katzke.');
+ }
  return text.replace(/\b(?:Felix Tudose|Ryan Baylon),\s*/g, '')
   .replace(/,\s*(?:Felix Tudose|Ryan Baylon)\b/g, '')
   .replace(/\b(?:Felix Tudose|Ryan Baylon)\b/g, '');
@@ -30,8 +35,8 @@ export async function load({ fetch }) {
   const url = orientationLinks.get(event.id.split('/')[0]);
   return {
    ...event,
-   description: event.description ? publicDescription(event.description) : event.description,
-   descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: publicDescription(part.text) })),
+   description: event.description ? publicDescription(event.description, event.id) : event.description,
+   descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: publicDescription(part.text, event.id) })),
    url: url ?? event.url, summary: orientationSummary(event) ?? workshopSummary(event)
   };
  });

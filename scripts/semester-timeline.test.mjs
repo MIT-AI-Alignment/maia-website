@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 
 const compiled = await build({
- entryPoints: [new URL('../src/lib/semesterTimeline.ts', import.meta.url).pathname],
+ entryPoints: [fileURLToPath(new URL('../src/lib/semesterTimeline.ts', import.meta.url))],
  bundle: true, platform: 'node', format: 'esm', write: false
 });
 const { dayNumber, eventDayRange, semesterForDate, availableSemesters, eventsInSemester, layoutTimeline, eventCategory } =
