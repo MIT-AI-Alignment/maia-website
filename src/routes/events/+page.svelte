@@ -243,6 +243,13 @@
 						{@const links = eventLinks(event, media?.sourceUrl)}
 						<article class="event-row">
 						<div class="event-meta">
+						{#if event.dateRanges?.length}
+							<ul class="workshop-dates text-sm font-medium text-maia-950/60 dark:text-maia-100/60" aria-label="Workshop dates">
+								{#each event.dateRanges as range}
+									<li><time datetime={range.start}>{displayDateRange({ ...event, ...range, dateRanges: undefined }, false)}</time></li>
+								{/each}
+							</ul>
+						{:else}
 						<time class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60" datetime={event.start}>
 							{displayDateRange(event, false)}
 							{#if displayTimeRange(event.start, event.end, false)}
@@ -250,6 +257,7 @@
 							{:else if category.id !== 'workshops' && category.id !== 'deadlines'}<span class="mt-1 block">All day</span>
 							{/if}
 						</time>
+						{/if}
 						<EventAttendance {event} />
 						</div>
 						<div class="event-body">
@@ -267,7 +275,7 @@
 								<details class="event-details" id={`details-${encodeURIComponent(event.id)}`}>
 									<summary>Event details</summary>
 									<div class="detail-panel">
-										{#if media}<a class="event-artwork" href={media.imageUrl} target="_blank" rel="noopener noreferrer"><img src={media.imageUrl} alt={media.imageAlt} loading="lazy" /><span class="image-caption">View full size <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></a>{/if}
+										{#if media}<a class="event-artwork" href={media.imageUrl} target="_blank" rel="noopener noreferrer"><img src={media.imageUrl} alt={media.imageAlt} loading="lazy" /></a>{/if}
 										{#if event.location}<p class="event-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{event.location}</span></p>{/if}
 										{#if event.description}
 											<p class="event-description">{#each event.descriptionParts ?? [{ text: event.description, href: undefined }] as part}{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a>{:else}{part.text}{/if}{/each}</p>
@@ -385,6 +393,8 @@
 	.collection-label { display: flex; align-items: center; gap: .45rem; margin-bottom: 1.15rem; color: var(--maia-accent); font-size: .85rem; font-weight: 700; }
 	.event-body { min-width: 0; container-type: inline-size; }
 	.event-meta :global(.event-attendance) { margin-top: .85rem; }
+	.workshop-dates { display: flex; flex-wrap: wrap; gap: .35rem .85rem; }
+	.workshop-dates li { white-space: nowrap; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
 	.program-logo { width: 7.5rem; max-height: 5rem; object-fit: contain; margin-bottom: .75rem; }
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .5rem; background: var(--maia-canvas); cursor: zoom-in; }
@@ -401,7 +411,6 @@
 	.detail-panel { padding-top: .65rem; }
 	.event-artwork { display: block; overflow: hidden; margin-bottom: 1rem; background: var(--maia-nav-surface); border: 1px solid var(--maia-border); border-radius: .5rem; }
 	.event-artwork img { display: block; width: 100%; max-height: 22rem; object-fit: contain; }
-	.image-caption { display: flex; justify-content: center; align-items: center; gap: .4rem; padding: .55rem; border-top: 1px solid var(--maia-border); color: var(--maia-accent); font-size: .75rem; }
 	.event-location { display: flex; align-items: baseline; gap: .55rem; margin-bottom: .85rem; font-size: .8rem; line-height: 1.6; color: var(--maia-muted); }
 	.event-location i { color: var(--maia-accent); }
 	.event-description { white-space: pre-line; overflow-wrap: anywhere; font-size: .9rem; line-height: 1.8; color: var(--maia-ink); }

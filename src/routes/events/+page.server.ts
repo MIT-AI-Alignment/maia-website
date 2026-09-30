@@ -2,7 +2,7 @@ import { CONFIG } from '$lib/config';
 import type { CalendarEvent } from '$lib/events';
 import { readCalendarEvents } from '$lib/server/calendar';
 import { PROGRAM_HISTORY } from '$lib/programHistory';
-import { ORIENTATION_2026_RSVP_EVENTS, orientationSummary } from '$lib/eventCollections';
+import { ORIENTATION_2026_RSVP_EVENTS, orientationSummary, combineFallWorkshops } from '$lib/eventCollections';
 
 const orientationLinks = new Map(ORIENTATION_2026_RSVP_EVENTS
  .filter(event => event.calendarId)
@@ -40,5 +40,5 @@ export async function load({ fetch }) {
    url: url ?? event.url, summary: orientationSummary(event) ?? workshopSummary(event)
   };
  });
- return { events: [...events, ...PROGRAM_HISTORY], fetchedAt: new Date().toISOString() };
+ return { events: [...combineFallWorkshops(events), ...PROGRAM_HISTORY], fetchedAt: new Date().toISOString() };
 }

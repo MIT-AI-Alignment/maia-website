@@ -12,6 +12,7 @@ export type CalendarEvent = {
  url?: string;
  kind?: 'event' | 'initiative';
  dateLabel?: string;
+ dateRanges?: { start: string; end?: string }[];
 };
 
 const zone = 'America/New_York';
@@ -43,8 +44,10 @@ export function displayTimeRange(start: string, end?: string, showYear = true) {
  return startTime + '–' + (displayDate(start) === displayDate(end) ? '' : displayDate(end, showYear || crossesYear) + ', ') + endTime;
 }
 
-export function displayDateRange(event: CalendarEvent, showYear = true) {
+export function displayDateRange(event: CalendarEvent, showYear = true): string {
  if (event.dateLabel) return event.dateLabel;
+ if (event.dateRanges?.length) return event.dateRanges.map(range =>
+  displayDateRange({ ...event, ...range, dateRanges: undefined }, showYear)).join(' · ');
  if (!event.end || !isDay(event.start) || !isDay(event.end)) return displayDate(event.start, showYear);
  // iCalendar all-day DTEND is exclusive.
  const lastDay = new Date(event.end + 'T12:00:00Z');

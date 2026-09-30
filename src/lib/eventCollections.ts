@@ -41,6 +41,27 @@ export const ORIENTATION_2026_RSVP_EVENTS: { name: string; href: string; note: s
 type EventCollection = { id: string; label: string; icon: string };
 export type EventRun = { collection: EventCollection | null; events: CalendarEvent[] };
 
+const FALL_2026_WORKSHOPS = new Set([
+ '62t93vcs72k239ci750rit6l2h@google.com/2026-11-06',
+ '3j8q3d7vbgvdkbmqje21vm5cri@google.com/2026-11-13',
+ '7ebmkf3cbhq7lgch1eq631qm97@google.com/2026-11-20'
+]);
+
+// Present the three November weekends together without changing the source calendar.
+export function combineFallWorkshops(events: CalendarEvent[]): CalendarEvent[] {
+ const workshops = events.filter(event => FALL_2026_WORKSHOPS.has(event.id))
+  .sort((a, b) => a.start.localeCompare(b.start));
+ if (!workshops.length) return events;
+ const combined: CalendarEvent = {
+  ...workshops[0],
+  end: workshops.at(-1)!.end ?? workshops.at(-1)!.start,
+  location: undefined,
+  dateRanges: workshops.flatMap(({ start, end, dateRanges }) => dateRanges ?? [{ start, end }])
+ };
+ return events.flatMap(event => event.id === combined.id ? [combined]
+  : FALL_2026_WORKSHOPS.has(event.id) ? [] : [event]);
+}
+
 // Public schedule: /orientation-2026/ and /images/flyers/maia-2026-orientation-flyer.jpg.
 // Exact calendar identities avoid grouping unrelated events merely because of their date.
 const ORIENTATION_2026_EVENTS = new Map([

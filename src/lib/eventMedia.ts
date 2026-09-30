@@ -423,7 +423,7 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  }
  if (event.start.length === 10 && /workshop/i.test(event.title)) {
   return {
-   imageUrl: '/images/events/workshop-representative.jpg',
+   imageUrl: '/images/events/workshop-representative.jpg?v=c745196d1260',
    imageAlt: 'Representative MAIA/AISST workshop group photo from 2025, reused across workshop listings.',
    kind: 'photo'
   };
