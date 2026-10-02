@@ -29,6 +29,7 @@ export const NAVIGATION_ITEMS = [
 		icon: 'fas fa-hands-helping',
 		dropdownItems: [
 			{ href: '/getinvolved#aisf', label: 'AI Safety Fundamentals' },
+			{ href: '/hermes/', label: 'Hermes Fellowship' },
 			{ href: '/getinvolved#membership', label: 'Membership' },
 			{ href: '/getinvolved#workshops', label: 'Workshops' },
 			{ href: '/getinvolved#bootcamps', label: 'Bootcamps' }

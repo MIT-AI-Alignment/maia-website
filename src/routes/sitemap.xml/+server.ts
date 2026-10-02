@@ -4,7 +4,7 @@ export const prerender = true;
 
 // Public evergreen pages; campaign redirects and experimental routes are omitted.
 const paths = [
-	'/', '/about/', '/getinvolved/', '/events/', '/initiatives/', '/resources/',
+	'/', '/about/', '/getinvolved/', '/hermes/', '/events/', '/initiatives/', '/resources/',
 	'/resources/mit-classes/', '/resources/faculty-labs/', '/resources/fellowships/',
 	'/aisf/', '/aisf/summer-2026/fellows/'
 ];

@@ -555,7 +555,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'asher-parker-sartori',
 		name: 'Asher Parker Sartori',
 		position: 'Student Advisor',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-192',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U05Q6J86544-7e9e371eb5f6-512',
 		// mitEmail: 'aparkersartori@gmail.com',
 		isAdvisor: false,
 		isActive: true
@@ -565,7 +565,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'daria-ivanova',
 		name: 'Daria Ivanova',
 		position: 'Deputy Director',
-		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-192',
+		imageUrl: 'https://ca.slack-edge.com/T040KLU5EHM-U07P4HG9HHD-a4c9c78c57f2-512',
 		// mitEmail: 'divanova@mit.edu',
 		isExec: false,
 		isActive: true
