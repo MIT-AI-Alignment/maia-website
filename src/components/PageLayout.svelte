@@ -9,10 +9,13 @@
 	export let title: string;
 	export let description: string;
 	export let heroIcon = '';
-	export let heroTitle: string;
+	// Leave empty to skip the shared hero when a page renders its own header.
+	export let heroTitle = '';
 	export let centerTitle = false;
 	export let pageNavItems: DropdownItem[] = [];
 	export let motionVariant: 'community' | 'ambient' = 'ambient';
+	// Extra classes on <main>, for pages that restyle their own surface.
+	export let pageClass = '';
 
 	let mounted = false;
 
@@ -42,13 +45,14 @@
 </svelte:head>
 
 <main
-	class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden"
+	class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden {pageClass}"
 >
 	<!-- No background grid needed anymore -->
 
 	<Navbar />
 
 	<!-- Hero Section -->
+	{#if heroTitle}
 	<div class:painted-hero={motionVariant === 'community'} class="page-hero pt-8 md:pt-14 pb-8 md:pb-10 relative z-10 overflow-hidden">
 		<div class:studio-hero={motionVariant === 'community'} class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl relative z-10" data-motion="quiet">
 			<div class="hero-copy">
@@ -66,6 +70,7 @@
 			</div>
 		</div>
 	</div>
+	{/if}
 
 	<!-- Main Content -->
 	<div class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl pb-16 relative z-10">

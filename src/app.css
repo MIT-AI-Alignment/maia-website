@@ -208,6 +208,19 @@ main .w-16.h-1 {
   display: none;
 }
 
+/* Hermes Fellowship mark (winged sandal), drawn in the current text color so it can be sized
+   and colored like a Font Awesome icon in both themes. The SVG is cropped to the drawing,
+   which is about 1 wide by 3 tall. */
+.maia-icon-winged-shoe {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: url('/images/hermes/winged-sandal.svg') center / contain no-repeat;
+  mask: url('/images/hermes/winged-sandal.svg') center / contain no-repeat;
+}
+
 /* Respect device text sizing and the reduced-motion preference (Neha's mobile pass). */
 html { -webkit-text-size-adjust: 100%; }
 

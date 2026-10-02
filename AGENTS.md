@@ -17,6 +17,7 @@
 | Events layout and undated planned events | `src/routes/events/+page.svelte` |
 | Public calendar import | `src/routes/events/+page.server.ts`, `src/lib/server/calendar.ts` |
 | Semester programs, including AISF and partner programs | `src/lib/programHistory.ts` |
+| Hermes Fellowship page (`/hermes/`): copy and mentor profiles | `src/lib/hermes.ts`; deadline and form link in `CONFIG.hermes` |
 | Event photos, attendance, collections/categories | `src/lib/eventMedia.ts`, `eventAttendance.ts`, `eventCollections.ts`, `semesterTimeline.ts` |
 | Local images and merch files | `static/images/`, `static/merch/` |
 
