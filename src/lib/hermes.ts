@@ -11,7 +11,7 @@ import { PEOPLE } from './people';
 export type Mentor = {
 	name: string;
 	// One short line under the name, at most two items, e.g. "MIT PhD". List current roles;
-	// mark a past one with "former" (e.g. "former xAI") rather than "ex-".
+	// mark a past one with "Former" (e.g. "Former xAI") rather than "ex-".
 	short?: string;
 	// Shown when someone opens the mentor's profile. Write it in the third person. Each string is
 	// a paragraph and each nested array is a bulleted list; links can be written inline as
@@ -134,8 +134,7 @@ const mentorList: Mentor[] = [
 		]
 	},
 	fromProfile('asher-parker-sartori', {
-		// The non-breaking space keeps "former xAI" together when the line wraps.
-		short: 'Anthropic contractor, former\u00a0xAI',
+		short: 'Former xAI',
 		bio: [
 			'Asher used to organize for MAIA before dropping out of MIT. Since then, Asher has worked on white-box control at Redwood Research, model behavior at xAI (briefly), and most recently scalable interpretability as a contractor for Anthropic.'
 		]
