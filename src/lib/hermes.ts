@@ -169,10 +169,8 @@ const mentorList: Mentor[] = [
 		name: 'Aruna Sankaranarayanan',
 		imageUrl: '/images/hermes/mentors/aruna-sankaranarayanan.jpg',
 		short: 'MIT PhD',
-		// Summarized from the Algorithmic Alignment Group's team page
-		// (algorithmicalignment.csail.mit.edu/team); replace with Aruna's own words.
 		bio: [
-			'Aruna is a PhD student in MIT’s Algorithmic Alignment Group. She uses interpretability methods, especially causal interpretability, to explain model and human behavior and to make models safer. Her past work studied how people interact with AI-generated content and audited black-box social media algorithms.'
+			'Aruna is a PhD student in MIT’s Algorithmic Alignment Group. She uses interpretability methods to investigate the representations that lead to certain model behavior. Her past work spans robust interpretability benchmarks, understanding refusal behavior, and modeling emergent collective dynamics among agents.'
 		],
 		linkedin: 'https://www.linkedin.com/in/arunasank/'
 	}
