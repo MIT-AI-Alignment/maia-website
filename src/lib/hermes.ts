@@ -11,7 +11,7 @@ import { PEOPLE } from './people';
 export type Mentor = {
 	name: string;
 	// One short line under the name, at most two items, e.g. "MIT PhD". List current roles;
-	// mark a past one with "Former" (e.g. "Former xAI") rather than "ex-".
+	// mark a past one with "ex-" (e.g. "ex-xAI").
 	short?: string;
 	// Shown when someone opens the mentor's profile. Write it in the third person. Each string is
 	// a paragraph and each nested array is a bulleted list; links can be written inline as
@@ -134,7 +134,7 @@ const mentorList: Mentor[] = [
 		]
 	},
 	fromProfile('asher-parker-sartori', {
-		short: 'Former xAI',
+		short: 'ex-xAI',
 		bio: [
 			'Asher used to organize for MAIA before dropping out of MIT. Since then, he has worked on white-box control at Redwood Research, model behavior at xAI (briefly), and most recently scalable interpretability as a contractor for Anthropic.',
 			'He is interested in ambitious projects that will help us understand AGI, particularly in interpretability. This includes trying to fundamentally understand intelligence at small scale (see: parameter decomposition, Algzoo), as well as designing maximally useful approaches at large scale (see: NLAs, appendix A.9 of the J-space paper).'
