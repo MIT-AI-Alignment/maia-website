@@ -10,24 +10,13 @@
 
 	const { deadlineDate, deadlineTime, deadlineAt, applicationLink } = CONFIG.hermes;
 	const deadline = `${deadlineDate}, ${deadlineTime}`;
-	const HOUR = 60 * 60 * 1000;
 
-	// The site is prerendered, so the countdown is worked out in the visitor's browser.
-	// Until then (and without JavaScript) the page shows only the fixed deadline.
+	// The site is prerendered, so whether applications have closed is checked in the visitor's
+	// browser. Until then (and without JavaScript) the page shows them as open.
 	let closed = false;
-	let remaining = '';
 
 	onMount(() => {
-		const msLeft = new Date(deadlineAt).getTime() - Date.now();
-		if (msLeft <= 0) {
-			closed = true;
-		} else if (msLeft < 24 * HOUR) {
-			const hours = Math.max(1, Math.round(msLeft / HOUR));
-			remaining = `closes in ${hours} ${hours === 1 ? 'hour' : 'hours'}`;
-		} else {
-			const days = Math.floor(msLeft / (24 * HOUR));
-			remaining = `${days} ${days === 1 ? 'day' : 'days'} left`;
-		}
+		closed = Date.now() >= new Date(deadlineAt).getTime();
 	});
 
 	$: canApply = Boolean(applicationLink) && !closed;
@@ -135,7 +124,7 @@
 				{#if closed}
 					<span class="deadline-label">Deadline:</span> {deadline}. Applications have closed.
 				{:else}
-					<span class="deadline-label">Deadline:</span> {deadline}{#if remaining}{' '}({remaining}){/if}.
+					<span class="deadline-label">Deadline:</span> {deadline}
 				{/if}
 			</p>
 		</div>

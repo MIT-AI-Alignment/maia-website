@@ -59,7 +59,7 @@ export const CONFIG = {
         // Shown as "Apply by Wednesday, October 7" and, with the time, as the full deadline.
         deadlineDate: "Wednesday, October 7",
         deadlineTime: "11:59 PM ET",
-        // Drives the "N days left" note; Boston is on EDT (-04:00) until November 1.
+        // After this moment the Apply buttons are hidden. Boston is on EDT (-04:00) until November 1.
         deadlineAt: "2026-10-07T23:59:00-04:00",
         // Leave empty to hide the Apply buttons until the form is ready.
         applicationLink: "https://airtable.com/app2QxPIfTjgZX8Ih/pagqFpIYrvzDCS8J6/form"
