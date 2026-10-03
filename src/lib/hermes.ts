@@ -136,7 +136,7 @@ const mentorList: Mentor[] = [
 	fromProfile('asher-parker-sartori', {
 		short: 'ex-xAI',
 		bio: [
-			'Asher used to organize for MAIA before dropping out of MIT. Since then, he has worked on white-box control at Redwood Research, model behavior at xAI (briefly), and most recently scalable interpretability as a contractor for Anthropic.',
+			'Asher used to organize for MAIA before dropping out of MIT. Since then, he has worked on white-box control at Redwood Research, model behavior at xAI (briefly), and most recently scalable interpretability.',
 			'He is interested in ambitious projects that will help us understand AGI, particularly in interpretability. This includes trying to fundamentally understand intelligence at small scale (see: parameter decomposition, Algzoo), as well as designing maximally useful approaches at large scale (see: NLAs, appendix A.9 of the J-space paper).'
 		]
 	}),
