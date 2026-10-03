@@ -12,7 +12,7 @@ export const CONFIG = {
     // pointing it at a new campaign shows it again to people who dismissed the old one.
     // Never shown on the page `href` points to when that is an internal path.
     popup: {
-        visible: true,
+        visible: false,
         showOnPaths: ["/"],
         remember: "device",
         icon: "fa-solid fa-graduation-cap",
