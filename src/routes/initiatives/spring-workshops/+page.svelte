@@ -78,9 +78,7 @@
 				alt="Workshop location surrounded by nature"
 				class="w-full h-full object-cover"
 			/>
-			<div
-				class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-light/70 to-surface-light dark:via-surface-dark/70 dark:to-surface-dark"
-			/>
+			<div class="workshop-overlay absolute inset-0" />
 		</div>
 
 		<!-- Content -->
@@ -208,3 +206,12 @@
 	</div>
 	<Footer />
 </main>
+
+<style>
+	.workshop-overlay {
+		background: linear-gradient(to bottom,
+			color-mix(in srgb, var(--maia-canvas) 90%, transparent),
+			color-mix(in srgb, var(--maia-canvas) 96%, transparent) 65%,
+			var(--maia-canvas) 100%);
+	}
+</style>
