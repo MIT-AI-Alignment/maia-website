@@ -97,13 +97,22 @@ The first rule strips supported locker alias prefixes; the second preserves the
 path on the vanity host. Original query strings are preserved. This is an HTTP
 redirect, not a homepage fallback or an in-place copy of the Vercel site.
 
-The operator checked all 53 old Athena page paths: all first-hop redirects
+The operator checked all 53 old Athena HTTPS page paths: all first-hop redirects
 preserved the expected path/query; 52 destination paths worked, while the
 intentionally deleted `/aisf-hack-s26/` returned a genuine 404. Existing intended
 orientation-to-Airtable and AISF-week-to-summer redirects remain. A synthetic
 unknown route also redirected to its matching .org path and returned a true 404.
 `/initiatives/spring-workshops/` was recovered from the old dev branch in PR #46,
 including its seven photos, and visually checked in both themes.
+
+Known upstream HTTP exception: a request such as
+`http://aialignment.mit.edu/events/?example=1` is first intercepted by MIT's BigIP
+load balancer, which returns 302 to `https://aialignment.mit.edu/`, dropping the
+path/query before Apache can apply `.htaccess.mit`. The 53-path preservation
+verification above covers HTTPS, not this HTTP variant. The HTTPS
+`www.mit.edu` locker alias was also verified. Correcting the HTTP exception
+requires MIT-side load-balancer configuration; a repository or Apache redirect
+change cannot recover a path already stripped upstream. That work remains open.
 
 Hosted Events HTML (slash and non-slash), both data routes, asset loading,
 images, and interactive semester selection passed; HTML/data cache HIT responses
