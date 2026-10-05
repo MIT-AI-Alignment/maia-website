@@ -31,7 +31,18 @@ try {
       const response = await request(adapterPath);
       assert.equal(response.status, 200, `ISR rewrite for ${path} must not redirect`);
       assert.equal(response.headers.get('location'), null, path);
-      assert.ok((await response.text()).includes('Runtime calendar check'), path);
+      const body = await response.text();
+      assert.ok(body.includes('Runtime calendar check'), path);
+      if (!path.endsWith('/__data.json')) {
+        const assets = [...body.matchAll(/["']([^"']*_app\/immutable\/[^"']+)["']/g)].map(match => match[1]);
+        assert.ok(assets.some(asset => asset.endsWith('.css')), `Missing CSS for ${path}`);
+        assert.ok(assets.some(asset => asset.endsWith('.js')), `Missing JS for ${path}`);
+        for (const asset of assets) {
+          assert.ok(asset.startsWith('/_app/immutable/'), `Non-root asset for ${path}: ${asset}`);
+          assert.equal(new URL(asset, `https://mitaialignment.org${path}`).pathname, asset);
+          assert.ok(readFileSync(`.vercel/output/static${asset}`).length, `Missing built asset ${asset}`);
+        }
+      }
     }
   }
   // External calendar text must not become HTML, handlers, or executable links.

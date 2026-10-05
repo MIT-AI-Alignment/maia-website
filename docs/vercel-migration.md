@@ -27,6 +27,11 @@ on cold generation or revalidation, not every visit. Each route may refresh inde
 After 10 minutes the next visit triggers background regeneration: this is not a
 cron job or a guarantee that idle pages refresh exactly every 10 minutes.
 
+`kit.paths.relative: false` emits root-relative CSS and JavaScript URLs. The site
+is hosted at the domain root; this prevents ISR's slashless internal pathname from
+producing relative assets that resolve to the wrong directory on external slash
+URLs. The runtime rewrite test checks CSS/JS URLs and their built files for both forms.
+
 The existing parser, recurrence handling, grouping, program history and content
 overrides are unchanged. Timeout, HTTP errors and malformed ICS fail regeneration
 instead of publishing an empty archive. Vercel retains the last successful ISR

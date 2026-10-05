@@ -8,6 +8,9 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		// Hosted at the domain root. ISR reconstructs slashless internal URLs;
+		// relative assets otherwise resolve incorrectly on external slash URLs.
+		paths: { relative: false },
 		adapter: adapter({
 			runtime: 'nodejs22.x',
 			maxDuration: 30
