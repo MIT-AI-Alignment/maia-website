@@ -5,7 +5,7 @@
 
 <PageLayout
 	title="AISF Fall 2026 Curriculum"
-	description="The Fall 2026 AI Safety Fundamentals curriculum. Week 0: Introduction to Machine Learning is available. Weeks 1–8 are coming soon."
+	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0 and 1 are available with original reading links and the Fall reading packet. Weeks 2–8 are coming soon."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
@@ -23,6 +23,13 @@
 						<span class="availability">Introduction to Machine Learning <span aria-hidden="true">→</span></span>
 					</a>
 				</li>
+			{:else if week === 1}
+				<li>
+					<a href="/aisf/week1/" class="week-card available-card">
+						<h2 class="font-heading">Week 1</h2>
+						<span class="availability">The trajectory of AI <span aria-hidden="true">→</span></span>
+					</a>
+				</li>
 			{:else}
 			<li class="week-card">
 				<h2 class="font-heading">Week {week}</h2>
@@ -37,6 +44,7 @@
 			{/if}
 		{/each}
 	</ul>
+	<p class="text-center mb-6"><a href="https://docs.google.com/document/d/1j9D16VU0IzxiYHKfJ_8YwkWnnuZFUTr57-MctXXm4N0/edit?tab=t.mrtb8xgs15x9" target="_blank" rel="noopener" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">Fall 2026 curriculum Google Doc ↗</a></p>
 	<p class="text-center mb-8">
 		<a href="/aisf/summer-2026/" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">View the Summer 2026 curriculum →</a>
 	</p>
