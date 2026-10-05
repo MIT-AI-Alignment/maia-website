@@ -1,5 +1,6 @@
 // Run after build. Exercises the built server, not Vercel's CDN.
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { Server } from '../.svelte-kit/output/server/index.js';
 import { manifest } from '../.svelte-kit/output/server/manifest.js';
 
@@ -16,6 +17,22 @@ try {
     const response = await request(path);
     assert.equal(response.status, 200, path);
     assert.ok((await response.text()).includes('Runtime calendar check'), path);
+  }
+  // Replay the emitted ISR rewrite and adapter's __pathname reconstruction.
+  // Direct Server tests with only slash-terminated paths miss redirect loops.
+  const routes = JSON.parse(readFileSync('.vercel/output/config.json', 'utf8')).routes;
+  for (const base of ['/events', '/events/semester']) {
+    for (const path of [base, `${base}/`, `${base}/__data.json`]) {
+      const route = routes.find(route => route.dest?.includes('__pathname=') && new RegExp(route.src).test(path));
+      assert.ok(route, `Missing ISR rewrite for ${path}`);
+      const rewritten = new URL(route.dest, 'https://mitaialignment.org');
+      const pathname = rewritten.searchParams.get('__pathname');
+      const adapterPath = pathname + (rewritten.pathname.endsWith('/__data.json') ? '/__data.json' : '');
+      const response = await request(adapterPath);
+      assert.equal(response.status, 200, `ISR rewrite for ${path} must not redirect`);
+      assert.equal(response.headers.get('location'), null, path);
+      assert.ok((await response.text()).includes('Runtime calendar check'), path);
+    }
   }
   // External calendar text must not become HTML, handlers, or executable links.
   globalThis.fetch = async () => new Response([

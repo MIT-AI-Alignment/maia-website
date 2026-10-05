@@ -18,6 +18,10 @@ Athena redirect are separate checks. Do not upload this branch's output to Athen
 
 /events/ and /events/semester/ use Vercel ISR with a 600-second expiration;
 all other pages remain prerendered. Each view's HTML and SvelteKit data responses
+accept the Events route's `trailingSlash: 'ignore'` override: the adapter reconstructs
+ISR pathnames without trailing slashes, so inheriting the global `always` setting
+causes an HTML redirect loop. Existing slash-terminated links continue to work.
+The rest of the site's slash policy is unchanged. Both HTML and data responses
 are cached. Tracking queries do not create independent caches. Google is fetched
 on cold generation or revalidation, not every visit. Each route may refresh independently.
 After 10 minutes the next visit triggers background regeneration: this is not a
