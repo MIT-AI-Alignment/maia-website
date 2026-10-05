@@ -17,6 +17,23 @@ try {
     assert.equal(response.status, 200, path);
     assert.ok((await response.text()).includes('Runtime calendar check'), path);
   }
+  // External calendar text must not become HTML, handlers, or executable links.
+  globalThis.fetch = async () => new Response([
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', 'UID:untrusted-calendar',
+    'DTSTART:20261006T180000Z', 'DTEND:20261006T190000Z',
+    'SUMMARY:&lt;img src=x onerror=alert(12345)&gt;',
+    'LOCATION:&lt;svg onload=alert(12345)&gt;',
+    'DESCRIPTION:<a href="javascript:alert(12345)">Unsafe link</a> <img src=x onerror=alert(12345)> &lt;script&gt;alert(12345)&lt;/script&gt;',
+    'END:VEVENT', 'END:VCALENDAR'
+  ].join('\r\n'));
+  for (const path of paths.filter(path => !path.endsWith('.json'))) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.ok(html.includes('&lt;img src=x onerror=alert(12345)'), path);
+    assert.ok(!/<(?:img|svg|script)\b[^>]*alert\(12345\)/i.test(html), path);
+    assert.ok(!/href=["']javascript:/i.test(html), path);
+  }
   for (const failedFetch of [
     async () => new Response('upstream unavailable', { status: 503 }),
     async () => new Response('invalid ICS'),

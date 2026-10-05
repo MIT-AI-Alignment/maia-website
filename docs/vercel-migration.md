@@ -75,4 +75,6 @@ Vercel build/function logs and spend alerts. ISR cache is deployment-scoped.
 SvelteKit is updated within 2.x for the security-fixed Vercel adapter's builder API;
 Svelte and Vite remain unchanged. Rollup's locked 4.x version is refreshed to fix
 incorrect tree-shaking of the newer server's environment initialization. Existing dependency
-audit findings should be assessed separately, not hidden by an automatic force upgrade.
+audit findings are triaged in [dependency-security-review.md](dependency-security-review.md).
+Kit's runtime cookie serializer is pinned to patched 0.7.2; remaining Svelte and
+build-tool upgrades need separate compatibility testing, not an automatic force upgrade.
