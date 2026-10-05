@@ -412,7 +412,7 @@ export const PEOPLE: Record<string, Person> = {
 		mitEmail: 'emily_yu@mit.edu',
 		linkedin: 'https://www.linkedin.com/in/emily-yu-398249278/',
 		isExec: false,
-		isOrg: false,
+		isOrg: true,
 		isActive: true,
 	},
 
