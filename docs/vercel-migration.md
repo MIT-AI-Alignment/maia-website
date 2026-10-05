@@ -113,6 +113,11 @@ verification above covers HTTPS, not this HTTP variant. The HTTPS
 `www.mit.edu` locker alias was also verified. Correcting the HTTP exception
 requires MIT-side load-balancer configuration; a repository or Apache redirect
 change cannot recover a path already stripped upstream. That work remains open.
+The operator's read-only `stella aialignment -i` lookup resolved the alias to the
+shared `HOST-TO-WEB-REWRITE-5.MIT.EDU` F5 front door (`18.9.107.56`), with contact
+`ops@mit.edu` and many unrelated aliases. Do not modify that shared host record.
+Ask MIT IS&T/Ops to preserve path/query in the HTTP-to-HTTPS front-door rule;
+MAIA locker permissions are not authority to change shared MIT infrastructure.
 
 Hosted Events HTML (slash and non-slash), both data routes, asset loading,
 images, and interactive semester selection passed; HTML/data cache HIT responses
