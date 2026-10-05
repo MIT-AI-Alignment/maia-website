@@ -118,7 +118,7 @@
 	button:hover { background:var(--maia-card); }
 	.article-header { padding-bottom:1.5rem; border-bottom:1px solid var(--maia-border); margin-bottom:2rem; }
 	.selection-note { margin-top:1.25rem; }
-	.article-body { font:18px/1.85 Georgia,serif; overflow-wrap:anywhere; }
+	.article-body { font:400 18px/1.8 'Manrope',sans-serif; overflow-wrap:anywhere; }
 	.article-body :global(p) { margin-bottom:1.25rem; }
 	.article-body :global(h2), .article-body :global(h3) { font-family:inherit; font-weight:500; line-height:1.5; scroll-margin-top:6rem; }
 	.article-body :global(h2) { font-size:1.55rem; margin:2.5rem 0 1.25rem; }
