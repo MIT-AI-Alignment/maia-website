@@ -127,8 +127,12 @@
 	.article-body :global(img) { display:block; max-width:100%; height:auto; margin:1.5rem auto; background:white; cursor:zoom-in; }
 	.article-body :global(img.expanded) { position:fixed; inset:0; margin:auto; width:auto; max-width:96vw; max-height:96vh; object-fit:contain; z-index:100; box-shadow:0 0 0 100vmax #100a18ee; cursor:zoom-out; }
 	.article-body :global(a) { color:var(--maia-accent); text-decoration:underline; text-underline-offset:4px; }
-	.article-body :global(.list-item) { padding-left:1.1rem; position:relative; }
-	.article-body :global(.list-item)::before { content:'•'; position:absolute; left:0; }
+	.article-body :global(.reading-list) { margin:1rem 0 1.5rem; padding-left:1.5rem; list-style-position:outside; }
+	.article-body :global(ul.reading-list) { list-style-type:disc; }
+	.article-body :global(ol.reading-list) { list-style-type:decimal; }
+	.article-body :global(.reading-list li) { padding-left:.35rem; margin-bottom:.65rem; }
+	.article-body :global(.reading-list li:last-child) { margin-bottom:0; }
+	.article-body :global(.reading-list li::marker) { color:var(--maia-ink); }
 	.article-body :global(.table-scroll) { overflow:auto; max-width:100%; margin:1.5rem 0; }
 	.article-body :global(table) { border-collapse:collapse; width:100%; font-size:.85em; }
 	.article-body :global(td) { padding:.75rem; border:1px solid var(--maia-border); vertical-align:top; }
