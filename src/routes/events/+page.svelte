@@ -7,17 +7,19 @@
 	import { displayDate, displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
 	import { groupEventRuns, ORIENTATION_2026_RSVP_EVENTS, type EventRun } from '$lib/eventCollections';
-	import { getEventMedia, type EventMedia } from '$lib/eventMedia';
+	import { getEventMedia } from '$lib/eventMedia';
 	import EventAttendance from '$lib/components/EventAttendance.svelte';
 	import { PARTNER_PROGRAMS } from '$lib/programHistory';
+	import { reconcilePlannedEvents, splitPlannedEvents, matchesPlannedEvent, type PlannedEvent } from '$lib/plannedEvents';
 
 	export let data: { events: CalendarEvent[]; fetchedAt: string };
 	let now = new Date();
 	let activeCategory: TimelineCategory | 'all' = 'all';
 	// Planned fall events from the activities sheet, Partiful, and organizer updates.
-	const plannedEvents: { title: string; category: TimelineCategory; description: string; url?: string; date?: string; media?: EventMedia; imageCredit?: string }[] = [
+	const plannedEvents: PlannedEvent[] = [
 		{
 			title: 'Dwarkesh Fireside Chat with MAIA Members',
+			calendarSubject: 'Dwarkesh',
 			url: 'https://partiful.com/e/1qwsXEvYdRrjIDu8roeI',
 			category: 'talks',
 			date: '2026-09-23',
@@ -26,6 +28,7 @@
 		},
 		{
 			title: 'Talk with Stephen Casper',
+			calendarSubject: 'Stephen Casper',
 			category: 'talks',
 			date: '2026-10-06',
 			media: { imageUrl: '/images/events/speaker-stephen-casper.jpg', imageAlt: 'Stephen Casper portrait', sourceUrl: 'https://www.hks.harvard.edu/faculty/stephen-casper', kind: 'portrait' },
@@ -45,7 +48,9 @@
 			url: ORIENTATION_2026_RSVP_EVENTS.find(event => event.name === 'Estimation and Forecasting Challenge')!.href
 		}
 	];
-	$: eventRows = data.events.filter(event => event.kind !== 'initiative');
+	$: reconciled = reconcilePlannedEvents(data.events, plannedEvents);
+	$: planned = splitPlannedEvents(reconciled.unmatched, now);
+	$: eventRows = reconciled.events.filter(event => event.kind !== 'initiative');
 	const highlightTitles: Record<string, string> = {
 		'6ja895bhclgqneiankcah6ugl0@google.com/2026-09-07T21:30:00Z': 'Sunset Cruise',
 		'maia-archive-33a39a9fe19563f56735abe5684b7fa5@mitaialignment.org/2026-02-10': 'Nicholas Carlini: AI Security Talk and Q&A',
@@ -83,9 +88,9 @@
 	}
 	afterNavigate(() => { void revealHashTarget(); });
 
-	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + plannedEvents.filter(event => event.category === category.id).length + (category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + reconciled.unmatched.filter(event => event.category === category.id).length + (category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? data.events.length + plannedEvents.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
+	$: visibleCount = activeCategory === 'all' ? data.events.length + reconciled.unmatched.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		window.addEventListener('hashchange', revealHashTarget);
@@ -135,16 +140,16 @@
 	}
 
 	$: sections = [
-		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, hasPlannedEvents: true },
-		...Array.from(new Set([...grouped.past, ...programs.past].map(eventYear))).sort().reverse().map(year => ({
+		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, plannedEvents: planned.upcoming },
+		...Array.from(new Set([...grouped.past, ...programs.past].map(eventYear).concat(planned.past.map(event => event.date!.slice(0, 4))))).sort().reverse().map(year => ({
 			title: `Past · ${year}`, id: `year-${year}`, events: grouped.past.filter(event => eventYear(event) === year),
-			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], hasPlannedEvents: false
+			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], plannedEvents: planned.past.filter(event => event.date!.startsWith(year))
 		}))
 	];
-	$: visiblePlannedEvents = plannedEvents.filter(event => activeCategory === 'all' || event.category === activeCategory);
 	$: filteredSections = sections.map(section => ({
 		...section,
-		hasPlannedEvents: section.hasPlannedEvents && visiblePlannedEvents.length > 0,
+		plannedEvents: section.plannedEvents.filter(event => activeCategory === 'all' || event.category === activeCategory),
+		hasPlannedEvents: section.plannedEvents.some(event => activeCategory === 'all' || event.category === activeCategory),
 		events: section.events.filter(event => activeCategory === 'all' || eventCategory(event) === activeCategory),
 		programs: activeCategory === 'all' || activeCategory === 'programs' ? section.programs : [],
 		undatedPrograms: activeCategory === 'all' || activeCategory === 'programs' ? section.undatedPrograms : []
@@ -211,10 +216,10 @@
 					{#each eventRuns(visibleEvents, section.hasPlannedEvents) as run}
 					{#if run.planned}
 					<div class="event-run">
-						{#each visiblePlannedEvents as event}
+						{#each section.plannedEvents as event}
 							{@const category = categoryDetails(event)}
 							<article class="event-row">
-								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">{event.date ? displayDate(event.date, false) : 'Fall 2026'}<span class="mt-1 block">{event.date ? 'Time TBD' : 'Date TBD'}</span></p></div>
+								<div class="event-meta"><p class="text-sm font-medium text-maia-950/60 dark:text-maia-100/60">{event.date ? displayDate(event.date, false) : 'Fall 2026'}<span class="mt-1 block">{event.date ? (section.id === 'upcoming' ? 'Time TBD' : 'Time not recorded') : 'Date TBD'}</span></p></div>
 								<div class="event-body">
 									<div class="event-heading" class:has-media={!!event.media}>
 										<div class="min-w-0">
@@ -239,7 +244,8 @@
 						{#if run.collection}<p class="collection-label"><i class="fa-solid {run.collection.icon}" aria-hidden="true"></i> {run.collection.label}</p>{/if}
 					{#each run.events as event (event.id)}
 						{@const category = categoryDetails(event)}
-						{@const media = getEventMedia(event)}
+						{@const curated = plannedEvents.find(plan => matchesPlannedEvent(event, plan))}
+						{@const media = getEventMedia(event) ?? curated?.media}
 						{@const links = eventLinks(event, media?.sourceUrl)}
 						<article class="event-row">
 						<div class="event-meta">
@@ -276,6 +282,7 @@
 									<summary>Event details</summary>
 									<div class="detail-panel">
 										{#if media}<a class="event-artwork" href={media.imageUrl} target="_blank" rel="noopener noreferrer"><img src={media.imageUrl} alt={media.imageAlt} loading="lazy" /></a>{/if}
+										{#if curated?.imageCredit && media === curated.media}<p class="text-xs"><a href={media?.sourceUrl} target="_blank" rel="noopener noreferrer">{curated.imageCredit}</a></p>{/if}
 										{#if event.location}<p class="event-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{event.location}</span></p>{/if}
 										{#if event.description}
 											<p class="event-description">{#each event.descriptionParts ?? [{ text: event.description, href: undefined }] as part}{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a>{:else}{part.text}{/if}{/each}</p>
@@ -326,7 +333,7 @@
 			{/if}
 		{/each}
 
-		{#if !grouped.upcoming.length}<p>No dated upcoming events are currently listed.</p>{/if}
+		{#if !grouped.upcoming.length && !planned.upcoming.some(event => event.date)}<p>No dated upcoming events are currently listed.</p>{/if}
 		{#if !data.events.length}
 			<p class="text-maia-950/70 dark:text-maia-100/70">No events are listed yet.</p>
 		{/if}
