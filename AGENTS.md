@@ -3,9 +3,9 @@
 ## Start here
 
 - Repository: https://github.com/MIT-AI-Alignment/maia-website
-- Live site: https://aialignment.mit.edu
-- Stack: SvelteKit, TypeScript, Tailwind; static production output is `build/`.
-- Hosting: MIT Athena, in `/mit/aialignment/www`. A GitHub commit or merge does **not** deploy the site.
+- Canonical target: https://mitaialignment.org. MIT remains live until separately verified DNS/redirect cutover.
+- Stack: SvelteKit, TypeScript, Tailwind; Vercel output is `.vercel/output/`.
+- Hosting migration: see `docs/vercel-migration.md`. Vercel Git integration can auto-deploy main once configured; do not equate a merge with verified live deployment. Never upload this output to Athena.
 - Fetch current `origin/main` before editing; other maintainers work here. Preserve unrelated local changes and untracked files. Build the exact revision you intend to publish.
 
 ## Where content lives
@@ -21,7 +21,7 @@
 | Event photos, attendance, collections/categories | `src/lib/eventMedia.ts`, `eventAttendance.ts`, `eventCollections.ts`, `semesterTimeline.ts` |
 | Local images and merch files | `static/images/`, `static/merch/` |
 
-The Events page reads the **public** MAIA calendar configured in `config.ts` at build time. Calendar changes need a rebuild and Athena upload to appear on the website. Keep the private planning calendar private. Verify dates, links, and photos against current sources; do not invent missing details. Undated events can stay website-only with “Date TBD.” All-day calendar end dates are exclusive.
+Both Events views read the **public** MAIA calendar configured in `config.ts` through 600-second Vercel ISR. Updates are request-triggered after expiration, without a rebuild. Errors must fail regeneration rather than overwrite the cache with empty content. Keep the private planning calendar private. Verify dates, links, and photos against current sources; do not invent missing details. Undated events can stay website-only with “Date TBD.” All-day calendar end dates are exclusive.
 
 Keep the compact event dates, Orientation/CPW groupings, and mobile layout. Store organizer photos locally so they do not depend on expiring links. Profiles without photos are currently hidden. Use verified contact details and distinguish partner-run programs from MAIA programs.
 
@@ -34,9 +34,11 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-Run relevant `scripts/*.test.mjs` checks for logic changes. Also review and run `node scripts/verify-built-site.mjs`; its content assertions must match the intended release. At present, its legacy “Orientation popup must remain disabled” assertion conflicts with the AISF application popup added on main, so reconcile that check before the next deployment. Check desktop/mobile for layout changes, image loading, and link destinations. Restart the preview server after rebuilding if newly added assets return 404. Use the user's task browser panel and reuse existing tabs.
+Run `node --experimental-strip-types --test scripts/*.test.mjs`, `node scripts/verify-built-site.mjs`, and `node scripts/verify-events-runtime.mjs` after building. The latter verifies both Events HTML/data success and failure responses; CDN cache retention still needs a Vercel preview check. Check desktop/mobile for layout changes, image loading, and link destinations. Restart the preview server after rebuilding if newly added assets return 404. Use the user's task browser panel and reuse existing tabs.
 
-## Deploy to Athena
+## Legacy Athena deployment (pre-migration revisions only)
+
+The following instructions apply only to a reviewed adapter-static revision that emits build/. They must NOT be used with the Vercel branch. Athena redirect configuration remains pending an authenticated check of the actual vanity-host mapping and existing .htaccess.mit.
 
 Deploy when requested or already authorized in the current session. Use the signed-in maintainer's MIT Kerberos username, replacing `YOUR_KERB` below. Their account needs membership in `aialignment-www`. Never store passwords, tokens, or private Slack/email exports in this public repository.
 

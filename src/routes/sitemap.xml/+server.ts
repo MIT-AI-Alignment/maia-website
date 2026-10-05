@@ -10,6 +10,6 @@ const paths = [
 ];
 
 export const GET: RequestHandler = () => new Response(
-	`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path => `\n  <url><loc>https://aialignment.mit.edu${path}</loc></url>`).join('')}\n</urlset>`,
+	`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path => `\n  <url><loc>https://mitaialignment.org${path}</loc></url>`).join('')}\n</urlset>`,
 	{ headers: { 'Content-Type': 'application/xml' } }
 );

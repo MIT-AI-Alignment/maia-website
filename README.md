@@ -1,6 +1,6 @@
 # MAIA website
 
-For AI-assisted maintenance, start with [AGENTS.md](./AGENTS.md): content locations, preview checks, and the Athena deployment workflow.
+For AI-assisted maintenance, start with [AGENTS.md](./AGENTS.md). This branch targets Vercel: follow [migration and maintenance](./docs/vercel-migration.md) for previews, calendar ISR, checks, and domain cutover. The Athena instructions below are historical and apply only to pre-migration static revisions; do not run them on this branch.
 
 Tutorial video: [https://youtu.be/R00G5PhiKNw](https://youtu.be/R00G5PhiKNw)
 
