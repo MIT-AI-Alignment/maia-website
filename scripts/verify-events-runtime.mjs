@@ -12,6 +12,15 @@ const request = path => server.respond(new Request(`https://mitaialignment.org${
   getClientAddress: () => '127.0.0.1'
 });
 try {
+  for (const path of ['/nonexistent-regression-page/', '/aisf-hack-s26/']) {
+    const response = await request(path);
+    assert.equal(response.status, 404, path);
+    assert.equal(response.headers.get('location'), null, path);
+    const html = await response.text();
+    assert.ok(html.includes('Page not found'), path);
+    assert.ok(html.includes('Back to home') && html.includes('Explore events'), path);
+    assert.ok(html.includes('name="robots" content="noindex"'), path);
+  }
   globalThis.fetch = async () => new Response('BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:runtime-test\r\nDTSTART:20261006T180000Z\r\nDTEND:20261006T190000Z\r\nSUMMARY:Runtime calendar check\r\nEND:VEVENT\r\nEND:VCALENDAR');
   for (const path of paths) {
     const response = await request(path);
@@ -72,6 +81,11 @@ try {
       const response = await request(path);
       assert.equal(response.status, 503, path);
       assert.equal(response.headers.get('cache-control'), 'no-store', path);
+      if (!path.endsWith('.json')) {
+        const html = await response.text();
+        assert.ok(html.includes('Something went wrong'), path);
+        assert.ok(!html.includes('Page not found'), path);
+      }
     }
   }
   console.log('Verified both Events HTML/data routes: success and HTTP/parse/network failures.');
