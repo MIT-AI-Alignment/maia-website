@@ -1,15 +1,20 @@
 # Vercel migration and maintenance
 
-This branch prepares hosting; merging, Vercel deployment, DNS cutover, and the
-Athena redirect are separate checks. Do not upload this branch's output to Athena.
+The Vercel migration and domain cutover completed on October 5, 2026. PR #45
+merged as `9a57b0a`; the restored workshop archive in PR #46 merged as `a5b8703`.
+Production was Ready and the cutover checks below passed in the operator's live
+session. Merging, successful deployment and public verification remain separate
+release checks. Do not upload Vercel output to Athena.
 
 ## Setup
 
-- Import MIT-AI-Alignment/maia-website into the MAIA-controlled Vercel team.
+- Project `maia-website` is connected to `MIT-AI-Alignment/maia-website` in the
+  MAIA Vercel team `maia-0ed3b11d`, owned by `nvemuri4649`.
 - SvelteKit preset, Node 22, npm ci (package-lock.json is authoritative), build
   command from vercel.json; do not override output directory to build/.
-- Review branch preview before merging. Configure main as production branch and
-  PR previews via Git integration. Protect main with review requirements.
+- Git integration builds branch previews and deploys `main` to production.
+  Review the preview before merging and verify the resulting production release.
+  Maintain review requirements on main; merging is not proof of a successful deploy.
 - Output is .vercel/output, not build/. No calendar API key or private calendar is required.
 - Keep preview deployment protection enabled; production metadata points to
   https://mitaialignment.org, not preview hosts.
@@ -34,9 +39,10 @@ URLs. The runtime rewrite test checks CSS/JS URLs and their built files for both
 
 The existing parser, recurrence handling, grouping, program history and content
 overrides are unchanged. Timeout, HTTP errors and malformed ICS fail regeneration
-instead of publishing an empty archive. Vercel retains the last successful ISR
-response on error. A brand-new deployment has no last-good cache: warm and verify
-both routes before domain cutover; if Google is unavailable, delay promotion.
+instead of publishing an empty archive. Vercel is expected to retain the last
+successful ISR response on error, but upstream-failure retention has not been
+platform-verified for this project. A brand-new deployment has no last-good cache:
+warm and verify both routes before promotion; if Google is unavailable, delay it.
 
 ## Release checks
 
@@ -55,18 +61,72 @@ After expiration verify refreshed fetchedAt and stale-while-revalidate behavior.
 Exercise an upstream-failure scenario in an isolated preview before claiming
 last-good cache retention is platform-verified. No production calendar edits needed.
 
-## Cutover (separate approval)
+## Current domains and DNS
 
-Keep registration/nameservers at Squarespace. Add .org and www to the Vercel
-project and apply only Vercel's required web DNS records, preserving Google
-MX/SPF/DKIM/DMARC and unrelated records. Configure www to redirect to the apex.
-Verify HTTPS and nested routes at .org before touching the MIT site.
+Primary: `https://mitaialignment.org`. Registration and nameservers remain at
+Squarespace; only web records changed. The October 5 cutover records are:
 
-Athena vanity-host mapping and existing .htaccess.mit still need an authenticated
-read. Preserve existing directives and back up live files outside public www.
-Test path/query-preserving temporary redirects on the actual hostname before
-making them permanent. Do not guess a universal / redirect for locker aliases.
-Keep the old site/previous Vercel deployment available for rollback.
+| Name | Type | Value | TTL |
+| --- | --- | --- | --- |
+| @ | A | 216.150.1.1 | 1800 |
+| www | CNAME | 7505914e553749b2.vercel-dns-016.com | 1800 |
+
+Both Vercel domains have valid TLS. `www` returns a path/query-preserving 308 to
+the apex. Google MX, SPF, DKIM, DMARC and verification records were unchanged.
+Recheck Vercel's current requirements before future DNS edits; these values are
+a cutover record, not universal settings for another project.
+
+Google/Cloudflare public resolvers and the MIT network resolved the new site at
+cutover. The operator's local Tailscale resolver retained the old Squarespace IP
+for about three hours. This was a resolver-specific observation, not a global
+propagation guarantee. `https://maia-website-ten.vercel.app` is the production
+alias for checking the deployment while diagnosing stale DNS.
+
+## Athena redirect and verified paths
+
+The locker web root is `/mit/aialignment/www`, resolving to
+`/afs/athena.mit.edu/org/a/aialignment/www`. There was no previous `.htaccess` or
+`.htaccess.mit`. The new `/mit/aialignment/www/.htaccess.mit` contains:
+
+```apache
+RedirectMatch 301 ^/(?:~aialignment|aialignment/www)(?:/(.*))?$ https://mitaialignment.org/$1
+RedirectMatch 301 ^/(.*)$ https://mitaialignment.org/$1
+```
+
+The first rule strips supported locker alias prefixes; the second preserves the
+path on the vanity host. Original query strings are preserved. This is an HTTP
+redirect, not a homepage fallback or an in-place copy of the Vercel site.
+
+The operator checked all 53 old Athena page paths: all first-hop redirects
+preserved the expected path/query; 52 destination paths worked, while the
+intentionally deleted `/aisf-hack-s26/` returned a genuine 404. Existing intended
+orientation-to-Airtable and AISF-week-to-summer redirects remain. A synthetic
+unknown route also redirected to its matching .org path and returned a true 404.
+`/initiatives/spring-workshops/` was recovered from the old dev branch in PR #46,
+including its seven photos, and visually checked in both themes.
+
+Hosted Events HTML (slash and non-slash), both data routes, asset loading,
+images, and interactive semester selection passed; HTML/data cache HIT responses
+were observed. These checks do not establish upstream-failure cache retention.
+
+## Rollback
+
+The cutover backup/rollback record is outside the public web root at
+`/mit/aialignment/.website-migration-backups/20261005-vercel`. Old static files
+were left intact. Inspect that record before rollback; do not guess prior DNS.
+
+- For an application regression, restore a known-good Vercel production deployment
+  and verify Events plus other critical routes. No DNS changes are needed.
+- To serve the old MIT static site again, first copy the current `.htaccess.mit`
+  into a new dated backup outside `www`, then move the redirect file out of `www`.
+  There is no original redirect file to restore. Verify the old hostname directly.
+- If DNS rollback is required, use the saved pre-cutover web records, leaving
+  nameservers and Google mail/verification records untouched. Returning to the old
+  Squarespace records does not itself restore a MAIA site at .org.
+- Permanent 301 redirects may remain cached in clients after server rollback.
+  Test with a fresh client and inspect response headers; communicate that caveat.
+
+Rollback is an explicit operational action, not part of routine content releases.
 
 ## Follow-up: public Partiful enrichment
 
