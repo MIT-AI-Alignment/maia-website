@@ -6,7 +6,7 @@
       "pageTitle": "ML Fundamentals",
       "topics": [],
       "packet": "",
-      "plan": "https://aialignment.mit.edu/aisf/week0/",
+      "plan": "/aisf/week0/",
       "description": "Week 0 is self-paced and optional. It provides a foundation in neural networks and transformers for the rest of the fellowship. If you are already comfortable with these topics, feel free to skip it.",
       "objectives": [
         "Explain, at a high level, how neural networks are trained",

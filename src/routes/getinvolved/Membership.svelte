@@ -71,7 +71,7 @@
 	</p>
 	<p class="mt-4">
 		If you're newer to AI safety, we recommend starting with <a
-			href="https://aialignment.mit.edu/getinvolved#aisf">AI Safety Fundamentals</a
+			href="/getinvolved/#aisf">AI Safety Fundamentals</a
 		>. You can also <a href={CONFIG.orientation.interestFormLink}>join our mailing list</a> to hear
 		about events, programs, and opportunities throughout the year without applying for membership.
 	</p>

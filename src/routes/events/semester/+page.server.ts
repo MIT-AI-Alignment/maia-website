@@ -1,1 +1,1 @@
-export { load } from '../+page.server';
+export { load, prerender, config } from '../+page.server';

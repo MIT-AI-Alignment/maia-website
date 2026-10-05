@@ -4,6 +4,11 @@ import { readCalendarEvents } from '$lib/server/calendar';
 import { PROGRAM_HISTORY } from '$lib/programHistory';
 import { ORIENTATION_2026_RSVP_EVENTS, orientationSummary, combineFallWorkshops } from '$lib/eventCollections';
 
+// Vercel caches the rendered public page; failed regeneration retains the last
+// successful response. Do not catch calendar failures and cache an empty page.
+export const prerender = false;
+export const config = { isr: { expiration: 600, allowQuery: [] } };
+
 const orientationLinks = new Map(ORIENTATION_2026_RSVP_EVENTS
  .filter(event => event.calendarId)
  .map(event => [event.calendarId, event.href]));

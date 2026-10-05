@@ -34,8 +34,8 @@
 </script>
 
 <svelte:head>
-	<link rel="canonical" href={`https://aialignment.mit.edu${$page.url.pathname}`} />
-	<meta property="og:url" content={`https://aialignment.mit.edu${$page.url.pathname}`} />
+	<link rel="canonical" href={`https://mitaialignment.org${$page.url.pathname}`} />
+	<meta property="og:url" content={`https://mitaialignment.org${$page.url.pathname}`} />
 	<title>MAIA - {title}</title>
 	<meta name="description" content={description} />
 	<meta property="og:title" content={`MAIA - ${title}`} />
