@@ -47,6 +47,13 @@ const gallery = built('aisf/summer-2026/fellows/index.html');
 assert.doesNotMatch(gallery, /Thank you for eight weeks|This page lists approved completers/);
 assert.match(gallery, /<strong>For corrections or to remove your name or photo/);
 assert.ok(existsSync(`${output}/resources/merch/index.html`));
+const workshops = built('initiatives/spring-workshops/index.html');
+assert.ok(workshops.includes('Technical &amp; Policy Workshops, Spring 2025'));
+assert.ok(workshops.includes('around 150 students and 20 speakers'));
+assert.ok(!existsSync(`${output}/aisf-hack-s26/index.html`), 'Intentionally deleted hackathon page must stay deleted');
+for (const file of ['campfire-2', 'campfire', 'nature-walk', 'nature', 'speaker-session', 'workshop-discussion', 'workshop-group']) {
+  assert.ok(existsSync(`${output}/images/initiatives/spring-workshops/${file}.jpg`));
+}
 for (const path of ['events', 'events/semester']) {
   assert.ok(!existsSync(`${output}/${path}/index.html`), `${path} must not be frozen at build time`);
   for (const suffix of ['', '/__data.json']) {
