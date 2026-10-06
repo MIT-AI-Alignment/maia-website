@@ -51,8 +51,8 @@
 	});
 </script>
 
-<PageLayout title="AISF Fall 2026 · Week 1" description="The trajectory of AI: five readings from the Fall 2026 AISF reading packet, with original sources and an integrated reader." heroTitle={article ? article.title : 'The trajectory of AI'}>
-	<svelte:fragment slot="hero-content"><p class="text-maia-950/70 dark:text-maia-200">Fall 2026 · Week 1{article ? ` · Reading ${selected + 1} of ${articles.length}` : ''}</p></svelte:fragment>
+<PageLayout title="AISF Fall 2026: Week 1" description="The trajectory of AI: five readings from the Fall 2026 AISF reading packet, with original sources and an integrated reader." heroTitle={article ? article.title : 'The trajectory of AI'}>
+	<svelte:fragment slot="hero-content"><p class="packet-meta"><span>Fall 2026</span><span>Week 1</span>{#if article}<span>Reading {selected + 1} of {articles.length}</span>{/if}</p></svelte:fragment>
 	<a class="back-link" href="/aisf/">← All weeks</a>
 	<div class="packet-layout">
 		<aside aria-label="Week 1 readings">
@@ -70,7 +70,7 @@
 		<section class="packet-content" id="overview">
 			{#if article}
 				<div class="article-header">
-					<p>{article.byline}</p>
+					<p class="packet-meta">{#each article.byline.split(' · ') as part}<span>{part}</span>{/each}</p>
 					<div class="links">{#each article.sources as source}<a href={source.url} target="_blank" rel="noopener">{source.title} ↗</a>{/each}<a href={article.packet} target="_blank" rel="noopener">Google Doc ↗</a><button on:click={markRead} aria-pressed={read.includes(selected)}>{read.includes(selected) ? 'Read ✓' : 'Mark as read'}</button></div>
 					<p class="selection-note">Selection from the Fall 2026 reading packet.</p>
 				</div>
@@ -84,7 +84,7 @@
 					{#each group.items as item}
 						<div class="reading-row" id={`reading-${item.article}`}>
 							<h3><a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>{item.title}</a></h3>
-							{#if item.meta}<p class="reading-meta">{item.meta}</p>{/if}
+							{#if item.meta}<p class="reading-meta packet-meta">{#each item.meta.split(' · ') as part}<span>{part}</span>{/each}</p>{/if}
 							{#if item.note}<p class="reading-meta">{item.note}</p>{/if}
 							<div class="links"><a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>Read here →</a>{#each item.sources as source}<a href={source.url} target="_blank" rel="noopener">{source.title} ↗</a>{/each}<a href={curriculum.packet} target="_blank" rel="noopener">Google Doc ↗</a></div>
 						</div>
@@ -96,11 +96,12 @@
 </PageLayout>
 
 <style>
+	.packet-meta { display:flex; flex-wrap:wrap; column-gap:1.25rem; row-gap:.25rem; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); }
 	.back-link { display:inline-block; margin-bottom:2rem; color:var(--maia-accent); }
 	.packet-layout { display:grid; grid-template-columns:235px minmax(0,1fr); gap:3rem; }
 	aside { position:sticky; top:6rem; align-self:start; max-height:calc(100vh - 7rem); overflow:auto; }
 	nav { display:grid; gap:.25rem; }
-	nav a { padding:.6rem .75rem; border-left:1px solid var(--maia-border); font-size:.85rem; line-height:1.6; color:var(--maia-muted); text-decoration:none; }
+	nav a { padding:.6rem .75rem; border-left:1px solid var(--maia-border); font-size:.85rem; line-height:1.6; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); text-decoration:none; }
 	nav a:hover, nav a.active { color:var(--maia-ink); background:var(--maia-card); }
 	nav a.active { border-left:2px solid var(--maia-accent); }
 	.packet-link { display:block; margin:1.5rem .75rem; font-size:.85rem; }
@@ -111,7 +112,7 @@
 	.packet-content h2 { font-size:1.5rem; margin:2rem 0 0; padding-bottom:1rem; border-bottom:1px solid var(--maia-border); }
 	.reading-row { padding:1.5rem 0; border-bottom:1px solid var(--maia-border); }
 	.reading-row h3 { font-size:1.125rem; margin:0 0 .6rem; }
-	.reading-meta, .article-header p { font-size:.85rem; line-height:1.7; color:var(--maia-muted); }
+	.reading-meta, .article-header p { font-size:.85rem; line-height:1.7; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); }
 	.links { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; font-size:.85rem; margin-top:1rem; }
 	.links a, .packet-link { color:var(--maia-accent); text-decoration:underline; text-underline-offset:4px; }
 	button { border:1px solid var(--maia-border); border-radius:5px; padding:.45rem .7rem; }
