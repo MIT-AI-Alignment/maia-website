@@ -44,7 +44,6 @@
 			{/if}
 		{/each}
 	</ul>
-	<p class="text-center mb-6"><a href="https://docs.google.com/document/d/1j9D16VU0IzxiYHKfJ_8YwkWnnuZFUTr57-MctXXm4N0/edit?tab=t.mrtb8xgs15x9" target="_blank" rel="noopener" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">Fall 2026 curriculum Google Doc ↗</a></p>
 	<p class="text-center mb-8">
 		<a href="/aisf/summer-2026/" class="text-maia-800 dark:text-maia-400 underline underline-offset-4">View the Summer 2026 curriculum →</a>
 	</p>
