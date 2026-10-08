@@ -97,8 +97,8 @@
 </p>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
-	{#each organizations as { imagePath, wordmark, name, link, invert }}
-		<div class="org-card last:md:col-span-2 last:md:col-start-2 flex flex-col items-center justify-center p-4 transition-all duration-300">
+	{#each organizations as { imagePath, wordmark, name, link, invert }, index}
+		<div class="org-card last:md:col-span-2 last:md:col-start-2 flex flex-col items-center justify-center p-4" data-motion="quiet" style={`--motion-delay: ${(index % 4) * 60}ms`}>
 			<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
 				<div class="h-24 flex items-center justify-center">
 					{#if imagePath}
@@ -117,3 +117,28 @@
 		</div>
 	{/each}
 </div>
+
+<style>
+	.org-card a:focus-visible {
+		outline: 2px solid var(--maia-accent);
+		outline-offset: 6px;
+		border-radius: 0.25rem;
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		.org-card img,
+		.org-card a > span {
+			transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms ease;
+		}
+		.org-card a:focus-visible img {
+			transform: translateY(-3px);
+		}
+		@media (hover: hover) and (pointer: fine) {
+			.org-card a:hover img {
+				transform: translateY(-3px);
+			}
+			.org-card a:hover > span {
+				color: var(--maia-accent);
+			}
+		}
+	}
+</style>

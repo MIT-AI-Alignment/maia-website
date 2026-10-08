@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
+	import PageMetadata from './PageMetadata.svelte';
 	import Footer from '../routes/components/footer.svelte';
 	import Navbar from '../routes/components/navbar.svelte';
 	import { updatePageNavItems, clearPageNavItems, type DropdownItem } from '$lib/stores/navigation';
@@ -33,16 +33,7 @@
 	});
 </script>
 
-<svelte:head>
-	<link rel="canonical" href={`https://mitaialignment.org${$page.url.pathname}`} />
-	<meta property="og:url" content={`https://mitaialignment.org${$page.url.pathname}`} />
-	<title>MAIA - {title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:title" content={`MAIA - ${title}`} />
-	<meta property="og:description" content={description} />
-	<meta name="twitter:title" content={`MAIA - ${title}`} />
-	<meta name="twitter:description" content={description} />
-</svelte:head>
+<PageMetadata {title} {description} />
 
 <main
 	class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden {pageClass}"
@@ -54,9 +45,10 @@
 	<!-- Hero Section -->
 	{#if heroTitle}
 	<div class:painted-hero={motionVariant === 'community'} class="page-hero pt-8 md:pt-14 pb-8 md:pb-10 relative z-10 overflow-hidden">
-		<div class:studio-hero={motionVariant === 'community'} class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl relative z-10" data-motion="quiet">
+		<div class:studio-hero={motionVariant === 'community'} class="px-5 sm:px-8 md:px-24 mx-auto max-w-6xl relative z-10">
 			<div class="hero-copy">
 			<h1
+				data-motion="hero"
 				class="text-4xl md:text-5xl lg:text-6xl font-heading font-[550] mb-6 {centerTitle
 					? 'text-center'
 					: ''}"
@@ -66,7 +58,9 @@
 				{/if}
 				{@html heroTitle}
 			</h1>
-			<slot name="hero-content" />
+			<div data-motion="quiet" style="--motion-delay: 140ms">
+				<slot name="hero-content" />
+			</div>
 			</div>
 		</div>
 	</div>
@@ -86,6 +80,15 @@
 	.studio-hero .hero-copy { max-width: 740px; }
 	.studio-hero h1 { font-size: clamp(2.4rem, 4.4vw, 3.8rem); line-height: 1.09; letter-spacing: -.045em; }
 	:global(.dark) .painted-hero::before { opacity: .25; }
+	@keyframes painting-arrives {
+		from { transform: scale(1.035) translateY(6px); }
+		to { transform: scale(1) translateY(0); }
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		.painted-hero::before {
+			animation: painting-arrives 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+		}
+	}
 	@media(max-width: 640px) { .painted-hero::before { background-position: 60% center; opacity: .65; } }
 	:global(.prose) {
 		@apply text-maia-950 dark:text-maia-100;

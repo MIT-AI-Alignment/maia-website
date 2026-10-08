@@ -1,6 +1,9 @@
 import { CONFIG } from '$lib/config';
 import type { CalendarEvent } from '$lib/events';
 import { readCalendarEvents } from '$lib/server/calendar';
+import { enrichEventPages } from '$lib/server/eventPages';
+import { EVENT_SOURCE_LINKS } from '$lib/eventSources';
+import eventPageMetadata from '$lib/eventPageMetadata.json';
 import { PROGRAM_HISTORY } from '$lib/programHistory';
 import { ORIENTATION_2026_RSVP_EVENTS, orientationSummary, combineFallWorkshops } from '$lib/eventCollections';
 
@@ -42,8 +45,9 @@ export async function load({ fetch }) {
    ...event,
    description: event.description ? publicDescription(event.description, event.id) : event.description,
    descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: publicDescription(part.text, event.id) })),
-   url: url ?? event.url, summary: orientationSummary(event) ?? workshopSummary(event)
+   url: url ?? event.url ?? EVENT_SOURCE_LINKS[event.id.split('/')[0]], summary: orientationSummary(event) ?? workshopSummary(event)
   };
  });
- return { events: [...combineFallWorkshops(events), ...PROGRAM_HISTORY], fetchedAt: new Date().toISOString() };
+ const enriched = await enrichEventPages(events, fetch, eventPageMetadata);
+ return { events: [...combineFallWorkshops(enriched), ...PROGRAM_HISTORY], fetchedAt: new Date().toISOString() };
 }

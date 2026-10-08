@@ -1,6 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readCalendarEvents } from '../src/lib/server/calendar.ts';
+
+test('calendar URL fields preserve RSVP links without executable schemes', () => {
+ const fixture = url => ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', 'UID:url-test', 'DTSTART:20261014T220000Z', 'SUMMARY:Speaker event', `URL:${url}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+ assert.equal(readCalendarEvents(fixture('https://partiful.com/e/CalendarLink'))[0].url, 'https://partiful.com/e/CalendarLink');
+ assert.equal(readCalendarEvents(fixture('javascript:alert(1)'))[0].url, undefined);
+});
 import { displayDate, displayDateRange, displayTimeRange, splitEvents } from '../src/lib/events.ts';
 
 const calendar = (...events) => ['BEGIN:VCALENDAR', 'VERSION:2.0', ...events, 'END:VCALENDAR'].join('\r\n');

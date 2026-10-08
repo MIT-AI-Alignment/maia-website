@@ -118,7 +118,9 @@ export function readCalendarEvents(calendar: string, now = new Date()): Calendar
    if (!title || !start) continue;
    const id = event.uid + '/' + occurrence.toString();
    const parts = descriptionParts(item.description);
-   result.set(id, { id, title, start, end, description: parts.map(part => part.text).join(''), descriptionParts: parts,
+   const calendarUrl = item.component.getFirstPropertyValue('url');
+   result.set(id, { id, title, start, end, url: typeof calendarUrl === 'string' ? safeUrl(calendarUrl) : undefined,
+    description: parts.map(part => part.text).join(''), descriptionParts: parts,
     location: clean(item.location), kind: 'event' });
   }
  }

@@ -29,8 +29,10 @@ causes an HTML redirect loop. Existing slash-terminated links continue to work.
 The rest of the site's slash policy is unchanged. Both HTML and data responses
 are cached. Tracking queries do not create independent caches. Google is fetched
 on cold generation or revalidation, not every visit. Each route may refresh independently.
-After 10 minutes the next visit triggers background regeneration: this is not a
-cron job or a guarantee that idle pages refresh exactly every 10 minutes.
+After 10 minutes the next visit triggers background regeneration. Two daily
+Vercel cron requests in `vercel.json` also warm `/events` and `/events/semester`
+(scheduled for 10:17 and 10:23 UTC). These daily warmers do not guarantee that an
+idle page refreshes every 10 minutes. Vercel controls actual scheduling precision.
 
 `kit.paths.relative: false` emits root-relative CSS and JavaScript URLs. The site
 is hosted at the domain root; this prevents ISR's slashless internal pathname from
@@ -142,14 +144,32 @@ were left intact. Inspect that record before rollback; do not guess prior DNS.
 
 Rollback is an explicit operational action, not part of routine content releases.
 
-## Follow-up: public Partiful enrichment
+## Public event-page descriptions and photos
 
-Not included in this migration. Preserve existing curated event images meanwhile.
-A separate change should extract only public Partiful event links from the public
-calendar, cache metadata separately, bound requests/timeouts/response size, validate
-hosts and redirect targets, and fall back to calendar data/curated images on error.
-Do not scrape guest lists, private events or authenticated data. Verify images and
-attribution before replacing curated overrides. Scraping must never block calendar rendering.
+`src/lib/server/eventPages.ts` imports public Partiful/Luma event metadata for
+upcoming events and the past 90 days. Direct RSVP links come from the public
+calendar URL or description. `src/lib/eventSources.ts` supplies verified overrides
+when the public calendar omits a link; prefer fixing the calendar for new events.
+Calendar title/date/location remain authoritative. Summaries use the source's
+opening two sentences with a length limit. Curated local media takes precedence.
+
+The importer accepts HTTPS event URLs on explicit source hosts, validates each
+redirect, allows only known event-image CDNs, and never signs in or imports guest
+lists. Four workers share a seven-second enrichment budget; each response is
+limited to 3 MiB. Successful metadata is cached for up to 24 hours in a warm
+function instance, with at most 200 entries. This is an instance cache, not durable
+shared storage. A bundled public metadata snapshot in
+`src/lib/eventPageMetadata.json` supplies a fallback for verified events.
+After checking the public sources, `node scripts/sync-event-metadata.mjs`
+optionally refreshes that snapshot. Review its diff before committing; individual
+source failures retain prior records, and an all-source failure leaves the file
+untouched. Normal calendar updates do not require a snapshot rebuild.
+
+An unavailable or malformed optional event page preserves calendar content and
+any bundled/last-good metadata. It does not fail the calendar page. Public-calendar
+fetch failures still fail regeneration as described above. Source-page markup can
+change; verify the displayed summary, RSVP destination, and photo after releases.
+See the [website editing guide](website-editing-guide.md) for maintainer steps.
 
 ## Maintenance
 

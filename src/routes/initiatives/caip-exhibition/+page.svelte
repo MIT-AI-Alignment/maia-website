@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StrategicDeception from './strategic-deception/StrategicDeception.svelte';
+	import PageMetadata from '../../../components/PageMetadata.svelte';
 	import PhoneLineAttacks from './phone-lines/PhoneLineAttacks.svelte';
 	import Footer from '../../components/footer.svelte';
 	import Navbar from '../../components/navbar.svelte';
@@ -57,10 +58,10 @@
 	];
 </script>
 
-<svelte:head>
-	<title>MAIA - Initiatives</title>
-	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
-</svelte:head>
+<PageMetadata
+	title="Congressional Exhibition on Advanced AI"
+	description="MAIA's February 2025 Congressional Exhibition demonstrations on AI phone-line attacks and strategic deception, with team profiles, photos, and videos."
+/>
 
 <main class="min-h-screen bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50">
 	<Navbar />

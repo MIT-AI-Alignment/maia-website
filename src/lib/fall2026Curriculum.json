@@ -75,7 +75,7 @@
       "title": "The trajectory of AI",
       "topics": [],
       "packet": "https://docs.google.com/document/d/1IH2N3L2ogXQJOTdvb095_YpkhiPfEIqi8Dsn1K2RCKg/edit?tab=t.tsiqig9c7rqe",
-      "plan": "https://docs.google.com/document/d/1j9D16VU0IzxiYHKfJ_8YwkWnnuZFUTr57-MctXXm4N0/edit?tab=t.mrtb8xgs15x9",
+      "plan": "/aisf/week1/",
       "description": "This week combines the state of AI capabilities, the drivers of recent progress, theories of AGI, and the OpenAI / Hugging Face incident. We will review where AI is today, how we got here, and what we should expect in the future.",
       "groups": [
         {
@@ -326,6 +326,6 @@
       "packet": "https://docs.google.com/document/d/1IH2N3L2ogXQJOTdvb095_YpkhiPfEIqi8Dsn1K2RCKg/edit?tab=t.tsiqig9c7rqe"
     }
   ],
-  "master": "https://docs.google.com/document/d/1j9D16VU0IzxiYHKfJ_8YwkWnnuZFUTr57-MctXXm4N0/edit?tab=t.mrtb8xgs15x9",
+  "master": "/aisf/",
   "packet": "https://docs.google.com/document/d/1IH2N3L2ogXQJOTdvb095_YpkhiPfEIqi8Dsn1K2RCKg/edit?tab=t.tsiqig9c7rqe"
 }

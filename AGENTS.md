@@ -3,9 +3,9 @@
 ## Start here
 
 - Repository: https://github.com/MIT-AI-Alignment/maia-website
-- Canonical target: https://mitaialignment.org. MIT remains live until separately verified DNS/redirect cutover.
+- Canonical site: https://mitaialignment.org. The October 5 migration record verifies the Vercel cutover and matching-path legacy MIT redirects; refresh live state before reporting a new deployment.
 - Stack: SvelteKit, TypeScript, Tailwind; Vercel output is `.vercel/output/`.
-- Hosting migration: see `docs/vercel-migration.md`. Vercel Git integration can auto-deploy main once configured; do not equate a merge with verified live deployment. Never upload this output to Athena.
+- Everyday edits: see `docs/website-editing-guide.md`. Hosting and rollback: see `docs/vercel-migration.md`. Vercel Git integration builds branch previews and auto-deploys main; do not equate a merge with verified live deployment. Never upload this output to Athena.
 - Fetch current `origin/main` before editing; other maintainers work here. Preserve unrelated local changes and untracked files. Build the exact revision you intend to publish.
 
 ## Where content lives
@@ -16,12 +16,15 @@
 | Organizer profiles, emails, LinkedIns | `src/lib/people.ts`; `src/lib/organizerPhotos2026.json` can override photos |
 | Events layout and undated planned events | `src/routes/events/+page.svelte` |
 | Public calendar import | `src/routes/events/+page.server.ts`, `src/lib/server/calendar.ts` |
+| Public RSVP metadata and verified link overrides | `src/lib/server/eventPages.ts`, `src/lib/eventSources.ts` |
 | Semester programs, including AISF and partner programs | `src/lib/programHistory.ts` |
 | Hermes Fellowship page (`/hermes/`): copy and mentor profiles | `src/lib/hermes.ts`; deadline and form link in `CONFIG.hermes` |
 | Event photos, attendance, collections/categories | `src/lib/eventMedia.ts`, `eventAttendance.ts`, `eventCollections.ts`, `semesterTimeline.ts` |
 | Local images and merch files | `static/images/`, `static/merch/` |
 
 Both Events views read the **public** MAIA calendar configured in `config.ts` through 600-second Vercel ISR. Updates are request-triggered after expiration, without a rebuild. Errors must fail regeneration rather than overwrite the cache with empty content. Keep the private planning calendar private. Verify dates, links, and photos against current sources; do not invent missing details. Undated events can stay website-only with “Date TBD.” All-day calendar end dates are exclusive.
+
+Daily Vercel cron requests also warm both Events views. Public Partiful/Luma links in the calendar URL or description supply optional summaries/photos; curated local media takes priority. Public-calendar titles, dates, and locations stay authoritative. Bound enrichment requests and preserve calendar/last-good metadata on event-page errors. Never import private RSVP data. Prefer adding missing public RSVP links to the calendar; use `eventSources.ts` only for verified overrides. Update this guide if cron paths or cache behavior changes.
 
 Keep the compact event dates, Orientation/CPW groupings, and mobile layout. Store organizer photos locally so they do not depend on expiring links. Profiles without photos are currently hidden. Use verified contact details and distinguish partner-run programs from MAIA programs.
 
@@ -34,11 +37,11 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-Run `node --experimental-strip-types --test scripts/*.test.mjs`, `node scripts/verify-built-site.mjs`, and `node scripts/verify-events-runtime.mjs` after building. The latter verifies both Events HTML/data success and failure responses; CDN cache retention still needs a Vercel preview check. Check desktop/mobile for layout changes, image loading, and link destinations. Restart the preview server after rebuilding if newly added assets return 404. Use the user's task browser panel and reuse existing tabs.
+Run `node --experimental-strip-types --test scripts/*.test.mjs`, `node scripts/verify-built-site.mjs`, and `node scripts/verify-events-runtime.mjs` after building. The latter verifies both Events HTML/data success and failure responses; CDN cache retention still needs a Vercel preview check. Check desktop/mobile for layout changes, image loading, and link destinations. Restart the preview server after rebuilding if newly added assets return 404. Follow the user's current browser instructions; use Aside for browser tasks in this session and reuse existing tabs.
 
 ## Legacy Athena deployment (pre-migration revisions only)
 
-The following instructions apply only to a reviewed adapter-static revision that emits build/. They must NOT be used with the Vercel branch. Athena redirect configuration remains pending an authenticated check of the actual vanity-host mapping and existing .htaccess.mit.
+The following instructions apply only to a reviewed adapter-static revision that emits build/. They must NOT be used with the Vercel branch. Athena now hosts legacy redirects; inspect `docs/vercel-migration.md` and the current redirect/backup state before any operational rollback.
 
 Deploy when requested or already authorized in the current session. Use the signed-in maintainer's MIT Kerberos username, replacing `YOUR_KERB` below. Their account needs membership in `aialignment-www`. Never store passwords, tokens, or private Slack/email exports in this public repository.
 

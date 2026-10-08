@@ -8,6 +8,7 @@ const files = dir => readdirSync(dir, { withFileTypes: true }).flatMap(entry =>
 const output = '.vercel/output/static';
 const built = path => read(`${output}/${path}`);
 const htmlFiles = files(output).filter(path => path.endsWith('.html'));
+const removedCurriculumDoc = '1j9D16VU0IzxiYHKfJ_8YwkWnnuZFUTr57-MctXXm4N0';
 assert.ok(htmlFiles.length >= 38, 'Expected all public routes to prerender');
 for (const path of htmlFiles) {
   const html = read(path);
@@ -16,7 +17,17 @@ for (const path of htmlFiles) {
   if (!html.includes('http-equiv="refresh"')) {
     assert.match(html, /property="og:image" content="https:\/\/mitaialignment\.org\/images\/brand\/maia-social-preview\.png"/, `Missing MAIA preview image in ${path}`);
     assert.equal((html.match(/property="og:image" /g) ?? []).length, 1, `Conflicting preview images in ${path}`);
+    const canonicals = [...html.matchAll(/<link rel="canonical" href="([^"]+)"/g)];
+    assert.equal(canonicals.length, 1, `Missing or conflicting canonical URL in ${path}`);
+    assert.match(canonicals[0][1], /^https:\/\/mitaialignment\.org\/[^?#]*\/$|^https:\/\/mitaialignment\.org\/$/);
+    assert.ok(html.includes(`property="og:url" content="${canonicals[0][1]}"`), `Social URL differs from canonical in ${path}`);
+    const organization = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    assert.equal(organization['@type'], 'Organization');
+    assert.equal(organization.url, 'https://mitaialignment.org/');
   }
+}
+for (const path of files(output).filter(path => /\.(html|js)$/.test(path))) {
+  assert.ok(!read(path).includes(removedCurriculumDoc), `Removed curriculum document leaked into ${path}`);
 }
 const home = built('index.html');
 const about = built('about/index.html');
@@ -44,6 +55,10 @@ for (const person of fellows) {
   assert.ok(existsSync(`static${person.imageUrl}`));
 }
 const gallery = built('aisf/summer-2026/fellows/index.html');
+for (const name of ['Aidan Taha', 'Liam Sheldon', 'Jean Onyuro']) {
+  assert.ok(gallery.includes(name), `Fellows gallery missing ${name}`);
+}
+assert.ok(about.includes('Emily Yu'), 'About page missing restored organizer Emily Yu');
 assert.doesNotMatch(gallery, /Thank you for eight weeks|This page lists approved completers/);
 assert.match(gallery, /<strong>For corrections or to remove your name or photo/);
 assert.ok(existsSync(`${output}/resources/merch/index.html`));
@@ -62,6 +77,17 @@ for (const path of ['events', 'events/semester']) {
     assert.deepEqual(config.allowQuery.filter(key => key !== '__pathname'), []);
   }
 }
-assert.ok(built('sitemap.xml').includes('https://mitaialignment.org/'));
+const sitemapUrls = [...built('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URL');
+for (const url of sitemapUrls) {
+  assert.match(url, /^https:\/\/mitaialignment\.org\//);
+  const pathname = new URL(url).pathname;
+  assert.ok(!/^\/aisf\/week[2-8]\/$/.test(pathname), 'Redirecting AISF weeks must stay out of the sitemap');
+  if (pathname === '/events/' || pathname === '/events/semester/') continue;
+  const path = pathname === '/' ? 'index.html' : `${pathname.slice(1)}index.html`;
+  assert.ok(existsSync(`${output}/${path}`), `Sitemap points to an absent page: ${url}`);
+  assert.ok(!built(path).includes('http-equiv="refresh"'), `Sitemap points to a redirect: ${url}`);
+  assert.ok(built(path).includes(`rel="canonical" href="${url}"`), `Sitemap differs from canonical: ${url}`);
+}
 assert.ok(built('robots.txt').includes('https://mitaialignment.org/sitemap.xml'));
 console.log(`Verified ${htmlFiles.length} rendered pages and ${fellows.length} public fellow records.`);

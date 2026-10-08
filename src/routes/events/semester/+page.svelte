@@ -3,6 +3,7 @@
  import { goto } from '$app/navigation';
  import EventsLayout from '../../../components/EventsLayout.svelte';
  import { displayDateRange, displayTimeRange, localDate, type CalendarEvent } from '$lib/events';
+ import { getEventMedia } from '$lib/eventMedia';
  import {
   TIMELINE_CATEGORIES, availableSemesters, semesterForDate, semesterMonths,
   eventCategory, eventsInSemester, layoutTimeline, type TimelineCategory
@@ -29,6 +30,7 @@
  }).filter(row => row.events.length) : [];
  $: visibleEvents = rows.flatMap(row => row.events);
  $: selectedEvent = visibleEvents.find(event => event.id === selectedId) ?? null;
+ $: selectedMedia = selectedEvent ? getEventMedia(selectedEvent) : undefined;
  $: selectedCategory = selectedEvent ? TIMELINE_CATEGORIES.find(category => category.id === eventCategory(selectedEvent)) : null;
  $: programCount = semesterEvents.filter(event => event.kind === 'initiative').length;
 
@@ -154,6 +156,8 @@
       {:else if selectedEvent.kind !== 'initiative'}<span>All day</span>{/if}
       {#if selectedEvent.location}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {selectedEvent.location}</span>{/if}
      </div>
+     {#if selectedMedia}<a class="detail-artwork" href={selectedMedia.imageUrl} target="_blank" rel="noopener noreferrer"><img src={selectedMedia.imageUrl} alt={selectedMedia.imageAlt} loading="lazy" /></a>{/if}
+     {#if selectedEvent.summary}<p class="description">{selectedEvent.summary}</p>{/if}
      {#if selectedEvent.description}
       <p class="description">{#each selectedEvent.descriptionParts ?? [{ text: selectedEvent.description, href: undefined }] as part}{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a>{:else}{part.text}{/if}{/each}</p>
      {/if}
@@ -172,6 +176,8 @@
 </EventsLayout>
 
 <style>
+ .detail-artwork { display: block; width: min(18rem, 100%); margin: 1rem 0; }
+ .detail-artwork img { max-width: 100%; max-height: 18rem; object-fit: contain; border-radius: .6rem; }
  .semester-view { min-width: 0; }
  .term-control { display: flex; align-items: center; gap: .65rem; font-size: .85rem; }
  .term-control label { color: var(--maia-muted); }

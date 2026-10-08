@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StrategicDeception from './StrategicDeception.svelte';
+	import PageMetadata from '../../../../components/PageMetadata.svelte';
 	import Footer from '../../../components/footer.svelte';
 	import Navbar from '../../../components/navbar.svelte';
 	import Profile from '../../../about/profile.svelte';
@@ -10,10 +11,10 @@
 	const strategicDeceptionTeam = getSortedPeopleByProject('strategic-deception');
 </script>
 
-<svelte:head>
-	<title>MAIA - Initiatives</title>
-	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
-</svelte:head>
+<PageMetadata
+	title="AI Strategic Deception"
+	description="MAIA's demonstration of strategic deception in AI systems, presented at the February 2025 Congressional Exhibition on Advanced AI, with researcher profiles."
+/>
 
 <main class="min-h-screen bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50">
 	<Navbar />
