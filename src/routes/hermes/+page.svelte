@@ -98,7 +98,7 @@
 
 <PageLayout
 	title={HERMES.name}
-	description={`${HERMES.intro.program} Applications close ${deadline}.`}
+	description={`${HERMES.intro.program} Application deadline extended to ${deadline}.`}
 	pageClass="hermes-page"
 >
 	<header class="hero">
@@ -122,9 +122,9 @@
 			{/if}
 			<p class="deadline">
 				{#if closed}
-					<span class="deadline-label">Deadline:</span> {deadline}. Applications have closed.
+					<span class="deadline-label">Extended deadline:</span> {deadline}. Applications have closed.
 				{:else}
-					<span class="deadline-label">Deadline:</span> {deadline}
+					<span class="deadline-label">Extended deadline:</span> {deadline}
 				{/if}
 			</p>
 		</div>
@@ -281,7 +281,7 @@
 			{#if closed}
 				<p class="closing-deadline">Applications for this round have closed.</p>
 			{:else}
-				<p class="closing-deadline">Interested? Apply by {deadlineDate}!</p>
+				<p class="closing-deadline">Extended deadline: {deadline}.</p>
 			{/if}
 			{#if applicationLink}
 				<a

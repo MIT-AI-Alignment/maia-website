@@ -61,10 +61,10 @@ export const HERMES = {
 			value: 'By the end of the program, you are strongly encouraged to submit your work to a conference or workshop, or to write a blog post. If you wish to continue your project, we may be able to provide extensions, depending on research manager and mentor availability.'
 		}
 	],
-	// Rough schedule. The deadline and start date come from the application form; the later
+	// Rough schedule. Keep the application deadline aligned with CONFIG.hermes; the later
 	// phases follow the program plan and are approximate.
 	timeline: [
-		{ when: 'October 7', title: 'Applications close', text: 'Submit the form by 11:59 PM ET.' },
+		{ when: 'October 9', title: 'Extended application deadline', text: 'Submit the form by 11:59 PM ET.' },
 		{
 			when: 'October 9',
 			title: 'Kick-off',
