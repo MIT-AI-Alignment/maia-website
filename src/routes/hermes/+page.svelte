@@ -19,7 +19,7 @@
 		closed = Date.now() >= new Date(deadlineAt).getTime();
 	});
 
-	$: canApply = Boolean(applicationLink) && !closed;
+	$: applicationLabel = closed ? 'Application form' : 'Apply';
 
 	// Mentor profiles: selecting a mentor opens a panel right after the row they are in, so it
 	// appears next to them at every width. The column count is read from the grid itself.
@@ -111,13 +111,13 @@
 		</p>
 		<p class="program">{HERMES.intro.program}</p>
 		<div class="cta">
-			{#if canApply}
+			{#if applicationLink}
 				<a
 					class="apply-button"
 					href={applicationLink}
 					target="_blank"
 					rel="noopener noreferrer"
-					aria-label="Apply to the Hermes Fellowship (opens the application form)">Apply</a
+					aria-label="Open the Hermes Fellowship application form">{applicationLabel}</a
 				>
 			{/if}
 			<p class="deadline">
@@ -275,24 +275,24 @@
 		</ol>
 	</section>
 
-	<!-- Closing call to action: the deadline beside the Apply button, then who to ask. -->
+	<!-- Keep the form reachable after the deadline while retaining the closed notice. -->
 	<div id="apply" class="closing">
-		{#if closed}
-			<p class="closing-deadline">Applications for this round have closed.</p>
-		{:else}
-			<div class="closing-apply">
+		<div class="closing-apply">
+			{#if closed}
+				<p class="closing-deadline">Applications for this round have closed.</p>
+			{:else}
 				<p class="closing-deadline">Interested? Apply by {deadlineDate}!</p>
-				{#if applicationLink}
-					<a
-						class="apply-button apply-button-large"
-						href={applicationLink}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Apply to the Hermes Fellowship (opens the application form)">Apply</a
-					>
-				{/if}
-			</div>
-		{/if}
+			{/if}
+			{#if applicationLink}
+				<a
+					class="apply-button apply-button-large"
+					href={applicationLink}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Open the Hermes Fellowship application form">{applicationLabel}</a
+				>
+			{/if}
+		</div>
 		<p class="closing-questions">
 			Questions? Email <a class="text-link" href={`mailto:${HERMES.contactEmail}`}
 				>{HERMES.contactEmail}</a
