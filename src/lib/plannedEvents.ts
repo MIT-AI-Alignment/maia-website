@@ -5,6 +5,8 @@ import type { TimelineCategory } from './semesterTimeline';
 export type PlannedEvent = {
  title: string; category: TimelineCategory; description: string; url?: string;
  date?: string; media?: EventMedia; imageCredit?: string;
+ // Stable calendar UID also reconciles undated plans and rescheduled events.
+ calendarId?: string;
  // Explicit identity phrase for calendar titles with different editorial wording.
  calendarSubject?: string;
 };
@@ -17,6 +19,7 @@ const urlIdentity = (value?: string) => {
 
 export function matchesPlannedEvent(event: CalendarEvent, plan: PlannedEvent): boolean {
  if (event.kind === 'initiative') return false;
+ if (plan.calendarId && event.id.split('/')[0] === plan.calendarId) return true;
  const links = [event.url, ...(event.descriptionParts ?? []).map(part => part.href)];
  const identity = urlIdentity(plan.url);
  if (identity && links.some(link => urlIdentity(link) === identity)) return true;

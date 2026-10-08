@@ -36,10 +36,11 @@
 		},
 		{
 			title: 'Talk with Garrison Lovely',
+			calendarId: '25o7sn6dn74nmd78771pmeteea@google.com',
 			category: 'talks',
 			media: { imageUrl: '/images/events/speaker-garrison-lovely.jpg', imageAlt: 'Garrison Lovely portrait', sourceUrl: 'https://www.garrisonlovely.com/', kind: 'portrait' },
 			imageCredit: 'Photo: Min Goodman-Cheng',
-			description: 'Planned for fall.'
+			description: 'A fireside chat with Garrison Lovely.'
 		},
 		{
 			title: 'Estimation & Forecasting Challenge',
