@@ -181,7 +181,10 @@ export async function enrichEventPages(
  const worker = async () => {
   while (next < sources.length && !signal.aborted) {
    const url = sources[next++];
-   if (now - (cache.get(url)?.refreshedAt ?? 0) < CACHE_TTL) continue;
+   const refreshedAt = cache.get(url)?.refreshedAt ?? 0;
+   // Refresh on the first regeneration of each UTC day. A rolling 24-hour
+   // cache alone can make a scheduled morning request skip an entire day.
+   if (now - refreshedAt < CACHE_TTL && Math.floor(now / 86400000) === Math.floor(refreshedAt / 86400000)) continue;
    try {
     const data = await fetchEventPage(url, fetch, signal);
     if (!data) continue;

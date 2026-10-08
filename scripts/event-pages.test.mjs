@@ -78,6 +78,19 @@ test('a failed refresh retains last successful metadata and bundled fallback sur
  assert.equal(cold[0].media.imageUrl, image);
 });
 
+test('daily refresh cannot skip a day because yesterday evening is less than 24 hours ago', async () => {
+ const url = 'https://partiful.com/e/DailyRefresh';
+ let calls = 0;
+ const fetch = async () => new Response(html(`Version ${++calls}. Current event details.`), { headers: { 'content-type': 'text/html' } });
+ const first = await enrichEventPages([event(url)], fetch, {}, { now: Date.parse('2026-10-08T20:00Z') });
+ assert.equal(first[0].summary, 'Version 1. Current event details.');
+ const nextDay = await enrichEventPages([event(url)], fetch, {}, { now: Date.parse('2026-10-09T10:00Z') });
+ assert.equal(nextDay[0].summary, 'Version 2. Current event details.');
+ const sameDay = await enrichEventPages([event(url)], fetch, {}, { now: Date.parse('2026-10-09T11:00Z') });
+ assert.equal(sameDay[0].summary, 'Version 2. Current event details.');
+ assert.equal(calls, 2);
+});
+
 test('one stalled event source cannot exhaust the page request budget', async () => {
  const start = performance.now();
  const rows = await enrichEventPages([event('https://partiful.com/e/SlowSource')], async (_url, { signal }) => {
