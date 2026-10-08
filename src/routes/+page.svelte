@@ -7,10 +7,10 @@
 	import Orgs from './components/orgs.svelte';
 	import MetricCounter from '../components/MetricCounter.svelte';
 
-	const aisfBenefits = [
-		'2 hours per week',
-		'Free food at sessions',
-		'No prior AI background required'
+	const hermesBenefits = [
+		'Mentored research in teams of 2–3',
+		'Roughly 15 hours per week',
+		'Compute and research support provided'
 	];
 	const maiaStats = [
 		{ value: '300+', label: 'active members' },
@@ -67,21 +67,33 @@
 	</section>
 
 	<div class="participation">
-		<section id="aisf" aria-labelledby="aisf-title" data-motion="rise">
-			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
+		<section id="hermes" aria-labelledby="hermes-title" data-motion="rise">
+			<h2 id="hermes-title" class="font-heading">Apply to Hermes</h2>
 			<p>
-				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts, we discuss
-				AI trends, evidence for misalignment, and approaches to AI safety and policy.
+				The Hermes Fellowship is MAIA's eight-week research program in technical AI safety. Work
+				on a focused project with guidance from an experienced AI safety researcher.
 			</p>
 			<ul class="fellowship-details">
-				{#each aisfBenefits as benefit}<li>{@html benefit}</li>{/each}
+				{#each hermesBenefits as benefit}<li>{benefit}</li>{/each}
 			</ul>
-			<p>Open to anyone, with preference for MIT undergraduate and graduate students.</p>
+			<p>
+				Open to MAIA members, AISF Fellows, and MIT undergrads. Previous research experience is strongly
+				preferred.
+			</p>
+			<p class="application-deadline">
+				<strong>Extended deadline:</strong> {CONFIG.hermes.deadlineDate}, {CONFIG.hermes.deadlineTime}.
+			</p>
 			<div class="participation-actions">
-				{#if CONFIG.aisf_ml.applicationLink}
-					<Button text="Apply for Fall AISF" type="purple" href={CONFIG.aisf_ml.applicationLink} />
+				{#if CONFIG.hermes.applicationLink}
+					<Button
+						text="Apply to Hermes"
+						type="purple"
+						href={CONFIG.hermes.applicationLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					/>
 				{/if}
-				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
+				<a href="/hermes/">Fellowship details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
 		<section id="membership" aria-labelledby="membership-title" data-motion="rise" style="--motion-delay: 100ms">
@@ -226,6 +238,9 @@
 		padding-left: 1.25rem;
 		list-style: disc;
 		line-height: 1.75;
+	}
+	.application-deadline {
+		color: var(--maia-accent);
 	}
 	.participation-actions {
 		display: flex;
