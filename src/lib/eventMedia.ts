@@ -4,6 +4,13 @@ export type EventMedia = { imageUrl: string; imageAlt: string; sourceUrl?: strin
 
 const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string })[] = [
   {
+    calendarId: '25o7sn6dn74nmd78771pmeteea',
+    imageUrl: '/images/events/speaker-garrison-lovely.jpg',
+    imageAlt: 'Garrison Lovely portrait. Photo: Min Goodman-Cheng.',
+    sourceUrl: 'https://www.garrisonlovely.com/',
+    kind: 'portrait'
+  },
+  {
     calendarId: "67nup42v5rga1hd39984n05da5",
     imageUrl: "/images/events/boba-representative.jpg",
     imageAlt: "Representative bubble tea photograph, not a photograph of the MAIA open house.",
@@ -405,6 +412,7 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  const matched = eventMediaEntries.find(artwork => artwork.calendarId === calendarId || (artwork.partifulId !== undefined && partifulIds.includes(artwork.partifulId)));
  // Refresh image URLs after earlier preview builds left cached failed requests.
  if (matched) return { ...matched, imageUrl: `${matched.imageUrl}?v=20260915` };
+ if (event.media) return event.media;
  if (event.kind === 'initiative' && event.url?.includes('aisst.ai/')) {
   return { imageUrl: '/images/logos/aisst.png', imageAlt: 'AISST logo', kind: 'artwork' };
  }

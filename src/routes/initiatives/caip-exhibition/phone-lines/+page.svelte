@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PhoneLineAttacks from './PhoneLineAttacks.svelte';
+	import PageMetadata from '../../../../components/PageMetadata.svelte';
 	import type { ComponentType } from 'svelte';
 	import Footer from '../../../components/footer.svelte';
 	import Navbar from '../../../components/navbar.svelte';
@@ -12,10 +13,10 @@
 	const phoneLineTeam = getSortedPeopleByProject('phone-line-attacks');
 </script>
 
-<svelte:head>
-	<title>MAIA - Initiatives</title>
-	<meta name="description" content="MIT AI Alignment (MAIA) initiatives page." />
-</svelte:head>
+<PageMetadata
+	title="AI Phone-line Attacks"
+	description="MAIA's demonstration of automated phone-line attacks and social engineering risks, presented at the February 2025 Congressional Exhibition on Advanced AI."
+/>
 
 <main class="min-h-screen bg-surface-light dark:bg-surface-dark text-maia-950 dark:text-maia-50">
 	<Navbar />

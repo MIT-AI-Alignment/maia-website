@@ -14,7 +14,7 @@
 	];
 	const maiaStats = [
 		{ value: '300+', label: 'active members' },
-		{ value: '1,300+', label: 'in our Slack community' },
+		{ value: '1,400+', label: 'MAIA affiliates' },
 		{ value: String(RESEARCH_PAPERS.length), label: 'papers by members & alumni' }
 	];
 
@@ -46,16 +46,17 @@
 		</nav>
 	</svelte:fragment>
 
-	<section class="home-section" aria-labelledby="maia-by-the-numbers-title" data-motion="quiet">
+	<section class="home-section" aria-labelledby="maia-by-the-numbers-title">
 		<h2
 			id="maia-by-the-numbers-title"
 			class="text-3xl md:text-4xl font-heading font-[550] leading-tight"
+			data-motion="quiet"
 		>
 			Our community
 		</h2>
 		<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
 			{#each maiaStats as stat, index}
-				<div data-motion="quiet" style={`--motion-delay: ${index * 90}ms`}>
+				<div data-motion="rise" style={`--motion-delay: ${index * 100}ms`}>
 					<p class="font-heading text-4xl font-[550] leading-none text-maia-800 dark:text-maia-400">
 						<MetricCounter value={stat.value} />
 					</p>
@@ -65,8 +66,8 @@
 		</div>
 	</section>
 
-	<div class="participation" data-motion="quiet">
-		<section id="aisf" aria-labelledby="aisf-title">
+	<div class="participation">
+		<section id="aisf" aria-labelledby="aisf-title" data-motion="rise">
 			<h2 id="aisf-title" class="font-heading">AI Safety Fundamentals</h2>
 			<p>
 				AISF is MAIA's eight-week introductory fellowship on AI safety. In small cohorts, we discuss
@@ -83,7 +84,7 @@
 				<a href="/aisf/">See the curriculum <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
-		<section id="membership" aria-labelledby="membership-title">
+		<section id="membership" aria-labelledby="membership-title" data-motion="rise" style="--motion-delay: 100ms">
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
 				Members get 24/7 office access, free compute, and access to research discussions and MAIA
@@ -107,8 +108,8 @@
 	</div>
 
 	<!-- Chat with us: bookable team members -->
-	<section id="chat-with-us" class="home-section scroll-mt-24" data-motion="quiet">
-		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+	<section id="chat-with-us" class="home-section scroll-mt-24">
+		<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6" data-motion="quiet">
 			<div>
 				<h2 class="text-3xl md:text-4xl font-heading font-[550] mb-3 leading-tight">
 					<i class="fa-solid fa-mug-hot mr-2 text-maia-800 dark:text-maia-400"></i>
@@ -128,7 +129,7 @@
 					target={person.calendly ? '_blank' : undefined}
 					rel={person.calendly ? 'noopener noreferrer' : undefined}
 					class="team-person"
-					data-motion="quiet"
+					data-motion="rise"
 					style={`--motion-delay: ${Math.min(index, 5) * 60}ms`}
 				>
 					<img src={person.imageUrl} alt="" loading="lazy" />
@@ -288,6 +289,42 @@
 		color: var(--maia-accent);
 		margin-top: 0.4rem;
 		font-size: 1rem;
+	}
+	.person-action span {
+		display: inline-block;
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		.participation section {
+			transition: border-color 220ms ease, box-shadow 220ms ease;
+		}
+		.team-person img {
+			transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 250ms ease;
+		}
+		.person-action span,
+		.home-links span {
+			display: inline-block;
+			transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+		}
+		.team-person:focus-visible img {
+			transform: translateY(-3px);
+		}
+		.team-person:focus-visible .person-action span,
+		.home-links a:focus-visible span {
+			transform: translateX(4px);
+		}
+		@media (hover: hover) and (pointer: fine) {
+			.participation section:hover {
+				box-shadow: 0 8px 24px -16px var(--maia-accent);
+			}
+			.team-person:hover img {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 18px -10px var(--maia-accent);
+			}
+			.team-person:hover .person-action span,
+			.home-links a:hover span {
+				transform: translateX(4px);
+			}
+		}
 	}
 	.team-person:hover .person-action {
 		text-decoration: underline;

@@ -1,12 +1,18 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<script>
-			// Apply a saved light theme before paint; dark remains the default.
+			// Respect an explicit choice, otherwise follow the device before the first paint.
+			let savedTheme;
 			try {
-				document.documentElement.classList.toggle('dark', localStorage.getItem('theme') !== 'light');
-			} catch { /* Use the default when browser storage is unavailable. */ }
+				savedTheme = localStorage.getItem('theme');
+			} catch { /* The system preference still works when storage is unavailable. */ }
+			const initialTheme = savedTheme === 'light' || savedTheme === 'dark'
+				? savedTheme
+				: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+			document.documentElement.style.colorScheme = initialTheme;
 		</script>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +26,19 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:image" content="https://mitaialignment.org/images/brand/maia-social-preview.png" />
 		<meta name="twitter:image:alt" content="MAIA — MIT AI Alignment logo" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"@id": "https://mitaialignment.org/#organization",
+				"name": "MIT AI Alignment",
+				"alternateName": "MAIA",
+				"url": "https://mitaialignment.org/",
+				"logo": "https://mitaialignment.org/images/brand/maia-horizontal-size-5-light-transparent.svg",
+				"description": "MIT's student community for AI safety, with fellowships, student research, talks, and workshops.",
+				"email": "maia-exec@mit.edu"
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="dark:bg-black bg-gray-100">

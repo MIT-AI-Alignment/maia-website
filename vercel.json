@@ -2,5 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "sveltekit",
   "installCommand": "npm ci",
-  "buildCommand": "npm run build && node scripts/verify-built-site.mjs"
+  "buildCommand": "npm run build && node scripts/verify-built-site.mjs",
+  "crons": [
+    { "path": "/events", "schedule": "17 10 * * *" },
+    { "path": "/events/semester", "schedule": "23 10 * * *" }
+  ]
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Footer from '../../components/footer.svelte';
+	import PageMetadata from '../../../components/PageMetadata.svelte';
 	import Navbar from '../../components/navbar.svelte';
 	import SectionHeader from '../../../components/SectionHeader.svelte';
 	import Link from '../../../components/Link.svelte';
@@ -62,11 +63,10 @@
 	];
 </script>
 
-<svelte:head>
-	<link rel="canonical" href="https://mitaialignment.org/initiatives/spring-workshops/" />
-	<title>MAIA - Spring AI Workshops</title>
-	<meta name="description" content="MIT AI Alignment (MAIA) spring technical and policy workshops." />
-</svelte:head>
+<PageMetadata
+	title="Spring 2025 AI Safety Workshops"
+	description="MAIA and Harvard's Spring 2025 technical AI safety and policy workshops, bringing together around 150 students and 20 speakers, with photos from the retreats."
+/>
 
 <main class="min-h-screen bg-surface-light dark:bg-surface-dark text-gray-800 dark:text-maia-50">
 	<Navbar />

@@ -4,6 +4,7 @@ export type CalendarEvent = {
  id: string;
  title: string;
  summary?: string;
+ media?: { imageUrl: string; imageAlt: string; sourceUrl?: string; kind?: 'photo' | 'artwork' | 'portrait' };
  start: string;
  end?: string;
  description?: string;

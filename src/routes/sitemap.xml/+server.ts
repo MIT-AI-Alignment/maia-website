@@ -2,11 +2,18 @@ import type { RequestHandler } from './$types';
 
 export const prerender = true;
 
-// Public evergreen pages; campaign redirects and experimental routes are omitted.
+// Public content pages only; campaign redirects and the demo blog are omitted.
 const paths = [
-	'/', '/about/', '/getinvolved/', '/hermes/', '/events/', '/initiatives/', '/resources/',
+	'/', '/about/', '/getinvolved/', '/hermes/', '/events/', '/events/semester/', '/initiatives/', '/resources/',
 	'/resources/mit-classes/', '/resources/faculty-labs/', '/resources/fellowships/',
-	'/aisf/', '/aisf/summer-2026/fellows/'
+	'/resources/merch/', '/donate/',
+	'/initiatives/caip-exhibition/', '/initiatives/caip-exhibition/phone-lines/',
+	'/initiatives/caip-exhibition/strategic-deception/', '/initiatives/spring-workshops/',
+	'/aisf/', '/aisf/week0/', '/aisf/week1/', '/aisf/summer-2026/fellows/',
+	...['spring-2026', 'summer-2026'].flatMap(semester => [
+		`/aisf/${semester}/`,
+		...Array.from({ length: 9 }, (_, week) => `/aisf/${semester}/week${week}/`)
+	])
 ];
 
 export const GET: RequestHandler = () => new Response(

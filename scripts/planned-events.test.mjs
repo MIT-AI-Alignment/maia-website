@@ -40,6 +40,15 @@ test('shared event URL reconciles rescheduling and preserves authoritative metad
  assert.equal(result.unmatched.length, 0);
  assert.deepEqual(result.events[0], event);
 });
+test('stable calendar UID reconciles undated plans while preserving rescheduled facts', () => {
+ const undated = { title: 'Talk with Garrison Lovely', calendarId: 'garrison@google.com', category: 'talks', description: 'A fireside chat with Garrison Lovely.' };
+ const event = { ...confirmed, id: 'garrison@google.com/2026-10-22T22:00:00Z', title: 'Garrison Lovely - Fireside Chat', start: '2026-10-22T22:00:00Z', end: '2026-10-22T23:30:00Z', location: 'Confirmed room' };
+ const result = reconcilePlannedEvents([event], [undated]);
+ assert.equal(result.unmatched.length, 0);
+ assert.deepEqual(result.events[0], { ...event, url: undefined, summary: undated.description });
+ assert.equal(matchesPlannedEvent({ ...event, id: 'different@google.com/2026-10-22T22:00:00Z' }, undated), false);
+ assert.equal(matchesPlannedEvent({ ...event, kind: 'initiative' }, undated), false);
+});
 test('RSVP links in calendar descriptions match, while dates alone never match', () => {
  assert.equal(matchesPlannedEvent({ ...confirmed, title: 'Renamed talk', descriptionParts: [{ text: 'RSVP', href: plan.url }] }, plan), true);
  assert.equal(matchesPlannedEvent({ ...confirmed, title: 'Unrelated event' }, { ...plan, calendarSubject: undefined, url: undefined }), false);
