@@ -43,6 +43,8 @@ export const CONFIG = {
             "https://calendar.google.com/calendar/u/0?cid=ZTExYTA1NzY1NjIxMzNmMDM4M2Y2NGNiY2E4ZGFkODRiMGRlMjg1ZjE2MDA4YjQ4ZWVkNmU4MGVhM2QxZjQ2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
     },
     aisf_ml: {
+        // General MAIA interest form; visitors can note AISF Spring 2027 in the comments field.
+        interestFormLink: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form",
         visible: true,
         deadline: "Wednesday, September 23 at 11:59 PM Eastern Time",
         deadline_short: "September 23",

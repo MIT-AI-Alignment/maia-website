@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import PageLayout from '../components/PageLayout.svelte';
 	import Button from '../components/Button.svelte';
 	import { CONFIG } from '$lib/config';
@@ -19,6 +20,28 @@
 	];
 
 	const bookablePeople = getBookablePeople();
+	/** @type {HTMLDivElement} */
+	let programTrack;
+	let atStart = true;
+	let atEnd = false;
+	function updateProgramPosition() {
+		atStart = programTrack.scrollLeft < 2;
+		atEnd = programTrack.scrollLeft + programTrack.clientWidth >= programTrack.scrollWidth - 2;
+	}
+	/** @param {number} direction */
+	function browsePrograms(direction) {
+		const card = programTrack.querySelector('section');
+		if (!card) return;
+		const gap = parseFloat(getComputedStyle(programTrack).columnGap);
+		programTrack.scrollBy({ left: direction * (card.offsetWidth + gap),
+			behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+	}
+	onMount(() => {
+		const observer = new ResizeObserver(updateProgramPosition);
+		observer.observe(programTrack);
+		updateProgramPosition();
+		return () => observer.disconnect();
+	});
 </script>
 
 <PageLayout
@@ -66,7 +89,12 @@
 		</div>
 	</section>
 
-	<div class="participation">
+	<div class="home-section">
+	<div class="program-controls" aria-label="Browse programs">
+		<button on:click={() => browsePrograms(-1)} disabled={atStart} aria-label="Previous programs" aria-controls="programs">←</button>
+		<button on:click={() => browsePrograms(1)} disabled={atEnd} aria-label="Next programs" aria-controls="programs">→</button>
+	</div>
+	<div id="programs" class="participation" bind:this={programTrack} on:scroll={updateProgramPosition}>
 		<section id="hermes" aria-labelledby="hermes-title" data-motion="rise">
 			<h2 id="hermes-title" class="font-heading">Apply to Hermes</h2>
 			<p>
@@ -117,6 +145,21 @@
 				<a href="/getinvolved/#membership">Membership details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
+		<section id="aisf" aria-labelledby="aisf-title">
+			<h2 id="aisf-title" class="font-heading">AISF</h2>
+			<p>
+				AI Safety Fundamentals is MAIA's eight-week introductory fellowship on AI safety.
+				In small cohorts, we read and discuss how AI systems work, the risks they pose,
+				and approaches to making them safer.
+			</p>
+			<p>Fall 2026 is currently underway.</p>
+			<div class="participation-actions">
+				<Button text="Interest for Spring 2027" type="purple" href={CONFIG.aisf_ml.interestFormLink}
+					target="_blank" rel="noopener noreferrer" />
+				<a href="/aisf/">Curriculum <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+	</div>
 	</div>
 
 	<!-- Chat with us: bookable team members -->
@@ -200,20 +243,24 @@
 	}
 	.participation {
 		position: relative;
+		scroll-margin-top: 9rem;
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-auto-flow: column;
+		grid-auto-columns: calc((100% - 3rem) / 2);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: none;
+		margin-bottom: 1rem;
 		gap: 3rem;
 	}
-	.participation::before {
-		content: '';
-		position: absolute;
-		left: calc(50% - 0.5px);
-		top: 0;
-		bottom: 0;
-		width: 1px;
-		background: var(--maia-border);
-	}
+	.participation::-webkit-scrollbar { display: none; }
+	.program-controls { display: flex; justify-content: flex-end; gap: .5rem; margin-bottom: 1rem; }
+	.program-controls button { width: 2.5rem; height: 2.5rem; border: 1px solid var(--maia-border); border-radius: 6px; color: var(--maia-ink); }
+	.program-controls button:hover:enabled { background: var(--maia-card); }
+	.program-controls button:disabled { opacity: .35; cursor: default; }
+	.program-controls button:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 3px; }
 	.participation section {
+		scroll-snap-align: start;
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
@@ -258,11 +305,8 @@
 	}
 	@media (max-width: 760px) {
 		.participation {
-			grid-template-columns: 1fr;
+			grid-auto-columns: 100%;
 			gap: 1.5rem;
-		}
-		.participation::before {
-			display: none;
 		}
 		.participation section {
 			padding: 1.5rem;
