@@ -6,7 +6,7 @@
 </script>
 
 <p class="text-sm text-gray-600 dark:text-gray-400">Fall 2026</p>
-<figure class="mx-auto my-6 max-w-3xl">
+<figure class="mx-0 my-6 w-full">
 	<img
 		src="/images/maia-organizer-retreat-fall-2026.webp"
 		alt="MAIA organizers holding the MAIA banner at the fall 2026 organizer retreat"
@@ -16,9 +16,6 @@
 		decoding="async"
 		class="m-0 h-auto w-full rounded-lg"
 	/>
-	<figcaption class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-		Organizer retreat, September 2026. Photo by Melissa Li.
-	</figcaption>
 </figure>
 <div class="flex my-6 flex-wrap">
 	{#each orgs as org}
