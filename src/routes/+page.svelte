@@ -314,16 +314,14 @@
 	}
 
 	.team-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 1.5rem 1.5rem;
 	}
 	.team-person {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: calc((100% - 6rem) / 5);
 		min-width: 0;
 		gap: 0.75rem;
 		text-align: center;
@@ -394,17 +392,17 @@
 		outline-offset: 4px;
 	}
 	.team-email {
-		width: 100%;
+		grid-column: 1 / -1;
 		text-align: center;
 	}
 	@media (max-width: 900px) {
-		.team-person {
-			width: calc((100% - 3rem) / 3);
+		.team-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 	@media (max-width: 600px) {
-		.team-person {
-			width: calc((100% - 1.5rem) / 2);
+		.team-list {
+			grid-template-columns: minmax(0, 1fr);
 		}
 	}
 </style>
