@@ -152,7 +152,10 @@
 				In small cohorts, we read and discuss how AI systems work, the risks they pose,
 				and approaches to making them safer.
 			</p>
-			<p>Fall 2026 is currently underway.</p>
+			<p>
+				Fall 2026 is currently underway, with <strong>212 fellows</strong> across
+				<strong>14 cohorts</strong>. Our largest fall fellowship yet.
+			</p>
 			<div class="participation-actions">
 				<Button text="Interest for Spring 2027" type="purple" href={CONFIG.aisf_ml.interestFormLink}
 					target="_blank" rel="noopener noreferrer" />
