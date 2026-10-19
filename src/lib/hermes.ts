@@ -191,8 +191,8 @@ const mentorList: Mentor[] = [
 	},
 	{
 		name: 'Stephan Wäldchen',
-		imageUrl: '/images/hermes/mentors/stephan-waeldchen.png',
-		short: 'Iliad · Scalable Oversight',
+		imageUrl: '/images/hermes/mentors/stephan-waeldchen-speaking.png',
+		short: 'Iliad, Scalable Oversight',
 		bio: [
 			'Stephan leads the Scalable Oversight team at Iliad. The team builds the foundations of adversarial inference: how can a human judge extract useful information from a superintelligent, but potentially adversarial AI? For mathematical proofs this works, because verifying a proof is much easier than finding it. But if we have one of the following restrictions:',
 			[
