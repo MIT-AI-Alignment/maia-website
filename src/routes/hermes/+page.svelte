@@ -219,6 +219,8 @@
 												</li>
 											{/each}
 										</ul>
+									{:else if typeof block !== 'string'}
+										<h4>{block.heading}</h4>
 									{:else}
 										<p>
 											{#each bioParts(block) as part}{#if part.href}<a
@@ -717,6 +719,16 @@
 		font-size: 1.0625rem;
 		line-height: 1.65;
 		color: var(--h-ink-2);
+	}
+	.mentor-detail h4 {
+		margin: 1.5rem 0 0;
+		font-size: 1.0625rem;
+		font-weight: 600;
+		line-height: 1.4;
+		color: var(--h-ink);
+	}
+	.mentor-detail h4 + p {
+		margin-top: 0.5rem;
 	}
 	.mentor-detail .mentor-detail-meta {
 		margin-top: 0.35rem;

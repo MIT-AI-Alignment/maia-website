@@ -14,9 +14,9 @@ export type Mentor = {
 	// mark a past one with "ex-" (e.g. "ex-xAI").
 	short?: string;
 	// Shown when someone opens the mentor's profile. Write it in the third person. Each string is
-	// a paragraph and each nested array is a bulleted list; links can be written inline as
-	// [text](https://...).
-	bio?: (string | string[])[];
+	// a paragraph and each nested array is a bulleted list; heading objects separate longer
+	// research descriptions. Links can be written inline as [text](https://...).
+	bio?: (string | string[] | { heading: string })[];
 	imageUrl?: string;
 	website?: string;
 	linkedin?: string;
@@ -133,6 +133,13 @@ const mentorList: Mentor[] = [
 			'David is a rising fourth-year PhD student at MIT, broadly interested in AI safety, alignment, and scalable oversight. As a mentor, David is looking for mentees who are curious, critical, and willing to keep asking questions, particularly questions that push back on our own implicit assumptions. David is excited about understanding how modern LLMs’ behaviors and values evolve over training, and how we can translate those learnings into making LLMs more reliable and safer.'
 		]
 	},
+	fromProfile('david-turturean', {
+		imageUrl: '/images/hermes/mentors/david-turturean.png',
+		short: 'Physical Superintelligence',
+		bio: [
+			'David Turturean works at Physical Superintelligence on applying AI to physics. He graduated from MIT in Physics and Artificial Intelligence & Decision Making. He directs AI systems on open mathematical problems and collaborates with mathematicians to check, formalize and structure the results. He is interested in what happens as research becomes increasingly automated, including AI research: how we choose worthwhile questions, recognize useful discoveries, reward correction, and structure results we could not have produced ourselves. For Hermes, he would be interested in mentoring mathematical or experimental projects on these questions.'
+		]
+	}),
 	fromProfile('asher-parker-sartori', {
 		short: 'ex-xAI',
 		bio: [
@@ -173,6 +180,37 @@ const mentorList: Mentor[] = [
 			'Aruna is a PhD student in MIT’s Algorithmic Alignment Group. She uses interpretability methods to investigate the representations that lead to certain model behavior. Her past work spans robust interpretability benchmarks, understanding refusal behavior, and modeling emergent collective dynamics among agents.'
 		],
 		linkedin: 'https://www.linkedin.com/in/arunasank/'
+	},
+	{
+		name: 'Marco Bazzani',
+		imageUrl: '/images/hermes/mentors/marco-bazzani.jpg',
+		short: 'Anthropic Fellow',
+		bio: [
+			'Marco is an Anthropic fellow working on metamodels like NLAs and activation oracles. He is interested in a broad range of questions around interpretability and alignment science.'
+		]
+	},
+	{
+		name: 'Stephan Wäldchen',
+		imageUrl: '/images/hermes/mentors/stephan-waeldchen.png',
+		short: 'Iliad · Scalable Oversight',
+		bio: [
+			'Stephan leads the Scalable Oversight team at Iliad. The team builds the foundations of adversarial inference: how can a human judge extract useful information from a superintelligent, but potentially adversarial AI? For mathematical proofs this works, because verifying a proof is much easier than finding it. But if we have one of the following restrictions:',
+			[
+				'We don’t have all the information that the AI has,',
+				'The ground truth is more complicated than what can be explained to the judge,',
+				'The judge makes errors,'
+			],
+			'then the picture becomes more intricate. In which domains can we probably extend a reward signal for honest, helpful, and harmless work?',
+			'Concretely, the team’s research is based on:',
+			{ heading: 'Computational Complexity' },
+			'We want to build on AI safety protocols like doubly-efficient Debate (Brown-Cohen, 2023) and Prover-Estimator Debate (Brown-Cohen, 2025), and understand whether obfuscated arguments are a fundamental limitation, or can be remedied.',
+			{ heading: 'Graph Theory' },
+			'Debate protocols can be described as games on (belief) graphs, such as factor graphs or Bayesian models, see [Results by Heckett et al.](https://www.lesswrong.com/posts/GwhDhEgEc8YjDK4jd/local-factor-graph-debate) Which debate protocols work for which class of graphs? Joint project with Alex Heckett from Resolution.',
+			{ heading: 'Algorithmic Complexity and Learning Theory' },
+			'We want to build a foundation of adversarial inference. How would an optimal Bayesian induct on adversarially selected information? Which function classes allow for efficient debate, when the ground truth is more complicated than bounded communication can capture? Can we derive graph properties from Kolmogorov complexity or arguments?',
+			{ heading: 'Game Theory' },
+			'We investigate incentive design and which kinds of equilibria emerge in debate games, including their stability, basins of attraction, and robustness to judge errors. Even if we give the right incentives, the AI might never explore the relevant actions to collect the reward.'
+		]
 	}
 ];
 
