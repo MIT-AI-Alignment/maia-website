@@ -87,7 +87,7 @@ export const PEOPLE: Record<string, Person> = {
 		id: 'jason-chin',
 		name: 'Jason Chin',
 		email: 'jasonchin098@gmail.com',
-		calendly: 'https://savvycal.com/jasonchin098/chat-with-jason',
+		calendly: 'https://savvycal.com/jasonchin098/intro-chat-with-jason-maia',
 		position: 'Exec Board Member',
 		imageUrl: '/images/people/jason-chin-fall-2026.jpg',
 		isExec: true,
