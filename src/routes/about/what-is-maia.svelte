@@ -4,12 +4,12 @@
  { title: 'Members', description: 'Members take part in reading groups, research, technical programs, and the wider community. Alumni remain connected after leaving MIT.' },
  { title: 'Organizers', description: 'Organizers run programs: facilitating AISF, planning workshops and speaker events, and helping with operations. Responsibilities and time commitments depend on the program.' },
  { title: 'Executive board', description: 'The executive board sets priorities, supports organizers, and takes responsibility for MAIA’s programs and membership decisions.' },
- { title: 'CBAI', description: 'The Cambridge Boston Alignment Initiative supports MAIA with funding and operations, and runs technical AI safety programs in the Boston area.' }
+ { title: 'CBAI', description: 'supports MAIA with funding and operations, and runs technical AI safety programs in the Boston area.' }
  ];
 </script>
 <p>MAIA brings together students who want to understand AI risk and contribute to AI safety. Members participate; organizers run programs; the executive board coordinates the work.</p>
 <div class="roles not-prose">
- {#each roles as role}<ExpandableCard><svelte:fragment slot="summary"><span>{role.title}</span></svelte:fragment><p>{role.description}</p></ExpandableCard>{/each}
+ {#each roles as role}<ExpandableCard><svelte:fragment slot="summary"><span>{role.title}</span></svelte:fragment><p>{#if role.title === 'CBAI'}The <a href="https://www.cbai.ai/">Cambridge Boston Alignment Initiative</a> {role.description}{:else}{role.description}{/if}</p></ExpandableCard>{/each}
 </div>
 <h3>What we do</h3>
 <ul>

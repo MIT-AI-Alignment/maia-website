@@ -19,7 +19,7 @@
 			<p>
 				Please consider donating via every.org if you would like to support our work. Donations can be
 				marked for MAIA or for the Cambridge Boston Alignment Initiative (CBAI), which supports both
-				the student groups <a href="https://haist.ai">AISST at Harvard</a> and MAIA at MIT.
+				the student groups <a href="https://aisst.ai">AISST at Harvard</a> and MAIA at MIT.
 			</p>
 			
 			<div class="flex flex-col sm:flex-row gap-4 mt-8">

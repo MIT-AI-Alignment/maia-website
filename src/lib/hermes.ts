@@ -64,7 +64,7 @@ export const HERMES = {
 	// Rough schedule. Keep the application deadline aligned with CONFIG.hermes; the later
 	// phases follow the program plan and are approximate.
 	timeline: [
-		{ when: 'October 9', title: 'Extended application deadline', text: 'Submit the form by 11:59 PM ET.' },
+		{ when: 'October 9', title: 'Application deadline', text: 'Applications closed at 11:59 PM ET.' },
 		{
 			when: 'October 9',
 			title: 'Kick-off',

@@ -96,7 +96,7 @@
 	</div>
 	<div id="programs" class="participation" bind:this={programTrack} on:scroll={updateProgramPosition}>
 		<section id="hermes" aria-labelledby="hermes-title" data-motion="rise">
-			<h2 id="hermes-title" class="font-heading">Apply to Hermes</h2>
+			<h2 id="hermes-title" class="font-heading">Hermes Fellowship</h2>
 			<p>
 				The Hermes Fellowship is MAIA's eight-week research program in technical AI safety. Work
 				on a focused project with guidance from an experienced AI safety researcher.
@@ -109,18 +109,9 @@
 				preferred.
 			</p>
 			<p class="application-deadline">
-				<strong>Extended deadline:</strong> {CONFIG.hermes.deadlineDate}, {CONFIG.hermes.deadlineTime}.
+				<strong>Applications are closed.</strong> The deadline was {CONFIG.hermes.deadlineDate}, {CONFIG.hermes.deadlineTime}.
 			</p>
 			<div class="participation-actions">
-				{#if CONFIG.hermes.applicationLink}
-					<Button
-						text="Apply to Hermes"
-						type="purple"
-						href={CONFIG.hermes.applicationLink}
-						target="_blank"
-						rel="noopener noreferrer"
-					/>
-				{/if}
 				<a href="/hermes/">Fellowship details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
