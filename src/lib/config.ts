@@ -16,11 +16,11 @@ export const CONFIG = {
         showOnPaths: ["/"],
         remember: "device",
         icon: "fa-solid fa-graduation-cap",
-        title: "Apply to AISF",
-        text: "Apply to AISF - our introductory reading group about topics in AI safety.",
-        ctaText: "Apply to AISF",
+        title: "AISF applications are closed",
+        text: "Register your interest in AISF for Spring 2027.",
+        ctaText: "Register interest",
         dismissText: "Maybe later",
-        href: "https://airtable.com/appl0nOt45L6eUfMu/pagJvamt09btxpfB3/form"
+        href: "https://airtable.com/app3u6UqyNPuDm3bn/pagGaVOc5VOJO8pIF/form"
     },
     orientation: {
         // Linked from the /orientation26 QR short link, the banner, and the Orientation 2026 page.
@@ -61,7 +61,7 @@ export const CONFIG = {
         // Extended application deadline, displayed with the time on the Hermes page.
         deadlineDate: "Friday, October 9",
         deadlineTime: "11:59 PM ET",
-        // After this moment show the closed notice; keep the form reachable. Boston is on EDT (-04:00) until November 1.
+        // After this moment show the closed notice and hide application buttons. Boston is on EDT (-04:00) until November 1.
         deadlineAt: "2026-10-09T23:59:00-04:00",
         // Leave empty to hide the Apply buttons until the form is ready.
         applicationLink: "https://airtable.com/app2QxPIfTjgZX8Ih/pagqFpIYrvzDCS8J6/form"

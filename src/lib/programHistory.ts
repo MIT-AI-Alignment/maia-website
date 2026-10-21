@@ -104,8 +104,8 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
   id: 'aisf-fall-2026', title: 'Fall 2026 AI Safety Fundamentals · MAIA',
   start: '2026-09-28', end: '2026-11-23', dateLabel: 'Starts the week of September 28, 2026 · eight weeks', kind: 'initiative',
-  description: `An eight-week reading and discussion fellowship on AI safety, beginning the week of September 28. Applications close ${CONFIG.aisf_ml.deadline}. Participants meet in weekly cohorts at MAIA’s office in Kendall Square. Each two-hour session includes reading time, so no additional work is required outside of sessions.`,
-  url: CONFIG.aisf_ml.applicationLink
+  description: `An eight-week reading and discussion fellowship on AI safety, beginning the week of September 28. Applications closed ${CONFIG.aisf_ml.deadline}. Participants meet in weekly cohorts at MAIA’s office in Kendall Square. Each two-hour session includes reading time, so no additional work is required outside of sessions.`,
+  url: '/getinvolved/#aisf'
  },
  {
   id: 'aisf-spring-2026', title: 'Spring 2026 AI Safety Fundamentals · MAIA',
@@ -150,17 +150,17 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
 // These offerings have no confirmed next-session dates, so they stay outside the dated timeline.
 export const PARTNER_PROGRAMS = [
  {
-  title: 'Technical AI Safety Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'Technical AI Safety Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'Weekly, two-hour discussions in Harvard Square covering AI progress, alignment, interpretability, and technical approaches to AI safety. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/tech-fellowship'
  },
  {
-  title: 'AI Policy Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'AI Policy Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'An introductory reading group on AI governance and strategy, meeting weekly in small groups in Harvard Square. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/policy-fellowship'
  },
  {
-  title: 'AI × Biorisk Fellowship', organizer: 'AISST', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'AI × Biorisk Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'A new reading group exploring AI-driven biological risks, biodefense, safeguards, and governance. Cohorts meet weekly for two hours in Harvard Square. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/biorisk-fellowship'
  },
