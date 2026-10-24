@@ -16,6 +16,7 @@
 	export let motionVariant: 'community' | 'ambient' = 'ambient';
 	// Extra classes on <main>, for pages that restyle their own surface.
 	export let pageClass = '';
+	export let allowStickyContent = false;
 
 	let mounted = false;
 
@@ -36,7 +37,7 @@
 <PageMetadata {title} {description} />
 
 <main
-	class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative overflow-hidden {pageClass}"
+	class="min-h-screen bg-surface-light dark:bg-surface-dark dark:text-maia-50 relative {allowStickyContent ? 'overflow-visible' : 'overflow-hidden'} {pageClass}"
 >
 	<!-- No background grid needed anymore -->
 
