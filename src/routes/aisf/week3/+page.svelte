@@ -134,6 +134,7 @@
 	.article-header { padding-bottom:1.5rem; border-bottom:1px solid var(--maia-border); margin-bottom:2rem; }
 	.article-body { font:400 17px/1.8 'Manrope',sans-serif; overflow-wrap:anywhere; }
 	.article-body :global(p) { margin-bottom:1.25rem; }
+	.article-body :global(.source-line) { font-size:.875rem; line-height:1.7; margin:1rem 0 1.5rem; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); }
 	.article-body :global(h2), .article-body :global(h3) { font-family:inherit; font-weight:500; line-height:1.5; scroll-margin-top:6rem; }
 	.article-body :global(h2) { font-size:1.55rem; margin:2.5rem 0 1.25rem; }
 	.article-body :global(h3) { font-size:1.25rem; margin:2rem 0 1rem; }
