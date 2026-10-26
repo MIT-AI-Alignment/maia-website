@@ -404,6 +404,17 @@ export const PEOPLE: Record<string, Person> = {
 	},
 
 
+	'angela-ho': {
+		id: 'angela-ho',
+		name: 'Angela Ho',
+		position: '',
+		imageUrl: '/images/people/angela-ho-fall-2026.jpg',
+		mitEmail: 'angela_h@mit.edu',
+		isExec: false,
+		isOrg: true,
+		isActive: true,
+	},
+
 	'emily-yu': {
 		id: 'emily-yu',
 		name: 'Emily Yu',
