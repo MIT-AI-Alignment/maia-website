@@ -49,6 +49,15 @@ const FALL_2026_WORKSHOPS = new Set([
 
 // Present the three November weekends together without changing the source calendar.
 export function combineFallWorkshops(events: CalendarEvent[]): CalendarEvent[] {
+ // Organizer correction (October 26, 2026): the legacy calendar record still
+ // lists Nov 14–16. Only this exact record uses the confirmed three weekends.
+ // Keep its links and identity; corrected calendar records use the normal path.
+ events = events.map(event => event.id === '7ebmkf3cbhq7lgch1eq631qm97@google.com/2026-11-14'
+  ? { ...event, start: '2026-11-06', end: '2026-11-23', location: undefined, dateRanges: [
+   { start: '2026-11-06', end: '2026-11-09' },
+   { start: '2026-11-13', end: '2026-11-16' },
+   { start: '2026-11-20', end: '2026-11-23' }
+  ] } : event);
  const workshops = events.filter(event => FALL_2026_WORKSHOPS.has(event.id))
   .sort((a, b) => a.start.localeCompare(b.start));
  if (!workshops.length) return events;

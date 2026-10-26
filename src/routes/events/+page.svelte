@@ -3,6 +3,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import EventsLayout from '../../components/EventsLayout.svelte';
 	import Button from '../../components/Button.svelte';
+	import { HERMES } from '$lib/hermes';
 	import { CONFIG } from '$lib/config';
 	import { displayDate, displayDateRange, displayTimeRange, localDate, splitEvents, type CalendarEvent } from '$lib/events';
 	import { eventCategory, TIMELINE_CATEGORIES, type TimelineCategory } from '$lib/semesterTimeline';
@@ -90,7 +91,14 @@
 	afterNavigate(() => { void revealHashTarget(); });
 
 	// Undated partner cohorts stop being opportunities after their published deadline.
-	$: partnerPrograms = PARTNER_PROGRAMS.filter(program => !program.applicationDeadline || program.applicationDeadline >= localDate(now));
+	$: partnerPrograms = [
+		{
+			title: HERMES.name, organizer: 'MAIA',
+			timing: 'Fall 2026 · October 9 through the end of fall classes · Applications closed',
+			description: HERMES.detailsIntro.join(' '), url: '/hermes/'
+		},
+		...PARTNER_PROGRAMS.filter(program => !program.applicationDeadline || program.applicationDeadline >= localDate(now))
+	];
 	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + reconciled.unmatched.filter(event => event.category === category.id).length + (category.id === 'programs' ? partnerPrograms.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
 	$: visibleCount = activeCategory === 'all' ? data.events.length + reconciled.unmatched.length + partnerPrograms.length : categoryCounts.get(activeCategory) ?? 0;
@@ -310,7 +318,7 @@
 					{#if !visibleEvents.length && !section.hasPlannedEvents}<p class="empty-category">No individual events listed for this period.</p>{/if}
 					</div>{/if}
 					{#if section.programs.length || section.undatedPrograms.length}
-						<details class="programs" open={activeCategory === 'programs'}>
+						<details class="programs" open={section.id === 'upcoming' || activeCategory === 'programs'}>
 							<summary>{section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'} <span>({section.programs.length + section.undatedPrograms.length})</span></summary>
 							<p class="programs-intro">MAIA programs and opportunities from AISST at Harvard and CBAI. Each listing names its organizer.</p>
 							<div class="program-grid">
@@ -323,12 +331,12 @@
 									<h4>{program.title}</h4>
 									<p class="program-dates">{displayDateRange(program)}</p>
 									{#if program.description}<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>{/if}
-									{#if program.url}<a href={program.url}>{program.id === 'aisf-fall-2026' ? 'Apply for Fall AISF' : program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
+									{#if program.url}<a href={program.url}>{program.id === 'aisf-fall-2026' ? 'Explore Fall AISF' : program.url.includes('arena.education') ? 'Visit ARENA' : 'Explore the program'} <span aria-hidden="true">→</span></a>{/if}
 								</article>
 							{/each}
 							{#each section.undatedPrograms as program}
 								<article class="program-card">
-									<img class="program-logo" src={program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
+									<img class="program-logo" src={program.organizer === 'MAIA' ? '/images/maia_mark.svg' : program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
 									<h4>{program.title} · {program.organizer}</h4>
 									<p class="program-dates">{program.timing}</p>
 									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
@@ -413,7 +421,8 @@
 	.workshop-dates { display: flex; flex-wrap: wrap; gap: .35rem .85rem; }
 	.workshop-dates li { white-space: nowrap; }
 	.event-heading.has-media { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem; align-items: start; gap: 1rem; }
-	.program-logo { width: 7.5rem; max-height: 5rem; object-fit: contain; margin-bottom: .75rem; }
+	.program-logo { width: 7.5rem; height: 3rem; object-fit: contain; object-position: left center; margin-bottom: 1rem; }
+	:global(.dark) .program-logo[src$="/cbai.png"] { filter: brightness(0) invert(1); }
 	.event-thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--maia-border); border-radius: .5rem; background: var(--maia-canvas); cursor: zoom-in; }
 	.event-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
 	.event-thumbnail.photo img { object-fit: cover; }
@@ -444,7 +453,7 @@
 	.section-grid > * { width: 100%; }
 	.event-list { order: 0; }
 	.programs { order: 1; }
-	.program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+	.program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 1.25rem; }
 	.programs > summary { cursor: pointer; padding: 1rem 0; border-top: 1px solid var(--maia-border); font-size: 1.1rem; font-weight: 600; }
 	.programs > summary span { color: var(--maia-muted); font-weight: 400; }
 	details.event-period { border-top: 1px solid var(--maia-border); }
@@ -459,12 +468,15 @@
 	.event-row { position: relative; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem 0; margin-bottom: .5rem; border-bottom: 1px solid var(--maia-border); }
 	.event-row:last-child { margin-bottom: 0; }
 	.programs-intro { font-size: .9rem; line-height: 1.6; color: var(--maia-muted); margin: .5rem 0 1.2rem; }
-	.program-card { border-top: 1px solid var(--maia-border); padding: 1.25rem 0; }
+	.program-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--maia-border); border-radius: .75rem; background: var(--maia-nav-surface); padding: 1.25rem; }
 	.program-card h4 { font-size: 1rem; font-weight: 650; line-height: 1.4; }
 	.program-dates { font-size: .8rem; line-height: 1.65; margin: .65rem 0; color: var(--maia-muted); }
 	.program-card details { font-size: .78rem; margin: .85rem 0; }
 	.program-description { margin-top: .65rem; line-height: 1.7; }
 	.program-card > a, .timeline-link { display: inline-block; color: var(--maia-accent); font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; padding: .4rem 0; }
+	.program-card > a { margin-top: auto; align-self: flex-start; padding: .65rem .85rem; border: 1px solid var(--maia-border); border-radius: .4rem; text-decoration: none; }
+	.program-card > a:hover { border-color: var(--maia-accent); }
+	.program-card > a:focus-visible { outline: 2px solid var(--maia-accent); outline-offset: 3px; }
 	.timeline-link { margin-bottom: 1rem; }
 
 	@media (max-width: 540px) {

@@ -69,3 +69,16 @@ test('grouped runs preserve chronological order and split around unrelated recor
  assert.equal(runs[1].collection, null);
  assert.deepEqual(groupEventRuns([]), []);
 });
+
+
+test('legacy fall workshop uses organizer-confirmed weekends and preserves links', () => {
+ const legacy = { ...fallWorkshops[2], id: '7ebmkf3cbhq7lgch1eq631qm97@google.com/2026-11-14',
+  start: '2026-11-14', end: '2026-11-17', url: 'https://aisst.ai/workshops' };
+ const unrelated = { ...legacy, id: 'unrelated' };
+ const [corrected, untouched] = combineFallWorkshops([legacy, unrelated]);
+ assert.equal(displayDateRange(corrected, false), 'Nov 6–8 · Nov 13–15 · Nov 20–22');
+ assert.equal(corrected.url, legacy.url);
+ assert.equal(corrected.id, legacy.id);
+ assert.equal(untouched, unrelated);
+ assert.deepEqual(combineFallWorkshops([corrected]), [corrected]);
+});

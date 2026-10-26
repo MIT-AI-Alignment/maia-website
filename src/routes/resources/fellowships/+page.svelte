@@ -6,6 +6,9 @@
 	type Fellowship = {
 		name: string;
 		featured?: boolean;
+		deadline?: string;
+		deadlineSource?: string;
+		deadlineOpen?: boolean;
 		logo?: string;
 		logoInvert?: boolean;
 		tagline: string;
@@ -19,6 +22,8 @@
 	const fellowships: Fellowship[] = [
 		{
 			name: 'CBAI Research Fellowship',
+			deadline: 'Fall 2026 closed (Sep 6). Spring 2027 cycle to be announced later this fall',
+			deadlineSource: 'https://www.cbai.ai/ais-research-fellowship',
 			featured: true,
 			logo: '/images/logos/cbai.png',
 			logoInvert: true,
@@ -30,6 +35,8 @@
 		},
 		{
 			name: 'SPAR',
+			deadline: 'Spring 2027 applications expected to open around December',
+			deadlineSource: 'https://sparai.org/',
 			logo: '/images/logos/spar.png',
 			tagline: 'Supervised Program for Alignment Research',
 			note: 'Remote · Part time · 3 months',
@@ -39,6 +46,8 @@
 		},
 		{
 			name: 'MATS',
+			deadline: 'Winter 2027 closed (Sep 6). Next round TBA',
+			deadlineSource: 'https://www.matsprogram.org/apply',
 			logo: '/images/logos/mats.png',
 			tagline: 'ML Alignment & Theory Scholars',
 			note: 'In person · Berkeley, CA / London, UK · ~3 months · Funded',
@@ -50,6 +59,8 @@
 		},
 		{
 			name: 'Astra Fellowship',
+			deadline: 'Latest round closed (Sep 26). Next round TBA',
+			deadlineSource: 'https://constellation.org/programs/astra',
 			logo: '/images/logos/constellation.png',
 			logoInvert: true,
 			tagline: 'Research fellowship at Constellation',
@@ -62,6 +73,8 @@
 		},
 		{
 			name: 'Redwood Research Internship',
+			deadline: 'Rolling',
+			deadlineSource: 'https://www.redwoodresearch.org/careers',
 			logo: '/images/logos/redwood.png',
 			tagline: 'AI control, alignment, and futurism research',
 			note: 'In person · Berkeley, CA · Paid',
@@ -72,6 +85,8 @@
 		},
 		{
 			name: 'Anthropic Fellows Program',
+			deadline: 'Rolling (Oct 18 cutoff for the January 2027 cohort has passed)',
+			deadlineSource: 'https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/',
 			logo: '/images/logos/anthropic-mark.png',
 			logoInvert: true,
 			tagline: 'AI safety research with Anthropic mentorship',
@@ -82,6 +97,8 @@
 		},
 		{
 			name: 'OpenAI Safety Fellowship',
+			deadline: '2026 pilot closed (May 3). Next round TBA',
+			deadlineSource: 'https://alignment.openai.com/safety-fellowship/',
 			logo: '/images/logos/openai-mark.png',
 			logoInvert: true,
 			tagline: 'AI safety research with OpenAI mentorship',
@@ -92,15 +109,20 @@
 		},
 		{
 			name: 'Pivotal Research Fellowship',
+			deadline: 'Nov 1, 2026, 11:59pm AoE (Jan 18 – Apr 30, 2027 cohort)',
+			deadlineSource: 'https://forum.effectivealtruism.org/posts/XWom297KDJXkirfiC/pivotal-research-fellowship-q1-2027-applications-open',
+			deadlineOpen: true,
 			logo: '/images/logos/pivotal.png',
 			tagline: 'AI safety, AI policy, and biosecurity research',
-			note: 'In person · London, UK · 10 weeks · Fully funded',
+			note: 'In person · London, UK · 15 weeks · Fully funded',
 			description:
 				'A fully funded research fellowship focused on reducing risks from transformative technology, with tracks in AI safety, AI policy, and biosecurity. Fellows work closely with experienced mentors and receive a stipend plus travel and housing support. Cohorts run twice a year.',
 			link: 'https://www.pivotal-research.org/'
 		},
 		{
 			name: 'ERA Fellowship',
+			deadline: 'Winter 2027 closed. Next round TBA',
+			deadlineSource: 'https://erafellowship.org/',
 			logo: '/images/logos/era.png',
 			logoInvert: true,
 			tagline: 'AI safety & governance research in Cambridge, UK',
@@ -111,6 +133,8 @@
 		},
 		{
 			name: 'LASR Labs',
+			deadline: 'June–Sep 2027 cohort; applications not yet open',
+			deadlineSource: 'https://www.lasrlabs.org/',
 			logo: '/images/logos/lasr.png',
 			tagline: 'Team-based technical AI safety research in London',
 			note: 'In person · London, UK · 13 weeks · Funded',
@@ -120,6 +144,8 @@
 		},
 		{
 			name: 'ARENA',
+			deadline: 'ARENA 9.0 closed. Next round TBA',
+			deadlineSource: 'https://www.arena.education/',
 			logo: '/images/logos/arena.png',
 			logoInvert: true,
 			tagline: 'Alignment Research Engineer Accelerator',
@@ -148,32 +174,46 @@
 			are considering a career in AI safety, applying to a fellowship is often the highest-value
 			next step.
 		</p>
+		<p class="mb-6 text-sm text-maia-950/70 dark:text-maia-200">Deadlines checked October 26, 2026. Always confirm on the program's site.</p>
 		<div class="not-prose flex flex-col gap-4">
 			{#each fellowships as fellowship}
 				<ExpandableCard featured={fellowship.featured ?? false} open={fellowship.featured ?? false}>
 					<svelte:fragment slot="summary">
-						{#if fellowship.logo}
-							<img
-								src={fellowship.logo}
-								alt=""
-								class="h-6 w-auto object-contain shrink-0 {fellowship.featured
-									? 'max-w-[64px]'
-									: 'max-w-[28px]'} {fellowship.logoInvert
-									? 'dark:brightness-0 dark:invert'
-									: ''}"
-							/>
-						{/if}
-						<span class="font-semibold">{fellowship.name}</span>
-						<span class="text-maia-600 dark:text-maia-400 hidden sm:inline"
-							>{fellowship.tagline}</span
-						>
-						{#if fellowship.featured}
-							<span
-								class="ml-auto text-xs font-semibold uppercase tracking-wide text-maia-600 dark:text-maia-400 whitespace-nowrap"
-							>
-								<i class="fas fa-star" aria-hidden="true"></i> Featured
+						<span class="min-w-0 flex-1">
+							<span class="flex flex-wrap items-center gap-3">
+								{#if fellowship.logo}
+									<img
+										src={fellowship.logo}
+										alt=""
+										class="h-6 w-auto object-contain shrink-0 {fellowship.featured
+											? 'max-w-[64px]'
+											: 'max-w-[28px]'} {fellowship.logoInvert
+											? 'dark:brightness-0 dark:invert'
+											: ''}"
+									/>
+								{/if}
+								<span class="font-semibold">{fellowship.name}</span>
+								<span class="text-maia-600 dark:text-maia-400 hidden sm:inline"
+									>{fellowship.tagline}</span
+								>
+								{#if fellowship.featured}
+									<span
+										class="ml-auto text-xs font-semibold uppercase tracking-wide text-maia-600 dark:text-maia-400 whitespace-nowrap"
+									>
+										<i class="fas fa-star" aria-hidden="true"></i> Featured
+									</span>
+								{/if}
+							</span>
+						{#if fellowship.deadline}
+							<span class="mt-3 block rounded-lg border p-3 text-sm leading-relaxed {fellowship.deadlineOpen ? 'border-emerald-600/40 bg-emerald-50 text-emerald-950 dark:border-emerald-400/40 dark:bg-emerald-950/50 dark:text-emerald-100' : 'border-maia-500/20 bg-maia-500/5 text-maia-950/80 dark:text-maia-100/80'}">
+								<strong class="block text-xs uppercase tracking-wide">Application deadline{fellowship.deadlineOpen ? ' · Open' : ''}</strong>
+								{fellowship.deadline}
+								{#if fellowship.deadlineSource}
+									<a href={fellowship.deadlineSource} target="_blank" rel="noopener noreferrer" class="ml-1 text-xs underline underline-offset-2" aria-label={`Deadline source for ${fellowship.name}`}>source</a>
+								{/if}
 							</span>
 						{/if}
+						</span>
 					</svelte:fragment>
 					<p class="text-xs uppercase tracking-wide text-maia-600 dark:text-maia-400 mb-2">
 						{fellowship.note}

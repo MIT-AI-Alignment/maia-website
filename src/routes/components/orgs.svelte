@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let compact = false;
 	type Organization = {
 		name: string;
 		link: string;
@@ -96,16 +97,16 @@
 		Not all organizations listed endorse or are affiliated with MAIA.
 </p>
 
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10">
+<div class="grid grid-cols-2 sm:grid-cols-3 {compact ? 'md:grid-cols-5 gap-3 mt-6' : 'md:grid-cols-4 gap-8 mt-10'}">
 	{#each organizations as { imagePath, wordmark, name, link, invert }, index}
-		<div class="org-card last:md:col-span-2 last:md:col-start-2 flex flex-col items-center justify-center p-4" data-motion="quiet" style={`--motion-delay: ${(index % 4) * 60}ms`}>
+		<div class="org-card flex flex-col items-center justify-center {compact ? 'p-2' : 'last:md:col-span-2 last:md:col-start-2 p-4'}" data-motion="quiet" style={`--motion-delay: ${(index % 4) * 60}ms`}>
 			<a href={link} class="flex flex-col items-center gap-2 w-full h-full" target="_blank" rel="noopener noreferrer">
-				<div class="h-24 flex items-center justify-center">
+				<div class="{compact ? 'h-12' : 'h-24'} flex items-center justify-center">
 					{#if imagePath}
 						<img
 							src={imagePath}
 							alt={name}
-							class="h-14 max-w-full object-contain"
+							class="{compact ? 'h-8' : 'h-14'} max-w-full object-contain"
 							class:dark:invert={invert}
 						/>
 					{:else}
