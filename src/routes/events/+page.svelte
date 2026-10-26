@@ -89,9 +89,11 @@
 	}
 	afterNavigate(() => { void revealHashTarget(); });
 
-	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + reconciled.unmatched.filter(event => event.category === category.id).length + (category.id === 'programs' ? PARTNER_PROGRAMS.length : 0)]));
+	// Undated partner cohorts stop being opportunities after their published deadline.
+	$: partnerPrograms = PARTNER_PROGRAMS.filter(program => !program.applicationDeadline || program.applicationDeadline >= localDate(now));
+	$: categoryCounts = new Map(TIMELINE_CATEGORIES.map(category => [category.id, data.events.filter(event => eventCategory(event) === category.id).length + reconciled.unmatched.filter(event => event.category === category.id).length + (category.id === 'programs' ? partnerPrograms.length : 0)]));
 	$: categories = TIMELINE_CATEGORIES.filter(category => categoryCounts.get(category.id)! > 0);
-	$: visibleCount = activeCategory === 'all' ? data.events.length + reconciled.unmatched.length + PARTNER_PROGRAMS.length : categoryCounts.get(activeCategory) ?? 0;
+	$: visibleCount = activeCategory === 'all' ? data.events.length + reconciled.unmatched.length + partnerPrograms.length : categoryCounts.get(activeCategory) ?? 0;
 	onMount(() => {
 		now = new Date();
 		window.addEventListener('hashchange', revealHashTarget);
@@ -129,8 +131,9 @@
 		return [...links.values()].sort((a, b) => Number(b.icon === 'fa-ticket') - Number(a.icon === 'fa-ticket'));
 	}
 
-	function eventRuns(events: CalendarEvent[], includePlanned: boolean): (EventRun & { planned?: boolean })[] {
+	function eventRuns(events: CalendarEvent[], includePlanned: boolean, upcoming: boolean): (EventRun & { planned?: boolean })[] {
 		if (!includePlanned) return groupEventRuns(events);
+		if (upcoming) return [...groupEventRuns(events), { collection: null, events: [], planned: true }];
 		const foodTruckIndex = events.findLastIndex(event => /bon me.*food truck/i.test(event.title));
 		const insertionIndex = foodTruckIndex + 1;
 		return [
@@ -141,7 +144,7 @@
 	}
 
 	$: sections = [
-		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: PARTNER_PROGRAMS, plannedEvents: planned.upcoming },
+		{ title: 'Upcoming', id: 'upcoming', events: grouped.upcoming, programs: programs.upcoming, undatedPrograms: partnerPrograms, plannedEvents: planned.upcoming },
 		...Array.from(new Set([...grouped.past, ...programs.past].map(eventYear).concat(planned.past.map(event => event.date!.slice(0, 4))))).sort().reverse().map(year => ({
 			title: `Past · ${year}`, id: `year-${year}`, events: grouped.past.filter(event => eventYear(event) === year),
 			programs: programs.past.filter(event => eventYear(event) === year), undatedPrograms: [], plannedEvents: planned.past.filter(event => event.date!.startsWith(year))
@@ -214,7 +217,7 @@
 				</svelte:element>
 				<div class="section-grid">
 					{#if activeCategory !== 'programs'}<div class="event-list" class:has-events={visibleEvents.length > 0 || section.hasPlannedEvents}>
-					{#each eventRuns(visibleEvents, section.hasPlannedEvents) as run}
+					{#each eventRuns(visibleEvents, section.hasPlannedEvents, section.id === 'upcoming') as run}
 					{#if run.planned}
 					<div class="event-run">
 						{#each section.plannedEvents as event}
@@ -248,6 +251,7 @@
 						{@const curated = plannedEvents.find(plan => matchesPlannedEvent(event, plan))}
 						{@const media = getEventMedia(event) ?? curated?.media}
 						{@const links = eventLinks(event, media?.sourceUrl)}
+						{@const partiful = links.find(link => link.label === 'View on Partiful')}
 						<article class="event-row">
 						<div class="event-meta">
 						{#if event.dateRanges?.length}
@@ -273,9 +277,14 @@
 									<p class="event-category" data-category={category.id}><i class="fa-solid {category.icon}" aria-hidden="true"></i> {category.label}</p>
 									<h3 class="font-heading text-xl font-[650]">{event.title}</h3>
 									{#if event.summary}<p class="event-intro">{event.summary}</p>{/if}
+									{#if partiful}<a href={partiful.href} target="_blank" rel="noopener noreferrer">View on Partiful <span aria-hidden="true">→</span></a>{/if}
 								</div>
 								{#if media}
+									{#if partiful}
+										<a class="event-thumbnail" class:photo={media.kind === 'photo'} href={partiful.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${event.title} on Partiful`}><img src={media.imageUrl} alt="" loading="lazy" /></a>
+									{:else}
 									<button class="event-thumbnail" class:photo={media.kind === 'photo'} type="button" aria-label={`View ${media.kind ?? 'artwork'} for ${event.title}`} aria-controls={`details-${encodeURIComponent(event.id)}`} on:click={(click) => openEventImage(click.currentTarget)}><img src={media.imageUrl} alt="" loading="lazy" /><span aria-hidden="true"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span></button>
+									{/if}
 								{/if}
 							</div>
 							{#if event.description || event.location || links.length || media}

@@ -1,6 +1,6 @@
 <section>
 	<p class="pt-4">
-		Every semester, MAIA and the AI Student Safety Team at Harvard (<a href="http://haist.ai"
+		Every semester, MAIA and the AI Safety Student Team at Harvard (<a href="https://aisst.ai"
 			>AISST</a
 		>) collaborate to run weekend retreats on AI safety. We gather students, professors, and
 		professionals working on AI safety to discuss and collaborate on the cutting edge of AI safety

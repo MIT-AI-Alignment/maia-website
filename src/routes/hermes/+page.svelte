@@ -11,12 +11,13 @@
 	const { deadlineDate, deadlineTime, deadlineAt, applicationLink } = CONFIG.hermes;
 	const deadline = `${deadlineDate}, ${deadlineTime}`;
 
-	// The site is prerendered, so whether applications have closed is checked in the visitor's
-	// browser. Until then (and without JavaScript) the page shows them as open.
-	let closed = false;
-
+	// Include the deadline status in prerendered HTML and refresh it during long visits.
+	let closed = Date.now() >= new Date(deadlineAt).getTime();
 	onMount(() => {
-		closed = Date.now() >= new Date(deadlineAt).getTime();
+		const update = () => closed = Date.now() >= new Date(deadlineAt).getTime();
+		update();
+		const timer = setInterval(update, 60000);
+		return () => clearInterval(timer);
 	});
 
 	$: applicationLabel = closed ? 'Application form' : 'Apply';
@@ -98,7 +99,7 @@
 
 <PageLayout
 	title={HERMES.name}
-	description={`${HERMES.intro.program} Application deadline extended to ${deadline}.`}
+	description={`${HERMES.intro.program} ${closed ? 'Applications are closed.' : `Application deadline: ${deadline}.`}`}
 	pageClass="hermes-page"
 >
 	<header class="hero">
@@ -111,7 +112,7 @@
 		</p>
 		<p class="program">{HERMES.intro.program}</p>
 		<div class="cta">
-			{#if applicationLink}
+			{#if applicationLink && !closed}
 				<a
 					class="apply-button"
 					href={applicationLink}
@@ -277,7 +278,7 @@
 		</ol>
 	</section>
 
-	<!-- Keep the form reachable after the deadline while retaining the closed notice. -->
+	<!-- Show the application link only while applications are open. -->
 	<div id="apply" class="closing">
 		<div class="closing-apply">
 			{#if closed}
@@ -285,7 +286,7 @@
 			{:else}
 				<p class="closing-deadline">Extended deadline: {deadline}.</p>
 			{/if}
-			{#if applicationLink}
+			{#if applicationLink && !closed}
 				<a
 					class="apply-button apply-button-large"
 					href={applicationLink}
