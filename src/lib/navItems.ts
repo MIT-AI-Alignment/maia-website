@@ -19,8 +19,8 @@ export const NAVIGATION_ITEMS = [
 		href: '/initiatives',
 		icon: 'fas fa-flask',
 		dropdownItems: [
-			{ href: '/initiatives#research', label: 'Research by MAIA Members' },
-			{ href: '/initiatives#orgs', label: 'Organizations MAIA Works With' }
+			{ href: '/initiatives/#research', label: 'Research by MAIA Members' },
+			{ href: '/initiatives/#orgs', label: 'Organizations MAIA Works With' }
 		]
 	},
 	{

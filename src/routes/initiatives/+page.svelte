@@ -17,25 +17,18 @@
 	};
 
 	const sections: Section[] = [
-		
-		{
-			id: 'orgs',
-			title: 'Organizations MAIA Works With',
-			icon: 'fa-solid fa-book-open',
-			component: Orgs
-		},
 		{
 			id: 'research',
 			title: 'Research by MAIA Members',
-			icon: 'fa-solid fa-book-open',
+			icon: 'fa-solid fa-file-lines',
 			component: ResearchShowcase
 		},
-		// {
-		// 	id: 'current',
-		// 	title: 'Projects',
-		// 	icon: 'fa-solid fa-rocket',
-		// 	component: CongressionalExhibition
-		// },
+		{
+			id: 'orgs',
+			title: 'Organizations MAIA Works With',
+			icon: 'fa-solid fa-building',
+			component: Orgs
+		}
 	];
 	
 	function scrollToSection(id: string) {
@@ -74,7 +67,9 @@
 			title={section.title}
 			icon={section.icon}
 		>
-			{#if section.component}
+			{#if section.id === 'orgs'}
+				<Orgs compact />
+			{:else if section.component}
 				<svelte:component this={section.component} />
 			{:else}
 				<UpdateNotification message="🌹 To be updated Spring 2025! 🌹" />

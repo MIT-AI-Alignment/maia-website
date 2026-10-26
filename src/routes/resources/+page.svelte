@@ -10,6 +10,12 @@
 	];
 
 	const startHere = [
+		{
+			title: 'AI Safety & Existential Risk Cheatsheet',
+			by: 'David Veksler',
+			blurb: 'A quick-reference overview and glossary of AI safety and existential risk concepts.',
+			link: 'https://cheatsheets.davidveksler.com/ai-safety-existential-risk.html'
+		},
 		{ title: 'AI Safety Fundamentals at MAIA', by: 'MIT AI Alignment', blurb: 'Start with our eight-week reading and discussion program. No prior AI safety background required.', link: '/getinvolved/#aisf' },
 		{
 			title: 'AI Safety: a non-technical introduction',
