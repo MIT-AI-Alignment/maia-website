@@ -63,3 +63,7 @@ Deploy when requested or already authorized in the current session. Use the sign
 4. Verify the changed **public URLs**, including image files, against the build. Use cache-busting URLs or hashes when needed. Only then report “deployed.” If login or upload is blocked, distinguish saved source, local preview, and live deployment clearly.
 
 Keep these instructions brief and update them when the workflow changes; semester-specific facts belong in the content files above.
+
+## AISF reading sources
+
+For Fall 2026 and future AISF weeks, publish only **Recent Developments in AI** in the built-in reader. All other readings must link directly to their original sources; do not publish curated, condensed, rewritten, or transcribed copies on the website. Keep the weekly overview, source links, additional-reading lists, and existing packet links. Week 0 already links to original resources; do not alter archived Summer curricula as part of Fall changes.
