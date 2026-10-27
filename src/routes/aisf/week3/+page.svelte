@@ -15,11 +15,11 @@
 	function route() {
 		additionalActive = window.location.hash === '#additional-readings';
 		const match = window.location.hash.match(/^#reading-(\d+)$/);
-		selected = match && articles[Number(match[1])] ? Number(match[1]) : -1;
+		selected = match && articles[Number(match[1])]?.kind === 'recent-developments' ? Number(match[1]) : -1;
 	}
 	function navigate(index: number) {
 		additionalActive = false;
-		selected = index;
+		selected = index >= 0 && articles[index]?.kind === 'recent-developments' ? index : -1;
 		window.history.pushState({}, '', index < 0 ? '#overview' : `#reading-${index}`);
 		window.scrollTo(0, 0);
 	}
@@ -58,15 +58,19 @@
 	});
 </script>
 
-<PageLayout allowStickyContent={true} title="AISF Fall 2026: Week 3" description="Alignment via Written Principles: readings from the Fall 2026 AISF reading packet, with original sources and an integrated reader." heroTitle={article ? article.title : 'Alignment via Written Principles'}>
-	<svelte:fragment slot="hero-content"><p class="packet-meta"><span>Fall 2026</span><span>Week 3</span>{#if article}<span>Reading {selected + 1} of {articles.length}</span>{/if}</p></svelte:fragment>
+<PageLayout allowStickyContent={true} title="AISF Fall 2026: Week 3" description="Week 3 of AISF Fall 2026: original readings and recent developments in AI." heroTitle={article ? article.title : 'Alignment via Written Principles'}>
+	<svelte:fragment slot="hero-content"><p class="packet-meta"><span>Fall 2026</span><span>Week 3</span>{#if article}<span>Recent developments</span>{/if}</p></svelte:fragment>
 	<a class="back-link" href="/aisf/">← All weeks</a>
 	<div class="packet-layout">
 		<aside aria-label="Week 3 readings">
 			<nav>
 				<a href="#overview" class:active={selected < 0 && !additionalActive} on:click|preventDefault={() => navigate(-1)}>Overview</a>
 				{#each articles as item, index}
-					<a href={`#reading-${index}`} class:active={index === selected} on:click|preventDefault={() => navigate(index)}>{item.title}</a>
+					{#if item.kind === 'recent-developments'}
+						<a href={`#reading-${index}`} class:active={index === selected} on:click|preventDefault={() => navigate(index)}>{item.title}</a>
+					{:else}
+						<a href={item.sources[0].url} target="_blank" rel="noopener">{item.title}</a>
+					{/if}
 				{/each}
 				{#if extraReadings.length}<a href="#additional-readings" class:active={additionalActive} on:click|preventDefault={showAdditional}>Additional readings</a>{/if}
 			</nav>
@@ -83,17 +87,17 @@
 					<div class="links">{#each article.sources as source}<a href={source.url} target="_blank" rel="noopener">{source.title}</a>{/each}</div>
 				</div>
 				{#key selected}<div class="article-body" use:figures={article.html}>{@html article.html}</div>{/key}
-				<div class="reading-end"><button on:click={() => navigate(selected === articles.length - 1 ? -1 : selected + 1)}>{selected === articles.length - 1 ? 'Back to Week 3 readings' : `Next: ${articles[selected + 1].title} →`}</button></div>
+				<div class="reading-end"><button on:click={() => navigate(-1)}>Back to Week 3 readings</button></div>
 			{:else}
 				<p class="overview">{week.description}</p>
 				{#each groups as group}
 					<h2>{group.name}</h2>
 					{#each group.items as item}
 						<div class="reading-row" id={`reading-${item.article}`}>
-							<h3><a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>{item.title}</a></h3>
+							<h3>{#if articles[item.article].kind === 'recent-developments'}<a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>{item.title}</a>{:else}<a href={item.sources[0].url} target="_blank" rel="noopener">{item.title}</a>{/if}</h3>
 							{#if item.meta}<p class="reading-meta packet-meta">{#each item.meta.split(' · ') as part}<span>{part}</span>{/each}</p>{/if}
 							{#if item.note}<p class="reading-meta">{item.note}</p>{/if}
-							<div class="links"><a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>Read here</a>{#each item.sources as source}<a href={source.url} target="_blank" rel="noopener">{source.title}</a>{/each}</div>
+							<div class="links">{#if articles[item.article].kind === 'recent-developments'}<a href={`#reading-${item.article}`} on:click|preventDefault={() => navigate(item.article)}>Read here</a>{/if}{#each item.sources as source}<a href={source.url} target="_blank" rel="noopener">{source.title}</a>{/each}</div>
 						</div>
 					{/each}
 				{/each}
@@ -134,7 +138,7 @@
 	.article-header { padding-bottom:1.5rem; border-bottom:1px solid var(--maia-border); margin-bottom:2rem; }
 	.article-body { font:400 17px/1.8 'Manrope',sans-serif; overflow-wrap:anywhere; }
 	.article-body :global(p) { margin-bottom:1.25rem; }
-	.article-body :global(.source-line) { font-size:.875rem; line-height:1.7; margin:1rem 0 1.5rem; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); }
+	.article-body :global(.source-line), .article-body :global(.figure-caption), .article-body :global(.article-attribution) { font-size:.875rem; line-height:1.7; margin:1rem 0 1.5rem; color:color-mix(in srgb, var(--maia-ink) 80%, var(--maia-canvas)); }
 	.article-body :global(h2), .article-body :global(h3) { font-family:inherit; font-weight:500; line-height:1.5; scroll-margin-top:6rem; }
 	.article-body :global(h2) { font-size:1.55rem; margin:2.5rem 0 1.25rem; }
 	.article-body :global(h3) { font-size:1.25rem; margin:2rem 0 1rem; }
