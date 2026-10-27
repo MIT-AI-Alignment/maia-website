@@ -410,6 +410,7 @@ export const PEOPLE: Record<string, Person> = {
 		position: '',
 		imageUrl: '/images/people/angela-ho-fall-2026.jpg',
 		mitEmail: 'angela_h@mit.edu',
+		linkedin: 'https://www.linkedin.com/in/angela-ho-4289992b2',
 		isExec: false,
 		isOrg: true,
 		isActive: true,
