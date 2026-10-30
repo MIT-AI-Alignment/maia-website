@@ -1,0 +1,6 @@
+# Temporary mitigation while recursive resolvers cache the former Squarespace DNS.
+# Install only after backing up and comparing the live Athena .htaccess.mit.
+# This is a stable production alias, not a deployment-specific preview URL.
+# Preserve paths and queries; avoid another permanent redirect during recovery.
+RedirectMatch 302 ^/(?:~aialignment|aialignment/www)(?:/(.*))?$ https://maia-website-ten.vercel.app/$1
+RedirectMatch 302 ^/(.*)$ https://maia-website-ten.vercel.app/$1
