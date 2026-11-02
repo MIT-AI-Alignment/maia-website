@@ -189,7 +189,32 @@
       "url": "https://arxiv.org/pdf/2506.18032"
     }
   ],
-  "5": [],
+  "5": [
+    {
+      "title": "AI as Normal Technology",
+      "url": "https://www.normaltech.ai/p/ai-as-normal-technology"
+    },
+    {
+      "title": "Forecasting LLM-enabled Biorisk and the Efficacy of Safeguards",
+      "url": "https://forecastingresearch.org/research/llm-enabled-biorisk"
+    },
+    {
+      "title": "The Adolescence of Technology",
+      "url": "https://darioamodei.com/essay/the-adolescence-of-technology"
+    },
+    {
+      "title": "International AI Safety Report 2026",
+      "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026"
+    },
+    {
+      "title": "Gradual disempowerment",
+      "url": "https://80000hours.org/problem-profiles/gradual-disempowerment/"
+    },
+    {
+      "title": "AI-enabled coups",
+      "url": "https://www.forethought.org/research/ai-enabled-coups-how-a-small-group-could-use-ai-to-seize-power"
+    }
+  ],
   "6": [],
   "7": [],
   "8": []

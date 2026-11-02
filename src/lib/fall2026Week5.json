@@ -1,0 +1,188 @@
+{
+  "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4",
+  "weeks": [
+    {
+      "week": 5,
+      "title": "The Path to an AGI World",
+      "description": "This week, we explore what the path to superintelligent AI systems could look like and what kind of world could lie on the other side. We begin with two foundational arguments: the orthogonality thesis and instrumental convergence. Together, they suggest that highly capable AIs need not share our goals, and that almost any goal gives it reasons to seek out resources and resist being shut down. Next, we examine the idea of an intelligence explosion, where AI R&D feedback loops at multiple layers (algorithms and data, chip quality, and chip manufacturing capacity) compound and drive progress extremely quickly. We then consider contrasting pictures of where this could lead. In “Machines of Loving Grace,” Dario Amodei sketches the upside: a world where AI compresses decades of progress in biology, medicine, and economic development, curing diseases and lifting billions out of poverty. We also discuss the possibility of gradual disempowerment where humans lose control not through sudden AI outmaneuvering or takeover but as human institutions gradually come to rely on AIs for economic labor, decision making, and even social needs. Finally, we consider how advanced AIs could lead to concentration of power in the hands of a few actors, amplifying inequality to an unprecedented degree.",
+      "groups": [
+        {
+          "name": "Week 5 readings",
+          "items": [
+            {
+              "title": "Recent Developments in AI",
+              "article": 0,
+              "sources": [],
+              "meta": "Compiled by MAIA",
+              "note": ""
+            },
+            {
+              "title": "Orthogonality Thesis & Instrumental Convergence",
+              "article": 1,
+              "sources": [
+                {
+                  "title": "Orthogonality thesis",
+                  "url": "https://aisafety.info/questions/6568/What-is-the-orthogonality-thesis"
+                },
+                {
+                  "title": "Instrumental convergence",
+                  "url": "https://aisafety.info/questions/897I/What-is-instrumental-convergence"
+                }
+              ],
+              "meta": "AISafety.info",
+              "note": ""
+            },
+            {
+              "title": "Three Types of Intelligence Explosion",
+              "article": 2,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://www.forethought.org/research/three-types-of-intelligence-explosion"
+                }
+              ],
+              "meta": "Tom Davidson, Rose Hadshar and William MacAskill, Forethought, March 2025",
+              "note": ""
+            },
+            {
+              "title": "Machines of Loving Grace",
+              "article": 3,
+              "sources": [
+                {
+                  "title": "Original essay",
+                  "url": "https://darioamodei.com/essay/machines-of-loving-grace"
+                }
+              ],
+              "meta": "Dario Amodei, October 2024",
+              "note": ""
+            },
+            {
+              "title": "Gradual Disempowerment",
+              "article": 4,
+              "sources": [
+                {
+                  "title": "Original paper",
+                  "url": "https://proceedings.mlr.press/v267/kulveit25a.html"
+                }
+              ],
+              "meta": "Jan Kulveit, Raymond Douglas, Nora Ammann, Deger Turan, David Krueger and David Duvenaud. ICML 2025",
+              "note": ""
+            },
+            {
+              "title": "Extreme power concentration",
+              "article": 5,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://80000hours.org/problem-profiles/extreme-power-concentration/"
+                }
+              ],
+              "meta": "Rose Hadshar, 80,000 Hours",
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Recent Developments in AI",
+      "kind": "recent-developments",
+      "html": "<h2 id=\"section-0\">Critical PHP bugs trigger emergency patches</h2><p>On October 21, PHP released emergency patches for two bugs that could let an attacker run code on a web server without logging in. Wikimedia took Toolforge and Cloud VPS offline while it patched them.</p><p>Developers had found the underlying memory-handling problem in 2024. Researchers at Calif, OpenAI and Wiz later used AI models to show how it could be exploited.</p><p>PHP moved the release from October 22 to October 21 after CVE IDs leaked and Calif accidentally published an exploit demo. Chainguard also released patched container images more than six hours before the embargo lifted. The NSA and FBI urged operators to patch immediately or take affected systems offline. AWS later found an attempted exploit in its honeypot logs from October 17, before disclosure; it could not establish whether the attempt would have worked against a real server.</p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week5/dependency.png\" alt=\"“Dependency” by Randall Munroe, xkcd\" style=\"max-width:280px;width:100%\"></p><p class=\"figure-caption\"><em>“Dependency”, Randall Munroe / xkcd (CC BY-NC 2.5).</em><em></em></p><p class=\"source-line\">Sources: <a href=\"https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\" target=\"_blank\" rel=\"noopener\">PHP Foundation</a>, <a href=\"https://diff.wikimedia.org/2026/10/21/impact-of-php-vulnerabilities-on-wikimedia-tools-and-services/\" target=\"_blank\" rel=\"noopener\">Wikimedia</a>, <a href=\"https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/\" target=\"_blank\" rel=\"noopener\">OpenAI</a>, <a href=\"https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619\" target=\"_blank\" rel=\"noopener\">Google / Wiz</a>, <a href=\"https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/\" target=\"_blank\" rel=\"noopener\">AWS</a>, <a href=\"https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4630238/nsa-advisory-critical-patches-recommended-for-php-vulnerabilities/\" target=\"_blank\" rel=\"noopener\">NSA</a>, <a href=\"https://www.ic3.gov/PSA/2026/PSA261023\" target=\"_blank\" rel=\"noopener\">FBI</a></p><h2 id=\"section-1\">OpenAI hands AI-generated proofs to researchers</h2><p>On October 26, OpenAI announced AI-generated results on wave behavior, the Exponential Time Hypothesis (ETH), and quantum field theory. It reports Lean formalizations for the mathematics and computer science results. These major claims have yet to be examined by domain experts.</p><p>The ETH concerns how quickly certain satisfiability problems can be solved. OpenAI’s released formalization describes a subexponential-time algorithm, which surprised many in the field. Refuting it does not settle P versus NP or immediately give any practical algorithms.</p><p>The release tries three ways of bringing researchers in. OpenAI published the mathematics output for anyone to examine. For computer science, it released the proofs while a group led by Russell Impagliazzo, Ramamohan Paturi and MIT’s Ryan Williams works to understand and explain them. The physics group will decide when to release its materials. </p><p>Even with Lean checks, researchers still need to examine what has been proved; OpenAI says the groups behind this effort are independent and participation is unpaid. </p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week5/eth-manuscript.png\" alt=\"Excerpt from OpenAI’s released ETH manuscript\"></p><p class=\"figure-caption\"><em>Excerpt from OpenAI’s released ETH manuscript, revised October 25.</em></p><p class=\"source-line\">Sources: <a href=\"https://openai.com/index/building-scientific-understanding-with-academic-communities/\" target=\"_blank\" rel=\"noopener\">OpenAI’s announcement</a>, <a href=\"https://github.com/openai/math/blob/main/lean/docs/378.md\" target=\"_blank\" rel=\"noopener\">ETH formalization</a>, <a href=\"https://github.com/openai/math\" target=\"_blank\" rel=\"noopener\">Research repository</a></p>",
+      "toc": [
+        {
+          "title": "Critical PHP bugs trigger emergency patches",
+          "id": "section-0"
+        },
+        {
+          "title": "OpenAI hands AI-generated proofs to researchers",
+          "id": "section-1"
+        }
+      ],
+      "byline": "Compiled by MAIA",
+      "note": "",
+      "sources": [],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Orthogonality Thesis & Instrumental Convergence",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "AISafety.info",
+      "note": "",
+      "sources": [
+        {
+          "title": "Orthogonality thesis",
+          "url": "https://aisafety.info/questions/6568/What-is-the-orthogonality-thesis"
+        },
+        {
+          "title": "Instrumental convergence",
+          "url": "https://aisafety.info/questions/897I/What-is-instrumental-convergence"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Three Types of Intelligence Explosion",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Tom Davidson, Rose Hadshar and William MacAskill, Forethought, March 2025",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://www.forethought.org/research/three-types-of-intelligence-explosion"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Machines of Loving Grace",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Dario Amodei, October 2024",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original essay",
+          "url": "https://darioamodei.com/essay/machines-of-loving-grace"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Gradual Disempowerment",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Jan Kulveit, Raymond Douglas, Nora Ammann, Deger Turan, David Krueger and David Duvenaud. ICML 2025",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original paper",
+          "url": "https://proceedings.mlr.press/v267/kulveit25a.html"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Extreme power concentration",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Rose Hadshar, 80,000 Hours",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://80000hours.org/problem-profiles/extreme-power-concentration/"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1ERvO59--r2yyRl1chTBMuY_Ya9ERDvcu72R59N8lzyo/edit?tab=t.r68g9l54awj4"
+    }
+  ]
+}

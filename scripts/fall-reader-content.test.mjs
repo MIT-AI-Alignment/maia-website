@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const files = ['fall2026Curriculum.json', 'fall2026Week2.json', 'fall2026Week3.json', 'fall2026Week4.json'];
+const files = ['fall2026Curriculum.json', 'fall2026Week2.json', 'fall2026Week3.json', 'fall2026Week4.json', 'fall2026Week5.json'];
 const plain = html => html.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 for (const file of files) {
  const { articles } = JSON.parse(readFileSync(resolve('src/lib', file), 'utf8'));
