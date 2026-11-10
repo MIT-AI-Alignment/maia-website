@@ -215,7 +215,32 @@
       "url": "https://www.forethought.org/research/ai-enabled-coups-how-a-small-group-could-use-ai-to-seize-power"
     }
   ],
-  "6": [],
+  "6": [
+    {
+      "title": "Natural Language Autoencoders",
+      "url": "https://www.anthropic.com/research/natural-language-autoencoders"
+    },
+    {
+      "title": "Interpretability Will Not Reliably Find Deceptive AI",
+      "url": "https://www.lesswrong.com/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai"
+    },
+    {
+      "title": "Simple Probes Can Catch Sleeper Agents",
+      "url": "https://www.anthropic.com/research/probes-catch-sleeper-agents"
+    },
+    {
+      "title": "Mechanistic Interpretability for AI Safety — A Review",
+      "url": "https://leonardbereska.github.io/blog/2024/mechinterpreview/"
+    },
+    {
+      "title": "A Comprehensive Mechanistic Interpretability Explainer & Glossary",
+      "url": "https://www.neelnanda.io/mechanistic-interpretability/glossary"
+    },
+    {
+      "title": "Auditing alignment",
+      "url": "https://www.anthropic.com/research/auditing-hidden-objectives"
+    }
+  ],
   "7": [],
   "8": []
 }

@@ -5,7 +5,7 @@
 
 <PageLayout
 	title="AISF Fall 2026 Curriculum"
-	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0–5 are available with original reading links and the Fall reading packet. Weeks 6–8 are coming soon."
+	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0–6 are available with original reading links and the Fall reading packet. Weeks 7–8 are coming soon."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
@@ -56,6 +56,13 @@
 					<a href="/aisf/week5/" class="week-card available-card">
 						<h2 class="font-heading">Week 5</h2>
 						<span class="availability">The Path to an AGI World <span aria-hidden="true">→</span></span>
+					</a>
+				</li>
+			{:else if week === 6}
+				<li>
+					<a href="/aisf/week6/" class="week-card available-card">
+						<h2 class="font-heading">Week 6</h2>
+						<span class="availability">Interpretability <span aria-hidden="true">→</span></span>
 					</a>
 				</li>
 			{:else}
