@@ -1,0 +1,153 @@
+{
+  "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4",
+  "weeks": [
+    {
+      "week": 6,
+      "title": "Interpretability",
+      "description": "This week, we will explore interpretability, the subfield of machine learning that searches for explanations of models grounded in their weights and activations, rather than their inputs and outputs. We begin with an essay that argues that interpretability is important for AI safety, reliability, and robustness. Next, we will read three research blog posts by the Anthropic interpretability team. The first is about finding “features” in model neurons that correspond to interpretable concepts. The second is about attribution graphs, which help explain how AI models arrive at their answers. The third is about the J-space, which is a technique for understanding what an AI model is “thinking about”. The main goal for this week is to understand what interpretability is, why it is important, and what our best methods and results have been so far.",
+      "groups": [
+        {
+          "name": "Week 6 readings",
+          "items": [
+            {
+              "title": "Recent Developments in AI",
+              "article": 0,
+              "sources": [],
+              "meta": "Compiled by MAIA",
+              "note": ""
+            },
+            {
+              "title": "The Urgency of Interpretability",
+              "article": 1,
+              "sources": [
+                {
+                  "title": "Original essay",
+                  "url": "https://darioamodei.com/post/the-urgency-of-interpretability"
+                }
+              ],
+              "meta": "Dario Amodei, April 2025",
+              "note": ""
+            },
+            {
+              "title": "Mapping the Mind of a Large Language Model",
+              "article": 2,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://www.anthropic.com/research/mapping-mind-language-model"
+                }
+              ],
+              "meta": "Anthropic Interpretability team, May 2024",
+              "note": ""
+            },
+            {
+              "title": "Tracing the Thoughts of a Large Language Model",
+              "article": 3,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
+                }
+              ],
+              "meta": "Anthropic Interpretability team, March 2025",
+              "note": ""
+            },
+            {
+              "title": "A Global Workspace in Language Models",
+              "article": 4,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://www.anthropic.com/research/global-workspace"
+                }
+              ],
+              "meta": "Anthropic Interpretability team, July 2026",
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Recent Developments in AI",
+      "kind": "recent-developments",
+      "html": "<h2 id=\"section-0\">Democrats win big in 2026 midterms</h2><p>The 2026 midterms resulted in a resounding victory for Democrats, who won back control over both chambers of congress. Their victory came in historic proportions, with Democrats winning senate races in Kansas (first since 1932), Texas (first since 1988) and South Carolina (first since 1998), with a race in Mississippi (last won by a Democrat in 1982) too close to call. The overall popular vote shifted 15 points towards Democrats from 2024, and was the best result that the Democratic party has achieved since Watergate in 1974.</p><p>Although AI was not a top issue for voters, it played an important role in the outcome. According to an NBC exit poll, 56% of voters said that AI and data centers were a “crucial or major factor” in their vote. Several pro-regulation candidates were victorious, such as Jon Ossoff (D-GA), Sherrod Brown (D-OH), Annie Andrews (D-SC), and James Talarico (D-TX), while their pro-innovation opponents, such as Darline Graham (R-SC), Mike Rogers (R-TX), and Jon Husted (R-OH), lost despite strong AI-industry backing. Additionally, voters in over 30 communities across nine states approved moratoriums, bans, and other restrictions on data centers. Although it is unclear how much of the results were attributable to AI, it appears that opposing AI and data centers was a winning message in 2026.</p><p>With their large margins of victory, Democrats will have a higher chance of passing AI regulation in the new congress. Policies such as data center moratoriums, strict liability, and mandatory safety testing seem within reach. However, regulation is far from certain, as Democrats remain divided on the best approach, and a presidential veto still looms.</p><p class=\"source-line\">Sources: <a href=\"https://time.com/article/2026/11/04/midterm-elections-results-ai-industry-data-centers/\" target=\"_blank\" rel=\"noopener\">Time</a>, <a href=\"https://www.semafor.com/article/11/04/2026/us-voters-roundly-reject-data-centers-in-ballot-measures\" target=\"_blank\" rel=\"noopener\">Semafor</a>, <a href=\"https://www.nytimes.com/live/2026/11/04/us/midterm-election-results-democrats\" target=\"_blank\" rel=\"noopener\">New York Times</a>, <a href=\"https://www.transformernews.ai/p/midterms-democrats-blue-tsunami-ai-policy-legislation\" target=\"_blank\" rel=\"noopener\">Transformer</a>, <a href=\"https://www.axios.com/2026/10/29/democrats-ai-ads-house-races\" target=\"_blank\" rel=\"noopener\">Axios</a>, <a href=\"https://www.nbcnews.com/politics/2026-elections/senate-results#results\" target=\"_blank\" rel=\"noopener\">NBC</a></p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week6/midterms-1.png\" alt=\"Figure from the Week 6 reading packet: Democrats win big in 2026 midterms\"></p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week6/midterms-2.png\" alt=\"Figure from the Week 6 reading packet: Democrats win big in 2026 midterms\"></p><h2 id=\"section-1\">Anthropic files its S-1 ahead of planned IPO</h2><p>On October 26, Anthropic publicly filed its S-1 ahead of its planned IPO. Anthropic reportedly plans to debut on Nasdaq under the ticker “ANT” on the week of November 16, 2026. The filing reports $16.3 billion in revenue for the first half of 2026 against an operating loss of about $693 million. In a subsequent November 2 amendment, Anthropic indicated that it may soon meet its Responsible Scaling Policy definition of “dramatically accelerated progress attributable to AI” and would publish further reports.</p><p>The risk factors section of the filing is close to 100 pages. It groups risks into four categories: misuse, such as bioweapons or cyberattacks; loss of human control; abuse by authoritarian governments; and economic disruption. It states that advanced AI could “pose catastrophic or existential risks to humanity.”</p><p>Anthropic’s filing mentions that it will uphold safety considerations even if this comes at the cost of shareholders. As a public benefit corporation (PBC), Anthropic’s board has a duty to its stated mission which may result in deliberately slowing down R&amp;D, delaying releases, or giving up various commercial opportunities. The filing reveals that the company recently paused the training run of a next-generation model for over a month due to safety considerations.</p><p class=\"source-line\">Sources: <a href=\"https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm\" target=\"_blank\" rel=\"noopener\">SEC filing</a>, <a href=\"https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo\" target=\"_blank\" rel=\"noopener\">CNN</a>, <a href=\"https://fortune.com/2026/10/26/anthropic-s1-risk-factors-existential-risk-pentagon-dario-amodei/\" target=\"_blank\" rel=\"noopener\">Fortune</a>, <a href=\"https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html\" target=\"_blank\" rel=\"noopener\">CNBC</a></p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week6/anthropic-ipo.png\" alt=\"Figure from the Week 6 reading packet: Anthropic files its S-1 ahead of planned IPO\"></p>",
+      "toc": [
+        {
+          "title": "Democrats win big in 2026 midterms",
+          "id": "section-0"
+        },
+        {
+          "title": "Anthropic files its S-1 ahead of planned IPO",
+          "id": "section-1"
+        }
+      ],
+      "byline": "Compiled by MAIA",
+      "note": "",
+      "sources": [],
+      "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "The Urgency of Interpretability",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Dario Amodei, April 2025",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original essay",
+          "url": "https://darioamodei.com/post/the-urgency-of-interpretability"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Mapping the Mind of a Large Language Model",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Anthropic Interpretability team, May 2024",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://www.anthropic.com/research/mapping-mind-language-model"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Tracing the Thoughts of a Large Language Model",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Anthropic Interpretability team, March 2025",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "A Global Workspace in Language Models",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Anthropic Interpretability team, July 2026",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://www.anthropic.com/research/global-workspace"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1Km4PH6wGlJK8ZizybRQCgniCTIx5MpH49tJfVIqcMss/edit?tab=t.r68g9l54awj4"
+    }
+  ]
+}
