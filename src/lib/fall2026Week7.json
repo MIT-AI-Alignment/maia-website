@@ -1,0 +1,188 @@
+{
+  "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4",
+  "weeks": [
+    {
+      "week": 7,
+      "title": "Control & Scalable Oversight",
+      "description": "This week focuses on how to supervise models that are much smarter than their overseers. We begin with an introduction to scalable oversight, which studies how weaker overseers can reliably evaluate the work of stronger models. Next, we look at how training against a chain-of-thought monitor can improve behavior at first but eventually teaches the model to hide its reasoning, and read the case for why chain of thought monitoring may be crucial for safety. Finally, we turn to the AI control agenda, which seeks to prevent harm in worst-case worlds where AIs turn out to be scheming.",
+      "groups": [
+        {
+          "name": "Week 7 readings",
+          "items": [
+            {
+              "title": "Recent Developments in AI",
+              "article": 0,
+              "sources": [],
+              "meta": "Compiled by MAIA",
+              "note": ""
+            },
+            {
+              "title": "Can we scale human feedback for complex AI tasks? An intro to scalable oversight.",
+              "article": 1,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://blog.bluedot.org/p/scalable-oversight-intro"
+                }
+              ],
+              "meta": "BlueDot Impact, March 2024.",
+              "note": ""
+            },
+            {
+              "title": "Detecting misbehavior in frontier reasoning models",
+              "article": 2,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://openai.com/index/chain-of-thought-monitoring/"
+                },
+                {
+                  "title": "Research paper",
+                  "url": "https://arxiv.org/html/2503.11926v1"
+                }
+              ],
+              "meta": "OpenAI, March 2025.",
+              "note": ""
+            },
+            {
+              "title": "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety",
+              "article": 3,
+              "sources": [
+                {
+                  "title": "Original paper",
+                  "url": "https://arxiv.org/abs/2507.11473"
+                }
+              ],
+              "meta": "UK AI Security Institute and Apollo Research, December 2025.",
+              "note": ""
+            },
+            {
+              "title": "The case for ensuring that powerful AIs are controlled",
+              "article": 4,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://blog.redwoodresearch.org/p/the-case-for-ensuring-that-powerful"
+                }
+              ],
+              "meta": "Redwood Research, January 2024.",
+              "note": ""
+            },
+            {
+              "title": "AI Control: Improving Safety Despite Intentional Subversion",
+              "article": 5,
+              "sources": [
+                {
+                  "title": "Original paper",
+                  "url": "https://arxiv.org/abs/2312.06942"
+                }
+              ],
+              "meta": "Redwood Research, December 2023.",
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Recent Developments in AI",
+      "kind": "recent-developments",
+      "html": "<h2 id=\"section-0\">METR finds Anthropic’s benchmark progress nearly doubled</h2><p>On November 5, METR published an independent assessment of how quickly Anthropic’s models are improving. The report analyzes Anthropic’s version of the Epoch Capabilities Index, which combines scores across benchmarks and includes several unreleased models. The slope rose from about 15 to 29 points per year around October 2025, a 1.9× increase (95% CI 1.5–2.8×). On that index, Anthropic’s models improved as much in the past year as in the two years before it.</p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week7/metr-acceleration.png\" alt=\"METR’s plot of Anthropic model benchmark scores over time, with fitted trends before and after October 2025\"></p><p class=\"figure-caption\"><em>Anthropic model snapshots plotted by when employees could use them. Chart from METR.</em></p><p>METR’s rough estimate was that AI use accounted for about 80% of the increase in pace as of October 2026. That was a judgment informed by staff interviews and internal data. Training compute was still growing at roughly its previous rate. Researchers described using Claude to turn ideas into experiments faster, although major autonomous contributions to core training remain limited.</p><p>Anthropic gave METR access to internal data but reserved the right to redact non-public information. METR says Anthropic redacted most of the evidence it found most informative.</p><p class=\"source-line\"><a href=\"https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/\" target=\"_blank\" rel=\"noopener\">METR assessment, November 5, 2026</a></p><h2 id=\"section-1\">Nvidia’s security inquiry and U.S.–China chip policy</h2><p>Nvidia designs most of the chips used to train frontier AI models. According to the New York Times and the Financial Times, U.S. intelligence agencies assessed that China’s Ministry of State Security recruited an executive at Megaspeed, a Singapore-based cloud company already under investigation for suspected chip diversion to China, to gather information on CEO Jensen Huang. On November 8, Huang told staff he had been unfaithful to his wife, and Nvidia’s board opened an independent investigation. The board said it had no reason to believe company secrets or U.S. national security had been compromised. China’s Foreign Ministry denied the allegation.</p><p><img loading=\"lazy\" src=\"/images/aisf/fall-2026/week7/nvidia-shares.png\" alt=\"Nvidia’s security inquiry and U.S.–China chip policy\"></p><p class=\"figure-caption\"><em>Nvidia share price over the five trading days to November 9. Redrawn by MAIA from Google Finance.</em></p><p>Three House committee chairs have asked Huang to attend a closed-door briefing on November 18. The letter is a request and not a subpoena. Nvidia’s shares closed 4.27% lower on November 9 while other chip stocks rose. The inquiry matters for AI policy because Huang has been the leading advocate for selling more advanced chips to China, arguing that it keeps U.S. technology the global standard. Lawmakers now want to know whether he was compromised while making that case. No public evidence shows that he was.</p><p class=\"source-line\"><a href=\"https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\" target=\"_blank\" rel=\"noopener\">Nvidia board statement</a>, <a href=\"https://chinaselectcommittee.house.gov/media/press-releases/moolenaar-mast-and-crawford-seek-briefing-from-jensen-huang-on-ties-to-chinese-intelligence-asset\" target=\"_blank\" rel=\"noopener\">House briefing request</a>, <a href=\"https://apnews.com/article/df45d21030691f59c67bc0b35adb89a2\" target=\"_blank\" rel=\"noopener\">Associated Press</a>, <a href=\"https://www.bis.gov/press-release/department-commerce-revises-license-review-policy-semiconductors-exported-china\" target=\"_blank\" rel=\"noopener\">Commerce Department</a>, <a href=\"https://transcripts.cnn.com/show/fzgps/date/2025-07-13/segment/01\" target=\"_blank\" rel=\"noopener\">Huang interview</a>, <a href=\"https://www.semafor.com/article/05/21/2025/nvidia-ceo-says-us-chip-export-controls-on-china-are-a-failure\" target=\"_blank\" rel=\"noopener\">Huang at Computex</a>, <a href=\"https://blogs.nvidia.com/blog/nvidia-ceo-promotes-ai-in-dc-and-china/\" target=\"_blank\" rel=\"noopener\">July 2025 visit</a>, <a href=\"https://www.marketscreener.com/news/nvidia-ceo-joins-trump-s-mission-to-open-up-china-ce7f5bdfdd8df520\" target=\"_blank\" rel=\"noopener\">May 2026 visit</a></p>",
+      "toc": [
+        {
+          "title": "METR finds Anthropic’s benchmark progress nearly doubled",
+          "id": "section-0"
+        },
+        {
+          "title": "Nvidia’s security inquiry and U.S.–China chip policy",
+          "id": "section-1"
+        }
+      ],
+      "byline": "Compiled by MAIA",
+      "note": "",
+      "sources": [],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Can we scale human feedback for complex AI tasks? An intro to scalable oversight.",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "BlueDot Impact, March 2024.",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://blog.bluedot.org/p/scalable-oversight-intro"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Detecting misbehavior in frontier reasoning models",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "OpenAI, March 2025.",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://openai.com/index/chain-of-thought-monitoring/"
+        },
+        {
+          "title": "Research paper",
+          "url": "https://arxiv.org/html/2503.11926v1"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "UK AI Security Institute and Apollo Research, December 2025.",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original paper",
+          "url": "https://arxiv.org/abs/2507.11473"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "The case for ensuring that powerful AIs are controlled",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Redwood Research, January 2024.",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://blog.redwoodresearch.org/p/the-case-for-ensuring-that-powerful"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    },
+    {
+      "title": "AI Control: Improving Safety Despite Intentional Subversion",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Redwood Research, December 2023.",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original paper",
+          "url": "https://arxiv.org/abs/2312.06942"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/19dCFbIMBKJKaeID6ZN1Qwouibri35vWQ7uGivZ0G9i8/edit?tab=t.r68g9l54awj4"
+    }
+  ]
+}
