@@ -89,7 +89,7 @@ export const PAPERS = [
 		imgSrc: '/images/papers/model-manipulation.png',
 		tags: [TAGS.ADVERSARIAL, TAGS.ICLR_2025],
 		title: 'Model Manipulation Attacks Enable More Rigorous Evaluations of LLM Capabilities',
-		authors: ['Stephen Casper', 'Stewy Slocum'],
+		authors: ['Stephen Casper'],
 		link: 'https://openreview.net/forum?id=XmvgWEjkhG'
 	},
 	{
@@ -97,7 +97,7 @@ export const PAPERS = [
 		imgSrc: '/images/papers/diverse-preference-learning.png',
 		tags: [TAGS.RLHF, TAGS.ICLR_2025],
 		title: 'Diverse Preference Learning for Capabilities and Alignment',
-		authors: ['Stewy Slocum', 'Asher Parker-Sartori'],
+		authors: ['Asher Parker-Sartori'],
 		link: 'https://openreview.net/forum?id=pOq9vDIYev'
 	},
 	{
