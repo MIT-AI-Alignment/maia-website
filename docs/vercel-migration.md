@@ -1,10 +1,12 @@
 # Vercel migration and maintenance
 
-The Vercel migration and domain cutover completed on October 5, 2026. PR #45
+The Vercel deployment and domain cutover were performed on October 5, 2026. PR #45
 merged as `9a57b0a`; the restored workshop archive in PR #46 merged as `a5b8703`.
 Production was Ready and the cutover checks below passed in the operator's live
-session. Merging, successful deployment and public verification remain separate
-release checks. Do not upload Vercel output to Athena.
+session. A later check found stale Squarespace DNS on another client network;
+those initial checks did not establish global DNS convergence. See the recovery
+section below. Merging, successful deployment and public verification remain
+separate release checks. Do not upload Vercel output to Athena.
 
 ## Setup
 
@@ -83,6 +85,71 @@ cutover. The operator's local Tailscale resolver retained the old Squarespace IP
 for about three hours. This was a resolver-specific observation, not a global
 propagation guarantee. `https://maia-website-ten.vercel.app` is the production
 alias for checking the deployment while diagnosing stale DNS.
+
+### October 5 stale-DNS incident and recovery
+
+At approximately 19:10 Eastern, the reporting client's recursive resolvers still
+returned the four former Squarespace A records with 5,450 seconds of TTL left.
+Authoritative DNS, Google, and Cloudflare returned Vercel's new address. Following
+`https://aialignment.mit.edu/hermes/` reached the Squarespace parking page with
+HTTP 200. The production alias, and the canonical hostname resolved directly to
+Vercel with normal TLS verification, both served the real Hermes page.
+
+Relevant history (Eastern time):
+
+- `9a57b0a` / PR #45, 17:20: switched the build to Vercel and canonical metadata
+  to `.org`. The DNS and Athena changes were separate operational actions.
+- `a5b8703` / PR #46, 17:36: restored the workshop archive before cutover.
+- `f5dc229` / PR #47, 17:46: recorded the DNS cutover and live permanent Athena
+  redirects to `.org`. This documentation commit did not itself install them.
+- `10b8859` / PR #48 and `6eac3c3` / PR #49, 17:52–17:56: fixed reading styles,
+  event planning, and application error rendering. They do not produce the
+  Squarespace parking page; affected requests never reach the Vercel app.
+
+The migration exposed clients with cached old DNS to a parked destination when
+Athena began redirecting them. Lowering the new record's TTL does not shorten
+the lifetime of records already cached under the previous TTL.
+
+Run the content-aware check on each relevant network, especially the affected
+network, before declaring recovery:
+
+```sh
+node scripts/verify-public-site.mjs
+```
+
+It reports system/Google/Cloudflare IPv4 answers and remaining TTLs, and follows
+the MIT, apex, www, and stable production-alias Hermes URLs. A 200 parking page,
+missing application link, or failed request exits nonzero. DNS differences are
+diagnostic, not a blanket failure: CDNs may legitimately return different IPs.
+This is a client-network check, not proof of worldwide convergence or browser
+cache invalidation. It does not submit applications or change any settings.
+
+`ops/athena-dns-recovery.htaccess.mit` is a **temporary recovery template**, not
+an automatically deployed file. It uses 302 redirects to the stable Vercel
+production alias, preserving paths and queries and bypassing `.org` DNS.
+Applying it requires authenticated Athena access:
+
+1. Read and compare the live `/mit/aialignment/www/.htaccess.mit`; do not overwrite
+   unexpected directives or another maintainer's changes.
+2. Make a dated backup outside public `www`, under `.website-migration-backups`.
+3. Stage the reviewed template beside the live file, preserve its permissions,
+   recheck the original checksum, and rename the staged file into place.
+4. Verify fresh HTTPS requests to the MIT homepage, Hermes, Events, a locker
+   alias, and an unknown route. Check Location path/query preservation, real
+   content at valid destinations, and a genuine 404 at the unknown destination.
+   Restore the exact backup if these checks fail.
+
+This mitigation does not repair direct `.org` requests using stale DNS. An
+already-cached 301 can also bypass the updated MIT server; a fresh client or
+unique query string is needed to test the new server behavior. Use the direct
+production alias for immediate access in those cases. Do not change mail DNS,
+disable TLS verification, or redeploy the application to address cached DNS.
+
+After old TTLs have elapsed and the affected networks pass the content checks,
+restore the canonical redirect deliberately from the saved configuration and
+verify again. For future migrations, lower the **old** TTL in advance, wait out
+its original lifetime, and verify the destination on affected networks before
+switching the old site's redirect. Use temporary redirects during cutover.
 
 ## Athena redirect and verified paths
 
