@@ -5,7 +5,7 @@
 
 <PageLayout
 	title="AISF Fall 2026 Curriculum"
-	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0–7 are available with original reading links and the Fall reading packet. Week 8 is coming soon."
+	description="The Fall 2026 AI Safety Fundamentals curriculum. Weeks 0–8 are available with original reading links and the Fall reading packet."
 	heroIcon="fa-solid fa-graduation-cap"
 	heroTitle="AI Safety Fundamentals"
 	centerTitle={true}
@@ -72,17 +72,13 @@
 						<span class="availability">Control &amp; Scalable Oversight <span aria-hidden="true">→</span></span>
 					</a>
 				</li>
-			{:else}
-			<li class="week-card">
-				<h2 class="font-heading">Week {week}</h2>
-				<span class="availability">
-					<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="12" cy="12" r="9" />
-						<path d="M12 7v5l3 2" />
-					</svg>
-					Coming soon
-				</span>
-			</li>
+			{:else if week === 8}
+				<li>
+					<a href="/aisf/week8/" class="week-card available-card">
+						<h2 class="font-heading">Week 8</h2>
+						<span class="availability">Governance and Politics <span aria-hidden="true">→</span></span>
+					</a>
+				</li>
 			{/if}
 		{/each}
 	</ul>
