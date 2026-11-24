@@ -1,0 +1,189 @@
+{
+  "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0",
+  "weeks": [
+    {
+      "week": 8,
+      "title": "Governance and Politics",
+      "description": "This week focuses on the role of the government in shaping the trajectory of AI. We begin by examining the current state of frontier AI regulation, which mainly exists in the form of state laws. We then turn to a study of the macro-strategies that governments could take in the face of advanced AI. Next, we study two important governance tools: compute governance, and liability, and weigh the costs and benefits of each. Next, we learn about the various dimensions of the US-China AI race, and consider what policies could help the US stay ahead. Finally, we take stock of what the Democratic majorities in the newest congress mean for AI.",
+      "groups": [
+        {
+          "name": "Week 8 readings",
+          "items": [
+            {
+              "title": "Frontier AI Safety Regulations: A Reference for Lab Staff",
+              "article": 0,
+              "sources": [
+                {
+                  "title": "Original post",
+                  "url": "https://metr.org/notes/2026-01-29-frontier-ai-safety-regulations/#model-reports"
+                }
+              ],
+              "meta": "Miles Kodama, Michael Chen, Garrett Xu, METR, Jul 2026",
+              "note": ""
+            },
+            {
+              "title": "Summary: AI Governance to Avoid Extinction",
+              "article": 1,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://intelligence.org/2026/04/13/summary-ai-governance-to-avoid-extinction/"
+                },
+                {
+                  "title": "Research paper",
+                  "url": "https://intelligence.org/wp-content/uploads/2025/05/AI-Governance-to-Avoid-Extinction.pdf"
+                }
+              ],
+              "meta": "Alana Horowitz Friedman, MIRI, April 2026",
+              "note": ""
+            },
+            {
+              "title": "Computing Power and the Governance of AI",
+              "article": 2,
+              "sources": [
+                {
+                  "title": "Original post",
+                  "url": "https://www.governance.ai/analysis/computing-power-and-the-governance-of-ai"
+                }
+              ],
+              "meta": "Lennart Heim, Markus Anderljung, Emma Bluemke, Robert Trager, GovAI, February 2024",
+              "note": ""
+            },
+            {
+              "title": "The Case for AI Liability",
+              "article": 3,
+              "sources": [
+                {
+                  "title": "Original article",
+                  "url": "https://ai-frontiers.org/articles/case-for-ai-liability"
+                }
+              ],
+              "meta": "Gabriel Weil, AI Frontiers, June 2025",
+              "note": ""
+            },
+            {
+              "title": "Competing AI strategies for the US and China",
+              "article": 4,
+              "sources": [
+                {
+                  "title": "Original source",
+                  "url": "https://www.brookings.edu/articles/competing-ai-strategies-for-the-us-and-china/"
+                }
+              ],
+              "meta": "Kyle Chan, Brookings, April 2026",
+              "note": ""
+            },
+            {
+              "title": "Will Democrats splinter on AI?",
+              "article": 5,
+              "sources": [
+                {
+                  "title": "Original source",
+                  "url": "https://www.transformernews.ai/p/will-democrats-splinter-on-ai"
+                }
+              ],
+              "meta": "Veronica Irwin, Transformer News, November 2026",
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Frontier AI Safety Regulations: A Reference for Lab Staff",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Miles Kodama, Michael Chen, Garrett Xu, METR, Jul 2026",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original post",
+          "url": "https://metr.org/notes/2026-01-29-frontier-ai-safety-regulations/#model-reports"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    },
+    {
+      "title": "Summary: AI Governance to Avoid Extinction",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Alana Horowitz Friedman, MIRI, April 2026",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://intelligence.org/2026/04/13/summary-ai-governance-to-avoid-extinction/"
+        },
+        {
+          "title": "Research paper",
+          "url": "https://intelligence.org/wp-content/uploads/2025/05/AI-Governance-to-Avoid-Extinction.pdf"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    },
+    {
+      "title": "Computing Power and the Governance of AI",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Lennart Heim, Markus Anderljung, Emma Bluemke, Robert Trager, GovAI, February 2024",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original post",
+          "url": "https://www.governance.ai/analysis/computing-power-and-the-governance-of-ai"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    },
+    {
+      "title": "The Case for AI Liability",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Gabriel Weil, AI Frontiers, June 2025",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original article",
+          "url": "https://ai-frontiers.org/articles/case-for-ai-liability"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    },
+    {
+      "title": "Competing AI strategies for the US and China",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Kyle Chan, Brookings, April 2026",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original source",
+          "url": "https://www.brookings.edu/articles/competing-ai-strategies-for-the-us-and-china/"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    },
+    {
+      "title": "Will Democrats splinter on AI?",
+      "kind": "external",
+      "html": "",
+      "toc": [],
+      "byline": "Veronica Irwin, Transformer News, November 2026",
+      "note": "",
+      "sources": [
+        {
+          "title": "Original source",
+          "url": "https://www.transformernews.ai/p/will-democrats-splinter-on-ai"
+        }
+      ],
+      "packet": "https://docs.google.com/document/d/1536QTxHEoCWGFQa46g-cXnI8Xwe459lrN4eoSpv-GB8/edit?tab=t.0"
+    }
+  ]
+}

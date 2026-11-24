@@ -242,5 +242,38 @@
     }
   ],
   "7": [],
-  "8": []
+  "8": [
+    {
+      "title": "How US Export Controls Have (and Haven’t) Curbed Chinese AI",
+      "url": "https://ai-frontiers.org/articles/us-chip-export-controls-china-ai"
+    },
+    {
+      "title": "Why China and America See AI Differently — The Economist",
+      "url": "https://www.youtube.com/watch?v=TugPBKBXIHc"
+    },
+    {
+      "title": "AI 2040: Plan A",
+      "url": "https://ai-2040.com/?choices=plan-a-root"
+    },
+    {
+      "title": "We’re Not Ready for AI Liability",
+      "url": "https://ai-frontiers.org/articles/options-for-ai-liability"
+    },
+    {
+      "title": "California SB 53: Bill Text",
+      "url": "https://legiscan.com/CA/text/SB53/2025"
+    },
+    {
+      "title": "AI Governance Needs a Theory of Victory",
+      "url": "https://www.convergenceanalysis.org/publications/ai-governance-needs-a-theory-of-victory"
+    },
+    {
+      "title": "When Reporting an AI Security Incident Is Not Mandatory",
+      "url": "https://law-ai.org/when-reporting-an-ai-security-incident-is-not-mandatory/"
+    },
+    {
+      "title": "The Vulnerable World Hypothesis",
+      "url": "https://nickbostrom.com/papers/vulnerable.pdf"
+    }
+  ]
 }
