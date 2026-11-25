@@ -95,27 +95,7 @@
 		<button on:click={() => browsePrograms(1)} disabled={atEnd} aria-label="Next programs" aria-controls="programs">→</button>
 	</div>
 	<div id="programs" class="participation" bind:this={programTrack} on:scroll={updateProgramPosition}>
-		<section id="hermes" aria-labelledby="hermes-title" data-motion="rise">
-			<h2 id="hermes-title" class="font-heading">Hermes Fellowship</h2>
-			<p>
-				The Hermes Fellowship is MAIA's eight-week research program in technical AI safety. Work
-				on a focused project with guidance from an experienced AI safety researcher.
-			</p>
-			<ul class="fellowship-details">
-				{#each hermesBenefits as benefit}<li>{benefit}</li>{/each}
-			</ul>
-			<p>
-				Open to MAIA members, AISF Fellows, and MIT undergrads. Previous research experience is strongly
-				preferred.
-			</p>
-			<p class="application-deadline">
-				<strong>Applications are closed.</strong> The deadline was {CONFIG.hermes.deadlineDate}, {CONFIG.hermes.deadlineTime}.
-			</p>
-			<div class="participation-actions">
-				<a href="/hermes/">Fellowship details <span aria-hidden="true">→</span></a>
-			</div>
-		</section>
-		<section id="membership" aria-labelledby="membership-title" data-motion="rise" style="--motion-delay: 100ms">
+		<section id="membership" aria-labelledby="membership-title" data-motion="rise">
 			<h2 id="membership-title" class="font-heading">MAIA membership</h2>
 			<p>
 				Members get 24/7 office access, free compute, and access to research discussions and MAIA
@@ -136,7 +116,7 @@
 				<a href="/getinvolved/#membership">Membership details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
-		<section id="aisf" aria-labelledby="aisf-title">
+		<section id="aisf" aria-labelledby="aisf-title" data-motion="rise" style="--motion-delay: 100ms">
 			<h2 id="aisf-title" class="font-heading">AISF</h2>
 			<p>
 				AI Safety Fundamentals is MAIA's eight-week introductory fellowship on AI safety.
@@ -144,13 +124,33 @@
 				and approaches to making them safer.
 			</p>
 			<p>
-				Fall 2026 is currently underway, with <strong>212 fellows</strong> across
-				<strong>14 cohorts</strong>. Our largest fall fellowship yet.
+				Our Fall 2026 fellowship recently concluded, with <strong>212 fellows</strong> across
+				<strong>14 cohorts</strong>.
 			</p>
 			<div class="participation-actions">
 				<Button text="Interest for Spring 2027" type="purple" href={CONFIG.aisf_ml.interestFormLink}
 					target="_blank" rel="noopener noreferrer" />
 				<a href="/aisf/">Curriculum <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+		<section id="hermes" aria-labelledby="hermes-title" data-motion="rise">
+			<h2 id="hermes-title" class="font-heading">Hermes Fellowship</h2>
+			<p>
+				The Hermes Fellowship is MAIA's eight-week research program in technical AI safety. Work
+				on a focused project with guidance from an experienced AI safety researcher.
+			</p>
+			<ul class="fellowship-details">
+				{#each hermesBenefits as benefit}<li>{benefit}</li>{/each}
+			</ul>
+			<p>
+				Open to MAIA members, AISF Fellows, and MIT undergrads. Previous research experience is strongly
+				preferred.
+			</p>
+			<p class="application-deadline">
+				<strong>Applications are closed.</strong> The deadline was {CONFIG.hermes.deadlineDate}, {CONFIG.hermes.deadlineTime}.
+			</p>
+			<div class="participation-actions">
+				<a href="/hermes/">Fellowship details <span aria-hidden="true">→</span></a>
 			</div>
 		</section>
 	</div>
