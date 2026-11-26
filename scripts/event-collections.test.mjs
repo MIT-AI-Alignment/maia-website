@@ -15,7 +15,7 @@ const fallWorkshops = [
  { id: '62t93vcs72k239ci750rit6l2h@google.com/2026-11-06', start: '2026-11-06', end: '2026-11-09' },
  { id: '3j8q3d7vbgvdkbmqje21vm5cri@google.com/2026-11-13', start: '2026-11-13', end: '2026-11-16' },
  { id: '7ebmkf3cbhq7lgch1eq631qm97@google.com/2026-11-20', start: '2026-11-20', end: '2026-11-23' }
-].map(event => ({ ...event, title: 'MAIA/AISST Workshop', location: 'Essex Woods, 1 Conomo Point Rd, Essex, MA 01929, USA' }));
+].map(event => ({ ...event, title: 'MAIA/AIST Workshop', location: 'Essex Woods, 1 Conomo Point Rd, Essex, MA 01929, USA' }));
 
 test('November workshops share one listing with distinct dates and no address', () => {
  const [combined] = combineFallWorkshops([...fallWorkshops].reverse());

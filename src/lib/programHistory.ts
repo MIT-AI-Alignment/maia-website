@@ -6,21 +6,21 @@ import { CONFIG } from './config';
 // The public calendar supplies the individual historical events and repeated sessions.
 export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
-  id: 'aisst-technical-spring-2023', title: 'Spring 2023 Technical AI Safety Fellowship · AISST',
+  id: 'aisst-technical-spring-2023', title: 'Spring 2023 Technical AI Safety Fellowship · AIST',
   start: '2023-02-01', end: '2023-06-01', dateLabel: 'Spring 2023 · exact session dates unavailable', kind: 'initiative',
-  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AISST’s fellowship history; the timeline uses an approximate semester range.',
+  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AIST’s fellowship history; the timeline uses an approximate semester range.',
   url: 'https://aisst.ai/tech-fellowship'
  },
  {
-  id: 'aisst-technical-summer-2023', title: 'Summer 2023 Technical AI Safety Fellowship · AISST',
+  id: 'aisst-technical-summer-2023', title: 'Summer 2023 Technical AI Safety Fellowship · AIST',
   start: '2023-06-01', end: '2023-09-01', dateLabel: 'Summer 2023 · exact session dates unavailable', kind: 'initiative',
-  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AISST’s fellowship history; the timeline uses an approximate semester range.',
+  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AIST’s fellowship history; the timeline uses an approximate semester range.',
   url: 'https://aisst.ai/tech-fellowship'
  },
  {
-  id: 'aisst-technical-fall-2023', title: 'Fall 2023 Technical AI Safety Fellowship · AISST',
+  id: 'aisst-technical-fall-2023', title: 'Fall 2023 Technical AI Safety Fellowship · AIST',
   start: '2023-09-01', end: '2024-01-01', dateLabel: 'Fall 2023 · exact session dates unavailable', kind: 'initiative',
-  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AISST’s fellowship history; the timeline uses an approximate semester range.',
+  description: 'A technical AI safety reading group run by Harvard’s AI safety community, then known as HAIST. This cohort is listed in AIST’s fellowship history; the timeline uses an approximate semester range.',
   url: 'https://aisst.ai/tech-fellowship'
  },
  {
@@ -30,9 +30,9 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
   url: 'https://www.cbai.ai/ais-research-fellowship'
  },
  {
-  id: 'arena-fall-2025', title: 'Fall 2025 AISST/MAIA ARENA Technical Upskilling',
+  id: 'arena-fall-2025', title: 'Fall 2025 AIST/MAIA ARENA Technical Upskilling',
   start: '2025-09-01', end: '2026-01-01', dateLabel: 'Fall 2025 · approximate semester range', kind: 'initiative',
-  description: 'Technical AI safety upskilling using the ARENA curriculum for the AISST and MAIA community. This entry represents the fall semester; exact session dates are not reconstructed.',
+  description: 'Technical AI safety upskilling using the ARENA curriculum for the AIST and MAIA community. This entry represents the fall semester; exact session dates are not reconstructed.',
   url: 'https://www.arena.education/curriculum'
  },
  {
@@ -50,19 +50,19 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
  {
   id: 'arena-iap-2025', title: 'IAP 2025 ARENA bootcamp',
   start: '2025-01-01', end: '2025-02-01', dateLabel: 'January 2025 · approximate IAP range', kind: 'initiative',
-  description: 'A structured MAIA upskilling program over IAP, with TAs from MAIA and AISST. Participants worked through ARENA fundamentals, transformers, interpretability, and reinforcement learning. Exact session dates are not reconstructed in this overview.',
+  description: 'A structured MAIA upskilling program over IAP, with TAs from MAIA and AIST. Participants worked through ARENA fundamentals, transformers, interpretability, and reinforcement learning. Exact session dates are not reconstructed in this overview.',
   url: 'https://www.arena.education/curriculum'
  },
  {
-  id: 'arena-fall-2024', title: 'Fall 2024 Saturday ARENA · AISST',
+  id: 'arena-fall-2024', title: 'Fall 2024 Saturday ARENA · AIST',
   start: '2024-10-01', end: '2024-12-01', dateLabel: 'October–November 2024 · program months', kind: 'initiative',
-  description: 'Saturday technical upskilling at the AISST office using the ARENA curriculum, led by Alex Semendinger. This related program ran through November 16; the November 23 session was cancelled. The range shows program months rather than individual sessions.',
+  description: 'Saturday technical upskilling at the AIST office using the ARENA curriculum, led by Alex Semendinger. This related program ran through November 16; the November 23 session was cancelled. The range shows program months rather than individual sessions.',
   url: 'https://www.arena.education/curriculum'
  },
  {
   id: 'techsprints-spring-2024', title: 'Spring 2024 MAIA TechSprints',
   start: '2024-02-01', end: '2024-06-01', dateLabel: 'Spring 2024 · approximate semester range', kind: 'initiative',
-  description: 'Saturday technical coworking with deep learning and mechanistic interpretability tracks using ARENA materials, alongside small projects and research. Sessions included TA-supported work, shared meals, and participation from Harvard AISST members. Exact session dates are not reconstructed in this overview.',
+  description: 'Saturday technical coworking with deep learning and mechanistic interpretability tracks using ARENA materials, alongside small projects and research. Sessions included TA-supported work, shared meals, and participation from Harvard AIST members. Exact session dates are not reconstructed in this overview.',
   url: 'https://www.arena.education/curriculum'
  },
  {
@@ -150,17 +150,17 @@ export const PROGRAM_HISTORY: CalendarEvent[] = [
 // These offerings have no confirmed next-session dates, so they stay outside the dated timeline.
 export const PARTNER_PROGRAMS = [
  {
-  title: 'Technical AI Safety Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'Technical AI Safety Fellowship', organizer: 'AIST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'Weekly, two-hour discussions in Harvard Square covering AI progress, alignment, interpretability, and technical approaches to AI safety. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/tech-fellowship'
  },
  {
-  title: 'AI Policy Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'AI Policy Fellowship', organizer: 'AIST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'An introductory reading group on AI governance and strategy, meeting weekly in small groups in Harvard Square. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/policy-fellowship'
  },
  {
-  title: 'AI × Biorisk Fellowship', organizer: 'AISST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
+  title: 'AI × Biorisk Fellowship', organizer: 'AIST', applicationDeadline: '2026-09-13', timing: 'Fall 2026 · nine weeks · cohort dates TBD',
   description: 'A new reading group exploring AI-driven biological risks, biodefense, safeguards, and governance. Cohorts meet weekly for two hours in Harvard Square. The published fall application deadline was September 13.',
   url: 'https://aisst.ai/biorisk-fellowship'
  },

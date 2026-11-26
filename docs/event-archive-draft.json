@@ -317,7 +317,7 @@
     },
     {
       "id": "maia-2026-009",
-      "title": "AISST/MAIA Technical AI Safety Workshop",
+      "title": "AIST/MAIA Technical AI Safety Workshop",
       "category": "Workshops",
       "start_date": "2026-03-27",
       "end_date": "2026-03-29",
@@ -325,7 +325,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.",
+      "description": "A joint AIST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -368,9 +368,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.\n\nSpeakers / session contributors: Sydney Von Arx, David Bau, Tzu Kit Chan, Kaivu Hariharan, Aryan Bhatt, Steven Byrnes.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA residential technical AI safety workshop at Essex Woods. Sessions examined AI control, propensity evaluations, interpretability, human intent in software, and challenges posed by brain-like AGI. The weekend combined researcher talks with small-group discussions, one-on-ones, career planning, and informal time together.\n\nSpeakers / session contributors: Sydney Von Arx, David Bau, Tzu Kit Chan, Kaivu Hariharan, Aryan Bhatt, Steven Byrnes.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqc9g75ij0phl6cpj8d1j6kq32cb268pm6d3560qj8phh6dh6ce9g81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -477,7 +477,7 @@
     },
     {
       "id": "maia-2026-012",
-      "title": "AISST/MAIA Technical AI Safety Workshop",
+      "title": "AIST/MAIA Technical AI Safety Workshop",
       "category": "Workshops",
       "start_date": "2026-04-03",
       "end_date": "2026-04-05",
@@ -485,7 +485,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "The second spring AISST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.",
+      "description": "The second spring AIST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -526,9 +526,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "The second spring AISST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "The second spring AIST/MAIA technical AI safety workshop brought students and researchers together at Essex Woods. The weekend featured talks by David Bau, Abra Ganz, Joshua Clymer, Aryan Bhatt, Alex Turner, Nikola Jurkovic, and Dillon Plunkett, alongside small-group discussions, paired one-on-ones, and sessions on research and career next steps.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqd316csm4ob16or68p1g6spm8pb3c4sjee1g68o62cpg61i64c3381mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -632,7 +632,7 @@
     },
     {
       "id": "maia-2026-015",
-      "title": "AISST/MAIA AI Policy Workshop",
+      "title": "AIST/MAIA AI Policy Workshop",
       "category": "Workshops",
       "start_date": "2026-04-10",
       "end_date": "2026-04-12",
@@ -640,7 +640,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.",
+      "description": "A joint AIST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -672,9 +672,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA residential AI policy workshop at Essex Woods. Talks and panels with AI policy practitioners included Nathan Calvin, Jason Hausenloy, Gabriel Weil, and Fin Moorhouse. The program also featured Harvard Law School and RAND panels, a tabletop exercise or wargame, career discussions, small groups, and one-on-ones.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqd9i64p64cj46lh3gcj669gjaob268pjcchi6cr36dpl6di66d9k81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -922,7 +922,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A summer residential AI safety workshop hosted by AISST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.",
+      "description": "A summer residential AI safety workshop hosted by AIST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -963,9 +963,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A summer residential AI safety workshop hosted by AISST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A summer residential AI safety workshop hosted by AIST and MAIA at Essex Woods. Students joined researchers including Nikola Jurkovic, Stephen Casper, David Bau, Tzu Kit Chan, James Sanders, Alex Turner, and Zac Hatfield-Dodds for talks, small-group discussions, one-on-ones, and conversations about AI safety research and careers.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqor168s3ceb16pijgohk68smceb46kp6ad1n6krm2dpgc8qj4p3481mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -1299,8 +1299,8 @@
       "start_time": null,
       "end_time": null,
       "timezone": "America/New_York",
-      "location": "CIC, Cambridge; later weekend sessions at AISST, 66 Church Street",
-      "description": "MAIA ran a spring technical upskilling series using the ARENA curriculum. Participants worked through machine-learning and AI-safety exercises together, including fundamentals, optimization, and later technical material at their own pace. Sessions generally met on Thursday evenings and Sundays, with some later weekend meetings hosted at AISST.",
+      "location": "CIC, Cambridge; later weekend sessions at AIST, 66 Church Street",
+      "description": "MAIA ran a spring technical upskilling series using the ARENA curriculum. Participants worked through machine-learning and AI-safety exercises together, including fundamentals, optimization, and later technical material at their own pace. Sessions generally met on Thursday evenings and Sundays, with some later weekend meetings hosted at AIST.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "collection",
@@ -1356,7 +1356,7 @@
     },
     {
       "id": "maia-2025-034",
-      "title": "MAIA × AISST Social",
+      "title": "MAIA × AIST Social",
       "category": "Socials",
       "start_date": "2025-03-06",
       "end_date": "2025-03-06",
@@ -1439,7 +1439,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.",
+      "description": "A joint AIST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -1482,9 +1482,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.\n\nSpeakers / session contributors: David Bau, Martin Wattenberg, Corin Katzke, Zac Hatfield-Dodds, Nikola Jurkovic, Joshua Clymer.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA technical AI safety workshop at Essex Woods. Researchers and students discussed large-scale AI, model evaluations, timelines, superintelligence and international security, and strategies for safely relying on increasingly capable AI. The residential weekend included talks, small groups, one-on-ones, and career planning.\n\nSpeakers / session contributors: David Bau, Martin Wattenberg, Corin Katzke, Zac Hatfield-Dodds, Nikola Jurkovic, Joshua Clymer.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqcj561h3ec3470qjgob2ccr6cp9j61i3idpl6cs3icj26hj30cpn81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -1508,7 +1508,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A residential AISST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.",
+      "description": "A residential AIST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -1569,9 +1569,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A residential AISST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.\n\nSpeakers / session contributors: Peter Salib, Sandhini Agarwal, Nitarshan Rajkumar, Joel Burke, Thomas Larsen, Arushi Gupta, Kevin Wei, Mackenzie Arnold, Yusuf Mahmood, Chris Byrd, Corin Katzke.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A residential AIST/MAIA AI policy workshop at Essex Woods. Talks and panels examined US-China AI competition, AI rights and human safety, short timelines, policy careers, and AI strategy. Participants also took part in an AGI wargame, small-group discussions, and one-on-ones with researchers and policy practitioners.\n\nSpeakers / session contributors: Peter Salib, Sandhini Agarwal, Nitarshan Rajkumar, Joel Burke, Thomas Larsen, Arushi Gupta, Kevin Wei, Mackenzie Arnold, Yusuf Mahmood, Chris Byrd, Corin Katzke.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqe1gcgs68cpk64p66p1i71h64cho60q68p1j6di32cb66kp3ge1n81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -1595,7 +1595,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.",
+      "description": "A joint AIST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -1637,9 +1637,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.\n\nSpeakers / session contributors: Sam Marks, Brad Knox, David Bau, Cody Rushing, Adam Kaufman, Kevin Liu, Neev Parikh.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA residential technical AI safety workshop at Essex Woods, featuring talks and an interview with researchers from Anthropic, Redwood Research, METR, Northeastern University, and the University of Texas at Austin. Small-group discussions, paired one-on-ones, and career sessions gave students opportunities to explore research questions and next steps.\n\nSpeakers / session contributors: Sam Marks, Brad Knox, David Bau, Cody Rushing, Adam Kaufman, Kevin Liu, Neev Parikh.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqphh70r3ic9hc9h36cj374s62cr56thjachp6op3coj3c5hjae9k81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -1847,7 +1847,7 @@
     },
     {
       "id": "maia-2025-044",
-      "title": "AISST/MAIA Fall Residential Workshop",
+      "title": "AIST/MAIA Fall Residential Workshop",
       "category": "Workshops",
       "start_date": "2025-11-07",
       "end_date": "2025-11-09",
@@ -1855,7 +1855,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "The first fall AISST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.",
+      "description": "The first fall AIST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -1883,9 +1883,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "The first fall AISST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.\n\nSpeakers / session contributors: David Bau, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "The first fall AIST/MAIA residential workshop at Essex Woods brought students together with AI safety researchers for talks, small-group discussions, and one-on-ones. Sessions explored scheming and AI systems that support human understanding, alongside career reflection, planning, and informal conversations.\n\nSpeakers / session contributors: David Bau, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqchk70sj8p33c8p64e1n64rj0p1i6osj2pj571i3cdhg6sojicj181mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -1901,7 +1901,7 @@
     },
     {
       "id": "maia-2025-045",
-      "title": "AISST/MAIA Fall Residential Workshop",
+      "title": "AIST/MAIA Fall Residential Workshop",
       "category": "Workshops",
       "start_date": "2025-11-14",
       "end_date": "2025-11-16",
@@ -1909,7 +1909,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "The second fall AISST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.",
+      "description": "The second fall AIST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -1943,9 +1943,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "The second fall AISST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.\n\nSpeakers / session contributors: Sam Marks, David Bau, Tyler Tracy, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "The second fall AIST/MAIA residential workshop at Essex Woods combined research talks with small-group discussions and paired one-on-ones. Participants explored technical AI safety, including mechanistic interpretability and AI control, discussed research and career directions, and connected with students from other university safety communities.\n\nSpeakers / session contributors: Sam Marks, David Bau, Tyler Tracy, Aryan Bhatt.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqob6chh64p1m6csj6phk68q64d356gq64e1o6kqm4p326cq3cohm81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2187,7 +2187,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.",
+      "description": "A joint AIST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2220,11 +2220,11 @@
         },
         {
           "name": "Nikola Jurkovic",
-          "topic": "AISST's AI predictions"
+          "topic": "AIST's AI predictions"
         },
         {
           "name": "Romeo Dean",
-          "topic": "AISST's AI predictions"
+          "topic": "AIST's AI predictions"
         }
       ],
       "scheduled_speakers": [],
@@ -2236,9 +2236,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.\n\nSpeakers / session contributors: Thomas Larsen, David Bau, Ethan Perez, Daniel Kokotajlo, Buck Shlegeris, Adam Jermyn, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA residential weekend at Essex Woods exploring technical AI safety, AI progress, and research careers. Talks covered AI control, adversarial robustness, responsible scaling policies, threat models, and forecasting, alongside small-group discussions, paired one-on-ones, and time to connect with researchers and other students.\n\nSpeakers / session contributors: Thomas Larsen, David Bau, Ethan Perez, Daniel Kokotajlo, Buck Shlegeris, Adam Jermyn, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqe346kpjcphn71hjie1i6hhj6ob474rjipj2cosm4pj3copjgdpg81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2262,7 +2262,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.",
+      "description": "A joint AIST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2310,9 +2310,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.\n\nSpeakers / session contributors: Trevor Levin, Gabriel Weil, Timothy Fist, Sam Marks, Stephen Casper, Daniel Kokotajlo, Chris Byrd.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA residential policy workshop at Essex Woods. Sessions explored AI liability, compute governance, national security, AI timelines, and the relationship between technical safety research and policy. The weekend also included a regulatory-frameworks panel, policy career discussions, small groups, and paired one-on-ones.\n\nSpeakers / session contributors: Trevor Levin, Gabriel Weil, Timothy Fist, Sam Marks, Stephen Casper, Daniel Kokotajlo, Chris Byrd.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqohpcco3ie34chgjed9jc4pj2cr1c8q3aeb375gj0o9l6pgj6p1k81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2336,7 +2336,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A joint AISST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.",
+      "description": "A joint AIST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2372,11 +2372,11 @@
         },
         {
           "name": "Nikola Jurkovic",
-          "topic": "AISST's AI predictions"
+          "topic": "AIST's AI predictions"
         },
         {
           "name": "Romeo Dean",
-          "topic": "AISST's AI predictions"
+          "topic": "AIST's AI predictions"
         }
       ],
       "scheduled_speakers": [],
@@ -2388,9 +2388,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A joint AISST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.\n\nSpeakers / session contributors: Daniel Kokotajlo, Lucas Sato, Zac Hatfield-Dodds, Sam Marks, Tamay Besiroglu, Neil Chowdhury, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A joint AIST/MAIA technical AI safety weekend at Essex Woods, with talks on AGI timelines, threat models, model evaluations, preparedness, and how technical safety projects develop. Researchers joined students for moderated Q&A, small-group discussions, career planning, and one-on-ones.\n\nSpeakers / session contributors: Daniel Kokotajlo, Lucas Sato, Zac Hatfield-Dodds, Sam Marks, Tamay Besiroglu, Neil Chowdhury, Nikola Jurkovic, Romeo Dean.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqphp61h66dj16cs6ccr575i3id3470pm4e3564rm8phh71imco9l81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2474,15 +2474,15 @@
     },
     {
       "id": "maia-2024-056",
-      "title": "David Krueger: MAIA × AISST Talk",
+      "title": "David Krueger: MAIA × AIST Talk",
       "category": "Speaker events",
       "start_date": "2024-10-20",
       "end_date": "2024-10-20",
       "start_time": "12:00",
       "end_time": null,
       "timezone": "America/New_York",
-      "location": "AISST office, 66 Church Street, Cambridge",
-      "description": "MAIA and AISST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AISST's AI forecasting contest at the same venue.",
+      "location": "AIST office, 66 Church Street, Cambridge",
+      "description": "MAIA and AIST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AIST's AI forecasting contest at the same venue.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2498,7 +2498,7 @@
       ],
       "scheduled_speakers": [],
       "links": [],
-      "calendar_description": "MAIA and AISST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AISST's AI forecasting contest at the same venue.",
+      "calendar_description": "MAIA and AIST hosted an informal lunchtime talk with David Krueger, then an assistant professor at the University of Cambridge working on AI safety. Members had an opportunity to engage with a researcher whose work spans reward modeling and gaming, interpretability, backdoors, and model distillation. The talk was followed by AIST's AI forecasting contest at the same venue.",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqd1g64r66c9o6srj0db3cgs6aohicgqm4cplcdj66e33c4q6ap1k81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2549,7 +2549,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "A residential AISST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.",
+      "description": "A residential AIST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2599,9 +2599,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "A residential AISST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.\n\nSpeakers / session contributors: Buck Shlegeris, Lucas Sato, Alan Chan, Richard Ngo, Lawrence Chan, David Bau, Nikola Jurkovic, Leo Gao.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "A residential AIST/MAIA workshop combining technical AI safety and governance perspectives. Sessions at Essex Woods covered AI control, evaluations of AI research and development, interpretability, resilience, and planning for advanced AI, with one-on-ones, small groups, and career discussions.\n\nSpeakers / session contributors: Buck Shlegeris, Lucas Sato, Alan Chan, Richard Ngo, Lawrence Chan, David Bau, Nikola Jurkovic, Leo Gao.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqe1jckrjcdhh60q3adhh64o38d9ocgqmcpb460sm4chi6dj6coho81mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2625,7 +2625,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "Essex Woods Retreat Center, Essex, Massachusetts",
-      "description": "The second fall AISST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.",
+      "description": "The second fall AIST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2676,9 +2676,9 @@
       ],
       "cohosts": [
         "MAIA",
-        "AISST"
+        "AIST"
       ],
-      "calendar_description": "The second fall AISST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.\n\nSpeakers / session contributors: Hidenori Tanaka, David Bau, Neev Parikh, Sam Marks, Kevin Liu, Leo Gao, Janet Egan, Nikola Jurkovic.\n\nWorkshop program: https://aisst.ai/workshops",
+      "calendar_description": "The second fall AIST/MAIA residential workshop at Essex Woods brought technical and policy perspectives together. Talks covered interpretability, sparse autoencoders, AI R&D evaluations, compute governance, and the development of technical safety projects. Students also joined researcher discussions, one-on-ones, and an AGI planning exercise.\n\nSpeakers / session contributors: Hidenori Tanaka, David Bau, Neev Parikh, Sam Marks, Kevin Liu, Leo Gao, Janet Egan, Nikola Jurkovic.\n\nWorkshop program: https://aisst.ai/workshops",
       "calendar_import": {
         "status": "imported",
         "event_id": "_dlgmio9dc5p66q39epiiqchnccpjgp9m6ko62dhgclh36p9h64r3ee34chij2cpl6ks3gpb381mmit31d5gmoqb7dpmmarjk5pnn4po",
@@ -2814,7 +2814,7 @@
       "end_time": "11:00",
       "timezone": "America/New_York",
       "location": "HAIST office, Cambridge, Massachusetts",
-      "description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AISST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
+      "description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AIST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2828,7 +2828,7 @@
       ],
       "scheduled_speakers": [],
       "links": [],
-      "calendar_description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AISST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
+      "calendar_description": "Zac Hatfield-Dodds of Anthropic led a practical mini-workshop for MAIA and AIST members on contributing to open-source projects. Participants learned how to choose a project and issue, read contributor guides, set up a development workflow, test changes, and work with maintainers through pull requests. Examples included NumFocus projects such as NumPy, pandas, and Matplotlib.",
       "calendar_import": {
         "status": "imported",
         "event_id": "mdnokn2m6nlhp5pc7ddc5na2mk",
@@ -2885,7 +2885,7 @@
       "end_time": null,
       "timezone": "America/New_York",
       "location": "CIC, Floor 11, Cambridge",
-      "description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AISST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
+      "description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AIST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
       "date_display": null,
       "publication_status": "draft",
       "record_type": "event",
@@ -2900,7 +2900,7 @@
       ],
       "scheduled_speakers": [],
       "links": [],
-      "calendar_description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AISST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
+      "calendar_description": "MAIA members gathered for a Q&A with Leo Gao before the joint MAIA and AIST social. The member meeting began on CIC's eleventh floor and was scheduled to continue into the evening social.",
       "calendar_import": {
         "status": "imported",
         "event_id": "v2didfjhdu472uoh6inmi1t9ms",

@@ -16,7 +16,7 @@
  <li><strong>AI Safety Fundamentals.</strong> An eight-week introduction to AI safety through readings and small-group discussion. <a href="/getinvolved/#aisf">Learn about AISF.</a></li>
  <li><strong>Research and technical programs.</strong> Paper discussions, replications, hackathons, and ARENA-based training. <a href="/initiatives/#research">Read work by members.</a></li>
  <li><strong>Member meetings and socials.</strong> Opportunities to meet collaborators, discuss ideas, and get to know the community.</li>
- <li><strong>MAIA &amp; AISST workshops.</strong> Workshop retreats connecting students with researchers and other people working on AI safety.</li>
+ <li><strong>MAIA &amp; AIST workshops.</strong> Workshop retreats connecting students with researchers and other people working on AI safety.</li>
  <li><strong>Speaker events.</strong> Talks and conversations with AI safety researchers. <a href="/events/">Browse the event archive.</a></li>
  <li><strong>CPW and orientation.</strong> Events introducing incoming and prospective MIT students to MAIA and AI safety.</li>
 </ul>

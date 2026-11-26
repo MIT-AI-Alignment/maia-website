@@ -1,7 +1,7 @@
 <section>
 	<p class="pt-4">
 		Every semester, MAIA and the AI Safety Student Team at Harvard (<a href="https://aisst.ai"
-			>AISST</a
+			>AIST</a
 		>) collaborate to run weekend retreats on AI safety. We gather students, professors, and
 		professionals working on AI safety to discuss and collaborate on the cutting edge of AI safety
 		research and policy. 
@@ -9,7 +9,7 @@
 		In the past, we have run workshops building transformers from scratch,
 		replicating papers in the field, and learning from industry leaders.
 	</p>
-	<p class="my-4">The AISST/MAIA Fall 2026 workshops run over three weekends: <strong>Nov 6–8, Nov 13–15, and Nov 20–22, 2026</strong>.</p>
+	<p class="my-4">The AIST/MAIA Fall 2026 workshops run over three weekends: <strong>Nov 6–8, Nov 13–15, and Nov 20–22, 2026</strong>.</p>
 	<img src="/images/initiatives/2025workshop.JPG" alt="2025 Workshop with all participants">
 	<!-- <p class="mt-2 italic mb-8">
 	 	More information to come out Spring 2026

@@ -320,7 +320,7 @@
 					{#if section.programs.length || section.undatedPrograms.length}
 						<details class="programs" open={section.id === 'upcoming' || activeCategory === 'programs'}>
 							<summary>{section.id === 'upcoming' ? 'Current & upcoming programs' : 'Programs that year'} <span>({section.programs.length + section.undatedPrograms.length})</span></summary>
-							<p class="programs-intro">MAIA programs and opportunities from AISST at Harvard and CBAI. Each listing names its organizer.</p>
+							<p class="programs-intro">MAIA programs and opportunities from AIST at Harvard and CBAI. Each listing names its organizer.</p>
 							<div class="program-grid">
 							{#each section.programs as program}
 								{@const programMedia = getEventMedia(program)}
@@ -336,7 +336,7 @@
 							{/each}
 							{#each section.undatedPrograms as program}
 								<article class="program-card">
-									<img class="program-logo" src={program.organizer === 'MAIA' ? '/images/maia_mark.svg' : program.organizer === 'AISST' ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
+									<img class="program-logo" src={program.organizer === 'MAIA' ? '/images/maia_mark.svg' : (program.organizer === 'AIST' || program.organizer === 'AISST') ? '/images/logos/aisst.png' : '/images/logos/cbai.png'} alt={`${program.organizer} logo`} loading="lazy" />
 									<h4>{program.title} · {program.organizer}</h4>
 									<p class="program-dates">{program.timing}</p>
 									<details><summary>About this program</summary><p class="program-description">{program.description}</p></details>
