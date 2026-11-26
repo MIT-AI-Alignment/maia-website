@@ -28,9 +28,13 @@ function publicDescription(text: string, eventId: string): string {
   .replace(/\b(?:Felix Tudose|Ryan Baylon)\b/g, '');
 }
 
+function displayAistName(text: string): string {
+ return text.replace(/AISST/g, 'AIST');
+}
+
 // Based on the joint workshop overview at https://aisst.ai/workshops and archived schedules.
 function workshopSummary(event: CalendarEvent): string | undefined {
- if (!/workshop/i.test(event.title) || !/residential|MAIA.*AISST|AISST.*MAIA|summer technical AI safety/i.test(event.title)) return;
+ if (!/workshop/i.test(event.title) || !/residential|MAIA.*(AISST|AIST)|(AISST|AIST).*MAIA|summer technical AI safety/i.test(event.title)) return;
  if (/policy/i.test(event.title)) return 'A residential weekend exploring AI policy and governance with students, researchers, and practitioners. Talks, small-group discussions, and one-on-ones connect policy questions with possible career paths.';
  if (/technical/i.test(event.title)) return 'A residential weekend exploring technical AI safety with students and researchers. Research talks, small-group discussions, and one-on-ones offer space to dig into open problems and plan next steps.';
  return 'A weekend bringing the MIT and Harvard AI safety communities together with researchers and practitioners. Talks and small-group discussions explore AI safety research and policy, with time to meet people and exchange ideas.';
@@ -43,8 +47,10 @@ export async function load({ fetch }) {
   const url = orientationLinks.get(event.id.split('/')[0]);
   return {
    ...event,
-   description: event.description ? publicDescription(event.description, event.id) : event.description,
-   descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: publicDescription(part.text, event.id) })),
+   title: displayAistName(event.title),
+   location: event.location ? displayAistName(event.location) : event.location,
+   description: event.description ? displayAistName(publicDescription(event.description, event.id)) : event.description,
+   descriptionParts: event.descriptionParts?.map(part => ({ ...part, text: displayAistName(publicDescription(part.text, event.id)) })),
    url: url ?? event.url ?? EVENT_SOURCE_LINKS[event.id.split('/')[0]], summary: orientationSummary(event) ?? workshopSummary(event)
   };
  });

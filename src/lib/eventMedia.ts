@@ -350,7 +350,7 @@ const eventMediaEntries: (EventMedia & { partifulId?: string; calendarId: string
   },
   {
     "imageUrl": "/images/events/workshop-2026-08-28-group.jpg",
-    "imageAlt": "Participants outside Essex Woods at the August 2026 MAIA and AISST summer workshop.",
+    "imageAlt": "Participants outside Essex Woods at the August 2026 MAIA and AIST summer workshop.",
     "kind": "photo",
     "calendarId": "maia-archive-ca2869a6e8b429f9d52e4757a70b52dd"
   },
@@ -414,7 +414,7 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  if (matched) return { ...matched, imageUrl: `${matched.imageUrl}?v=20260915` };
  if (event.media) return event.media;
  if (event.kind === 'initiative' && event.url?.includes('aisst.ai/')) {
-  return { imageUrl: '/images/logos/aisst.png', imageAlt: 'AISST logo', kind: 'artwork' };
+  return { imageUrl: '/images/logos/aisst.png', imageAlt: 'AIST logo', kind: 'artwork' };
  }
  if (event.kind === 'initiative' && event.url?.includes('cbai.ai/')) {
   return { imageUrl: '/images/logos/cbai.png', imageAlt: 'Cambridge Boston Alignment Initiative logo', kind: 'artwork' };
@@ -432,7 +432,7 @@ export function getEventMedia(event: CalendarEvent): EventMedia | undefined {
  if (event.start.length === 10 && /workshop/i.test(event.title)) {
   return {
    imageUrl: '/images/events/workshop-representative.jpg?v=c745196d1260',
-   imageAlt: 'Representative MAIA/AISST workshop group photo from 2025, reused across workshop listings.',
+   imageAlt: 'Representative MAIA/AIST workshop group photo from 2025, reused across workshop listings.',
    kind: 'photo'
   };
  }

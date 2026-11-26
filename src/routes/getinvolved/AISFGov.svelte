@@ -43,7 +43,7 @@
 	<h3 class="text-3xl font-heading text-maia-600 dark:text-maia-500">Policy Fellowship</h3>
 
 	<p class="mt-2">
-		Every semester our sister organization at Harvard, <a href="https://aisst.ai/">AISST</a>, runs an 8-week introductory reading group on the foundational policy and
+		Every semester our sister organization at Harvard, <a href="https://aisst.ai/">AIST</a>, runs an 8-week introductory reading group on the foundational policy and
 		governance issues posed by advanced AI systems. The fellowship meets weekly in small groups,
 		with dinner provided, and no additional work required beyond meetings.
 	</p>
@@ -59,7 +59,7 @@
 	</ul>
 	<div class="mt-8">
 		<Button
-			text="About the AISST Policy Fellowship"
+			text="About the AIST Policy Fellowship"
 			icon="fa-solid fa-arrow-right"
 			type="fuchsia"
 			size="md"

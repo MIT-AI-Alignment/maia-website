@@ -19,7 +19,7 @@
 		{ title: 'AI Safety Fundamentals at MAIA', by: 'MIT AI Alignment', blurb: 'Start with our eight-week reading and discussion program. No prior AI safety background required.', link: '/getinvolved/#aisf' },
 		{
 			title: 'AI Safety: a non-technical introduction',
-			by: 'AISST (our sister group at Harvard)',
+			by: 'AIST (our sister group at Harvard)',
 			blurb: 'Short curated list of articles and videos making the case for caution.',
 			link: 'https://aisst.ai/non-technical-intro-to-ai-safety'
 		},
